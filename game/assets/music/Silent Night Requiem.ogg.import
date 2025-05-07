@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://d3olga2mf7lgs"
+path="res://.godot/imported/Silent Night Requiem.ogg-c1305f62fab069d58221d25c7eb2c31b.oggvorbisstr"
+
+[deps]
+
+source_file="res://game/assets/music/Silent Night Requiem.ogg"
+dest_files=["res://.godot/imported/Silent Night Requiem.ogg-c1305f62fab069d58221d25c7eb2c31b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

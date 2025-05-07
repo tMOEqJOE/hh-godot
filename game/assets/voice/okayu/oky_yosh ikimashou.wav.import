@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cwg3hmjaboxd3"
+path="res://.godot/imported/oky_yosh ikimashou.wav-e579ac0a0758b1a6aea650815432bfa7.sample"
+
+[deps]
+
+source_file="res://game/assets/voice/okayu/oky_yosh ikimashou.wav"
+dest_files=["res://.godot/imported/oky_yosh ikimashou.wav-e579ac0a0758b1a6aea650815432bfa7.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=true
+force/max_rate=true
+force/max_rate_hz=22100.0
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=3 uid="uid://btifqf7jlg8wh"]
+
+[ext_resource type="PackedScene" uid="uid://cqee8xg8vov1x" path="res://game/StageCollision.tscn" id="1"]
+
+[node name="StageCage" type="SGFixedNode2D"]
+fixed_scale_x = 1237319
+fixed_scale_y = 948960
+scale = Vector2(18.88, 14.48)
+metadata/_edit_horizontal_guides_ = [445.0, -5810.0]
+metadata/_edit_vertical_guides_ = [2929.0, -2927.0]
+
+[node name="Floor" parent="." instance=ExtResource("1")]
+collision_layer = 4
+collision_mask = 0
+fixed_position_y = 50536588
+fixed_scale_x = 3057234
+fixed_scale_y = 4852149
+position = Vector2(0, 771.127)
+scale = Vector2(46.6497, 74.0379)
+
+[node name="HardWallRight" parent="." instance=ExtResource("1")]
+collision_layer = 786433
+collision_mask = 0
+fixed_position_x = 20788000
+fixed_scale_x = 1058479
+fixed_scale_y = 7993436
+position = Vector2(317.2, 0)
+scale = Vector2(16.1511, 121.97)
+
+[node name="HardWallLeft" parent="." instance=ExtResource("1")]
+collision_layer = 786433
+collision_mask = 0
+fixed_position_x = -20788000
+fixed_scale_x = 1058479
+fixed_scale_y = 7993436
+position = Vector2(-317.2, 0)
+scale = Vector2(16.1511, 121.97)
+
+[node name="Ceiling" parent="." instance=ExtResource("1")]
+collision_mask = 0
+fixed_position_y = -37552004
+fixed_scale_x = 3947450
+fixed_scale_y = 1116799
+position = Vector2(0, -572.998)
+scale = Vector2(60.2333, 17.041)

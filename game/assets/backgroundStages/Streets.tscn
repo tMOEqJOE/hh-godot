@@ -1,0 +1,58 @@
+[gd_scene load_steps=7 format=3 uid="uid://y6lkpix7txqj"]
+
+[ext_resource type="Texture2D" uid="uid://bve0wsq2nu8ha" path="res://game/assets/sprites/BGArt/Streets/mid1V4.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://cbuuf8eieqt3b" path="res://game/assets/sprites/BGArt/Streets/foregroundv4.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://7u4g5e5dxyj8" path="res://game/assets/sprites/BGArt/Streets/skyboxV4.png" id="3"]
+[ext_resource type="Script" uid="uid://gt6l8h6v6871" path="res://game/backgrounds/AnimatedBackgroundParent.gd" id="4"]
+[ext_resource type="Texture2D" uid="uid://bl0tt16yonp68" path="res://game/assets/sprites/BGArt/Streets/mid3v4.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://cl4fbrr5wbe4e" path="res://game/assets/sprites/BGArt/Streets/mid2v4.png" id="6"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+script = ExtResource("4")
+
+[node name="FarBackground" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0, 0)
+
+[node name="Background" type="Sprite2D" parent="FarBackground"]
+z_index = -100
+scale = Vector2(3.55, 3.55)
+texture = ExtResource("3")
+centered = false
+
+[node name="City3" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.5, 0.7)
+
+[node name="City" type="Sprite2D" parent="City3"]
+z_index = -100
+position = Vector2(-1940, -2169)
+scale = Vector2(10, 10)
+texture = ExtResource("5")
+centered = false
+
+[node name="City2" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.5, 0.5)
+
+[node name="City" type="Sprite2D" parent="City2"]
+z_index = -100
+position = Vector2(-2384, -880)
+scale = Vector2(10, 10)
+texture = ExtResource("6")
+centered = false
+
+[node name="City" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.7, 0.7)
+
+[node name="City" type="Sprite2D" parent="City"]
+z_index = -100
+position = Vector2(-1798, -1225)
+scale = Vector2(10, 10)
+texture = ExtResource("1")
+centered = false
+
+[node name="Floor" type="ParallaxLayer" parent="."]
+
+[node name="Floor" type="Sprite2D" parent="Floor"]
+z_index = -100
+position = Vector2(0, -730)
+scale = Vector2(2, 2)
+texture = ExtResource("2")

@@ -1,0 +1,225 @@
+[gd_scene load_steps=8 format=3 uid="uid://rghsr4xkme1m"]
+
+[ext_resource type="Script" uid="uid://bqourwt6u6d5m" path="res://game/menus/training/FastSlider.gd" id="2"]
+[ext_resource type="Script" uid="uid://7pwdp6l0cxh8" path="res://game/menus/onlinemenu/PrivateRoom.gd" id="3"]
+[ext_resource type="FontFile" uid="uid://d28sv0htum78d" path="res://game/assets/monogram_extended.ttf" id="6"]
+[ext_resource type="Material" uid="uid://bofoucuf31088" path="res://game/assets/shaders/EarthBoundV1.tres" id="8"]
+[ext_resource type="Texture2D" uid="uid://biq18vleavg8w" path="res://game/assets/sprites/UI/MainMenus/WIMScreen.png" id="12"]
+
+[sub_resource type="FontFile" id="1"]
+fallbacks = Array[Font]([ExtResource("6")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/20/0/ascent = 0.0
+cache/0/20/0/descent = 0.0
+cache/0/20/0/underline_position = 0.0
+cache/0/20/0/underline_thickness = 0.0
+cache/0/20/0/scale = 1.0
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
+
+[sub_resource type="FontFile" id="3"]
+fallbacks = Array[Font]([ExtResource("6")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+
+[node name="PrivateRoom" type="Node2D"]
+script = ExtResource("3")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MessageLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -940.0
+offset_top = 691.0
+offset_right = 60.0
+offset_bottom = 1091.0
+scale = Vector2(1.02569, 0.716395)
+theme_override_font_sizes/font_size = 20
+
+[node name="DebugLabel" type="Label" parent="CanvasLayer"]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -928.0
+offset_top = 836.0
+offset_right = 372.0
+offset_bottom = 886.0
+scale = Vector2(1.24678, 1.18851)
+theme_override_fonts/font = SubResource("1")
+theme_override_font_sizes/font_size = 20
+text = "(Nothing)"
+
+[node name="SpectatorLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -946.0
+offset_top = 529.0
+offset_right = 354.0
+offset_bottom = 579.0
+scale = Vector2(0.981321, 0.965868)
+theme_override_font_sizes/font_size = 20
+text = "(Nothing)"
+
+[node name="ErrorLabel" type="Label" parent="CanvasLayer"]
+visible = false
+modulate = Color(1, 0.117647, 0.117647, 1)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -439.0
+offset_top = 151.0
+offset_right = 861.0
+offset_bottom = 201.0
+grow_horizontal = 2
+scale = Vector2(1.24678, 1.18851)
+theme_override_fonts/font = SubResource("1")
+theme_override_font_sizes/font_size = 30
+text = "(Nothing)"
+
+[node name="NameLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -932.0
+offset_top = 16.0001
+offset_right = -332.0
+offset_bottom = 116.0
+scale = Vector2(1.24678, 1.18851)
+theme_override_font_sizes/font_size = 20
+text = "(Nothing)"
+
+[node name="SessionIDLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -932.0
+offset_top = 47.0
+offset_right = -332.0
+offset_bottom = 147.0
+grow_horizontal = 2
+scale = Vector2(1.24678, 1.18851)
+theme_override_font_sizes/font_size = 20
+
+[node name="BattleVersionLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 203.0
+offset_top = 1020.0
+offset_right = 674.0
+offset_bottom = 1150.0
+scale = Vector2(0.944353, 1.17029)
+theme_override_font_sizes/font_size = 20
+text = "Battle Version: "
+
+[node name="RoomIDLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 167.0
+offset_top = 21.0
+offset_right = 667.0
+offset_bottom = 94.0
+grow_horizontal = 2
+scale = Vector2(1.23896, 1.81123)
+theme_override_font_sizes/font_size = 16
+text = "RoomID: "
+
+[node name="RoomIDField" type="LineEdit" parent="CanvasLayer"]
+offset_left = 1224.0
+offset_top = 20.0
+offset_right = 1588.0
+offset_bottom = 44.0
+scale = Vector2(1.86698, 1.74891)
+size_flags_horizontal = 3
+focus_neighbor_bottom = NodePath("../GridContainer/HideRoomID")
+text = "Room ID"
+max_length = 40
+editable = false
+secret = true
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer"]
+offset_left = 282.0
+offset_top = 74.0
+offset_right = 982.0
+offset_bottom = 474.0
+scale = Vector2(2, 2)
+columns = 3
+
+[node name="CopyRoomID" type="Button" parent="CanvasLayer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Copy Room ID"
+
+[node name="Empty3" type="Label" parent="CanvasLayer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HideRoomID" type="Button" parent="CanvasLayer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Hide/UnHide RoomId"
+
+[node name="InputDelayLabel" type="Label" parent="CanvasLayer/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("3")
+text = "Input Delay: 2"
+
+[node name="Empty4" type="Label" parent="CanvasLayer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Empty5" type="Label" parent="CanvasLayer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="InputDelayMeter" type="HSlider" parent="CanvasLayer/GridContainer"]
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../../ScrollContainer/VBox")
+max_value = 10.0
+value = 2.0
+tick_count = 11
+ticks_on_borders = true
+script = ExtResource("2")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer"]
+custom_minimum_size = Vector2(800, 400)
+offset_left = 265.0
+offset_top = 230.0
+offset_right = 265.0
+offset_bottom = 230.0
+scale = Vector2(2, 2)
+follow_focus = true
+
+[node name="VBox" type="GridContainer" parent="CanvasLayer/ScrollContainer"]
+custom_minimum_size = Vector2(700, 500)
+layout_mode = 2
+focus_neighbor_top = NodePath("../../GridContainer/InputDelayLabel")
+
+[node name="Background" type="Sprite2D" parent="."]
+self_modulate = Color(0.0862745, 0.176471, 0.411765, 1)
+material = ExtResource("8")
+position = Vector2(961, 539)
+texture = ExtResource("12")
+
+[connection signal="pressed" from="CanvasLayer/GridContainer/CopyRoomID" to="." method="_on_copy_room_id_pressed"]
+[connection signal="pressed" from="CanvasLayer/GridContainer/HideRoomID" to="." method="_on_hide_room_id_pressed"]
+[connection signal="value_changed" from="CanvasLayer/GridContainer/InputDelayMeter" to="." method="_on_InputDelayMeter_value_changed"]

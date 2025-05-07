@@ -1,0 +1,230 @@
+[gd_scene load_steps=11 format=3 uid="uid://ccm836wy2y8gx"]
+
+[ext_resource type="Script" uid="uid://bu4cfxc3xx7dg" path="res://game/OfflineVersusMain.gd" id="1"]
+[ext_resource type="PackedScene" path="res://game/ui/FPSCounter.tscn" id="2"]
+[ext_resource type="FontFile" uid="uid://d28sv0htum78d" path="res://game/assets/monogram_extended.ttf" id="3"]
+[ext_resource type="PackedScene" uid="uid://c5xgqi0ik2bpc" path="res://game/ui/MatchWinCounter.tscn" id="4"]
+[ext_resource type="Script" uid="uid://da3lrwaml74um" path="res://game/menus/versus/PauseMenu.gd" id="5"]
+[ext_resource type="PackedScene" path="res://game/menus/training/CommandList.tscn" id="8"]
+[ext_resource type="Texture2D" uid="uid://csm7c5dbea7x2" path="res://game/assets/sprites/UI/CharacterSelect/WOOD.png" id="9"]
+
+[sub_resource type="FontFile" id="1"]
+fallbacks = Array[Font]([ExtResource("3")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+
+[sub_resource type="FontFile" id="2"]
+fallbacks = Array[Font]([ExtResource("3")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+
+[sub_resource type="FontFile" id="3"]
+fallbacks = Array[Font]([ExtResource("3")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+
+[node name="OfflineVersusMain" type="Node2D"]
+script = ExtResource("1")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MessageLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -400.0
+offset_top = 28.0
+offset_right = 71.0
+offset_bottom = 158.0
+scale = Vector2(2, 2)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("1")
+horizontal_alignment = 1
+
+[node name="PingLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -124.0
+offset_top = 1039.0
+offset_right = 52.0001
+offset_bottom = 1074.0
+scale = Vector2(1.57576, 0.666667)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("1")
+text = "Ping:160 ms"
+horizontal_alignment = 1
+
+[node name="HoldStartLabel" type="Label" parent="CanvasLayer"]
+modulate = Color(1, 0, 0.960784, 1)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -185.0
+offset_top = 934.0
+offset_right = 23.0
+offset_bottom = 969.0
+grow_horizontal = 2
+scale = Vector2(1.96386, 5.2058)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("1")
+text = "Hold Start..."
+horizontal_alignment = 1
+
+[node name="RollbackFrameLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -107.0
+offset_top = 1024.0
+offset_right = 165.0
+offset_bottom = 1059.0
+scale = Vector2(0.824673, 0.591117)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("1")
+text = "RollbackFrame: 2F"
+horizontal_alignment = 1
+
+[node name="SyncLostLabel" type="Label" parent="CanvasLayer"]
+visible = false
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -271.0
+offset_top = 22.0
+offset_right = -169.0
+offset_bottom = 35.0
+scale = Vector2(2, 2)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("2")
+text = "Regaining sync..."
+
+[node name="WinCounterP1" parent="CanvasLayer" instance=ExtResource("4")]
+offset_left = -475.0
+offset_right = -4.0
+scale = Vector2(1.77026, 1.92974)
+
+[node name="WinCounterP2" parent="CanvasLayer" instance=ExtResource("4")]
+offset_left = 371.0
+offset_right = 842.0
+scale = Vector2(1.77026, 1.92974)
+
+[node name="FPSCounter" parent="CanvasLayer" instance=ExtResource("2")]
+offset_left = 955.0
+offset_top = 5.0
+offset_right = 995.0
+offset_bottom = 19.0
+
+[node name="PauseMenu" type="GridContainer" parent="CanvasLayer"]
+visible = false
+offset_left = 218.0
+offset_top = 33.0
+offset_right = 718.0
+offset_bottom = 333.0
+scale = Vector2(3, 3)
+columns = 3
+script = ExtResource("5")
+
+[node name="Background" type="Sprite2D" parent="CanvasLayer/PauseMenu"]
+modulate = Color(0.172549, 0.121569, 0.121569, 0.788235)
+position = Vector2(229, 160)
+scale = Vector2(1.01874, 0.564336)
+texture = ExtResource("9")
+
+[node name="PlayerLabel" type="Label" parent="CanvasLayer/PauseMenu"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("3")
+
+[node name="PlayerLabel2" type="Label" parent="CanvasLayer/PauseMenu"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("3")
+
+[node name="PlayerLabel3" type="Label" parent="CanvasLayer/PauseMenu"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("3")
+
+[node name="CloseLabel" type="Label" parent="CanvasLayer/PauseMenu"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("3")
+text = "Close Menu"
+
+[node name="CloseButton" type="Button" parent="CanvasLayer/PauseMenu"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../ExitButton")
+text = "Close"
+
+[node name="CloseNumber" type="Label" parent="CanvasLayer/PauseMenu"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("3")
+
+[node name="CommandListLabel" type="Label" parent="CanvasLayer/PauseMenu"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("3")
+
+[node name="CommandListButton" type="Button" parent="CanvasLayer/PauseMenu"]
+layout_mode = 2
+text = "Command List"
+
+[node name="CommandListNumber" type="Label" parent="CanvasLayer/PauseMenu"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("3")
+
+[node name="ExitLabel" type="Label" parent="CanvasLayer/PauseMenu"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("3")
+text = "Quit Versus"
+
+[node name="ExitButton" type="Button" parent="CanvasLayer/PauseMenu"]
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../CloseButton")
+text = "Quit"
+
+[node name="ExitNumber" type="Label" parent="CanvasLayer/PauseMenu"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("3")
+
+[node name="CommandList" parent="CanvasLayer" instance=ExtResource("8")]
+visible = false
+offset_left = 59.0
+offset_top = 20.0
+offset_right = 106.0
+offset_bottom = 44.0
+scale = Vector2(2.87118, 3.02479)
+
+[node name="SetupPingTimer" type="Timer" parent="."]
+
+[connection signal="pressed" from="CanvasLayer/PauseMenu/CloseButton" to="CanvasLayer/PauseMenu" method="_on_CloseButton_pressed"]
+[connection signal="pressed" from="CanvasLayer/PauseMenu/CommandListButton" to="CanvasLayer/PauseMenu" method="_on_CommandListButton_pressed"]
+[connection signal="pressed" from="CanvasLayer/PauseMenu/ExitButton" to="CanvasLayer/PauseMenu" method="_on_ExitButton_pressed"]

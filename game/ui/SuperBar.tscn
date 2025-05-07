@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://dliwkyac5ynat"]
+
+[ext_resource type="Texture2D" uid="uid://dp0x5uqfojaji" path="res://game/assets/sprites/UI/HPBarFull.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://dpmfpn5ps78yp" path="res://game/assets/sprites/UI/HPBarOutline.png" id="2"]
+[ext_resource type="Script" path="res://game/ui/SuperBar.gd" id="3"]
+[ext_resource type="Texture2D" uid="uid://cg07hyunw6do8" path="res://game/assets/sprites/UI/Meters/Level/Timeline 1_0000.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://b1m8niy00f5ru" path="res://game/assets/sprites/VFX/BurstOK/Timeline 1_0002.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://cveg4ujxc60pm" path="res://game/assets/sprites/VFX/BurstCost/Timeline 1_0000.png" id="6"]
+
+[node name="SuperBar" type="Node2D"]
+script = ExtResource("3")
+
+[node name="FullBar" type="TextureProgressBar" parent="."]
+offset_top = -24.6809
+offset_right = 661.0
+offset_bottom = 30.3191
+value = 40.0
+fill_mode = 1
+texture_under = ExtResource("1")
+texture_progress = ExtResource("1")
+tint_under = Color(0.380392, 0.34902, 0.4, 1)
+tint_progress = Color(0.0823529, 0.411765, 0.380392, 1)
+
+[node name="Border" type="Sprite2D" parent="."]
+position = Vector2(322.917, 2.31909)
+scale = Vector2(0.996413, 0.978723)
+texture = ExtResource("2")
+
+[node name="LevelNumber" type="Sprite2D" parent="."]
+position = Vector2(5, -69)
+scale = Vector2(0.996413, 0.978723)
+texture = ExtResource("4")
+
+[node name="BurstOK" type="Sprite2D" parent="."]
+position = Vector2(113.5, 37)
+texture = ExtResource("5")
+
+[node name="BurstCost" type="Sprite2D" parent="."]
+position = Vector2(188.5, 45)
+texture = ExtResource("6")

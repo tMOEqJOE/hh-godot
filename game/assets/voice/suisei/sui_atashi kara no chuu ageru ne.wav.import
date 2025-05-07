@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cago5okwshjf4"
+path="res://.godot/imported/sui_atashi kara no chuu ageru ne.wav-78eda141a606185e8836b0da43edda1a.sample"
+
+[deps]
+
+source_file="res://game/assets/voice/suisei/sui_atashi kara no chuu ageru ne.wav"
+dest_files=["res://.godot/imported/sui_atashi kara no chuu ageru ne.wav-78eda141a606185e8836b0da43edda1a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=true
+force/max_rate=true
+force/max_rate_hz=22100.0
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

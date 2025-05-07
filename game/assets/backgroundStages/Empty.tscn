@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0fl7yyiy7nyu"]
+
+[ext_resource type="Script" uid="uid://gt6l8h6v6871" path="res://game/backgrounds/AnimatedBackgroundParent.gd" id="4"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+script = ExtResource("4")

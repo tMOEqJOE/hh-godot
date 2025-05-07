@@ -1,0 +1,505 @@
+[gd_scene load_steps=62 format=3 uid="uid://ctlx1oeqg24ic"]
+
+[ext_resource type="Texture2D" uid="uid://baqx7t1sjdxw" path="res://game/assets/sprites/subaru/StandHighHurt/Timeline 1_0003.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://b6fygc7up5rnd" path="res://game/assets/sprites/subaru/StandHighHurt/Timeline 1_0001.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://bvbt30egd4vn2" path="res://game/assets/sprites/subaru/StandHighHurt/Timeline 1_0000.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://d0yw6es1v4tyu" path="res://game/assets/sprites/subaru/StarballToss/Timeline 1_0002.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://dxro1sjewtjos" path="res://game/assets/sprites/subaru/StarballToss/Timeline 1_0000.png" id="5"]
+[ext_resource type="Script" uid="uid://dv11pt6y7wasy" path="res://addons/godot-rollback-netcode/NetworkAnimationPlayer.gd" id="6"]
+[ext_resource type="Texture2D" uid="uid://bm8sm0o0hq4wv" path="res://game/assets/sprites/subaru/StarballToss/Timeline 1_0004.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://dsx8ag01n2ige" path="res://game/assets/sprites/subaru/StarballToss/Timeline 1_0001.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://bjq5ggh7300yo" path="res://game/assets/sprites/subaru/AirHurt/Timeline 1_0000.png" id="9"]
+[ext_resource type="Script" uid="uid://d2ne70ywcgaei" path="res://game/fighter/assist/assistsubaru/AssistSubaruPlayer.gd" id="10"]
+[ext_resource type="Texture2D" uid="uid://dhp6bgli5bw0o" path="res://game/assets/sprites/subaru/Knockdown/Timeline 1_0000.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://bk3756ghx2v1t" path="res://game/assets/sprites/subaru/AirHurt/Timeline 1_0002.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://bok5adfg75ip6" path="res://game/assets/sprites/subaru/Knockdown/Timeline 1_0001.png" id="13"]
+[ext_resource type="Texture2D" uid="uid://dyb3pv6fg1s5e" path="res://game/assets/sprites/subaru/Knockdown/Timeline 1_0004.png" id="14"]
+[ext_resource type="Texture2D" uid="uid://dpdi4id3a27a0" path="res://game/assets/sprites/subaru/StarballToss/Timeline 1_0003.png" id="15"]
+[ext_resource type="Texture2D" uid="uid://b27pjonx2ipny" path="res://game/assets/sprites/subaru/AirHurt/Timeline 1_0001.png" id="16"]
+[ext_resource type="Texture2D" uid="uid://dqnmaj8drxnbn" path="res://game/assets/sprites/subaru/AirHurt/Timeline 1_0003.png" id="17"]
+[ext_resource type="Texture2D" uid="uid://hbf6mv45va7r" path="res://game/assets/sprites/subaru/Crouch/Timeline 1_0000.png" id="18"]
+[ext_resource type="Texture2D" uid="uid://dq6fa1o1xw7x1" path="res://game/assets/sprites/subaru/Knockdown/Timeline 1_0002.png" id="19"]
+[ext_resource type="Texture2D" uid="uid://08m78oacejax" path="res://game/assets/sprites/subaru/StandHighHurt/Timeline 1_0002.png" id="20"]
+[ext_resource type="Texture2D" uid="uid://xdahfjrsbek8" path="res://game/assets/sprites/subaru/Burst/Timeline 1_0003.png" id="21"]
+[ext_resource type="Texture2D" uid="uid://c7aq1oeo1jcwj" path="res://game/assets/sprites/subaru/5C/Timeline 1_0000.png" id="22"]
+[ext_resource type="Texture2D" uid="uid://0qby5jlrvk75" path="res://game/assets/sprites/subaru/5C/Timeline 1_0003.png" id="23"]
+[ext_resource type="Texture2D" uid="uid://hnwtjgr1mki4" path="res://game/assets/sprites/subaru/5C/Timeline 1_0001.png" id="24"]
+[ext_resource type="Texture2D" uid="uid://d0aewt5wlf7b3" path="res://game/assets/sprites/subaru/5C/Timeline 1_0002.png" id="25"]
+[ext_resource type="Texture2D" uid="uid://ctn6dht2d2qji" path="res://game/assets/sprites/subaru/3C/Timeline 1_0000.png" id="26"]
+[ext_resource type="Texture2D" uid="uid://h7fh1wbu8u3h" path="res://game/assets/sprites/subaru/3C/Timeline 1_0004.png" id="27"]
+[ext_resource type="Texture2D" uid="uid://5dddepxwia00" path="res://game/assets/sprites/subaru/3C/Timeline 1_0002.png" id="28"]
+[ext_resource type="Texture2D" uid="uid://tq7jpwpmpnav" path="res://game/assets/sprites/Empty_0000.png" id="29"]
+[ext_resource type="Texture2D" uid="uid://cq3vvk0fmi4u5" path="res://game/assets/sprites/subaru/3C/Timeline 1_0001.png" id="30"]
+[ext_resource type="Texture2D" uid="uid://bnywhh232ltuk" path="res://game/assets/sprites/subaru/3C/Timeline 1_0003.png" id="31"]
+[ext_resource type="Texture2D" uid="uid://gjimnxoji3ti" path="res://game/assets/sprites/subaru/JC/Timeline 1_0002.png" id="32"]
+[ext_resource type="Texture2D" uid="uid://c7wmdhp23uvs" path="res://game/assets/sprites/subaru/JC/Timeline 1_0003.png" id="33"]
+[ext_resource type="Texture2D" uid="uid://r3d5xf1656hc" path="res://game/assets/sprites/subaru/JC/Timeline 1_0000.png" id="34"]
+[ext_resource type="Material" uid="uid://bt3lvyqtd78u0" path="res://game/assets/shaders/ColorSwapMat.tres" id="35"]
+[ext_resource type="Texture2D" uid="uid://dpuh46bo6jai" path="res://game/assets/sprites/subaru/JC/Timeline 1_0001.png" id="36"]
+[ext_resource type="PackedScene" uid="uid://cwoqesvdf08m3" path="res://game/fighter/Hurtbox.tscn" id="46"]
+[ext_resource type="PackedScene" uid="uid://bvgu0aev8rq4g" path="res://game/fighter/Hitbox.tscn" id="47"]
+[ext_resource type="Texture2D" uid="uid://bb0le8lbjm862" path="res://game/assets/sprites/subaru/Idle/Timeline 1_0000.png" id="62"]
+[ext_resource type="Texture2D" uid="uid://bvj6s8nc5bid3" path="res://game/assets/sprites/subaru/Idle/Timeline 1_0002.png" id="63"]
+[ext_resource type="Texture2D" uid="uid://bj6s7gdmt0c1u" path="res://game/assets/sprites/subaru/Idle/Timeline 1_0003.png" id="64"]
+[ext_resource type="Texture2D" uid="uid://dc77vyx7raw2o" path="res://game/assets/sprites/subaru/Idle/Timeline 1_0001.png" id="65"]
+[ext_resource type="Texture2D" uid="uid://07gsfduimqo7" path="res://game/assets/sprites/subaru/Idle/Timeline 1_0004.png" id="66"]
+[ext_resource type="Texture2D" uid="uid://b482xhlms26ms" path="res://game/assets/sprites/subaru/Idle/Timeline 1_0005.png" id="67"]
+[ext_resource type="Texture2D" uid="uid://dg2aceqetuop3" path="res://game/assets/sprites/subaru/Idle/Timeline 1_0006.png" id="68"]
+[ext_resource type="Texture2D" uid="uid://cflraej4sk517" path="res://game/assets/sprites/subaru/Idle/Timeline 1_0007.png" id="69"]
+
+[sub_resource type="SGRectangleShape2D" id="1"]
+extents_x = 2063232
+extents_y = 6847360
+
+[sub_resource type="Animation" id="22"]
+resource_name = "AirAssistAttack2"
+length = 0.500001
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.116667, 0.216667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("34"), ExtResource("36"), ExtResource("32"), ExtResource("33")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1e+06),
+"update": 0,
+"values": [Vector2(0, 60)]
+}
+
+[sub_resource type="Animation" id="10"]
+resource_name = "AirHit"
+length = 0.500001
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.216667, 0.383333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("9"), ExtResource("16"), ExtResource("12"), ExtResource("17")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1e+06),
+"update": 0,
+"values": [Vector2(0, 150)]
+}
+
+[sub_resource type="Animation" id="9"]
+resource_name = "AssistAttack"
+length = 1.16667
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.116667, 0.216667, 0.35),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("5"), ExtResource("8"), ExtResource("4"), ExtResource("15"), ExtResource("7")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1e+06),
+"update": 0,
+"values": [Vector2(0, 130)]
+}
+
+[sub_resource type="Animation" id="21"]
+resource_name = "AssistAttack2"
+length = 0.500001
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.116667, 0.216667, 0.35),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("26"), ExtResource("30"), ExtResource("28"), ExtResource("31"), ExtResource("27")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1e+06),
+"update": 0,
+"values": [Vector2(0, 60)]
+}
+
+[sub_resource type="Animation" id="20"]
+resource_name = "AssistSuper"
+length = 1.08334
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.1, 0.133333, 0.2, 0.266667, 0.300001, 0.333334, 0.400001, 0.466667, 0.533334, 0.566668, 0.600001, 0.666668, 0.733334, 0.766668, 0.800002, 0.833335, 0.900002, 0.966668),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("5"), ExtResource("8"), ExtResource("4"), ExtResource("15"), ExtResource("7"), ExtResource("5"), ExtResource("8"), ExtResource("4"), ExtResource("15"), ExtResource("7"), ExtResource("5"), ExtResource("8"), ExtResource("4"), ExtResource("15"), ExtResource("7"), ExtResource("5"), ExtResource("8"), ExtResource("4"), ExtResource("15"), ExtResource("7")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1e+06),
+"update": 0,
+"values": [Vector2(0, 130)]
+}
+
+[sub_resource type="Animation" id="14"]
+resource_name = "Burst"
+length = 1.66667
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("21")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1e+06),
+"update": 0,
+"values": [Vector2(0, 150)]
+}
+
+[sub_resource type="Animation" id="19"]
+resource_name = "Exit"
+loop_mode = 1
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.283333, 0.383333, 0.516667, 0.65, 0.733333, 0.883333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("62"), ExtResource("65"), ExtResource("63"), ExtResource("64"), ExtResource("66"), ExtResource("67"), ExtResource("68"), ExtResource("69")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1e+06),
+"update": 0,
+"values": [Vector2(0, 80)]
+}
+
+[sub_resource type="Animation" id="13"]
+resource_name = "GuardCancel"
+length = 0.833335
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.15, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("22"), ExtResource("24"), ExtResource("25"), ExtResource("23")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1e+06),
+"update": 0,
+"values": [Vector2(50, 140)]
+}
+
+[sub_resource type="Animation" id="12"]
+resource_name = "Idle"
+length = 0.0333334
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("29")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1e+06),
+"update": 0,
+"values": [Vector2(-450, -100)]
+}
+
+[sub_resource type="Animation" id="15"]
+resource_name = "Intro"
+length = 1.25
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("62")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1e+06),
+"update": 0,
+"values": [Vector2(-20, 100)]
+}
+
+[sub_resource type="Animation" id="8"]
+resource_name = "Knockdown"
+length = 0.333334
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.133333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("11"), ExtResource("13"), ExtResource("19"), ExtResource("14")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1e+06),
+"update": 0,
+"values": [Vector2(0, 120)]
+}
+
+[sub_resource type="Animation" id="17"]
+resource_name = "LandingRecovery"
+length = 0.483334
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("18")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1e+06),
+"update": 0,
+"values": [Vector2(0, 190)]
+}
+
+[sub_resource type="Animation" id="7"]
+resource_name = "StandHighHit"
+length = 0.383334
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.183333, 0.266667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("3"), ExtResource("2"), ExtResource("20"), ExtResource("1")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1e+06),
+"update": 0,
+"values": [Vector2(-50, 120)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ghv83"]
+_data = {
+&"AirAssistAttack2": SubResource("22"),
+&"AirHit": SubResource("10"),
+&"AssistAttack": SubResource("9"),
+&"AssistAttack2": SubResource("21"),
+&"AssistSuper": SubResource("20"),
+&"Burst": SubResource("14"),
+&"Exit": SubResource("19"),
+&"GuardCancel": SubResource("13"),
+&"Idle": SubResource("12"),
+&"Intro": SubResource("15"),
+&"Knockdown": SubResource("8"),
+&"LandingRecovery": SubResource("17"),
+&"StandHighHit": SubResource("7")
+}
+
+[node name="AssistSubaruPlayer" type="SGCharacterBody2D"]
+collision_layer = 0
+collision_mask = 262148
+z_index = 8
+script = ExtResource("10")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.87451)
+material = ExtResource("35")
+position = Vector2(1, -416)
+scale = Vector2(1.428, 1.428)
+texture = ExtResource("34")
+offset = Vector2(0, 60)
+
+[node name="Pushbox" type="SGCollisionShape2D" parent="."]
+shape = SubResource("1")
+fixed_position_y = -6881280
+visible = false
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -105)
+
+[node name="NetworkAnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ghv83")
+}
+script = ExtResource("6")
+auto_reset = false
+
+[node name="Hurtbox1" parent="." instance=ExtResource("46")]
+fixed_position_y = -11337728
+fixed_scale_x = 686985
+fixed_scale_y = 1074037
+position = Vector2(0, -173)
+scale = Vector2(10.4826, 16.3885)
+
+[node name="Hurtbox2" parent="." instance=ExtResource("46")]
+fixed_position_x = 65536
+fixed_position_y = -11993090
+fixed_scale_x = 408108
+fixed_scale_y = 2087212
+position = Vector2(1, -183)
+scale = Vector2(6.22723, 31.8483)
+
+[node name="Hitbox1" parent="." instance=ExtResource("47")]
+fixed_position_x = 14286848
+fixed_position_y = -15400960
+fixed_scale_x = 848976
+fixed_scale_y = 1548125
+position = Vector2(218, -235)
+scale = Vector2(12.9543, 23.6225)
+
+[node name="Hitbox2" parent="." instance=ExtResource("47")]
+fixed_position_x = 19857410
+fixed_position_y = -12451842
+fixed_scale_x = 942229
+fixed_scale_y = -901102
+position = Vector2(303, -190)
+scale = Vector2(14.3773, -13.7497)

@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://du3upso7mhoce"]
+
+[ext_resource type="Texture2D" uid="uid://dx1cllrj4c6h1" path="res://game/assets/sprites/BGArt/PleiadesStarBeach/cityscape.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://6h2uk5g57hdw" path="res://game/assets/sprites/BGArt/PleiadesStarBeach/ground.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://o5k0jpxkhe77" path="res://game/assets/sprites/BGArt/PleiadesStarBeach/skybox.png" id="3"]
+[ext_resource type="Script" path="res://game/backgrounds/AnimatedBackgroundParent.gd" id="4"]
+[ext_resource type="Texture2D" uid="uid://d3gnx8n0km4q1" path="res://game/assets/sprites/BGArt/PleiadesStarBeach/cityscape2.png" id="5"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+script = ExtResource("4")
+
+[node name="FarBackground" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0, 0)
+
+[node name="Background" type="Sprite2D" parent="FarBackground"]
+z_index = -100
+texture = ExtResource("3")
+centered = false
+
+[node name="City" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.3, 0.3)
+
+[node name="City" type="Sprite2D" parent="City"]
+z_index = -100
+position = Vector2(-1698, -303)
+texture = ExtResource("1")
+centered = false
+
+[node name="City2" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.5, 0.5)
+
+[node name="City" type="Sprite2D" parent="City2"]
+z_index = -100
+position = Vector2(-1100, -107)
+texture = ExtResource("5")
+centered = false
+
+[node name="Floor" type="ParallaxLayer" parent="."]
+
+[node name="Floor" type="Sprite2D" parent="Floor"]
+z_index = -100
+texture = ExtResource("2")

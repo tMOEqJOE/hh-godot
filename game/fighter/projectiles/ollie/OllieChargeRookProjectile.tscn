@@ -1,0 +1,119 @@
+[gd_scene load_steps=15 format=3 uid="uid://bxgnoff730syt"]
+
+[ext_resource type="Script" uid="uid://dv11pt6y7wasy" path="res://addons/godot-rollback-netcode/NetworkAnimationPlayer.gd" id="1"]
+[ext_resource type="Script" uid="uid://b010dt6v25trf" path="res://addons/godot-rollback-netcode/NetworkTimer.gd" id="2"]
+[ext_resource type="Script" uid="uid://cvhvl56hrvye2" path="res://game/fighter/projectiles/ollie/OllieChargeChessProjectilePlayer.gd" id="2_kur6b"]
+[ext_resource type="PackedScene" uid="uid://bvgu0aev8rq4g" path="res://game/fighter/Hitbox.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://cwoqesvdf08m3" path="res://game/fighter/Hurtbox.tscn" id="4"]
+[ext_resource type="Material" uid="uid://bt3lvyqtd78u0" path="res://game/assets/shaders/ColorSwapMat.tres" id="5"]
+[ext_resource type="Texture2D" uid="uid://br2id8x35vwgu" path="res://game/assets/sprites/ollie/Rook/Timeline 1_0000.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://bvsho52dgau7y" path="res://game/assets/sprites/ollie/Rook/Timeline 1_0002.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://cfbdsbup863ve" path="res://game/assets/sprites/ollie/Rook/Timeline 1_0001.png" id="8"]
+
+[sub_resource type="SGRectangleShape2D" id="1"]
+extents_x = 4063232
+extents_y = 8847360
+
+[sub_resource type="Animation" id="2"]
+resource_name = "Active"
+length = 0.466668
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6")]
+}
+
+[sub_resource type="Animation" id="3"]
+resource_name = "Destroy"
+length = 0.333334
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("7")]
+}
+
+[sub_resource type="Animation" id="4"]
+resource_name = "Travel"
+length = 0.466668
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("8")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e5rv3"]
+_data = {
+&"Active": SubResource("2"),
+&"Destroy": SubResource("3"),
+&"Travel": SubResource("4")
+}
+
+[node name="ChargeRook" type="SGCharacterBody2D"]
+material = ExtResource("5")
+script = ExtResource("2_kur6b")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = ExtResource("5")
+position = Vector2(-3, -118)
+scale = Vector2(1.428, 1.428)
+texture = ExtResource("6")
+
+[node name="Pushbox" type="SGCollisionShape2D" parent="."]
+shape = SubResource("1")
+disabled = true
+fixed_position_x = 65536
+fixed_position_y = 196608
+visible = false
+modulate = Color(0, 0, 0, 1)
+position = Vector2(1, 3)
+
+[node name="NetworkAnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_e5rv3")
+}
+script = ExtResource("1")
+auto_reset = false
+
+[node name="Hitbox1" parent="." instance=ExtResource("3")]
+fixed_position_x = -4653056
+fixed_position_y = -6946816
+fixed_scale_x = 1142227
+fixed_scale_y = 515102
+position = Vector2(-71, -106)
+scale = Vector2(17.429, 7.85983)
+
+[node name="Hurtbox1" parent="." instance=ExtResource("4")]
+fixed_position_x = 1114112
+fixed_position_y = -7733247
+fixed_scale_x = 905242
+fixed_scale_y = 561758
+position = Vector2(17, -118)
+scale = Vector2(13.8129, 8.57175)
+
+[node name="ExplosionTimer" type="Node" parent="."]
+script = ExtResource("2")
+wait_ticks = 20

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cn3g6r25d7ci5"
+path="res://.godot/imported/fbk_kurokami yosh.wav-76e04ac7fc5e39b3723d61a3f5f6237b.sample"
+
+[deps]
+
+source_file="res://game/assets/voice/fubuki/fbk_kurokami yosh.wav"
+dest_files=["res://.godot/imported/fbk_kurokami yosh.wav-76e04ac7fc5e39b3723d61a3f5f6237b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=true
+force/max_rate=true
+force/max_rate_hz=22100.0
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

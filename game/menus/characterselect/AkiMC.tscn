@@ -1,0 +1,233 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://game/assets/sprites/UI/CharacterSelect/AkiMC/Intro/Timeline 1_0009.png" type="Texture2D" id=1]
+[ext_resource path="res://game/assets/sprites/UI/CharacterSelect/AkiMC/Intro/Timeline 1_0001.png" type="Texture2D" id=2]
+[ext_resource path="res://game/assets/sprites/UI/CharacterSelect/AkiMC/Intro/Timeline 1_0007.png" type="Texture2D" id=3]
+[ext_resource path="res://game/assets/sprites/UI/CharacterSelect/AkiMC/Intro/Timeline 1_0003.png" type="Texture2D" id=4]
+[ext_resource path="res://game/assets/sprites/UI/CharacterSelect/AkiMC/Intro/Timeline 1_0002.png" type="Texture2D" id=5]
+[ext_resource path="res://game/assets/sprites/UI/CharacterSelect/AkiMC/Idle/Timeline 1_0001.png" type="Texture2D" id=6]
+[ext_resource path="res://game/assets/sprites/UI/CharacterSelect/AkiMC/Intro/Timeline 1_0006.png" type="Texture2D" id=7]
+[ext_resource path="res://game/assets/sprites/UI/CharacterSelect/AkiMC/Intro/Timeline 1_0008.png" type="Texture2D" id=8]
+[ext_resource path="res://game/assets/sprites/UI/CharacterSelect/AkiMC/Intro/Timeline 1_0004.png" type="Texture2D" id=9]
+[ext_resource path="res://game/assets/sprites/UI/CharacterSelect/AkiMC/P1Call/Timeline 1_0001.png" type="Texture2D" id=10]
+[ext_resource path="res://game/assets/sprites/UI/CharacterSelect/AkiMC/Intro/Timeline 1_0000.png" type="Texture2D" id=11]
+[ext_resource path="res://game/assets/sprites/UI/CharacterSelect/AkiMC/Intro/Timeline 1_0010.png" type="Texture2D" id=12]
+[ext_resource path="res://game/assets/sprites/UI/CharacterSelect/AkiMC/Intro/Timeline 1_0005.png" type="Texture2D" id=13]
+[ext_resource path="res://game/assets/sprites/UI/CharacterSelect/AkiMC/P1Call/Timeline 1_0000.png" type="Texture2D" id=14]
+[ext_resource path="res://game/assets/sprites/UI/CharacterSelect/AkiMC/P1Call/Timeline 1_0002.png" type="Texture2D" id=15]
+[ext_resource path="res://game/assets/sprites/UI/CharacterSelect/AkiMC/MatchStart/Timeline 1_0000.png" type="Texture2D" id=16]
+[ext_resource path="res://game/assets/sprites/UI/CharacterSelect/AkiMC/Idle/Timeline 1_0000.png" type="Texture2D" id=17]
+[ext_resource path="res://game/menus/characterselect/AkiMC.gd" type="Script" id=18]
+[ext_resource path="res://game/assets/sprites/UI/CharacterSelect/AkiMC/MatchStart/Timeline 1_0002.png" type="Texture2D" id=19]
+[ext_resource path="res://game/assets/sprites/UI/CharacterSelect/AkiMC/MatchStart/Timeline 1_0001.png" type="Texture2D" id=20]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Idle"
+length = 6.0
+loop = true
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PackedFloat32Array( 0, 0.0833333, 2.73333, 2.81667, 2.93333, 3.01667 ),
+"transitions": PackedFloat32Array( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 17 ), ExtResource( 6 ), ExtResource( 17 ), ExtResource( 6 ), ExtResource( 17 ), ExtResource( 6 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1e+06 ),
+"update": 0,
+"values": [ Vector2( 30, 0 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Intro"
+length = 4.33334
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PackedFloat32Array( 0, 0.283333, 0.35, 0.416667, 0.566667, 0.633333, 0.733333, 0.85, 0.983333, 1.15, 1.26667, 1.38333, 1.93333, 2, 2.18333, 2.25, 2.9, 2.96667, 3.15, 3.21667 ),
+"transitions": PackedFloat32Array( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 11 ), ExtResource( 2 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 13 ), ExtResource( 7 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 1 ), ExtResource( 12 ), ExtResource( 6 ), ExtResource( 17 ), ExtResource( 6 ), ExtResource( 17 ), ExtResource( 6 ), ExtResource( 17 ), ExtResource( 6 ), ExtResource( 17 ), ExtResource( 6 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PackedFloat32Array( 0, 1.38333 ),
+"transitions": PackedFloat32Array( 1e+06, 1 ),
+"update": 0,
+"values": [ Vector2( 60, -160 ), Vector2( 30, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite2D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1e+06 ),
+"update": 0,
+"values": [ Vector2( 0.8, 0.8 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "MatchStart"
+length = 0.500001
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PackedFloat32Array( 0, 0.05, 0.116667 ),
+"transitions": PackedFloat32Array( 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 16 ), ExtResource( 20 ), ExtResource( 19 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
+"update": 0,
+"values": [ Vector2( 40, -40 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite2D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/keys = {
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
+"update": 0,
+"values": [ Vector2( 0.8, 0.8 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "P1Call"
+length = 0.466668
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PackedFloat32Array( 0, 0.0666667, 0.15, 0.233333, 0.316667, 0.4, 0.483333, 0.583333 ),
+"transitions": PackedFloat32Array( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 10 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 10 ), ExtResource( 14 ), ExtResource( 10 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite2D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
+"update": 0,
+"values": [ Vector2( 0.8, 0.8 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "P2Call"
+length = 0.466668
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PackedFloat32Array( 0, 0.0666667, 0.15, 0.233333, 0.316667, 0.4, 0.483333, 0.583333 ),
+"transitions": PackedFloat32Array( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 10 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 10 ), ExtResource( 14 ), ExtResource( 10 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite2D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1e+06 ),
+"update": 0,
+"values": [ Vector2( -0.8, 0.8 ) ]
+}
+
+[node name="AkiMC" type="Node2D"]
+z_index = 1000
+script = ExtResource( 18 )
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2( 961, 1021 )
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 16 )
+offset = Vector2( 40, -40 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Idle = SubResource( 1 )
+anims/Intro = SubResource( 2 )
+anims/MatchStart = SubResource( 5 )
+anims/P1Call = SubResource( 3 )
+anims/P2Call = SubResource( 4 )

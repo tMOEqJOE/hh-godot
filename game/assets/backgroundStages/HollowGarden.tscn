@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://swo4allq61uh"]
+
+[ext_resource type="Texture2D" uid="uid://n38lbw1xejoy" path="res://game/assets/sprites/BGArt/HollowGarden/HollowGarden.png" id="2"]
+[ext_resource type="Script" path="res://game/backgrounds/AnimatedBackgroundParent.gd" id="4"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+script = ExtResource("4")
+
+[node name="Floor" type="ParallaxLayer" parent="."]
+
+[node name="Floor" type="Sprite2D" parent="Floor"]
+self_modulate = Color(1, 1, 1, 0.333333)
+z_index = -100
+position = Vector2(0, -451)
+scale = Vector2(3.04, 1.96)
+texture = ExtResource("2")

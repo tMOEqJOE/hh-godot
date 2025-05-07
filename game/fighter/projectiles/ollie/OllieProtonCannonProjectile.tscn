@@ -1,0 +1,105 @@
+[gd_scene load_steps=14 format=3 uid="uid://de3fu0u3y3s77"]
+
+[ext_resource type="Script" uid="uid://dv11pt6y7wasy" path="res://addons/godot-rollback-netcode/NetworkAnimationPlayer.gd" id="1"]
+[ext_resource type="Script" uid="uid://b010dt6v25trf" path="res://addons/godot-rollback-netcode/NetworkTimer.gd" id="2"]
+[ext_resource type="Script" uid="uid://ccj4aoqw0jypu" path="res://game/fighter/projectiles/ollie/OllieProtonCannonPlayer.gd" id="2_opkev"]
+[ext_resource type="PackedScene" uid="uid://bvgu0aev8rq4g" path="res://game/fighter/Hitbox.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://cwoqesvdf08m3" path="res://game/fighter/Hurtbox.tscn" id="4"]
+[ext_resource type="Material" uid="uid://bt3lvyqtd78u0" path="res://game/assets/shaders/ColorSwapMat.tres" id="5"]
+[ext_resource type="Texture2D" uid="uid://bubw6a3uuur65" path="res://game/assets/sprites/ollie/ProtonLazer/Timeline 1_0002.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://ciffl3dp778el" path="res://game/assets/sprites/ollie/ProtonLazer/Timeline 1_0003.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://dg4ufo7p31nk0" path="res://game/assets/sprites/ollie/ProtonLazer/Timeline 1_0001.png" id="12"]
+
+[sub_resource type="SGRectangleShape2D" id="1"]
+extents_x = 4063232
+extents_y = 8847360
+
+[sub_resource type="Animation" id="2"]
+resource_name = "Active"
+length = 0.15
+loop_mode = 1
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("12"), ExtResource("10"), ExtResource("11")]
+}
+
+[sub_resource type="Animation" id="3"]
+resource_name = "Destroy"
+length = 0.333334
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ys2kk"]
+_data = {
+&"Active": SubResource("2"),
+&"Destroy": SubResource("3")
+}
+
+[node name="ProtonCannon" type="SGCharacterBody2D"]
+fixed_position_x = 79036416
+fixed_position_y = 4718592
+material = ExtResource("5")
+position = Vector2(1206, 72)
+script = ExtResource("2_opkev")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = ExtResource("5")
+position = Vector2(-3, -118)
+scale = Vector2(3, 3)
+texture = ExtResource("12")
+
+[node name="Pushbox" type="SGCollisionShape2D" parent="."]
+shape = SubResource("1")
+disabled = true
+fixed_position_x = 65536
+fixed_position_y = 196608
+visible = false
+modulate = Color(0, 0, 0, 1)
+position = Vector2(1, 3)
+
+[node name="NetworkAnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ys2kk")
+}
+script = ExtResource("1")
+auto_reset = false
+
+[node name="Hitbox1" parent="." instance=ExtResource("3")]
+fixed_position_x = 458752
+fixed_position_y = -5373952
+fixed_scale_x = 7892615
+fixed_scale_y = 944591
+position = Vector2(7, -82)
+scale = Vector2(120.432, 14.4133)
+
+[node name="Hurtbox1" parent="." instance=ExtResource("4")]
+fixed_position_x = 458752
+fixed_position_y = -7733247
+fixed_scale_x = 7892615
+fixed_scale_y = 561758
+position = Vector2(7, -118)
+scale = Vector2(120.432, 8.57175)
+
+[node name="ExplosionTimer" type="Node" parent="."]
+script = ExtResource("2")
+wait_ticks = 20

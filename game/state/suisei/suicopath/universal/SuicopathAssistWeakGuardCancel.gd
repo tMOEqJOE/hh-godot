@@ -1,0 +1,32 @@
+extends SuicopathAssistGuardCancelState
+
+class_name SuicopathAssistWeakGuardCancelState
+
+func _init():
+	endFrame = Util.BASE_ASSIST_RECOVERY
+	CallSound = Global.AirTechSound
+	anim_data = {
+		0 : {
+			Enums.StKey.counterOK : false,
+			Enums.StKey.Hit1Disable : true,
+			Enums.StKey.Hit2Disable : true,
+			Enums.StKey.Hurt1Disable : true, Enums.StKey.Hurt2Disable : true, Enums.StKey.Hurt3Disable : true,
+			},
+		2 : {
+			Enums.StKey.counterOK : false,
+			Enums.StKey.Hit1Disable : true,
+			Enums.StKey.Hit2Disable : true,
+			Enums.StKey.Hurt1Disable : true, Enums.StKey.Hurt2Disable : true, Enums.StKey.Hurt3Disable : true,
+			Enums.StKey.Summon : "assistWeakGuardCancel",
+			},
+		13 : {
+			Enums.StKey.counterOK : true,
+			Enums.StKey.Hurt1Disable : false,Enums.StKey.Hurt2Disable : false,Enums.StKey.Hurt3Disable : false,
+			Enums.StKey.Hurt1PosX : 327680, Enums.StKey.Hurt1PosY : -22085634,
+			Enums.StKey.Hurt1ScaleX : 257090, Enums.StKey.Hurt1ScaleY : 604574,
+			Enums.StKey.Hurt2PosX : 131072, Enums.StKey.Hurt2PosY : -14352384,
+			Enums.StKey.Hurt2ScaleX : 401098, Enums.StKey.Hurt2ScaleY : -853100,
+			Enums.StKey.Hurt3PosX : 262144, Enums.StKey.Hurt3PosY : -3538944,
+			Enums.StKey.Hurt3ScaleX : 783139, Enums.StKey.Hurt3ScaleY : -370037,
+			},
+	}

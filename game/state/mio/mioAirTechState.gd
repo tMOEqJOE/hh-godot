@@ -1,0 +1,3 @@
+extends AirTechState
+
+class_name MioAirTechState

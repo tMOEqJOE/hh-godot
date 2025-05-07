@@ -1,0 +1,116 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://game/menus/training/FastSlider.gd" type="Script" id=2]
+[ext_resource path="res://game/menus/onlinemenu/Challenge.gd" type="Script" id=3]
+[ext_resource path="res://game/assets/monogram_extended.ttf" type="FontFile" id=6]
+[ext_resource path="res://game/assets/sprites/UI/MainMenus/WIMScreen.png" type="Texture2D" id=12]
+
+[sub_resource type="FontFile" id=1]
+size = 42
+font_data = ExtResource( 6 )
+
+[sub_resource type="FontFile" id=3]
+font_data = ExtResource( 6 )
+
+[node name="Challenge" type="Node2D"]
+position = Vector2( 955, 527 )
+scale = Vector2( 0.904932, 0.904932 )
+z_index = 1000
+script = ExtResource( 3 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 128
+
+[node name="MessageLabel" type="Label" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 290.0
+offset_top = 295.0
+offset_right = 540.0
+offset_bottom = 368.0
+scale = Vector2( 1.5, 1 )
+theme_override_fonts/font = SubResource( 1 )
+text = "New Challenger:"
+autowrap = true
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer"]
+offset_left = 1246.0
+offset_top = 355.0
+offset_right = 1546.0
+offset_bottom = 775.0
+scale = Vector2( 2, 2 )
+
+[node name="ChallengerName" type="Label" parent="CanvasLayer/GridContainer"]
+offset_right = 300.0
+offset_bottom = 14.0
+size_flags_horizontal = 3
+text = "Challenger Name"
+
+[node name="Empty" type="Label" parent="CanvasLayer/GridContainer"]
+offset_top = 18.0
+offset_right = 300.0
+offset_bottom = 32.0
+size_flags_horizontal = 3
+
+[node name="PingLabel" type="Label" parent="CanvasLayer/GridContainer"]
+offset_top = 36.0
+offset_right = 300.0
+offset_bottom = 50.0
+size_flags_horizontal = 3
+text = "Ping: ???ms"
+
+[node name="InputDelayLabel" type="Label" parent="CanvasLayer/GridContainer"]
+offset_top = 54.0
+offset_right = 300.0
+offset_bottom = 67.0
+theme_override_colors/font_color = Color( 1, 1, 1, 1 )
+theme_override_colors/font_shadow_color = Color( 0, 0, 0, 1 )
+theme_override_fonts/font = SubResource( 3 )
+text = "Input Delay: 2"
+
+[node name="InputDelayMeter" type="HSlider" parent="CanvasLayer/GridContainer"]
+offset_top = 71.0
+offset_right = 300.0
+offset_bottom = 87.0
+max_value = 10.0
+value = 2.0
+tick_count = 11
+ticks_on_borders = true
+script = ExtResource( 2 )
+
+[node name="Empty2" type="Label" parent="CanvasLayer/GridContainer"]
+offset_top = 91.0
+offset_right = 300.0
+offset_bottom = 105.0
+size_flags_horizontal = 3
+
+[node name="CopyRoomID" type="Button" parent="CanvasLayer/GridContainer"]
+offset_top = 109.0
+offset_right = 300.0
+offset_bottom = 129.0
+size_flags_horizontal = 3
+text = "GO!"
+
+[node name="HideRoomID" type="Button" parent="CanvasLayer/GridContainer"]
+offset_top = 133.0
+offset_right = 300.0
+offset_bottom = 153.0
+size_flags_horizontal = 3
+button_mask = 0
+text = "Decline"
+
+[node name="ChallengeCount" type="Label" parent="CanvasLayer/GridContainer"]
+offset_top = 157.0
+offset_right = 300.0
+offset_bottom = 171.0
+size_flags_horizontal = 3
+
+[node name="Background" type="Sprite2D" parent="."]
+self_modulate = Color( 0.0313726, 0.137255, 0.262745, 1 )
+position = Vector2( 651.983, 209.961 )
+scale = Vector2( 0.366962, 0.918099 )
+texture = ExtResource( 12 )
+
+[connection signal="value_changed" from="CanvasLayer/GridContainer/InputDelayMeter" to="." method="_on_InputDelayMeter_value_changed"]
+[connection signal="pressed" from="CanvasLayer/GridContainer/CopyRoomID" to="." method="_on_accept_challenge_pressed"]
+[connection signal="pressed" from="CanvasLayer/GridContainer/HideRoomID" to="." method="_on_decline_challenge_pressed"]

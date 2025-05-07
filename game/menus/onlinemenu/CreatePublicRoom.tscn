@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://uncur2sbepkv"]
+
+[ext_resource type="Script" uid="uid://dxkkb36xxvrxk" path="res://game/menus/onlinemenu/CreatePublicRoom.gd" id="1"]
+[ext_resource type="FontFile" uid="uid://d28sv0htum78d" path="res://game/assets/monogram_extended.ttf" id="2"]
+[ext_resource type="Material" uid="uid://bofoucuf31088" path="res://game/assets/shaders/EarthBoundV1.tres" id="3"]
+[ext_resource type="Texture2D" uid="uid://biq18vleavg8w" path="res://game/assets/sprites/UI/MainMenus/WIMScreen.png" id="4"]
+
+[sub_resource type="FontFile" id="1"]
+fallbacks = Array[Font]([ExtResource("2")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+
+[node name="CreatePublicRoom" type="Node2D"]
+script = ExtResource("1")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MessageLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -926.0
+offset_top = 27.0
+offset_right = -126.0
+offset_bottom = 427.0
+grow_horizontal = 2
+scale = Vector2(3.61464, 4.08579)
+theme_override_fonts/font = SubResource("1")
+text = "Waiting for next match..."
+
+[node name="Earthbound2" type="Sprite2D" parent="."]
+modulate = Color(0.0470588, 0.145098, 0.27451, 1)
+material = ExtResource("3")
+position = Vector2(961, 539)
+texture = ExtResource("4")

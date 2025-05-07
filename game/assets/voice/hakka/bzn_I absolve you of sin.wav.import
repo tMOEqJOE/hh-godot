@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://blkakdgclkmct"
+path="res://.godot/imported/bzn_I absolve you of sin.wav-67e72db494dad33c52c3bf0fa9c342be.sample"
+
+[deps]
+
+source_file="res://game/assets/voice/hakka/bzn_I absolve you of sin.wav"
+dest_files=["res://.godot/imported/bzn_I absolve you of sin.wav-67e72db494dad33c52c3bf0fa9c342be.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=true
+force/max_rate=true
+force/max_rate_hz=22100.0
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

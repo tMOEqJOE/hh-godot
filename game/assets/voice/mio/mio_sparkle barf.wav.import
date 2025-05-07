@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d2tpyc6fhc7vj"
+path="res://.godot/imported/mio_sparkle barf.wav-27e01eb2e69152c2563e96155780b963.sample"
+
+[deps]
+
+source_file="res://game/assets/voice/mio/mio_sparkle barf.wav"
+dest_files=["res://.godot/imported/mio_sparkle barf.wav-27e01eb2e69152c2563e96155780b963.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=true
+force/max_rate=true
+force/max_rate_hz=22100.0
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

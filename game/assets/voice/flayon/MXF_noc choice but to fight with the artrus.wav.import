@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ub146ef4xqsr"
+path="res://.godot/imported/MXF_noc choice but to fight with the artrus.wav-7949ad3bdb24c7c2645def165485677c.sample"
+
+[deps]
+
+source_file="res://game/assets/voice/flayon/MXF_noc choice but to fight with the artrus.wav"
+dest_files=["res://.godot/imported/MXF_noc choice but to fight with the artrus.wav-7949ad3bdb24c7c2645def165485677c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=true
+force/max_rate=true
+force/max_rate_hz=22100.0
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

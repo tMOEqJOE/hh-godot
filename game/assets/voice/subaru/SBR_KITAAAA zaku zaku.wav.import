@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://e6kq04ot7f65"
+path="res://.godot/imported/SBR_KITAAAA zaku zaku.wav-637a99c53d2a74cf90cbde750cc8abef.sample"
+
+[deps]
+
+source_file="res://game/assets/voice/subaru/SBR_KITAAAA zaku zaku.wav"
+dest_files=["res://.godot/imported/SBR_KITAAAA zaku zaku.wav-637a99c53d2a74cf90cbde750cc8abef.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=true
+force/max_rate=true
+force/max_rate_hz=22100.0
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

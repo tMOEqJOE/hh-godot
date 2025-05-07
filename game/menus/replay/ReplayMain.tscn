@@ -1,0 +1,254 @@
+[gd_scene load_steps=9 format=3 uid="uid://cds64jg8xv3ng"]
+
+[ext_resource type="Script" uid="uid://3vpqwgvy7go2" path="res://game/menus/replay/ReplayMain.gd" id="1"]
+[ext_resource type="PackedScene" path="res://game/ui/FPSCounter.tscn" id="2"]
+[ext_resource type="FontFile" uid="uid://d28sv0htum78d" path="res://game/assets/monogram_extended.ttf" id="3"]
+[ext_resource type="PackedScene" uid="uid://c5xgqi0ik2bpc" path="res://game/ui/MatchWinCounter.tscn" id="4"]
+[ext_resource type="Script" uid="uid://dghp7qc477ymy" path="res://game/menus/replay/ReplayOptionsMenu.gd" id="5"]
+[ext_resource type="Texture2D" uid="uid://csm7c5dbea7x2" path="res://game/assets/sprites/UI/CharacterSelect/WOOD.png" id="6"]
+
+[sub_resource type="FontFile" id="1"]
+fallbacks = Array[Font]([ExtResource("3")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
+cache/0/20/0/ascent = 0.0
+cache/0/20/0/descent = 0.0
+cache/0/20/0/underline_position = 0.0
+cache/0/20/0/underline_thickness = 0.0
+cache/0/20/0/scale = 1.0
+
+[sub_resource type="FontFile" id="2"]
+fallbacks = Array[Font]([ExtResource("3")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+
+[node name="ReplayMain" type="Node2D"]
+script = ExtResource("1")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MessageLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -299.0
+offset_top = 103.0
+offset_right = 172.0
+offset_bottom = 233.0
+grow_horizontal = 2
+scale = Vector2(1.95114, 1.97515)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "WOW"
+
+[node name="ErrorLabel" type="Label" parent="CanvasLayer"]
+self_modulate = Color(0.819608, 0.231373, 0.231373, 1)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -299.0
+offset_top = 332.0
+offset_right = 172.0
+offset_bottom = 462.0
+scale = Vector2(1.42898, 1.42898)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("1")
+theme_override_font_sizes/font_size = 20
+
+[node name="SyncLostLabel" type="Label" parent="CanvasLayer"]
+visible = false
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -271.0
+offset_top = 22.0
+offset_right = -169.0
+offset_bottom = 35.0
+scale = Vector2(2, 2)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("2")
+text = "Regaining sync..."
+
+[node name="PingLabel" type="Label" parent="CanvasLayer"]
+visible = false
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -271.0
+offset_top = 22.0
+offset_right = -169.0
+offset_bottom = 35.0
+scale = Vector2(2, 2)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("2")
+text = "Regaining sync..."
+
+[node name="RollbackFrameLabel" type="Label" parent="CanvasLayer"]
+visible = false
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -271.0
+offset_top = 22.0
+offset_right = -169.0
+offset_bottom = 35.0
+scale = Vector2(2, 2)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("2")
+text = "Regaining sync..."
+
+[node name="WinCounterP1" parent="CanvasLayer" instance=ExtResource("4")]
+visible = false
+offset_left = -475.0
+offset_right = -4.0
+
+[node name="WinCounterP2" parent="CanvasLayer" instance=ExtResource("4")]
+visible = false
+offset_left = 1.0
+offset_right = 472.0
+
+[node name="FPSCounter" parent="CanvasLayer" instance=ExtResource("2")]
+offset_left = 937.0
+offset_top = 2.0
+offset_right = 977.0
+offset_bottom = 16.0
+
+[node name="TrainingOptionsMenu" type="GridContainer" parent="CanvasLayer"]
+visible = false
+offset_left = 221.0
+offset_top = 32.0
+offset_right = 721.0
+offset_bottom = 332.0
+scale = Vector2(3, 3)
+columns = 3
+script = ExtResource("5")
+
+[node name="Background" type="Sprite2D" parent="CanvasLayer/TrainingOptionsMenu"]
+modulate = Color(0.172549, 0.121569, 0.121569, 0.788235)
+position = Vector2(229, 160)
+scale = Vector2(1.01874, 0.564336)
+texture = ExtResource("6")
+
+[node name="CloseLabel" type="Label" parent="CanvasLayer/TrainingOptionsMenu"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("2")
+text = "Close Menu"
+
+[node name="CloseButton" type="Button" parent="CanvasLayer/TrainingOptionsMenu"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../ExitButton")
+text = "Close"
+
+[node name="CloseNumber" type="Label" parent="CanvasLayer/TrainingOptionsMenu"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("2")
+
+[node name="TakeoverLabel" type="Label" parent="CanvasLayer/TrainingOptionsMenu"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("2")
+text = "Replay Takeover"
+
+[node name="TakeoverButton" type="OptionButton" parent="CanvasLayer/TrainingOptionsMenu"]
+layout_mode = 2
+
+[node name="TakeoverNumber" type="Label" parent="CanvasLayer/TrainingOptionsMenu"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("2")
+
+[node name="LoadStateLabel" type="Label" parent="CanvasLayer/TrainingOptionsMenu"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("2")
+text = "Load Takeover State"
+
+[node name="LoadStateButton" type="Button" parent="CanvasLayer/TrainingOptionsMenu"]
+layout_mode = 2
+text = "Load (Back button works too)"
+
+[node name="LoadStateNumber" type="Label" parent="CanvasLayer/TrainingOptionsMenu"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("2")
+
+[node name="ChangeControlsLabel" type="Label" parent="CanvasLayer/TrainingOptionsMenu"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("2")
+
+[node name="ChangeControlsButton" type="Button" parent="CanvasLayer/TrainingOptionsMenu"]
+layout_mode = 2
+text = "Change Controls"
+
+[node name="ChangeControlsEmpty" type="Label" parent="CanvasLayer/TrainingOptionsMenu"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("2")
+
+[node name="ResetLabel" type="Label" parent="CanvasLayer/TrainingOptionsMenu"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("2")
+
+[node name="ResetButton" type="Button" parent="CanvasLayer/TrainingOptionsMenu"]
+layout_mode = 2
+text = "Reset"
+
+[node name="ResetNumber" type="Label" parent="CanvasLayer/TrainingOptionsMenu"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("2")
+
+[node name="ExitLabel" type="Label" parent="CanvasLayer/TrainingOptionsMenu"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("2")
+text = "Quit Training"
+
+[node name="ExitButton" type="Button" parent="CanvasLayer/TrainingOptionsMenu"]
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../CloseButton")
+text = "Quit"
+
+[node name="ExitNumber" type="Label" parent="CanvasLayer/TrainingOptionsMenu"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("2")
+
+[connection signal="pressed" from="CanvasLayer/TrainingOptionsMenu/CloseButton" to="CanvasLayer/TrainingOptionsMenu" method="_on_CloseButton_pressed"]
+[connection signal="pressed" from="CanvasLayer/TrainingOptionsMenu/LoadStateButton" to="CanvasLayer/TrainingOptionsMenu" method="_on_LoadStateButton_pressed"]
+[connection signal="pressed" from="CanvasLayer/TrainingOptionsMenu/ChangeControlsButton" to="CanvasLayer/TrainingOptionsMenu" method="_on_ChangeControlsButton_pressed"]
+[connection signal="pressed" from="CanvasLayer/TrainingOptionsMenu/ResetButton" to="CanvasLayer/TrainingOptionsMenu" method="_on_ResetButton_pressed"]
+[connection signal="pressed" from="CanvasLayer/TrainingOptionsMenu/ExitButton" to="CanvasLayer/TrainingOptionsMenu" method="_on_ExitButton_pressed"]

@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhi2mifbwhi3g"]
+
+[ext_resource type="Script" path="res://game/menus/onlinemenu/PublicLobbyCard.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://biq18vleavg8w" path="res://game/assets/sprites/UI/MainMenus/WIMScreen.png" id="12"]
+
+[node name="PublicLobbyCard" type="HBoxContainer"]
+scale = Vector2(0.914246, 1.16539)
+script = ExtResource("1")
+
+[node name="Background" type="Sprite2D" parent="."]
+self_modulate = Color(0.0941176, 0.270588, 0.290196, 1)
+position = Vector2(218.759, 16.3036)
+scale = Vector2(0.233952, 0.0280781)
+texture = ExtResource("12")
+
+[node name="Join" type="Button" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Join Room"
+
+[node name="CurrentSizeLabel" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "a"
+
+[node name="MaxSizeLabel" type="Label" parent="."]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+text = "<None>"
+
+[connection signal="pressed" from="Join" to="." method="_on_join_room_pressed"]

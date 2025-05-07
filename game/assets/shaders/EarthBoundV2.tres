@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cffvtcw31hg4s"]
+
+[ext_resource type="Shader" uid="uid://c8e7o3a7rhcw4" path="res://game/assets/shaders/EarthBoundV1.gdshader" id="2"]
+
+[resource]
+resource_local_to_scene = true
+shader = ExtResource("2")
+shader_parameter/amp = 5.0
+shader_parameter/freq = 3.0
+shader_parameter/scale = 1.0
+shader_parameter/amp2 = 0.3
+shader_parameter/freq2 = 8.0
+shader_parameter/scale2 = 1.0

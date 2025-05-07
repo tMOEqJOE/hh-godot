@@ -1,0 +1,140 @@
+[gd_scene load_steps=17 format=3 uid="uid://dp766q1me5af4"]
+
+[ext_resource type="FontFile" uid="uid://d28sv0htum78d" path="res://game/assets/monogram_extended.ttf" id="1"]
+[ext_resource type="Script" uid="uid://ydl22yb0cm65" path="res://game/menus/mainmenu/BackgroundFadeLoop.gd" id="2"]
+[ext_resource type="Script" uid="uid://cyya0oolm3yee" path="res://game/menus/mainmenu/LPSpin.gd" id="3"]
+[ext_resource type="Script" uid="uid://b7d56q256bktj" path="res://game/menus/onlinemenu/LoginToServer.gd" id="4"]
+[ext_resource type="Texture2D" uid="uid://b6ow73udpctn1" path="res://game/assets/sprites/UI/MainMenus/AruDJ/Timeline 1_0001.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://d3jnh37mq4dor" path="res://game/assets/sprites/UI/MainMenus/AruDJ/Timeline 1_0000.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://bvgnj3khkmjjr" path="res://game/assets/sprites/UI/MainMenus/AruDJ/Timeline 1_0002.png" id="7"]
+[ext_resource type="Material" path="res://game/assets/shaders/EarthBoundV1.tres" id="8"]
+[ext_resource type="Texture2D" uid="uid://kjlqkbldjwjy" path="res://game/assets/sprites/BGArt/Earthbound1.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://biq18vleavg8w" path="res://game/assets/sprites/UI/MainMenus/WIMScreen.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://dnrbymofxcin4" path="res://game/assets/sprites/UI/MainMenus/WIM.png" id="14"]
+[ext_resource type="Material" uid="uid://cffvtcw31hg4s" path="res://game/assets/shaders/EarthBoundV2.tres" id="15"]
+[ext_resource type="Texture2D" uid="uid://0xw5lcnwgjfc" path="res://game/assets/sprites/BGArt/Earthbound2.png" id="16"]
+
+[sub_resource type="FontFile" id="1"]
+fallbacks = Array[Font]([ExtResource("1")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+
+[sub_resource type="Animation" id="2"]
+resource_name = "Idle"
+length = 0.5
+loop_mode = 1
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../AruDJ2:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("6"), ExtResource("5"), ExtResource("7")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_llja7"]
+_data = {
+&"Idle": SubResource("2")
+}
+
+[node name="LoginToServer" type="Node2D"]
+script = ExtResource("4")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MessageLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -497.0
+offset_top = 191.0
+offset_right = -26.0
+offset_bottom = 321.0
+scale = Vector2(2, 2)
+text = "Logging in to Server..."
+
+[node name="NameLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -939.0
+offset_top = 15.0
+offset_right = -468.0
+offset_bottom = 145.0
+scale = Vector2(1.36835, 1.30464)
+theme_override_fonts/font = SubResource("1")
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer"]
+visible = false
+offset_left = 765.0
+offset_top = 307.0
+offset_right = 1129.0
+offset_bottom = 383.0
+scale = Vector2(2.62065, 3.92985)
+
+[node name="HostLabel" type="Label" parent="CanvasLayer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Display Name"
+
+[node name="HostField" type="LineEdit" parent="CanvasLayer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_neighbor_bottom = NodePath("../PortField")
+
+[node name="CreateRoomButton2" type="Button" parent="CanvasLayer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+button_mask = 0
+text = "Login"
+
+[node name="Earthbound" type="Sprite2D" parent="."]
+visible = false
+material = ExtResource("15")
+position = Vector2(961, 539)
+texture = ExtResource("10")
+
+[node name="EarthboundGod" type="Sprite2D" parent="."]
+visible = false
+material = ExtResource("15")
+position = Vector2(961, 539)
+texture = ExtResource("16")
+
+[node name="Earthbound2" type="Sprite2D" parent="."]
+self_modulate = Color(0.407843, 0.34902, 0.258824, 1)
+material = ExtResource("8")
+position = Vector2(961, 539)
+texture = ExtResource("16")
+
+[node name="Background" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(961, 539)
+texture = ExtResource("12")
+script = ExtResource("2")
+
+[node name="LP" type="Sprite2D" parent="."]
+position = Vector2(185, 817)
+texture = ExtResource("14")
+script = ExtResource("3")
+
+[node name="AruDJ2" type="Sprite2D" parent="."]
+position = Vector2(258, 911)
+texture = ExtResource("6")
+
+[node name="AruDJAnimator" type="AnimationPlayer" parent="."]
+reset_on_save = false
+root_node = NodePath("../Background")
+libraries = {
+&"": SubResource("AnimationLibrary_llja7")
+}
+
+[connection signal="pressed" from="CanvasLayer/GridContainer/CreateRoomButton2" to="." method="_on_create_private_room_pressed"]

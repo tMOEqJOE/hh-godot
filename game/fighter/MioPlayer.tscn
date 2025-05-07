@@ -1,0 +1,1987 @@
+[gd_scene load_steps=282 format=3 uid="uid://bahv36p0oriog"]
+
+[ext_resource type="Texture2D" uid="uid://cys2w6snwfl60" path="res://game/assets/sprites/mio/5B/Timeline 1_0006.png" id="1"]
+[ext_resource type="Script" uid="uid://dfikixggfxk0g" path="res://game/fighter/MioPlayer.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://bno7kd4qph33k" path="res://game/assets/sprites/mio/GroundThrowHit/Timeline 1_0007.png" id="3"]
+[ext_resource type="Script" uid="uid://dv11pt6y7wasy" path="res://addons/godot-rollback-netcode/NetworkAnimationPlayer.gd" id="4"]
+[ext_resource type="Material" uid="uid://bt3lvyqtd78u0" path="res://game/assets/shaders/ColorSwapMat.tres" id="5"]
+[ext_resource type="PackedScene" uid="uid://cwoqesvdf08m3" path="res://game/fighter/Hurtbox.tscn" id="6"]
+[ext_resource type="PackedScene" uid="uid://bvgu0aev8rq4g" path="res://game/fighter/Hitbox.tscn" id="7"]
+[ext_resource type="Texture2D" uid="uid://b3ow484et81ut" path="res://game/assets/sprites/mio/5B/Timeline 1_0003.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://dk3o556dify6b" path="res://game/assets/sprites/mio/GroundThrowHit/Timeline 1_0013.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://dt1wctghstk0x" path="res://game/assets/sprites/mio/5A/Timeline 1_0000.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://dgit41a368wxj" path="res://game/assets/sprites/mio/5A/Timeline 1_0002.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://cxejq1a7hykow" path="res://game/assets/sprites/mio/GroundThrowHit/Timeline 1_0004.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://deldikxnq0opc" path="res://game/assets/sprites/mio/5B/Timeline 1_0005.png" id="13"]
+[ext_resource type="Texture2D" uid="uid://csottxil6gwk2" path="res://game/assets/sprites/mio/StandHighHit/Timeline 1_0001.png" id="14"]
+[ext_resource type="Texture2D" uid="uid://byyrxkbxlkpp7" path="res://game/assets/sprites/mio/StandHighHit/Timeline 1_0002.png" id="15"]
+[ext_resource type="Texture2D" uid="uid://djwlo3dlskx78" path="res://game/assets/sprites/mio/StandHighHit/Timeline 1_0003.png" id="16"]
+[ext_resource type="Texture2D" uid="uid://dge2i6weltxpw" path="res://game/assets/sprites/mio/Charge/Timeline 1_0006.png" id="17"]
+[ext_resource type="Texture2D" uid="uid://bmhy1ui8f2dhv" path="res://game/assets/sprites/mio/Charge/Timeline 1_0009.png" id="18"]
+[ext_resource type="Texture2D" uid="uid://cp01ncub8ig1s" path="res://game/assets/sprites/mio/Charge/Timeline 1_0010.png" id="19"]
+[ext_resource type="Texture2D" uid="uid://j173ri6fih88" path="res://game/assets/sprites/mio/5A/Timeline 1_0001.png" id="20"]
+[ext_resource type="Texture2D" uid="uid://85rkwfoaqcc4" path="res://game/assets/sprites/mio/Charge/Timeline 1_0011.png" id="21"]
+[ext_resource type="Texture2D" uid="uid://caud0kpifdo1t" path="res://game/assets/sprites/mio/Charge/Timeline 1_0012.png" id="22"]
+[ext_resource type="Texture2D" uid="uid://beau2vfqaeqpq" path="res://game/assets/sprites/mio/Charge/Timeline 1_0014.png" id="23"]
+[ext_resource type="Texture2D" uid="uid://px5x7ccs3exh" path="res://game/assets/sprites/mio/Charge/Timeline 1_0015.png" id="24"]
+[ext_resource type="Texture2D" uid="uid://b3ppxme1u3o2m" path="res://game/assets/sprites/mio/Charge/Timeline 1_0007.png" id="25"]
+[ext_resource type="Texture2D" uid="uid://btolf2wrhsvun" path="res://game/assets/sprites/mio/Charge/Timeline 1_0016.png" id="26"]
+[ext_resource type="Texture2D" uid="uid://cokj27oany4ra" path="res://game/assets/sprites/mio/Charge/Timeline 1_0017.png" id="27"]
+[ext_resource type="Texture2D" uid="uid://clwuj50jwckpb" path="res://game/assets/sprites/mio/Charge/Timeline 1_0005.png" id="28"]
+[ext_resource type="Texture2D" uid="uid://dyyuqytmca62v" path="res://game/assets/sprites/mio/Charge/Timeline 1_0004.png" id="29"]
+[ext_resource type="Texture2D" uid="uid://cigcns6nx8qbo" path="res://game/assets/sprites/mio/Charge/Timeline 1_0008.png" id="30"]
+[ext_resource type="Texture2D" uid="uid://cfwibepdltixw" path="res://game/assets/sprites/mio/GroundAssist/Timeline 1_0004.png" id="31"]
+[ext_resource type="Texture2D" uid="uid://showno22ld0p" path="res://game/assets/sprites/mio/GroundAssist/Timeline 1_0003.png" id="32"]
+[ext_resource type="Texture2D" uid="uid://ce7m7vykmssjp" path="res://game/assets/sprites/mio/GroundAssist/Timeline 1_0005.png" id="33"]
+[ext_resource type="Texture2D" uid="uid://b1de0qyrybx1p" path="res://game/assets/sprites/mio/GroundAssist/Timeline 1_0002.png" id="34"]
+[ext_resource type="Texture2D" uid="uid://dbkfosop4kj35" path="res://game/assets/sprites/mio/GroundAssist/Timeline 1_0000.png" id="35"]
+[ext_resource type="Texture2D" uid="uid://cdqggsv5lpfd" path="res://game/assets/sprites/mio/GroundAssist/Timeline 1_0001.png" id="36"]
+[ext_resource type="Texture2D" uid="uid://bhq6727wey4jo" path="res://game/assets/sprites/mio/GroundThrowWhiff/Timeline 1_0000.png" id="37"]
+[ext_resource type="Texture2D" uid="uid://b7pnspd2hw6k3" path="res://game/assets/sprites/mio/GroundThrowWhiff/Timeline 1_0001.png" id="38"]
+[ext_resource type="Texture2D" uid="uid://cf4rdkyxb1x0o" path="res://game/assets/sprites/mio/Charge/Timeline 1_0013.png" id="39"]
+[ext_resource type="Texture2D" uid="uid://bb6u8ojkqfyf8" path="res://game/assets/sprites/mio/StandBlockHit/Timeline 1_0000.png" id="40"]
+[ext_resource type="Texture2D" uid="uid://ba15wmbc0idcm" path="res://game/assets/sprites/mio/3C/Timeline 1_0000.png" id="41"]
+[ext_resource type="Texture2D" uid="uid://chbggc7gqnxr4" path="res://game/assets/sprites/mio/3C/Timeline 1_0002.png" id="42"]
+[ext_resource type="Texture2D" uid="uid://dtcx5qgphat3i" path="res://game/assets/sprites/mio/Jump/Timeline 1_0000.png" id="43"]
+[ext_resource type="Texture2D" uid="uid://ckjcvkvdyxfff" path="res://game/assets/sprites/mio/Jump/Timeline 1_0001.png" id="44"]
+[ext_resource type="Texture2D" uid="uid://ddysq301uyd3j" path="res://game/assets/sprites/mio/Jump/Timeline 1_0002.png" id="45"]
+[ext_resource type="Texture2D" uid="uid://c6gorhlhdb0vy" path="res://game/assets/sprites/mio/Jump/Timeline 1_0003.png" id="46"]
+[ext_resource type="Texture2D" uid="uid://crsuci1b14p03" path="res://game/assets/sprites/mio/Jump/Timeline 1_0004.png" id="47"]
+[ext_resource type="Texture2D" uid="uid://b1acdttjdqye2" path="res://game/assets/sprites/mio/Jump/Timeline 1_0006.png" id="48"]
+[ext_resource type="Texture2D" uid="uid://btc2sp5niniqh" path="res://game/assets/sprites/mio/Jump/Timeline 1_0008.png" id="49"]
+[ext_resource type="Texture2D" uid="uid://ch2phlg11onbk" path="res://game/assets/sprites/mio/Jump/Timeline 1_0010.png" id="50"]
+[ext_resource type="Texture2D" uid="uid://bpw2yaortoht7" path="res://game/assets/sprites/mio/Jump/Timeline 1_0007.png" id="51"]
+[ext_resource type="Texture2D" uid="uid://5j3m0voiwehv" path="res://game/assets/sprites/mio/Jump/Timeline 1_0005.png" id="52"]
+[ext_resource type="Texture2D" uid="uid://cxiwqau3ngxho" path="res://game/assets/sprites/mio/Jump/Timeline 1_0009.png" id="53"]
+[ext_resource type="Texture2D" uid="uid://d1j8phx6i14uu" path="res://game/assets/sprites/mio/jB/Timeline 1_0005.png" id="54"]
+[ext_resource type="Texture2D" uid="uid://ct5uky5iyni7y" path="res://game/assets/sprites/mio/jB/Timeline 1_0001.png" id="55"]
+[ext_resource type="Texture2D" uid="uid://dv5l2n7vstm2s" path="res://game/assets/sprites/mio/jB/Timeline 1_0003.png" id="56"]
+[ext_resource type="Texture2D" uid="uid://caf3kv1d84peq" path="res://game/assets/sprites/mio/CrouchHurt/Timeline 1_0000.png" id="57"]
+[ext_resource type="Texture2D" uid="uid://bs3jft4lwsd5p" path="res://game/assets/sprites/mio/CrouchHurt/Timeline 1_0001.png" id="58"]
+[ext_resource type="Texture2D" uid="uid://cfkoh1imx0t57" path="res://game/assets/sprites/mio/CrouchBlock/Timeline 1_0000.png" id="59"]
+[ext_resource type="Texture2D" uid="uid://ckh5bpb7x76ti" path="res://game/assets/sprites/mio/jB/Timeline 1_0002.png" id="60"]
+[ext_resource type="Texture2D" uid="uid://blv8oghp0qonq" path="res://game/assets/sprites/mio/jB/Timeline 1_0000.png" id="61"]
+[ext_resource type="Texture2D" uid="uid://boef352m0hd0i" path="res://game/assets/sprites/mio/jB/Timeline 1_0006.png" id="62"]
+[ext_resource type="Texture2D" uid="uid://dlaw60qq2n13h" path="res://game/assets/sprites/mio/StandHighHit/Timeline 1_0000.png" id="63"]
+[ext_resource type="Texture2D" uid="uid://c5uei7pgxkb6s" path="res://game/assets/sprites/mio/GroundThrowWhiff/Timeline 1_0002.png" id="64"]
+[ext_resource type="Texture2D" uid="uid://b0ipricrl4cq7" path="res://game/assets/sprites/mio/3C/Timeline 1_0003.png" id="65"]
+[ext_resource type="Texture2D" uid="uid://o65hxwd0ksrq" path="res://game/assets/sprites/mio/3C/Timeline 1_0008.png" id="66"]
+[ext_resource type="Texture2D" uid="uid://dys4qlqy5r63g" path="res://game/assets/sprites/mio/3C/Timeline 1_0004.png" id="67"]
+[ext_resource type="Texture2D" uid="uid://gohs1vmm754o" path="res://game/assets/sprites/mio/3C/Timeline 1_0007.png" id="68"]
+[ext_resource type="Texture2D" uid="uid://xvc3jtpm6ppf" path="res://game/assets/sprites/mio/3C/Timeline 1_0001.png" id="69"]
+[ext_resource type="Texture2D" uid="uid://dshxm02v4345c" path="res://game/assets/sprites/mio/3C/Timeline 1_0005.png" id="70"]
+[ext_resource type="Texture2D" uid="uid://e7mbu88c7m5d" path="res://game/assets/sprites/mio/3C/Timeline 1_0006.png" id="71"]
+[ext_resource type="Texture2D" uid="uid://bqlhqm3vjdg7x" path="res://game/assets/sprites/mio/AirHit/Timeline 1_0002.png" id="72"]
+[ext_resource type="Texture2D" uid="uid://2em1qq2ldboa" path="res://game/assets/sprites/mio/AirHit/Timeline 1_0000.png" id="73"]
+[ext_resource type="Texture2D" uid="uid://bofmbk7babkvr" path="res://game/assets/sprites/mio/AirHit/Timeline 1_0001.png" id="74"]
+[ext_resource type="Texture2D" uid="uid://bd6c1p1lq0vof" path="res://game/assets/sprites/mio/AirHit/Timeline 1_0003.png" id="75"]
+[ext_resource type="Texture2D" uid="uid://dc2ldauwwa4fe" path="res://game/assets/sprites/mio/AirThrowWhiff/Timeline 1_0002.png" id="76"]
+[ext_resource type="Texture2D" uid="uid://dc6kves5gc7vk" path="res://game/assets/sprites/mio/AirThrowWhiff/Timeline 1_0000.png" id="77"]
+[ext_resource type="Texture2D" uid="uid://cu2ne58qs6ucj" path="res://game/assets/sprites/mio/AirThrowWhiff/Timeline 1_0001.png" id="78"]
+[ext_resource type="Texture2D" uid="uid://bfllive7koo8" path="res://game/assets/sprites/mio/CrouchParryCatch/Timeline 1_0001.png" id="79"]
+[ext_resource type="Texture2D" uid="uid://cjlx3euui8p3a" path="res://game/assets/sprites/mio/CrouchParryCatch/Timeline 1_0000.png" id="80"]
+[ext_resource type="Texture2D" uid="uid://4d8ugmdhvak0" path="res://game/assets/sprites/mio/CrouchParryCatch/Timeline 1_0002.png" id="81"]
+[ext_resource type="Texture2D" uid="uid://nhnn1fmxwows" path="res://game/assets/sprites/mio/AirThrowHit/Timeline 1_0001.png" id="82"]
+[ext_resource type="Texture2D" uid="uid://dyyia5o0wgeno" path="res://game/assets/sprites/mio/AirParryCatch/Timeline 1_0000.png" id="83"]
+[ext_resource type="Texture2D" uid="uid://nisdn451d2so" path="res://game/assets/sprites/mio/AirParryCatch/Timeline 1_0002.png" id="84"]
+[ext_resource type="Texture2D" uid="uid://ddhlgxlmtkuy4" path="res://game/assets/sprites/mio/AirParryCatch/Timeline 1_0001.png" id="85"]
+[ext_resource type="Texture2D" uid="uid://cm6vl03l2wsqv" path="res://game/assets/sprites/mio/CrouchHurt/Timeline 1_0002.png" id="86"]
+[ext_resource type="Texture2D" uid="uid://bx0jodakha2j" path="res://game/assets/sprites/mio/CrouchHurt/Timeline 1_0003.png" id="87"]
+[ext_resource type="Texture2D" uid="uid://3ou1axavc4k0" path="res://game/assets/sprites/mio/Charge/Timeline 1_0000.png" id="88"]
+[ext_resource type="Texture2D" uid="uid://8g7umf6fh3gw" path="res://game/assets/sprites/mio/AirThrowHit/Timeline 1_0000.png" id="89"]
+[ext_resource type="Texture2D" uid="uid://cv6mw6ddtioiu" path="res://game/assets/sprites/mio/AirBlock/Timeline 1_0000.png" id="90"]
+[ext_resource type="Texture2D" uid="uid://b8a4nr02pla40" path="res://game/assets/sprites/mio/ForwardAirDash/Timeline 1_0000.png" id="91"]
+[ext_resource type="Texture2D" uid="uid://bi3d1l6u4l4nw" path="res://game/assets/sprites/mio/BackwardAirDash/Timeline 1_0000.png" id="93"]
+[ext_resource type="Texture2D" uid="uid://djcdv3jgr5g1m" path="res://game/assets/sprites/mio/Run/Timeline 1_0004.png" id="94"]
+[ext_resource type="Texture2D" uid="uid://ba3cxo3p8ihl5" path="res://game/assets/sprites/mio/Run/Timeline 1_0005.png" id="95"]
+[ext_resource type="Texture2D" uid="uid://dmbs87fjmi8b7" path="res://game/assets/sprites/mio/Run/Timeline 1_0000.png" id="96"]
+[ext_resource type="Texture2D" uid="uid://nlltojruuwgc" path="res://game/assets/sprites/mio/Run/Timeline 1_0001.png" id="97"]
+[ext_resource type="Texture2D" uid="uid://by12cvjaxu1ly" path="res://game/assets/sprites/mio/Run/Timeline 1_0003.png" id="98"]
+[ext_resource type="Texture2D" uid="uid://stwhneqb707x" path="res://game/assets/sprites/mio/Run/Timeline 1_0002.png" id="99"]
+[ext_resource type="Texture2D" uid="uid://drlg8gowxwooi" path="res://game/assets/sprites/mio/Skid/Timeline 1_0000.png" id="100"]
+[ext_resource type="Texture2D" uid="uid://4rdnu3owoqvr" path="res://game/assets/sprites/mio/6C/Timeline 1_0003.png" id="101"]
+[ext_resource type="Texture2D" uid="uid://b7qtwi3j861ch" path="res://game/assets/sprites/mio/6C/Timeline 1_0009.png" id="102"]
+[ext_resource type="Texture2D" uid="uid://dq2l8rys8iby8" path="res://game/assets/sprites/mio/6C/Timeline 1_0005.png" id="103"]
+[ext_resource type="Texture2D" uid="uid://ofawbsrxiko6" path="res://game/assets/sprites/mio/6C/Timeline 1_0002.png" id="104"]
+[ext_resource type="Texture2D" uid="uid://4qf7lta0vnpu" path="res://game/assets/sprites/mio/6C/Timeline 1_0006.png" id="105"]
+[ext_resource type="Texture2D" uid="uid://dakximtqftug0" path="res://game/assets/sprites/mio/6C/Timeline 1_0007.png" id="106"]
+[ext_resource type="Texture2D" uid="uid://4ac5x20km4in" path="res://game/assets/sprites/mio/6C/Timeline 1_0004.png" id="107"]
+[ext_resource type="Texture2D" uid="uid://b53wwqwg70q26" path="res://game/assets/sprites/mio/6C/Timeline 1_0008.png" id="108"]
+[ext_resource type="Texture2D" uid="uid://bq750nu0w4uik" path="res://game/assets/sprites/mio/6C/Timeline 1_0001.png" id="109"]
+[ext_resource type="Texture2D" uid="uid://chofsyqsqg5s0" path="res://game/assets/sprites/mio/6C/Timeline 1_0000.png" id="110"]
+[ext_resource type="Texture2D" uid="uid://c3oax2uwb2l24" path="res://game/assets/sprites/mio/jC/Timeline 1_0002.png" id="111"]
+[ext_resource type="Texture2D" uid="uid://drxrka06h1xbx" path="res://game/assets/sprites/mio/jC/Timeline 1_0003.png" id="112"]
+[ext_resource type="Texture2D" uid="uid://dt7w88ioi5kl1" path="res://game/assets/sprites/mio/jC/Timeline 1_0000.png" id="113"]
+[ext_resource type="Texture2D" uid="uid://da8hgfgmt5hfg" path="res://game/assets/sprites/mio/jC/Timeline 1_0001.png" id="114"]
+[ext_resource type="Texture2D" uid="uid://drn35hpelq8fq" path="res://game/assets/sprites/mio/j2C/Timeline 1_0001.png" id="115"]
+[ext_resource type="Texture2D" uid="uid://di1h77eft6gs3" path="res://game/assets/sprites/mio/j2C/Timeline 1_0002.png" id="116"]
+[ext_resource type="Texture2D" uid="uid://cgeybp56db7ep" path="res://game/assets/sprites/mio/jA/Timeline 1_0000.png" id="117"]
+[ext_resource type="Texture2D" uid="uid://c724v4burigy3" path="res://game/assets/sprites/mio/jA/Timeline 1_0002.png" id="118"]
+[ext_resource type="Texture2D" uid="uid://dp7lbu44027i1" path="res://game/assets/sprites/mio/jA/Timeline 1_0001.png" id="119"]
+[ext_resource type="Texture2D" uid="uid://dcrkvlikq1cuo" path="res://game/assets/sprites/mio/j2C/Timeline 1_0000.png" id="120"]
+[ext_resource type="Texture2D" uid="uid://dynprklihfisu" path="res://game/assets/sprites/mio/Wakeup/Timeline 1_0000.png" id="121"]
+[ext_resource type="Texture2D" uid="uid://2pm5m7ru32sh" path="res://game/assets/sprites/mio/Wakeup/Timeline 1_0004.png" id="122"]
+[ext_resource type="Texture2D" uid="uid://ct0eofmcjaqh" path="res://game/assets/sprites/mio/Wakeup/Timeline 1_0002.png" id="123"]
+[ext_resource type="Texture2D" uid="uid://d3uqrq54i6tyt" path="res://game/assets/sprites/mio/Wakeup/Timeline 1_0003.png" id="124"]
+[ext_resource type="Texture2D" uid="uid://po35p1qgaoo4" path="res://game/assets/sprites/mio/Wakeup/Timeline 1_0001.png" id="125"]
+[ext_resource type="Texture2D" uid="uid://dpo658ns5gdwj" path="res://game/assets/sprites/mio/Wakeup/Timeline 1_0005.png" id="126"]
+[ext_resource type="Texture2D" uid="uid://bnxp5nwftsk5u" path="res://game/assets/sprites/mio/Charge/Timeline 1_0002.png" id="127"]
+[ext_resource type="Texture2D" uid="uid://bsw5pvdjxy0kc" path="res://game/assets/sprites/mio/MioCannon/Timeline 1_0001.png" id="128"]
+[ext_resource type="Texture2D" uid="uid://cyg8rw83d6ftx" path="res://game/assets/sprites/mio/MioCannon/Timeline 1_0002.png" id="129"]
+[ext_resource type="Texture2D" uid="uid://cboc6dqyoyv78" path="res://game/assets/sprites/mio/MioCannon/Timeline 1_0004.png" id="130"]
+[ext_resource type="Texture2D" uid="uid://rbdi750pmkpx" path="res://game/assets/sprites/mio/MioCannon/Timeline 1_0000.png" id="131"]
+[ext_resource type="Texture2D" uid="uid://du7gkjwp4xiey" path="res://game/assets/sprites/mio/Intro/Timeline 1_0000.png" id="132"]
+[ext_resource type="Texture2D" uid="uid://bc7grmwgvgmu2" path="res://game/assets/sprites/mio/Backdash/Timeline 1_0003.png" id="138"]
+[ext_resource type="Texture2D" uid="uid://dg6rs0h0v4s8y" path="res://game/assets/sprites/mio/Backdash/Timeline 1_0002.png" id="139"]
+[ext_resource type="Texture2D" uid="uid://cscnnewfa4xjd" path="res://game/assets/sprites/mio/Backdash/Timeline 1_0001.png" id="140"]
+[ext_resource type="Texture2D" uid="uid://dkum3bfkedy4d" path="res://game/assets/sprites/mio/Backdash/Timeline 1_0000.png" id="141"]
+[ext_resource type="Texture2D" uid="uid://dvrgiw2ptkdte" path="res://game/assets/sprites/mio/Backdash/Timeline 1_0005.png" id="142"]
+[ext_resource type="Texture2D" uid="uid://bgxqi2gr0rrm4" path="res://game/assets/sprites/mio/Backdash/Timeline 1_0004.png" id="143"]
+[ext_resource type="Texture2D" uid="uid://lc30tuj7c05s" path="res://game/assets/sprites/mio/AirTech/Timeline 1_0001.png" id="144"]
+[ext_resource type="Texture2D" uid="uid://ktbx4i2esret" path="res://game/assets/sprites/mio/AirTech/Timeline 1_0000.png" id="145"]
+[ext_resource type="Texture2D" uid="uid://dx5yf0u46ytgv" path="res://game/assets/sprites/mio/AirTech/Timeline 1_0002.png" id="146"]
+[ext_resource type="Texture2D" uid="uid://dkoejdsyncb0i" path="res://game/assets/sprites/mio/AirTech/Timeline 1_0003.png" id="147"]
+[ext_resource type="Texture2D" uid="uid://di6tdefsal5ci" path="res://game/assets/sprites/mio/AirTech/Timeline 1_0004.png" id="148"]
+[ext_resource type="Texture2D" uid="uid://dn5blcn1pvpsb" path="res://game/assets/sprites/mio/AirTech/Timeline 1_0005.png" id="149"]
+[ext_resource type="Texture2D" uid="uid://crcuqivcbd6hi" path="res://game/assets/sprites/mio/cB/Timeline 1_0002.png" id="150"]
+[ext_resource type="Texture2D" uid="uid://bu0pc077ug1u1" path="res://game/assets/sprites/mio/cB/Timeline 1_0001.png" id="151"]
+[ext_resource type="Texture2D" uid="uid://ba7wwo1vbswo3" path="res://game/assets/sprites/mio/cB/Timeline 1_0000.png" id="152"]
+[ext_resource type="Texture2D" uid="uid://cmq2uv0dcr354" path="res://game/assets/sprites/mio/Burst/Timeline 1_0003.png" id="153"]
+[ext_resource type="Texture2D" uid="uid://cd5y1rgrch3jk" path="res://game/assets/sprites/mio/Burst/Timeline 1_0000.png" id="154"]
+[ext_resource type="Texture2D" uid="uid://c5a8vuhc6os12" path="res://game/assets/sprites/mio/Charge/Timeline 1_0001.png" id="155"]
+[ext_resource type="Texture2D" uid="uid://bxk6l5ryqsa1f" path="res://game/assets/sprites/mio/Burst/Timeline 1_0001.png" id="156"]
+[ext_resource type="Texture2D" uid="uid://4yowthl404q2" path="res://game/assets/sprites/mio/Burst/Timeline 1_0002.png" id="157"]
+[ext_resource type="Texture2D" uid="uid://d1w72oqcdccii" path="res://game/assets/sprites/mio/Charge/Timeline 1_0018.png" id="158"]
+[ext_resource type="Texture2D" uid="uid://bis0kyfg8vssb" path="res://game/assets/sprites/mio/Charge/Timeline 1_0023.png" id="159"]
+[ext_resource type="Texture2D" uid="uid://1pljd8ehcxga" path="res://game/assets/sprites/mio/Charge/Timeline 1_0021.png" id="160"]
+[ext_resource type="Texture2D" uid="uid://bsiv0kj46v1a5" path="res://game/assets/sprites/mio/Charge/Timeline 1_0019.png" id="161"]
+[ext_resource type="Texture2D" uid="uid://dgkrke2dhj6sn" path="res://game/assets/sprites/mio/Charge/Timeline 1_0022.png" id="162"]
+[ext_resource type="Texture2D" uid="uid://c1opdv6lnp504" path="res://game/assets/sprites/mio/Charge/Timeline 1_0020.png" id="163"]
+[ext_resource type="Texture2D" uid="uid://cy70x1q0xv3ei" path="res://game/assets/sprites/mio/MioCards/Timeline 1_0001.png" id="164"]
+[ext_resource type="Texture2D" uid="uid://bl45aw3qq4xnw" path="res://game/assets/sprites/mio/MioCards/Timeline 1_0003.png" id="165"]
+[ext_resource type="Texture2D" uid="uid://cw5wnrwtr1kdj" path="res://game/assets/sprites/mio/ForwardWalk/Timeline 1_0000.png" id="166"]
+[ext_resource type="Texture2D" uid="uid://bptyiufuwcmi8" path="res://game/assets/sprites/mio/BackWalk/Timeline 1_0000.png" id="167"]
+[ext_resource type="Texture2D" uid="uid://bflruanfvpjbq" path="res://game/assets/sprites/mio/5B/Timeline 1_0008.png" id="168"]
+[ext_resource type="Texture2D" uid="uid://dkl4h834v1r2x" path="res://game/assets/sprites/mio/5B/Timeline 1_0004.png" id="169"]
+[ext_resource type="Texture2D" uid="uid://bt2r5p5bir7m" path="res://game/assets/sprites/mio/5B/Timeline 1_0000.png" id="170"]
+[ext_resource type="Texture2D" uid="uid://bgrw77r88eh13" path="res://game/assets/sprites/mio/5B/Timeline 1_0001.png" id="171"]
+[ext_resource type="Texture2D" uid="uid://cljp163nb4wss" path="res://game/assets/sprites/mio/5B/Timeline 1_0002.png" id="172"]
+[ext_resource type="Texture2D" uid="uid://dpr0bgx2enj6x" path="res://game/assets/sprites/mio/5B/Timeline 1_0007.png" id="173"]
+[ext_resource type="Texture2D" uid="uid://c7fufdnbq2rwi" path="res://game/assets/sprites/mio/5C/Timeline 1_0000.png" id="174"]
+[ext_resource type="Texture2D" uid="uid://6l5t63tu6eks" path="res://game/assets/sprites/mio/5C/Timeline 1_0001.png" id="175"]
+[ext_resource type="Texture2D" uid="uid://j85ecfx0dmni" path="res://game/assets/sprites/mio/5C/Timeline 1_0002.png" id="176"]
+[ext_resource type="Texture2D" uid="uid://b4dlbf2jfnu5u" path="res://game/assets/sprites/mio/5C/Timeline 1_0003.png" id="177"]
+[ext_resource type="Texture2D" uid="uid://bdbhax3674s7c" path="res://game/assets/sprites/mio/5C/Timeline 1_0007.png" id="178"]
+[ext_resource type="Texture2D" uid="uid://dd0n7l7cngy62" path="res://game/assets/sprites/mio/5C/Timeline 1_0008.png" id="179"]
+[ext_resource type="Texture2D" uid="uid://wmlkl5a33evc" path="res://game/assets/sprites/mio/5C/Timeline 1_0009.png" id="180"]
+[ext_resource type="Texture2D" uid="uid://c806pwjqqfex4" path="res://game/assets/sprites/mio/5C/Timeline 1_0005.png" id="181"]
+[ext_resource type="Texture2D" uid="uid://c8dplhec4rc22" path="res://game/assets/sprites/mio/5C/Timeline 1_0006.png" id="182"]
+[ext_resource type="Texture2D" uid="uid://ckflt4phwpber" path="res://game/assets/sprites/mio/Idle/Timeline 1_0000.png" id="183"]
+[ext_resource type="Texture2D" uid="uid://c72gm5asiadgm" path="res://game/assets/sprites/mio/Idle/Timeline 1_0004.png" id="184"]
+[ext_resource type="Texture2D" uid="uid://5cmxhba8d5yd" path="res://game/assets/sprites/mio/Idle/Timeline 1_0002.png" id="185"]
+[ext_resource type="Texture2D" uid="uid://m36j0lx5xqja" path="res://game/assets/sprites/mio/Idle/Timeline 1_0006.png" id="186"]
+[ext_resource type="Texture2D" uid="uid://b0e5mq2e755jc" path="res://game/assets/sprites/mio/Idle/Timeline 1_0003.png" id="187"]
+[ext_resource type="Texture2D" uid="uid://dgv350iloa741" path="res://game/assets/sprites/mio/Idle/Timeline 1_0005.png" id="188"]
+[ext_resource type="Texture2D" uid="uid://n8ec1h1l3owf" path="res://game/assets/sprites/mio/Idle/Timeline 1_0007.png" id="189"]
+[ext_resource type="Texture2D" uid="uid://dt21boidwwaty" path="res://game/assets/sprites/mio/Idle/Timeline 1_0001.png" id="190"]
+[ext_resource type="Texture2D" uid="uid://cw6q1qplymme0" path="res://game/assets/sprites/mio/Idle/Timeline 1_0008.png" id="191"]
+[ext_resource type="Texture2D" uid="uid://0srouqqj6fop" path="res://game/assets/sprites/mio/Idle/Timeline 1_0017.png" id="192"]
+[ext_resource type="Texture2D" uid="uid://cnb4dsopyla6l" path="res://game/assets/sprites/mio/Idle/Timeline 1_0010.png" id="193"]
+[ext_resource type="Texture2D" uid="uid://bt6rjtpmhd67t" path="res://game/assets/sprites/mio/Idle/Timeline 1_0013.png" id="194"]
+[ext_resource type="Texture2D" uid="uid://dx8dm51makx8o" path="res://game/assets/sprites/mio/Idle/Timeline 1_0009.png" id="195"]
+[ext_resource type="Texture2D" uid="uid://dniilxsaad2hx" path="res://game/assets/sprites/mio/Idle/Timeline 1_0011.png" id="196"]
+[ext_resource type="Texture2D" uid="uid://bqr761ekp2if4" path="res://game/assets/sprites/mio/Idle/Timeline 1_0015.png" id="197"]
+[ext_resource type="Texture2D" uid="uid://ct8etwbvbkqw0" path="res://game/assets/sprites/mio/Idle/Timeline 1_0016.png" id="198"]
+[ext_resource type="Texture2D" uid="uid://cyxqqy5iuvkd0" path="res://game/assets/sprites/mio/Idle/Timeline 1_0012.png" id="199"]
+[ext_resource type="Texture2D" uid="uid://b5gqiygy51fg7" path="res://game/assets/sprites/mio/Idle/Timeline 1_0014.png" id="200"]
+[ext_resource type="Texture2D" uid="uid://cmj285d2pbty3" path="res://game/assets/sprites/mio/Idle/Timeline 1_0018.png" id="201"]
+[ext_resource type="Texture2D" uid="uid://rcvoc5k82nxv" path="res://game/assets/sprites/mio/Idle/Timeline 1_0019.png" id="202"]
+[ext_resource type="Texture2D" uid="uid://bu7u0wm1pqe37" path="res://game/assets/sprites/mio/Crouch/Timeline 1_0002.png" id="203"]
+[ext_resource type="Texture2D" uid="uid://cqpdwxtxqhe1h" path="res://game/assets/sprites/mio/MioCards/Timeline 1_0002.png" id="204"]
+[ext_resource type="Texture2D" uid="uid://ck31xrnpar0iv" path="res://game/assets/sprites/mio/MioCards/Timeline 1_0000.png" id="205"]
+[ext_resource type="Texture2D" uid="uid://dgst145kspo4" path="res://game/assets/sprites/mio/2A/Timeline 1_0000.png" id="206"]
+[ext_resource type="Texture2D" uid="uid://dnmselt461os2" path="res://game/assets/sprites/mio/2C/Timeline 1_0000.png" id="207"]
+[ext_resource type="Texture2D" uid="uid://bavtlih3j4a71" path="res://game/assets/sprites/mio/2C/Timeline 1_0003.png" id="208"]
+[ext_resource type="Texture2D" uid="uid://crwcj81s53u5m" path="res://game/assets/sprites/mio/2C/Timeline 1_0004.png" id="209"]
+[ext_resource type="Texture2D" uid="uid://brpg7kcyur0qs" path="res://game/assets/sprites/mio/2C/Timeline 1_0002.png" id="210"]
+[ext_resource type="Texture2D" uid="uid://x8dk6v6ijhpd" path="res://game/assets/sprites/mio/2C/Timeline 1_0005.png" id="211"]
+[ext_resource type="Texture2D" uid="uid://cm1g84wryoghj" path="res://game/assets/sprites/mio/2C/Timeline 1_0006.png" id="212"]
+[ext_resource type="Texture2D" uid="uid://c4jnnab1hv0ej" path="res://game/assets/sprites/mio/2C/Timeline 1_0001.png" id="213"]
+[ext_resource type="Texture2D" uid="uid://d2sq6mbtrm2ae" path="res://game/assets/sprites/mio/2B/Timeline 1_0004.png" id="214"]
+[ext_resource type="Texture2D" uid="uid://c82w0qk0d1djb" path="res://game/assets/sprites/mio/2B/Timeline 1_0001.png" id="215"]
+[ext_resource type="Texture2D" uid="uid://eeq0y7y8gl61" path="res://game/assets/sprites/mio/2B/Timeline 1_0003.png" id="216"]
+[ext_resource type="Texture2D" uid="uid://bke1j7o58y44p" path="res://game/assets/sprites/mio/2B/Timeline 1_0000.png" id="217"]
+[ext_resource type="Texture2D" uid="uid://dfkuhrtaa8mtu" path="res://game/assets/sprites/mio/2B/Timeline 1_0002.png" id="218"]
+[ext_resource type="Texture2D" uid="uid://btojfgybly6rm" path="res://game/assets/sprites/mio/6A/Timeline 1_0000.png" id="219"]
+[ext_resource type="Texture2D" uid="uid://48goriq4o584" path="res://game/assets/sprites/mio/2A/Timeline 1_0002.png" id="220"]
+[ext_resource type="Texture2D" uid="uid://ch43pcdbo7siy" path="res://game/assets/sprites/mio/2A/Timeline 1_0001.png" id="221"]
+[ext_resource type="Texture2D" uid="uid://c83wr3fune8di" path="res://game/assets/sprites/mio/MioCannon/Timeline 1_0003.png" id="222"]
+[ext_resource type="Texture2D" uid="uid://th508s1f4hsm" path="res://game/assets/sprites/mio/AirAssistCall/Timeline 1_0000.png" id="223"]
+[ext_resource type="Texture2D" uid="uid://id3guw6uw6rs" path="res://game/assets/sprites/mio/StandParryCatch/Timeline 1_0000.png" id="224"]
+[ext_resource type="Texture2D" uid="uid://bi3c1dexn80hi" path="res://game/assets/sprites/mio/StandParryCatch/Timeline 1_0002.png" id="225"]
+[ext_resource type="Texture2D" uid="uid://4rtyovy4tdaq" path="res://game/assets/sprites/mio/StandParryCatch/Timeline 1_0001.png" id="226"]
+[ext_resource type="Texture2D" uid="uid://da4313c4hyj1w" path="res://game/assets/sprites/mio/6A/Timeline 1_0001.png" id="227"]
+[ext_resource type="Texture2D" uid="uid://ssqoas4s16jo" path="res://game/assets/sprites/mio/6A/Timeline 1_0002.png" id="228"]
+
+[sub_resource type="SGRectangleShape2D" id="1"]
+extents_x = 2063232
+extents_y = 6847360
+
+[sub_resource type="Animation" id="61"]
+resource_name = "2A"
+length = 0.2
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.15),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("206"), ExtResource("221"), ExtResource("220")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1e+06),
+"update": 0,
+"values": [Vector2(-20, 80)]
+}
+
+[sub_resource type="Animation" id="45"]
+resource_name = "2B"
+length = 0.233334
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.1, 0.166667, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("217"), ExtResource("215"), ExtResource("218"), ExtResource("216"), ExtResource("214")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1e+06),
+"update": 0,
+"values": [Vector2(50, 120)]
+}
+
+[sub_resource type="Animation" id="46"]
+resource_name = "2C"
+length = 0.333334
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.116667, 0.166667, 0.233333, 0.266667, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("207"), ExtResource("213"), ExtResource("210"), ExtResource("208"), ExtResource("211"), ExtResource("212"), ExtResource("209")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1e+06),
+"update": 0,
+"values": [Vector2(0, 140)]
+}
+
+[sub_resource type="Animation" id="14"]
+resource_name = "3C"
+length = 0.416667
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.366667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("41"), ExtResource("69"), ExtResource("42"), ExtResource("65"), ExtResource("67"), ExtResource("70"), ExtResource("71"), ExtResource("68"), ExtResource("66")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1e+06),
+"update": 0,
+"values": [Vector2(-100, 0)]
+}
+
+[sub_resource type="Animation" id="2"]
+resource_name = "5A"
+length = 0.166667
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.116667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("10"), ExtResource("20"), ExtResource("11")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1e+06),
+"update": 0,
+"values": [Vector2(-90, 70)]
+}
+
+[sub_resource type="Animation" id="40"]
+resource_name = "5B"
+length = 0.433334
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.366667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("170"), ExtResource("171"), ExtResource("172"), ExtResource("8"), ExtResource("169"), ExtResource("13"), ExtResource("1"), ExtResource("173"), ExtResource("168")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1e+06),
+"update": 0,
+"values": [Vector2(-50, 50)]
+}
+
+[sub_resource type="Animation" id="42"]
+resource_name = "5C"
+length = 2.0
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.366667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("174"), ExtResource("175"), ExtResource("176"), ExtResource("177"), ExtResource("181"), ExtResource("182"), ExtResource("178"), ExtResource("179"), ExtResource("180")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1e+06),
+"update": 0,
+"values": [Vector2(0, 80)]
+}
+
+[sub_resource type="Animation" id="55"]
+resource_name = "6A"
+length = 0.25
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.166667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("219"), ExtResource("227"), ExtResource("228")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1e+06),
+"update": 0,
+"values": [Vector2(0, 130)]
+}
+
+[sub_resource type="Animation" id="23"]
+resource_name = "6C"
+length = 0.416667
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.1, 0.133333, 0.166667, 0.2, 0.266667, 0.3, 0.333333, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("110"), ExtResource("109"), ExtResource("104"), ExtResource("101"), ExtResource("107"), ExtResource("103"), ExtResource("105"), ExtResource("106"), ExtResource("108"), ExtResource("102")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1e+06),
+"update": 0,
+"values": [Vector2(30, 40)]
+}
+
+[sub_resource type="Animation" id="53"]
+resource_name = "AirAssist"
+length = 0.0500001
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("223")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1e+06),
+"update": 0,
+"values": [Vector2(-80, 80)]
+}
+
+[sub_resource type="Animation" id="18"]
+resource_name = "AirBlock"
+length = 0.166667
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("90")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0166667, 0.0333333, 0.05, 0.0833333, 0.116667, 0.15),
+"transitions": PackedFloat32Array(1e+06, 1e+06, 1e+06, 1e+06, 1e+06, 1e+06, 1e+06),
+"update": 0,
+"values": [Vector2(-5, 40), Vector2(5, 40), Vector2(-5, 40), Vector2(3, 40), Vector2(-3, 40), Vector2(3, 40), Vector2(0, 40)]
+}
+
+[sub_resource type="Animation" id="15"]
+resource_name = "AirHit"
+length = 0.450001
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.233333, 0.383333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("73"), ExtResource("74"), ExtResource("72"), ExtResource("75")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1e+06),
+"update": 0,
+"values": [Vector2(-90, 130)]
+}
+
+[sub_resource type="Animation" id="49"]
+resource_name = "AirParry"
+length = 0.166667
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("90")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 40)]
+}
+
+[sub_resource type="Animation" id="58"]
+resource_name = "AirParryCatch"
+length = 0.166667
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("83"), ExtResource("85"), ExtResource("84")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-60, 0)]
+}
+
+[sub_resource type="Animation" id="32"]
+resource_name = "AirTech"
+length = 0.25
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("145"), ExtResource("144"), ExtResource("146"), ExtResource("147"), ExtResource("148"), ExtResource("149")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1e+06),
+"update": 0,
+"values": [Vector2(-40, 100)]
+}
+
+[sub_resource type="Animation" id="17"]
+resource_name = "AirThrowHit"
+length = 0.516668
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.316667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("89"), ExtResource("82")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1e+06),
+"update": 0,
+"values": [Vector2(0, -80)]
+}
+
+[sub_resource type="Animation" id="16"]
+resource_name = "AirThrowWhiff"
+length = 0.483334
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.15, 0.216667, 0.283333, 0.35, 0.416667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("77"), ExtResource("78"), ExtResource("76"), ExtResource("78"), ExtResource("76"), ExtResource("78"), ExtResource("76")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1e+06),
+"update": 0,
+"values": [Vector2(0, 100)]
+}
+
+[sub_resource type="Animation" id="31"]
+resource_name = "BackDash"
+length = 0.266667
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.233333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("141"), ExtResource("140"), ExtResource("139"), ExtResource("138"), ExtResource("143"), ExtResource("142"), ExtResource("141")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1e+06),
+"update": 0,
+"values": [Vector2(-60, 80)]
+}
+
+[sub_resource type="Animation" id="20"]
+resource_name = "BackwardAirDash"
+length = 0.0333334
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("93")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1e+06),
+"update": 0,
+"values": [Vector2(-10, 80)]
+}
+
+[sub_resource type="Animation" id="39"]
+resource_name = "BackwardWalk"
+length = 0.166667
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("167")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1e+06),
+"update": 0,
+"values": [Vector2(-80, 70)]
+}
+
+[sub_resource type="CompressedTexture2D" id="60"]
+
+[sub_resource type="Animation" id="34"]
+resource_name = "Burst"
+length = 0.916668
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.233333, 0.3, 0.366667, 0.433333, 0.55, 0.666667, 0.816667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("154"), SubResource("60"), ExtResource("156"), ExtResource("157"), ExtResource("153"), ExtResource("156"), ExtResource("157"), ExtResource("153"), ExtResource("53")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1e+06),
+"update": 0,
+"values": [Vector2(-50, 0)]
+}
+
+[sub_resource type="Animation" id="4"]
+resource_name = "Charge"
+length = 0.466667
+loop_mode = 1
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("29"), ExtResource("28"), ExtResource("17"), ExtResource("25"), ExtResource("30"), ExtResource("18"), ExtResource("19"), ExtResource("21"), ExtResource("22"), ExtResource("39"), ExtResource("23"), ExtResource("24"), ExtResource("26"), ExtResource("27")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1e+06),
+"update": 0,
+"values": [Vector2(-50, 30)]
+}
+
+[sub_resource type="Animation" id="37"]
+resource_name = "ChargeStart"
+length = 0.15
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("88"), ExtResource("155"), ExtResource("127")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-50, 60)]
+}
+
+[sub_resource type="Animation" id="43"]
+resource_name = "Crouch"
+length = 0.0333334
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("203")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1e+06),
+"update": 0,
+"values": [Vector2(-100, 150)]
+}
+
+[sub_resource type="Animation" id="48"]
+resource_name = "CrouchBlock"
+length = 0.166667
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("59")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0166667, 0.0333333, 0.05, 0.0833333, 0.116667, 0.15),
+"transitions": PackedFloat32Array(1e+06, 1e+06, 1e+06, 1e+06, 1e+06, 1e+06, 1e+06),
+"update": 0,
+"values": [Vector2(-25, 170), Vector2(-15, 170), Vector2(-25, 170), Vector2(-17, 170), Vector2(-23, 170), Vector2(-17, 170), Vector2(-20, 170)]
+}
+
+[sub_resource type="Animation" id="47"]
+resource_name = "CrouchHurt"
+length = 0.666668
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.233333, 0.383333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("57"), ExtResource("58"), ExtResource("86"), ExtResource("87")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1e+06),
+"update": 0,
+"values": [Vector2(-100, 160)]
+}
+
+[sub_resource type="Animation" id="50"]
+resource_name = "CrouchParry"
+length = 0.166667
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("59")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1e+06),
+"update": 0,
+"values": [Vector2(-30, 170)]
+}
+
+[sub_resource type="Animation" id="57"]
+resource_name = "CrouchParryCatch"
+length = 0.166667
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("80"), ExtResource("79"), ExtResource("81")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1e+06),
+"update": 0,
+"values": [Vector2(-60, 130)]
+}
+
+[sub_resource type="Animation" id="19"]
+resource_name = "ForwardAirDash"
+length = 0.266667
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("91")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1e+06),
+"update": 0,
+"values": [Vector2(-110, 80)]
+}
+
+[sub_resource type="Animation" id="38"]
+resource_name = "ForwardWalk"
+length = 0.166667
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("166")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1e+06),
+"update": 0,
+"values": [Vector2(-80, 90)]
+}
+
+[sub_resource type="Animation" id="5"]
+resource_name = "GroundAssist"
+length = 0.500001
+loop_mode = 1
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.15, 0.25, 0.333333, 0.416667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("35"), ExtResource("36"), ExtResource("34"), ExtResource("32"), ExtResource("31"), ExtResource("33")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1e+06),
+"update": 0,
+"values": [Vector2(0, 80)]
+}
+
+[sub_resource type="Animation" id="7"]
+resource_name = "GroundThrowHit"
+length = 0.500001
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.333333, 0.433333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("12"), ExtResource("3"), ExtResource("9")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1e+06),
+"update": 0,
+"values": [Vector2(60, 50)]
+}
+
+[sub_resource type="Animation" id="6"]
+resource_name = "GroundThrowWhiff"
+length = 0.500001
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.15, 0.216667, 0.283333, 0.35, 0.416667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("37"), ExtResource("38"), ExtResource("64"), ExtResource("38"), ExtResource("64"), ExtResource("38"), ExtResource("64")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1e+06),
+"update": 0,
+"values": [Vector2(-50, 80)]
+}
+
+[sub_resource type="Animation" id="41"]
+resource_name = "Idle"
+length = 4.00001
+loop_mode = 1
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.183333, 0.4, 0.6, 0.8, 1, 1.18333, 1.35, 1.55, 1.71667, 1.93333, 2.16667, 2.36667, 2.56667, 2.8, 2.98333, 3.2, 3.41667, 3.6, 3.81667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("183"), ExtResource("190"), ExtResource("185"), ExtResource("187"), ExtResource("184"), ExtResource("188"), ExtResource("186"), ExtResource("189"), ExtResource("191"), ExtResource("195"), ExtResource("193"), ExtResource("196"), ExtResource("199"), ExtResource("194"), ExtResource("200"), ExtResource("197"), ExtResource("198"), ExtResource("192"), ExtResource("201"), ExtResource("202")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1e+06),
+"update": 0,
+"values": [Vector2(-120, 80)]
+}
+
+[sub_resource type="Animation" id="30"]
+resource_name = "Intro"
+length = 2.0
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("132")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1e+06),
+"update": 0,
+"values": [Vector2(-80, 130)]
+}
+
+[sub_resource type="Animation" id="11"]
+resource_name = "Jump"
+length = 2.0
+loop_mode = 1
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.583333, 0.65, 0.716667, 0.783333, 0.833333, 0.9, 0.966667, 1.03333, 1.1, 1.16667, 1.23333, 1.3, 1.36667, 1.43333, 1.5, 1.56667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("44"), ExtResource("45"), ExtResource("46"), ExtResource("47"), ExtResource("52"), ExtResource("48"), ExtResource("51"), ExtResource("44"), ExtResource("45"), ExtResource("46"), ExtResource("47"), ExtResource("52"), ExtResource("48"), ExtResource("51"), ExtResource("49"), ExtResource("53"), ExtResource("50"), ExtResource("53"), ExtResource("50"), ExtResource("53"), ExtResource("50"), ExtResource("53"), ExtResource("50"), ExtResource("53"), ExtResource("50"), ExtResource("53"), ExtResource("50"), ExtResource("53"), ExtResource("50"), ExtResource("53"), ExtResource("50")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1e+06),
+"update": 0,
+"values": [Vector2(-60, -50)]
+}
+
+[sub_resource type="Animation" id="13"]
+resource_name = "JumpFall"
+length = 3.00001
+loop_mode = 1
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.119, 0.2, 0.283333, 0.35, 0.416667, 0.483333, 0.55, 0.616667, 0.683333, 0.75, 0.816667, 0.883333, 0.95, 1.01667, 1.06667, 1.13333, 1.2, 1.26667, 1.33333, 1.4, 1.46667, 1.53333, 1.58333, 1.65, 1.68334, 1.75, 1.81667, 1.88334, 1.95, 2.01667, 2.08334, 2.15, 2.21667, 2.28334, 2.35, 2.41667, 2.46667, 2.53334, 2.6, 2.66667, 2.73334, 2.8, 2.86667, 2.93334, 2.98334, 3.05),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("49"), ExtResource("53"), ExtResource("50"), ExtResource("53"), ExtResource("50"), ExtResource("53"), ExtResource("50"), ExtResource("53"), ExtResource("50"), ExtResource("53"), ExtResource("50"), ExtResource("53"), ExtResource("50"), ExtResource("53"), ExtResource("50"), ExtResource("53"), ExtResource("50"), ExtResource("53"), ExtResource("50"), ExtResource("53"), ExtResource("50"), ExtResource("53"), ExtResource("50"), ExtResource("53"), ExtResource("50"), ExtResource("53"), ExtResource("50"), ExtResource("53"), ExtResource("50"), ExtResource("53"), ExtResource("50"), ExtResource("53"), ExtResource("50"), ExtResource("53"), ExtResource("50"), ExtResource("53"), ExtResource("50"), ExtResource("53"), ExtResource("50"), ExtResource("53"), ExtResource("50"), ExtResource("53"), ExtResource("50"), ExtResource("53"), ExtResource("50"), ExtResource("53"), ExtResource("50")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1e+06),
+"update": 0,
+"values": [Vector2(-80, -50)]
+}
+
+[sub_resource type="Animation" id="35"]
+resource_name = "KO"
+length = 0.700001
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.366667, 0.516667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("73"), ExtResource("74"), ExtResource("72"), ExtResource("75")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-90, 110)]
+}
+
+[sub_resource type="Animation" id="27"]
+resource_name = "Knockdown"
+length = 0.333333
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("124"), ExtResource("126"), ExtResource("121")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1e+06),
+"update": 0,
+"values": [Vector2(-100, 150)]
+}
+
+[sub_resource type="Animation" id="44"]
+resource_name = "MioCards"
+length = 0.333334
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.166667, 0.216667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("205"), ExtResource("164"), ExtResource("204"), ExtResource("165")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1e+06),
+"update": 0,
+"values": [Vector2(-40, 140)]
+}
+
+[sub_resource type="Animation" id="10"]
+resource_name = "PreJump"
+length = 0.0833335
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("43")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1e+06),
+"update": 0,
+"values": [Vector2(-70, 30)]
+}
+
+[sub_resource type="Animation" id="21"]
+resource_name = "Run"
+length = 0.600001
+loop_mode = 1
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("96"), ExtResource("97"), ExtResource("99"), ExtResource("98"), ExtResource("94"), ExtResource("95")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1e+06),
+"update": 0,
+"values": [Vector2(-100, 120)]
+}
+
+[sub_resource type="Animation" id="22"]
+resource_name = "Skid"
+length = 0.0833335
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("100")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1e+06),
+"update": 0,
+"values": [Vector2(-50, 100)]
+}
+
+[sub_resource type="Animation" id="9"]
+resource_name = "StandBlock"
+length = 0.166667
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("40")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0166667, 0.0333333, 0.05, 0.0833333, 0.116667, 0.15),
+"transitions": PackedFloat32Array(1e+06, 1e+06, 1e+06, 1e+06, 1e+06, 1e+06, 1e+06),
+"update": 0,
+"values": [Vector2(-135, 80), Vector2(-145, 80), Vector2(-135, 80), Vector2(-145, 80), Vector2(-137, 80), Vector2(-143, 80), Vector2(-140, 80)]
+}
+
+[sub_resource type="Animation" id="3"]
+resource_name = "StandHighHit"
+length = 0.433334
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.25, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("63"), ExtResource("14"), ExtResource("15"), ExtResource("16")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1e+06),
+"update": 0,
+"values": [Vector2(-200, 120)]
+}
+
+[sub_resource type="Animation" id="51"]
+resource_name = "StandParry"
+length = 0.166667
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("40")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1e+06),
+"update": 0,
+"values": [Vector2(-140, 80)]
+}
+
+[sub_resource type="Animation" id="54"]
+resource_name = "StandParryCatch"
+length = 0.166667
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("224"), ExtResource("226"), ExtResource("225")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1e+06),
+"update": 0,
+"values": [Vector2(-100, 70)]
+}
+
+[sub_resource type="Animation" id="36"]
+resource_name = "Summon"
+length = 0.2
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("158"), ExtResource("161"), ExtResource("163"), ExtResource("160"), ExtResource("162"), ExtResource("159")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1e+06),
+"update": 0,
+"values": [Vector2(-50, 30)]
+}
+
+[sub_resource type="Animation" id="29"]
+resource_name = "SuperTarot"
+length = 0.766668
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.183333, 0.25, 0.316667, 0.383333, 0.416667, 0.466667, 0.533333, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("131"), ExtResource("128"), ExtResource("129"), ExtResource("222"), ExtResource("130"), ExtResource("222"), ExtResource("130"), ExtResource("222"), ExtResource("130")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1e+06),
+"update": 0,
+"values": [Vector2(-100, 130)]
+}
+
+[sub_resource type="Animation" id="8"]
+resource_name = "ThrowHurt"
+length = 0.0833335
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("14")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1e+06),
+"update": 0,
+"values": [Vector2(-200, 100)]
+}
+
+[sub_resource type="Animation" id="28"]
+resource_name = "Wakeup"
+length = 0.333333
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.1, 0.166667, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("125"), ExtResource("123"), ExtResource("124"), ExtResource("122"), ExtResource("126")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1e+06),
+"update": 0,
+"values": [Vector2(-100, 150)]
+}
+
+[sub_resource type="Animation" id="33"]
+resource_name = "cB"
+length = 0.15
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("152"), ExtResource("151"), ExtResource("150")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1e+06),
+"update": 0,
+"values": [Vector2(0, 30)]
+}
+
+[sub_resource type="Animation" id="25"]
+resource_name = "j2C"
+length = 0.166667
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("120"), ExtResource("115"), ExtResource("116")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1e+06),
+"update": 0,
+"values": [Vector2(-50, 100)]
+}
+
+[sub_resource type="Animation" id="26"]
+resource_name = "jA"
+length = 0.25
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.166667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("119"), ExtResource("118"), ExtResource("117")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1e+06),
+"update": 0,
+"values": [Vector2(0, 50)]
+}
+
+[sub_resource type="Animation" id="12"]
+resource_name = "jB"
+length = 0.383334
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.133333, 0.166667, 0.216667, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("61"), ExtResource("55"), ExtResource("60"), ExtResource("56"), ExtResource("54"), ExtResource("62")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1e+06),
+"update": 0,
+"values": [Vector2(0, 70)]
+}
+
+[sub_resource type="Animation" id="24"]
+resource_name = "jC"
+length = 0.333334
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.166667, 0.233333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("113"), ExtResource("114"), ExtResource("111"), ExtResource("112")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 60)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pbyp2"]
+_data = {
+&"2A": SubResource("61"),
+&"2B": SubResource("45"),
+&"2C": SubResource("46"),
+&"3C": SubResource("14"),
+&"5A": SubResource("2"),
+&"5B": SubResource("40"),
+&"5C": SubResource("42"),
+&"6A": SubResource("55"),
+&"6C": SubResource("23"),
+&"AirAssist": SubResource("53"),
+&"AirBlock": SubResource("18"),
+&"AirHit": SubResource("15"),
+&"AirParry": SubResource("49"),
+&"AirParryCatch": SubResource("58"),
+&"AirTech": SubResource("32"),
+&"AirThrowHit": SubResource("17"),
+&"AirThrowWhiff": SubResource("16"),
+&"BackDash": SubResource("31"),
+&"BackwardAirDash": SubResource("20"),
+&"BackwardWalk": SubResource("39"),
+&"Burst": SubResource("34"),
+&"Charge": SubResource("4"),
+&"ChargeStart": SubResource("37"),
+&"Crouch": SubResource("43"),
+&"CrouchBlock": SubResource("48"),
+&"CrouchHurt": SubResource("47"),
+&"CrouchParry": SubResource("50"),
+&"CrouchParryCatch": SubResource("57"),
+&"ForwardAirDash": SubResource("19"),
+&"ForwardWalk": SubResource("38"),
+&"GroundAssist": SubResource("5"),
+&"GroundThrowHit": SubResource("7"),
+&"GroundThrowWhiff": SubResource("6"),
+&"Idle": SubResource("41"),
+&"Intro": SubResource("30"),
+&"Jump": SubResource("11"),
+&"JumpFall": SubResource("13"),
+&"KO": SubResource("35"),
+&"Knockdown": SubResource("27"),
+&"MioCards": SubResource("44"),
+&"PreJump": SubResource("10"),
+&"Run": SubResource("21"),
+&"Skid": SubResource("22"),
+&"StandBlock": SubResource("9"),
+&"StandHighHit": SubResource("3"),
+&"StandParry": SubResource("51"),
+&"StandParryCatch": SubResource("54"),
+&"Summon": SubResource("36"),
+&"SuperTarot": SubResource("29"),
+&"ThrowHurt": SubResource("8"),
+&"Wakeup": SubResource("28"),
+&"cB": SubResource("33"),
+&"j2C": SubResource("25"),
+&"jA": SubResource("26"),
+&"jB": SubResource("12"),
+&"jC": SubResource("24")
+}
+
+[node name="MioPlayer" type="SGCharacterBody2D"]
+collision_layer = 2
+collision_mask = 7
+z_index = 10
+script = ExtResource("2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = ExtResource("5")
+position = Vector2(77, -379)
+scale = Vector2(1.428, 1.428)
+texture = ExtResource("34")
+offset = Vector2(0, 80)
+
+[node name="Pushbox" type="SGCollisionShape2D" parent="."]
+shape = SubResource("1")
+fixed_position_y = -6881280
+visible = false
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -105)
+
+[node name="NetworkAnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_pbyp2")
+}
+script = ExtResource("4")
+auto_reset = false
+
+[node name="Hitbox1" parent="." instance=ExtResource("7")]
+fixed_position_x = 11796481
+fixed_position_y = -15925248
+fixed_scale_x = 1260160
+fixed_scale_y = -252545
+position = Vector2(180, -243)
+scale = Vector2(19.2285, -3.85353)
+
+[node name="Hitbox2" parent="." instance=ExtResource("7")]
+fixed_position_x = 17498114
+fixed_position_y = -23068672
+fixed_scale_x = 995742
+fixed_scale_y = 475488
+position = Vector2(267, -352)
+scale = Vector2(15.1938, 7.25537)
+
+[node name="Hurtbox1" parent="." instance=ExtResource("6")]
+fixed_position_x = 3604480
+fixed_position_y = -18481152
+fixed_scale_x = 650886
+fixed_scale_y = 903770
+position = Vector2(55, -282)
+scale = Vector2(9.93173, 13.7904)
+
+[node name="Hurtbox2" parent="." instance=ExtResource("6")]
+fixed_position_x = 10682369
+fixed_position_y = -18415616
+fixed_scale_x = 547706
+fixed_scale_y = 753896
+position = Vector2(163, -281)
+scale = Vector2(8.35733, 11.5035)
+
+[node name="Hurtbox3" parent="." instance=ExtResource("6")]
+fixed_position_x = -1114112
+fixed_position_y = -25690112
+fixed_scale_x = 752196
+fixed_scale_y = 295639
+position = Vector2(-17, -392)
+scale = Vector2(11.4776, 4.51109)

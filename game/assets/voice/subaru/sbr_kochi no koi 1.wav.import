@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://csfk4vitn0uqg"
+path="res://.godot/imported/sbr_kochi no koi 1.wav-7f7236b0366cf0583d5721e062d0b3af.sample"
+
+[deps]
+
+source_file="res://game/assets/voice/subaru/sbr_kochi no koi 1.wav"
+dest_files=["res://.godot/imported/sbr_kochi no koi 1.wav-7f7236b0366cf0583d5721e062d0b3af.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=true
+force/max_rate=true
+force/max_rate_hz=22100.0
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

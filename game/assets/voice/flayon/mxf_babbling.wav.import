@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/mxf_babbling.wav-dffa1fdf637045807d048f12f88a454e.sample"
+
+[deps]
+
+source_file="res://game/assets/voice/flayon/mxf_babbling.wav"
+dest_files=[ "res://.import/mxf_babbling.wav-dffa1fdf637045807d048f12f88a454e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

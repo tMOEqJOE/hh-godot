@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://caiesl5miifd5"]
+
+[ext_resource type="Texture2D" uid="uid://d302mjwqy8r6g" path="res://game/assets/sprites/UI/CharacterSelect/MiniPortraits/SubaruButton.png" id="1"]
+[ext_resource type="Script" uid="uid://bu5fw1pa3ogy8" path="res://game/ui/BattlePointPortrait.gd" id="2"]
+[ext_resource type="Material" uid="uid://bt3lvyqtd78u0" path="res://game/assets/shaders/ColorSwapMat.tres" id="4"]
+[ext_resource type="PackedScene" uid="uid://ducj6c4yjd71u" path="res://game/ui/BattleAssistPortrait.tscn" id="5"]
+
+[node name="ServerPortrait" type="Sprite2D"]
+script = ExtResource("2")
+
+[node name="AssistBattlePortrait" parent="." instance=ExtResource("5")]
+position = Vector2(105, 39)
+scale = Vector2(-0.5, 0.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = ExtResource("4")
+position = Vector2(-2, 0)
+texture = ExtResource("1")

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://game/menus/characterselect/CharacterPortrait.gd" type="Script" id=3]
+
+[node name="P1Portrait" type="Sprite2D"]
+script = ExtResource( 3 )

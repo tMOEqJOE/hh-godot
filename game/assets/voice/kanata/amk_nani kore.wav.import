@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://8vg5ypea7qx7"
+path="res://.godot/imported/amk_nani kore.wav-95c38adde72f9566468729c4a50e34fd.sample"
+
+[deps]
+
+source_file="res://game/assets/voice/kanata/amk_nani kore.wav"
+dest_files=["res://.godot/imported/amk_nani kore.wav-95c38adde72f9566468729c4a50e34fd.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=true
+force/max_rate=true
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

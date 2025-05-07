@@ -1,0 +1,58 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://game/menus/training/TrainingInputDisplay.gd" type="Script" id=1]
+[ext_resource path="res://game/assets/sprites/UI/RoundCounterEmpty.png" type="Texture2D" id=2]
+[ext_resource path="res://game/assets/sprites/UI/MainMenus/MenuTutorials/Input_0011.png" type="Texture2D" id=3]
+[ext_resource path="res://game/assets/sprites/UI/MainMenus/MenuTutorials/Input_0009.png" type="Texture2D" id=4]
+[ext_resource path="res://game/assets/sprites/UI/MainMenus/MenuTutorials/Input_0005.png" type="Texture2D" id=5]
+[ext_resource path="res://game/assets/sprites/UI/MainMenus/MenuTutorials/Input_0007.png" type="Texture2D" id=6]
+
+[node name="TrainingInputDisplay" type="Node2D"]
+position = Vector2( -3, 1 )
+z_index = 1000
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="InputLog" type="GridContainer" parent="CanvasLayer"]
+modulate = Color( 1, 1, 1, 0.698039 )
+offset_left = 26.0
+offset_top = 187.0
+offset_right = 176.0
+offset_bottom = 987.0
+columns = 6
+
+[node name="A" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2( 985, 222.5 )
+texture = ExtResource( 2 )
+
+[node name="B" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2( 1025, 219.5 )
+texture = ExtResource( 2 )
+
+[node name="C" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2( 1064, 222.5 )
+texture = ExtResource( 2 )
+
+[node name="D" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2( 984, 272.5 )
+texture = ExtResource( 2 )
+
+[node name="left" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2( 867, 240.5 )
+texture = ExtResource( 3 )
+
+[node name="up" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2( 895, 205.5 )
+texture = ExtResource( 5 )
+
+[node name="right" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2( 922, 240.5 )
+texture = ExtResource( 6 )
+
+[node name="down" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2( 895, 258.5 )
+texture = ExtResource( 4 )

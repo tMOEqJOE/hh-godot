@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://bt3lvyqtd78u0"]
+
+[ext_resource type="Shader" uid="uid://dinoskkj75qym" path="res://game/assets/shaders/ColorSwapAntiAlias.gdshader" id="2"]
+[ext_resource type="Texture2D" uid="uid://c0d3r6wvtcptb" path="res://game/assets/sprites/subaru/ColorPalettes/1.png" id="2_3k8e4"]
+
+[resource]
+resource_local_to_scene = true
+shader = ExtResource("2")
+shader_parameter/palette = ExtResource("2_3k8e4")
+shader_parameter/dimming = 1.0

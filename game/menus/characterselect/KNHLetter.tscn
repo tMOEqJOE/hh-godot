@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://game/assets/sprites/UI/CharacterSelect/KimiNoHiroin/QuestionMark.png" type="Texture2D" id=1]
+[ext_resource path="res://game/menus/characterselect/KNHLetter.gd" type="Script" id=2]
+
+[node name="KNHLetter" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource( 1 )
+offset = Vector2( 40, 0 )

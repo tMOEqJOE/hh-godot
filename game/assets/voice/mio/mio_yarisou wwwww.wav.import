@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d4m8wtkprmqly"
+path="res://.godot/imported/mio_yarisou wwwww.wav-dc370a8098576cb8a0a36bb3b805dcf6.sample"
+
+[deps]
+
+source_file="res://game/assets/voice/mio/mio_yarisou wwwww.wav"
+dest_files=["res://.godot/imported/mio_yarisou wwwww.wav-dc370a8098576cb8a0a36bb3b805dcf6.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=true
+force/max_rate=true
+force/max_rate_hz=22100.0
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

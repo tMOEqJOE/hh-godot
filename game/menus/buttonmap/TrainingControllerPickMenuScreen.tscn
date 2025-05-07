@@ -1,0 +1,43 @@
+[gd_scene load_steps=8 format=3 uid="uid://b1g7tv6qgc5qj"]
+
+[ext_resource type="Texture2D" uid="uid://djahwkdvu1cpx" path="res://game/assets/sprites/UI/MainMenus/MenuTutorials/ControllerPick.png" id="1"]
+[ext_resource type="Script" uid="uid://ux6sj3wtqi1d" path="res://game/menus/buttonmap/TrainingControllerPickMenuScreen.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://b6k86wramlylm" path="res://game/assets/sprites/UI/MainMenus/MenuTutorials/OKController.png" id="3"]
+[ext_resource type="Material" uid="uid://cffvtcw31hg4s" path="res://game/assets/shaders/EarthBoundV2.tres" id="4"]
+[ext_resource type="Texture2D" uid="uid://bb1ay2q3kixt1" path="res://game/assets/sprites/UI/CharacterSelect/Cursors/BigP1/Timeline 1_0000.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://ba6f4fx263cmu" path="res://game/assets/sprites/UI/CharacterSelect/Cursors/BigP2/Timeline 1_0000.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://cxu43ttytxp1o" path="res://game/assets/sprites/UI/MainMenus/TrainingScreen.png" id="8"]
+
+[node name="TrainingControllerPickScreen" type="Node2D"]
+script = ExtResource("2")
+
+[node name="Background2" type="Sprite2D" parent="."]
+modulate = Color(0.470588, 0.329412, 0, 1)
+position = Vector2(960, 540)
+texture = ExtResource("8")
+
+[node name="Background" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.2)
+material = ExtResource("4")
+position = Vector2(960, 540)
+texture = ExtResource("8")
+
+[node name="ChooseSide" type="Sprite2D" parent="."]
+position = Vector2(752.157, 40)
+scale = Vector2(1.767, 1.767)
+texture = ExtResource("1")
+
+[node name="A OK" type="Sprite2D" parent="."]
+position = Vector2(1174.16, 40)
+scale = Vector2(1.37597, 1.37597)
+texture = ExtResource("3")
+
+[node name="P1Side" type="Sprite2D" parent="."]
+position = Vector2(301, 522)
+scale = Vector2(3.993, 4.774)
+texture = ExtResource("6")
+
+[node name="P2Side" type="Sprite2D" parent="."]
+position = Vector2(1595, 517)
+scale = Vector2(3.993, 4.774)
+texture = ExtResource("7")

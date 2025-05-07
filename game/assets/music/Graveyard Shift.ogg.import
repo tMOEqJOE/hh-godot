@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dahfik72030wi"
+path="res://.godot/imported/Graveyard Shift.ogg-75c7c0cfa766d534b55154c4e803a69b.oggvorbisstr"
+
+[deps]
+
+source_file="res://game/assets/music/Graveyard Shift.ogg"
+dest_files=["res://.godot/imported/Graveyard Shift.ogg-75c7c0cfa766d534b55154c4e803a69b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dyxst3sp6qhfn"]
+
+[ext_resource type="Texture2D" uid="uid://cq2apjw8dcaqs" path="res://game/assets/sprites/UI/MainMenus/LoadingScreen.png" id="1_u0dnp"]
+
+[node name="LoadingScreen" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1000
+position = Vector2(960, 540)
+scale = Vector2(4, 4)
+texture = ExtResource("1_u0dnp")

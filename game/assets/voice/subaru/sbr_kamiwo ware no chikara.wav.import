@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ds3bvlr4p835g"
+path="res://.godot/imported/sbr_kamiwo ware no chikara.wav-82187aac152a9e5e6e61ff455e2e97dc.sample"
+
+[deps]
+
+source_file="res://game/assets/voice/subaru/sbr_kamiwo ware no chikara.wav"
+dest_files=["res://.godot/imported/sbr_kamiwo ware no chikara.wav-82187aac152a9e5e6e61ff455e2e97dc.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=true
+force/max_rate=true
+force/max_rate_hz=22100.0
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

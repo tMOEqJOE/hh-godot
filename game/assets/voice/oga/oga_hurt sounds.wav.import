@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://be67xwkqcmm3i"
+path="res://.godot/imported/oga_hurt sounds.wav-caf00a9208c04ab56dd855603bb1200c.sample"
+
+[deps]
+
+source_file="res://game/assets/voice/oga/oga_hurt sounds.wav"
+dest_files=["res://.godot/imported/oga_hurt sounds.wav-caf00a9208c04ab56dd855603bb1200c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=true
+force/max_rate=true
+force/max_rate_hz=22100.0
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

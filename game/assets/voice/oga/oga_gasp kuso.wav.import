@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d4ilhbnkfhc4"
+path="res://.godot/imported/oga_gasp kuso.wav-da8d6febe5ac3bee51e9ed3dc9fa0354.sample"
+
+[deps]
+
+source_file="res://game/assets/voice/oga/oga_gasp kuso.wav"
+dest_files=["res://.godot/imported/oga_gasp kuso.wav-da8d6febe5ac3bee51e9ed3dc9fa0354.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=true
+force/max_rate=true
+force/max_rate_hz=22100.0
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

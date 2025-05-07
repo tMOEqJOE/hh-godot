@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://4wth2ggva2mv"
+path="res://.godot/imported/sbr_senno bon.wav-13266f8df1653a7f40f4539becc6cf9d.sample"
+
+[deps]
+
+source_file="res://game/assets/voice/subaru/sbr_senno bon.wav"
+dest_files=["res://.godot/imported/sbr_senno bon.wav-13266f8df1653a7f40f4539becc6cf9d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=true
+force/max_rate=true
+force/max_rate_hz=22100.0
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

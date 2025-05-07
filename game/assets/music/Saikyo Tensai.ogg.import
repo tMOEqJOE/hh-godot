@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dlscn51qt76wn"
+path="res://.godot/imported/Saikyo Tensai.ogg-13db9b5db71eb2e2a612fd7dadc70412.oggvorbisstr"
+
+[deps]
+
+source_file="res://game/assets/music/Saikyo Tensai.ogg"
+dest_files=["res://.godot/imported/Saikyo Tensai.ogg-13db9b5db71eb2e2a612fd7dadc70412.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

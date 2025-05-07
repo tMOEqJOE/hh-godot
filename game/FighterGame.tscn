@@ -1,0 +1,555 @@
+[gd_scene load_steps=65 format=3 uid="uid://bngmafg6y7eqk"]
+
+[ext_resource type="PackedScene" uid="uid://bee7pcc18xndp" path="res://game/ui/SyncRateMeter.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://btifqf7jlg8wh" path="res://game/StageCage.tscn" id="2"]
+[ext_resource type="Script" uid="uid://cpebuvk2oc2i1" path="res://game/FighterGame.gd" id="3"]
+[ext_resource type="Script" uid="uid://ba76tnqyqqueq" path="res://game/StageBackgroundArt.gd" id="4"]
+[ext_resource type="Script" uid="uid://qcfjxk2q4k1t" path="res://game/BattleCamera.gd" id="5"]
+[ext_resource type="PackedScene" path="res://game/fighter/InputInterpreter.tscn" id="6"]
+[ext_resource type="PackedScene" path="res://game/ui/ComboCounter.tscn" id="7"]
+[ext_resource type="PackedScene" path="res://game/ui/HPBar.tscn" id="8"]
+[ext_resource type="PackedScene" path="res://game/ui/RoundCounter.tscn" id="9"]
+[ext_resource type="Texture2D" uid="uid://phia8rmjqc86" path="res://game/assets/sprites/UI/DOWN/Timeline 1_0012.png" id="11"]
+[ext_resource type="PackedScene" uid="uid://cqee8xg8vov1x" path="res://game/StageCollision.tscn" id="12"]
+[ext_resource type="Script" uid="uid://ce5j5u6wh5u1u" path="res://game/ui/RoundTimer.gd" id="13"]
+[ext_resource type="Texture2D" uid="uid://ffkpavam854b" path="res://game/assets/sprites/UI/DOWN/Timeline 1_0010.png" id="14"]
+[ext_resource type="Texture2D" uid="uid://ckncp6jnc2dsd" path="res://game/assets/sprites/UI/DOWN/Timeline 1_0009.png" id="15"]
+[ext_resource type="Texture2D" uid="uid://cr7d3fg22mrc" path="res://game/assets/sprites/UI/DOWN/Timeline 1_0007.png" id="16"]
+[ext_resource type="Script" uid="uid://dfen0xbj6phr" path="res://game/VisualCamera.gd" id="17"]
+[ext_resource type="PackedScene" path="res://game/ui/AssistBar.tscn" id="18"]
+[ext_resource type="PackedScene" uid="uid://dliwkyac5ynat" path="res://game/ui/SuperBar.tscn" id="19"]
+[ext_resource type="Script" uid="uid://xbwpdr64o4cf" path="res://game/WinScreenManager.gd" id="20"]
+[ext_resource type="Texture2D" uid="uid://cobiaw7xhjpuj" path="res://game/assets/sprites/UI/DOWN/Timeline 1_0001.png" id="21"]
+[ext_resource type="Script" uid="uid://dv11pt6y7wasy" path="res://addons/godot-rollback-netcode/NetworkAnimationPlayer.gd" id="22"]
+[ext_resource type="Texture2D" uid="uid://cq2apjw8dcaqs" path="res://game/assets/sprites/UI/MainMenus/LoadingScreen.png" id="22_yl1ep"]
+[ext_resource type="Texture2D" uid="uid://c3qxlrpsshysw" path="res://game/assets/sprites/UI/FadeScreen.png" id="23"]
+[ext_resource type="Texture2D" uid="uid://bjt6c3wo20xi7" path="res://game/assets/sprites/UI/DOWN/Timeline 1_0002.png" id="24"]
+[ext_resource type="Texture2D" uid="uid://cmrr784esd3to" path="res://game/assets/sprites/UI/DOWN/Timeline 1_0000.png" id="25"]
+[ext_resource type="Texture2D" uid="uid://dwrah3a0efdab" path="res://game/assets/sprites/UI/DOWN/Timeline 1_0003.png" id="26"]
+[ext_resource type="Texture2D" uid="uid://dm761d7n2ydot" path="res://game/assets/sprites/UI/DOWN/Timeline 1_0004.png" id="27"]
+[ext_resource type="Texture2D" uid="uid://bacr1nok7kbtt" path="res://game/assets/sprites/UI/DOWN/Timeline 1_0005.png" id="28"]
+[ext_resource type="Texture2D" uid="uid://nj813edjhqg2" path="res://game/assets/sprites/UI/DOWN/Timeline 1_0006.png" id="29"]
+[ext_resource type="Script" uid="uid://cpf7xgu0reaiu" path="res://game/DownText.gd" id="30"]
+[ext_resource type="Script" uid="uid://b010dt6v25trf" path="res://addons/godot-rollback-netcode/NetworkTimer.gd" id="31"]
+[ext_resource type="Script" uid="uid://byuc10p5mpce" path="res://game/NowLoadingText.gd" id="32"]
+[ext_resource type="Texture2D" uid="uid://6183e5lbwa5h" path="res://game/assets/sprites/UI/NOWLOADING/Timeline 1_0000.png" id="33"]
+[ext_resource type="Texture2D" uid="uid://cfimqn4jbon38" path="res://game/assets/sprites/UI/NOWLOADING/Timeline 1_0002.png" id="34"]
+[ext_resource type="Texture2D" uid="uid://cpfo851cbaeg7" path="res://game/assets/sprites/UI/NOWLOADING/Timeline 1_0001.png" id="35"]
+[ext_resource type="Texture2D" uid="uid://tq7jpwpmpnav" path="res://game/assets/sprites/Empty_0000.png" id="35_yl1ep"]
+[ext_resource type="Texture2D" uid="uid://c8vnryjx11k30" path="res://game/assets/sprites/UI/NOWLOADING/Timeline 1_0007.png" id="36"]
+[ext_resource type="Texture2D" uid="uid://bselgvo8osjiu" path="res://game/assets/sprites/UI/NOWLOADING/Timeline 1_0003.png" id="37"]
+[ext_resource type="Texture2D" uid="uid://bdys3jxqvuno7" path="res://game/assets/sprites/UI/NOWLOADING/Timeline 1_0004.png" id="38"]
+[ext_resource type="Texture2D" uid="uid://c8nr6wmrmvmnu" path="res://game/assets/sprites/UI/NOWLOADING/Timeline 1_0005.png" id="39"]
+[ext_resource type="Texture2D" uid="uid://dcyxauh4vgla1" path="res://game/assets/sprites/UI/NOWLOADING/Timeline 1_0006.png" id="40"]
+[ext_resource type="Texture2D" uid="uid://b0e6kfn07guey" path="res://game/assets/sprites/UI/WIN/Timeline 1_0000.png" id="41"]
+[ext_resource type="Animation" path="res://game/assets/anim/gameWIN.tres" id="42"]
+[ext_resource type="PackedScene" path="res://game/ui/BattlePointPortrait.tscn" id="43"]
+[ext_resource type="Script" uid="uid://8bt3h44ryda0" path="res://game/BattleUIPosition.gd" id="44"]
+[ext_resource type="Texture2D" uid="uid://dnmluq3uvo6i0" path="res://game/assets/sprites/UI/DOWN/Timeline 1_0008.png" id="45"]
+[ext_resource type="Texture2D" uid="uid://4foqq7s4s8x7" path="res://game/assets/sprites/UI/DOWN/Timeline 1_0011.png" id="46"]
+[ext_resource type="Script" uid="uid://du0hv4v6goj1k" path="res://game/IntroShutters.gd" id="70"]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0donp"]
+_data = {
+&"gameWIN": ExtResource("42")
+}
+
+[sub_resource type="Animation" id="5"]
+length = 0.333337
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [ExtResource("22_yl1ep")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="4"]
+resource_name = "SlideAway"
+length = 0.350001
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.183333, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -400), Vector2(0, -1500)]
+}
+
+[sub_resource type="Animation" id="Animation_4ia5l"]
+resource_name = "Wait"
+length = 0.333337
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.854902, 1, 0, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [ExtResource("22_yl1ep")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l5bxo"]
+_data = {
+&"RESET": SubResource("5"),
+&"SlideAway": SubResource("4"),
+&"Wait": SubResource("Animation_4ia5l")
+}
+
+[sub_resource type="Animation" id="8"]
+resource_name = "DOUBLEKO"
+length = 0.833333
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.233333, 0.7, 0.766667, 0.8, 0.816667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("25"), ExtResource("21"), ExtResource("16"), ExtResource("45"), ExtResource("27"), ExtResource("28"), ExtResource("29"), ExtResource("35_yl1ep")]
+}
+
+[sub_resource type="Animation" id="1"]
+resource_name = "DOWN"
+length = 0.833333
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.233333, 0.7, 0.766667, 0.8, 0.816667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("25"), ExtResource("21"), ExtResource("24"), ExtResource("26"), ExtResource("27"), ExtResource("28"), ExtResource("29"), ExtResource("35_yl1ep")]
+}
+
+[sub_resource type="Animation" id="9"]
+resource_name = "DRAW"
+length = 0.833333
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.233333, 0.7, 0.766667, 0.8, 0.816667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("25"), ExtResource("21"), ExtResource("46"), ExtResource("11"), ExtResource("27"), ExtResource("28"), ExtResource("29"), ExtResource("35_yl1ep")]
+}
+
+[sub_resource type="Animation" id="10"]
+resource_name = "EMPTY"
+length = 0.166669
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("35_yl1ep")]
+}
+
+[sub_resource type="Animation" id="Animation_yl1ep"]
+resource_name = "RESET"
+length = 0.166669
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("35_yl1ep")]
+}
+
+[sub_resource type="Animation" id="7"]
+resource_name = "TIMEOUT"
+length = 0.833333
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.233333, 0.7, 0.766667, 0.8, 0.816667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("25"), ExtResource("21"), ExtResource("15"), ExtResource("14"), ExtResource("27"), ExtResource("28"), ExtResource("29"), ExtResource("35_yl1ep")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i6ekg"]
+_data = {
+&"DOUBLEKO": SubResource("8"),
+&"DOWN": SubResource("1"),
+&"DRAW": SubResource("9"),
+&"EMPTY": SubResource("10"),
+&"RESET": SubResource("Animation_yl1ep"),
+&"TIMEOUT": SubResource("7")
+}
+
+[sub_resource type="Animation" id="6"]
+resource_name = "EMPTY"
+length = 3.66667
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextSprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("35_yl1ep")]
+}
+
+[sub_resource type="Animation" id="2"]
+resource_name = "LOADING"
+length = 3.66667
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextSprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.16667, 1.3, 1.45, 1.58333, 1.75, 1.9, 2.03333, 2.21667, 2.48333, 2.73333, 2.98333, 3.05, 3.08333, 3.11667, 3.18333, 3.48333, 3.55, 3.58333, 3.65),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("35_yl1ep"), ExtResource("35"), ExtResource("34"), ExtResource("33"), ExtResource("35"), ExtResource("34"), ExtResource("33"), ExtResource("35"), ExtResource("34"), ExtResource("33"), ExtResource("35"), ExtResource("34"), ExtResource("37"), ExtResource("38"), ExtResource("39"), ExtResource("40"), ExtResource("36"), ExtResource("27"), ExtResource("28"), ExtResource("29"), ExtResource("35_yl1ep")]
+}
+
+[sub_resource type="Animation" id="Animation_54rxn"]
+resource_name = "RESET"
+length = 0.166669
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextSprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("35_yl1ep")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xonw4"]
+_data = {
+&"EMPTY": SubResource("6"),
+&"LOADING": SubResource("2"),
+&"RESET": SubResource("Animation_54rxn")
+}
+
+[node name="FighterGame" type="SGFixedNode2D"]
+script = ExtResource("3")
+
+[node name="ServerInputInterpreter" parent="." instance=ExtResource("6")]
+
+[node name="ClientInputInterpreter" parent="." instance=ExtResource("6")]
+
+[node name="StageCage" parent="." instance=ExtResource("2")]
+fixed_scale_y = 948961
+visible = false
+scale = Vector2(18.88, 14.48)
+
+[node name="StageBackgroundArt" type="Node2D" parent="."]
+visible = false
+script = ExtResource("4")
+
+[node name="Camera3D" type="Camera2D" parent="."]
+script = ExtResource("17")
+xBoundMax = 1914.0
+xBoundMin = -1914.0
+yBoundMin = -2064.0
+smooth_x_speed = 7.0
+smooth_y_speed = 20.0
+
+[node name="BattleUI" type="Node2D" parent="Camera3D"]
+z_index = -10
+script = ExtResource("44")
+
+[node name="RoundTimer" parent="Camera3D/BattleUI" instance=ExtResource("7")]
+offset_left = -56.0
+offset_top = -563.0
+offset_right = -23.0
+offset_bottom = -540.0
+scale = Vector2(3.95387, 6.4293)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.113725, 0.0823529, 0.0509804, 1)
+text = "100"
+script = ExtResource("13")
+
+[node name="ClientComboCounter" parent="Camera3D/BattleUI" instance=ExtResource("7")]
+offset_left = 374.0
+offset_top = -304.0
+offset_right = 390.0
+offset_bottom = -290.0
+
+[node name="ServerComboCounter" parent="Camera3D/BattleUI" instance=ExtResource("7")]
+offset_left = -748.0
+offset_top = -304.0
+offset_right = -732.0
+offset_bottom = -290.0
+
+[node name="ServerPortrait" parent="Camera3D/BattleUI" instance=ExtResource("43")]
+position = Vector2(-874, -450)
+
+[node name="ClientPortrait" parent="Camera3D/BattleUI" instance=ExtResource("43")]
+position = Vector2(878, -451)
+scale = Vector2(-1, 1)
+
+[node name="SuperFlashDim" type="Node2D" parent="Camera3D/BattleUI"]
+visible = false
+
+[node name="FadeSprite" type="Sprite2D" parent="Camera3D/BattleUI/SuperFlashDim"]
+modulate = Color(1, 1, 1, 0.388235)
+position = Vector2(-0.111017, -0.499951)
+texture = ExtResource("23")
+
+[node name="ServerSyncRateBar" parent="Camera3D/BattleUI" instance=ExtResource("1")]
+position = Vector2(-663, -400)
+
+[node name="ClientSyncRateBar" parent="Camera3D/BattleUI" instance=ExtResource("1")]
+position = Vector2(650, -402)
+
+[node name="ClientHPBar" parent="Camera3D/BattleUI" instance=ExtResource("8")]
+position = Vector2(802, -511)
+scale = Vector2(-1.1, 1)
+
+[node name="ServerHPBar" parent="Camera3D/BattleUI" instance=ExtResource("8")]
+position = Vector2(-797, -510)
+scale = Vector2(1.1, 1)
+
+[node name="ClientAssistBar" parent="Camera3D/BattleUI" instance=ExtResource("18")]
+position = Vector2(701, -450)
+scale = Vector2(-1.2, 1.1)
+
+[node name="ServerAssistBar" parent="Camera3D/BattleUI" instance=ExtResource("18")]
+position = Vector2(-694, -449)
+
+[node name="ServerSuperBar" parent="Camera3D/BattleUI" instance=ExtResource("19")]
+position = Vector2(-828, 476)
+scale = Vector2(1, 0.77)
+p1_side = true
+
+[node name="ClientSuperBar" parent="Camera3D/BattleUI" instance=ExtResource("19")]
+position = Vector2(822, 475)
+scale = Vector2(-1, 0.77)
+
+[node name="WinScreenManager" type="Node2D" parent="Camera3D/BattleUI"]
+script = ExtResource("20")
+
+[node name="FadeFreezeFrame" type="Node2D" parent="Camera3D/BattleUI/WinScreenManager"]
+visible = false
+modulate = Color(1, 1, 1, 0.392157)
+
+[node name="Sprite2D" type="Sprite2D" parent="Camera3D/BattleUI/WinScreenManager/FadeFreezeFrame"]
+position = Vector2(-0.111017, -0.499951)
+texture = ExtResource("23")
+
+[node name="WinSprite" type="Sprite2D" parent="Camera3D/BattleUI/WinScreenManager"]
+scale = Vector2(3.34, 3.34)
+texture = ExtResource("41")
+
+[node name="NetworkTimer" type="Node" parent="Camera3D/BattleUI/WinScreenManager"]
+script = ExtResource("31")
+wait_ticks = 200
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera3D/BattleUI/WinScreenManager"]
+callback_mode_process = 0
+libraries = {
+&"": SubResource("AnimationLibrary_0donp")
+}
+
+[node name="ClientRoundCounter" parent="Camera3D/BattleUI" instance=ExtResource("9")]
+position = Vector2(105, -434)
+scale = Vector2(-1, 1)
+
+[node name="ServerRoundCounter" parent="Camera3D/BattleUI" instance=ExtResource("9")]
+position = Vector2(-99, -433)
+is_p1 = true
+
+[node name="IntroShutters" type="Node2D" parent="Camera3D/BattleUI"]
+modulate = Color(1, 0.741176, 0.592157, 1)
+scale = Vector2(4, 4)
+script = ExtResource("70")
+
+[node name="NetworkAnimationPlayer" type="AnimationPlayer" parent="Camera3D/BattleUI/IntroShutters"]
+reset_on_save = false
+libraries = {
+&"": SubResource("AnimationLibrary_l5bxo")
+}
+script = ExtResource("22")
+
+[node name="Sprite2D" type="Sprite2D" parent="Camera3D/BattleUI/IntroShutters"]
+z_index = 1000
+position = Vector2(0, -1)
+texture = ExtResource("22_yl1ep")
+
+[node name="NetworkTimer" type="Node" parent="Camera3D/BattleUI/IntroShutters"]
+script = ExtResource("31")
+wait_ticks = 30
+
+[node name="DownText" type="Node2D" parent="Camera3D/BattleUI"]
+script = ExtResource("30")
+
+[node name="NetworkAnimationPlayer" type="AnimationPlayer" parent="Camera3D/BattleUI/DownText"]
+libraries = {
+&"": SubResource("AnimationLibrary_i6ekg")
+}
+script = ExtResource("22")
+
+[node name="Sprite2D" type="Sprite2D" parent="Camera3D/BattleUI/DownText"]
+position = Vector2(0, 4)
+scale = Vector2(3, 3)
+texture = ExtResource("35_yl1ep")
+
+[node name="NetworkTimer" type="Node" parent="Camera3D/BattleUI/DownText"]
+script = ExtResource("31")
+wait_ticks = 60
+
+[node name="NowLoadingText" type="Node2D" parent="Camera3D/BattleUI"]
+script = ExtResource("32")
+
+[node name="NetworkAnimationPlayer" type="AnimationPlayer" parent="Camera3D/BattleUI/NowLoadingText"]
+libraries = {
+&"": SubResource("AnimationLibrary_xonw4")
+}
+script = ExtResource("22")
+
+[node name="NetworkTimer" type="Node" parent="Camera3D/BattleUI/NowLoadingText"]
+script = ExtResource("31")
+wait_ticks = 191
+
+[node name="Fade" type="Node2D" parent="Camera3D/BattleUI/NowLoadingText"]
+visible = false
+
+[node name="FadeSprite" type="Sprite2D" parent="Camera3D/BattleUI/NowLoadingText/Fade"]
+modulate = Color(1, 1, 1, 0.388235)
+position = Vector2(-0.111017, -0.499951)
+texture = ExtResource("23")
+
+[node name="TextSprite" type="Sprite2D" parent="Camera3D/BattleUI/NowLoadingText"]
+position = Vector2(0, 4)
+scale = Vector2(3.4, 3.4)
+texture = ExtResource("35_yl1ep")
+
+[node name="BattleVersionLabel" type="Label" parent="Camera3D/BattleUI"]
+offset_left = -73.0
+offset_top = -451.0
+offset_right = 47.0
+offset_bottom = -428.0
+scale = Vector2(1.24764, 2.0009)
+text = "HHv1.0.0000"
+horizontal_alignment = 1
+
+[node name="BattleCamera" type="SGFixedNode2D" parent="."]
+visible = false
+script = ExtResource("5")
+xBoundMax = 119730404
+xBoundMin = -119730404
+yBoundMin = -96944704
+
+[node name="MovingWalls" type="SGFixedNode2D" parent="BattleCamera"]
+
+[node name="WallLeft" parent="BattleCamera/MovingWalls" instance=ExtResource("12")]
+fixed_position_x = -131152208
+fixed_scale_x = 7123843
+fixed_scale_y = 44163057
+position = Vector2(-2001.22, 0)
+scale = Vector2(108.701, 673.875)
+
+[node name="WallRight" parent="BattleCamera/MovingWalls" instance=ExtResource("12")]
+fixed_position_x = 131152208
+fixed_scale_x = 7123843
+fixed_scale_y = 44163057
+position = Vector2(2001.22, 0)
+scale = Vector2(108.701, 673.875)
+
+[node name="AssistWallLeft" parent="BattleCamera/MovingWalls" instance=ExtResource("12")]
+collision_layer = 262145
+fixed_position_x = -133252208
+fixed_scale_x = 7123843
+fixed_scale_y = 44163057
+position = Vector2(-2033.27, 0)
+scale = Vector2(108.701, 673.875)
+
+[node name="AssistWallRight" parent="BattleCamera/MovingWalls" instance=ExtResource("12")]
+collision_layer = 262145
+collision_mask = 2147483649
+fixed_position_x = 133252208
+fixed_scale_x = 7123843
+fixed_scale_y = 44163057
+position = Vector2(2033.27, 0)
+scale = Vector2(108.701, 673.875)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[connection signal="timeout" from="Camera3D/BattleUI/WinScreenManager/NetworkTimer" to="Camera3D/BattleUI/WinScreenManager" method="_on_NetworkTimer_timeout"]
+[connection signal="timeout" from="Camera3D/BattleUI/DownText/NetworkTimer" to="Camera3D/BattleUI/DownText" method="_on_NetworkTimer_timeout"]
+[connection signal="timeout" from="Camera3D/BattleUI/NowLoadingText/NetworkTimer" to="Camera3D/BattleUI/NowLoadingText" method="_on_NetworkTimer_timeout"]

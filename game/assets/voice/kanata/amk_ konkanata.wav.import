@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://qnqhny4u73mo"
+path="res://.godot/imported/amk_ konkanata.wav-595c7c9f3ccf8c0addf627acfb9ae385.sample"
+
+[deps]
+
+source_file="res://game/assets/voice/kanata/amk_ konkanata.wav"
+dest_files=["res://.godot/imported/amk_ konkanata.wav-595c7c9f3ccf8c0addf627acfb9ae385.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=true
+force/max_rate=true
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

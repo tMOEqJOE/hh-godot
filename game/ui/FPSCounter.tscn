@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://game/ui/FPSCounter.gd" type="Script" id=1]
+
+[node name="FPSCounter" type="Label"]
+offset_right = 40.0
+offset_bottom = 14.0
+scale = Vector2( 2.36978, 1.19546 )
+text = "60 fps"
+script = ExtResource( 1 )

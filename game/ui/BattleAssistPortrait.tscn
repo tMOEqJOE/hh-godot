@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://ducj6c4yjd71u"]
+
+[ext_resource type="Texture2D" uid="uid://d302mjwqy8r6g" path="res://game/assets/sprites/UI/CharacterSelect/MiniPortraits/SubaruButton.png" id="1"]
+[ext_resource type="Material" uid="uid://bt3lvyqtd78u0" path="res://game/assets/shaders/ColorSwapMat.tres" id="4"]
+
+[node name="AssistBattlePortrait" type="Sprite2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = ExtResource("4")
+position = Vector2(0.5, 1.5)
+texture = ExtResource("1")

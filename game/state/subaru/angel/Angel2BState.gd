@@ -1,0 +1,76 @@
+extends AngelCrouchAttackState
+
+class_name Angel2BState
+
+func _init():
+	endFrame = 10
+	
+	anim_data = {
+		0 : {
+			Enums.StKey.counterOK : true,
+			Enums.StKey.Hit1Disable : true,
+			Enums.StKey.Hit2Disable : true,
+			Enums.StKey.Hurt1Disable : false,Enums.StKey.Hurt2Disable : false,Enums.StKey.Hurt3Disable : true,
+			Enums.StKey.Hurt1PosX : 2883584, Enums.StKey.Hurt1PosY : -3276800,
+			Enums.StKey.Hurt1ScaleX : 334968, Enums.StKey.Hurt1ScaleY : 357786,
+			Enums.StKey.Hurt2PosX : -524288, Enums.StKey.Hurt2PosY : -7471104,
+			Enums.StKey.Hurt2ScaleX : 446568, Enums.StKey.Hurt2ScaleY : -774072,
+			Enums.StKey.Hurt3PosX : 10747904, Enums.StKey.Hurt3PosY : -3276800,
+			Enums.StKey.Hurt3ScaleX : 1263663, Enums.StKey.Hurt3ScaleY : -349887,
+			},
+		5 : {
+			Enums.StKey.counterOK : true,
+			Enums.StKey.Hit1Disable : false,
+			Enums.StKey.Hit2Disable : false,
+			Enums.StKey.Hit1PosX : 17104898, Enums.StKey.Hit1PosY : -1376256,
+			Enums.StKey.Hit1ScaleX : 1170480, Enums.StKey.Hit1ScaleY : -167990,
+			Enums.StKey.Hit2PosX : 9633793, Enums.StKey.Hit2PosY : -3014657,
+			Enums.StKey.Hit2ScaleX : 711968, Enums.StKey.Hit2ScaleY : -321020,
+			Enums.StKey.Hurt1Disable : false,Enums.StKey.Hurt2Disable : false,Enums.StKey.Hurt3Disable : false,
+			Enums.StKey.Hurt1PosX : 2883584, Enums.StKey.Hurt1PosY : -3276800,
+			Enums.StKey.Hurt1ScaleX : 334968, Enums.StKey.Hurt1ScaleY : 357786,
+			Enums.StKey.Hurt2PosX : -524288, Enums.StKey.Hurt2PosY : -7471104,
+			Enums.StKey.Hurt2ScaleX : 446568, Enums.StKey.Hurt2ScaleY : -774072,
+			Enums.StKey.Hurt3PosX : 10747904, Enums.StKey.Hurt3PosY : -3276800,
+			Enums.StKey.Hurt3ScaleX : 1263663, Enums.StKey.Hurt3ScaleY : -349887,
+			Enums.StKey.hit_box_colliding_frame : 254,
+			Enums.StKey.guard: Enums.GuardType.Low,
+			Enums.StKey.attack_damage: 50,
+			Enums.StKey.counter_hit: Enums.AttackType.Strike,
+			},
+		10 : { 
+			Enums.StKey.Hit1Disable : true,
+			Enums.StKey.Hit2Disable : true,
+			Enums.StKey.Hurt1Disable : false,Enums.StKey.Hurt2Disable : false,Enums.StKey.Hurt3Disable : true,
+			Enums.StKey.Hurt1PosX : 2883584, Enums.StKey.Hurt1PosY : -3276800,
+			Enums.StKey.Hurt1ScaleX : 334968, Enums.StKey.Hurt1ScaleY : 357786,
+			Enums.StKey.Hurt2PosX : -524288, Enums.StKey.Hurt2PosY : -7471104,
+			Enums.StKey.Hurt2ScaleX : 446568, Enums.StKey.Hurt2ScaleY : -774072,
+			Enums.StKey.Hurt3PosX : 10747904, Enums.StKey.Hurt3PosY : -3276800,
+			Enums.StKey.Hurt3ScaleX : 1263663, Enums.StKey.Hurt3ScaleY : -349887,
+			},
+	}
+
+# Writing _delta instead of delta here prevents the unused variable warning.
+func enter(state: Dictionary) -> void:
+	super.enter(state)
+	anim.play("Angel2B")
+
+func gatling_cancel(state: Dictionary, interpreter: InputInterpreter):
+	if (state[Enums.StKey.hitStopFrame] >= 0):
+		if (interpreter.is_holding_a_direction(Enums.Numpad.N6, state[Enums.StKey.leftface]) and 
+				interpreter.is_button_down(Enums.InputFlags.CDown)):
+			state[Enums.StKey.cancelState] = "AngelStand6C"
+		elif (interpreter.is_holding_a_direction(Enums.Numpad.N3, state[Enums.StKey.leftface]) and 
+				interpreter.is_button_down(Enums.InputFlags.CDown)):
+			state[Enums.StKey.cancelState] = "AngelCrouch3C"
+		elif ((interpreter.is_holding_a_direction(Enums.Numpad.N1, state[Enums.StKey.leftface]) or
+				interpreter.is_holding_a_direction(Enums.Numpad.N2, state[Enums.StKey.leftface]) or
+				interpreter.is_holding_a_direction(Enums.Numpad.N3, state[Enums.StKey.leftface])) and 
+				interpreter.is_button_down(Enums.InputFlags.CDown)):
+			state[Enums.StKey.cancelState] = "AngelCrouch2C"
+		elif (interpreter.is_button_down(Enums.InputFlags.CDown)):
+			state[Enums.StKey.cancelState] = "AngelStand5C"
+
+func jump_cancel(state: Dictionary, interpreter: InputInterpreter):
+	pass

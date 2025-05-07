@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://degygwfi2hbyh"
+path="res://.godot/imported/Detabare Neko.ogg-f6153b71d4c7751689d09517bb1e4cad.oggvorbisstr"
+
+[deps]
+
+source_file="res://game/assets/music/Detabare Neko.ogg"
+dest_files=["res://.godot/imported/Detabare Neko.ogg-f6153b71d4c7751689d09517bb1e4cad.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

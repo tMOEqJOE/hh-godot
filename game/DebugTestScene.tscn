@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://game/assets/shaders/ColorSwapMat.tres" type="Material" id=1]
+[ext_resource path="res://game/assets/sprites/UI/CharacterSelect/Portraits/SubaruPortraitReal.png" type="Texture2D" id=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = ExtResource( 1 )
+position = Vector2( 796, 538 )
+texture = ExtResource( 2 )

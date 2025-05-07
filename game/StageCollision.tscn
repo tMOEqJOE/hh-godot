@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqee8xg8vov1x"]
+
+[ext_resource type="Texture2D" uid="uid://c87ab18f5d3he" path="res://game/assets/godot.png" id="1"]
+
+[sub_resource type="SGRectangleShape2D" id="1"]
+
+[node name="FixedCollision" type="SGStaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.312425, 0.312425)
+texture = ExtResource("1")
+
+[node name="SGCollisionShape2D" type="SGCollisionShape2D" parent="."]
+shape = SubResource("1")
+visible = false

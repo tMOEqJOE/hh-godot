@@ -1,0 +1,10 @@
+[gd_resource type="FontFile" load_steps=3 format=2]
+
+[ext_resource path="res://game/assets/NotoSans-VariableFont_wdth,wght.ttf" type="FontFile" id=1]
+[ext_resource path="res://game/assets/NotoSansJP-VariableFont_wght.ttf" type="FontFile" id=2]
+
+[resource]
+outline_size = 1
+outline_color = Color( 0.72549, 0.72549, 0.72549, 1 )
+font_data = ExtResource( 1 )
+fallback/0 = ExtResource( 2 )

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bioxo0dlvg08l"
+path="res://.godot/imported/Battle at the Top of the World.ogg-434d753b777d1875a3030e4535454676.oggvorbisstr"
+
+[deps]
+
+source_file="res://game/assets/music/Battle at the Top of the World.ogg"
+dest_files=["res://.godot/imported/Battle at the Top of the World.ogg-434d753b777d1875a3030e4535454676.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

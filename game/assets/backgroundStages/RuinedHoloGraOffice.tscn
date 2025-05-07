@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://c2erh5aglvl10"]
+
+[ext_resource type="Texture2D" uid="uid://bit22aqevfph5" path="res://game/assets/sprites/BGArt/RuinedHoloProOffice/parallax.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://dsyacd7b24v7o" path="res://game/assets/sprites/BGArt/RuinedHoloProOffice/cityscape.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://dyw6wmfeduuaf" path="res://game/assets/sprites/BGArt/RuinedHoloProOffice/Sky.png" id="3"]
+[ext_resource type="Script" path="res://game/backgrounds/AnimatedBackgroundParent.gd" id="4"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+script = ExtResource("4")
+
+[node name="FarBackground" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0, 0)
+
+[node name="Background" type="Sprite2D" parent="FarBackground"]
+z_index = -100
+scale = Vector2(3.2, 3.2)
+texture = ExtResource("3")
+centered = false
+
+[node name="City" type="ParallaxLayer" parent="."]
+position = Vector2(604, -121)
+motion_scale = Vector2(0.3, 0.3)
+
+[node name="City" type="Sprite2D" parent="City"]
+z_index = -100
+position = Vector2(-1311, 82)
+scale = Vector2(2, 2)
+texture = ExtResource("1")
+centered = false
+
+[node name="Floor" type="ParallaxLayer" parent="."]
+
+[node name="Floor" type="Sprite2D" parent="Floor"]
+z_index = -100
+position = Vector2(0, -451)
+scale = Vector2(1.96, 1.96)
+texture = ExtResource("2")

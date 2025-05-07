@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://bspvfv3dixcey"]
+
+[ext_resource type="Texture2D" uid="uid://c3wwdgnw2w7g1" path="res://game/assets/sprites/BGArt/HeartOfTheForest/ground.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://dyw6wmfeduuaf" path="res://game/assets/sprites/BGArt/RuinedHoloProOffice/Sky.png" id="3"]
+[ext_resource type="Script" path="res://game/backgrounds/AnimatedBackgroundParent.gd" id="4"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+script = ExtResource("4")
+
+[node name="FarBackground" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0, 0)
+
+[node name="Background" type="Sprite2D" parent="FarBackground"]
+z_index = -100
+scale = Vector2(3.2, 3.2)
+texture = ExtResource("3")
+centered = false
+
+[node name="Floor" type="ParallaxLayer" parent="."]
+
+[node name="Floor" type="Sprite2D" parent="Floor"]
+z_index = -100
+position = Vector2(0, -19)
+scale = Vector2(1.06817, 1.06817)
+texture = ExtResource("2")

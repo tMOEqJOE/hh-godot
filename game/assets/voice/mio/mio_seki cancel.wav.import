@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bmx1miynpx3up"
+path="res://.godot/imported/mio_seki cancel.wav-f80f5c391e42b2f961fb6e9284cac6b5.sample"
+
+[deps]
+
+source_file="res://game/assets/voice/mio/mio_seki cancel.wav"
+dest_files=["res://.godot/imported/mio_seki cancel.wav-f80f5c391e42b2f961fb6e9284cac6b5.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=true
+force/max_rate=true
+force/max_rate_hz=22100.0
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

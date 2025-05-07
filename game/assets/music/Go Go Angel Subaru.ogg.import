@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://m75o5h75w7xf"
+path="res://.godot/imported/Go Go Angel Subaru.ogg-38bf4da3c0236a339734e11de989b9fb.oggvorbisstr"
+
+[deps]
+
+source_file="res://game/assets/music/Go Go Angel Subaru.ogg"
+dest_files=["res://.godot/imported/Go Go Angel Subaru.ogg-38bf4da3c0236a339734e11de989b9fb.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

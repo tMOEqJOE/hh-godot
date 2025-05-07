@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b6wniu6linu1"
+path="res://.godot/imported/mxf_you can't conceive what im capable of.wav-abd893100e69c87f24c62e8bc8bf3dc3.sample"
+
+[deps]
+
+source_file="res://game/assets/voice/flayon/mxf_you can't conceive what im capable of.wav"
+dest_files=["res://.godot/imported/mxf_you can't conceive what im capable of.wav-abd893100e69c87f24c62e8bc8bf3dc3.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=true
+force/max_rate=true
+force/max_rate_hz=22100.0
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

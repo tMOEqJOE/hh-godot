@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dmbf8hhfl02j3"
+path="res://.godot/imported/oga_yosh jaa yatteruzo.wav-16b9c15240d75514cd2105690c11bc78.sample"
+
+[deps]
+
+source_file="res://game/assets/voice/oga/oga_yosh jaa yatteruzo.wav"
+dest_files=["res://.godot/imported/oga_yosh jaa yatteruzo.wav-16b9c15240d75514cd2105690c11bc78.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=true
+force/max_rate=true
+force/max_rate_hz=22100.0
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

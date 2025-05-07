@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b02h85qvysq3n"
+path="res://.godot/imported/MXF_running noises.wav-22675b992dc98217046cdc1560df0056.sample"
+
+[deps]
+
+source_file="res://game/assets/voice/flayon/MXF_running noises.wav"
+dest_files=["res://.godot/imported/MXF_running noises.wav-22675b992dc98217046cdc1560df0056.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=true
+force/max_rate=true
+force/max_rate_hz=22100.0
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

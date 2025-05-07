@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dy6t12egllxev"
+path="res://.godot/imported/mio_uuu uuu.wav-31470e5ac0bae58a428847703c1690eb.sample"
+
+[deps]
+
+source_file="res://game/assets/voice/mio/mio_uuu uuu.wav"
+dest_files=["res://.godot/imported/mio_uuu uuu.wav-31470e5ac0bae58a428847703c1690eb.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=true
+force/max_rate=true
+force/max_rate_hz=22100.0
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

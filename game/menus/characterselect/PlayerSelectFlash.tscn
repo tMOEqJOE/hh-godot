@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://game/menus/characterselect/AkiMC.gd" type="Script" id=1]
+[ext_resource path="res://game/assets/sprites/UI/CharacterSelect/CurtainFlash/Timeline 1_0007.png" type="Texture2D" id=2]
+[ext_resource path="res://game/assets/sprites/UI/CharacterSelect/CurtainFlash/Timeline 1_0004.png" type="Texture2D" id=3]
+[ext_resource path="res://game/assets/sprites/UI/CharacterSelect/CurtainFlash/Timeline 1_0006.png" type="Texture2D" id=4]
+[ext_resource path="res://game/assets/sprites/UI/CharacterSelect/CurtainFlash/Timeline 1_0005.png" type="Texture2D" id=5]
+
+[sub_resource type="Animation" id=5]
+resource_name = "player_call"
+length = 0.25
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PackedFloat32Array( 0, 0.0666667, 0.1, 0.166667, 0.2 ),
+"transitions": PackedFloat32Array( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 3 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 2 ), null ]
+}
+
+[node name="P1SelectFlash" type="Node2D"]
+scale = Vector2( 2, 2 )
+z_index = 1000
+script = ExtResource( 1 )
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color( 1, 1, 1, 0.94902 )
+position = Vector2( 0, -181.5 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/player_call = SubResource( 5 )

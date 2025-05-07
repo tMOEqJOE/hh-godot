@@ -1,0 +1,403 @@
+[gd_scene load_steps=71 format=3 uid="uid://b7q1hk8ukhhu2"]
+
+[ext_resource type="Texture2D" uid="uid://phq86ugkwrgi" path="res://game/assets/sprites/UI/CharacterSelect/CardboardFloor.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://bmx8kcarubmxo" path="res://game/assets/sprites/UI/MainMenus/MenuTutorials/ButtonSelect.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://iolb5317v1lk" path="res://game/assets/sprites/UI/MainMenus/MenuTutorials/Color.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://djoyr0hnf5eju" path="res://game/assets/sprites/UI/CharacterSelect/MiniPortraits/OllieButton.png" id="4"]
+[ext_resource type="Script" uid="uid://ko1hngd7anqo" path="res://game/menus/characterselect/CharacterSelect.gd" id="5"]
+[ext_resource type="PackedScene" uid="uid://y8pd0pebt7ce" path="res://game/menus/characterselect/CharacterCursor.tscn" id="6"]
+[ext_resource type="Texture2D" uid="uid://c8mmyiwenb41k" path="res://game/assets/sprites/UI/CharacterSelect/CurtainFlash/Timeline 1_0000.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://rwa2ihlvs5vp" path="res://game/assets/sprites/UI/CharacterSelect/CurtainFlash/Timeline 1_0015.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://lj1dcdy08xyo" path="res://game/assets/sprites/UI/CharacterSelect/MiniPortraits/KanataButton.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://dppcf4hqlvayd" path="res://game/assets/sprites/UI/CharacterSelect/MiniPortraits/SuiseiButton.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://dtj3xj7tdcm7" path="res://game/assets/sprites/UI/CharacterSelect/MiniPortraits/UnknownButton.png" id="11"]
+[ext_resource type="PackedScene" path="res://game/menus/characterselect/CharacterPortrait.tscn" id="12"]
+[ext_resource type="PackedScene" path="res://game/menus/characterselect/AkiMC.tscn" id="14"]
+[ext_resource type="Texture2D" uid="uid://csm7c5dbea7x2" path="res://game/assets/sprites/UI/CharacterSelect/WOOD.png" id="15"]
+[ext_resource type="Texture2D" uid="uid://c3ahcg632gqqd" path="res://game/assets/sprites/UI/CharacterSelect/MiniPortraits/MukiNeoButton.png" id="16"]
+[ext_resource type="Texture2D" uid="uid://d302mjwqy8r6g" path="res://game/assets/sprites/UI/CharacterSelect/MiniPortraits/SubaruButton.png" id="19"]
+[ext_resource type="Texture2D" uid="uid://dtxwiyc72wl6n" path="res://game/assets/sprites/UI/CharacterSelect/MiniPortraits/OgaButton.png" id="21"]
+[ext_resource type="Texture2D" uid="uid://e5nkp6iv6sb8" path="res://game/assets/sprites/UI/CharacterSelect/MiniPortraits/AkigangerButton.png" id="22"]
+[ext_resource type="Texture2D" uid="uid://bdrrw6y2gsrvp" path="res://game/assets/sprites/UI/CharacterSelect/MiniPortraits/SummeryButton.png" id="23"]
+[ext_resource type="Texture2D" uid="uid://ds2u53rfp3f5i" path="res://game/assets/sprites/UI/CharacterSelect/MiniPortraits/RosetaiButton.png" id="24"]
+[ext_resource type="PackedScene" path="res://game/menus/characterselect/Rosetai.tscn" id="25"]
+[ext_resource type="Texture2D" uid="uid://byxe3cmt8n8r3" path="res://game/assets/sprites/UI/CharacterSelect/MiniPortraits/Brewski mini.png" id="26"]
+[ext_resource type="Texture2D" uid="uid://bcxls26tiktea" path="res://game/assets/sprites/UI/CharacterSelect/MiniPortraits/MioButton.png" id="27"]
+[ext_resource type="Script" uid="uid://irk3qummfdvc" path="res://game/menus/characterselect/CharacterIconsNode.gd" id="28"]
+[ext_resource type="PackedScene" uid="uid://c5xgqi0ik2bpc" path="res://game/ui/MatchWinCounter.tscn" id="29"]
+[ext_resource type="Script" uid="uid://dm4wmxa8r0rr0" path="res://game/menus/characterselect/KimiNoHiroin.gd" id="32"]
+[ext_resource type="PackedScene" path="res://game/menus/characterselect/KNHLetter.tscn" id="33"]
+[ext_resource type="Texture2D" uid="uid://cb3cge0m6ejxt" path="res://game/assets/sprites/UI/CharacterSelect/KimiNoHiroin/Ki.png" id="34"]
+[ext_resource type="Texture2D" uid="uid://8yqueauwb65d" path="res://game/assets/sprites/UI/CharacterSelect/KimiNoHiroin/Mi.png" id="35"]
+[ext_resource type="Texture2D" uid="uid://c3chy16kpe1fl" path="res://game/assets/sprites/UI/CharacterSelect/KimiNoHiroin/Hi.png" id="36"]
+[ext_resource type="Texture2D" uid="uid://ofwf6t0bj2hk" path="res://game/assets/sprites/UI/CharacterSelect/KimiNoHiroin/Ro.png" id="37"]
+[ext_resource type="Texture2D" uid="uid://bj5nkpo6xgr8o" path="res://game/assets/sprites/UI/CharacterSelect/KimiNoHiroin/No.png" id="38"]
+[ext_resource type="Texture2D" uid="uid://dk2swpv6c7t8v" path="res://game/assets/sprites/UI/CharacterSelect/KimiNoHiroin/EEE.png" id="39"]
+[ext_resource type="Texture2D" uid="uid://c14i8508j0jv7" path="res://game/assets/sprites/UI/CharacterSelect/KimiNoHiroin/DaRe.png" id="40"]
+[ext_resource type="Texture2D" uid="uid://boa7c3jhjmjnu" path="res://game/assets/sprites/UI/CharacterSelect/KimiNoHiroin/Wa.png" id="41"]
+[ext_resource type="Texture2D" uid="uid://wtyslxnpw0hv" path="res://game/assets/sprites/UI/CharacterSelect/KimiNoHiroin/NN.png" id="42"]
+[ext_resource type="Texture2D" uid="uid://b3qcbehmbwrua" path="res://game/assets/sprites/UI/CharacterSelect/KimiNoHiroin/QuestionMark.png" id="43"]
+[ext_resource type="Texture2D" uid="uid://otd3h6tsa26q" path="res://game/assets/sprites/UI/CharacterSelect/Curtains/HighCurtain.png" id="44"]
+[ext_resource type="Texture2D" uid="uid://q62mbepsarc0" path="res://game/assets/sprites/UI/CharacterSelect/Curtains/LowCurtain.png" id="45"]
+[ext_resource type="Script" uid="uid://bl4bfy15l04hj" path="res://game/menus/characterselect/Curtains.gd" id="47"]
+[ext_resource type="Texture2D" uid="uid://cewcfj8dllkf1" path="res://game/assets/sprites/UI/CharacterSelect/Curtains/HideCurtain.png" id="48"]
+[ext_resource type="Texture2D" uid="uid://hj18pwkpjrye" path="res://game/assets/sprites/UI/CharacterSelect/CurtainFlash/Timeline 1_0002.png" id="50"]
+[ext_resource type="Texture2D" uid="uid://3bgihg1fwdww" path="res://game/assets/sprites/UI/CharacterSelect/CurtainFlash/Timeline 1_0007.png" id="51"]
+[ext_resource type="Texture2D" uid="uid://cfruvgwgalw1h" path="res://game/assets/sprites/UI/CharacterSelect/CurtainFlash/Timeline 1_0010.png" id="52"]
+[ext_resource type="Texture2D" uid="uid://b7rpvk7v1noo7" path="res://game/assets/sprites/UI/CharacterSelect/CurtainFlash/Timeline 1_0011.png" id="53"]
+[ext_resource type="Texture2D" uid="uid://cbmgy2tl83f8s" path="res://game/assets/sprites/UI/CharacterSelect/CurtainFlash/Timeline 1_0012.png" id="54"]
+[ext_resource type="Texture2D" uid="uid://bfbfjc1ts7tec" path="res://game/assets/sprites/UI/CharacterSelect/CurtainFlash/Timeline 1_0003.png" id="55"]
+[ext_resource type="Texture2D" uid="uid://dkohpp6n61bbj" path="res://game/assets/sprites/UI/CharacterSelect/CurtainFlash/Timeline 1_0001.png" id="56"]
+[ext_resource type="Texture2D" uid="uid://fuvu0x5nnicj" path="res://game/assets/sprites/UI/CharacterSelect/CurtainFlash/Timeline 1_0004.png" id="57"]
+[ext_resource type="Texture2D" uid="uid://c7680ehucnr2u" path="res://game/assets/sprites/UI/CharacterSelect/CurtainFlash/Timeline 1_0005.png" id="58"]
+[ext_resource type="Texture2D" uid="uid://bw0ubw2v2pleb" path="res://game/assets/sprites/UI/CharacterSelect/CurtainFlash/Timeline 1_0008.png" id="59"]
+[ext_resource type="Texture2D" uid="uid://b825s3tye1bad" path="res://game/assets/sprites/UI/CharacterSelect/CurtainFlash/Timeline 1_0006.png" id="60"]
+[ext_resource type="Texture2D" uid="uid://cr3uk8bhhgsge" path="res://game/assets/sprites/UI/CharacterSelect/CurtainFlash/Timeline 1_0009.png" id="61"]
+[ext_resource type="Texture2D" uid="uid://2okjuema2yb1" path="res://game/assets/sprites/UI/CharacterSelect/CurtainFlash/Timeline 1_0013.png" id="62"]
+[ext_resource type="Texture2D" uid="uid://csgb5113mmwtx" path="res://game/assets/sprites/UI/CharacterSelect/CurtainFlash/Timeline 1_0014.png" id="63"]
+[ext_resource type="Texture2D" uid="uid://dk4ksvghwkmqq" path="res://game/assets/sprites/UI/CharacterSelect/CurtainFlash/Timeline 1_0024.png" id="64"]
+[ext_resource type="Texture2D" uid="uid://164s5hbm0pjl" path="res://game/assets/sprites/UI/CharacterSelect/CurtainFlash/Timeline 1_0019.png" id="65"]
+[ext_resource type="Texture2D" uid="uid://yi4pu3gk8p7h" path="res://game/assets/sprites/UI/CharacterSelect/CurtainFlash/Timeline 1_0017.png" id="66"]
+[ext_resource type="Texture2D" uid="uid://ckfbndmp5vhoo" path="res://game/assets/sprites/UI/CharacterSelect/CurtainFlash/Timeline 1_0016.png" id="67"]
+[ext_resource type="Texture2D" uid="uid://bsvn7ojbc87ok" path="res://game/assets/sprites/UI/CharacterSelect/CurtainFlash/Timeline 1_0021.png" id="68"]
+[ext_resource type="Texture2D" uid="uid://dae1hjwbl0klg" path="res://game/assets/sprites/UI/CharacterSelect/CurtainFlash/Timeline 1_0026.png" id="69"]
+[ext_resource type="Texture2D" uid="uid://b13nyu4c0vdq0" path="res://game/assets/sprites/UI/CharacterSelect/CurtainFlash/Timeline 1_0020.png" id="70"]
+[ext_resource type="Texture2D" uid="uid://dfdsl35e8igk2" path="res://game/assets/sprites/UI/CharacterSelect/CurtainFlash/Timeline 1_0023.png" id="71"]
+[ext_resource type="Texture2D" uid="uid://c4ttuui2h66on" path="res://game/assets/sprites/UI/CharacterSelect/CurtainFlash/Timeline 1_0022.png" id="72"]
+[ext_resource type="Texture2D" uid="uid://dyvfchnkof632" path="res://game/assets/sprites/UI/CharacterSelect/CurtainFlash/Timeline 1_0025.png" id="73"]
+[ext_resource type="Script" uid="uid://cv1fa8k03ytiy" path="res://game/menus/characterselect/CurtainFlash.gd" id="74"]
+[ext_resource type="Script" uid="uid://ds4bds8ylrmqi" path="res://game/menus/characterselect/PlayerSelectFlash.gd" id="75"]
+[ext_resource type="PackedScene" path="res://game/menus/characterselect/PlayerSelectFlash.tscn" id="76"]
+
+[sub_resource type="Animation" id="8"]
+resource_name = "Intro"
+length = 5.0
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.23333, 1.3, 1.33333, 1.4, 1.43333, 1.61667, 1.68333, 1.71667, 1.78333, 1.81667, 2.25, 2.31667, 2.35, 2.41667, 2.45, 2.63333, 2.7, 2.73333, 2.8, 2.83333, 3.01667, 3.05, 3.08333, 3.11667, 3.15, 3.2, 3.25, 3.3, 3.38333, 3.46667, 3.53333, 3.61667, 3.68333, 3.75, 3.81667, 3.88333, 3.95, 4.01667, 4.08333, 4.15, 4.21667, 4.28333, 4.35, 4.41667, 4.48333, 4.55, 4.61667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [null, ExtResource("57"), ExtResource("58"), ExtResource("60"), ExtResource("51"), null, ExtResource("7"), ExtResource("56"), ExtResource("50"), ExtResource("55"), null, ExtResource("7"), ExtResource("56"), ExtResource("50"), ExtResource("55"), null, ExtResource("57"), ExtResource("58"), ExtResource("60"), ExtResource("51"), null, ExtResource("52"), ExtResource("61"), ExtResource("59"), ExtResource("52"), ExtResource("53"), ExtResource("54"), ExtResource("62"), ExtResource("63"), ExtResource("8"), ExtResource("8"), ExtResource("67"), ExtResource("66"), ExtResource("65"), ExtResource("70"), ExtResource("68"), ExtResource("72"), ExtResource("71"), ExtResource("64"), ExtResource("73"), ExtResource("69"), ExtResource("71"), ExtResource("69"), null, ExtResource("69"), null, ExtResource("69"), null]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pvv0v"]
+_data = {
+&"Intro": SubResource("8")
+}
+
+[node name="CharacterSelectMenu" type="Node2D"]
+script = ExtResource("5")
+
+[node name="BackgroundSprite" type="Sprite2D" parent="."]
+z_index = -1000
+position = Vector2(960, 540)
+texture = ExtResource("1")
+
+[node name="MenuTutorials" type="Node2D" parent="."]
+z_index = 1016
+position = Vector2(960, 540)
+
+[node name="ButtonSet" type="Sprite2D" parent="MenuTutorials"]
+z_index = -1000
+position = Vector2(-299.75, 506)
+texture = ExtResource("2")
+
+[node name="ColorSet" type="Sprite2D" parent="MenuTutorials"]
+z_index = -1000
+position = Vector2(322, 509)
+texture = ExtResource("3")
+
+[node name="RosetaiFlock" type="Node2D" parent="."]
+z_index = -999
+position = Vector2(-1892, 381)
+
+[node name="Rosetai" parent="RosetaiFlock" instance=ExtResource("25")]
+
+[node name="Rosetai2" parent="RosetaiFlock" instance=ExtResource("25")]
+position = Vector2(-13, -11)
+delay = 20
+
+[node name="Rosetai3" parent="RosetaiFlock" instance=ExtResource("25")]
+position = Vector2(4, 21)
+delay = 40
+
+[node name="Rosetai4" parent="RosetaiFlock" instance=ExtResource("25")]
+position = Vector2(9, -19)
+delay = 60
+
+[node name="Rosetai5" parent="RosetaiFlock" instance=ExtResource("25")]
+position = Vector2(-21, 21)
+delay = 80
+
+[node name="CharacterIconsNode" type="Node2D" parent="."]
+z_index = 100
+position = Vector2(750, 144)
+script = ExtResource("28")
+
+[node name="WOOD" type="Sprite2D" parent="CharacterIconsNode"]
+position = Vector2(216, 357)
+texture = ExtResource("15")
+
+[node name="1" type="TextureRect" parent="CharacterIconsNode"]
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 137.0
+offset_bottom = 169.0
+texture = ExtResource("4")
+
+[node name="2" type="TextureRect" parent="CharacterIconsNode"]
+offset_left = 146.0
+offset_right = 282.0
+offset_bottom = 168.0
+texture = ExtResource("10")
+
+[node name="3" type="TextureRect" parent="CharacterIconsNode"]
+offset_left = 292.0
+offset_right = 428.0
+offset_bottom = 168.0
+texture = ExtResource("9")
+
+[node name="4" type="TextureRect" parent="CharacterIconsNode"]
+offset_left = -3.0
+offset_top = 177.0
+offset_right = 140.0
+offset_bottom = 349.0
+texture = ExtResource("27")
+
+[node name="5" type="TextureRect" parent="CharacterIconsNode"]
+offset_left = 146.0
+offset_top = 178.0
+offset_right = 282.0
+offset_bottom = 346.0
+texture = ExtResource("19")
+
+[node name="6" type="TextureRect" parent="CharacterIconsNode"]
+offset_left = 292.0
+offset_top = 178.0
+offset_right = 428.0
+offset_bottom = 346.0
+texture = ExtResource("21")
+
+[node name="7" type="TextureRect" parent="CharacterIconsNode"]
+visible = false
+offset_left = 1.0
+offset_top = 357.0
+offset_right = 137.0
+offset_bottom = 525.0
+texture = ExtResource("26")
+
+[node name="8" type="TextureRect" parent="CharacterIconsNode"]
+offset_left = 146.0
+offset_top = 356.0
+offset_right = 282.0
+offset_bottom = 524.0
+texture = ExtResource("11")
+
+[node name="9" type="TextureRect" parent="CharacterIconsNode"]
+visible = false
+offset_left = 292.0
+offset_top = 356.0
+offset_right = 428.0
+offset_bottom = 524.0
+texture = ExtResource("16")
+
+[node name="10" type="TextureRect" parent="CharacterIconsNode"]
+visible = false
+offset_left = 1.0
+offset_top = 535.0
+offset_right = 137.0
+offset_bottom = 703.0
+texture = ExtResource("22")
+
+[node name="11" type="TextureRect" parent="CharacterIconsNode"]
+visible = false
+offset_left = 146.0
+offset_top = 534.0
+offset_right = 282.0
+offset_bottom = 702.0
+texture = ExtResource("24")
+
+[node name="12" type="TextureRect" parent="CharacterIconsNode"]
+visible = false
+offset_left = 292.0
+offset_top = 534.0
+offset_right = 428.0
+offset_bottom = 702.0
+texture = ExtResource("23")
+
+[node name="KimiNoHiroin" type="Node2D" parent="."]
+z_index = 120
+position = Vector2(529, 89)
+script = ExtResource("32")
+
+[node name="Ki" parent="KimiNoHiroin" instance=ExtResource("33")]
+z_index = 1
+position = Vector2(-49, 0)
+image = ExtResource("34")
+
+[node name="Mi" parent="KimiNoHiroin" instance=ExtResource("33")]
+position = Vector2(52, 0)
+image = ExtResource("35")
+ticks = 13
+
+[node name="No" parent="KimiNoHiroin" instance=ExtResource("33")]
+z_index = -1
+position = Vector2(140, 0)
+image = ExtResource("38")
+ticks = 20
+
+[node name="Hi" parent="KimiNoHiroin" instance=ExtResource("33")]
+z_index = 1
+position = Vector2(236, 0)
+image = ExtResource("36")
+ticks = 40
+
+[node name="Ro" parent="KimiNoHiroin" instance=ExtResource("33")]
+position = Vector2(324, 0)
+image = ExtResource("37")
+ticks = 60
+
+[node name="EE" parent="KimiNoHiroin" instance=ExtResource("33")]
+z_index = 1
+position = Vector2(394, 0)
+image = ExtResource("39")
+ticks = 80
+
+[node name="NN" parent="KimiNoHiroin" instance=ExtResource("33")]
+z_index = -1
+position = Vector2(453, 0)
+image = ExtResource("42")
+ticks = 100
+
+[node name="Wa" parent="KimiNoHiroin" instance=ExtResource("33")]
+position = Vector2(567, 0)
+image = ExtResource("41")
+ticks = 120
+
+[node name="DaRe" parent="KimiNoHiroin" instance=ExtResource("33")]
+z_index = 1
+position = Vector2(742, 0)
+image = ExtResource("40")
+ticks = 140
+
+[node name="?" parent="KimiNoHiroin" instance=ExtResource("33")]
+position = Vector2(897, 0)
+image = ExtResource("43")
+ticks = 150
+
+[node name="CurtainFlash" type="Node2D" parent="."]
+z_index = 4096
+position = Vector2(960, 540)
+script = ExtResource("74")
+
+[node name="Sprite2D" type="Sprite2D" parent="CurtainFlash"]
+scale = Vector2(2, 2)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CurtainFlash"]
+libraries = {
+&"": SubResource("AnimationLibrary_pvv0v")
+}
+
+[node name="AkiMC" parent="." instance=ExtResource("14")]
+position = Vector2(0, -24)
+
+[node name="P1SelectFlash" parent="." instance=ExtResource("76")]
+position = Vector2(428, 446)
+script = ExtResource("75")
+
+[node name="P2SelectFlash" parent="." instance=ExtResource("76")]
+position = Vector2(1492, 446)
+scale = Vector2(-2, 2)
+script = ExtResource("75")
+
+[node name="Curtains" type="Node2D" parent="."]
+z_index = 13
+script = ExtResource("47")
+ticks = 190
+
+[node name="Left" type="Sprite2D" parent="Curtains"]
+position = Vector2(1540, 540)
+texture = ExtResource("48")
+offset = Vector2(40, 0)
+
+[node name="Right" type="Sprite2D" parent="Curtains"]
+position = Vector2(347, 540)
+scale = Vector2(-1, 1)
+texture = ExtResource("48")
+offset = Vector2(40, 0)
+
+[node name="P2Cursor" parent="." instance=ExtResource("6")]
+position = Vector2(966, 392)
+input_prefix = "player2_"
+gridY = 4
+gridX = 3
+start_col = 1
+start_row = 1
+
+[node name="P1Cursor" parent="." instance=ExtResource("6")]
+position = Vector2(962, 392)
+is_p1 = true
+gridY = 4
+gridX = 3
+start_col = 1
+start_row = 1
+
+[node name="P1Portrait" parent="." instance=ExtResource("12")]
+z_index = 103
+position = Vector2(396, 591)
+xOffset = 396
+speed = 5
+
+[node name="P2Portrait" parent="." instance=ExtResource("12")]
+z_index = 103
+position = Vector2(1535, 598)
+xOffset = 1535
+speed = -5
+
+[node name="A1Portrait" parent="." instance=ExtResource("12")]
+z_index = 104
+position = Vector2(212, 400)
+scale = Vector2(0.8, 0.8)
+xOffset = 212
+speed = 5
+
+[node name="A2Portrait" parent="." instance=ExtResource("12")]
+z_index = 104
+position = Vector2(1764, 400)
+scale = Vector2(0.8, 0.8)
+xOffset = 1764
+speed = -5
+
+[node name="SideCurtainLeft" type="Sprite2D" parent="."]
+z_index = -90
+position = Vector2(2000, 511)
+texture = ExtResource("45")
+
+[node name="SideCurtainRight" type="Sprite2D" parent="."]
+z_index = -90
+position = Vector2(-80, 511)
+scale = Vector2(-1, 1)
+texture = ExtResource("45")
+
+[node name="HighCurtain" type="Sprite2D" parent="."]
+z_index = -90
+position = Vector2(960, 92)
+texture = ExtResource("44")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="WinCounterP1" parent="CanvasLayer" instance=ExtResource("29")]
+offset_left = -942.0
+offset_top = 11.0
+offset_right = -471.0
+offset_bottom = 61.0
+
+[node name="WinCounterP2" parent="CanvasLayer" instance=ExtResource("29")]
+offset_left = 472.0
+offset_right = 943.0

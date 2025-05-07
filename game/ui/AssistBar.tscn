@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://game/assets/sprites/UI/Meters/Assist/AssistBar.png" type="Texture2D" id=1]
+[ext_resource path="res://game/assets/sprites/UI/Meters/Assist/AssistBarOutline.png" type="Texture2D" id=2]
+[ext_resource path="res://game/ui/AssistBar.gd" type="Script" id=3]
+[ext_resource path="res://game/assets/sprites/UI/Meters/Assist/AssistBarSolid.png" type="Texture2D" id=4]
+
+[node name="AssistBar" type="Node2D"]
+scale = Vector2( 1.2, 1.1 )
+script = ExtResource( 3 )
+
+[node name="FullBar" type="TextureProgressBar" parent="."]
+offset_right = 482.0
+offset_bottom = 27.0
+value = 49.0
+texture_under = ExtResource( 1 )
+texture_progress = ExtResource( 4 )
+fill_mode = 1
+tint_under = Color( 0, 0, 0, 1 )
+tint_progress = Color( 0.87451, 0.87451, 0.87451, 1 )
+
+[node name="NegativeZone" type="TextureProgressBar" parent="."]
+offset_right = 482.0
+offset_bottom = 27.0
+value = 25.0
+texture_progress = ExtResource( 1 )
+fill_mode = 1
+tint_under = Color( 0, 0, 0, 1 )
+tint_progress = Color( 0.447059, 0.415686, 0.309804, 1 )
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2( 241.667, 13.6364 )
+texture = ExtResource( 2 )
