@@ -73,6 +73,9 @@ func meter_cancel(state: Dictionary, interpreter: InputInterpreter):
 		change_state.call("AirBoostCancel")
 
 func reaction(state: Dictionary, interpreter: InputInterpreter,event_cause: int) -> void:
-	super.reaction(state, interpreter, event_cause)
 	if (event_cause == Enums.Reaction.ThrowHit):
 		change_state.call("AirThrowHit")
+	elif (event_cause == Enums.Reaction.GroundLand and state[Enums.StKey.frame] <= 1):
+		pass
+	else:
+		super.reaction(state, interpreter, event_cause)
