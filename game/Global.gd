@@ -1,6 +1,6 @@
 extends Node
 
-var BATTLE_ENGINE_VERSION = "HHv0.7.0002"
+var BATTLE_ENGINE_VERSION = "HHv0.7.0003"
 var LOCAL_SERVER = false
 var FIGHTER_GAME = preload("res://game/FighterGame.tscn")
 var load_queue = preload("res://game/simple_resource_queue.gd").new()
