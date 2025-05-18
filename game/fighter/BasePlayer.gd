@@ -508,7 +508,7 @@ func normal_strike_hurt(_react_type: int, opponent_attack: Dictionary, leftface:
 	SyncManager.spawn("HitVFX", get_parent(), Global.HitVFX,
 	{
 		position_x = g_position.x,
-		position_y = g_position.y,
+		position_y = g_position.y - Util.HIT_EFFECT_Y_OFFSET,
 		leftface = currentState[Enums.StKey.leftface],
 	})
 	currentState[Enums.StKey.super_meter] += SGFixed.ONE * 400

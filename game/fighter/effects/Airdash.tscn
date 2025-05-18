@@ -29,7 +29,7 @@ _data = {
 &"Hit": SubResource("1")
 }
 
-[node name="Airdash" type="SGFixedNode2D"]
+[node name="Airdash" type="Node2D"]
 z_index = 15
 script = ExtResource("9")
 
@@ -40,7 +40,7 @@ libraries = {
 script = ExtResource("1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-26, -157)
+position = Vector2(-26, -233)
 scale = Vector2(3.19538, 3.19538)
 texture = ExtResource("3")
 
