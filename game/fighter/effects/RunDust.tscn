@@ -1,47 +1,54 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=3 uid="uid://cdar00wsb1e5u"]
 
-[ext_resource path="res://addons/godot-rollback-netcode/NetworkAnimationPlayer.gd" type="Script" id=1]
-[ext_resource path="res://game/assets/sprites/VFX/Run/Timeline 1_0000.png" type="Texture2D" id=2]
-[ext_resource path="res://game/assets/sprites/VFX/Run/Timeline 1_0001.png" type="Texture2D" id=3]
-[ext_resource path="res://game/assets/sprites/VFX/Run/Timeline 1_0002.png" type="Texture2D" id=4]
-[ext_resource path="res://game/assets/sprites/VFX/Run/Timeline 1_0003.png" type="Texture2D" id=5]
-[ext_resource path="res://game/assets/sprites/VFX/Run/Timeline 1_0005.png" type="Texture2D" id=6]
-[ext_resource path="res://game/assets/sprites/VFX/Run/Timeline 1_0004.png" type="Texture2D" id=7]
-[ext_resource path="res://game/fighter/effects/VFX.gd" type="Script" id=9]
-[ext_resource path="res://addons/godot-rollback-netcode/NetworkTimer.gd" type="Script" id=10]
+[ext_resource type="Script" uid="uid://dv11pt6y7wasy" path="res://addons/godot-rollback-netcode/NetworkAnimationPlayer.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://bafr00qolpn7v" path="res://game/assets/sprites/VFX/Run/Timeline 1_0000.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://bk54prvak024c" path="res://game/assets/sprites/VFX/Run/Timeline 1_0001.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://w3bqkvgiqfpf" path="res://game/assets/sprites/VFX/Run/Timeline 1_0002.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://dowlya1mx1wfw" path="res://game/assets/sprites/VFX/Run/Timeline 1_0003.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://7pfsmc2hdnqi" path="res://game/assets/sprites/VFX/Run/Timeline 1_0005.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://bjbvgupsutfhc" path="res://game/assets/sprites/VFX/Run/Timeline 1_0004.png" id="7"]
+[ext_resource type="Script" uid="uid://bhp1nkcfug72s" path="res://game/fighter/effects/VFX.gd" id="9"]
+[ext_resource type="Script" uid="uid://b010dt6v25trf" path="res://addons/godot-rollback-netcode/NetworkTimer.gd" id="10"]
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id="1"]
 resource_name = "Hit"
 step = 0.0166667
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0, 0.0666667, 0.1, 0.133333, 0.2, 0.266667 ),
-"transitions": PackedFloat32Array( 1, 1, 1, 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.0666667, 0.1, 0.133333, 0.2, 0.266667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 6 ) ]
+"values": [ExtResource("2"), ExtResource("3"), ExtResource("4"), ExtResource("5"), ExtResource("7"), ExtResource("6")]
 }
 
-[node name="RunDust" type="SGFixedNode2D"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b6hwh"]
+_data = {
+&"Hit": SubResource("1")
+}
+
+[node name="RunDust" type="Node2D"]
 z_index = 15
-script = ExtResource( 9 )
+script = ExtResource("9")
 
 [node name="NetworkAnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Hit = SubResource( 1 )
-script = ExtResource( 1 )
+libraries = {
+&"": SubResource("AnimationLibrary_b6hwh")
+}
+script = ExtResource("1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2( -238, -88 )
-scale = Vector2( 3, 3 )
 z_index = -10
-texture = ExtResource( 2 )
+position = Vector2(-238, -88)
+scale = Vector2(3, 3)
+texture = ExtResource("2")
 
 [node name="NetworkTimer" type="Node" parent="."]
-script = ExtResource( 10 )
+script = ExtResource("10")
 one_shot = true
 wait_ticks = 20
 
