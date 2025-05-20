@@ -842,7 +842,7 @@ func get_controller_data_name_by_id(device_id: int):
 	if joy_data.has("vendor_id") and joy_data.has("product_id"):
 		return str(joy_data["product_id"]) + "_" + str(joy_data["vendor_id"])
 	else:
-		return ""
+		return "UnrecognizedGamepad"
 
 func update_controllers(device_id: int, connected: bool):
 	print(str(device_id) + " " + str(connected))

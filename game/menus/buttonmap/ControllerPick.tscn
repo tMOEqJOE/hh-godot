@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://6ephaqppgy8m"]
 
-[ext_resource type="Script" path="res://game/menus/buttonmap/ControllerPick.gd" id="1"]
+[ext_resource type="Script" uid="uid://d0ww7d3mgee1i" path="res://game/menus/buttonmap/ControllerPick.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://by0jdcp4y7to8" path="res://game/assets/sprites/UI/MainMenus/MenuTutorials/Controller.png" id="2"]
 
 [node name="ControllerPick" type="Node2D"]
