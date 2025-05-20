@@ -1,9 +1,11 @@
 extends Node
 
-var BATTLE_ENGINE_VERSION = "HHv0.7.0003"
+const BATTLE_ENGINE_VERSION = "HHv0.7.0003"
 
 func get_battle_version() -> String:
-	return Build.INTERNAL_BATTLE_ENGINE_KEY + BATTLE_ENGINE_VERSION
+	if (len(Build.INTERNAL_BATTLE_ENGINE_KEY) < 50):
+		return Build.INTERNAL_BATTLE_ENGINE_KEY + BATTLE_ENGINE_VERSION
+	return Build.INTERNAL_BATTLE_ENGINE_KEY.substr(0, 50) + BATTLE_ENGINE_VERSION
 
 var LOCAL_SERVER = false
 var FIGHTER_GAME = preload("res://game/FighterGame.tscn")
