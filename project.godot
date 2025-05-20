@@ -26,6 +26,7 @@ Global="*res://game/Global.gd"
 MainMenuMusicControl="*res://game/menus/mainmenu/MainMenuMusicControl.tscn"
 SyncManager="*res://addons/godot-rollback-netcode/SyncManager.gd"
 SyncReplay="*res://addons/godot-rollback-netcode/SyncReplay.gd"
+Build="*res://game/Build.gd"
 
 [debug]
 

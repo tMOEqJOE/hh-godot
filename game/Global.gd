@@ -1,6 +1,10 @@
 extends Node
 
 var BATTLE_ENGINE_VERSION = "HHv0.7.0003"
+
+func get_battle_version() -> String:
+	return Build.INTERNAL_BATTLE_ENGINE_KEY + BATTLE_ENGINE_VERSION
+
 var LOCAL_SERVER = false
 var FIGHTER_GAME = preload("res://game/FighterGame.tscn")
 var load_queue = preload("res://game/simple_resource_queue.gd").new()
