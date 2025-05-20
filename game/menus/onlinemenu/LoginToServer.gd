@@ -19,12 +19,12 @@ func connect_to_nakama() -> void:
 	$CanvasLayer/MessageLabel.text = "Connecting to server"
 	# Connect to a local Nakama instance using all the default settings.
 	if (not Global.LOCAL_SERVER):
-		nakama_client = Nakama.create_client('', '', 0000, 'http', 
+		nakama_client = Nakama.create_client(Build.SERVER_KEY, Build.SERVER_IP, Build.SERVER_PORT, 'http', 
 			Nakama.DEFAULT_TIMEOUT, NakamaLogger.LOG_LEVEL.ERROR)
 	else:
 		$CanvasLayer/MessageLabel.text = "connecting to local server"
 		print("connecting to local server")
-		nakama_client = Nakama.create_client('', '127.0.0.1', 0000, 'http', 
+		nakama_client = Nakama.create_client(Build.SERVER_KEY, '127.0.0.1', Build.SERVER_PORT, 'http', 
 			Nakama.DEFAULT_TIMEOUT, NakamaLogger.LOG_LEVEL.ERROR)
 	# Login to Nakama using "device authentication".
 	var device_id = OS.get_unique_id()
