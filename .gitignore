@@ -25,3 +25,4 @@ mono_crash.*.json
 serverkey
 game/Build.gd
 game/Build.gd.uid
+BuildCommands.md
