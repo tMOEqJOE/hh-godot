@@ -11,7 +11,7 @@ enum StKey {
 	modify_x,
 	leftface,
 	leftfaceOK,
-	frame,
+	frame, # 11
 	last_anim_frame,
 	hitStopFrame,
 	hit_box_colliding_frame,  # 14

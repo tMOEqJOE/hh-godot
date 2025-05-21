@@ -41,7 +41,7 @@ func _ready() -> void:
 	$CanvasLayer/TrainingOptionsMenu.connect("close_menu", Callable(self, "set_new_training_options"))
 	$CanvasLayer/TrainingOptionsMenu.connect("exit", Callable(self, "exit"))
 	$CanvasLayer/TrainingOptionsMenu.connect("reset", Callable(self, "reset"))
-	$CanvasLayer/TrainingOptionsMenu.connect("loadstate", Callable(self, "loadstate"))
+	$CanvasLayer/TrainingOptionsMenu.connect("loadstate", Callable(self, "loadstate_menu"))
 	$CanvasLayer/TrainingOptionsMenu.connect("savestate", Callable(self, "execute_savestate"))
 	$CanvasLayer/TrainingOptionsMenu.command_list = $CanvasLayer/CommandList
 	$CanvasLayer/TrainingOptionsMenu.command_list.connect("close_menu", Callable($CanvasLayer/TrainingOptionsMenu, "command_list_closed"))
@@ -108,6 +108,10 @@ func load_reaction_state():
 func loadstate():
 	load_state_delay = SyncManager.input_delay
 	dummy_input.clear_input()
+
+func loadstate_menu():
+	loadstate()
+	#fighter_game.un_freeze_game_sim()
 
 func execute_loadstate():
 	if (not savestate.is_empty()):
