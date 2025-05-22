@@ -73,7 +73,6 @@ func _init():
 		},
 		14 : {
 			Enums.StKey.Summon : "protoncannon",
-			Enums.StKey.Hit1Disable : false,
 			Enums.StKey.Hurt1Disable : false,Enums.StKey.Hurt2Disable : false,Enums.StKey.Hurt3Disable : false,
 			Enums.StKey.Hurt1PosX : 327680, Enums.StKey.Hurt1PosY : -22085634,
 			Enums.StKey.Hurt1ScaleX : 257090, Enums.StKey.Hurt1ScaleY : 604574,

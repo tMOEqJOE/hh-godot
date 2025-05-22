@@ -446,9 +446,7 @@ func on_attack_hit(attack_type: int, opponent_hit_data: Dictionary) -> void:
 		currentState[Enums.StKey.sync_rate] += SGFixed.ONE * 20
 	if (currentState[Enums.StKey.hitStopFrame] < attackData[Enums.StKey.hitstop]):
 		if (currentState[Enums.StKey.hitStopFrame] <= 0):
-			 #and len(currentState[Enums.StKey.hit_cooldown]) <= 1
 			currentState[Enums.StKey.hitStopFrame] = attackData[Enums.StKey.hitstop]
-			#print(attackData)
 	match attack_type:
 		Enums.AttackType.Strike:
 			if (opponent_hit_data["hitType"] == Enums.HitType.Strike):
