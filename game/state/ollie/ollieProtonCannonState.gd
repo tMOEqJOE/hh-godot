@@ -10,9 +10,7 @@ func _init():
 	anim_data = {
 		0 : {
 			Enums.StKey.counterOK : true,
-			Enums.StKey.Hit1Disable : true,
-			Enums.StKey.Hit2Disable : true,
-			#
+			Enums.StKey.Hit1Disable : true, Enums.StKey.Hit2Disable : true,
 			Enums.StKey.Hurt1Disable : false,Enums.StKey.Hurt2Disable : false,Enums.StKey.Hurt3Disable : false,
 			Enums.StKey.Hurt1PosX : 327680, Enums.StKey.Hurt1PosY : -22085634,
 			Enums.StKey.Hurt1ScaleX : 257090, Enums.StKey.Hurt1ScaleY : 604574,
@@ -22,6 +20,7 @@ func _init():
 			Enums.StKey.Hurt3ScaleX : 783139, Enums.StKey.Hurt3ScaleY : 370037,
 			},
 		8 : {
+			Enums.StKey.counterOK : true,
 			Enums.StKey.Hit2Disable : false,
 			Enums.StKey.Hit2PosX : 5832720, Enums.StKey.Hit2PosY : -37289984,
 			Enums.StKey.Hit2ScaleX : 1405564, Enums.StKey.Hit2ScaleY : 378195,
@@ -38,11 +37,7 @@ func _init():
 			Enums.StKey.attack_type : Enums.AttackType.GroundBouncer, 
 			Enums.StKey.launch_dir_x : -SGFixed.ONE*30,
 			Enums.StKey.launch_dir_y : SGFixed.ONE*10,
-#			Enums.StKey.hitstop: 4,
 			Enums.StKey.min_damage:6,
-			Enums.StKey.chip_damage:4,
-			Enums.StKey.hitstun : 20,
-			Enums.StKey.blockstun : 20,
 			Enums.StKey.counter_hit: Enums.AttackType.GroundBouncer,
 			Enums.StKey.counter_launch_dir_x: -SGFixed.ONE*30,
 			Enums.StKey.counter_launch_dir_y: SGFixed.ONE*10,
