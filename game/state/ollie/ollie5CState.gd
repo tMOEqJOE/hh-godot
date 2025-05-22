@@ -3,7 +3,7 @@ extends "res://game/state/ollie/mainstates/ollieAttackState.gd"
 class_name Ollie5CState
 
 func _init():
-	endFrame = 55
+	endFrame = 54
 	
 	anim_data = {
 		0 : {

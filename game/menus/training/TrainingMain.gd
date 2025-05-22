@@ -117,6 +117,7 @@ func execute_loadstate():
 	if (not savestate.is_empty()):
 		SyncManager._call_load_state(savestate)
 		dummy_input.clear_input()
+		$CanvasLayer/LoadedStateLabel.show_text()
 	else:
 		self.execute_savestate()
 		self.loadstate()
