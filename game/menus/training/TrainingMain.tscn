@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://crkvty0v7xv45"]
+[gd_scene load_steps=15 format=3 uid="uid://crkvty0v7xv45"]
 
 [ext_resource type="Script" uid="uid://c3crr8e8iawl" path="res://game/menus/training/TrainingMain.gd" id="1"]
 [ext_resource type="PackedScene" path="res://game/ui/FPSCounter.tscn" id="2"]
+[ext_resource type="Script" uid="uid://bpq5gaa5mv3gf" path="res://game/menus/training/LoadedStateLabel.gd" id="2_34aeq"]
 [ext_resource type="FontFile" uid="uid://d28sv0htum78d" path="res://game/assets/monogram_extended.ttf" id="3"]
 [ext_resource type="PackedScene" uid="uid://c5xgqi0ik2bpc" path="res://game/ui/MatchWinCounter.tscn" id="4"]
 [ext_resource type="Script" uid="uid://c2ba4562pur36" path="res://game/menus/training/TrainingOptionsMenu.gd" id="5"]
@@ -40,6 +41,21 @@ scale = Vector2(2.31141, 2.08452)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 text = "WOW"
+
+[node name="LoadedStateLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -507.0
+offset_top = 213.0
+offset_right = -36.0
+offset_bottom = 343.0
+grow_horizontal = 2
+scale = Vector2(2.31141, 2.08452)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Loaded State"
+script = ExtResource("2_34aeq")
 
 [node name="SyncLostLabel" type="Label" parent="CanvasLayer"]
 visible = false

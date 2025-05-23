@@ -30,7 +30,7 @@ func update_controllers(device: int, connected: bool):
 
 func spawn_controller_pick(device: int):
 	var new_pick = ControllerPick.instantiate()
-	new_pick.set_id(device)
+	new_pick.set_id(device + 1)
 	add_child(new_pick)
 	current_picks[device] = new_pick
 

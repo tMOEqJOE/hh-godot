@@ -13,8 +13,8 @@ func join_an_online_match() -> void:
 	# We can configure OnlineMatch before using it:
 	OnlineMatch.min_players = 2
 	OnlineMatch.max_players = 2
-	OnlineMatch.client_version = Global.BATTLE_ENGINE_VERSION
-	OnlineMatch.ice_servers = [{ "urls": ["stun:stun.l.google.com:19302"] }]
+	OnlineMatch.client_version = Global.get_battle_version()
+	OnlineMatch.ice_servers = [{ "urls": Build.ICE_SERVERS }]
 	OnlineMatch.use_network_relay = OnlineMatch.NetworkRelay.AUTO
 
 	# Connect to all of OnlineMatch's signals.

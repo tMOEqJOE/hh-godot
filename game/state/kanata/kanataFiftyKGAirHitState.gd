@@ -98,7 +98,7 @@ func meter_cancel(state: Dictionary, interpreter: InputInterpreter):
 	pass
 
 func reaction(state: Dictionary, interpreter: InputInterpreter, event_cause: int) -> void:
-	if (event_cause == Enums.Reaction.GroundLand):
+	if (event_cause == Enums.Reaction.GroundLand and state[Enums.StKey.frame] >= 13):
 		state[Enums.StKey.doubleJump] = 1
 		state[Enums.StKey.airDash] = 1
 		state[Enums.StKey.leftfaceOK] = true

@@ -18,11 +18,12 @@ config/windows_native_icon="res://icon.ico"
 
 [autoload]
 
+Build="*res://game/Build.gd"
 Util="*res://game/Util.gd"
+Global="*res://game/Global.gd"
 Nakama="*res://addons/com.heroiclabs.nakama/Nakama.gd"
 OnlineMatch="*res://addons/nakama-webrtc/OnlineMatch.gd"
 OnlineLobby="*res://game/menus/onlinemenu/OnlineLobby.gd"
-Global="*res://game/Global.gd"
 MainMenuMusicControl="*res://game/menus/mainmenu/MainMenuMusicControl.tscn"
 SyncManager="*res://addons/godot-rollback-netcode/SyncManager.gd"
 SyncReplay="*res://addons/godot-rollback-netcode/SyncReplay.gd"

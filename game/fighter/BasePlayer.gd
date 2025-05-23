@@ -446,7 +446,6 @@ func on_attack_hit(attack_type: int, opponent_hit_data: Dictionary) -> void:
 		currentState[Enums.StKey.sync_rate] += SGFixed.ONE * 20
 	if (currentState[Enums.StKey.hitStopFrame] < attackData[Enums.StKey.hitstop]):
 		if (currentState[Enums.StKey.hitStopFrame] <= 0):
-			 #and len(currentState[Enums.StKey.hit_cooldown]) <= 1
 			currentState[Enums.StKey.hitStopFrame] = attackData[Enums.StKey.hitstop]
 	match attack_type:
 		Enums.AttackType.Strike:
@@ -508,7 +507,7 @@ func normal_strike_hurt(_react_type: int, opponent_attack: Dictionary, leftface:
 	SyncManager.spawn("HitVFX", get_parent(), Global.HitVFX,
 	{
 		position_x = g_position.x,
-		position_y = g_position.y,
+		position_y = g_position.y - Util.HIT_EFFECT_Y_OFFSET,
 		leftface = currentState[Enums.StKey.leftface],
 	})
 	currentState[Enums.StKey.super_meter] += SGFixed.ONE * 400
