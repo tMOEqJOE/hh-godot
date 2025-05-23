@@ -12,12 +12,12 @@ func _ready() -> void:
 	# We can configure OnlineMatch before using it:
 	OnlineLobby.min_players = 2
 	OnlineLobby.max_players = 8
-	OnlineLobby.client_version = Global.BATTLE_ENGINE_VERSION
+	OnlineLobby.client_version = Global.get_battle_version()
 	OnlineLobby.use_network_relay = OnlineLobby.NetworkRelay.AUTO
 	
 	OnlineMatch.min_players = 2
 	OnlineMatch.max_players = 8
-	OnlineMatch.ice_servers = [{ "urls": ["stun:stun.l.google.com:19302"] }]
+	OnlineMatch.ice_servers = [{ "urls": Build.ICE_SERVERS }]
 	OnlineMatch.use_network_relay = OnlineMatch.NetworkRelay.AUTO
 	update_lobby_size($CanvasLayer/GridContainer/PlayerCountMeter.value)
 

@@ -104,7 +104,7 @@ fixed_position_y = -7929856
 fixed_scale_x = 240065
 fixed_scale_y = 762342
 position = Vector2(4, -121)
-scale = Vector2(3.6631, 11.6324)
+scale = Vector2(11.3198, 6.41538)
 
 [node name="Hurtbox1" parent="." instance=ExtResource("8_idwt1")]
 fixed_position_x = -262143

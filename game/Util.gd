@@ -47,6 +47,7 @@ const CORNER_POS := 175570000
 const MIN_IAD_HEIGHT := SGFixed.ONE*140 # SGFixed.ONE*100
 const DEATH_PLANE_Y := 35000000
 const PROXY_NORMAL := SGFixed.ONE*250
+const HIT_EFFECT_Y_OFFSET := SGFixed.ONE*170
 
 const LEVEL_ONE_SUPER := SGFixed.ONE*10000
 const LEVEL_TWO_SUPER := LEVEL_ONE_SUPER*2
@@ -841,7 +842,7 @@ func get_controller_data_name_by_id(device_id: int):
 	if joy_data.has("vendor_id") and joy_data.has("product_id"):
 		return str(joy_data["product_id"]) + "_" + str(joy_data["vendor_id"])
 	else:
-		return ""
+		return "UnrecognizedGamepad"
 
 func update_controllers(device_id: int, connected: bool):
 	print(str(device_id) + " " + str(connected))

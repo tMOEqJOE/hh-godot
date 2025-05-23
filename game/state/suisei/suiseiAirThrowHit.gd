@@ -70,3 +70,9 @@ func meter_cancel(state: Dictionary, interpreter: InputInterpreter):
 				state[Enums.StKey.cancelState] = "AirAssistCallSuper"
 			else:
 				state[Enums.StKey.cancelState] = "AirAssistCall"
+
+func reaction(state: Dictionary, interpreter: InputInterpreter, event_cause: int) -> void:
+	if (event_cause == Enums.Reaction.GroundLand and state[Enums.StKey.frame] <= 23):
+		pass
+	else:
+		super.reaction(state, interpreter, event_cause)

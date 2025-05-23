@@ -16,7 +16,7 @@ func _ready() -> void:
 	Global.P1_WIN_STREAK = 0
 	Global.P2_WIN_STREAK = 0
 	SyncManager.set_input_delay(2)
-	OnlineMatch.client_version = Global.BATTLE_ENGINE_VERSION
+	OnlineMatch.client_version = Global.get_battle_version()
 	load_startup_config()
 	$AruDJAnimator.play("Idle")
 

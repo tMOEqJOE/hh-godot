@@ -3,7 +3,7 @@ extends Node2D
 var id: int
 
 func set_id (new_id: int):
-	self.position.y = 200 + new_id*100
+	self.position.y = 200 + (new_id-1)*100
 	move_reset()
 	$Label.text = str(new_id)
 

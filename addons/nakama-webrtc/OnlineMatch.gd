@@ -8,7 +8,7 @@ extends Node
 var min_players := 2
 var max_players := 4
 var client_version := 'dev'
-var ice_servers = [{ "urls": ["stun:stun.l.google.com:19302"] }]
+var ice_servers = [{ "urls": Build.ICE_SERVERS }]
 
 enum NetworkRelay {
 	AUTO,

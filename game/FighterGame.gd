@@ -414,6 +414,7 @@ func freeze_game_sim() -> void:
 func un_freeze_game_sim() -> void:
 	frozen = false
 	frozenFrame = 0
+	
 	ServerPlayer.un_freeze_player_sim()
 	ClientPlayer.un_freeze_player_sim()
 	AssistPlayer1.un_freeze_player_sim()

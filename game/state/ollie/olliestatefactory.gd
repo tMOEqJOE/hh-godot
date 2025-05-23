@@ -19,7 +19,7 @@ func _init():
 		"BackDash": preload("res://game/state/ollie/ollieBackdash.gd"),
 		
 		"GroundThrowWhiff": preload("res://game/state/ollie/ollieGroundThrowWhiffState.gd"),
-		"GroundBackThrowWhiff": preload("res://game/state/ollie/ollieGroundThrowWhiffState.gd"),
+		"GroundBackThrowWhiff": preload("res://game/state/ollie/ollieGroundBackThrowWhiffState.gd"),
 		
 		"StandBlock": preload("res://game/state/ollie/ollieStandBlockState.gd"),
 		"CrouchBlock": preload("res://game/state/ollie/ollieCrouchBlockState.gd"),

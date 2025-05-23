@@ -67,7 +67,7 @@ func _ready() -> void:
 	#Util.print_controls()
 	
 func exit():
-	print_orphan_nodes()
+	#print_orphan_nodes() # stops working in custom export build
 	get_tree().quit()
 
 func _input(event):

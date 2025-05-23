@@ -32,7 +32,7 @@ _data = {
 &"Hit": SubResource("1")
 }
 
-[node name="Hit" type="SGFixedNode2D"]
+[node name="AssistTagFlash" type="Node2D"]
 z_index = -15
 script = ExtResource("2")
 

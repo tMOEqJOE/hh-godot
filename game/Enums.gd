@@ -11,7 +11,7 @@ enum StKey {
 	modify_x,
 	leftface,
 	leftfaceOK,
-	frame,
+	frame, # 11
 	last_anim_frame,
 	hitStopFrame,
 	hit_box_colliding_frame,  # 14
@@ -405,8 +405,8 @@ const OllieMoveList: = [
 	["Run", "", "", "Starts with a back sway"],
 	["Hold 2", "Low profile", "", "A super low crouch, blocking is still OK"],
 	["Command Normals"],
-	["Missing moves", "WARNING", "", "No close B, or ground back throw"],
-	["Ground Forward Throw", "", "", "Throw hits at mid range"],
+	["Missing moves", "WARNING", "", "No close B"],
+	["Ground Throws", "", "", "Throw hits at mid range"],
 	["3C", "Smollie Kiiiick!", "", "Universal launcher, close range dead zone"],
 	["6A", "Head Dango", "", "long range anti air"],
 	["6[C]", "Twintail Drill", "", "guard crusher"],

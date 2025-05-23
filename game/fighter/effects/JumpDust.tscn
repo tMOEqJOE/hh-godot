@@ -35,7 +35,7 @@ _data = {
 &"Hit": SubResource("1")
 }
 
-[node name="JumpDust" type="SGFixedNode2D"]
+[node name="JumpDust" type="Node2D"]
 z_index = 15
 script = ExtResource("9")
 

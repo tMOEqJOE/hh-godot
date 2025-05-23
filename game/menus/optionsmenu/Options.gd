@@ -11,7 +11,6 @@ var Voice_volume = -10
 var DebugRollbackLogsEnabled: bool = false
 
 func _ready():
-	OnlineMatch.client_version = Global.BATTLE_ENGINE_VERSION
 	load_startup_config()
 	$CanvasLayer/Options/FullScreenButton.grab_focus()
 	$CanvasLayer/Options/VsyncEmpty.text = str((DisplayServer.window_get_vsync_mode() != DisplayServer.VSYNC_DISABLED))
@@ -19,7 +18,7 @@ func _ready():
 	$CanvasLayer/Options/MusicVolumeMeter.value = BGM_volume + $CanvasLayer/Options/MusicVolumeMeter.max_value
 	$CanvasLayer/Options/SoundVolumeMeter.value = Sound_volume + $CanvasLayer/Options/SoundVolumeMeter.max_value
 	$CanvasLayer/Options/VoiceVolumeMeter.value = Voice_volume + $CanvasLayer/Options/VoiceVolumeMeter.max_value
-	$CanvasLayer/Options/VersionLabelReadout.text = OnlineMatch.client_version
+	$CanvasLayer/Options/VersionLabelReadout.text = Global.BATTLE_ENGINE_VERSION
 	update_debug_rollback_log()
 	replay_text_update()
 

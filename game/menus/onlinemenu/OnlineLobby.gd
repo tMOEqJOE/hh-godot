@@ -232,7 +232,7 @@ func join_public_lobby(_nakama_socket: NakamaSocket, _match_id: String) -> void:
 	match_mode = MatchMode.PUBLICLOBBY
 	
 	var payload_dict = {
-		"battleEngineVersion" : Global.BATTLE_ENGINE_VERSION,
+		"battleEngineVersion" : Global.get_battle_version(),
 	}
 	var data = await nakama_socket.join_match_async(_match_id, payload_dict)
 	if data.is_exception():
@@ -247,7 +247,7 @@ func create_new_public_lobby(_nakama_socket: NakamaSocket):
 	match_mode = MatchMode.PUBLICLOBBY
 	var payload_dict = {
 		"isPrivate" : false,
-		"battleEngineVersion" : Global.BATTLE_ENGINE_VERSION,
+		"battleEngineVersion" : Global.get_battle_version(),
 	}
 	var payload = JSON.stringify(payload_dict)
 	var data = await nakama_socket.rpc_async("create-match", payload)
@@ -259,7 +259,7 @@ func create_new_public_lobby(_nakama_socket: NakamaSocket):
 
 func find_lobbies(nakama_socket: NakamaSocket, nakama_client: NakamaClient, nakama_session: NakamaSession):
 	_set_nakama_socket(nakama_socket)
-	var query = "+label.isPrivate:false +label.battleEngineVersion:"+Global.BATTLE_ENGINE_VERSION
+	var query = "+label.isPrivate:false +label.battleEngineVersion:"+Global.get_battle_version()
 	var data: NakamaAPI.ApiMatchList = await nakama_client.list_matches_async(nakama_session, 0, 250, 100, true, "", query)
 	if data.is_exception():
 		_emit_error(ErrorCode.FIND_PUBLIC_LOBBY_FAILED, data.get_exception())
@@ -535,7 +535,8 @@ func _on_nakama_match_state(data: NakamaRTAPI.MatchData) -> void:
 			var host_client_version = content.get('client_version', '')
 			if client_version != host_client_version:
 				leave()
-				_emit_error(ErrorCode.CLIENT_VERSION_ERROR, host_client_version)
+				#error.emit("Client version doesn't match host")
+				_emit_error(ErrorCode.CLIENT_VERSION_ERROR, "") #host_client_version)
 				return
 
 			var content_players = unserialize_players(content['players'])
