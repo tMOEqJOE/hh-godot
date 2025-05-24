@@ -32,7 +32,7 @@ func _load_state(state: Dictionary) -> void:
 	if state['is_playing']:
 		if not is_playing() or current_animation != state['current_animation']:
 			play(state['current_animation'])
-		seek(state['current_position'], true)
+		seek(state['current_position']) # used to be update=true, but that causes an animation bug
 		speed_scale = state['current_speed']
 	elif is_playing():
 		if auto_reset and has_animation("RESET"):
