@@ -3054,7 +3054,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="37"]
 resource_name = "DP"
-length = 0.466667
+length = 1.33334
 step = 0.0166667
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -3063,7 +3063,7 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.45),
+"times": PackedFloat32Array(0, 0.1, 0.383333),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [ExtResource("225"), ExtResource("26"), ExtResource("23")]
@@ -4082,7 +4082,7 @@ material = ExtResource("5")
 position = Vector2(-15, -259)
 scale = Vector2(1.428, 1.428)
 texture = ExtResource("176")
-offset = Vector2(0, 90)
+offset = Vector2(0, -30)
 
 [node name="Pushbox" type="SGCollisionShape2D" parent="."]
 shape = SubResource("1")

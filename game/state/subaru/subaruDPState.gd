@@ -26,6 +26,7 @@ func _init():
 			Enums.StKey.launch_dir_x : -SGFixed.ONE*20,
 			Enums.StKey.launch_dir_y : -SGFixed.ONE*80,
 			Enums.StKey.chip_damage: 8,
+			Enums.StKey.hitstop: 10,
 			Enums.StKey.min_damage:10,
 			Enums.StKey.hitstun: 48,
 			Enums.StKey.counter_hit: Enums.AttackType.Launcher,
@@ -68,7 +69,6 @@ func physics_tick(state: Dictionary) -> void:
 	if (state[Enums.StKey.frame] == 9):
 		state[Enums.StKey.velocity_y] = -SGFixed.ONE * 70
 		state[Enums.StKey.velocity_x] = Util.fixed_max(SGFixed.ONE * 10, state[Enums.StKey.velocity_x])
-#		state[Enums.StKey.drag_x] = 85536
 	elif (state[Enums.StKey.frame] == 5):
 		SyncManager.play_sound("SubaruVoice", DPSound, {"bus": "Voice"})
 
