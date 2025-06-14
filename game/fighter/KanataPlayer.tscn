@@ -1,4 +1,4 @@
-[gd_scene load_steps=201 format=3 uid="uid://jn7rbmbm6c2w"]
+[gd_scene load_steps=203 format=3 uid="uid://jn7rbmbm6c2w"]
 
 [ext_resource type="Texture2D" uid="uid://b6hv4pgvya0vc" path="res://game/assets/sprites/kanata/5B/Timeline 1_0001.png" id="1"]
 [ext_resource type="Script" uid="uid://dgsx3duqjaeo5" path="res://game/fighter/PointPlayer.gd" id="2"]
@@ -898,6 +898,35 @@ tracks/1/keys = {
 "values": [Vector2(-60, 120)]
 }
 
+[sub_resource type="Animation" id="Animation_fwiuq"]
+resource_name = "DodgeRoll"
+length = 0.666668
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.116667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("60"), ExtResource("121")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-60, 140)]
+}
+
 [sub_resource type="Animation" id="19"]
 resource_name = "ForwardAirDash"
 length = 0.2
@@ -1391,6 +1420,21 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1e+06),
 "update": 0,
 "values": [Vector2(-50, 160)]
+}
+
+[sub_resource type="Animation" id="Animation_janba"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("60")]
 }
 
 [sub_resource type="Animation" id="21"]
@@ -1975,6 +2019,7 @@ _data = {
 &"CrouchHurt": SubResource("47"),
 &"CrouchParry": SubResource("50"),
 &"CrouchParryCatch": SubResource("57"),
+&"DodgeRoll": SubResource("Animation_fwiuq"),
 &"ForwardAirDash": SubResource("19"),
 &"ForwardWalk": SubResource("38"),
 &"GroundAssist": SubResource("5"),
@@ -1992,6 +2037,7 @@ _data = {
 &"LandingRecovery": SubResource("73"),
 &"Moonkick": SubResource("68"),
 &"PreJump": SubResource("10"),
+&"RESET": SubResource("Animation_janba"),
 &"Run": SubResource("21"),
 &"Skid": SubResource("22"),
 &"StandBlock": SubResource("9"),
@@ -2023,8 +2069,8 @@ script = ExtResource("2")
 material = ExtResource("5")
 position = Vector2(85, -424)
 scale = Vector2(1.428, 1.428)
-texture = ExtResource("64")
-offset = Vector2(200, 50)
+texture = ExtResource("60")
+offset = Vector2(-60, 140)
 
 [node name="Pushbox" type="SGCollisionShape2D" parent="."]
 shape = SubResource("1")

@@ -230,7 +230,7 @@ func _on_network_peer_disconnected(peer_id: int):
 		SyncManager.remove_peer(peer_id)
 		
 		if not peer.spectator:
-			message_label.text = "Disconnected"
+			message_label.text = "Disconnected, Press Back button to exit to lobby"
 			quit_online_hard()
 		
 		if (peer_ready.has(peer_id)):
@@ -371,7 +371,7 @@ func _on_SyncManager_sync_regained() -> void:
 	sync_lost_label.visible = false
 
 func _on_SyncManager_sync_error(msg: String) -> void:
-	message_label.text = "Fatal sync error: " + msg
+	message_label.text = "Fatal sync error: " + msg + " , Press Back button to exit to lobby"
 	sync_lost_label.visible = false
 	
 	sync_clear()
@@ -433,7 +433,7 @@ func input_helper(event):
 			MainMenuMusicControl.stop_music()
 			main_menu()
 	if (event.is_action_pressed("player1_cancel") or event.is_action_pressed("player2_cancel")):
-		if (match_disconnected and Global.NETPLAY_MODE != Global.NETPLAY_MODES.OFFLINE):
+		#if (match_disconnected and Global.NETPLAY_MODE != Global.NETPLAY_MODES.OFFLINE):
 			MainMenuMusicControl.stop_music()
 			main_menu()
 

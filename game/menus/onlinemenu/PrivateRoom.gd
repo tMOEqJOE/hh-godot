@@ -13,6 +13,10 @@ var player_cards_order: Array = []
 var peer_ready: Dictionary = {}
 
 func _ready() -> void:
+	if (OnlineLobby.match_id == ""):
+		print("Lobby is already closed")
+		exit_lobby()
+		return
 	MainMenuMusicControl.play_main_menu_music()
 	Global.NETPLAY_MODE = Global.NETPLAY_MODES.PRIVATE_ROOM
 	SyncManager.network_adaptor = WebRTCNetworkAdaptor.new()
