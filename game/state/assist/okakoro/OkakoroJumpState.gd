@@ -28,13 +28,14 @@ func _init():
 			Enums.StKey.min_damage:2,
 			Enums.StKey.chip_damage:2,
 			Enums.StKey.attack_damage: 40,
-			Enums.StKey.attack_type : Enums.AttackType.Launcher,
-			Enums.StKey.launch_dir_x : -SGFixed.ONE*25,
-			Enums.StKey.launch_dir_y : -SGFixed.ONE*45,
+			Enums.StKey.attack_type : Enums.AttackType.WallBouncer,
+			Enums.StKey.launch_dir_x : -SGFixed.ONE*5,
+			Enums.StKey.launch_dir_y : -SGFixed.ONE*58,
 			Enums.StKey.counter_hit: Enums.AttackType.WallBouncer,
+			Enums.StKey.hitstun: 45,
 			Enums.StKey.counter_hitstun: 60,
-			Enums.StKey.counter_launch_dir_x: -SGFixed.ONE*25,
-			Enums.StKey.counter_launch_dir_y: -SGFixed.ONE*45,
+			Enums.StKey.counter_launch_dir_x: -SGFixed.ONE*1,
+			Enums.StKey.counter_launch_dir_y: -SGFixed.ONE*65,
 			},
 		20 : { 
 			Enums.StKey.Hit1Disable : true,
@@ -59,8 +60,8 @@ func enter(state: Dictionary) -> void:
 func physics_tick(state: Dictionary) -> void:
 	super.physics_tick(state)
 	if (state[Enums.StKey.frame] == 1):
-		state[Enums.StKey.velocity_y] = -SGFixed.ONE*50
-		state[Enums.StKey.velocity_x] = SGFixed.ONE*20
+		state[Enums.StKey.velocity_y] = -SGFixed.ONE*60
+		state[Enums.StKey.velocity_x] = SGFixed.ONE*30
 
 func tag_cancel(state: Dictionary, interpreter: InputInterpreter):
 	super.tag_cancel(state, interpreter)

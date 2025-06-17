@@ -220,8 +220,8 @@ func assist_hurt(scaled:int, hitCount:int, invalid: bool, block: bool, guard: bo
 
 func puppet_hurt(scaled:int, hitCount:int, invalid: bool, block: bool, guard: bool) -> void:
 	# 50 DMG
-	emit_signal("strike_hurt", 55, currentState[Enums.StKey.hitCount], false, false, Enums.GuardType.Mid)
-	currentState[Enums.StKey.sync_rate] -= 40 * 45536
+	emit_signal("strike_hurt", 50, currentState[Enums.StKey.hitCount], false, false, Enums.GuardType.Mid)
+	currentState[Enums.StKey.sync_rate] -= 20 * 45536
 	currentState[Enums.StKey.assist_meter] -= Util.ASSIST_STOCK # 40 * SGFixed.ONE*60
 
 func getAssistMeter() -> int:

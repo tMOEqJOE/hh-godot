@@ -2105,10 +2105,10 @@ scale = Vector2(23.204, 13.8866)
 [node name="Hurtbox1" parent="." instance=ExtResource("6")]
 fixed_position_x = -2545184
 fixed_position_y = -16087936
-fixed_scale_x = 803537
+fixed_scale_x = 1103537
 fixed_scale_y = 1171143
-position = Vector2(-38.8364, -245.482)
-scale = Vector2(12.261, 17.8702)
+position = Vector2(11, -79)
+scale = Vector2(16.8386, 17.8702)
 
 [node name="Hurtbox2" parent="." instance=ExtResource("6")]
 fixed_position_x = -5046271
