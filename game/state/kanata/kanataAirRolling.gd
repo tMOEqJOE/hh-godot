@@ -42,6 +42,9 @@ func physics_tick(state: Dictionary) -> void:
 func gatling_cancel(state: Dictionary, interpreter: InputInterpreter):
 	pass
 
+func jump_cancel(state: Dictionary, interpreter: InputInterpreter):
+	pass
+
 func special_cancel(state: Dictionary, interpreter: InputInterpreter):
 	var next_state = self.persistent_state.state_factory.air_special_cancel(state, interpreter)
 	if (next_state != "" and next_state != "AirKanataRolling"):
