@@ -419,6 +419,7 @@ func exit_lobby():
 	get_tree().change_scene_to_file("res://game/menus/onlinemenu/LoginToServer.tscn")
 	OnlineLobby.leave()
 	OnlineMatch.leave()
+	SyncManager.stop()
 	SyncManager.clear_peers()
 	SyncManager.reset_network_adaptor()
 

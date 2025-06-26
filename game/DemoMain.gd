@@ -178,8 +178,12 @@ func main_menu():
 	sync_clear()
 	if (Global.NETPLAY_MODE == Global.NETPLAY_MODES.PRIVATE_ROOM):
 		quit_online_hard()
-		OnlineLobby.send_status_update(OnlineLobby.CHALLENGE_STATE.IDLE)
-		get_tree().change_scene_to_file("res://game/menus/onlinemenu/PrivateRoom.tscn")
+		if (OnlineLobby.match_id == ""):
+			get_tree().change_scene_to_file("res://game/menus/onlinemenu/OnlineModes.tscn")
+		else:
+			# jank, but should avoid crash (might have to re login to server tho)
+			OnlineLobby.send_status_update(OnlineLobby.CHALLENGE_STATE.IDLE)
+			get_tree().change_scene_to_file("res://game/menus/onlinemenu/PrivateRoom.tscn")
 	elif (Global.NETPLAY_MODE == Global.NETPLAY_MODES.PUBLIC_QUEUE):
 		quit_online_hard()
 		get_tree().change_scene_to_file("res://game/menus/onlinemenu/OnlineModes.tscn")
@@ -433,7 +437,7 @@ func input_helper(event):
 			MainMenuMusicControl.stop_music()
 			main_menu()
 	if (event.is_action_pressed("player1_cancel") or event.is_action_pressed("player2_cancel")):
-		#if (match_disconnected and Global.NETPLAY_MODE != Global.NETPLAY_MODES.OFFLINE):
+		if (match_disconnected and Global.NETPLAY_MODE != Global.NETPLAY_MODES.OFFLINE):
 			MainMenuMusicControl.stop_music()
 			main_menu()
 
