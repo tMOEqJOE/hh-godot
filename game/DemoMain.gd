@@ -178,8 +178,12 @@ func main_menu():
 	sync_clear()
 	if (Global.NETPLAY_MODE == Global.NETPLAY_MODES.PRIVATE_ROOM):
 		quit_online_hard()
-		OnlineLobby.send_status_update(OnlineLobby.CHALLENGE_STATE.IDLE)
-		get_tree().change_scene_to_file("res://game/menus/onlinemenu/PrivateRoom.tscn")
+		if (OnlineLobby.match_id == ""):
+			get_tree().change_scene_to_file("res://game/menus/onlinemenu/OnlineModes.tscn")
+		else:
+			# jank, but should avoid crash (might have to re login to server tho)
+			OnlineLobby.send_status_update(OnlineLobby.CHALLENGE_STATE.IDLE)
+			get_tree().change_scene_to_file("res://game/menus/onlinemenu/PrivateRoom.tscn")
 	elif (Global.NETPLAY_MODE == Global.NETPLAY_MODES.PUBLIC_QUEUE):
 		quit_online_hard()
 		get_tree().change_scene_to_file("res://game/menus/onlinemenu/OnlineModes.tscn")
@@ -230,7 +234,7 @@ func _on_network_peer_disconnected(peer_id: int):
 		SyncManager.remove_peer(peer_id)
 		
 		if not peer.spectator:
-			message_label.text = "Disconnected"
+			message_label.text = "Disconnected, Press Back button to exit to lobby"
 			quit_online_hard()
 		
 		if (peer_ready.has(peer_id)):
@@ -371,7 +375,7 @@ func _on_SyncManager_sync_regained() -> void:
 	sync_lost_label.visible = false
 
 func _on_SyncManager_sync_error(msg: String) -> void:
-	message_label.text = "Fatal sync error: " + msg
+	message_label.text = "Fatal sync error: " + msg + " , Press Back button to exit to lobby"
 	sync_lost_label.visible = false
 	
 	sync_clear()

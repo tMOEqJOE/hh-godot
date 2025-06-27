@@ -538,7 +538,11 @@ func _webrtc_connect_peer(player: Player) -> void:
 			error.emit("Unable to create WebRTC offer")
 
 func _webrtc_disconnect_peer(player: Player) -> void:
+	if (not _webrtc_peers.has(player.session_id)):
+		print("Missing webrtc peer")
+		return 
 	var webrtc_peer = _webrtc_peers[player.session_id]
+	# Looks like webrtc peers has already removed this player, but the players dict still has it
 	webrtc_peer_removed.emit(webrtc_peer, player)
 	webrtc_peer.close()
 	_webrtc_peers.erase(player.session_id)

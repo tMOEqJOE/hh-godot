@@ -39,7 +39,12 @@ func _input(event):
 			get_tree().change_scene_to_file("res://game/menus/onlinemenu/OnlineModes.tscn")
 
 func _on_create_private_room_pressed():
-	OnlineLobby.join_match(Global.nakama_socket, $CanvasLayer/GridContainer/RoomIDField.text)
+	var room_id: String = $CanvasLayer/GridContainer/RoomIDField.text
+	if (room_id.length() > 50):
+		room_id = room_id.substr(0, 50)
+	if (not room_id.ends_with(".")):
+		room_id += "."
+	OnlineLobby.join_match(Global.nakama_socket, room_id)
 
 func _on_paste_button_pressed():
 	$CanvasLayer/GridContainer/RoomIDField.text = DisplayServer.clipboard_get()

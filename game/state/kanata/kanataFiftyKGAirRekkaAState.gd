@@ -77,4 +77,3 @@ func meter_cancel(state: Dictionary, interpreter: InputInterpreter):
 				state[Enums.StKey.cancelState] = "GroundAssistCallSuper"
 			else:
 				state[Enums.StKey.cancelState] = "GroundAssistCall"
-

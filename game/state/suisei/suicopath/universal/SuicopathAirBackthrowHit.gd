@@ -26,7 +26,7 @@ func _init():
 			Enums.StKey.counter_hit: Enums.AttackType.Launcher,
 			Enums.StKey.counter_launch_dir_x: SGFixed.ONE*15,
 			Enums.StKey.counter_launch_dir_y: -SGFixed.ONE*50,
-			Enums.StKey.attack_damage: 40,
+			Enums.StKey.attack_damage: 80,
 			Enums.StKey.hitstun : 80,
 			},
 		22 : { 
@@ -42,7 +42,7 @@ func enter(state: Dictionary) -> void:
 	state[Enums.StKey.velocity_x] = 0
 	state[Enums.StKey.velocity_y] = 0
 	state[Enums.StKey.accel_y] = 0
-	state[Enums.StKey.sync_rate] += SGFixed.ONE*12
+	#state[Enums.StKey.sync_rate] += SGFixed.ONE*12
 	anim.play("AngelAirThrowHit")
 
 # Writing _delta instead of delta here prevents the unused variable warning.
