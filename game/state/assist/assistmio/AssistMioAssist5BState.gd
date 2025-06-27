@@ -24,8 +24,8 @@ func _init():
 			Enums.StKey.Hurt1PosX : 0, Enums.StKey.Hurt1PosY : -12337728,
 			Enums.StKey.Hurt1ScaleX : 1286985, Enums.StKey.Hurt1ScaleY : 1374037,
 			Enums.StKey.attack_damage: 30,
-			Enums.StKey.min_damage:4,
-			Enums.StKey.chip_damage:2,
+			Enums.StKey.min_damage:13,
+			Enums.StKey.chip_damage:6,
 			Enums.StKey.attack_type : Enums.AttackType.Launcher,
 			Enums.StKey.guard: Enums.GuardType.Mid, # Goodbye the rare build with the low
 			Enums.StKey.launch_dir_x: -SGFixed.ONE*12,

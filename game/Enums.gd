@@ -445,6 +445,7 @@ const KanataMoveList: = [
 	["Specials"],
 	["63214A (Air OK)", "50KG Grip Strength", "", "Kanata's signature command grab, steerable left and right"],
 	["63214[A] (Air OK)", "25KG Grip Strength", "", "Alternate version that only launches opponent"],
+	["22X (Air OK)", "Dodge Roll", "", ""],
 	["236X (Air OK)", "Wing Stance", "", "Enter stance with followups"],
 	["236X > A (Air OK)", "Wing Shield", "", ""],
 	["236X > A > A (Air OK)", "Moon Jump", "", "Steerable in 4 directions"],

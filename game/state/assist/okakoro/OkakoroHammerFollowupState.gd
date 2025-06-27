@@ -25,7 +25,14 @@ func _init():
 			Enums.StKey.attack_damage: 30,
 			Enums.StKey.min_damage:2,
 			Enums.StKey.chip_damage:2,
-			Enums.StKey.counter_hit: Enums.AttackType.Strike,
+			Enums.StKey.attack_type : Enums.AttackType.Launcher,
+			Enums.StKey.launch_dir_x : -SGFixed.ONE*10,
+			Enums.StKey.launch_dir_y : -SGFixed.ONE*35,
+			Enums.StKey.counter_hit: Enums.AttackType.GroundBouncer,
+			Enums.StKey.hitstun: 25,
+			Enums.StKey.counter_hitstun: 60,
+			Enums.StKey.counter_launch_dir_x: -SGFixed.ONE*5,
+			Enums.StKey.counter_launch_dir_y: -SGFixed.ONE*10,
 			},
 		12 : { 
 			Enums.StKey.Hit1Disable : true,
@@ -47,5 +54,5 @@ func enter(state: Dictionary) -> void:
 func physics_tick(state: Dictionary) -> void:
 	super.physics_tick(state)
 	if (state[Enums.StKey.frame] == 1):
-		state[Enums.StKey.velocity_x] = SGFixed.ONE*30
+		state[Enums.StKey.velocity_x] = SGFixed.ONE*35
 		state[Enums.StKey.drag_x] = Util.FRICTION

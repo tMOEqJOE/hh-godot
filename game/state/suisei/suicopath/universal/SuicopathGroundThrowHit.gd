@@ -21,7 +21,7 @@ func _init():
 			Enums.StKey.burst_OK: false,
 			Enums.StKey.launch_dir_x : 0,
 			Enums.StKey.launch_dir_y : SGFixed.ONE*70,
-			Enums.StKey.attack_damage: 40,
+			Enums.StKey.attack_damage: 75,
 			Enums.StKey.hitstun : 100,
 			},
 		22 : { 
@@ -35,7 +35,7 @@ func _init():
 func enter(state: Dictionary) -> void:
 	super.enter(state)
 	anim.play("AngelGroundThrowHit")
-	state[Enums.StKey.sync_rate] += Util.GROUND_THROW_SYNC_BOOST
+	#state[Enums.StKey.sync_rate] += Util.GROUND_THROW_SYNC_BOOST
 
 func jump_cancel(state: Dictionary, interpreter: InputInterpreter):
 	pass

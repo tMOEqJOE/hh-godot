@@ -24,7 +24,7 @@ func _init():
 			Enums.StKey.counter_hit: Enums.AttackType.GroundBouncer,
 			Enums.StKey.counter_launch_dir_x: SGFixed.ONE*30,
 			Enums.StKey.counter_launch_dir_y: -SGFixed.ONE*80,
-			Enums.StKey.attack_damage: 30,
+			Enums.StKey.attack_damage: 80,
 			Enums.StKey.hitstun : 60,
 			},
 		22 : { 
@@ -38,7 +38,7 @@ func _init():
 func enter(state: Dictionary) -> void:
 	super.enter(state)
 	anim.play("AngelGroundThrowHit")
-	state[Enums.StKey.sync_rate] += Util.GROUND_THROW_SYNC_BOOST
+	#state[Enums.StKey.sync_rate] += Util.GROUND_THROW_SYNC_BOOST
 
 # Writing _delta instead of delta here prevents the unused variable warning.
 func physics_tick(state: Dictionary) -> void:

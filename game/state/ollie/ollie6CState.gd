@@ -3,7 +3,7 @@ extends "res://game/state/ollie/mainstates/ollieAttackState.gd"
 class_name Ollie6CState
 
 func _init():
-	endFrame = 26
+	endFrame = 28
 	
 	anim_data = {
 		0 : {
@@ -18,7 +18,7 @@ func _init():
 			Enums.StKey.Hurt3PosX : -2555903, Enums.StKey.Hurt3PosY : -20119552,
 			Enums.StKey.Hurt3ScaleX : 786415, Enums.StKey.Hurt3ScaleY : 697920,
 			},
-		22 : {
+		24 : {
 			Enums.StKey.counterOK : true,
 			Enums.StKey.Hit2Disable : false,
 			Enums.StKey.Hit2PosX : 30408704, Enums.StKey.Hit2PosY : -14483458,
@@ -52,7 +52,7 @@ func handle_input(state: Dictionary, interpreter: InputInterpreter) -> void:
 		anim.play("6CLoop")
 		state[Enums.StKey.velocity_x] += SGFixed.ONE*35
 	if (state[Enums.StKey.frame] == endFrame - 2):
-		state[Enums.StKey.frame] = 22
+		state[Enums.StKey.frame] = 24
 	if (not interpreter.is_button_down(Enums.InputFlags.CHold)):
 		change_state.call("Stand6CRelease")
 	super.handle_input(state, interpreter)

@@ -26,16 +26,16 @@ func enter(state: Dictionary) -> void:
 	anim.play("AssistSuperFall")
 
 func handle_input(state: Dictionary, interpreter: InputInterpreter) -> void:
-	if (state[Enums.StKey.velocity_x] > -SGFixed.ONE*20 and 
+	if (state[Enums.StKey.velocity_x] > -SGFixed.ONE*30 and 
 			(interpreter.is_holding_a_direction(Enums.Numpad.N1, state[Enums.StKey.leftface]) or
 			interpreter.is_holding_a_direction(Enums.Numpad.N4, state[Enums.StKey.leftface]) or
 			interpreter.is_holding_a_direction(Enums.Numpad.N7, state[Enums.StKey.leftface]))):
-		state[Enums.StKey.accel_x] = -85336
-	elif (state[Enums.StKey.velocity_x] < SGFixed.ONE*20 and 
+		state[Enums.StKey.accel_x] = -95336
+	elif (state[Enums.StKey.velocity_x] < SGFixed.ONE*30 and 
 			(interpreter.is_holding_a_direction(Enums.Numpad.N3, state[Enums.StKey.leftface]) or
 			interpreter.is_holding_a_direction(Enums.Numpad.N6, state[Enums.StKey.leftface]) or
 			interpreter.is_holding_a_direction(Enums.Numpad.N9, state[Enums.StKey.leftface]))):
-		state[Enums.StKey.accel_x] = 85336
+		state[Enums.StKey.accel_x] = 95336
 	else:
 		state[Enums.StKey.accel_x] = 0
 

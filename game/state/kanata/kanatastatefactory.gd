@@ -80,6 +80,9 @@ func _init():
 		"AirAssistCall2": preload("res://game/state/kanata/kanataAirAssistCall2.gd"),
 		"AirAssistCallSuper": preload("res://game/state/kanata/kanataAirAssistCallSuper.gd"),
 
+		"KanataRolling" : preload("res://game/state/kanata/kanataRolling.gd"),
+		"AirKanataRolling" : preload("res://game/state/kanata/kanataAirRolling.gd"),
+		
 		"KanataWingStance" : preload("res://game/state/kanata/kanataWingStanceState.gd"),
 		"KanataWingStanceA" : preload("res://game/state/kanata/kanataWingStanceAState.gd"),
 		"KanataWingStanceAA" : preload("res://game/state/kanata/kanataWingStanceAAState.gd"),
@@ -150,6 +153,12 @@ func common_idle_transitions(state: Dictionary, interpreter: InputInterpreter) -
 		return "KanataWingStance"
 	elif (interpreter.special_input_button(Enums.SpecialInput.M236, Enums.InputFlags.ADown, state[Enums.StKey.leftface])):
 		return "KanataWingStance"
+	elif (interpreter.special_input_button(Enums.SpecialInput.M22, Enums.InputFlags.CDown, state[Enums.StKey.leftface])):
+		return "KanataRolling"
+	elif (interpreter.special_input_button(Enums.SpecialInput.M22, Enums.InputFlags.BDown, state[Enums.StKey.leftface])):
+		return "KanataRolling"
+	elif (interpreter.special_input_button(Enums.SpecialInput.M22, Enums.InputFlags.ADown, state[Enums.StKey.leftface])):
+		return "KanataRolling"
 	elif (interpreter.is_dashing(true, state[Enums.StKey.leftface])):
 		return "Run"
 	elif (interpreter.is_dashing(false, state[Enums.StKey.leftface])):
@@ -218,7 +227,6 @@ func common_idle_transitions(state: Dictionary, interpreter: InputInterpreter) -
 	else:
 		return "Stand"
 
-
 func common_jump_transitions_default(state: Dictionary, interpreter: InputInterpreter) -> String:
 	if (Global.burst_OK(state, interpreter)):
 		return "Burst"
@@ -253,6 +261,12 @@ func common_jump_transitions_default(state: Dictionary, interpreter: InputInterp
 		return "AirKanataWingStance"
 	elif (interpreter.special_input_button(Enums.SpecialInput.M236, Enums.InputFlags.CDown, state[Enums.StKey.leftface])):
 		return "AirKanataWingStance"
+	elif (interpreter.special_input_button(Enums.SpecialInput.M22, Enums.InputFlags.CDown, state[Enums.StKey.leftface])):
+		return "AirKanataRolling"
+	elif (interpreter.special_input_button(Enums.SpecialInput.M22, Enums.InputFlags.BDown, state[Enums.StKey.leftface])):
+		return "AirKanataRolling"
+	elif (interpreter.special_input_button(Enums.SpecialInput.M22, Enums.InputFlags.ADown, state[Enums.StKey.leftface])):
+		return "AirKanataRolling"
 	elif (interpreter.is_holding_a_direction(Enums.Numpad.N6, state[Enums.StKey.leftface])
 				and interpreter.is_button_down(Enums.InputFlags.CDown)):
 			return "Jump6C"
@@ -281,3 +295,43 @@ func common_jump_transitions_default(state: Dictionary, interpreter: InputInterp
 		return "BackwardMidAirPreJump"
 	else:
 		return ""
+
+func air_special_cancel(state: Dictionary, interpreter: InputInterpreter) -> String:
+	if (state[Enums.StKey.hitStopFrame] >= 0):
+		if (Global.level_2_OK(state) and interpreter.special_input_button(Enums.SpecialInput.M214, Enums.InputFlags.BDown, state[Enums.StKey.leftface])):
+			return "KanataAirWingHazard"
+		elif (interpreter.special_input_button(Enums.SpecialInput.M63214, Enums.InputFlags.ADown, state[Enums.StKey.leftface])):
+			return "KanataAirFiftyKGWhiff"
+		elif (interpreter.special_input_button(Enums.SpecialInput.M236, Enums.InputFlags.ADown, state[Enums.StKey.leftface])):
+			return "AirKanataWingStance"
+		elif (interpreter.special_input_button(Enums.SpecialInput.M236, Enums.InputFlags.BDown, state[Enums.StKey.leftface])):
+			return "AirKanataWingStance"
+		elif (interpreter.special_input_button(Enums.SpecialInput.M236, Enums.InputFlags.CDown, state[Enums.StKey.leftface])):
+			return "AirKanataWingStance"
+		elif (interpreter.special_input_button(Enums.SpecialInput.M22, Enums.InputFlags.CDown, state[Enums.StKey.leftface])):
+			return "AirKanataRolling"
+		elif (interpreter.special_input_button(Enums.SpecialInput.M22, Enums.InputFlags.BDown, state[Enums.StKey.leftface])):
+			return "AirKanataRolling"
+		elif (interpreter.special_input_button(Enums.SpecialInput.M22, Enums.InputFlags.ADown, state[Enums.StKey.leftface])):
+			return "AirKanataRolling"
+	return ""
+
+func special_cancel(state: Dictionary, interpreter: InputInterpreter) -> String:
+	if (state[Enums.StKey.hitStopFrame] >= 0):
+		if (Global.level_3_OK(state) and interpreter.special_input_button(Enums.SpecialInput.M63214, Enums.InputFlags.CDown, state[Enums.StKey.leftface])):
+			return "KanataSuperFiftyKGWhiff"
+		elif (interpreter.special_input_button(Enums.SpecialInput.M63214, Enums.InputFlags.ADown, state[Enums.StKey.leftface])):
+			return "KanataFiftyKGWhiff"
+		elif (interpreter.special_input_button(Enums.SpecialInput.M236, Enums.InputFlags.CDown, state[Enums.StKey.leftface])):
+			return "KanataWingStance"
+		elif (interpreter.special_input_button(Enums.SpecialInput.M236, Enums.InputFlags.BDown, state[Enums.StKey.leftface])):
+			return "KanataWingStance"
+		elif (interpreter.special_input_button(Enums.SpecialInput.M236, Enums.InputFlags.ADown, state[Enums.StKey.leftface])):
+			return "KanataWingStance"
+		elif (interpreter.special_input_button(Enums.SpecialInput.M22, Enums.InputFlags.CDown, state[Enums.StKey.leftface])):
+			return "KanataRolling"
+		elif (interpreter.special_input_button(Enums.SpecialInput.M22, Enums.InputFlags.BDown, state[Enums.StKey.leftface])):
+			return "KanataRolling"
+		elif (interpreter.special_input_button(Enums.SpecialInput.M22, Enums.InputFlags.ADown, state[Enums.StKey.leftface])):
+			return "KanataRolling"
+	return ""

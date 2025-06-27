@@ -38,7 +38,7 @@ func _init():
 			Enums.StKey.attack_type : Enums.AttackType.Launcher,
 			Enums.StKey.launch_dir_x: -SGFixed.ONE*12,
 			Enums.StKey.launch_dir_y: -SGFixed.ONE*30,
-			Enums.StKey.attack_damage: 58,
+			Enums.StKey.attack_damage: 54,
 			Enums.StKey.hitstun: 60,
 			Enums.StKey.counter_hit: Enums.AttackType.GroundBouncer,
 			Enums.StKey.counter_hitstun: 60,

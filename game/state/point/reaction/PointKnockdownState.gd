@@ -13,7 +13,7 @@ func _init():
 			Enums.StKey.Hurt2Disable : true,
 			Enums.StKey.Hurt3Disable : true,
 			Enums.StKey.Hurt1PosX : 0, Enums.StKey.Hurt1PosY : -3145729,
-			Enums.StKey.Hurt1ScaleX : 1310325, Enums.StKey.Hurt1ScaleY : -514394,
+			Enums.StKey.Hurt1ScaleX : 1310325, Enums.StKey.Hurt1ScaleY : 514394,
 			Enums.StKey.Summon: "knockdowndust",
 			},
 	}

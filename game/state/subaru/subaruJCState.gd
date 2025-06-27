@@ -37,7 +37,7 @@ func _init():
 			Enums.StKey.Hurt3PosX : 4259840, Enums.StKey.Hurt3PosY : -12845055,
 			Enums.StKey.Hurt3ScaleX : 608053, Enums.StKey.Hurt3ScaleY : 670102,
 			Enums.StKey.guard: Enums.GuardType.High,
-			Enums.StKey.attack_damage: 60,
+			Enums.StKey.attack_damage: 50,
 			Enums.StKey.counter_hit: Enums.AttackType.Strike,
 			Enums.StKey.counter_hitstun: 10,
 			},

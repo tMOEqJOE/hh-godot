@@ -36,18 +36,10 @@ func jump_cancel(state: Dictionary, interpreter: InputInterpreter):
 		elif (interpreter.is_tapping_direction(Enums.Numpad.N7, state[Enums.StKey.leftface])):
 			state[Enums.StKey.cancelState] = "BackwardMidAirPreJump"
 
-func special_cancel(state: Dictionary, interpreter: InputInterpreter):
-	if (state[Enums.StKey.hitStopFrame] >= 0):
-		if (level_2_OK(state) and interpreter.special_input_button(Enums.SpecialInput.M214, Enums.InputFlags.BDown, state[Enums.StKey.leftface])):
-			state[Enums.StKey.cancelState] = "KanataAirWingHazard"
-		elif (interpreter.special_input_button(Enums.SpecialInput.M63214, Enums.InputFlags.ADown, state[Enums.StKey.leftface])):
-			state[Enums.StKey.cancelState] = "KanataAirFiftyKGWhiff"
-		elif (interpreter.special_input_button(Enums.SpecialInput.M236, Enums.InputFlags.ADown, state[Enums.StKey.leftface])):
-			state[Enums.StKey.cancelState] = "AirKanataWingStance"
-		elif (interpreter.special_input_button(Enums.SpecialInput.M236, Enums.InputFlags.BDown, state[Enums.StKey.leftface])):
-			state[Enums.StKey.cancelState] = "AirKanataWingStance"
-		elif (interpreter.special_input_button(Enums.SpecialInput.M236, Enums.InputFlags.CDown, state[Enums.StKey.leftface])):
-			state[Enums.StKey.cancelState] = "AirKanataWingStance"
+func special_cancel(state: Dictionary, interpreter: InputInterpreter) -> void:
+	var next_state = self.persistent_state.state_factory.air_special_cancel(state, interpreter)
+	if (next_state != ""):
+		state[Enums.StKey.cancelState] = next_state
 
 func gatling_cancel(state: Dictionary, interpreter: InputInterpreter):
 	if (state[Enums.StKey.hitStopFrame] >= 0):
