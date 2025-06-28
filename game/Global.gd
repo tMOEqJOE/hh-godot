@@ -1,6 +1,6 @@
 extends Node
 
-const BATTLE_ENGINE_VERSION = "HHv0.7.0005"
+const BATTLE_ENGINE_VERSION = "HHv0.7.0006"
 
 func get_battle_version() -> String:
 	if (len(Build.INTERNAL_BATTLE_ENGINE_KEY) < 50):
@@ -243,6 +243,7 @@ const CHHitSound = preload("res://game/assets/sfx/CHHit.wav")
 
 const BlockLV3Sound = preload("res://game/assets/sfx/BlockLvl2.wav")
 const JustBlockSound = preload("res://game/assets/sfx/RomanCancel.wav")
+const PushBlockSound = preload("res://game/assets/sfx/PushBlock.wav")
 const ParrySound = preload("res://game/assets/sfx/Parry.wav")
 
 # Point Player effects

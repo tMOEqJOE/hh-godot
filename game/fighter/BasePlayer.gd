@@ -520,7 +520,7 @@ func normal_strike_block(opponent_attack: Dictionary, hit_data: Dictionary) -> v
 	currentState[Enums.StKey.hitstun] = opponent_attack[Enums.StKey.blockstun]
 	currentState[Enums.StKey.hitStopFrame] = opponent_attack[Enums.StKey.hitstop]
 	if (currentState[Enums.StKey.super_meter] > 0 and input_interpreter.is_push_blocking()):
-		SyncManager.play_sound("block1", Global.BlockLV3Sound, {"bus": "Sound"})
+		SyncManager.play_sound("pushblock1", Global.PushBlockSound, {"bus": "Sound"})
 		var g_position = get_global_fixed_position()
 		SyncManager.spawn("PushBlockVFX", get_parent(), Global.PushBlockVFX,
 		{
@@ -584,7 +584,8 @@ func just_strike_block(opponent_attack: Dictionary, hit_data: Dictionary) -> voi
 	currentState[Enums.StKey.hitstun] = opponent_attack[Enums.StKey.blockstun]
 	currentState[Enums.StKey.hitStopFrame] = opponent_attack[Enums.StKey.hitstop]
 	if (currentState[Enums.StKey.super_meter] > 0 and input_interpreter.is_push_blocking()):
-		SyncManager.play_sound("justblock", Global.JustBlockSound, {"bus": "Sound"})
+		SyncManager.play_sound("pushblock1", Global.PushBlockSound, {"bus": "Sound"})
+		SyncManager.play_sound("just", Global.JustBlockSound, {"bus": "Sound"})
 		var g_position = get_global_fixed_position()
 		SyncManager.spawn("JustPushBlockVFX", get_parent(), Global.JustPushBlockVFX,
 		{
@@ -600,7 +601,8 @@ func just_strike_block(opponent_attack: Dictionary, hit_data: Dictionary) -> voi
 		hit_data["hitType"] = Enums.HitType.JustPushBlock
 		emit_signal("strike_hurt", 0, currentState[Enums.StKey.hitCount], false, true, opponent_attack[Enums.StKey.guard])
 	else:
-		SyncManager.play_sound("justblock", Global.JustBlockSound, {"bus": "Sound"})
+		SyncManager.play_sound("block1", Global.BlockLV3Sound, {"bus": "Sound"})
+		SyncManager.play_sound("just", Global.JustBlockSound, {"bus": "Sound"})
 		var g_position = get_global_fixed_position()
 		SyncManager.spawn("JustBlockVFX", get_parent(), Global.JustBlockVFX,
 		{
