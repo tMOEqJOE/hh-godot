@@ -67,6 +67,9 @@ func enter(state: Dictionary) -> void:
 
 func physics_tick(state: Dictionary) -> void:
 	super.physics_tick(state)
+	if (state[Enums.StKey.frame] == 2):
+		SyncManager.play_sound("throwcatch", Global.ThrowCatchSound, {"bus": "Sound"})
+
 	if (state[Enums.StKey.frame] >= 30 and state[Enums.StKey.frame] <= 60):
 		state[Enums.StKey.velocity_x] = 0
 		state[Enums.StKey.velocity_y] = -SGFixed.ONE*300
