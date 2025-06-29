@@ -14,6 +14,15 @@ func _init():
 			Enums.StKey.Hurt1PosX : -262144, Enums.StKey.Hurt1PosY : -7471104,
 			Enums.StKey.Hurt1ScaleX : 522078, Enums.StKey.Hurt1ScaleY : 1436954,
 			},
+		6 : {
+			Enums.StKey.Summon : "rundust",
+			Enums.StKey.counterOK : true,
+			Enums.StKey.Hit1Disable : true,
+			Enums.StKey.Hit2Disable : true,
+			Enums.StKey.Hurt1Disable : false,Enums.StKey.Hurt2Disable : true,Enums.StKey.Hurt3Disable : true,
+			Enums.StKey.Hurt1PosX : -262144, Enums.StKey.Hurt1PosY : -7471104,
+			Enums.StKey.Hurt1ScaleX : 522078, Enums.StKey.Hurt1ScaleY : 1436954,
+			},
 		10 : {
 			Enums.StKey.counterOK : true,
 			Enums.StKey.Hit1Disable : false,

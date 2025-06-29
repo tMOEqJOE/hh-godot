@@ -29,6 +29,8 @@ func enter(state: Dictionary) -> void:
 
 func physics_tick(state: Dictionary) -> void:
 	super.physics_tick(state)
+	if (state[Enums.StKey.frame] == 2):
+		SyncManager.play_sound("skid", Global.SkidSound, {"bus": "Sound"})
 	state[Enums.StKey.sync_rate] -= SGFixed.mul(Util.fixed_abs(state[Enums.StKey.velocity_x]), 5536)
 	state[Enums.StKey.assist_meter] -= SGFixed.ONE*220
 

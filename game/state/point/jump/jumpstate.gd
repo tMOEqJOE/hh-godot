@@ -20,6 +20,7 @@ func enter(state: Dictionary) -> void:
 	state[Enums.StKey.velocity_y] = JUMP_SPEED
 	state[Enums.StKey.accel_y] = Util.GRAVITY
 	anim.play("Jump")
+	SyncManager.play_sound("jump", Global.JumpSound, {"bus": "Sound"})
 
 func physics_tick(state: Dictionary) -> void:
 	super.physics_tick(state)

@@ -26,7 +26,8 @@ func enter(state: Dictionary) -> void:
 func physics_tick(state: Dictionary) -> void:
 	super.physics_tick(state)
 	state[Enums.StKey.sync_rate] += 4000
-	if (state[Enums.StKey.frame] >= 8):
+	if (state[Enums.StKey.frame] >= 12):
+		SyncManager.play_sound("step", Global.StepSound, {"bus": "Sound"})
 		state[Enums.StKey.frame] = 1
 
 func handle_input(state: Dictionary, interpreter: InputInterpreter) -> void:

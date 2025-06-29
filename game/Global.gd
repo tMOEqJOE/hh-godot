@@ -246,6 +246,12 @@ const JustBlockSound = preload("res://game/assets/sfx/RomanCancel.wav")
 const PushBlockSound = preload("res://game/assets/sfx/PushBlock.wav")
 const ParrySound = preload("res://game/assets/sfx/Parry.wav")
 
+const StepSound = preload("res://game/assets/sfx/Step.wav")
+const SkidSound = preload("res://game/assets/sfx/Skid.wav")
+const JumpSound = preload("res://game/assets/sfx/JumpPaper.wav")
+const SuperJumpSound = preload("res://game/assets/sfx/SuperJumpPaper.wav")
+const ThrowCatchSound = preload("res://game/assets/sfx/ThrowCatch.wav")
+
 # Point Player effects
 const BurstVFX = preload("res://game/fighter/effects/Burst.tscn")
 const RCVFX = preload("res://game/fighter/effects/RadicalCancel.tscn")

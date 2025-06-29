@@ -29,6 +29,8 @@ func enter(state: Dictionary) -> void:
 func physics_tick(state: Dictionary) -> void:
 	super.physics_tick(state)
 	state[Enums.StKey.sync_rate] += 8000
+	if (state[Enums.StKey.frame] == 2):
+		SyncManager.play_sound("skid", Global.SkidSound, {"bus": "Sound"})
 	if (state[Enums.StKey.frame] >= 3 and state[Enums.StKey.frame] < 15):
 		state[Enums.StKey.velocity_x] = Util.fixed_max(SGFixed.ONE*20, state[Enums.StKey.velocity_x])
 		state[Enums.StKey.drag_x] = SGFixed.ONE*1

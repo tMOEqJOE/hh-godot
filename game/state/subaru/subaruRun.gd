@@ -33,7 +33,8 @@ func physics_tick(state: Dictionary) -> void:
 	elif (negative_penalty(state)):
 		state[Enums.StKey.sync_rate] -= SGFixed.mul(state[Enums.StKey.velocity_x], 1036)
 
-	if (state[Enums.StKey.frame] >= 8):
+	if (state[Enums.StKey.frame] >= 12):
+		SyncManager.play_sound("step", Global.StepSound, {"bus": "Sound"})
 		state[Enums.StKey.frame] = 1
 	if (state[Enums.StKey.velocity_x] > SGFixed.ONE*49):
 		state[Enums.StKey.velocity_x] = SGFixed.ONE*49
