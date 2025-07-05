@@ -1,4 +1,4 @@
-[gd_scene load_steps=316 format=3 uid="uid://bmn2buuipdmkn"]
+[gd_scene load_steps=315 format=3 uid="uid://bmn2buuipdmkn"]
 
 [ext_resource type="Texture2D" uid="uid://4lo4cemr486p" path="res://game/assets/sprites/suisei/Idle/Timeline 1_0000.png" id="1"]
 [ext_resource type="Script" uid="uid://dctxuxh3f2d6a" path="res://game/fighter/SuiseiPlayer.gd" id="2"]
@@ -132,7 +132,6 @@
 [ext_resource type="Texture2D" uid="uid://xww48r6qfg6e" path="res://game/assets/sprites/suisei/5B/Timeline 1_0001.png" id="140"]
 [ext_resource type="Texture2D" uid="uid://dndmb7htq0lnr" path="res://game/assets/sprites/suisei/5B/Timeline 1_0002.png" id="141"]
 [ext_resource type="Texture2D" uid="uid://uuqn3kvrrbqr" path="res://game/assets/sprites/suisei/5B/Timeline 1_0003.png" id="142"]
-[ext_resource type="Texture2D" uid="uid://dvyfwkmx6khj7" path="res://game/assets/sprites/suisei/5B/Timeline 1_0004.png" id="143"]
 [ext_resource type="Texture2D" uid="uid://cxfggbj0i1qew" path="res://game/assets/sprites/suisei/66B/Timeline 1_0001.png" id="144"]
 [ext_resource type="Texture2D" uid="uid://en5shav8sndh" path="res://game/assets/sprites/suisei/StandParry/Timeline 1_0000.png" id="153"]
 [ext_resource type="Texture2D" uid="uid://si3367cg8rha" path="res://game/assets/sprites/suicopath/GroundAssistCall/Timeline 1_0000.png" id="154"]
@@ -2895,10 +2894,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.133333, 0.2, 0.316667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.116667, 0.2, 0.266667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("196"), ExtResource("140"), ExtResource("141"), ExtResource("142"), ExtResource("143")]
+"values": [ExtResource("196"), ExtResource("140"), ExtResource("141"), ExtResource("142")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -3112,7 +3111,7 @@ material = ExtResource("5")
 position = Vector2(4, -193)
 scale = Vector2(1.428, 1.428)
 texture = ExtResource("246")
-offset = Vector2(0, -30)
+offset = Vector2(0, -90)
 
 [node name="Pushbox" type="SGCollisionShape2D" parent="."]
 shape = SubResource("1")
