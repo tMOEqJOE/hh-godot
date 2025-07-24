@@ -1,4 +1,4 @@
-[gd_scene load_steps=315 format=3 uid="uid://bmn2buuipdmkn"]
+[gd_scene load_steps=311 format=3 uid="uid://bmn2buuipdmkn"]
 
 [ext_resource type="Texture2D" uid="uid://4lo4cemr486p" path="res://game/assets/sprites/suisei/Idle/Timeline 1_0000.png" id="1"]
 [ext_resource type="Script" uid="uid://dctxuxh3f2d6a" path="res://game/fighter/SuiseiPlayer.gd" id="2"]
@@ -87,15 +87,10 @@
 [ext_resource type="Texture2D" uid="uid://xw7bw2kktnms" path="res://game/assets/sprites/subaru/Knockdown/Timeline 1_0006.png" id="100"]
 [ext_resource type="Texture2D" uid="uid://dntc3e2svaq6x" path="res://game/assets/sprites/subaru/Knockdown/Timeline 1_0008.png" id="101"]
 [ext_resource type="Texture2D" uid="uid://rvslc2kl8i20" path="res://game/assets/sprites/subaru/Knockdown/Timeline 1_0009.png" id="102"]
-[ext_resource type="Texture2D" uid="uid://dyb3pv6fg1s5e" path="res://game/assets/sprites/subaru/Knockdown/Timeline 1_0004.png" id="103"]
 [ext_resource type="Texture2D" uid="uid://drdjtqgnl4rxo" path="res://game/assets/sprites/suisei/ForwardWalk/Timeline 1_0000.png" id="103_haa14"]
-[ext_resource type="Texture2D" uid="uid://dhp6bgli5bw0o" path="res://game/assets/sprites/subaru/Knockdown/Timeline 1_0000.png" id="104"]
 [ext_resource type="Texture2D" uid="uid://pfwua4joy5iu" path="res://game/assets/sprites/suisei/ForwardWalk/Timeline 1_0001.png" id="104_1qreq"]
-[ext_resource type="Texture2D" uid="uid://dq6fa1o1xw7x1" path="res://game/assets/sprites/subaru/Knockdown/Timeline 1_0002.png" id="105"]
 [ext_resource type="Texture2D" uid="uid://yxw3sfhc36ai" path="res://game/assets/sprites/suisei/ForwardWalk/Timeline 1_0002.png" id="105_u5g2n"]
-[ext_resource type="Texture2D" uid="uid://bok5adfg75ip6" path="res://game/assets/sprites/subaru/Knockdown/Timeline 1_0001.png" id="106"]
 [ext_resource type="Texture2D" uid="uid://buc6gtp2ae0ee" path="res://game/assets/sprites/suisei/ForwardWalk/Timeline 1_0003.png" id="106_ntrx0"]
-[ext_resource type="Texture2D" uid="uid://bodlcn32kqhse" path="res://game/assets/sprites/subaru/Knockdown/Timeline 1_0003.png" id="107"]
 [ext_resource type="Texture2D" uid="uid://d2maryiinubtj" path="res://game/assets/sprites/suicopath/AirParry/Timeline 1_0000.png" id="108"]
 [ext_resource type="Texture2D" uid="uid://4bw6d2jvu68r" path="res://game/assets/sprites/subaru/GroundThrowWhiff/Timeline 1_0003.png" id="109"]
 [ext_resource type="Texture2D" uid="uid://chntgxnkp1rjh" path="res://game/assets/sprites/subaru/AirTech/Timeline 1_0003.png" id="110"]
@@ -111,6 +106,7 @@
 [ext_resource type="Texture2D" uid="uid://cki6n5rk5d8vv" path="res://game/assets/sprites/subaru/Burst/Timeline 1_0001.png" id="117"]
 [ext_resource type="Texture2D" uid="uid://bogppe3ngmqe0" path="res://game/assets/sprites/subaru/Burst/Timeline 1_0004.png" id="118"]
 [ext_resource type="Texture2D" uid="uid://bp7ba57rna5hw" path="res://game/assets/sprites/suicopath/cB/Timeline 1_0002.png" id="119"]
+[ext_resource type="Texture2D" uid="uid://b2im4swmhuqo1" path="res://game/assets/sprites/suisei/Knockdown/Timeline 1_0000.png" id="119_lvk85"]
 [ext_resource type="Texture2D" uid="uid://cbsjev7vnb2gy" path="res://game/assets/sprites/suisei/j6B/Timeline 1_0000.png" id="120"]
 [ext_resource type="Texture2D" uid="uid://bi3egqfojuwwy" path="res://game/assets/sprites/suicopath/cB/Timeline 1_0000.png" id="121"]
 [ext_resource type="Texture2D" uid="uid://bormpfhjlt30l" path="res://game/assets/sprites/suisei/GatoKick/Timeline 1_0001.png" id="122"]
@@ -2066,10 +2062,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 0.1, 0.166667, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.116667),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ExtResource("104"), ExtResource("106"), ExtResource("105"), ExtResource("107"), ExtResource("103")]
+"values": [ExtResource("119_lvk85"), ExtResource("119_lvk85")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -2081,7 +2077,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1e+06),
 "update": 0,
-"values": [Vector2(0, -30)]
+"values": [Vector2(0, 20)]
 }
 
 [sub_resource type="Animation" id="127"]
@@ -3111,7 +3107,7 @@ material = ExtResource("5")
 position = Vector2(4, -193)
 scale = Vector2(1.428, 1.428)
 texture = ExtResource("246")
-offset = Vector2(0, -90)
+offset = Vector2(0, 20)
 
 [node name="Pushbox" type="SGCollisionShape2D" parent="."]
 shape = SubResource("1")
