@@ -1,4 +1,4 @@
-extends Label
+extends ComboCounter
 
 const TOTAL_TIME:int = 6000 # 6000
 const VISUAL_TOTAL_TIME:int = 100
@@ -14,11 +14,16 @@ enum State {
 signal round_timeout ()
 
 func _init():
-	self.visible_characters = 4
+	#self.visible_characters = 4
+	show_counter()
+	#get_node("Counter/Count").visible = false
 	stopped = true
 	currentTime = TOTAL_TIME
-	display_time()
+	#display_time()
 	add_to_group("network_sync")
+
+func _ready() -> void:
+	change_color(Color("ffffff"))
 
 func reset_to_game_start():
 	stopped = true
@@ -62,4 +67,4 @@ func timeout() -> void:
 	stopped = true
 
 func display_time():
-	self.text = str(VISUAL_TOTAL_TIME * (currentTime / float(TOTAL_TIME)))
+	display_text(int(10 * VISUAL_TOTAL_TIME * (currentTime / float(TOTAL_TIME))))

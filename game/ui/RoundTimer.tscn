@@ -1,0 +1,186 @@
+[gd_scene load_steps=20 format=3 uid="uid://dlpdov1eot246"]
+
+[ext_resource type="Script" uid="uid://ce5j5u6wh5u1u" path="res://game/ui/RoundTimer.gd" id="1_fmtav"]
+[ext_resource type="Texture2D" uid="uid://tq7jpwpmpnav" path="res://game/assets/sprites/Empty_0000.png" id="2_fmtav"]
+[ext_resource type="Texture2D" uid="uid://bcrich145mfm" path="res://game/assets/sprites/VFX/InvalidComboFlash/Timeline 1_0000.png" id="3_oc5wp"]
+[ext_resource type="Texture2D" uid="uid://ceh4xuroewj1y" path="res://game/assets/sprites/VFX/InvalidComboFlash/Timeline 1_0001.png" id="4_1q0sf"]
+[ext_resource type="Texture2D" uid="uid://jstopqw15kja" path="res://game/assets/sprites/VFX/InvalidComboFlash/Timeline 1_0002.png" id="5_co4un"]
+[ext_resource type="Texture2D" uid="uid://bk0gb2g7ol4aa" path="res://game/assets/sprites/VFX/InvalidComboFlash/Timeline 1_0003.png" id="6_x8qyr"]
+[ext_resource type="Texture2D" uid="uid://cob4qjlv0uhpb" path="res://game/assets/sprites/VFX/InvalidComboFlash/Timeline 1_0004.png" id="7_42uc0"]
+[ext_resource type="Script" uid="uid://dv11pt6y7wasy" path="res://addons/godot-rollback-netcode/NetworkAnimationPlayer.gd" id="8_ic4r4"]
+[ext_resource type="Texture2D" uid="uid://bj5tsnrtee8bo" path="res://game/assets/sprites/UI/Meters/Combo/Timeline 1_0010.png" id="9_5ftrn"]
+[ext_resource type="Texture2D" uid="uid://bp4j4hy8p3y40" path="res://game/assets/sprites/UI/Meters/Combo/Timeline 1_0009.png" id="10_1du3x"]
+[ext_resource type="Texture2D" uid="uid://btthaxjs2gwqh" path="res://game/assets/sprites/UI/Meters/Combo/Timeline 1_0011.png" id="10_fmtav"]
+
+[sub_resource type="Animation" id="1"]
+resource_name = "CountHit"
+length = 0.366667
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Counter:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0166667, 0.05),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 0.8), Vector2(0.88, 1.2), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_gnvgj"]
+resource_name = "Invalid"
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("X:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.133333, 0.2, 0.266667, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_oc5wp"), ExtResource("4_1q0sf"), ExtResource("5_co4un"), ExtResource("6_x8qyr"), ExtResource("7_42uc0"), ExtResource("2_fmtav")]
+}
+
+[sub_resource type="Animation" id="Animation_3dghh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Counter:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("X:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_fmtav")]
+}
+
+[sub_resource type="Animation" id="2"]
+resource_name = "Resting"
+length = 0.0333334
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("X:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_fmtav")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n4sq1"]
+_data = {
+&"CountHit": SubResource("1"),
+&"Invalid": SubResource("Animation_gnvgj"),
+&"RESET": SubResource("Animation_3dghh"),
+&"Resting": SubResource("2")
+}
+
+[sub_resource type="Animation" id="Animation_7wqtw"]
+resource_name = "CountHit"
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Counter:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 0.8), Vector2(1, 1.2), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_v4xqn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Counter:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 0.8)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qbq3o"]
+_data = {
+&"CountHit": SubResource("Animation_7wqtw"),
+&"RESET": SubResource("Animation_v4xqn")
+}
+
+[node name="RoundTimer" type="Node2D"]
+script = ExtResource("1_fmtav")
+
+[node name="NetworkAnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_n4sq1")
+}
+script = ExtResource("8_ic4r4")
+
+[node name="CounterAnimation" type="AnimationPlayer" parent="."]
+root_node = NodePath("../X")
+libraries = {
+&"": SubResource("AnimationLibrary_qbq3o")
+}
+script = ExtResource("8_ic4r4")
+metadata/_custom_type_script = "uid://dv11pt6y7wasy"
+
+[node name="X" type="Sprite2D" parent="."]
+position = Vector2(13.2202, 3.34536)
+texture = ExtResource("2_fmtav")
+
+[node name="DropShadow" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(6, -68)
+scale = Vector2(9.72712, 2.13992)
+texture = ExtResource("10_fmtav")
+
+[node name="Counter" type="Node2D" parent="."]
+scale = Vector2(1, 0.8)
+
+[node name="Count" type="Sprite2D" parent="Counter"]
+visible = false
+position = Vector2(111, 6.69072)
+texture = ExtResource("9_5ftrn")
+
+[node name="Digit3" type="Sprite2D" parent="Counter"]
+position = Vector2(-42, 3.91528)
+texture = ExtResource("10_1du3x")
+
+[node name="Digit2" type="Sprite2D" parent="Counter"]
+position = Vector2(3, 3.91528)
+texture = ExtResource("10_1du3x")
+
+[node name="Digit1" type="Sprite2D" parent="Counter"]
+position = Vector2(55, 3.34536)
+texture = ExtResource("10_1du3x")
+
+[node name="Dot" type="Sprite2D" parent="Counter"]
+position = Vector2(26, 8)
+texture = ExtResource("10_fmtav")
