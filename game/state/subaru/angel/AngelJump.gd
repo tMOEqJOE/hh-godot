@@ -24,6 +24,7 @@ func enter(state: Dictionary) -> void:
 	state[Enums.StKey.velocity_y] = JUMP_SPEED
 	state[Enums.StKey.accel_y] = Util.GRAVITY
 	anim.play("AngelJump")
+	SyncManager.play_sound("jump", Global.JumpSound, {"bus": "Sound"})
 
 func handle_input(state: Dictionary, interpreter: InputInterpreter) -> void:
 	common_jump_transitions_default(state, interpreter)

@@ -291,6 +291,22 @@ func super_jump() -> bool:
 				return true
 			moveOK = input[moveIndex] == $InputSource.get_input(hist_index) & vertical_flags
 		hist_index += 1
+	return _super_jump_short_cut()
+
+func _super_jump_short_cut() -> bool:
+	# Spaghetti, but there are some strange bugs when trying to refactor superjump function
+	var time:int = Enums.SpecialInput.superJumpShortCut[0]
+	var input = Enums.SpecialInput.superJumpShortCut
+	var hist_index = 0 # index in input history, 0 is most recent
+	var moveIndex = 1
+	var moveOK:bool = input[moveIndex] == $InputSource.get_input(hist_index) & vertical_flags
+	while (moveOK and hist_index < time):
+		if (input[moveIndex] != $InputSource.get_input(hist_index) & vertical_flags):
+			moveIndex += 1
+			if (moveIndex >= len(input)-1):
+				return true
+			moveOK = input[moveIndex] == $InputSource.get_input(hist_index) & vertical_flags
+		hist_index += 1
 	return false
 
 func clear_history():

@@ -1,64 +1,173 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=19 format=3 uid="uid://5gsrso7qn0ff"]
 
-[ext_resource path="res://game/ui/ComboCounter.gd" type="Script" id=1]
-[ext_resource path="res://addons/godot-rollback-netcode/NetworkAnimationPlayer.gd" type="Script" id=2]
-[ext_resource path="res://game/assets/sprites/VFX/InvalidComboFlash/Timeline 1_0004.png" type="Texture2D" id=3]
-[ext_resource path="res://game/assets/sprites/VFX/InvalidComboFlash/Timeline 1_0000.png" type="Texture2D" id=4]
-[ext_resource path="res://game/assets/sprites/VFX/InvalidComboFlash/Timeline 1_0001.png" type="Texture2D" id=5]
-[ext_resource path="res://game/assets/sprites/VFX/InvalidComboFlash/Timeline 1_0003.png" type="Texture2D" id=6]
-[ext_resource path="res://game/assets/sprites/VFX/InvalidComboFlash/Timeline 1_0002.png" type="Texture2D" id=7]
-[ext_resource path="res://game/assets/sprites/Empty_0000.png" type="Texture2D" id=8]
+[ext_resource type="Script" uid="uid://0rc6xhuk6el3" path="res://game/ui/ComboCounter.gd" id="1"]
+[ext_resource type="Script" uid="uid://dv11pt6y7wasy" path="res://addons/godot-rollback-netcode/NetworkAnimationPlayer.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://cob4qjlv0uhpb" path="res://game/assets/sprites/VFX/InvalidComboFlash/Timeline 1_0004.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://bcrich145mfm" path="res://game/assets/sprites/VFX/InvalidComboFlash/Timeline 1_0000.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://ceh4xuroewj1y" path="res://game/assets/sprites/VFX/InvalidComboFlash/Timeline 1_0001.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://bk0gb2g7ol4aa" path="res://game/assets/sprites/VFX/InvalidComboFlash/Timeline 1_0003.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://jstopqw15kja" path="res://game/assets/sprites/VFX/InvalidComboFlash/Timeline 1_0002.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://tq7jpwpmpnav" path="res://game/assets/sprites/Empty_0000.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://bj5tsnrtee8bo" path="res://game/assets/sprites/UI/Meters/Combo/Timeline 1_0010.png" id="9_7wqtw"]
+[ext_resource type="Texture2D" uid="uid://bp4j4hy8p3y40" path="res://game/assets/sprites/UI/Meters/Combo/Timeline 1_0009.png" id="9_lpo3l"]
 
-[sub_resource type="Animation" id=1]
-resource_name = "Invalid"
-length = 0.366667
-step = 0.0166667
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PackedFloat32Array( 0, 0.1, 0.15, 0.216667, 0.283333, 0.35 ),
-"transitions": PackedFloat32Array( 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 3 ), null ]
-}
-
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id="2"]
 resource_name = "Resting"
 length = 0.0333334
 step = 0.0166667
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
+tracks/0/path = NodePath("X:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array( 0 ),
-"transitions": PackedFloat32Array( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ ExtResource( 8 ) ]
+"values": [ExtResource("8")]
 }
 
-[node name="ComboCounter" type="Label"]
-offset_right = 16.0
-offset_bottom = 14.0
-scale = Vector2( 21.1324, 14.1213 )
-theme_override_colors/font_color = Color( 0.988235, 0.87451, 0.356863, 1 )
-theme_override_colors/font_shadow_color = Color( 0.290196, 0.207843, 0.207843, 1 )
-text = "42"
-uppercase = true
-script = ExtResource( 1 )
+[sub_resource type="Animation" id="Animation_3dghh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Counter:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("X:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("8")]
+}
+
+[sub_resource type="Animation" id="1"]
+resource_name = "CountHit"
+length = 0.366667
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Counter:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0166667, 0.05),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 0.8), Vector2(0.88, 1.2), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_gnvgj"]
+resource_name = "Invalid"
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("X:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.133333, 0.2, 0.266667, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("4"), ExtResource("5"), ExtResource("7"), ExtResource("6"), ExtResource("3"), ExtResource("8")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n4sq1"]
+_data = {
+&"CountHit": SubResource("1"),
+&"Invalid": SubResource("Animation_gnvgj"),
+&"RESET": SubResource("Animation_3dghh"),
+&"Resting": SubResource("2")
+}
+
+[sub_resource type="Animation" id="Animation_7wqtw"]
+resource_name = "CountHit"
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Counter:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 0.8), Vector2(1, 1.2), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_v4xqn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Counter:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 0.8)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qbq3o"]
+_data = {
+&"CountHit": SubResource("Animation_7wqtw"),
+&"RESET": SubResource("Animation_v4xqn")
+}
+
+[node name="ComboCounter" type="Node2D"]
+script = ExtResource("1")
 
 [node name="NetworkAnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Invalid = SubResource( 1 )
-anims/Resting = SubResource( 2 )
-script = ExtResource( 2 )
+libraries = {
+&"": SubResource("AnimationLibrary_n4sq1")
+}
+script = ExtResource("2")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2( 6.48294, 6.09009 )
-scale = Vector2( 0.147915, 0.195428 )
-texture = ExtResource( 8 )
+[node name="CounterAnimation" type="AnimationPlayer" parent="."]
+root_node = NodePath("../X")
+libraries = {
+&"": SubResource("AnimationLibrary_qbq3o")
+}
+script = ExtResource("2")
+metadata/_custom_type_script = "uid://dv11pt6y7wasy"
+
+[node name="X" type="Sprite2D" parent="."]
+position = Vector2(13.2202, 3.34536)
+texture = ExtResource("8")
+
+[node name="Counter" type="Node2D" parent="."]
+scale = Vector2(1, 0.8)
+
+[node name="Count" type="Sprite2D" parent="Counter"]
+position = Vector2(112, 6.69072)
+texture = ExtResource("9_7wqtw")
+
+[node name="Digit3" type="Sprite2D" parent="Counter"]
+position = Vector2(-42, 3.91528)
+
+[node name="Digit2" type="Sprite2D" parent="Counter"]
+position = Vector2(3, 3.91528)
+texture = ExtResource("9_lpo3l")
+
+[node name="Digit1" type="Sprite2D" parent="Counter"]
+position = Vector2(51, 3.34536)
+texture = ExtResource("9_lpo3l")

@@ -41,6 +41,7 @@ func physics_tick(state: Dictionary) -> void:
 		state[Enums.StKey.sync_rate] -= SGFixed.mul(state[Enums.StKey.velocity_x], 1036)
 
 	if (state[Enums.StKey.frame] >= 21):
+		SyncManager.play_sound("step", Global.StepSound, {"bus": "Sound"})
 		state[Enums.StKey.frame] = 16
 	elif (state[Enums.StKey.frame] == 15):
 		anim.play("Run")

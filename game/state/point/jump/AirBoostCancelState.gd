@@ -32,7 +32,7 @@ func handle_input(state: Dictionary, interpreter: InputInterpreter) -> void:
 		state[Enums.StKey.doubleJump] = 1
 		state[Enums.StKey.airDash] = 1
 		change_state.call("JumpFall")
-		SyncManager.play_sound("RC", Global.RCSound, {"bus": "Sound"})
+		SyncManager.play_sound("rc", Global.RCSound, {"bus": "Sound"})
 	if (state[Enums.StKey.frame] == 0):
 		if (state[Enums.StKey.kara_OK]):
 			# Kara Cancel section

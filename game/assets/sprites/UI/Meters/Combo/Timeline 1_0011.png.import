@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcg55h1tujak2"
-path="res://.godot/imported/Timeline 1_0005.png-390691c59fc780e254388a6332de46fa.ctex"
+uid="uid://btthaxjs2gwqh"
+path="res://.godot/imported/Timeline 1_0011.png-6843981d63f755ee6bf73c90a6ae1130.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/assets/sprites/subaru/2B/Timeline 1_0005.png"
-dest_files=["res://.godot/imported/Timeline 1_0005.png-390691c59fc780e254388a6332de46fa.ctex"]
+source_file="res://game/assets/sprites/UI/Meters/Combo/Timeline 1_0011.png"
+dest_files=["res://.godot/imported/Timeline 1_0011.png-6843981d63f755ee6bf73c90a6ae1130.ctex"]
 
 [params]
 

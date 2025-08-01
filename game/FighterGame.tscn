@@ -6,12 +6,12 @@
 [ext_resource type="Script" uid="uid://ba76tnqyqqueq" path="res://game/StageBackgroundArt.gd" id="4"]
 [ext_resource type="Script" uid="uid://qcfjxk2q4k1t" path="res://game/BattleCamera.gd" id="5"]
 [ext_resource type="PackedScene" path="res://game/fighter/InputInterpreter.tscn" id="6"]
-[ext_resource type="PackedScene" path="res://game/ui/ComboCounter.tscn" id="7"]
+[ext_resource type="PackedScene" uid="uid://5gsrso7qn0ff" path="res://game/ui/ComboCounter.tscn" id="7"]
+[ext_resource type="PackedScene" uid="uid://dlpdov1eot246" path="res://game/ui/RoundTimer.tscn" id="7_yl1ep"]
 [ext_resource type="PackedScene" path="res://game/ui/HPBar.tscn" id="8"]
 [ext_resource type="PackedScene" path="res://game/ui/RoundCounter.tscn" id="9"]
 [ext_resource type="Texture2D" uid="uid://phia8rmjqc86" path="res://game/assets/sprites/UI/DOWN/Timeline 1_0012.png" id="11"]
 [ext_resource type="PackedScene" uid="uid://cqee8xg8vov1x" path="res://game/StageCollision.tscn" id="12"]
-[ext_resource type="Script" uid="uid://ce5j5u6wh5u1u" path="res://game/ui/RoundTimer.gd" id="13"]
 [ext_resource type="Texture2D" uid="uid://ffkpavam854b" path="res://game/assets/sprites/UI/DOWN/Timeline 1_0010.png" id="14"]
 [ext_resource type="Texture2D" uid="uid://ckncp6jnc2dsd" path="res://game/assets/sprites/UI/DOWN/Timeline 1_0009.png" id="15"]
 [ext_resource type="Texture2D" uid="uid://cr7d3fg22mrc" path="res://game/assets/sprites/UI/DOWN/Timeline 1_0007.png" id="16"]
@@ -43,7 +43,7 @@
 [ext_resource type="Texture2D" uid="uid://dcyxauh4vgla1" path="res://game/assets/sprites/UI/NOWLOADING/Timeline 1_0006.png" id="40"]
 [ext_resource type="Texture2D" uid="uid://b0e6kfn07guey" path="res://game/assets/sprites/UI/WIN/Timeline 1_0000.png" id="41"]
 [ext_resource type="Animation" path="res://game/assets/anim/gameWIN.tres" id="42"]
-[ext_resource type="PackedScene" path="res://game/ui/BattlePointPortrait.tscn" id="43"]
+[ext_resource type="PackedScene" uid="uid://caiesl5miifd5" path="res://game/ui/BattlePointPortrait.tscn" id="43"]
 [ext_resource type="Script" uid="uid://8bt3h44ryda0" path="res://game/BattleUIPosition.gd" id="44"]
 [ext_resource type="Texture2D" uid="uid://dnmluq3uvo6i0" path="res://game/assets/sprites/UI/DOWN/Timeline 1_0008.png" id="45"]
 [ext_resource type="Texture2D" uid="uid://4foqq7s4s8x7" path="res://game/assets/sprites/UI/DOWN/Timeline 1_0011.png" id="46"]
@@ -333,28 +333,17 @@ smooth_y_speed = 20.0
 z_index = -10
 script = ExtResource("44")
 
-[node name="RoundTimer" parent="Camera3D/BattleUI" instance=ExtResource("7")]
-offset_left = -56.0
-offset_top = -563.0
-offset_right = -23.0
-offset_bottom = -540.0
-scale = Vector2(3.95387, 6.4293)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0.113725, 0.0823529, 0.0509804, 1)
-text = "100"
-script = ExtResource("13")
+[node name="RoundTimer" parent="Camera3D/BattleUI" instance=ExtResource("7_yl1ep")]
+position = Vector2(-2, -484)
+scale = Vector2(0.794853, 0.794853)
 
 [node name="ClientComboCounter" parent="Camera3D/BattleUI" instance=ExtResource("7")]
-offset_left = 374.0
-offset_top = -304.0
-offset_right = 390.0
-offset_bottom = -290.0
+position = Vector2(553, -140)
+scale = Vector2(2, 2)
 
 [node name="ServerComboCounter" parent="Camera3D/BattleUI" instance=ExtResource("7")]
-offset_left = -748.0
-offset_top = -304.0
-offset_right = -732.0
-offset_bottom = -290.0
+position = Vector2(-759, -140)
+scale = Vector2(2, 2)
 
 [node name="ServerPortrait" parent="Camera3D/BattleUI" instance=ExtResource("43")]
 position = Vector2(-874, -450)
@@ -435,6 +424,7 @@ position = Vector2(-99, -433)
 is_p1 = true
 
 [node name="IntroShutters" type="Node2D" parent="Camera3D/BattleUI"]
+visible = false
 modulate = Color(1, 0.741176, 0.592157, 1)
 scale = Vector2(4, 4)
 script = ExtResource("70")

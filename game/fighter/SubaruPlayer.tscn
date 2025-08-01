@@ -1,4 +1,4 @@
-[gd_scene load_steps=386 format=3 uid="uid://de1nks15kamf"]
+[gd_scene load_steps=384 format=3 uid="uid://de1nks15kamf"]
 
 [ext_resource type="Texture2D" uid="uid://bb0le8lbjm862" path="res://game/assets/sprites/subaru/Idle/Timeline 1_0000.png" id="1"]
 [ext_resource type="Script" uid="uid://cp7ju52qan5eu" path="res://game/fighter/SubaruPlayer.gd" id="2"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://b6n0lxp4lqr22" path="res://game/assets/sprites/subaru/5B/Timeline 1_0002.png" id="8"]
 [ext_resource type="Texture2D" uid="uid://cslsl2cejv50e" path="res://game/assets/sprites/subaru/GroundThrowWhiff/Timeline 1_0004.png" id="9"]
 [ext_resource type="Texture2D" uid="uid://bsk6ymba5uv8j" path="res://game/assets/sprites/subaru/5A/Timeline 1_0000.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://c6alcugqgqunc" path="res://game/assets/sprites/subaru/2B/Timeline 1_0001.png" id="10_aisso"]
 [ext_resource type="Texture2D" uid="uid://ckk24reyv6n45" path="res://game/assets/sprites/subaru/5A/Timeline 1_0001.png" id="11"]
 [ext_resource type="Texture2D" uid="uid://bmukm6bc4bcls" path="res://game/assets/sprites/subaru/GroundThrowWhiff/Timeline 1_0001.png" id="12"]
 [ext_resource type="Texture2D" uid="uid://dct7d5aijdixc" path="res://game/assets/sprites/subaru/5B/Timeline 1_0000.png" id="13"]
@@ -130,8 +131,7 @@
 [ext_resource type="Texture2D" uid="uid://dicuhp5mhrjkc" path="res://game/assets/sprites/subaru/2B/Timeline 1_0003.png" id="135"]
 [ext_resource type="Texture2D" uid="uid://c7sv2htmwdn5h" path="res://game/assets/sprites/subaru/2A/Timeline 1_0003.png" id="136"]
 [ext_resource type="Texture2D" uid="uid://0pq58gqy2jrv" path="res://game/assets/sprites/subaru/2B/Timeline 1_0002.png" id="137"]
-[ext_resource type="Texture2D" uid="uid://c14k5x32tiefo" path="res://game/assets/sprites/subaru/2B/Timeline 1_0004.png" id="138"]
-[ext_resource type="Texture2D" uid="uid://bcg55h1tujak2" path="res://game/assets/sprites/subaru/2B/Timeline 1_0005.png" id="139"]
+[ext_resource type="Texture2D" uid="uid://d24h113anyh8c" path="res://game/assets/sprites/subaru/2B/Timeline 1_0004.png" id="138"]
 [ext_resource type="Texture2D" uid="uid://cg5paecyc3ur5" path="res://game/assets/sprites/subaru/2C/Timeline 1_0001.png" id="140"]
 [ext_resource type="Texture2D" uid="uid://cvx2uulgxur6t" path="res://game/assets/sprites/subaru/2C/Timeline 1_0000.png" id="141"]
 [ext_resource type="Texture2D" uid="uid://cy5xybacqyqgh" path="res://game/assets/sprites/subaru/2C/Timeline 1_0002.png" id="142"]
@@ -209,12 +209,10 @@
 [ext_resource type="Texture2D" uid="uid://cyi0ktuk0xd80" path="res://game/assets/sprites/subaru/AngelSidewinder/Timeline 1_0000.png" id="216"]
 [ext_resource type="Texture2D" uid="uid://dr1m30njwenet" path="res://game/assets/sprites/subaru/CrouchHurt/Timeline 1_0003.png" id="217"]
 [ext_resource type="Texture2D" uid="uid://dy01ov0v7nw5b" path="res://game/assets/sprites/subaru/CrouchHurt/Timeline 1_0002.png" id="218"]
-[ext_resource type="Texture2D" uid="uid://b3ov78civ4llw" path="res://game/assets/sprites/subaru/2C/Timeline 1_0005.png" id="219"]
 [ext_resource type="Texture2D" uid="uid://dejk3qd1d7mra" path="res://game/assets/sprites/subaru/JB/Timeline 1_0001.png" id="220"]
 [ext_resource type="Texture2D" uid="uid://df6vcproaxlk3" path="res://game/assets/sprites/subaru/JB/Timeline 1_0003.png" id="221"]
 [ext_resource type="Texture2D" uid="uid://h7fh1wbu8u3h" path="res://game/assets/sprites/subaru/3C/Timeline 1_0004.png" id="222"]
 [ext_resource type="Texture2D" uid="uid://ctolkk30wwtty" path="res://game/assets/sprites/subaru/5A/Timeline 1_0002.png" id="223"]
-[ext_resource type="Texture2D" uid="uid://vpdpb3o0w3mp" path="res://game/assets/sprites/subaru/5A/Timeline 1_0003.png" id="224"]
 [ext_resource type="Texture2D" uid="uid://cw6tk01rd2vb1" path="res://game/assets/sprites/subaru/DP/Timeline 1_0000.png" id="225"]
 [ext_resource type="Texture2D" uid="uid://bv0ew48cadatl" path="res://game/assets/sprites/subaru/AngelUninstall/Timeline 1_0006.png" id="226"]
 [ext_resource type="Texture2D" uid="uid://yx6pp0nuw5u3" path="res://game/assets/sprites/subaru/AngelUninstall/Timeline 1_0007.png" id="227"]
@@ -301,10 +299,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.183333, 0.266667),
+"times": PackedFloat32Array(0, 0.1, 0.15, 0.216667, 0.283333),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("133"), ExtResource("137"), ExtResource("135"), ExtResource("138"), ExtResource("139")]
+"values": [ExtResource("133"), ExtResource("10_aisso"), ExtResource("137"), ExtResource("135"), ExtResource("138")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -330,10 +328,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.166667, 0.2, 0.233333, 0.366667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.166667, 0.233333, 0.283333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("141"), ExtResource("140"), ExtResource("142"), ExtResource("143"), ExtResource("144"), ExtResource("219")]
+"values": [ExtResource("141"), ExtResource("140"), ExtResource("142"), ExtResource("143"), ExtResource("144")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -345,7 +343,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1e+06),
 "update": 0,
-"values": [Vector2(40, 40)]
+"values": [Vector2(40, 45)]
 }
 
 [sub_resource type="Animation" id="14"]
@@ -388,10 +386,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.0666667, 0.116667),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [ExtResource("10"), ExtResource("11"), ExtResource("223"), ExtResource("224")]
+"values": [ExtResource("10"), ExtResource("11"), ExtResource("223")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -766,10 +764,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.25),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [ExtResource("132"), ExtResource("128"), ExtResource("136"), ExtResource("132")]
+"values": [ExtResource("132"), ExtResource("128"), ExtResource("136")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -795,10 +793,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.133333, 0.216667),
+"times": PackedFloat32Array(0, 0.0333333, 0.0833333, 0.166667, 0.233333),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("133"), ExtResource("137"), ExtResource("135"), ExtResource("138"), ExtResource("139")]
+"values": [ExtResource("133"), ExtResource("10_aisso"), ExtResource("137"), ExtResource("135"), ExtResource("138")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -3777,10 +3775,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.0833333, 0.116667),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.05, 0.0833333),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [ExtResource("53"), ExtResource("119"), ExtResource("122"), ExtResource("121")]
+"values": [ExtResource("53"), ExtResource("119"), ExtResource("122")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -3864,10 +3862,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("73"), ExtResource("74"), ExtResource("72")]
+"values": [ExtResource("72"), ExtResource("73"), ExtResource("74"), ExtResource("72")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -3879,7 +3877,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1e+06),
 "update": 0,
-"values": [Vector2(80, -20)]
+"values": [Vector2(80, 0)]
 }
 
 [sub_resource type="Animation" id="12"]
@@ -3908,7 +3906,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1e+06),
 "update": 0,
-"values": [Vector2(0, 0)]
+"values": [Vector2(30, 0)]
 }
 
 [sub_resource type="Animation" id="24"]
@@ -4082,7 +4080,6 @@ material = ExtResource("5")
 position = Vector2(-15, -259)
 scale = Vector2(1.428, 1.428)
 texture = ExtResource("176")
-offset = Vector2(0, -30)
 
 [node name="Pushbox" type="SGCollisionShape2D" parent="."]
 shape = SubResource("1")

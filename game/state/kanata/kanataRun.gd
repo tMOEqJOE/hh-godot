@@ -39,6 +39,8 @@ func physics_tick(state: Dictionary) -> void:
 func handle_input(state: Dictionary, interpreter: InputInterpreter) -> void:
 	if (state[Enums.StKey.frame] == 0):
 		state[Enums.StKey.leftfaceOK] = false
+	if (state[Enums.StKey.frame] == 2):
+		SyncManager.play_sound("skid", Global.SkidSound, {"bus": "Sound"})
 	if (state[Enums.StKey.frame] == endFrame):
 		common_jump_transitions(state, interpreter)
 	

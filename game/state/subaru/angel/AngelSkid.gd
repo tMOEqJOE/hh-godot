@@ -32,6 +32,11 @@ func enter(state: Dictionary) -> void:
 	anim.stop(true)
 	anim.play("AngelSkid")
 
+func physics_tick(state: Dictionary) -> void:
+	super.physics_tick(state)
+	if (state[Enums.StKey.frame] == 2):
+		SyncManager.play_sound("skid", Global.SkidSound, {"bus": "Sound"})
+
 func handle_input(state: Dictionary, interpreter: InputInterpreter) -> void:
 	if ((interpreter.is_holding_a_direction(Enums.Numpad.N5, state[Enums.StKey.leftface]) or
 				interpreter.is_holding_a_direction(Enums.Numpad.N3, state[Enums.StKey.leftface]) or

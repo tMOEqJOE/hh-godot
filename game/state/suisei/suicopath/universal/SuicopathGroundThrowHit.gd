@@ -36,6 +36,10 @@ func enter(state: Dictionary) -> void:
 	super.enter(state)
 	anim.play("AngelGroundThrowHit")
 	#state[Enums.StKey.sync_rate] += Util.GROUND_THROW_SYNC_BOOST
+func physics_tick(state: Dictionary) -> void:
+	super.physics_tick(state)
+	if (state[Enums.StKey.frame] == 2):
+		SyncManager.play_sound("throwcatch", Global.ThrowCatchSound, {"bus": "Sound"})
 
 func jump_cancel(state: Dictionary, interpreter: InputInterpreter):
 	pass

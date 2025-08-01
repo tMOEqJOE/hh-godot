@@ -311,7 +311,8 @@ const SpecialInput: Dictionary = {
 	"M214214" : [60, [Numpad.N4, Numpad.N1, Numpad.N2, Numpad.N5, Numpad.N4, Numpad.N1, Numpad.N2], 
 					[Numpad.N5, Numpad.N4, Numpad.N1, Numpad.N2, Numpad.N5, Numpad.N4, Numpad.N1, Numpad.N2],
 					[Numpad.N7, Numpad.N4, Numpad.N1, Numpad.N2, Numpad.N5, Numpad.N4, Numpad.N1, Numpad.N2]],
-	"superJump" : [12, InputFlags.UP, 0, InputFlags.DOWN, 0],
+	"superJump" : [15, InputFlags.UP, 0, InputFlags.DOWN, 0],
+	"superJumpShortCut" : [12, InputFlags.UP, InputFlags.DOWN, 0],
 }
 
 const UniversalMoveList: Array = [
