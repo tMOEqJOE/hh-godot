@@ -1,6 +1,6 @@
 extends Node
 
-const Logger = preload("res://addons/godot-rollback-netcode/Logger.gd")
+const SyncLogger = preload("res://addons/godot-rollback-netcode/Logger.gd")
 const DummyNetworkAdaptor = preload("res://addons/godot-rollback-netcode/DummyNetworkAdaptor.gd")
 
 const GAME_PORT_SETTING = 'network/rollback/log_inspector/replay_port'
@@ -154,13 +154,13 @@ func _do_execute_frame(msg: Dictionary) -> void:
 	SyncManager.mechanized_rollback_ticks = rollback_ticks
 
 	match frame_type:
-		Logger.FrameType.TICK:
+		SyncLogger.FrameType.TICK:
 			SyncManager.execute_mechanized_tick()
 
-		Logger.FrameType.INTERPOLATION_FRAME:
+		SyncLogger.FrameType.INTERPOLATION_FRAME:
 			SyncManager.execute_mechanized_interpolation_frame(msg['delta'])
 
-		Logger.FrameType.INTERFRAME:
+		SyncLogger.FrameType.INTERFRAME:
 			SyncManager.execute_mechanized_interframe()
 
 		_:

@@ -1,5 +1,5 @@
 Huge thanks to David Snopek and Snopek games discord for the rollback plugin!
 https://gitlab.com/snopek-games/godot-rollback-netcode
 
-Godot Engine commit used: 30b0aadab65fcafb9a160dba2c9abfd005bb62a5
-Godot Engine version: 4.4.1-rc
+Godot Engine commit used: 2d113cc224cb9be07866d003819fcef2226a52ea
+Godot Engine version: 4.5.beta4
