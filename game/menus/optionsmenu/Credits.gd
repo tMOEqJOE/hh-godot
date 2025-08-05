@@ -18,6 +18,7 @@ const credits = {
 		"J.Comet Bravo",
 		"Shino",
 		"Keyboard Noah",
+		"jdes",
 	],
 	"Location test": [
 		"Gabriel M.",
