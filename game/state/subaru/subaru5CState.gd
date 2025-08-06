@@ -36,6 +36,8 @@ func _init():
 			Enums.StKey.hit_box_colliding_frame : 254,
 			Enums.StKey.attack_damage: 52,
 			Enums.StKey.counter_hit: Enums.AttackType.Launcher,
+			Enums.StKey.counter_launch_dir_x: -SGFixed.ONE*12,
+			Enums.StKey.counter_launch_dir_y: -SGFixed.ONE*40,
 			Enums.StKey.counter_hitstun: 10,
 			},
 		12 : { 
