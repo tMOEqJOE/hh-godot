@@ -40,6 +40,7 @@ func _init():
 			Enums.StKey.min_damage:3,
 			Enums.StKey.attack_damage: 20,
 			Enums.StKey.hitstun: 30,
+			Enums.StKey.blockstun: Util.DEFAULT_BLOCKSTUN-3,
 			Enums.StKey.counter_hit: Enums.AttackType.GroundBouncer,
 			Enums.StKey.counter_hitstun: 90,
 			Enums.StKey.meter_build: SGFixed.ONE*1000,

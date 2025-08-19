@@ -40,7 +40,7 @@ func handle_input(state: Dictionary, interpreter: InputInterpreter) -> void:
 		state[Enums.StKey.leftfaceOK] = false
 	if (state[Enums.StKey.frame] == 20):
 		common_idle_transitions(state, interpreter)
-	elif (state[Enums.StKey.frame] >= 10): 
+	elif (state[Enums.StKey.frame] >= 5): 
 		if (not (interpreter.is_button_down(Enums.InputFlags.ADown) or
 				interpreter.is_button_down(Enums.InputFlags.BDown) or
 				interpreter.is_button_down(Enums.InputFlags.CDown) or

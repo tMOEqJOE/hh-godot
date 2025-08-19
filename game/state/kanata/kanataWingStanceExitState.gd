@@ -23,7 +23,7 @@ func _init():
 # Writing _delta instead of delta here prevents the unused variable warning.
 func enter(state: Dictionary) -> void:
 	super.enter(state)
-	state[Enums.StKey.drag_x] = Util.SLIPPERY_FRICTION
+	state[Enums.StKey.drag_x] = 0
 	anim.play("WingStance")
 
 func handle_input(state: Dictionary, interpreter: InputInterpreter) -> void:

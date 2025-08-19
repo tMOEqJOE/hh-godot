@@ -193,6 +193,8 @@ func summonHelper(entity: String) -> void:
 			summonVFX("AirdashVFX", Global.AirdashVFX)
 		elif (entity == "rundust"):
 			summonVFX("RunDustVFX", Global.RunDustVFX)
+		elif (entity == "backdashdust"):
+			summonVFX("BackDashDustVFX", Global.BackDashDustVFX)
 		elif (entity == "jumpdust"):
 			summonVFX("JumpDustVFX", Global.JumpDustVFX)
 		elif (entity == "knockdowndust"):

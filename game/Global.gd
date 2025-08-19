@@ -1,6 +1,6 @@
 extends Node
 
-const BATTLE_ENGINE_VERSION = "HHv0.7.0007"
+const BATTLE_ENGINE_VERSION = "HHv0.7.0008"
 
 func get_battle_version() -> String:
 	if (len(Build.INTERNAL_BATTLE_ENGINE_KEY) < 50):
@@ -257,6 +257,7 @@ const BurstVFX = preload("res://game/fighter/effects/Burst.tscn")
 const RCVFX = preload("res://game/fighter/effects/RadicalCancel.tscn")
 const AirdashVFX = preload("res://game/fighter/effects/Airdash.tscn")
 const RunDustVFX = preload("res://game/fighter/effects/RunDust.tscn")
+const BackDashDustVFX = preload("res://game/fighter/effects/BackDashDust.tscn")
 const JumpDustVFX = preload("res://game/fighter/effects/JumpDust.tscn")
 const KnockdownDustVFX = preload("res://game/fighter/effects/KnockdownDust.tscn")
 const WallBounceDustVFX = preload("res://game/fighter/effects/WallBounceDust.tscn")

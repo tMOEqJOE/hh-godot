@@ -52,7 +52,7 @@ func _init():
 			Enums.StKey.hit_box_colliding_frame : 254,
 			Enums.StKey.guard: Enums.GuardType.Mid,
 			Enums.StKey.attack_type : Enums.AttackType.GroundBouncer,
-			Enums.StKey.hitstun: 35,
+			Enums.StKey.hitstun: 55,
 			Enums.StKey.blockstun: 25,
 			Enums.StKey.launch_dir_x : -SGFixed.ONE*8,
 			Enums.StKey.launch_dir_y : SGFixed.ONE*48,
