@@ -12,8 +12,8 @@ func _init():
 		0 : {
 			Enums.StKey.Hit1Disable : true,
 			Enums.StKey.Hurt1Disable : false,
-			Enums.StKey.Hurt1PosX : 9830400, Enums.StKey.Hurt1PosY : -8847361,
-			Enums.StKey.Hurt1ScaleX : 2191695, Enums.StKey.Hurt1ScaleY : 588993,
+			Enums.StKey.Hurt1PosX : 4323071, Enums.StKey.Hurt1PosY : -9371649,
+			Enums.StKey.Hurt1ScaleX : 2097895, Enums.StKey.Hurt1ScaleY : 1077828,
 			},
 		5 : {
 			Enums.StKey.Hit1Disable : false,

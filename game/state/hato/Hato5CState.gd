@@ -14,14 +14,14 @@ func _init():
 			Enums.StKey.hit_box_colliding_frame : 4, 
 			Enums.StKey.Hit1PosX : 17381698, Enums.StKey.Hit1PosY : -21233664,
 			Enums.StKey.Hit1ScaleX : 2333967, Enums.StKey.Hit1ScaleY : 971559,
-			Enums.StKey.Hurt1PosX : 0, Enums.StKey.Hurt1PosY : -15728640,
-			Enums.StKey.Hurt1ScaleX : 1088918, Enums.StKey.Hurt1ScaleY : 1252738,
+			Enums.StKey.Hurt1PosX : 10485760, Enums.StKey.Hurt1PosY : -15828640,
+			Enums.StKey.Hurt1ScaleX : 3188918, Enums.StKey.Hurt1ScaleY : 1652738,
 			},
 		7 : {
 			Enums.StKey.Hit1Disable : true,
 			Enums.StKey.Hurt1Disable : false,
-			Enums.StKey.Hurt1PosX : 10485760, Enums.StKey.Hurt1PosY : -15728640,
-			Enums.StKey.Hurt1ScaleX : 2988918, Enums.StKey.Hurt1ScaleY : 1252738,
+			Enums.StKey.Hurt1PosX : 10485760, Enums.StKey.Hurt1PosY : -15828640,
+			Enums.StKey.Hurt1ScaleX : 3188918, Enums.StKey.Hurt1ScaleY : 1652738,
 			},
 		9 : {
 			Enums.StKey.Hit1Disable : false,

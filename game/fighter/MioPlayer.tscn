@@ -1924,8 +1924,8 @@ script = ExtResource("2")
 material = ExtResource("5")
 position = Vector2(77, -379)
 scale = Vector2(1.428, 1.428)
-texture = ExtResource("117")
-offset = Vector2(-25, 50)
+texture = ExtResource("177")
+offset = Vector2(0, 80)
 
 [node name="Pushbox" type="SGCollisionShape2D" parent="."]
 shape = SubResource("1")
@@ -1958,25 +1958,25 @@ position = Vector2(267, -352)
 scale = Vector2(15.1938, 7.25537)
 
 [node name="Hurtbox1" parent="." instance=ExtResource("6")]
-fixed_position_x = 3604480
-fixed_position_y = -18481152
-fixed_scale_x = 650886
+fixed_position_x = 17367040
+fixed_position_y = -18481153
+fixed_scale_x = 1550886
 fixed_scale_y = 903770
-position = Vector2(55, -282)
-scale = Vector2(9.93173, 13.7904)
+position = Vector2(265, -282)
+scale = Vector2(23.664642, 13.790436)
 
 [node name="Hurtbox2" parent="." instance=ExtResource("6")]
-fixed_position_x = 10682369
-fixed_position_y = -18415616
-fixed_scale_x = 547706
-fixed_scale_y = 753896
-position = Vector2(163, -281)
-scale = Vector2(8.35733, 11.5035)
+fixed_position_x = 6083040
+fixed_position_y = -9121856
+fixed_scale_x = 1325172
+fixed_scale_y = 953896
+position = Vector2(92.819824, -139.18848)
+scale = Vector2(20.22052, 14.555298)
 
 [node name="Hurtbox3" parent="." instance=ExtResource("6")]
-fixed_position_x = -1114112
-fixed_position_y = -25690112
+fixed_position_x = 2014112
+fixed_position_y = -19690112
 fixed_scale_x = 752196
-fixed_scale_y = 295639
-position = Vector2(-17, -392)
-scale = Vector2(11.4776, 4.51109)
+fixed_scale_y = 1095639
+position = Vector2(30.73291, -300.44727)
+scale = Vector2(11.4776, 16.718124)

@@ -68,6 +68,7 @@ func _init():
 		"AirThrowWhiff": OgaAirThrowWhiffState,
 		"GroundThrowHit": OgaGroundThrowHitState,
 		"AirThrowHit": OgaAirThrowHitState,
+		"AirBackThrowHit": OgaBackAirThrowHitState,
 		
 		"GroundAssistCall2": OgaGroundAssistCall2State,
 		"GroundAssistCallSuper": OgaGroundAssistCallSuperState,

@@ -80,6 +80,10 @@ func special_cancel(state: Dictionary, interpreter: InputInterpreter):
 			state[Enums.StKey.cancelState] = "AirStinger"
 		elif (interpreter.special_input_button(Enums.SpecialInput.M214, Enums.InputFlags.ADown, state[Enums.StKey.leftface])):
 			state[Enums.StKey.cancelState] = "LightYoruMatsuyo"
+		elif (interpreter.special_input_button(Enums.SpecialInput.M236, Enums.InputFlags.BDown, state[Enums.StKey.leftface])):
+			state[Enums.StKey.cancelState] = "AirCaramelThrust"
+		elif (interpreter.special_input_button(Enums.SpecialInput.M236, Enums.InputFlags.ADown, state[Enums.StKey.leftface])):
+			state[Enums.StKey.cancelState] = "AirCaramelThrust"
 		elif (interpreter.is_button_down(Enums.InputFlags.CDown)):
 			state[Enums.StKey.cancelState] = "AirSuiseiToSuicopath"
 
