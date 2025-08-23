@@ -1,4 +1,4 @@
-[gd_scene load_steps=313 format=3 uid="uid://bmn2buuipdmkn"]
+[gd_scene load_steps=317 format=3 uid="uid://bmn2buuipdmkn"]
 
 [ext_resource type="Texture2D" uid="uid://4lo4cemr486p" path="res://game/assets/sprites/suisei/Idle/Timeline 1_0000.png" id="1"]
 [ext_resource type="Script" uid="uid://dctxuxh3f2d6a" path="res://game/fighter/SuiseiPlayer.gd" id="2"]
@@ -142,9 +142,13 @@
 [ext_resource type="Texture2D" uid="uid://cxnijjq6cipov" path="res://game/assets/sprites/suisei/GatoKick/Timeline 1_0002.png" id="189"]
 [ext_resource type="Texture2D" uid="uid://4gkot8sbp2fc" path="res://game/assets/sprites/suisei/66B/Timeline 1_0002.png" id="192"]
 [ext_resource type="Texture2D" uid="uid://s31j4oh8w5tw" path="res://game/assets/sprites/suisei/66B/Timeline 1_0003.png" id="193"]
+[ext_resource type="Texture2D" uid="uid://dmhom85whwbnm" path="res://game/assets/sprites/suisei/Divine/Timeline 1_0001.png" id="193_cfqyn"]
 [ext_resource type="Texture2D" uid="uid://c3472ujsmpiil" path="res://game/assets/sprites/suisei/66B/Timeline 1_0004.png" id="194"]
+[ext_resource type="Texture2D" uid="uid://d0hjkw3yofeb1" path="res://game/assets/sprites/suisei/Divine/Timeline 1_0002.png" id="194_dp278"]
 [ext_resource type="Texture2D" uid="uid://dcn0pvwq2128d" path="res://game/assets/sprites/suisei/66B/Timeline 1_0005.png" id="195"]
+[ext_resource type="Texture2D" uid="uid://cx3lojtwb5fmp" path="res://game/assets/sprites/suisei/Divine/Timeline 1_0003.png" id="195_haa14"]
 [ext_resource type="Texture2D" uid="uid://bnnhwxgeqrqkf" path="res://game/assets/sprites/suisei/5B/Timeline 1_0000.png" id="196"]
+[ext_resource type="Texture2D" uid="uid://dk8tpdqk113d4" path="res://game/assets/sprites/suisei/Divine/Timeline 1_0004.png" id="196_1qreq"]
 [ext_resource type="Texture2D" uid="uid://c83xik0obpqns" path="res://game/assets/sprites/suisei/StandBlock/Timeline 1_0000.png" id="197"]
 [ext_resource type="Texture2D" uid="uid://dgrf3a5htkojb" path="res://game/assets/sprites/suisei/Jump/Timeline 1_0000.png" id="198"]
 [ext_resource type="Texture2D" uid="uid://cr3jfsvhy16qu" path="res://game/assets/sprites/suisei/jB/Timeline 1_0001.png" id="199"]
@@ -2851,6 +2855,35 @@ tracks/1/keys = {
 "values": [Vector2(0, -50)]
 }
 
+[sub_resource type="Animation" id="Animation_gkp4e"]
+resource_name = "Thrust"
+length = 0.41666916
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.16666667, 0.23333333, 0.36666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("210_kishj"), ExtResource("193_cfqyn"), ExtResource("194_dp278"), ExtResource("195_haa14"), ExtResource("196_1qreq")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1000000),
+"update": 0,
+"values": [Vector2(30, -40)]
+}
+
 [sub_resource type="Animation" id="43"]
 resource_name = "Wakeup"
 length = 0.333333
@@ -2995,35 +3028,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1000000),
 "update": 0,
 "values": [Vector2(0, -60)]
-}
-
-[sub_resource type="Animation" id="Animation_gkp4e"]
-resource_name = "Thrust"
-length = 0.200002
-step = 0.0166667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("210_kishj")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:offset")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1000000),
-"update": 0,
-"values": [Vector2(30, -40)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6de0c"]

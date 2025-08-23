@@ -469,6 +469,7 @@ const SuiseiMoveList: = [
 	["6A", "", "", "two hitting upper body invul attack"],
 	["j6B", "", "", ""],
 	["Specials"],
+	["236B or A (Air OK)", "Caramel Thrust", "", "Stance cancel on hit"],
 	["214B or A (Air OK)", "Yoru wo Matsuyo", "", "Rekka special, follow ups can whiff cancel"],
 	["214B->A (Air OK)", "", "", "Launcher"],
 	["214B->B (Air OK)", "", "", "Multi hit"],
