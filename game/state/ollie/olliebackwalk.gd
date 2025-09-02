@@ -5,7 +5,7 @@ class_name OllieBackWalk
 func enter(state: Dictionary) -> void:
 	super.enter(state)
 	anim.play("BackwardWalk")
-	state[Enums.StKey.drag_x] = Util.SLIPPERY_FRICTION
+	state[Enums.StKey.drag_x] = Util.ICE_FRICTION
 	state[Enums.StKey.velocity_y] = 0
 
 func physics_tick(state: Dictionary) -> void:

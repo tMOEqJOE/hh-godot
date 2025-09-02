@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://che34jrnw8ye8"]
+
+[ext_resource type="Script" uid="uid://bicbitqrt201n" path="res://game/debug_music.gd" id="1_or4cb"]
+
+[node name="DebugMusic" type="SGFixedNode2D"]
+script = ExtResource("1_or4cb")
+metadata/_edit_horizontal_guides_ = [445.0, -5810.0]
+metadata/_edit_vertical_guides_ = [2929.0, -2927.0]
+
+[node name="NextSongButton" type="Button" parent="."]
+anchors_preset = -1
+offset_left = 125.99999
+offset_top = 67.99999
+offset_right = 213.0
+offset_bottom = 98.99999
+scale = Vector2(5, 5)
+text = "Next Song"
+
+[node name="RandomSongButton" type="Button" parent="."]
+anchors_preset = -1
+offset_left = 619.99994
+offset_top = 67.99999
+offset_right = 706.99994
+offset_bottom = 98.99999
+scale = Vector2(5, 5)
+text = "Random Song"
+
+[connection signal="pressed" from="NextSongButton" to="." method="_on_next_song_button_pressed"]
+[connection signal="pressed" from="RandomSongButton" to="." method="_on_random_song_button_pressed"]

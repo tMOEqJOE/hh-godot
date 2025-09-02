@@ -124,7 +124,8 @@ func play_song(id: int):
 	if (id < 3 or id >= Global.BGM_LIST.size()):
 		push_error(str(id) + " out of bounds BGM")
 	current_song = Global.BGM_LIST[id]
-	var audiostream = load('res://game/assets/music/' + Global.BGM_LIST[id] + '.ogg')
+	var uid = Global.BGM_UID_LIST[id]
+	var audiostream = load(uid)
 	audio_player.set_stream(audiostream)
 #	print(seek_point)
 #	print(current_song)
