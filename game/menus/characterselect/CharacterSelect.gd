@@ -245,7 +245,7 @@ func resolve_assists(row:int, col:int, is_p1):
 		enumChara = assist1[row][col]
 	
 	if (enumChara == Enums.AssistCharacters.Random):
-		enumChara = rng.randi_range(0, 7)
+		enumChara = rng.randi_range(0, 8)
 		print("RANDOM ASSIST " + str(enumChara))
 	
 	match enumChara:

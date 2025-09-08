@@ -12,7 +12,8 @@ func _init():
 			Enums.StKey.Hurt2Disable : true,
 			Enums.StKey.Hurt3Disable : true,
 			},
-		8 : { 
+		8 : {
+			Enums.StKey.Summon : "backdashdust",
 			Enums.StKey.Hurt1Disable : false,Enums.StKey.Hurt2Disable : true,Enums.StKey.Hurt3Disable : true,
 			Enums.StKey.Hurt1PosX : -262144, Enums.StKey.Hurt1PosY : -7471104,
 			Enums.StKey.Hurt1ScaleX : 522078, Enums.StKey.Hurt1ScaleY : 1436954,

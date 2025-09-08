@@ -9,8 +9,8 @@ var replay_logger
 @onready var message_label = $CanvasLayer/MessageLabel
 @onready var sync_lost_label = $CanvasLayer/SyncLostLabel
 
-const LOG_FILE_DIRECTORY = 'user://detailed_logs'
-const REPLAY_LOG_FILE_DIRECTORY = 'user://replay_logs'
+const LOG_FILE_DIRECTORY = Global.LOG_FILE_DIRECTORY
+const REPLAY_LOG_FILE_DIRECTORY = Global.REPLAY_LOG_FILE_DIRECTORY
 
 var logging_enabled := true
 var replay_logging_enabled := true

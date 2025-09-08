@@ -9,13 +9,6 @@ func _init():
 			Enums.StKey.counterOK: true,
 			Enums.StKey.Summon : "rundust",
 			Enums.StKey.Hit1Disable : true, Enums.StKey.Hit2Disable : true,
-			Enums.StKey.Hurt1Disable : true, Enums.StKey.Hurt2Disable : true, Enums.StKey.Hurt3Disable : true,
-			Enums.StKey.Hurt1PosX : 0, Enums.StKey.Hurt1PosY : -3145729,
-			Enums.StKey.Hurt1ScaleX : 1310325, Enums.StKey.Hurt1ScaleY : 714394,
-		},
-		10 : { 
-			Enums.StKey.counterOK: true,
-			Enums.StKey.Hit1Disable : true, Enums.StKey.Hit2Disable : true,
 			Enums.StKey.Hurt1Disable : false, Enums.StKey.Hurt2Disable : true, Enums.StKey.Hurt3Disable : true,
 			Enums.StKey.Hurt1PosX : 0, Enums.StKey.Hurt1PosY : -3145729,
 			Enums.StKey.Hurt1ScaleX : 1310325, Enums.StKey.Hurt1ScaleY : 714394,
@@ -45,3 +38,10 @@ func special_cancel(state: Dictionary, interpreter: InputInterpreter):
 	var next_state = self.persistent_state.state_factory.special_cancel(state, interpreter)
 	if (next_state != "" and next_state != "KanataRolling"):
 		state[Enums.StKey.cancelState] = next_state
+
+func has_property(state: Dictionary,property: int) -> bool:
+	match property:
+		Enums.StateProperty.StrikeInvul:
+			return state[Enums.StKey.frame] < 15
+		_:
+			return super.has_property(state,property)

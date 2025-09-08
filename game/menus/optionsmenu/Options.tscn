@@ -22,6 +22,7 @@ script = ExtResource("1")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Options" type="GridContainer" parent="CanvasLayer"]
+anchors_preset = -1
 offset_left = 87.0
 offset_top = 90.0
 offset_right = 727.0

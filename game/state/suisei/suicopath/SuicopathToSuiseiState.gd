@@ -5,7 +5,7 @@ class_name SuicopathToSuiseiState
 var SoundFX = Global.AirTechSound
 
 func _init():
-	endFrame = 12
+	endFrame = 8
 	
 	anim_data = {
 		0 : {

@@ -27,6 +27,14 @@ func load_startup_config():
 	DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED if (config.get_value("Visual", "Vsync", true)) else DisplayServer.VSYNC_DISABLED)
 	ProjectSettings.set_setting(
 		"display/window/vsync/vsync_mode", (DisplayServer.window_get_vsync_mode() != DisplayServer.VSYNC_DISABLED))
+	if (config.get_value("Visual", "FullScreen", false)):
+		get_window().mode = Window.MODE_EXCLUSIVE_FULLSCREEN
+		ProjectSettings.set_setting(
+			"display/window/size/fullscreen", true)
+	else:
+		get_window().mode = Window.MODE_WINDOWED
+		ProjectSettings.set_setting(
+			"display/window/size/fullscreen", false)
 
 func try_write_new_config_file():
 	# Create new ConfigFile object.
@@ -51,6 +59,7 @@ func try_write_new_config_file():
 	config.set_value("AccountOptions", "UserDisplayName", "HH Player")
 	config.set_value("Replay", "ReplayLogsEnabled", true)
 	config.set_value("Visual", "Vsync", true)
+	config.set_value("Visual", "FullScreen", false)
 	# Save it to a file (overwrite if already exists).
 	config.save("user://gamesettings.cfg")
 
@@ -65,6 +74,8 @@ func _ready() -> void:
 	Util.init_global_input_map()
 	Util.set_input_map_ui_controls()
 	#Util.print_controls()
+	DirAccess.make_dir_absolute(Global.LOG_FILE_DIRECTORY)
+	DirAccess.make_dir_absolute(Global.REPLAY_LOG_FILE_DIRECTORY)
 	
 func exit():
 	#print_orphan_nodes() # stops working in custom export build

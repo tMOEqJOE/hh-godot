@@ -246,11 +246,6 @@ func common_jump_transitions_default(state: Dictionary, interpreter: InputInterp
 			interpreter.is_holding_a_direction(Enums.Numpad.N8, state[Enums.StKey.leftface])) 
 			and interpreter.is_button_down(Enums.InputFlags.BDown | Enums.InputFlags.CDown)):
 		return "AirParryWhiff"
-	elif ((interpreter.is_holding_a_direction(Enums.Numpad.N1, state[Enums.StKey.leftface]) or
-				interpreter.is_holding_a_direction(Enums.Numpad.N2, state[Enums.StKey.leftface]) or
-				interpreter.is_holding_a_direction(Enums.Numpad.N3, state[Enums.StKey.leftface])) and 
-			interpreter.is_button_down(Enums.InputFlags.CDown)):
-		return "Jump2C"
 	elif (Global.level_2_OK(state) and interpreter.special_input_button(Enums.SpecialInput.M214, Enums.InputFlags.BDown, state[Enums.StKey.leftface])):
 		return "KanataAirWingHazard"
 	elif (interpreter.special_input_button(Enums.SpecialInput.M63214, Enums.InputFlags.ADown, state[Enums.StKey.leftface])):
@@ -267,6 +262,11 @@ func common_jump_transitions_default(state: Dictionary, interpreter: InputInterp
 		return "AirKanataRolling"
 	elif (interpreter.special_input_button(Enums.SpecialInput.M22, Enums.InputFlags.ADown, state[Enums.StKey.leftface])):
 		return "AirKanataRolling"
+	elif ((interpreter.is_holding_a_direction(Enums.Numpad.N1, state[Enums.StKey.leftface]) or
+				interpreter.is_holding_a_direction(Enums.Numpad.N2, state[Enums.StKey.leftface]) or
+				interpreter.is_holding_a_direction(Enums.Numpad.N3, state[Enums.StKey.leftface])) and 
+			interpreter.is_button_down(Enums.InputFlags.CDown)):
+		return "Jump2C"
 	elif (interpreter.is_holding_a_direction(Enums.Numpad.N6, state[Enums.StKey.leftface])
 				and interpreter.is_button_down(Enums.InputFlags.CDown)):
 			return "Jump6C"

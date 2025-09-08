@@ -191,7 +191,7 @@ texture = ExtResource("23")
 
 [node name="YourNameLabel" type="Label" parent="CanvasLayer"]
 modulate = Color(0, 0.427451, 0.623529, 1)
-anchors_preset = 5
+anchors_preset = -1
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 275.0
@@ -205,7 +205,7 @@ theme_override_fonts/font = SubResource("1")
 text = "Your Name:"
 
 [node name="DiscordLabel" type="Label" parent="CanvasLayer"]
-anchors_preset = 5
+anchors_preset = -1
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -168.0
@@ -219,6 +219,7 @@ theme_override_fonts/font = SubResource("1")
 text = "Join our discord!"
 
 [node name="DiscordButton" type="TextureButton" parent="CanvasLayer"]
+anchors_preset = -1
 offset_left = 664.0
 offset_top = 933.0
 offset_right = 794.0
@@ -231,7 +232,7 @@ texture_hover = ExtResource("6_vmtg1")
 texture_focused = ExtResource("6_vmtg1")
 
 [node name="YourNameEdit" type="LineEdit" parent="CanvasLayer"]
-anchors_preset = 5
+anchors_preset = -1
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 280.0
@@ -251,6 +252,7 @@ clear_button_enabled = true
 deselect_on_focus_loss_enabled = false
 
 [node name="MainMenuButtons" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = -1
 offset_left = 148.0
 offset_top = 86.0
 offset_right = 328.0
@@ -305,6 +307,7 @@ libraries = {
 }
 
 [node name="Earthbound2" type="Sprite2D" parent="."]
+texture_repeat = 3
 material = ExtResource("13")
 position = Vector2(961, 539)
 texture = ExtResource("3")

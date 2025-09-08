@@ -15,7 +15,7 @@ func _init():
 			Enums.StKey.Summon : "rundust",
 			Enums.StKey.Hurt1Disable : false,Enums.StKey.Hurt2Disable : true,Enums.StKey.Hurt3Disable : true,
 		},
-		15 : {
+		12 : {
 			Enums.StKey.Hurt1Disable : false,Enums.StKey.Hurt2Disable : true,Enums.StKey.Hurt3Disable : true,
 			Enums.StKey.Hurt1PosX : 851968, Enums.StKey.Hurt1PosY : -13107200,
 			Enums.StKey.Hurt1ScaleX : 1707349, Enums.StKey.Hurt1ScaleY : 628498,
@@ -43,7 +43,7 @@ func physics_tick(state: Dictionary) -> void:
 	if (state[Enums.StKey.frame] >= 21):
 		SyncManager.play_sound("step", Global.StepSound, {"bus": "Sound"})
 		state[Enums.StKey.frame] = 16
-	elif (state[Enums.StKey.frame] == 15):
+	elif (state[Enums.StKey.frame] == 12):
 		anim.play("Run")
 		state[Enums.StKey.velocity_x] = Util.fixed_max(SGFixed.ONE*30, state[Enums.StKey.velocity_x])
 		state[Enums.StKey.accel_x] = 65536

@@ -14,6 +14,14 @@ func _init():
 			Enums.StKey.Hurt2ScaleX : 892575, Enums.StKey.Hurt2ScaleY : 726926,
 			},
 		1 : {
+			Enums.StKey.Summon : "backdashdust",
+			Enums.StKey.Hurt1Disable : false,Enums.StKey.Hurt2Disable : false,Enums.StKey.Hurt3Disable : true,
+			Enums.StKey.Hurt1PosX : 0, Enums.StKey.Hurt1PosY : -14107200,
+			Enums.StKey.Hurt1ScaleX : 2291502, Enums.StKey.Hurt1ScaleY : 588738,
+			Enums.StKey.Hurt2PosX : 0, Enums.StKey.Hurt2PosY : -5056321,
+			Enums.StKey.Hurt2ScaleX : 892575, Enums.StKey.Hurt2ScaleY : 726926,
+			},
+		8 : {
 			Enums.StKey.Summon : "rundust",
 			Enums.StKey.Hurt1Disable : false,Enums.StKey.Hurt2Disable : false,Enums.StKey.Hurt3Disable : true,
 			Enums.StKey.Hurt1PosX : 0, Enums.StKey.Hurt1PosY : -14107200,
@@ -37,9 +45,9 @@ func physics_tick(state: Dictionary) -> void:
 	elif (negative_penalty(state)):
 		state[Enums.StKey.sync_rate] -= SGFixed.mul(Util.fixed_abs(state[Enums.StKey.velocity_x]), 1036)
 
-	if (state[Enums.StKey.frame] >= 8):
+	if (state[Enums.StKey.frame] >= 9):
 		SyncManager.play_sound("step", Global.StepSound, {"bus": "Sound"})
-		state[Enums.StKey.frame] = 1
+		state[Enums.StKey.frame] = 2
 	if (state[Enums.StKey.velocity_x] > SGFixed.ONE*30):
 		state[Enums.StKey.velocity_x] = SGFixed.ONE*30
 

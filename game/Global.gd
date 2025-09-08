@@ -1,6 +1,6 @@
 extends Node
 
-const BATTLE_ENGINE_VERSION = "HHv0.7.0007"
+const BATTLE_ENGINE_VERSION = "HHv0.7.0010"
 
 func get_battle_version() -> String:
 	if (len(Build.INTERNAL_BATTLE_ENGINE_KEY) < 50):
@@ -10,6 +10,9 @@ func get_battle_version() -> String:
 var LOCAL_SERVER = false
 var FIGHTER_GAME = preload("res://game/FighterGame.tscn")
 var load_queue = preload("res://game/simple_resource_queue.gd").new()
+
+const LOG_FILE_DIRECTORY = 'user://detailed_logs'
+const REPLAY_LOG_FILE_DIRECTORY = 'user://replay_logs'
 
 var PLAYER_1_NODE_PATH = ["res://game/fighter/SubaruPlayer.tscn", "res://game/fighter/assist/fubuki/FubukiPlayer.tscn", "res://game/fighter/puppet/HatoPuppet.tscn"]
 var PLAYER_2_NODE_PATH = ["res://game/fighter/SubaruPlayer.tscn", "res://game/fighter/assist/fubuki/FubukiPlayer.tscn", "res://game/fighter/puppet/HatoPuppet.tscn"]
@@ -146,6 +149,28 @@ const BGM_LIST = [
 	'WIM',
 	'This MU is (2-8) At Best',
 ]
+const BGM_UID_LIST = [
+	'uid://63an0yld6m2s', # Unused: Auto
+	'uid://63an0yld6m2s', # Unused: Random Once
+	'uid://63an0yld6m2s', # Unused Random Always
+	'uid://be36p1tue1m4e', #'Pleiades',
+	'uid://ia7b4sk853dr', #'Howling',
+	'uid://d3olga2mf7lgs', #'Silent Night Requiem',
+	'uid://bbsjim3t0k5um', #'Chuuku No Niwa',
+	'uid://clyck2abylosw', #'The Wahphony',
+	'uid://degygwfi2hbyh', #'Detabare Neko',
+	'uid://dnd4fo321ckra', #'Mogu Mogu Yummy',
+	'uid://dlscn51qt76wn', #'Saikyo Tensai',
+	'uid://ugrljdf7hfel', #'Just Follow Stars',
+	'uid://dahfik72030wi', #'Graveyard Shift',
+	'uid://bioxo0dlvg08l', # Battle at the top of the world
+	'uid://dbiyw2ycctnsw', #'Yume Hanabi',
+	'uid://baxokql4qdh6x', #'Homenobi',
+	'uid://cco7o17v7g0oh', #'Palette',
+	'uid://bta8h85cknuxa', #'Heroine Audition',
+	'uid://dpprd47eukupb', #'WIM',
+	'uid://63an0yld6m2s', #'This MU is (2-8) At Best',
+]
 
 var p1_device_id: int = 0
 var p2_device_id: int = 1
@@ -257,6 +282,7 @@ const BurstVFX = preload("res://game/fighter/effects/Burst.tscn")
 const RCVFX = preload("res://game/fighter/effects/RadicalCancel.tscn")
 const AirdashVFX = preload("res://game/fighter/effects/Airdash.tscn")
 const RunDustVFX = preload("res://game/fighter/effects/RunDust.tscn")
+const BackDashDustVFX = preload("res://game/fighter/effects/BackDashDust.tscn")
 const JumpDustVFX = preload("res://game/fighter/effects/JumpDust.tscn")
 const KnockdownDustVFX = preload("res://game/fighter/effects/KnockdownDust.tscn")
 const WallBounceDustVFX = preload("res://game/fighter/effects/WallBounceDust.tscn")

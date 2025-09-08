@@ -36,7 +36,7 @@ func _init():
 			Enums.StKey.min_damage:3,
 			Enums.StKey.hitstop: 9,
 			Enums.StKey.blockstun: Util.DEFAULT_LIGHT_BLOCKSTUN - 2,
-			Enums.StKey.hitstun: Util.DEFAULT_HITSTUN + 1,
+			Enums.StKey.hitstun: Util.DEFAULT_HITSTUN + 2,
 			Enums.StKey.meter_build: SGFixed.ONE*1000,
 			Enums.StKey.counter_hit: Enums.AttackType.Launcher,
 			Enums.StKey.counter_hitstun: 100,
@@ -64,7 +64,7 @@ func enter(state: Dictionary) -> void:
 func physics_tick(state: Dictionary) -> void:
 	super.physics_tick(state)
 	if (state[Enums.StKey.frame] == 6):
-		state[Enums.StKey.velocity_y] = -SGFixed.ONE*32
+		state[Enums.StKey.velocity_y] = -SGFixed.ONE*34
 		state[Enums.StKey.velocity_x] = -SGFixed.ONE*12
 
 

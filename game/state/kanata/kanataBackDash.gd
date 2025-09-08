@@ -12,7 +12,16 @@ func _init():
 			Enums.StKey.Hurt1PosX : -2545184, Enums.StKey.Hurt1PosY : -16087936,
 			Enums.StKey.Hurt1ScaleX : 803537, Enums.StKey.Hurt1ScaleY : 1171143,
 			},
-		18 : { 
+		4 : { 
+			Enums.StKey.Summon : "backdashdust",
+			Enums.StKey.Hit1Disable : true,
+			Enums.StKey.Hit2Disable : true,
+			Enums.StKey.Hurt1Disable : true,Enums.StKey.Hurt2Disable : true,Enums.StKey.Hurt3Disable : true,
+			Enums.StKey.Hurt1PosX : -2545184, Enums.StKey.Hurt1PosY : -16087936,
+			Enums.StKey.Hurt1ScaleX : 803537, Enums.StKey.Hurt1ScaleY : 1171143,
+			},
+		18 : {
+			Enums.StKey.Summon : "knockdowndust",
 			Enums.StKey.Hit1Disable : true,
 			Enums.StKey.Hit2Disable : true,
 			Enums.StKey.Hurt1Disable : false,Enums.StKey.Hurt2Disable : true,Enums.StKey.Hurt3Disable : true,

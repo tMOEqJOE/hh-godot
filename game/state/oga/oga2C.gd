@@ -42,15 +42,15 @@ func _init():
 			Enums.StKey.counter_launch_dir_x: -SGFixed.ONE*12,
 			Enums.StKey.counter_launch_dir_y: -SGFixed.ONE*40,
 			},
-		14 : { 
+		19 : { 
 			Enums.StKey.Hit1Disable : true,
 			Enums.StKey.Hit2Disable : true,
 			Enums.StKey.Hurt1Disable : false,Enums.StKey.Hurt2Disable : false,Enums.StKey.Hurt3Disable : false,
-			Enums.StKey.Hurt1PosX : 19070976, Enums.StKey.Hurt1PosY : -3866624,
+			Enums.StKey.Hurt1PosX : 14070976, Enums.StKey.Hurt1PosY : -3866624,
 			Enums.StKey.Hurt1ScaleX : 534613, Enums.StKey.Hurt1ScaleY : 274398,
-			Enums.StKey.Hurt2PosX : 6750208, Enums.StKey.Hurt2PosY : -14286848,
+			Enums.StKey.Hurt2PosX : 1750208, Enums.StKey.Hurt2PosY : -14286848,
 			Enums.StKey.Hurt2ScaleX : 1073082, Enums.StKey.Hurt2ScaleY : 628093,
-			Enums.StKey.Hurt3PosX : 1310719, Enums.StKey.Hurt3PosY : -5636095,
+			Enums.StKey.Hurt3PosX : 810719, Enums.StKey.Hurt3PosY : -5636095,
 			Enums.StKey.Hurt3ScaleX : 1376776, Enums.StKey.Hurt3ScaleY : 534814,
 			},
 	}

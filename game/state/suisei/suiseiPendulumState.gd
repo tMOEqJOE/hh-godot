@@ -48,17 +48,17 @@ func physics_tick(state: Dictionary) -> void:
 	super.physics_tick(state)
 	if (state[Enums.StKey.frame] == 0):
 		state[Enums.StKey.velocity_x] = -SGFixed.ONE*17
-		state[Enums.StKey.velocity_y] = -SGFixed.ONE*20
+		state[Enums.StKey.velocity_y] = -SGFixed.ONE*10
 		state[Enums.StKey.accel_y] = Util.GRAVITY
-	elif (state[Enums.StKey.frame] == 8):
+	elif (state[Enums.StKey.frame] == 5):
 		state[Enums.StKey.velocity_x] = SGFixed.ONE*10
 		state[Enums.StKey.velocity_y] = SGFixed.ONE*48
 		state[Enums.StKey.accel_y] = -SGFixed.ONE*3
 		state[Enums.StKey.accel_x] = 68536
-	elif (state[Enums.StKey.frame] == 30):
+	elif (state[Enums.StKey.frame] == 27):
 		state[Enums.StKey.accel_y] = SGFixed.ONE*3
 		state[Enums.StKey.accel_x] = -SGFixed.ONE*2
-	elif (state[Enums.StKey.frame] == 50):
+	elif (state[Enums.StKey.frame] == 47):
 		state[Enums.StKey.accel_y] = -SGFixed.ONE*1
 		state[Enums.StKey.accel_x] = -SGFixed.ONE*3
 
@@ -74,7 +74,7 @@ func special_cancel(state: Dictionary, interpreter: InputInterpreter):
 			state[Enums.StKey.cancelState] = "AirSuiseiToSuicopath"
 		elif (interpreter.is_button_down(Enums.InputFlags.BDown)):
 			change_state.call("GatoDive")
-	elif (state[Enums.StKey.frame] >= 10):
+	elif (state[Enums.StKey.frame] >= 2):
 		if (interpreter.is_button_down(Enums.InputFlags.CDown)):
 			change_state.call("AirSuiseiToSuicopath")
 		elif (interpreter.is_button_down(Enums.InputFlags.BDown)):

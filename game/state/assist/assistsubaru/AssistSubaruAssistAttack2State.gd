@@ -23,7 +23,7 @@ func _init():
 			Enums.StKey.hitstun : 35,
 			Enums.StKey.hitstop : 12,
 			Enums.StKey.attack_damage:60,
-			Enums.StKey.min_damage: 5,
+			Enums.StKey.min_damage: 8,
 			Enums.StKey.chip_damage:5,
 			Enums.StKey.counter_hit: Enums.AttackType.Launcher,
 			Enums.StKey.counter_hitstun: 100,

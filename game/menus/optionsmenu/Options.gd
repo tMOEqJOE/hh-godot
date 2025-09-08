@@ -72,6 +72,7 @@ func _on_GoBackButton_pressed():
 	Util.write_to_config_file("SoundOptions", "VoiceVolume", Voice_volume)
 	Util.write_to_config_file("Debug", "DebugRollbackLogsEnabled", DebugRollbackLogsEnabled)
 	Util.write_to_config_file("Visual", "Vsync", (DisplayServer.window_get_vsync_mode() != DisplayServer.VSYNC_DISABLED))
+	Util.write_to_config_file("Visual", "FullScreen", (ProjectSettings.get_setting("display/window/size/fullscreen")))
 	Util.write_to_config_file("Replay", "ReplayLogsEnabled", Global.replay_logging_enabled)
 
 func _on_MainVolumeMeter_value_changed(value):

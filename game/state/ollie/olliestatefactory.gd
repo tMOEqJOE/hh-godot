@@ -29,7 +29,7 @@ func _init():
 		"JustAirBlock": preload("res://game/state/ollie/ollieAirJustBlockState.gd"),
 #		"StandFDStance": StandFDStanceState,
 #		"CrouchFDStance": CrouchFDStanceState,
-#		"AirFDStance": AirFDStanceState,
+		"AirFDStance": preload("res://game/state/ollie/ollieAirFDStanceState.gd"),
 #		"StandParryWhiff": StandParryWhiffState,
 #		"CrouchParryWhiff": CrouchParryWhiffState,
 #		"AirParryWhiff": AirParryWhiffState,

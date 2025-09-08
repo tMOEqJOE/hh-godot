@@ -27,7 +27,7 @@ scale = Vector2(2, 2)
 texture = ExtResource("4")
 
 [node name="MessageLabel" type="Label" parent="."]
-anchors_preset = 5
+anchors_preset = -1
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 712.0

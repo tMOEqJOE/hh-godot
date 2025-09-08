@@ -70,6 +70,8 @@ func _init():
 		"Pendulum": preload("res://game/state/suisei/suiseiPendulumState.gd"),
 		"AirStinger": preload("res://game/state/suisei/suiseiYoruMatsuyo.gd"),
 		"LightYoruMatsuyo": preload("res://game/state/suisei/suiseiLightYoruMatsuyo.gd"),
+		"CaramelThrust": preload("res://game/state/suisei/suiseiCaramelThrust.gd"),
+		"AirCaramelThrust": preload("res://game/state/suisei/suiseiAirCaramelThrust.gd"),
 		
 		"LandingRecovery": preload("res://game/state/subaru/subaruLandingRecovery.gd"),
 		
@@ -304,6 +306,10 @@ func common_idle_transitions(state: Dictionary, interpreter: InputInterpreter) -
 		return "Stinger"
 	elif (interpreter.special_input_button(Enums.SpecialInput.M214, Enums.InputFlags.ADown, state[Enums.StKey.leftface])):
 		return "LightYoruMatsuyo"
+	elif (interpreter.special_input_button(Enums.SpecialInput.M236, Enums.InputFlags.BDown, state[Enums.StKey.leftface])):
+		return "CaramelThrust"
+	elif (interpreter.special_input_button(Enums.SpecialInput.M236, Enums.InputFlags.ADown, state[Enums.StKey.leftface])):
+		return "CaramelThrust"
 	elif (interpreter.is_stick_dashing(true, state[Enums.StKey.leftface]) and state[Enums.StKey.stateName] != "Run"):
 		return "Run"
 	elif (interpreter.is_button_dashing(true, state[Enums.StKey.leftface])):
@@ -387,6 +393,10 @@ func common_jump_transitions_default(state: Dictionary, interpreter: InputInterp
 		return "AirStinger"
 	elif (interpreter.special_input_button(Enums.SpecialInput.M214, Enums.InputFlags.ADown, state[Enums.StKey.leftface])):
 		return "LightYoruMatsuyo"
+	elif (interpreter.special_input_button(Enums.SpecialInput.M236, Enums.InputFlags.BDown, state[Enums.StKey.leftface])):
+		return "AirCaramelThrust"
+	elif (interpreter.special_input_button(Enums.SpecialInput.M236, Enums.InputFlags.ADown, state[Enums.StKey.leftface])):
+		return "AirCaramelThrust"
 	elif (state[Enums.StKey.airDash] > -1 and interpreter.is_stick_air_dashing(true, state[Enums.StKey.leftface]) and 
 			state[Enums.StKey.stateName] != "ForwardAirDash"):
 		return "ForwardAirDash"

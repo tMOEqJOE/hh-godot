@@ -42,7 +42,7 @@ script = ExtResource("3")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="MessageLabel" type="Label" parent="CanvasLayer"]
-anchors_preset = 5
+anchors_preset = -1
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -205.0
@@ -53,7 +53,7 @@ scale = Vector2(2, 2)
 text = "Netplay:"
 
 [node name="NameLabel" type="Label" parent="CanvasLayer"]
-anchors_preset = 5
+anchors_preset = -1
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -941.0
@@ -64,6 +64,7 @@ scale = Vector2(1.56009, 1.2171)
 text = "Netplay:"
 
 [node name="GridContainer" type="GridContainer" parent="CanvasLayer"]
+anchors_preset = -1
 offset_left = 758.0
 offset_top = 204.0
 offset_right = 1122.0
@@ -86,16 +87,19 @@ size_flags_horizontal = 3
 text = "Join Room"
 
 [node name="HostLabel2" type="Label" parent="CanvasLayer/GridContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Public Room"
 
 [node name="CreatePublicRoomButton" type="Button" parent="CanvasLayer/GridContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Create Room"
 
 [node name="FindPublicRoomButton" type="Button" parent="CanvasLayer/GridContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Find Room"
