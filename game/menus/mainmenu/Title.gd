@@ -74,6 +74,8 @@ func _ready() -> void:
 	Util.init_global_input_map()
 	Util.set_input_map_ui_controls()
 	#Util.print_controls()
+	DirAccess.make_dir_absolute(Global.LOG_FILE_DIRECTORY)
+	DirAccess.make_dir_absolute(Global.REPLAY_LOG_FILE_DIRECTORY)
 	
 func exit():
 	#print_orphan_nodes() # stops working in custom export build

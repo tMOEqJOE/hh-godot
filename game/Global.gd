@@ -1,6 +1,6 @@
 extends Node
 
-const BATTLE_ENGINE_VERSION = "HHv0.7.0009"
+const BATTLE_ENGINE_VERSION = "HHv0.7.0010"
 
 func get_battle_version() -> String:
 	if (len(Build.INTERNAL_BATTLE_ENGINE_KEY) < 50):
@@ -10,6 +10,9 @@ func get_battle_version() -> String:
 var LOCAL_SERVER = false
 var FIGHTER_GAME = preload("res://game/FighterGame.tscn")
 var load_queue = preload("res://game/simple_resource_queue.gd").new()
+
+const LOG_FILE_DIRECTORY = 'user://detailed_logs'
+const REPLAY_LOG_FILE_DIRECTORY = 'user://replay_logs'
 
 var PLAYER_1_NODE_PATH = ["res://game/fighter/SubaruPlayer.tscn", "res://game/fighter/assist/fubuki/FubukiPlayer.tscn", "res://game/fighter/puppet/HatoPuppet.tscn"]
 var PLAYER_2_NODE_PATH = ["res://game/fighter/SubaruPlayer.tscn", "res://game/fighter/assist/fubuki/FubukiPlayer.tscn", "res://game/fighter/puppet/HatoPuppet.tscn"]

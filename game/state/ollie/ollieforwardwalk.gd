@@ -5,7 +5,7 @@ class_name OllieForwardWalk
 func enter(state: Dictionary) -> void:
 	super.enter(state)
 	anim.play("ForwardWalk")
-	state[Enums.StKey.drag_x] = Util.ICE_FRICTION
+	state[Enums.StKey.drag_x] = Util.SUPER_ICE_FRICTION
 	state[Enums.StKey.velocity_y] = 0
 
 func physics_tick(state: Dictionary) -> void:
