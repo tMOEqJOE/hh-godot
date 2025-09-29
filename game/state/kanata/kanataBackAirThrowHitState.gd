@@ -51,7 +51,6 @@ func physics_tick(state: Dictionary) -> void:
 	super.physics_tick(state)
 	if (state[Enums.StKey.frame] == 2):
 		SyncManager.play_sound("throwcatch", Global.ThrowCatchSound, {"bus": "Sound"})
-
 #	if (state[Enums.StKey.frame] <= 20 and state[Enums.StKey.frame] % 8 == 0):
 #		state[Enums.StKey.leftface] = not state[Enums.StKey.leftface]
 #		state[Enums.StKey.velocity_x] = -state[Enums.StKey.velocity_x]

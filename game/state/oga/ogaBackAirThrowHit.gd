@@ -48,7 +48,8 @@ func _init():
 # Writing _delta instead of delta here prevents the unused variable warning.
 func enter(state: Dictionary) -> void:
 	super.enter(state)
-	state[Enums.StKey.velocity_x] = 0
+	state[Enums.StKey.drag_x] = Util.FRICTION
+	state[Enums.StKey.velocity_x] = Util.THROW_HIT_PUSH
 	state[Enums.StKey.velocity_y] = 0
 	state[Enums.StKey.accel_y] = 0
 	state[Enums.StKey.sync_rate] += SGFixed.ONE*12
@@ -59,7 +60,8 @@ func physics_tick(state: Dictionary) -> void:
 	super.physics_tick(state)
 	if (state[Enums.StKey.frame] == 2):
 		SyncManager.play_sound("throwcatch", Global.ThrowCatchSound, {"bus": "Sound"})
-
+	if (state[Enums.StKey.frame] == 19):
+		state[Enums.StKey.velocity_x] = Util.BACK_THROW_HIT_PUSH
 	if (state[Enums.StKey.frame] >= 34):
 		state[Enums.StKey.accel_y] = Util.GRAVITY
 

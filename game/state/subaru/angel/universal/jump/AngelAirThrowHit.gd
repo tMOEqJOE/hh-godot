@@ -36,7 +36,8 @@ func _init():
 # Writing _delta instead of delta here prevents the unused variable warning.
 func enter(state: Dictionary) -> void:
 	super.enter(state)
-	state[Enums.StKey.velocity_x] = 0
+	state[Enums.StKey.drag_x] = Util.FRICTION
+	state[Enums.StKey.velocity_x] = Util.THROW_HIT_PUSH
 	state[Enums.StKey.velocity_y] = 0
 	state[Enums.StKey.accel_y] = 0
 	state[Enums.StKey.sync_rate] += SGFixed.ONE*12

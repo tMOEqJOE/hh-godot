@@ -66,6 +66,7 @@ func _init():
 		
 		"GroundThrowWhiff": OgaGroundThrowWhiffState,
 		"AirThrowWhiff": OgaAirThrowWhiffState,
+		"AirBackThrowWhiff": OgaAirBackThrowWhiffState,
 		"GroundThrowHit": OgaGroundThrowHitState,
 		"AirThrowHit": OgaAirThrowHitState,
 		"AirBackThrowHit": OgaBackAirThrowHitState,
