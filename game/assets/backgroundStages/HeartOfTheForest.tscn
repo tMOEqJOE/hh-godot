@@ -34,5 +34,5 @@ centered = false
 [node name="Floor" type="Sprite2D" parent="Floor"]
 z_index = -100
 position = Vector2(0, -424)
-scale = Vector2(3.6035764, 3.6035764)
+scale = Vector2(2.1580098, 2.1580098)
 texture = ExtResource("2")

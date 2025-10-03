@@ -3,7 +3,7 @@ extends SuicopathIdleState
 class_name SuicopathBackDashState
 
 func _init():
-	endFrame = 15
+	endFrame = 20
 	anim_data = {
 		0 : { 
 			Enums.StKey.Hit1Disable : true,
@@ -17,7 +17,7 @@ func _init():
 			Enums.StKey.Hit2Disable : true,
 			Enums.StKey.Hurt1Disable : false,Enums.StKey.Hurt2Disable : true,Enums.StKey.Hurt3Disable : true,
 			Enums.StKey.Hurt1PosX : 2031616, Enums.StKey.Hurt1PosY : -18153472,
-			Enums.StKey.Hurt1ScaleX : 803879, Enums.StKey.Hurt1ScaleY : 1926445,
+			Enums.StKey.Hurt1ScaleX : 1003879, Enums.StKey.Hurt1ScaleY : 2549402,
 			},
 	}
 	
@@ -31,8 +31,13 @@ func physics_tick(state: Dictionary) -> void:
 	super.physics_tick(state)
 	if (state[Enums.StKey.frame] == 2):
 		SyncManager.play_sound("skid", Global.SkidSound, {"bus": "Sound"})
-	state[Enums.StKey.sync_rate] -= SGFixed.mul(Util.fixed_abs(state[Enums.StKey.velocity_x]), 5536)
-	state[Enums.StKey.assist_meter] -= SGFixed.ONE*220
+	
+	if (state[Enums.StKey.frame] <= 5):
+		state[Enums.StKey.sync_rate] -= 55536
+		state[Enums.StKey.assist_meter] -= SGFixed.ONE*420
+	elif (state[Enums.StKey.frame] <= 15):
+		state[Enums.StKey.sync_rate] -= 55536
+		state[Enums.StKey.assist_meter] -= SGFixed.ONE*180
 
 func handle_input(state: Dictionary, interpreter: InputInterpreter) -> void:
 	if (state[Enums.StKey.frame] == 0):
@@ -42,6 +47,9 @@ func handle_input(state: Dictionary, interpreter: InputInterpreter) -> void:
 	
 	if (boost_OK(state, interpreter)):
 		change_state.call("AngelBoostCancel")
+	if (state[Enums.StKey.frame] >= 15):
+		if (interpreter.is_button_down(Enums.InputFlags.CDown)):
+			change_state.call("AngelUninstall")
 
 func has_property(state: Dictionary,property: int) -> bool:
 	match property:
