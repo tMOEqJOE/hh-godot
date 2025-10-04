@@ -27,14 +27,18 @@ func load_startup_config():
 	DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED if (config.get_value("Visual", "Vsync", true)) else DisplayServer.VSYNC_DISABLED)
 	ProjectSettings.set_setting(
 		"display/window/vsync/vsync_mode", (DisplayServer.window_get_vsync_mode() != DisplayServer.VSYNC_DISABLED))
-	if (config.get_value("Visual", "FullScreen", false)):
-		get_window().mode = Window.MODE_EXCLUSIVE_FULLSCREEN
-		ProjectSettings.set_setting(
-			"display/window/size/fullscreen", true)
+	if (config.get_value("Visual", "FullScreenMode", DisplayServer.WINDOW_MODE_WINDOWED) == DisplayServer.WINDOW_MODE_FULLSCREEN):
+		call_deferred("full_screen_toggle", DisplayServer.WINDOW_MODE_FULLSCREEN)
 	else:
-		get_window().mode = Window.MODE_WINDOWED
-		ProjectSettings.set_setting(
-			"display/window/size/fullscreen", false)
+		call_deferred("full_screen_toggle", DisplayServer.WINDOW_MODE_WINDOWED)
+
+func full_screen_toggle(mode):
+	if (mode == DisplayServer.WINDOW_MODE_FULLSCREEN):
+		if (DisplayServer.window_get_mode() != DisplayServer.WINDOW_MODE_FULLSCREEN):
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	else:
+		if (DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN):
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 
 func try_write_new_config_file():
 	# Create new ConfigFile object.
@@ -59,7 +63,7 @@ func try_write_new_config_file():
 	config.set_value("AccountOptions", "UserDisplayName", "HH Player")
 	config.set_value("Replay", "ReplayLogsEnabled", true)
 	config.set_value("Visual", "Vsync", true)
-	config.set_value("Visual", "FullScreen", false)
+	config.set_value("Visual", "FullScreenMode", DisplayServer.WINDOW_MODE_WINDOWED)
 	# Save it to a file (overwrite if already exists).
 	config.save("user://gamesettings.cfg")
 
