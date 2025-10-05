@@ -40,7 +40,6 @@ func reaction(state: Dictionary, interpreter: InputInterpreter, event_cause: int
 	elif (state[Enums.StKey.hitStopFrame] <= 0):
 		if (event_cause == Enums.Reaction.GroundLand):
 			if (state[Enums.StKey.ground_bounce] > 0):
-				state[Enums.StKey.ground_bounce] -= 1
 				change_state.call("AngelGroundBounce")
 			else:
 				state[Enums.StKey.doubleJump] = 1
@@ -48,6 +47,4 @@ func reaction(state: Dictionary, interpreter: InputInterpreter, event_cause: int
 				change_state.call("AngelKnockdown")
 		elif (event_cause == Enums.Reaction.WallLand):
 			if (state[Enums.StKey.wall_bounce] > 0):
-				state[Enums.StKey.wall_bounce] -= 1
 				change_state.call("AngelWallBounce")
-

@@ -43,13 +43,11 @@ func reaction(state: Dictionary, interpreter: InputInterpreter, event_cause: int
 	elif (state[Enums.StKey.hitStopFrame] <= 0):
 		if (event_cause == Enums.Reaction.GroundLand):
 			if (state[Enums.StKey.ground_bounce] > 0):
-				state[Enums.StKey.ground_bounce] -= 1
 				change_state.call("GroundBounce")
 			else:
 				change_state.call("Knockdown")
 		elif (event_cause == Enums.Reaction.WallLand):
 			if (state[Enums.StKey.wall_bounce] > 0):
-				state[Enums.StKey.wall_bounce] -= 1
 				change_state.call("WallBounce")
 
 func physics_tick(state: Dictionary) -> void:

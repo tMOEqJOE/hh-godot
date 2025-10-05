@@ -18,6 +18,7 @@ func _init() -> void:
 # Writing _delta instead of delta here prevents the unused variable warning.
 func enter(state: Dictionary) -> void:
 	super.enter(state)
+	state[Enums.StKey.wall_bounce] -= 1
 	state[Enums.StKey.hitStopFrame] = -1
 	state[Enums.StKey.leftface] = not state[Enums.StKey.leftface]
 	if (state[Enums.StKey.velocity_y] > -SGFixed.ONE*5):
