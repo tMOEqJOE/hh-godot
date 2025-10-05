@@ -1,16 +1,50 @@
-[gd_scene load_steps=3 format=3 uid="uid://swo4allq61uh"]
+[gd_scene load_steps=6 format=3 uid="uid://swo4allq61uh"]
 
 [ext_resource type="Texture2D" uid="uid://n38lbw1xejoy" path="res://game/assets/sprites/BGArt/HollowGarden/HollowGarden.png" id="2"]
-[ext_resource type="Script" path="res://game/backgrounds/AnimatedBackgroundParent.gd" id="4"]
+[ext_resource type="Texture2D" uid="uid://baau283rt6ttj" path="res://game/assets/sprites/BGArt/HollowGarden/HollowGardenIslands.png" id="3_d5x6t"]
+[ext_resource type="Script" uid="uid://gt6l8h6v6871" path="res://game/backgrounds/AnimatedBackgroundParent.gd" id="4"]
+[ext_resource type="Texture2D" uid="uid://yc6tdu4ipj5b" path="res://game/assets/sprites/BGArt/HollowGarden/HollowGardenClouds.png" id="4_mxhbo"]
+[ext_resource type="Texture2D" uid="uid://cacjogpn05sdo" path="res://game/assets/sprites/BGArt/HollowGarden/HollowGardenGround.png" id="5_mxhbo"]
 
 [node name="ParallaxBackground" type="ParallaxBackground"]
 script = ExtResource("4")
+metadata/_edit_vertical_guides_ = [2915.0, -2913.0]
+metadata/_edit_horizontal_guides_ = [565.0]
+
+[node name="FarBackground" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0, 0)
+
+[node name="Background" type="Sprite2D" parent="FarBackground"]
+z_index = -100
+scale = Vector2(2.0037036, 2.0037036)
+texture = ExtResource("2")
+centered = false
+
+[node name="Clouds" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.2, 0.2)
+
+[node name="Background" type="Sprite2D" parent="Clouds"]
+z_index = -100
+position = Vector2(-1665, 267.00006)
+scale = Vector2(1.6072758, 1.7485683)
+texture = ExtResource("4_mxhbo")
+centered = false
+
+[node name="MidGround" type="ParallaxLayer" parent="."]
+position = Vector2(0, -317)
+motion_scale = Vector2(0.4, 0.4)
+
+[node name="Background" type="Sprite2D" parent="MidGround"]
+z_index = -100
+position = Vector2(-1665, 267.00006)
+scale = Vector2(1.6072758, 1.7485683)
+texture = ExtResource("3_d5x6t")
+centered = false
 
 [node name="Floor" type="ParallaxLayer" parent="."]
 
 [node name="Floor" type="Sprite2D" parent="Floor"]
-self_modulate = Color(1, 1, 1, 0.333333)
 z_index = -100
-position = Vector2(0, -451)
-scale = Vector2(3.04, 1.96)
-texture = ExtResource("2")
+position = Vector2(-1, 161.00002)
+scale = Vector2(2.0365882, 2.0365882)
+texture = ExtResource("5_mxhbo")

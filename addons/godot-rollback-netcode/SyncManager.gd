@@ -1593,6 +1593,9 @@ func set_default_sound_bus(bus: String) -> void:
 func play_sound(identifier: String, sound: AudioStream, info: Dictionary = {}) -> void:
 	_sound_manager.play_sound(identifier, sound, info)
 
+func clear_all_sounds() -> void:
+	_sound_manager.clear_all_sounds()
+
 func ensure_current_tick_input_complete() -> bool:
 	if is_current_tick_input_complete():
 		return true
