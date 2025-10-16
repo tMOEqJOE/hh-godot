@@ -62,7 +62,7 @@ func enter(state: Dictionary) -> void:
 	super.enter(state)
 	state[Enums.StKey.super_meter] += SGFixed.ONE*200
 	state[Enums.StKey.velocity_y] = 0
-	anim.play("DP")
+	anim.play("LightDP")
 
 func physics_tick(state: Dictionary) -> void:
 	super.physics_tick(state)

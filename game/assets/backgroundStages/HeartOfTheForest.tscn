@@ -7,7 +7,7 @@
 
 [node name="ParallaxBackground" type="ParallaxBackground"]
 script = ExtResource("4")
-metadata/_edit_horizontal_guides_ = [-595.0, 576.0]
+metadata/_edit_horizontal_guides_ = [-595.0, 563.0]
 metadata/_edit_vertical_guides_ = [2920.0, -2927.0]
 
 [node name="FarBackground" type="ParallaxLayer" parent="."]
@@ -33,6 +33,6 @@ centered = false
 
 [node name="Floor" type="Sprite2D" parent="Floor"]
 z_index = -100
-position = Vector2(0.42669296, -366.67087)
+position = Vector2(0, -384)
 scale = Vector2(2.035192, 2.035192)
 texture = ExtResource("2")
