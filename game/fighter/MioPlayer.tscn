@@ -1,4 +1,4 @@
-[gd_scene load_steps=277 format=3 uid="uid://bahv36p0oriog"]
+[gd_scene load_steps=281 format=3 uid="uid://bahv36p0oriog"]
 
 [ext_resource type="Texture2D" uid="uid://cys2w6snwfl60" path="res://game/assets/sprites/mio/5B/Timeline 1_0006.png" id="1"]
 [ext_resource type="Script" uid="uid://dfikixggfxk0g" path="res://game/fighter/MioPlayer.gd" id="2"]
@@ -58,7 +58,9 @@
 [ext_resource type="Texture2D" uid="uid://ct5uky5iyni7y" path="res://game/assets/sprites/mio/jB/Timeline 1_0001.png" id="55"]
 [ext_resource type="Texture2D" uid="uid://dv5l2n7vstm2s" path="res://game/assets/sprites/mio/jB/Timeline 1_0003.png" id="56"]
 [ext_resource type="Texture2D" uid="uid://caf3kv1d84peq" path="res://game/assets/sprites/mio/CrouchHurt/Timeline 1_0000.png" id="57"]
+[ext_resource type="Texture2D" uid="uid://d83jm6s6cqot" path="res://game/assets/sprites/mio/AirAssistCall/Timeline 1_0001.png" id="57_p0d0i"]
 [ext_resource type="Texture2D" uid="uid://bs3jft4lwsd5p" path="res://game/assets/sprites/mio/CrouchHurt/Timeline 1_0001.png" id="58"]
+[ext_resource type="Texture2D" uid="uid://2khcfpn47dn3" path="res://game/assets/sprites/mio/AirAssistCall/Timeline 1_0002.png" id="58_hrvyf"]
 [ext_resource type="Texture2D" uid="uid://cfkoh1imx0t57" path="res://game/assets/sprites/mio/CrouchBlock/Timeline 1_0000.png" id="59"]
 [ext_resource type="Texture2D" uid="uid://ckh5bpb7x76ti" path="res://game/assets/sprites/mio/jB/Timeline 1_0002.png" id="60"]
 [ext_resource type="Texture2D" uid="uid://blv8oghp0qonq" path="res://game/assets/sprites/mio/jB/Timeline 1_0000.png" id="61"]
@@ -74,6 +76,7 @@
 [ext_resource type="Texture2D" uid="uid://2em1qq2ldboa" path="res://game/assets/sprites/mio/AirHit/Timeline 1_0000.png" id="73"]
 [ext_resource type="Texture2D" uid="uid://bofmbk7babkvr" path="res://game/assets/sprites/mio/AirHit/Timeline 1_0001.png" id="74"]
 [ext_resource type="Texture2D" uid="uid://bd6c1p1lq0vof" path="res://game/assets/sprites/mio/AirHit/Timeline 1_0003.png" id="75"]
+[ext_resource type="Texture2D" uid="uid://b2e7et8rxvuct" path="res://game/assets/sprites/mio/AirThrowHit/Timeline 1_0002.png" id="75_hrvyf"]
 [ext_resource type="Texture2D" uid="uid://dc2ldauwwa4fe" path="res://game/assets/sprites/mio/AirThrowWhiff/Timeline 1_0002.png" id="76"]
 [ext_resource type="Texture2D" uid="uid://dc6kves5gc7vk" path="res://game/assets/sprites/mio/AirThrowWhiff/Timeline 1_0000.png" id="77"]
 [ext_resource type="Texture2D" uid="uid://cu2ne58qs6ucj" path="res://game/assets/sprites/mio/AirThrowWhiff/Timeline 1_0001.png" id="78"]
@@ -485,7 +488,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="53"]
 resource_name = "AirAssist"
-length = 0.0500001
+length = 0.15000196
 step = 0.0166667
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -494,10 +497,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [ExtResource("223")]
+"values": [ExtResource("223"), ExtResource("57_p0d0i"), ExtResource("58_hrvyf")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -610,7 +613,7 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.1),
+"times": PackedFloat32Array(0, 0.05, 0.15),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [ExtResource("83"), ExtResource("85"), ExtResource("84")]
@@ -625,7 +628,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-60, 0)]
+"values": [Vector2(-60, 50)]
 }
 
 [sub_resource type="Animation" id="32"]
@@ -668,10 +671,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.316667),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.23333333, 0.33333334),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [ExtResource("89"), ExtResource("82")]
+"values": [ExtResource("89"), ExtResource("82"), ExtResource("75_hrvyf")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -683,7 +686,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1000000),
 "update": 0,
-"values": [Vector2(0, -80)]
+"values": [Vector2(-120, 40)]
 }
 
 [sub_resource type="Animation" id="16"]
@@ -1418,6 +1421,21 @@ tracks/1/keys = {
 "values": [Vector2(-70, 30)]
 }
 
+[sub_resource type="Animation" id="Animation_4juik"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("223")]
+}
+
 [sub_resource type="Animation" id="21"]
 resource_name = "Run"
 length = 0.600001
@@ -1897,6 +1915,7 @@ _data = {
 &"Knockdown": SubResource("27"),
 &"MioCards": SubResource("44"),
 &"PreJump": SubResource("10"),
+&"RESET": SubResource("Animation_4juik"),
 &"Run": SubResource("21"),
 &"Skid": SubResource("22"),
 &"StandBlock": SubResource("9"),
@@ -1924,8 +1943,8 @@ script = ExtResource("2")
 material = ExtResource("5")
 position = Vector2(77, -379)
 scale = Vector2(1.428, 1.428)
-texture = ExtResource("177")
-offset = Vector2(0, 80)
+texture = ExtResource("223")
+offset = Vector2(-120, 40)
 
 [node name="Pushbox" type="SGCollisionShape2D" parent="."]
 shape = SubResource("1")

@@ -25,7 +25,7 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.0166667),
-"transitions": PackedFloat32Array(1e+06, 1e+06),
+"transitions": PackedFloat32Array(1000000, 1000000),
 "update": 1,
 "values": [ExtResource("5"), ExtResource("7")]
 }
@@ -60,7 +60,7 @@ script = ExtResource("3")
 material = ExtResource("40")
 position = Vector2(280, 14)
 scale = Vector2(1.51119, 0.608707)
-texture = ExtResource("5")
+texture = ExtResource("7")
 
 [node name="Pushbox" type="SGCollisionShape2D" parent="."]
 shape = SubResource("1")

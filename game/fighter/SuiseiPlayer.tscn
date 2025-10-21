@@ -1,4 +1,4 @@
-[gd_scene load_steps=326 format=3 uid="uid://bmn2buuipdmkn"]
+[gd_scene load_steps=325 format=3 uid="uid://bmn2buuipdmkn"]
 
 [ext_resource type="Texture2D" uid="uid://4lo4cemr486p" path="res://game/assets/sprites/suisei/Idle/Timeline 1_0000.png" id="1"]
 [ext_resource type="Script" uid="uid://dctxuxh3f2d6a" path="res://game/fighter/SuiseiPlayer.gd" id="2"]
@@ -86,6 +86,7 @@
 [ext_resource type="Texture2D" uid="uid://deoh7vm0rabk2" path="res://game/assets/sprites/subaru/ForwardAirDash/Timeline 1_0000.png" id="82"]
 [ext_resource type="Texture2D" uid="uid://b5akaldt2wuik" path="res://game/assets/sprites/suicopath/2B/Timeline 1_0001.png" id="90"]
 [ext_resource type="Texture2D" uid="uid://c6l6cii62r50w" path="res://game/assets/sprites/suisei/BackwardWalk/Timeline 1_0000.png" id="91_cfqyn"]
+[ext_resource type="Texture2D" uid="uid://b81y1vka0fcjp" path="res://game/assets/sprites/suicopath/CrouchParry/Timeline 1_0000.png" id="91_jvy3p"]
 [ext_resource type="Texture2D" uid="uid://baf7o5cgov568" path="res://game/assets/sprites/suisei/Backdash/Timeline 1_0000.png" id="91_pxbwb"]
 [ext_resource type="Texture2D" uid="uid://c4rr1tds84uou" path="res://game/assets/sprites/suisei/BackwardWalk/Timeline 1_0001.png" id="92_dp278"]
 [ext_resource type="Texture2D" uid="uid://bqp2l5osxnmpy" path="res://game/assets/sprites/suisei/Backdash/Timeline 1_0001.png" id="92_jvy3p"]
@@ -95,15 +96,10 @@
 [ext_resource type="Texture2D" uid="uid://c5lplsplb0fyh" path="res://game/assets/sprites/suisei/6A/Timeline 1_0001.png" id="95"]
 [ext_resource type="Texture2D" uid="uid://ddilkafp0bnsf" path="res://game/assets/sprites/suicopath/2B/Timeline 1_0003.png" id="96"]
 [ext_resource type="Texture2D" uid="uid://pxmpl0xo5t14" path="res://game/assets/sprites/suicopath/2B/Timeline 1_0002.png" id="97"]
-[ext_resource type="Texture2D" uid="uid://dnf6htlxp3wel" path="res://game/assets/sprites/subaru/Knockdown/Timeline 1_0005.png" id="98"]
 [ext_resource type="Texture2D" uid="uid://b5skhpatorhy4" path="res://game/assets/sprites/suisei/Burst/Timeline 1_0000.png" id="98_80hjc"]
-[ext_resource type="Texture2D" uid="uid://cl32xj23e2rl7" path="res://game/assets/sprites/subaru/Knockdown/Timeline 1_0007.png" id="99"]
 [ext_resource type="Texture2D" uid="uid://b2pub1fculr1s" path="res://game/assets/sprites/suisei/Burst/Timeline 1_0001.png" id="99_77rog"]
-[ext_resource type="Texture2D" uid="uid://xw7bw2kktnms" path="res://game/assets/sprites/subaru/Knockdown/Timeline 1_0006.png" id="100"]
 [ext_resource type="Texture2D" uid="uid://cox3pa7in6h1a" path="res://game/assets/sprites/suisei/Burst/Timeline 1_0002.png" id="100_1tkd1"]
-[ext_resource type="Texture2D" uid="uid://dntc3e2svaq6x" path="res://game/assets/sprites/subaru/Knockdown/Timeline 1_0008.png" id="101"]
 [ext_resource type="Texture2D" uid="uid://cy2eq55katao" path="res://game/assets/sprites/suisei/Burst/Timeline 1_0003.png" id="101_6pj2o"]
-[ext_resource type="Texture2D" uid="uid://rvslc2kl8i20" path="res://game/assets/sprites/subaru/Knockdown/Timeline 1_0009.png" id="102"]
 [ext_resource type="Texture2D" uid="uid://drdjtqgnl4rxo" path="res://game/assets/sprites/suisei/ForwardWalk/Timeline 1_0000.png" id="103_haa14"]
 [ext_resource type="Texture2D" uid="uid://pfwua4joy5iu" path="res://game/assets/sprites/suisei/ForwardWalk/Timeline 1_0001.png" id="104_1qreq"]
 [ext_resource type="Texture2D" uid="uid://yxw3sfhc36ai" path="res://game/assets/sprites/suisei/ForwardWalk/Timeline 1_0002.png" id="105_u5g2n"]
@@ -170,11 +166,15 @@
 [ext_resource type="Texture2D" uid="uid://bngogr05k7c8d" path="res://game/assets/sprites/suisei/YoruWoMatsuyo/Timeline 1_0001.png" id="205_852js"]
 [ext_resource type="Texture2D" uid="uid://bdxbdco3b6dx0" path="res://game/assets/sprites/suicopath/5A/Timeline 1_0006.png" id="206"]
 [ext_resource type="Texture2D" uid="uid://127lrqwuryb" path="res://game/assets/sprites/suisei/YoruWoMatsuyo/Timeline 1_0002.png" id="206_go7gh"]
+[ext_resource type="Texture2D" uid="uid://be2g8lkdi3q85" path="res://game/assets/sprites/suisei/TSpin/Timeline 1_0000.png" id="206_jvy3p"]
 [ext_resource type="Texture2D" uid="uid://b7c8553ov4vxr" path="res://game/assets/sprites/suisei/GatoKick/Timeline 1_0004.png" id="207"]
 [ext_resource type="Texture2D" uid="uid://5yms0xl5ddd2" path="res://game/assets/sprites/suisei/YoruWoMatsuyo/Timeline 1_0003.png" id="207_37ew3"]
+[ext_resource type="Texture2D" uid="uid://bayfngdl4nfcj" path="res://game/assets/sprites/suisei/TSpin/Timeline 1_0001.png" id="207_80hjc"]
 [ext_resource type="Texture2D" uid="uid://o5uv04rmy2bj" path="res://game/assets/sprites/suicopath/AirHurt/Timeline 1_0000.png" id="208"]
+[ext_resource type="Texture2D" uid="uid://bbfecf5j6vg3h" path="res://game/assets/sprites/suisei/TSpin/Timeline 1_0002.png" id="208_77rog"]
 [ext_resource type="Texture2D" uid="uid://diq6apkla6ncr" path="res://game/assets/sprites/suisei/YoruWoMatsuyo/Timeline 1_0004.png" id="208_upscd"]
 [ext_resource type="Texture2D" uid="uid://qgos8thtrrey" path="res://game/assets/sprites/suicopath/AirHurt/Timeline 1_0001.png" id="209"]
+[ext_resource type="Texture2D" uid="uid://by7qs2jfg72r8" path="res://game/assets/sprites/suisei/TSpin/Timeline 1_0003.png" id="209_1tkd1"]
 [ext_resource type="Texture2D" uid="uid://upshlwl0svlb" path="res://game/assets/sprites/suisei/YoruWoMatsuyo/Timeline 1_0005.png" id="209_2wsx3"]
 [ext_resource type="Texture2D" uid="uid://ccjh4madalvri" path="res://game/assets/sprites/suicopath/AirHurt/Timeline 1_0002.png" id="210"]
 [ext_resource type="Texture2D" uid="uid://dkp44yn1bmxfk" path="res://game/assets/sprites/suisei/Divine/Timeline 1_0000.png" id="210_kishj"]
@@ -195,7 +195,6 @@
 [ext_resource type="Texture2D" uid="uid://dr5hgegenpxhr" path="res://game/assets/sprites/suicopath/ScissorLaunch/Timeline 1_0002.png" id="236"]
 [ext_resource type="Texture2D" uid="uid://dupyeipml2dd0" path="res://game/assets/sprites/suicopath/ScissorLaunch/Timeline 1_0001.png" id="237"]
 [ext_resource type="Texture2D" uid="uid://q3bqhgrqhqej" path="res://game/assets/sprites/suicopath/CrouchHurt/Timeline 1_0000.png" id="244"]
-[ext_resource type="Texture2D" uid="uid://dkdfsj2uf2adc" path="res://game/assets/sprites/subaru/AngelAirHurt/Timeline 1_0003.png" id="245"]
 [ext_resource type="Texture2D" uid="uid://cq7hfs2mchpwa" path="res://game/assets/sprites/suisei/YoruWoMatsuyo/Timeline 1_0000.png" id="246"]
 [ext_resource type="Texture2D" uid="uid://c7of68w5rjrxl" path="res://game/assets/sprites/suicopath/CrouchParry/Timeline 1_0002.png" id="248"]
 [ext_resource type="Texture2D" uid="uid://vkeelic358ni" path="res://game/assets/sprites/suicopath/AirBlock/Timeline 1_0000.png" id="249"]
@@ -1464,10 +1463,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.1, 0.16666667),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [ExtResource("245")]
+"values": [ExtResource("91_jvy3p"), ExtResource("260"), ExtResource("261")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1479,7 +1478,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1000000),
 "update": 0,
-"values": [Vector2(0, -20)]
+"values": [Vector2(0, 0)]
 }
 
 [sub_resource type="Animation" id="31"]
@@ -2904,10 +2903,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.083333336, 0.13333334, 0.23333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("98"), ExtResource("100"), ExtResource("99"), ExtResource("101"), ExtResource("102")]
+"values": [ExtResource("206_jvy3p"), ExtResource("207_80hjc"), ExtResource("208_77rog"), ExtResource("209_1tkd1")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -2919,7 +2918,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1000000),
 "update": 0,
-"values": [Vector2(0, -50)]
+"values": [Vector2(0, -80)]
 }
 
 [sub_resource type="Animation" id="33"]

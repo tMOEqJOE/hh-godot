@@ -3283,7 +3283,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1000000),
 "update": 0,
-"values": [Vector2(30, -170)]
+"values": [Vector2(30, -100)]
 }
 
 [sub_resource type="Animation" id="11"]
@@ -4112,7 +4112,7 @@ material = ExtResource("5")
 position = Vector2(-15, -259)
 scale = Vector2(1.428, 1.428)
 texture = ExtResource("176")
-offset = Vector2(20, 40)
+offset = Vector2(30, -100)
 
 [node name="Pushbox" type="SGCollisionShape2D" parent="."]
 shape = SubResource("1")

@@ -5,6 +5,7 @@ class_name MioPlayer
 # Fields
 
 const HighMioCannon = preload("res://game/fighter/projectiles/HighMioCannon.tscn")
+const MioSuperCannon = preload("res://game/fighter/effects/MioSuperEffects.tscn")
 
 func summonHelper(entity: String) -> void:
 	super.summonHelper(entity)
@@ -28,4 +29,6 @@ func summonHelper(entity: String) -> void:
 				HighMioCannon,
 				"MioCards",
 				playerData)
+		elif (entity == "miosupercannon"):
+			summonVFX("MioSuperCannon", MioSuperCannon)
 		
