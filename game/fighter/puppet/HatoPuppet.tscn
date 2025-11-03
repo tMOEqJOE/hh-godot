@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://d2n505ahp1v4b"]
+[gd_scene load_steps=52 format=3 uid="uid://d2n505ahp1v4b"]
 
 [ext_resource type="Script" uid="uid://dmwt0jdrxharp" path="res://game/fighter/puppet/PuppetPlayer.gd" id="1"]
 [ext_resource type="Script" uid="uid://dv11pt6y7wasy" path="res://addons/godot-rollback-netcode/NetworkAnimationPlayer.gd" id="2"]
@@ -31,8 +31,11 @@
 [ext_resource type="Texture2D" uid="uid://cxr766lg1m5f7" path="res://game/assets/sprites/mio/HatoCards/Timeline 1_0001.png" id="26"]
 [ext_resource type="Material" uid="uid://bt3lvyqtd78u0" path="res://game/assets/shaders/ColorSwapMat.tres" id="29"]
 [ext_resource type="Texture2D" uid="uid://ofot8d4uvceq" path="res://game/assets/sprites/mio/HatoForwardWalk/Timeline 1_0000.png" id="30_x08d0"]
+[ext_resource type="Texture2D" uid="uid://dsr5o8lgbmigb" path="res://game/assets/sprites/mio/HatoCards/Timeline 1_0004.png" id="30_xl0cu"]
 [ext_resource type="Texture2D" uid="uid://c2pkufxpm41f5" path="res://game/assets/sprites/mio/HatoForwardWalk/Timeline 1_0001.png" id="31_xl0cu"]
 [ext_resource type="Texture2D" uid="uid://b6rod2av7stf" path="res://game/assets/sprites/mio/HatoForwardWalk/Timeline 1_0002.png" id="32_yr2ma"]
+[ext_resource type="Texture2D" uid="uid://dc0cyhut4ygt8" path="res://game/assets/sprites/mio/HatoIdle/Timeline 1_0001.png" id="34_rohpp"]
+[ext_resource type="Texture2D" uid="uid://dplonmflqisvs" path="res://game/assets/sprites/mio/HatoIdle/Timeline 1_0002.png" id="35_oqx41"]
 [ext_resource type="Texture2D" uid="uid://crftursjndnd5" path="res://game/assets/sprites/mio/HatoIdle/Timeline 1_0000.png" id="39"]
 [ext_resource type="PackedScene" uid="uid://bvgu0aev8rq4g" path="res://game/fighter/Hitbox.tscn" id="46"]
 [ext_resource type="PackedScene" uid="uid://cwoqesvdf08m3" path="res://game/fighter/Hurtbox.tscn" id="47"]
@@ -168,10 +171,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.116667, 0.2, 0.283333),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.116667, 0.15, 0.2, 0.28333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("25"), ExtResource("26"), ExtResource("23"), ExtResource("24")]
+"values": [ExtResource("25"), ExtResource("26"), ExtResource("23"), ExtResource("24"), ExtResource("30_xl0cu")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -180,10 +183,10 @@ tracks/1/path = NodePath("Sprite2D:offset")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(-0.017),
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1000000),
 "update": 0,
-"values": [Vector2(200, 0)]
+"values": [Vector2(180, 0)]
 }
 
 [sub_resource type="Animation" id="13"]
@@ -218,7 +221,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="8"]
 resource_name = "Idle"
-length = 0.300001
+length = 0.53333604
 loop_mode = 1
 step = 0.0166667
 tracks/0/type = "value"
@@ -228,10 +231,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.05, 0.23333333, 0.41666666),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("39")]
+"values": [ExtResource("39"), ExtResource("34_rohpp"), ExtResource("35_oqx41"), ExtResource("39")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -243,7 +246,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1000000),
 "update": 0,
-"values": [Vector2(-70, 10)]
+"values": [Vector2(-30, 10)]
 }
 
 [sub_resource type="Animation" id="15"]
@@ -272,6 +275,21 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1000000),
 "update": 0,
 "values": [Vector2(-40, 10)]
+}
+
+[sub_resource type="Animation" id="Animation_x08d0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("39")]
 }
 
 [sub_resource type="Animation" id="7"]
@@ -303,21 +321,6 @@ tracks/1/keys = {
 "values": [Vector2(-50, 20)]
 }
 
-[sub_resource type="Animation" id="Animation_x08d0"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("39")]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lwh34"]
 _data = {
 &"5A": SubResource("9"),
@@ -343,7 +346,7 @@ material = ExtResource("29")
 position = Vector2(0, -362)
 scale = Vector2(1.428, 1.428)
 texture = ExtResource("39")
-offset = Vector2(-20, 20)
+offset = Vector2(-30, 10)
 
 [node name="Pushbox" type="SGCollisionShape2D" parent="."]
 shape = SubResource("1")
