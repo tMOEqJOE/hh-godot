@@ -65,4 +65,3 @@ func jump_cancel(state: Dictionary, interpreter: InputInterpreter):
 
 func gatling_cancel(state: Dictionary, interpreter: InputInterpreter):
 	pass
-

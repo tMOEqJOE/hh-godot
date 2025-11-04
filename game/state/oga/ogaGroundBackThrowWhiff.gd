@@ -1,6 +1,6 @@
 extends OgaAttackState
 
-class_name OgaGroundThrowWhiffState
+class_name OgaGroundBackThrowWhiffState
 
 func _init():
 	endFrame = 25
@@ -61,4 +61,4 @@ func meter_cancel(state: Dictionary, interpreter: InputInterpreter):
 func reaction(state: Dictionary, interpreter: InputInterpreter,event_cause: int) -> void:
 	super.reaction(state, interpreter, event_cause)
 	if (event_cause == Enums.Reaction.ThrowHit):
-		change_state.call("GroundThrowHit")
+		change_state.call("GroundBackThrowHit")
