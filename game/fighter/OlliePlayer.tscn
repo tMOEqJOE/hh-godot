@@ -196,7 +196,7 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.116667, 0.183333, 0.25),
+"times": PackedFloat32Array(0, 0.05, 0.116667, 0.183333, 0.21666667),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": [ExtResource("204"), ExtResource("207"), ExtResource("206"), ExtResource("205"), ExtResource("204")]
@@ -211,7 +211,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1000000),
 "update": 0,
-"values": [Vector2(80, 170)]
+"values": [Vector2(80, 180)]
 }
 
 [sub_resource type="Animation" id="45"]
@@ -240,7 +240,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1000000),
 "update": 0,
-"values": [Vector2(-40, -160)]
+"values": [Vector2(-60, -140)]
 }
 
 [sub_resource type="Animation" id="46"]
@@ -269,7 +269,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1000000),
 "update": 0,
-"values": [Vector2(500, 200)]
+"values": [Vector2(520, 200)]
 }
 
 [sub_resource type="Animation" id="14"]
@@ -1935,7 +1935,7 @@ material = ExtResource("5")
 position = Vector2(55, -413)
 scale = Vector2(1.428, 1.428)
 texture = ExtResource("3_osmoy")
-offset = Vector2(-100, 150)
+offset = Vector2(520, 200)
 
 [node name="Pushbox" type="SGCollisionShape2D" parent="."]
 shape = SubResource("1")
