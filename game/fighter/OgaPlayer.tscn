@@ -1,4 +1,4 @@
-[gd_scene load_steps=259 format=3 uid="uid://62srvi7lofqt"]
+[gd_scene load_steps=261 format=3 uid="uid://62srvi7lofqt"]
 
 [ext_resource type="Texture2D" uid="uid://bwk11ciqu5hje" path="res://game/assets/sprites/oga/Idle/Timeline 1_0000.png" id="1"]
 [ext_resource type="Script" uid="uid://dgsx3duqjaeo5" path="res://game/fighter/PointPlayer.gd" id="2"]
@@ -106,7 +106,9 @@
 [ext_resource type="Texture2D" uid="uid://04n7ovcxjdpc" path="res://game/assets/sprites/oga/Snapback/Timeline 1_0004.png" id="107"]
 [ext_resource type="Texture2D" uid="uid://cmms8xgh3ryw8" path="res://game/assets/sprites/oga/Intro/Timeline 1_0015.png" id="108"]
 [ext_resource type="Texture2D" uid="uid://dbobyyh460pmj" path="res://game/assets/sprites/oga/Snapback/Timeline 1_0001.png" id="109"]
+[ext_resource type="Texture2D" uid="uid://bms5gsl2wqhyx" path="res://game/assets/sprites/oga/Idle/Timeline 1_0001.png" id="109_8nnt7"]
 [ext_resource type="Texture2D" uid="uid://dcrnp00647hxb" path="res://game/assets/sprites/oga/AirTech/Timeline 1_0002.png" id="110"]
+[ext_resource type="Texture2D" uid="uid://dxrudrgrc7uth" path="res://game/assets/sprites/oga/Idle/Timeline 1_0002.png" id="110_ephom"]
 [ext_resource type="Texture2D" uid="uid://4n3owusuyjss" path="res://game/assets/sprites/oga/AirTech/Timeline 1_0000.png" id="111"]
 [ext_resource type="Texture2D" uid="uid://dtj6ehveov2sq" path="res://game/assets/sprites/oga/SlashMode/Timeline 1_0010.png" id="112"]
 [ext_resource type="Texture2D" uid="uid://dkqcsj5c0xhew" path="res://game/assets/sprites/oga/SlashMode/Timeline 1_0013.png" id="113"]
@@ -1137,7 +1139,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="42"]
 resource_name = "Idle"
-length = 0.833335
+length = 1.3333375
 loop_mode = 1
 step = 0.0166667
 tracks/0/type = "value"
@@ -1147,10 +1149,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.53333336, 0.6666667, 1.2166667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("1")]
+"values": [ExtResource("1"), ExtResource("109_8nnt7"), ExtResource("110_ephom"), ExtResource("109_8nnt7")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1892,7 +1894,7 @@ material = ExtResource("5")
 position = Vector2(16, -306)
 scale = Vector2(1.428, 1.428)
 texture = ExtResource("36")
-offset = Vector2(0, 20)
+offset = Vector2(-30, 10)
 
 [node name="Pushbox" type="SGCollisionShape2D" parent="."]
 shape = SubResource("1")
