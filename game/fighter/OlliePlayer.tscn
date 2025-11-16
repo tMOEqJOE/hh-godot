@@ -1,4 +1,4 @@
-[gd_scene load_steps=241 format=3 uid="uid://enqykmcqocbq"]
+[gd_scene load_steps=242 format=3 uid="uid://enqykmcqocbq"]
 
 [ext_resource type="Texture2D" uid="uid://c73edt6xp2p55" path="res://game/assets/sprites/ollie/5B/Timeline 1_0001.png" id="1"]
 [ext_resource type="Script" uid="uid://pjo1td178t2f" path="res://game/fighter/OlliePlayer.gd" id="2"]
@@ -86,6 +86,7 @@
 [ext_resource type="Texture2D" uid="uid://ddl7ygottedqs" path="res://game/assets/sprites/ollie/StandParryCatch/Timeline 1_0000.png" id="84"]
 [ext_resource type="Texture2D" uid="uid://b1vwuabojr60g" path="res://game/assets/sprites/ollie/Crouch/Timeline 1_0001.png" id="85"]
 [ext_resource type="Texture2D" uid="uid://bce1c01l0htwc" path="res://game/assets/sprites/ollie/CrouchHurt/Timeline 1_0003.png" id="86"]
+[ext_resource type="Texture2D" uid="uid://c2xvivd0rgid8" path="res://game/assets/sprites/ollie/AirThrowHit/Timeline 1_0003.png" id="86_osmoy"]
 [ext_resource type="Texture2D" uid="uid://c38dygelx7wes" path="res://game/assets/sprites/ollie/CrouchHurt/Timeline 1_0002.png" id="87"]
 [ext_resource type="Texture2D" uid="uid://xf1b1qhv1eak" path="res://game/assets/sprites/ollie/AirHurt/Timeline 1_0002.png" id="88"]
 [ext_resource type="Texture2D" uid="uid://7aye461m4d5l" path="res://game/assets/sprites/ollie/AirHurt/Timeline 1_0003.png" id="90"]
@@ -676,7 +677,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1000000),
 "update": 0,
-"values": [Vector2(-50, 110)]
+"values": [Vector2(-30, 110)]
 }
 
 [sub_resource type="Animation" id="17"]
@@ -704,12 +705,12 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1000000),
 "update": 0,
-"values": [Vector2(40, 120)]
+"values": [Vector2(20, 120)]
 }
 
 [sub_resource type="Animation" id="16"]
 resource_name = "AirThrowWhiff"
-length = 0.483334
+length = 0.23333545
 step = 0.0166667
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -718,10 +719,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.083333336),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ExtResource("14")]
+"values": [ExtResource("86_osmoy"), ExtResource("14")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1935,7 +1936,7 @@ material = ExtResource("5")
 position = Vector2(55, -413)
 scale = Vector2(1.428, 1.428)
 texture = ExtResource("3_osmoy")
-offset = Vector2(-20, 50)
+offset = Vector2(0, 100)
 
 [node name="Pushbox" type="SGCollisionShape2D" parent="."]
 shape = SubResource("1")
