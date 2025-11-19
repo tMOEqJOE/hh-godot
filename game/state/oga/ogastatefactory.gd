@@ -65,7 +65,9 @@ func _init():
 		"AirRiderKickHeavy": preload("res://game/state/oga/ogaAirRiderKickHeavy.gd"),
 		
 		"GroundThrowWhiff": OgaGroundThrowWhiffState,
+		"GroundBackThrowWhiff": OgaGroundBackThrowWhiffState,
 		"AirThrowWhiff": OgaAirThrowWhiffState,
+		"AirBackThrowWhiff": OgaAirBackThrowWhiffState,
 		"GroundThrowHit": OgaGroundThrowHitState,
 		"AirThrowHit": OgaAirThrowHitState,
 		"AirBackThrowHit": OgaBackAirThrowHitState,

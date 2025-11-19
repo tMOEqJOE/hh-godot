@@ -19,6 +19,7 @@ func _init() -> void:
 # Writing _delta instead of delta here prevents the unused variable warning.
 func enter(state: Dictionary) -> void:
 	super.enter(state)
+	state[Enums.StKey.ground_bounce] -= 1
 	state[Enums.StKey.hitStopFrame] = -1
 	SyncManager.play_sound("knockdown", GroundBounceSound, {"bus": "Sound"})
 
@@ -50,7 +51,6 @@ func reaction(state: Dictionary, _interpreter: InputInterpreter, event_cause: in
 	elif (state[Enums.StKey.hitStopFrame] <= 0):
 		if (event_cause == Enums.Reaction.GroundLand and state[Enums.StKey.frame] > 2):
 			if (state[Enums.StKey.ground_bounce] > 0):
-				state[Enums.StKey.ground_bounce] -= 1
 				change_state.call("GroundBounce")
 			else:
 				state[Enums.StKey.doubleJump] = 1
@@ -58,5 +58,4 @@ func reaction(state: Dictionary, _interpreter: InputInterpreter, event_cause: in
 				change_state.call("Knockdown")
 		elif (event_cause == Enums.Reaction.WallLand):
 			if (state[Enums.StKey.wall_bounce] > 0):
-				state[Enums.StKey.wall_bounce] -= 1
 				change_state.call("WallBounce")

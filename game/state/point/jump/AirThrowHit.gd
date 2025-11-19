@@ -21,7 +21,7 @@ func _init():
 			Enums.StKey.Hit1ScaleX : 2503512, Enums.StKey.Hit1ScaleY : 2516269,
 			Enums.StKey.attack_type : Enums.AttackType.Launcher,
 			Enums.StKey.burst_OK: false,
-			Enums.StKey.launch_dir_x : -SGFixed.ONE*7,
+			Enums.StKey.launch_dir_x : -SGFixed.ONE*15,
 			Enums.StKey.launch_dir_y : +SGFixed.ONE*40,
 			Enums.StKey.attack_damage: 30,
 			Enums.StKey.hitstun : 80,
@@ -36,7 +36,8 @@ func _init():
 # Writing _delta instead of delta here prevents the unused variable warning.
 func enter(state: Dictionary) -> void:
 	super.enter(state)
-	state[Enums.StKey.velocity_x] = 0
+	state[Enums.StKey.drag_x] = Util.FRICTION
+	state[Enums.StKey.velocity_x] = Util.THROW_HIT_PUSH
 	state[Enums.StKey.velocity_y] = 0
 	state[Enums.StKey.accel_y] = 0
 	state[Enums.StKey.sync_rate] += SGFixed.ONE*12

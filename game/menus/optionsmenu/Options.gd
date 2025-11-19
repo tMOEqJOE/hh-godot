@@ -27,9 +27,11 @@ func _input(event):
 		_on_GoBackButton_pressed()
 
 func _on_FullScreenButton_pressed():
-	get_window().mode = Window.MODE_EXCLUSIVE_FULLSCREEN if (!((get_window().mode == Window.MODE_EXCLUSIVE_FULLSCREEN) or (get_window().mode == Window.MODE_FULLSCREEN))) else Window.MODE_WINDOWED
-	ProjectSettings.set_setting(
-		"display/window/size/fullscreen", not ProjectSettings.get_setting("display/window/size/fullscreen"))
+	print (DisplayServer.window_get_mode())
+	if (DisplayServer.window_get_mode() != DisplayServer.WINDOW_MODE_FULLSCREEN):
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 	ProjectSettings.save_custom("override.cfg")
 
 func _on_VsyncButton_pressed():
@@ -72,7 +74,8 @@ func _on_GoBackButton_pressed():
 	Util.write_to_config_file("SoundOptions", "VoiceVolume", Voice_volume)
 	Util.write_to_config_file("Debug", "DebugRollbackLogsEnabled", DebugRollbackLogsEnabled)
 	Util.write_to_config_file("Visual", "Vsync", (DisplayServer.window_get_vsync_mode() != DisplayServer.VSYNC_DISABLED))
-	Util.write_to_config_file("Visual", "FullScreen", (ProjectSettings.get_setting("display/window/size/fullscreen")))
+	#Util.write_to_config_file("Visual", "FullScreenMode", (ProjectSettings.get_setting("display/window/size/fullscreen")))
+	Util.write_to_config_file("Visual", "FullScreenMode", (DisplayServer.window_get_mode()))
 	Util.write_to_config_file("Replay", "ReplayLogsEnabled", Global.replay_logging_enabled)
 
 func _on_MainVolumeMeter_value_changed(value):

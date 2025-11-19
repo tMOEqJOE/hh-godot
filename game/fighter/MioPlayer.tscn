@@ -1,6 +1,5 @@
-[gd_scene load_steps=277 format=3 uid="uid://bahv36p0oriog"]
+[gd_scene load_steps=281 format=3 uid="uid://bahv36p0oriog"]
 
-[ext_resource type="Texture2D" uid="uid://cys2w6snwfl60" path="res://game/assets/sprites/mio/5B/Timeline 1_0006.png" id="1"]
 [ext_resource type="Script" uid="uid://dfikixggfxk0g" path="res://game/fighter/MioPlayer.gd" id="2"]
 [ext_resource type="Texture2D" uid="uid://bno7kd4qph33k" path="res://game/assets/sprites/mio/GroundThrowHit/Timeline 1_0007.png" id="3"]
 [ext_resource type="Script" uid="uid://dv11pt6y7wasy" path="res://addons/godot-rollback-netcode/NetworkAnimationPlayer.gd" id="4"]
@@ -8,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://cwoqesvdf08m3" path="res://game/fighter/Hurtbox.tscn" id="6"]
 [ext_resource type="PackedScene" uid="uid://bvgu0aev8rq4g" path="res://game/fighter/Hitbox.tscn" id="7"]
 [ext_resource type="Texture2D" uid="uid://b3ow484et81ut" path="res://game/assets/sprites/mio/5B/Timeline 1_0003.png" id="8"]
-[ext_resource type="Texture2D" uid="uid://dk3o556dify6b" path="res://game/assets/sprites/mio/GroundThrowHit/Timeline 1_0013.png" id="9"]
 [ext_resource type="Texture2D" uid="uid://dt1wctghstk0x" path="res://game/assets/sprites/mio/5A/Timeline 1_0000.png" id="10"]
 [ext_resource type="Texture2D" uid="uid://dgit41a368wxj" path="res://game/assets/sprites/mio/5A/Timeline 1_0002.png" id="11"]
 [ext_resource type="Texture2D" uid="uid://cxejq1a7hykow" path="res://game/assets/sprites/mio/GroundThrowHit/Timeline 1_0004.png" id="12"]
@@ -58,7 +56,9 @@
 [ext_resource type="Texture2D" uid="uid://ct5uky5iyni7y" path="res://game/assets/sprites/mio/jB/Timeline 1_0001.png" id="55"]
 [ext_resource type="Texture2D" uid="uid://dv5l2n7vstm2s" path="res://game/assets/sprites/mio/jB/Timeline 1_0003.png" id="56"]
 [ext_resource type="Texture2D" uid="uid://caf3kv1d84peq" path="res://game/assets/sprites/mio/CrouchHurt/Timeline 1_0000.png" id="57"]
+[ext_resource type="Texture2D" uid="uid://d83jm6s6cqot" path="res://game/assets/sprites/mio/AirAssistCall/Timeline 1_0001.png" id="57_p0d0i"]
 [ext_resource type="Texture2D" uid="uid://bs3jft4lwsd5p" path="res://game/assets/sprites/mio/CrouchHurt/Timeline 1_0001.png" id="58"]
+[ext_resource type="Texture2D" uid="uid://2khcfpn47dn3" path="res://game/assets/sprites/mio/AirAssistCall/Timeline 1_0002.png" id="58_hrvyf"]
 [ext_resource type="Texture2D" uid="uid://cfkoh1imx0t57" path="res://game/assets/sprites/mio/CrouchBlock/Timeline 1_0000.png" id="59"]
 [ext_resource type="Texture2D" uid="uid://ckh5bpb7x76ti" path="res://game/assets/sprites/mio/jB/Timeline 1_0002.png" id="60"]
 [ext_resource type="Texture2D" uid="uid://blv8oghp0qonq" path="res://game/assets/sprites/mio/jB/Timeline 1_0000.png" id="61"]
@@ -74,6 +74,7 @@
 [ext_resource type="Texture2D" uid="uid://2em1qq2ldboa" path="res://game/assets/sprites/mio/AirHit/Timeline 1_0000.png" id="73"]
 [ext_resource type="Texture2D" uid="uid://bofmbk7babkvr" path="res://game/assets/sprites/mio/AirHit/Timeline 1_0001.png" id="74"]
 [ext_resource type="Texture2D" uid="uid://bd6c1p1lq0vof" path="res://game/assets/sprites/mio/AirHit/Timeline 1_0003.png" id="75"]
+[ext_resource type="Texture2D" uid="uid://b2e7et8rxvuct" path="res://game/assets/sprites/mio/AirThrowHit/Timeline 1_0002.png" id="75_hrvyf"]
 [ext_resource type="Texture2D" uid="uid://dc2ldauwwa4fe" path="res://game/assets/sprites/mio/AirThrowWhiff/Timeline 1_0002.png" id="76"]
 [ext_resource type="Texture2D" uid="uid://dc6kves5gc7vk" path="res://game/assets/sprites/mio/AirThrowWhiff/Timeline 1_0000.png" id="77"]
 [ext_resource type="Texture2D" uid="uid://cu2ne58qs6ucj" path="res://game/assets/sprites/mio/AirThrowWhiff/Timeline 1_0001.png" id="78"]
@@ -81,6 +82,7 @@
 [ext_resource type="Texture2D" uid="uid://cjlx3euui8p3a" path="res://game/assets/sprites/mio/CrouchParryCatch/Timeline 1_0000.png" id="80"]
 [ext_resource type="Texture2D" uid="uid://4d8ugmdhvak0" path="res://game/assets/sprites/mio/CrouchParryCatch/Timeline 1_0002.png" id="81"]
 [ext_resource type="Texture2D" uid="uid://nhnn1fmxwows" path="res://game/assets/sprites/mio/AirThrowHit/Timeline 1_0001.png" id="82"]
+[ext_resource type="Texture2D" uid="uid://tq7jpwpmpnav" path="res://game/assets/sprites/Empty_0000.png" id="82_5ddv3"]
 [ext_resource type="Texture2D" uid="uid://dyyia5o0wgeno" path="res://game/assets/sprites/mio/AirParryCatch/Timeline 1_0000.png" id="83"]
 [ext_resource type="Texture2D" uid="uid://nisdn451d2so" path="res://game/assets/sprites/mio/AirParryCatch/Timeline 1_0002.png" id="84"]
 [ext_resource type="Texture2D" uid="uid://ddhlgxlmtkuy4" path="res://game/assets/sprites/mio/AirParryCatch/Timeline 1_0001.png" id="85"]
@@ -121,15 +123,21 @@
 [ext_resource type="Texture2D" uid="uid://dynprklihfisu" path="res://game/assets/sprites/mio/Wakeup/Timeline 1_0000.png" id="121"]
 [ext_resource type="Texture2D" uid="uid://2pm5m7ru32sh" path="res://game/assets/sprites/mio/Wakeup/Timeline 1_0004.png" id="122"]
 [ext_resource type="Texture2D" uid="uid://ct0eofmcjaqh" path="res://game/assets/sprites/mio/Wakeup/Timeline 1_0002.png" id="123"]
+[ext_resource type="Texture2D" uid="uid://ds5ll26wvd5oq" path="res://game/assets/sprites/mio/GroundThrowHit/Timeline 1_0000.png" id="123_klugg"]
 [ext_resource type="Texture2D" uid="uid://d3uqrq54i6tyt" path="res://game/assets/sprites/mio/Wakeup/Timeline 1_0003.png" id="124"]
+[ext_resource type="Texture2D" uid="uid://mgfi5kpfvevu" path="res://game/assets/sprites/mio/GroundThrowHit/Timeline 1_0001.png" id="124_dic3k"]
 [ext_resource type="Texture2D" uid="uid://po35p1qgaoo4" path="res://game/assets/sprites/mio/Wakeup/Timeline 1_0001.png" id="125"]
-[ext_resource type="Texture2D" uid="uid://dpo658ns5gdwj" path="res://game/assets/sprites/mio/Wakeup/Timeline 1_0005.png" id="126"]
+[ext_resource type="Texture2D" uid="uid://c8h45sfa3pl48" path="res://game/assets/sprites/mio/GroundThrowHit/Timeline 1_0002.png" id="125_oubsq"]
+[ext_resource type="Texture2D" uid="uid://dey407cvg3whx" path="res://game/assets/sprites/mio/GroundThrowHit/Timeline 1_0003.png" id="126_b70b2"]
 [ext_resource type="Texture2D" uid="uid://bnxp5nwftsk5u" path="res://game/assets/sprites/mio/Charge/Timeline 1_0002.png" id="127"]
 [ext_resource type="Texture2D" uid="uid://bsw5pvdjxy0kc" path="res://game/assets/sprites/mio/MioCannon/Timeline 1_0001.png" id="128"]
+[ext_resource type="Texture2D" uid="uid://42nn8i13wlay" path="res://game/assets/sprites/mio/GroundThrowHit/Timeline 1_0005.png" id="128_ulv8c"]
 [ext_resource type="Texture2D" uid="uid://cyg8rw83d6ftx" path="res://game/assets/sprites/mio/MioCannon/Timeline 1_0002.png" id="129"]
-[ext_resource type="Texture2D" uid="uid://cboc6dqyoyv78" path="res://game/assets/sprites/mio/MioCannon/Timeline 1_0004.png" id="130"]
+[ext_resource type="Texture2D" uid="uid://dwm68d4htls4k" path="res://game/assets/sprites/mio/GroundThrowHit/Timeline 1_0009.png" id="129_d0155"]
+[ext_resource type="Texture2D" uid="uid://cjbal017oie0t" path="res://game/assets/sprites/mio/GroundThrowHit/Timeline 1_0006.png" id="130_2knwq"]
 [ext_resource type="Texture2D" uid="uid://rbdi750pmkpx" path="res://game/assets/sprites/mio/MioCannon/Timeline 1_0000.png" id="131"]
 [ext_resource type="Texture2D" uid="uid://du7gkjwp4xiey" path="res://game/assets/sprites/mio/Intro/Timeline 1_0000.png" id="132"]
+[ext_resource type="Texture2D" uid="uid://budcxqtwmaws6" path="res://game/assets/sprites/mio/GroundThrowHit/Timeline 1_0008.png" id="132_f5np0"]
 [ext_resource type="Texture2D" uid="uid://bc7grmwgvgmu2" path="res://game/assets/sprites/mio/Backdash/Timeline 1_0003.png" id="138"]
 [ext_resource type="Texture2D" uid="uid://dg6rs0h0v4s8y" path="res://game/assets/sprites/mio/Backdash/Timeline 1_0002.png" id="139"]
 [ext_resource type="Texture2D" uid="uid://cscnnewfa4xjd" path="res://game/assets/sprites/mio/Backdash/Timeline 1_0001.png" id="140"]
@@ -145,7 +153,6 @@
 [ext_resource type="Texture2D" uid="uid://crcuqivcbd6hi" path="res://game/assets/sprites/mio/cB/Timeline 1_0002.png" id="150"]
 [ext_resource type="Texture2D" uid="uid://bu0pc077ug1u1" path="res://game/assets/sprites/mio/cB/Timeline 1_0001.png" id="151"]
 [ext_resource type="Texture2D" uid="uid://ba7wwo1vbswo3" path="res://game/assets/sprites/mio/cB/Timeline 1_0000.png" id="152"]
-[ext_resource type="Texture2D" uid="uid://cmq2uv0dcr354" path="res://game/assets/sprites/mio/Burst/Timeline 1_0003.png" id="153"]
 [ext_resource type="Texture2D" uid="uid://cd5y1rgrch3jk" path="res://game/assets/sprites/mio/Burst/Timeline 1_0000.png" id="154"]
 [ext_resource type="Texture2D" uid="uid://c5a8vuhc6os12" path="res://game/assets/sprites/mio/Charge/Timeline 1_0001.png" id="155"]
 [ext_resource type="Texture2D" uid="uid://bxk6l5ryqsa1f" path="res://game/assets/sprites/mio/Burst/Timeline 1_0001.png" id="156"]
@@ -157,15 +164,12 @@
 [ext_resource type="Texture2D" uid="uid://dgkrke2dhj6sn" path="res://game/assets/sprites/mio/Charge/Timeline 1_0022.png" id="162"]
 [ext_resource type="Texture2D" uid="uid://c1opdv6lnp504" path="res://game/assets/sprites/mio/Charge/Timeline 1_0020.png" id="163"]
 [ext_resource type="Texture2D" uid="uid://cy70x1q0xv3ei" path="res://game/assets/sprites/mio/MioCards/Timeline 1_0001.png" id="164"]
-[ext_resource type="Texture2D" uid="uid://bl45aw3qq4xnw" path="res://game/assets/sprites/mio/MioCards/Timeline 1_0003.png" id="165"]
 [ext_resource type="Texture2D" uid="uid://cw5wnrwtr1kdj" path="res://game/assets/sprites/mio/ForwardWalk/Timeline 1_0000.png" id="166"]
 [ext_resource type="Texture2D" uid="uid://bptyiufuwcmi8" path="res://game/assets/sprites/mio/BackWalk/Timeline 1_0000.png" id="167"]
-[ext_resource type="Texture2D" uid="uid://bflruanfvpjbq" path="res://game/assets/sprites/mio/5B/Timeline 1_0008.png" id="168"]
 [ext_resource type="Texture2D" uid="uid://dkl4h834v1r2x" path="res://game/assets/sprites/mio/5B/Timeline 1_0004.png" id="169"]
 [ext_resource type="Texture2D" uid="uid://bt2r5p5bir7m" path="res://game/assets/sprites/mio/5B/Timeline 1_0000.png" id="170"]
 [ext_resource type="Texture2D" uid="uid://bgrw77r88eh13" path="res://game/assets/sprites/mio/5B/Timeline 1_0001.png" id="171"]
 [ext_resource type="Texture2D" uid="uid://cljp163nb4wss" path="res://game/assets/sprites/mio/5B/Timeline 1_0002.png" id="172"]
-[ext_resource type="Texture2D" uid="uid://dpr0bgx2enj6x" path="res://game/assets/sprites/mio/5B/Timeline 1_0007.png" id="173"]
 [ext_resource type="Texture2D" uid="uid://c7fufdnbq2rwi" path="res://game/assets/sprites/mio/5C/Timeline 1_0000.png" id="174"]
 [ext_resource type="Texture2D" uid="uid://6l5t63tu6eks" path="res://game/assets/sprites/mio/5C/Timeline 1_0001.png" id="175"]
 [ext_resource type="Texture2D" uid="uid://j85ecfx0dmni" path="res://game/assets/sprites/mio/5C/Timeline 1_0002.png" id="176"]
@@ -378,10 +382,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.366667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.16666667, 0.233333, 0.26666668, 0.366667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("170"), ExtResource("171"), ExtResource("172"), ExtResource("8"), ExtResource("169"), ExtResource("13"), ExtResource("1"), ExtResource("173"), ExtResource("168")]
+"values": [ExtResource("170"), ExtResource("171"), ExtResource("172"), ExtResource("8"), ExtResource("169"), ExtResource("13")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -485,7 +489,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="53"]
 resource_name = "AirAssist"
-length = 0.0500001
+length = 0.15000196
 step = 0.0166667
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -494,10 +498,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [ExtResource("223")]
+"values": [ExtResource("223"), ExtResource("57_p0d0i"), ExtResource("58_hrvyf")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -610,7 +614,7 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.1),
+"times": PackedFloat32Array(0, 0.05, 0.15),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [ExtResource("83"), ExtResource("85"), ExtResource("84")]
@@ -625,7 +629,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-60, 0)]
+"values": [Vector2(-60, 50)]
 }
 
 [sub_resource type="Animation" id="32"]
@@ -668,10 +672,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.316667),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.23333333, 0.33333334),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [ExtResource("89"), ExtResource("82")]
+"values": [ExtResource("89"), ExtResource("82"), ExtResource("75_hrvyf")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -683,7 +687,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1000000),
 "update": 0,
-"values": [Vector2(0, -80)]
+"values": [Vector2(-40, 40)]
 }
 
 [sub_resource type="Animation" id="16"]
@@ -726,10 +730,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.233333),
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.13333334, 0.16666664, 0.20000003),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("141"), ExtResource("140"), ExtResource("139"), ExtResource("138"), ExtResource("143"), ExtResource("142"), ExtResource("141")]
+"values": [ExtResource("141"), ExtResource("140"), ExtResource("139"), ExtResource("82_5ddv3"), ExtResource("138"), ExtResource("143"), ExtResource("142")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -802,8 +806,6 @@ tracks/1/keys = {
 "values": [Vector2(-80, 70)]
 }
 
-[sub_resource type="CompressedTexture2D" id="60"]
-
 [sub_resource type="Animation" id="34"]
 resource_name = "Burst"
 length = 0.916668
@@ -815,10 +817,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.15, 0.233333, 0.3, 0.366667, 0.433333, 0.55, 0.666667, 0.816667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.26666668, 0.33333334, 0.4018591, 0.45, 0.53333336, 0.7, 0.816667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("154"), SubResource("60"), ExtResource("156"), ExtResource("157"), ExtResource("153"), ExtResource("156"), ExtResource("157"), ExtResource("153"), ExtResource("53")]
+"values": [ExtResource("154"), ExtResource("156"), ExtResource("157"), ExtResource("156"), ExtResource("157"), ExtResource("156"), ExtResource("157"), ExtResource("53")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1127,7 +1129,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="7"]
 resource_name = "GroundThrowHit"
-length = 0.500001
+length = 0.75000316
 step = 0.0166667
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -1136,10 +1138,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.333333, 0.433333),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.033333335, 0.083333336, 0.18333334, 0.26666668, 0.333333, 0.36666667, 0.38333333, 0.4, 0.41666666, 0.43333334, 0.45, 0.46666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("12"), ExtResource("3"), ExtResource("9")]
+"values": [ExtResource("123_klugg"), ExtResource("124_dic3k"), ExtResource("125_oubsq"), ExtResource("126_b70b2"), ExtResource("12"), ExtResource("128_ulv8c"), ExtResource("129_d0155"), ExtResource("130_2knwq"), ExtResource("129_d0155"), ExtResource("3"), ExtResource("129_d0155"), ExtResource("132_f5np0"), ExtResource("129_d0155")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1180,7 +1182,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1000000),
 "update": 0,
-"values": [Vector2(-50, 80)]
+"values": [Vector2(-80, 90)]
 }
 
 [sub_resource type="Animation" id="41"]
@@ -1342,10 +1344,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0333333, 0.0666667),
+"times": PackedFloat32Array(0, 0.05, 0.1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [ExtResource("124"), ExtResource("126"), ExtResource("121")]
+"values": [ExtResource("122"), ExtResource("123"), ExtResource("121")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1371,10 +1373,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.166667, 0.216667),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.13333334, 0.21666667),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [ExtResource("205"), ExtResource("164"), ExtResource("204"), ExtResource("165")]
+"values": [ExtResource("205"), ExtResource("164"), ExtResource("204")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1416,6 +1418,21 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1000000),
 "update": 0,
 "values": [Vector2(-70, 30)]
+}
+
+[sub_resource type="Animation" id="Animation_4juik"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("223")]
 }
 
 [sub_resource type="Animation" id="21"]
@@ -1575,7 +1592,7 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.1),
+"times": PackedFloat32Array(0, 0.05, 0.11666667),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [ExtResource("224"), ExtResource("226"), ExtResource("225")]
@@ -1590,7 +1607,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1000000),
 "update": 0,
-"values": [Vector2(-100, 70)]
+"values": [Vector2(-50, 70)]
 }
 
 [sub_resource type="Animation" id="36"]
@@ -1633,10 +1650,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.183333, 0.25, 0.316667, 0.383333, 0.416667, 0.466667, 0.533333, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.183333, 0.25, 0.316667, 0.38333333, 0.41666666, 0.46666667, 0.51666665, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("131"), ExtResource("128"), ExtResource("129"), ExtResource("222"), ExtResource("130"), ExtResource("222"), ExtResource("130"), ExtResource("222"), ExtResource("130")]
+"values": [ExtResource("131"), ExtResource("128"), ExtResource("129"), ExtResource("222"), ExtResource("129"), ExtResource("222"), ExtResource("129"), ExtResource("222"), ExtResource("129"), ExtResource("222")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1648,7 +1665,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1000000),
 "update": 0,
-"values": [Vector2(-100, 130)]
+"values": [Vector2(-70, 130)]
 }
 
 [sub_resource type="Animation" id="8"]
@@ -1691,10 +1708,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 0.1, 0.166667, 0.3),
+"times": PackedFloat32Array(0, 0.06666667, 0.1, 0.16666667, 0.26666668),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("125"), ExtResource("123"), ExtResource("124"), ExtResource("122"), ExtResource("126")]
+"values": [ExtResource("121"), ExtResource("125"), ExtResource("123"), ExtResource("124"), ExtResource("122")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1897,6 +1914,7 @@ _data = {
 &"Knockdown": SubResource("27"),
 &"MioCards": SubResource("44"),
 &"PreJump": SubResource("10"),
+&"RESET": SubResource("Animation_4juik"),
 &"Run": SubResource("21"),
 &"Skid": SubResource("22"),
 &"StandBlock": SubResource("9"),
@@ -1924,8 +1942,8 @@ script = ExtResource("2")
 material = ExtResource("5")
 position = Vector2(77, -379)
 scale = Vector2(1.428, 1.428)
-texture = ExtResource("177")
-offset = Vector2(0, 80)
+texture = ExtResource("223")
+offset = Vector2(-40, 40)
 
 [node name="Pushbox" type="SGCollisionShape2D" parent="."]
 shape = SubResource("1")

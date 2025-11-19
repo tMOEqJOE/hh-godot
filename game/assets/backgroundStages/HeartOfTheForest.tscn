@@ -1,25 +1,38 @@
-[gd_scene load_steps=4 format=3 uid="uid://bspvfv3dixcey"]
+[gd_scene load_steps=5 format=3 uid="uid://bspvfv3dixcey"]
 
 [ext_resource type="Texture2D" uid="uid://c3wwdgnw2w7g1" path="res://game/assets/sprites/BGArt/HeartOfTheForest/ground.png" id="2"]
-[ext_resource type="Texture2D" uid="uid://dyw6wmfeduuaf" path="res://game/assets/sprites/BGArt/RuinedHoloProOffice/Sky.png" id="3"]
-[ext_resource type="Script" path="res://game/backgrounds/AnimatedBackgroundParent.gd" id="4"]
+[ext_resource type="Texture2D" uid="uid://bg8fgpop3uy8e" path="res://game/assets/sprites/BGArt/HeartOfTheForest/skybox.png" id="2_eh7ye"]
+[ext_resource type="Texture2D" uid="uid://bak4fjo2gad2x" path="res://game/assets/sprites/BGArt/HeartOfTheForest/midground.png" id="3_015ob"]
+[ext_resource type="Script" uid="uid://gt6l8h6v6871" path="res://game/backgrounds/AnimatedBackgroundParent.gd" id="4"]
 
 [node name="ParallaxBackground" type="ParallaxBackground"]
 script = ExtResource("4")
+metadata/_edit_horizontal_guides_ = [-595.0, 563.0]
+metadata/_edit_vertical_guides_ = [2920.0, -2927.0]
 
 [node name="FarBackground" type="ParallaxLayer" parent="."]
 motion_scale = Vector2(0, 0)
 
 [node name="Background" type="Sprite2D" parent="FarBackground"]
 z_index = -100
-scale = Vector2(3.2, 3.2)
-texture = ExtResource("3")
+scale = Vector2(3.3457494, 3.3352792)
+texture = ExtResource("2_eh7ye")
+centered = false
+
+[node name="MidGround" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.5, 0.5)
+
+[node name="Background" type="Sprite2D" parent="MidGround"]
+z_index = -100
+position = Vector2(-1665, -559.99994)
+scale = Vector2(3.5269089, 3.8369522)
+texture = ExtResource("3_015ob")
 centered = false
 
 [node name="Floor" type="ParallaxLayer" parent="."]
 
 [node name="Floor" type="Sprite2D" parent="Floor"]
 z_index = -100
-position = Vector2(0, -19)
-scale = Vector2(1.06817, 1.06817)
+position = Vector2(0, -384)
+scale = Vector2(2.035192, 2.035192)
 texture = ExtResource("2")

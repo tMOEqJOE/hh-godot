@@ -16,8 +16,8 @@ func physics_tick(state: Dictionary) -> void:
 			state[Enums.StKey.velocity_x] = SGFixed.ONE*5
 			state[Enums.StKey.drag_x] = 0
 	else:
-		if (state[Enums.StKey.velocity_x] < SGFixed.ONE*14):
-			state[Enums.StKey.velocity_x] = SGFixed.ONE*14
+		if (state[Enums.StKey.velocity_x] < SGFixed.ONE*15):
+			state[Enums.StKey.velocity_x] = SGFixed.ONE*15
 			state[Enums.StKey.drag_x] = 0
 
 

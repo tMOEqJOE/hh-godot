@@ -35,7 +35,7 @@ func _init():
 			Enums.StKey.Hit1ScaleX : 942229, Enums.StKey.Hit1ScaleY : -901102,
 			Enums.StKey.burst_OK: false,
 			Enums.StKey.meter_build: 0,
-			Enums.StKey.min_damage:7,
+			Enums.StKey.min_damage:5,
 			Enums.StKey.chip_damage:4,
 			Enums.StKey.attack_damage: 40,
 			Enums.StKey.launch_dir_x : -SGFixed.ONE*25,

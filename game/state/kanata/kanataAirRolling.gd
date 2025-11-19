@@ -3,7 +3,7 @@ extends "res://game/state/kanata/mainstates/kanataAirAttackState.gd"
 class_name KanataAirRollingState
 
 func _init():
-	endFrame = 35
+	endFrame = 42
 	anim_data = {
 		0 : {
 			Enums.StKey.counterOK: true,

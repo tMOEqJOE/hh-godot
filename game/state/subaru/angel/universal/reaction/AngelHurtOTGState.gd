@@ -36,13 +36,6 @@ func reaction(state: Dictionary, interpreter: InputInterpreter, event_cause: int
 		state[Enums.StKey.burst_OK] = false
 	elif (state[Enums.StKey.hitStopFrame] <= 0):
 		if (event_cause == Enums.Reaction.GroundLand):
-#			if (state[Enums.StKey.ground_bounce] > 0):
-#				state[Enums.StKey.ground_bounce] -= 1
-#				change_state.call("GroundBounce")
-#			else:
 			change_state.call("AngelWakeup")
 		elif (event_cause == Enums.Reaction.WallLand):
 			pass
-#			if (state[Enums.StKey.wall_bounce] > 0):
-#				state[Enums.StKey.wall_bounce] -= 1
-#				change_state.call("WallBounce")

@@ -32,6 +32,7 @@ func _init():
 			Enums.StKey.counter_hit : Enums.AttackType.BurstLock,
 		},
 		15 : {
+			Enums.StKey.Summon: "miosupercannon",
 			Enums.StKey.Hit1Disable : false,
 			Enums.StKey.Hit1PosX : 70451200, Enums.StKey.Hit1PosY : -10813440,
 			Enums.StKey.Hit1ScaleX : 7464809, Enums.StKey.Hit1ScaleY : -629685,
@@ -52,7 +53,7 @@ func _init():
 			Enums.StKey.chip_damage:18,
 			Enums.StKey.meter_build: 0,
 			Enums.StKey.hitstun: 120,
-			Enums.StKey.hitstop: 15,
+			Enums.StKey.hitstop: 0,
 			Enums.StKey.counter_hit: Enums.AttackType.GroundBouncer,
 			Enums.StKey.counter_hitstun: 5,
 			Enums.StKey.counter_launch_dir_x: -SGFixed.ONE*28,
