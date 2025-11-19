@@ -63,7 +63,11 @@ func try_write_new_config_file():
 	config.set_value("AccountOptions", "UserDisplayName", "HH Player")
 	config.set_value("Replay", "ReplayLogsEnabled", true)
 	config.set_value("Visual", "Vsync", true)
+<<<<<<< HEAD
 	config.set_value("Visual", "FullScreenMode", DisplayServer.WINDOW_MODE_WINDOWED)
+=======
+	config.set_value("Visual", "FullScreen", false)
+>>>>>>> main
 	# Save it to a file (overwrite if already exists).
 	config.save("user://gamesettings.cfg")
 
