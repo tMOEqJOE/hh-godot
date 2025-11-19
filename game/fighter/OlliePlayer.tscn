@@ -1,4 +1,4 @@
-[gd_scene load_steps=242 format=3 uid="uid://enqykmcqocbq"]
+[gd_scene load_steps=248 format=3 uid="uid://enqykmcqocbq"]
 
 [ext_resource type="Texture2D" uid="uid://c73edt6xp2p55" path="res://game/assets/sprites/ollie/5B/Timeline 1_0001.png" id="1"]
 [ext_resource type="Script" uid="uid://pjo1td178t2f" path="res://game/fighter/OlliePlayer.gd" id="2"]
@@ -136,11 +136,17 @@
 [ext_resource type="Texture2D" uid="uid://bskrouv6g3fjg" path="res://game/assets/sprites/ollie/2C/Timeline 1_0007.png" id="132"]
 [ext_resource type="Texture2D" uid="uid://dvv6flpjwev2s" path="res://game/assets/sprites/ollie/2C/Timeline 1_0003.png" id="133"]
 [ext_resource type="Texture2D" uid="uid://caeo5d6prsg0i" path="res://game/assets/sprites/ollie/2C/Timeline 1_0004.png" id="135"]
+[ext_resource type="Texture2D" uid="uid://bvi3qu4elnb7n" path="res://game/assets/sprites/ollie/Idle/Timeline 1_0001.png" id="135_lxy8u"]
 [ext_resource type="Texture2D" uid="uid://b8hvqcs2vx4su" path="res://game/assets/sprites/ollie/2C/Timeline 1_0005.png" id="136"]
+[ext_resource type="Texture2D" uid="uid://5sxso55dqmmd" path="res://game/assets/sprites/ollie/Idle/Timeline 1_0002.png" id="136_rjvqp"]
 [ext_resource type="Texture2D" uid="uid://sk35rmjltoji" path="res://game/assets/sprites/ollie/2C/Timeline 1_0006.png" id="137"]
+[ext_resource type="Texture2D" uid="uid://btrqgoc17jb4o" path="res://game/assets/sprites/ollie/Idle/Timeline 1_0006.png" id="137_v2gbi"]
 [ext_resource type="Texture2D" uid="uid://cq3xri6uaieew" path="res://game/assets/sprites/ollie/BackDash/Timeline 1_0001.png" id="138"]
+[ext_resource type="Texture2D" uid="uid://bxki4ajlrsx5o" path="res://game/assets/sprites/ollie/Idle/Timeline 1_0005.png" id="138_l7xer"]
 [ext_resource type="Texture2D" uid="uid://cf4tc0pwwstwr" path="res://game/assets/sprites/ollie/BackDash/Timeline 1_0000.png" id="139"]
+[ext_resource type="Texture2D" uid="uid://ora8tymguluo" path="res://game/assets/sprites/ollie/Idle/Timeline 1_0004.png" id="139_nie01"]
 [ext_resource type="Texture2D" uid="uid://cp8qybfsf62hl" path="res://game/assets/sprites/ollie/BackDash/Timeline 1_0003.png" id="140"]
+[ext_resource type="Texture2D" uid="uid://cw58bwqena7k5" path="res://game/assets/sprites/ollie/Idle/Timeline 1_0003.png" id="140_hy6iu"]
 [ext_resource type="Texture2D" uid="uid://cythoak0pe4yi" path="res://game/assets/sprites/ollie/2C/Timeline 1_0001.png" id="141"]
 [ext_resource type="Texture2D" uid="uid://dy6jlwimfeas7" path="res://game/assets/sprites/ollie/BackDash/Timeline 1_0002.png" id="142"]
 [ext_resource type="Texture2D" uid="uid://dluojd2p4d8ad" path="res://game/assets/sprites/ollie/2C/Timeline 1_0000.png" id="143"]
@@ -1209,7 +1215,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="41"]
 resource_name = "Idle"
-length = 4.00001
+length = 6.6666813
 loop_mode = 1
 step = 0.0166667
 tracks/0/type = "value"
@@ -1219,10 +1225,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.26666665, 0.36666667, 0.6333333, 0.75, 1.3833333, 1.65, 1.75, 2.0166667, 2.1333332, 2.95, 3.2166667, 3.3166666, 3.5833335, 3.6999998, 4.65, 4.8166666, 4.9166665, 4.983333, 5.05, 5.116667, 5.1833334, 5.25, 5.3166666, 5.383333, 5.4166665, 5.45, 5.483333, 5.516667, 5.55, 5.6, 5.6666665, 5.733333, 5.7833333, 5.85, 5.9333334, 6.016667, 6.2833333, 6.3333335, 6.3833337, 6.4333334, 6.4666667, 6.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("39")]
+"values": [ExtResource("39"), ExtResource("135_lxy8u"), ExtResource("136_rjvqp"), ExtResource("135_lxy8u"), ExtResource("39"), ExtResource("39"), ExtResource("135_lxy8u"), ExtResource("136_rjvqp"), ExtResource("135_lxy8u"), ExtResource("39"), ExtResource("39"), ExtResource("135_lxy8u"), ExtResource("136_rjvqp"), ExtResource("135_lxy8u"), ExtResource("39"), ExtResource("137_v2gbi"), ExtResource("138_l7xer"), ExtResource("139_nie01"), ExtResource("140_hy6iu"), ExtResource("139_nie01"), ExtResource("140_hy6iu"), ExtResource("139_nie01"), ExtResource("140_hy6iu"), ExtResource("138_l7xer"), ExtResource("137_v2gbi"), ExtResource("138_l7xer"), ExtResource("137_v2gbi"), ExtResource("138_l7xer"), ExtResource("137_v2gbi"), ExtResource("39"), ExtResource("137_v2gbi"), ExtResource("39"), ExtResource("137_v2gbi"), ExtResource("39"), ExtResource("137_v2gbi"), ExtResource("39"), ExtResource("137_v2gbi"), ExtResource("138_l7xer"), ExtResource("139_nie01"), ExtResource("140_hy6iu"), ExtResource("138_l7xer"), ExtResource("137_v2gbi"), ExtResource("39")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1936,7 +1942,7 @@ material = ExtResource("5")
 position = Vector2(55, -413)
 scale = Vector2(1.428, 1.428)
 texture = ExtResource("3_osmoy")
-offset = Vector2(0, 100)
+offset = Vector2(-40, 160)
 
 [node name="Pushbox" type="SGCollisionShape2D" parent="."]
 shape = SubResource("1")

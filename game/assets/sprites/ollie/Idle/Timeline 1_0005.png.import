@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cf4tc0pwwstwr"
-path="res://.godot/imported/Timeline 1_0000.png-9509bfa48e234542e2a8ee1d1eea03e4.ctex"
+uid="uid://bxki4ajlrsx5o"
+path="res://.godot/imported/Timeline 1_0005.png-973c010f29eee92887b9a249182321a4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/assets/sprites/ollie/BackDash/Timeline 1_0000.png"
-dest_files=["res://.godot/imported/Timeline 1_0000.png-9509bfa48e234542e2a8ee1d1eea03e4.ctex"]
+source_file="res://game/assets/sprites/ollie/Idle/Timeline 1_0005.png"
+dest_files=["res://.godot/imported/Timeline 1_0005.png-973c010f29eee92887b9a249182321a4.ctex"]
 
 [params]
 
