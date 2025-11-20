@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dao6sdmg3433q"
-path="res://.godot/imported/Timeline 1_0001.png-736c3fafe52a064ca0523e1ffee8433b.ctex"
+uid="uid://cgbpnugtnpiik"
+path="res://.godot/imported/Timeline 1_0004.png-db1500a3c1b5452462ba1f7bb0c55266.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/assets/sprites/ollie/ProtonCannon/Timeline 1_0001.png"
-dest_files=["res://.godot/imported/Timeline 1_0001.png-736c3fafe52a064ca0523e1ffee8433b.ctex"]
+source_file="res://game/assets/sprites/ollie/Bishop/Timeline 1_0004.png"
+dest_files=["res://.godot/imported/Timeline 1_0004.png-db1500a3c1b5452462ba1f7bb0c55266.ctex"]
 
 [params]
 

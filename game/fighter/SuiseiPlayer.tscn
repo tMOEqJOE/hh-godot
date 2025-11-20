@@ -2927,13 +2927,8 @@ tracks/1/path = NodePath("Sprite2D:offset")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-<<<<<<< HEAD
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1000000, 1000000),
-=======
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1000000),
->>>>>>> main
 "update": 0,
 "values": [Vector2(0, -80), Vector2(0, 0)]
 }
@@ -3167,10 +3162,6 @@ material = ExtResource("5")
 position = Vector2(4, -193)
 scale = Vector2(1.428, 1.428)
 texture = ExtResource("246")
-<<<<<<< HEAD
-=======
-offset = Vector2(30, -40)
->>>>>>> main
 
 [node name="Pushbox" type="SGCollisionShape2D" parent="."]
 shape = SubResource("1")

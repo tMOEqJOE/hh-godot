@@ -1,10 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://c5d8bqvgd106t"]
+[gd_scene load_steps=17 format=3 uid="uid://c5d8bqvgd106t"]
 
 [ext_resource type="Script" uid="uid://b010dt6v25trf" path="res://addons/godot-rollback-netcode/NetworkTimer.gd" id="1"]
 [ext_resource type="Script" uid="uid://dv11pt6y7wasy" path="res://addons/godot-rollback-netcode/NetworkAnimationPlayer.gd" id="2"]
 [ext_resource type="Material" uid="uid://bt3lvyqtd78u0" path="res://game/assets/shaders/ColorSwapMat.tres" id="3"]
 [ext_resource type="Texture2D" uid="uid://c3x14vkbcj7xn" path="res://game/assets/sprites/ollie/Bishop/Timeline 1_0003.png" id="4"]
 [ext_resource type="Script" uid="uid://ckbtiijdlmusl" path="res://game/fighter/projectiles/ollie/OllieChessProjectilePlayer.gd" id="5"]
+[ext_resource type="Texture2D" uid="uid://cgbpnugtnpiik" path="res://game/assets/sprites/ollie/Bishop/Timeline 1_0004.png" id="5_00etq"]
 [ext_resource type="PackedScene" uid="uid://cwoqesvdf08m3" path="res://game/fighter/Hurtbox.tscn" id="20"]
 [ext_resource type="PackedScene" uid="uid://bvgu0aev8rq4g" path="res://game/fighter/Hitbox.tscn" id="21"]
 [ext_resource type="Texture2D" uid="uid://bhg2jx47mwqoj" path="res://game/assets/sprites/ollie/Bishop/Timeline 1_0002.png" id="25"]
@@ -17,8 +18,7 @@ extents_y = 8847360
 
 [sub_resource type="Animation" id="2"]
 resource_name = "Active"
-length = 0.466668
-loop_mode = 1
+length = 0.033335064
 step = 0.0166667
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -47,12 +47,13 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("4")]
+"values": [ExtResource("5_00etq")]
 }
 
 [sub_resource type="Animation" id="4"]
 resource_name = "Travel"
-length = 0.700001
+length = 0.15000196
+loop_mode = 1
 step = 0.0166667
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -61,10 +62,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.683333, 0.85),
+"times": PackedFloat32Array(0, 0.05, 0.083333336),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [ExtResource("27"), ExtResource("25"), ExtResource("26")]
+"values": [ExtResource("27"), ExtResource("25"), ExtResource("4")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6vfqn"]
@@ -82,7 +83,7 @@ script = ExtResource("5")
 material = ExtResource("3")
 position = Vector2(1, -179)
 scale = Vector2(1.428, 1.428)
-texture = ExtResource("25")
+texture = ExtResource("26")
 
 [node name="Pushbox" type="SGCollisionShape2D" parent="."]
 shape = SubResource("1")
