@@ -1943,7 +1943,7 @@ material = ExtResource("5")
 position = Vector2(77, -379)
 scale = Vector2(1.428, 1.428)
 texture = ExtResource("223")
-offset = Vector2(-40, 40)
+offset = Vector2(-70, 130)
 
 [node name="Pushbox" type="SGCollisionShape2D" parent="."]
 shape = SubResource("1")
