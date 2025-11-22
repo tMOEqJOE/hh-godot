@@ -13,7 +13,7 @@ var DebugRollbackLogsEnabled: bool = false
 func _ready():
 	load_startup_config()
 	$CanvasLayer/Options/FullScreenButton.grab_focus()
-	$CanvasLayer/Options/VsyncEmpty.text = str((DisplayServer.window_get_vsync_mode() != DisplayServer.VSYNC_DISABLED))
+	$CanvasLayer/Options/VsyncEmpty.text = bool_to_on_off_string(DisplayServer.window_get_vsync_mode() != DisplayServer.VSYNC_DISABLED)
 	$CanvasLayer/Options/MainVolumeMeter.value = Main_volume + $CanvasLayer/Options/MainVolumeMeter.max_value
 	$CanvasLayer/Options/MusicVolumeMeter.value = BGM_volume + $CanvasLayer/Options/MusicVolumeMeter.max_value
 	$CanvasLayer/Options/SoundVolumeMeter.value = Sound_volume + $CanvasLayer/Options/SoundVolumeMeter.max_value
@@ -38,8 +38,14 @@ func _on_VsyncButton_pressed():
 	DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED if (not (DisplayServer.window_get_vsync_mode() != DisplayServer.VSYNC_DISABLED)) else DisplayServer.VSYNC_DISABLED)
 	ProjectSettings.set_setting(
 		"display/window/vsync/vsync_mode", (DisplayServer.window_get_vsync_mode() != DisplayServer.VSYNC_DISABLED))
-	$CanvasLayer/Options/VsyncEmpty.text = str((DisplayServer.window_get_vsync_mode() != DisplayServer.VSYNC_DISABLED))
+	$CanvasLayer/Options/VsyncEmpty.text = bool_to_on_off_string(DisplayServer.window_get_vsync_mode() != DisplayServer.VSYNC_DISABLED)
 	ProjectSettings.save_custom("override.cfg")
+
+func bool_to_on_off_string(input_bool: bool):
+	if (input_bool):
+		return "ON"
+	else:
+		return "OFF"
 
 func _on_ResetButton_pressed():
 	_on_MainVolumeMeter_value_changed(0 + $CanvasLayer/Options/MainVolumeMeter.max_value)

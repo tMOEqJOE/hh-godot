@@ -18,8 +18,7 @@ func _init():
 			Enums.StKey.Hit1PosX : 2359296, Enums.StKey.Hit1PosY : -12976128,
 			Enums.StKey.Hit1ScaleX : 2503512, Enums.StKey.Hit1ScaleY : 2516269,
 			Enums.StKey.attack_type : Enums.AttackType.Strike,
-#			Enums.StKey.launch_dir_x : +SGFixed.ONE*2,
-#			Enums.StKey.launch_dir_y : -SGFixed.ONE*5,
+			Enums.StKey.launch_dir_x : -Util.BASE_STRIKE_X_PUSHBACK,
 			Enums.StKey.hitstop: 4,
 			Enums.StKey.burst_OK: false,
 			Enums.StKey.hitstun : 40,
@@ -52,6 +51,7 @@ func enter(state: Dictionary) -> void:
 	state[Enums.StKey.velocity_x] = Util.THROW_HIT_PUSH
 	state[Enums.StKey.velocity_y] = 0
 	state[Enums.StKey.accel_y] = 0
+	state[Enums.StKey.accel_x] = 0
 	state[Enums.StKey.sync_rate] += SGFixed.ONE*12
 	anim.play("AirThrowHit")
 
@@ -60,7 +60,7 @@ func physics_tick(state: Dictionary) -> void:
 	super.physics_tick(state)
 	if (state[Enums.StKey.frame] == 2):
 		SyncManager.play_sound("throwcatch", Global.ThrowCatchSound, {"bus": "Sound"})
-	if (state[Enums.StKey.frame] == 19):
+	if (state[Enums.StKey.frame] == 32):
 		state[Enums.StKey.velocity_x] = Util.BACK_THROW_HIT_PUSH
 	if (state[Enums.StKey.frame] >= 34):
 		state[Enums.StKey.accel_y] = Util.GRAVITY
