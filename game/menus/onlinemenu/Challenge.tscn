@@ -100,7 +100,7 @@ size_flags_horizontal = 3
 
 [node name="Background" type="Sprite2D" parent="."]
 self_modulate = Color(0.0313726, 0.137255, 0.262745, 1)
-position = Vector2(651.983, 209.961)
+position = Vector2(1710.6259, 781.2742)
 scale = Vector2(0.366962, 0.918099)
 texture = ExtResource("12")
 
