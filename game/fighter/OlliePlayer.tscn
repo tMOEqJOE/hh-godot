@@ -48,7 +48,6 @@
 [ext_resource type="Texture2D" uid="uid://c3lwxbk2jliy3" path="res://game/assets/sprites/ollie/6C/Timeline 1_0001.png" id="50"]
 [ext_resource type="Texture2D" uid="uid://dgmmd0cbkhft5" path="res://game/assets/sprites/ollie/Jump/Timeline 1_0005.png" id="51"]
 [ext_resource type="Texture2D" uid="uid://2ufgws67uegb" path="res://game/assets/sprites/ollie/6C/Timeline 1_0005.png" id="52"]
-[ext_resource type="Texture2D" uid="uid://r42qdqv5ndba" path="res://game/assets/sprites/ollie/jB/Timeline 1_0003.png" id="54"]
 [ext_resource type="Texture2D" uid="uid://ba7ts6hejotr3" path="res://game/assets/sprites/ollie/jB/Timeline 1_0001.png" id="55"]
 [ext_resource type="Texture2D" uid="uid://bmimdwdvg7etk" path="res://game/assets/sprites/ollie/jB/Timeline 1_0002.png" id="56"]
 [ext_resource type="Texture2D" uid="uid://bc6rg2ift7gdn" path="res://game/assets/sprites/ollie/StandHurt/Timeline 1_0000.png" id="57"]
@@ -128,7 +127,6 @@
 [ext_resource type="Texture2D" uid="uid://b2tcuutkxx1c1" path="res://game/assets/sprites/ollie/GroundThrowHit/Timeline 1_0000.png" id="126_kvp4l"]
 [ext_resource type="Texture2D" uid="uid://cw58tjr0f2pe2" path="res://game/assets/sprites/ollie/CrouchHurt/Timeline 1_0000.png" id="127"]
 [ext_resource type="Texture2D" uid="uid://csyv0hkllucyr" path="res://game/assets/sprites/ollie/GroundThrowHit/Timeline 1_0001.png" id="127_tsn6u"]
-[ext_resource type="Texture2D" uid="uid://bsw5pvdjxy0kc" path="res://game/assets/sprites/mio/MioCannon/Timeline 1_0001.png" id="128"]
 [ext_resource type="Texture2D" uid="uid://c7xsw8hx4w4gk" path="res://game/assets/sprites/ollie/GroundThrowHit/Timeline 1_0002.png" id="128_07ctu"]
 [ext_resource type="Texture2D" uid="uid://c27b7icn61sfm" path="res://game/assets/sprites/ollie/GroundThrowHit/Timeline 1_0003.png" id="129_i60n6"]
 [ext_resource type="Texture2D" uid="uid://bujdj1klsw6yt" path="res://game/assets/sprites/ollie/GroundThrowHit/Timeline 1_0004.png" id="130_lxy8u"]
@@ -163,6 +161,8 @@
 [ext_resource type="Texture2D" uid="uid://dqx1maii343g5" path="res://game/assets/sprites/ollie/6B/Timeline 1_0000.png" id="164"]
 [ext_resource type="Texture2D" uid="uid://dk2fx1518errq" path="res://game/assets/sprites/ollie/6B/Timeline 1_0001.png" id="165"]
 [ext_resource type="Texture2D" uid="uid://bvfd048a5nbff" path="res://game/assets/sprites/ollie/2B/Timeline 1_0001.png" id="168"]
+[ext_resource type="Texture2D" uid="uid://b8n87yhob2xnj" path="res://game/assets/sprites/ollie/StandParryCatch/Timeline 1_0001.png" id="171_l7xer"]
+[ext_resource type="Texture2D" uid="uid://bqc32tuy7ptqm" path="res://game/assets/sprites/ollie/StandParryCatch/Timeline 1_0002.png" id="172_nie01"]
 [ext_resource type="Texture2D" uid="uid://ivdu045fqdvx" path="res://game/assets/sprites/ollie/5C/Timeline 1_0002.png" id="174"]
 [ext_resource type="Texture2D" uid="uid://gtq2x7d8gx5d" path="res://game/assets/sprites/ollie/5C/Timeline 1_0005.png" id="175"]
 [ext_resource type="Texture2D" uid="uid://co5j854jsk7qc" path="res://game/assets/sprites/ollie/5C/Timeline 1_0003.png" id="176"]
@@ -847,10 +847,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.11666668, 0.16666669, 0.20000002, 0.26666668, 0.3, 0.36666667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.11666668, 0.16666669, 0.20000002, 0.26666668, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("98_dixo8"), ExtResource("99_kvp4l"), ExtResource("3_osmoy"), ExtResource("100_tsn6u"), ExtResource("101_07ctu"), ExtResource("100_tsn6u"), ExtResource("102_i60n6")]
+"values": [ExtResource("98_dixo8"), ExtResource("99_kvp4l"), ExtResource("3_osmoy"), ExtResource("100_tsn6u"), ExtResource("101_07ctu"), ExtResource("102_i60n6")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -891,7 +891,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.266667, 0.333333, 0.4, 0.45, 0.483333, 0.516667),
 "transitions": PackedFloat32Array(1000000, 1000000, 1000000, 1000000, 1000000, 1000000, 1000000),
 "update": 0,
-"values": [Vector2(-100, 70), Vector2(-95, 70), Vector2(-105, 70), Vector2(-95, 70), Vector2(-105, 70), Vector2(-95, 70), Vector2(-105, 70)]
+"values": [Vector2(-70, 70), Vector2(-65, 70), Vector2(-75, 70), Vector2(-65, 70), Vector2(-75, 70), Vector2(-65, 70), Vector2(-75, 70)]
 }
 
 [sub_resource type="Animation" id="54"]
@@ -920,7 +920,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1000000),
 "update": 0,
-"values": [Vector2(-100, 70)]
+"values": [Vector2(-70, 70)]
 }
 
 [sub_resource type="Animation" id="43"]
@@ -1065,7 +1065,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1000000),
 "update": 0,
-"values": [Vector2(-50, 180)]
+"values": [Vector2(-50, 170)]
 }
 
 [sub_resource type="Animation" id="19"]
@@ -1301,7 +1301,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1000000),
 "update": 0,
-"values": [Vector2(-50, 60)]
+"values": [Vector2(-30, 90)]
 }
 
 [sub_resource type="Animation" id="61"]
@@ -1330,7 +1330,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1000000),
 "update": 0,
-"values": [Vector2(-50, 60)]
+"values": [Vector2(-30, 60)]
 }
 
 [sub_resource type="Animation" id="35"]
@@ -1373,10 +1373,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.633333),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.0666667, 0.133333),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [ExtResource("123"), ExtResource("121"), ExtResource("122"), ExtResource("128")]
+"values": [ExtResource("123"), ExtResource("121"), ExtResource("122")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1417,7 +1417,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1000000),
 "update": 0,
-"values": [Vector2(-50, 50)]
+"values": [Vector2(-30, 90)]
 }
 
 [sub_resource type="Animation" id="62"]
@@ -1491,7 +1491,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1000000),
 "update": 0,
-"values": [Vector2(-50, 160)]
+"values": [Vector2(-50, 170)]
 }
 
 [sub_resource type="Animation" id="22"]
@@ -1520,7 +1520,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1000000),
 "update": 0,
-"values": [Vector2(-50, 160)]
+"values": [Vector2(-50, 170)]
 }
 
 [sub_resource type="Animation" id="9"]
@@ -1621,10 +1621,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.083333336, 0.13333334),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [ExtResource("84")]
+"values": [ExtResource("84"), ExtResource("171_l7xer"), ExtResource("172_nie01")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1636,7 +1636,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1000000),
 "update": 0,
-"values": [Vector2(-25, 100)]
+"values": [Vector2(-25, 110)]
 }
 
 [sub_resource type="Animation" id="29"]
@@ -1699,7 +1699,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="28"]
 resource_name = "Wakeup"
-length = 0.333333
+length = 0.41666916
 step = 0.0166667
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -1708,7 +1708,7 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 0.183333),
+"times": PackedFloat32Array(0, 0.18333372, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [ExtResource("122"), ExtResource("123"), ExtResource("121")]
@@ -1811,7 +1811,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1000000),
 "update": 0,
-"values": [Vector2(120, 70)]
+"values": [Vector2(120, 90)]
 }
 
 [sub_resource type="Animation" id="12"]
@@ -1825,10 +1825,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 0.183333, 0.25),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.13333334, 0.18333334),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [ExtResource("60"), ExtResource("55"), ExtResource("56"), ExtResource("54")]
+"values": [ExtResource("60"), ExtResource("55"), ExtResource("56")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1945,7 +1945,7 @@ material = ExtResource("5")
 position = Vector2(55, -413)
 scale = Vector2(1.428, 1.428)
 texture = ExtResource("3_osmoy")
-offset = Vector2(-50, 180)
+offset = Vector2(-50, 170)
 
 [node name="Pushbox" type="SGCollisionShape2D" parent="."]
 shape = SubResource("1")

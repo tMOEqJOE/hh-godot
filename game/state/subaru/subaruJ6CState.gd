@@ -3,6 +3,7 @@ extends SubaruAirAttackState
 class_name Subaruj6CState
 
 var voice = preload("res://game/assets/voice/subaru/sbr_hayaku koi.wav")
+var clean = preload("res://game/assets/sfx/CleanBatHit.wav")
 
 func _init():
 	endFrame = 60
@@ -115,6 +116,10 @@ func jump_cancel(state: Dictionary, interpreter: InputInterpreter):
 	pass
 
 func reaction(state: Dictionary, interpreter: InputInterpreter, event_cause: int) -> void:
+	if (event_cause == Enums.Reaction.StrikeHit):
+		if (state[Enums.StKey.frame] == 7):
+			SyncManager.play_sound("CleanBatHit", clean, {"bus": "Sound"})
+
 	if (event_cause == Enums.Reaction.GroundLand):
 		if (state[Enums.StKey.hitStopFrame] <= 0):
 			state[Enums.StKey.doubleJump] = 1
@@ -122,3 +127,4 @@ func reaction(state: Dictionary, interpreter: InputInterpreter, event_cause: int
 			change_state.call("LandingRecovery")
 	else:
 		super.reaction(state, interpreter, event_cause)
+	

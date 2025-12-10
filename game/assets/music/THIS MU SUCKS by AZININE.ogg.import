@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bv6mk21u5x8ns"
+path="res://.godot/imported/THIS MU SUCKS by AZININE.ogg-7a06bd678ebdab5894dd0cc26f6589e2.oggvorbisstr"
+
+[deps]
+
+source_file="res://game/assets/music/THIS MU SUCKS by AZININE.ogg"
+dest_files=["res://.godot/imported/THIS MU SUCKS by AZININE.ogg-7a06bd678ebdab5894dd0cc26f6589e2.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

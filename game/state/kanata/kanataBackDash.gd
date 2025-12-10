@@ -21,7 +21,7 @@ func _init():
 			Enums.StKey.Hurt1ScaleX : 803537, Enums.StKey.Hurt1ScaleY : 1171143,
 			},
 		18 : {
-			Enums.StKey.Summon : "knockdowndust",
+			#Enums.StKey.Summon : "knockdowndust",
 			Enums.StKey.Hit1Disable : true,
 			Enums.StKey.Hit2Disable : true,
 			Enums.StKey.Hurt1Disable : false,Enums.StKey.Hurt2Disable : true,Enums.StKey.Hurt3Disable : true,

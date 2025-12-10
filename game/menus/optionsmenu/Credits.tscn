@@ -12,6 +12,7 @@ script = ExtResource("1")
 
 [node name="Credits" type="GridContainer" parent="CanvasLayer"]
 clip_contents = true
+anchors_preset = -1
 offset_left = 221.0
 offset_top = 1126.0
 offset_right = 721.0
