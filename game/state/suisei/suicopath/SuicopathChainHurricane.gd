@@ -43,7 +43,7 @@ func _init():
 
 func enter(state: Dictionary) -> void:
 	super.enter(state)
-	anim.play("Suicopath5A")
+	anim.play("SuicopathChainsawSuper")
 	state[Enums.StKey.super_meter] -= Util.LEVEL_TWO_SUPER
 
 func meter_cancel(state: Dictionary, interpreter: InputInterpreter):
