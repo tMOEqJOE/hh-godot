@@ -1,8 +1,9 @@
-[gd_scene load_steps=281 format=3 uid="uid://bahv36p0oriog"]
+[gd_scene load_steps=282 format=3 uid="uid://bahv36p0oriog"]
 
 [ext_resource type="Script" uid="uid://dfikixggfxk0g" path="res://game/fighter/MioPlayer.gd" id="2"]
 [ext_resource type="Texture2D" uid="uid://bno7kd4qph33k" path="res://game/assets/sprites/mio/GroundThrowHit/Timeline 1_0007.png" id="3"]
 [ext_resource type="Script" uid="uid://dv11pt6y7wasy" path="res://addons/godot-rollback-netcode/NetworkAnimationPlayer.gd" id="4"]
+[ext_resource type="PackedScene" uid="uid://sdxa076t7wfp" path="res://game/fighter/effects/shadow.tscn" id="4_klugg"]
 [ext_resource type="Material" uid="uid://bt3lvyqtd78u0" path="res://game/assets/shaders/ColorSwapMat.tres" id="5"]
 [ext_resource type="PackedScene" uid="uid://cwoqesvdf08m3" path="res://game/fighter/Hurtbox.tscn" id="6"]
 [ext_resource type="PackedScene" uid="uid://bvgu0aev8rq4g" path="res://game/fighter/Hitbox.tscn" id="7"]
@@ -1153,7 +1154,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1000000),
 "update": 0,
-"values": [Vector2(60, 50)]
+"values": [Vector2(30, 60)]
 }
 
 [sub_resource type="Animation" id="6"]
@@ -1943,7 +1944,9 @@ material = ExtResource("5")
 position = Vector2(77, -379)
 scale = Vector2(1.428, 1.428)
 texture = ExtResource("223")
-offset = Vector2(-70, 130)
+offset = Vector2(0, 80)
+
+[node name="Shadow" parent="." instance=ExtResource("4_klugg")]
 
 [node name="Pushbox" type="SGCollisionShape2D" parent="."]
 shape = SubResource("1")

@@ -1,9 +1,10 @@
-[gd_scene load_steps=215 format=3 uid="uid://jn7rbmbm6c2w"]
+[gd_scene load_steps=216 format=3 uid="uid://jn7rbmbm6c2w"]
 
 [ext_resource type="Texture2D" uid="uid://b6hv4pgvya0vc" path="res://game/assets/sprites/kanata/5B/Timeline 1_0001.png" id="1"]
 [ext_resource type="Script" uid="uid://dgsx3duqjaeo5" path="res://game/fighter/PointPlayer.gd" id="2"]
 [ext_resource type="Texture2D" uid="uid://g8ctl78jb83e" path="res://game/assets/sprites/kanata/FiftyThrow/Timeline 1_0000.png" id="3"]
 [ext_resource type="Script" uid="uid://dv11pt6y7wasy" path="res://addons/godot-rollback-netcode/NetworkAnimationPlayer.gd" id="4"]
+[ext_resource type="PackedScene" uid="uid://sdxa076t7wfp" path="res://game/fighter/effects/shadow.tscn" id="4_1cl1j"]
 [ext_resource type="Material" uid="uid://bt3lvyqtd78u0" path="res://game/assets/shaders/ColorSwapMat.tres" id="5"]
 [ext_resource type="PackedScene" uid="uid://cwoqesvdf08m3" path="res://game/fighter/Hurtbox.tscn" id="6"]
 [ext_resource type="PackedScene" uid="uid://bvgu0aev8rq4g" path="res://game/fighter/Hitbox.tscn" id="7"]
@@ -2095,6 +2096,9 @@ position = Vector2(85, -424)
 scale = Vector2(1.428, 1.428)
 texture = ExtResource("60")
 offset = Vector2(-50, 150)
+
+[node name="Shadow" parent="." instance=ExtResource("4_1cl1j")]
+scale = Vector2(2.0963051, 2.0963051)
 
 [node name="Pushbox" type="SGCollisionShape2D" parent="."]
 shape = SubResource("1")

@@ -1,7 +1,8 @@
-[gd_scene load_steps=156 format=3 uid="uid://c0sr4wh64k6pt"]
+[gd_scene load_steps=157 format=3 uid="uid://c0sr4wh64k6pt"]
 
 [ext_resource type="Script" uid="uid://dgsx3duqjaeo5" path="res://game/fighter/PointPlayer.gd" id="2"]
 [ext_resource type="Script" uid="uid://dv11pt6y7wasy" path="res://addons/godot-rollback-netcode/NetworkAnimationPlayer.gd" id="4"]
+[ext_resource type="PackedScene" uid="uid://sdxa076t7wfp" path="res://game/fighter/effects/shadow.tscn" id="4_k05o5"]
 [ext_resource type="Material" uid="uid://bt3lvyqtd78u0" path="res://game/assets/shaders/ColorSwapMat.tres" id="5"]
 [ext_resource type="PackedScene" uid="uid://cwoqesvdf08m3" path="res://game/fighter/Hurtbox.tscn" id="6"]
 [ext_resource type="PackedScene" uid="uid://bvgu0aev8rq4g" path="res://game/fighter/Hitbox.tscn" id="7"]
@@ -972,6 +973,9 @@ position = Vector2(45, -345)
 scale = Vector2(1.428, 1.428)
 texture = ExtResource("125")
 
+[node name="Shadow" parent="." instance=ExtResource("4_k05o5")]
+position = Vector2(1, 9)
+
 [node name="Pushbox" type="SGCollisionShape2D" parent="."]
 shape = SubResource("1")
 fixed_position_x = 65536
@@ -1033,12 +1037,3 @@ fixed_scale_y = 241928
 visible = false
 position = Vector2(20, -247)
 scale = Vector2(4.19695, 3.69153)
-
-[node name="Hitbox3" parent="." instance=ExtResource("7")]
-fixed_position_x = 7405568
-fixed_position_y = -14811136
-fixed_scale_x = 860555
-fixed_scale_y = -780409
-visible = false
-position = Vector2(113, -226)
-scale = Vector2(13.131, -11.9081)

@@ -1,9 +1,10 @@
-[gd_scene load_steps=387 format=3 uid="uid://de1nks15kamf"]
+[gd_scene load_steps=388 format=3 uid="uid://de1nks15kamf"]
 
 [ext_resource type="Texture2D" uid="uid://bb0le8lbjm862" path="res://game/assets/sprites/subaru/Idle/Timeline 1_0000.png" id="1"]
 [ext_resource type="Script" uid="uid://cp7ju52qan5eu" path="res://game/fighter/SubaruPlayer.gd" id="2"]
 [ext_resource type="Texture2D" uid="uid://dp2uu7qx4mxvg" path="res://game/assets/sprites/subaru/GroundThrowWhiff/Timeline 1_0000.png" id="3"]
 [ext_resource type="Script" uid="uid://dv11pt6y7wasy" path="res://addons/godot-rollback-netcode/NetworkAnimationPlayer.gd" id="4"]
+[ext_resource type="PackedScene" uid="uid://sdxa076t7wfp" path="res://game/fighter/effects/shadow.tscn" id="4_sc1r3"]
 [ext_resource type="Material" uid="uid://bt3lvyqtd78u0" path="res://game/assets/shaders/ColorSwapMat.tres" id="5"]
 [ext_resource type="PackedScene" uid="uid://cwoqesvdf08m3" path="res://game/fighter/Hurtbox.tscn" id="6"]
 [ext_resource type="PackedScene" uid="uid://bvgu0aev8rq4g" path="res://game/fighter/Hitbox.tscn" id="7"]
@@ -4112,7 +4113,10 @@ material = ExtResource("5")
 position = Vector2(-15, -259)
 scale = Vector2(1.428, 1.428)
 texture = ExtResource("176")
-offset = Vector2(30, -100)
+offset = Vector2(60, 100)
+
+[node name="Shadow" parent="." instance=ExtResource("4_sc1r3")]
+position = Vector2(0, 6)
 
 [node name="Pushbox" type="SGCollisionShape2D" parent="."]
 shape = SubResource("1")

@@ -1,9 +1,10 @@
-[gd_scene load_steps=63 format=3 uid="uid://dqh17l2mwtwih"]
+[gd_scene load_steps=64 format=3 uid="uid://dqh17l2mwtwih"]
 
-[ext_resource type="Script" path="res://game/fighter/assist/bijou/BijouPlayer.gd" id="1"]
-[ext_resource type="Script" path="res://addons/godot-rollback-netcode/NetworkAnimationPlayer.gd" id="2"]
+[ext_resource type="Script" uid="uid://crn3kplesc6vi" path="res://game/fighter/assist/bijou/BijouPlayer.gd" id="1"]
+[ext_resource type="Script" uid="uid://dv11pt6y7wasy" path="res://addons/godot-rollback-netcode/NetworkAnimationPlayer.gd" id="2"]
 [ext_resource type="Texture2D" uid="uid://c5sr8u34ebiek" path="res://game/assets/sprites/assists/hakka/GalaxyPunch/Timeline 1_0007.png" id="3"]
 [ext_resource type="Texture2D" uid="uid://cenwsd4tb2sjp" path="res://game/assets/sprites/assists/fubuki/StandHurt/Timeline 1_0001.png" id="4"]
+[ext_resource type="PackedScene" uid="uid://sdxa076t7wfp" path="res://game/fighter/effects/shadow.tscn" id="4_5322d"]
 [ext_resource type="Texture2D" uid="uid://cytqq4f6ih8mh" path="res://game/assets/sprites/assists/fubuki/StandHurt/Timeline 1_0002.png" id="5"]
 [ext_resource type="Texture2D" uid="uid://rtjsheuoocek" path="res://game/assets/sprites/assists/fubuki/AirHurt/Timeline 1_0003.png" id="6"]
 [ext_resource type="Texture2D" uid="uid://c3d53ic464oh0" path="res://game/assets/sprites/assists/hakka/GalaxyPunch/Timeline 1_0006.png" id="7"]
@@ -29,9 +30,9 @@
 [ext_resource type="Texture2D" uid="uid://his66vedpfmu" path="res://game/assets/sprites/assists/fubuki/Burst/Timeline 1_0001.png" id="27"]
 [ext_resource type="Texture2D" uid="uid://gtpedfhjkyfr" path="res://game/assets/sprites/assists/fubuki/Burst/Timeline 1_0006.png" id="28"]
 [ext_resource type="Texture2D" uid="uid://dav4s7tcwcac4" path="res://game/assets/sprites/assists/hakka/Badlands/Timeline 1_0001.png" id="29"]
-[ext_resource type="PackedScene" path="res://game/fighter/Hurtbox.tscn" id="30"]
-[ext_resource type="PackedScene" path="res://game/fighter/Hitbox.tscn" id="31"]
-[ext_resource type="Material" path="res://game/assets/shaders/ColorSwapMat.tres" id="32"]
+[ext_resource type="PackedScene" uid="uid://cwoqesvdf08m3" path="res://game/fighter/Hurtbox.tscn" id="30"]
+[ext_resource type="PackedScene" uid="uid://bvgu0aev8rq4g" path="res://game/fighter/Hitbox.tscn" id="31"]
+[ext_resource type="Material" uid="uid://bt3lvyqtd78u0" path="res://game/assets/shaders/ColorSwapMat.tres" id="32"]
 [ext_resource type="Texture2D" uid="uid://cptag5x1fm1yb" path="res://game/assets/sprites/assists/bijou/JudgeCut/Timeline 1_0001.png" id="33"]
 [ext_resource type="Texture2D" uid="uid://dnokuuhnfvy6g" path="res://game/assets/sprites/assists/bijou/JudgeCut/Timeline 1_0000.png" id="34"]
 [ext_resource type="Texture2D" uid="uid://ct0xusy64y1px" path="res://game/assets/sprites/assists/bijou/JudgeCut/Timeline 1_0003.png" id="35"]
@@ -76,7 +77,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1e+06),
+"transitions": PackedFloat32Array(1000000),
 "update": 0,
 "values": [Vector2(0, 100)]
 }
@@ -105,7 +106,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1e+06),
+"transitions": PackedFloat32Array(1000000),
 "update": 0,
 "values": [Vector2(50, 80)]
 }
@@ -134,7 +135,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1e+06),
+"transitions": PackedFloat32Array(1000000),
 "update": 0,
 "values": [Vector2(0, 80)]
 }
@@ -163,7 +164,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1e+06),
+"transitions": PackedFloat32Array(1000000),
 "update": 0,
 "values": [Vector2(50, 80)]
 }
@@ -192,7 +193,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1e+06),
+"transitions": PackedFloat32Array(1000000),
 "update": 0,
 "values": [Vector2(0, 130)]
 }
@@ -221,7 +222,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1e+06),
+"transitions": PackedFloat32Array(1000000),
 "update": 0,
 "values": [Vector2(0, 0)]
 }
@@ -250,7 +251,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1e+06),
+"transitions": PackedFloat32Array(1000000),
 "update": 0,
 "values": [Vector2(0, 100)]
 }
@@ -279,7 +280,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1e+06),
+"transitions": PackedFloat32Array(1000000),
 "update": 0,
 "values": [Vector2(0, 70)]
 }
@@ -308,7 +309,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1e+06),
+"transitions": PackedFloat32Array(1000000),
 "update": 0,
 "values": [Vector2(0, 100)]
 }
@@ -337,7 +338,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1e+06),
+"transitions": PackedFloat32Array(1000000),
 "update": 0,
 "values": [Vector2(0, 100)]
 }
@@ -366,7 +367,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1e+06),
+"transitions": PackedFloat32Array(1000000),
 "update": 0,
 "values": [Vector2(-50, 120)]
 }
@@ -395,7 +396,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1e+06),
+"transitions": PackedFloat32Array(1000000),
 "update": 0,
 "values": [Vector2(0, 180)]
 }
@@ -424,26 +425,26 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1e+06),
+"transitions": PackedFloat32Array(1000000),
 "update": 0,
 "values": [Vector2(0, 200)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_v8xos"]
 _data = {
-"AirHit": SubResource("10"),
-"AssistAttack": SubResource("9"),
-"AssistAttack2": SubResource("16"),
-"AssistAttackJust": SubResource("21"),
-"AssistSuper": SubResource("18"),
-"Burst": SubResource("14"),
-"Exit": SubResource("19"),
-"GuardCancel": SubResource("13"),
-"Idle": SubResource("12"),
-"Intro": SubResource("15"),
-"Knockdown": SubResource("8"),
-"LandingRecovery": SubResource("17"),
-"StandHighHit": SubResource("7")
+&"AirHit": SubResource("10"),
+&"AssistAttack": SubResource("9"),
+&"AssistAttack2": SubResource("16"),
+&"AssistAttackJust": SubResource("21"),
+&"AssistSuper": SubResource("18"),
+&"Burst": SubResource("14"),
+&"Exit": SubResource("19"),
+&"GuardCancel": SubResource("13"),
+&"Idle": SubResource("12"),
+&"Intro": SubResource("15"),
+&"Knockdown": SubResource("8"),
+&"LandingRecovery": SubResource("17"),
+&"StandHighHit": SubResource("7")
 }
 
 [node name="BijouPlayer" type="SGCharacterBody2D"]
@@ -459,6 +460,8 @@ scale = Vector2(1.428, 1.428)
 texture = ExtResource("6")
 offset = Vector2(0, 100)
 
+[node name="Shadow" parent="." instance=ExtResource("4_5322d")]
+
 [node name="Pushbox" type="SGCollisionShape2D" parent="."]
 shape = SubResource("1")
 fixed_position_y = -6881280
@@ -468,7 +471,7 @@ position = Vector2(0, -105)
 
 [node name="NetworkAnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_v8xos")
+&"": SubResource("AnimationLibrary_v8xos")
 }
 script = ExtResource("2")
 auto_reset = false

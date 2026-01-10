@@ -1,10 +1,11 @@
-[gd_scene load_steps=45 format=3 uid="uid://c3i8yciwd8vmb"]
+[gd_scene load_steps=46 format=3 uid="uid://c3i8yciwd8vmb"]
 
-[ext_resource type="Script" path="res://addons/godot-rollback-netcode/NetworkAnimationPlayer.gd" id="1"]
-[ext_resource type="PackedScene" path="res://game/fighter/Hurtbox.tscn" id="2"]
-[ext_resource type="PackedScene" path="res://game/fighter/Hitbox.tscn" id="3"]
-[ext_resource type="Material" path="res://game/assets/shaders/ColorSwapMat.tres" id="4"]
-[ext_resource type="Script" path="res://game/fighter/assist/assistsana/SanaPlayer.gd" id="5"]
+[ext_resource type="Script" uid="uid://dv11pt6y7wasy" path="res://addons/godot-rollback-netcode/NetworkAnimationPlayer.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://cwoqesvdf08m3" path="res://game/fighter/Hurtbox.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://bvgu0aev8rq4g" path="res://game/fighter/Hitbox.tscn" id="3"]
+[ext_resource type="Material" uid="uid://bt3lvyqtd78u0" path="res://game/assets/shaders/ColorSwapMat.tres" id="4"]
+[ext_resource type="PackedScene" uid="uid://sdxa076t7wfp" path="res://game/fighter/effects/shadow.tscn" id="4_8tnd7"]
+[ext_resource type="Script" uid="uid://dhae8c4xx0bln" path="res://game/fighter/assist/assistsana/SanaPlayer.gd" id="5"]
 [ext_resource type="Texture2D" uid="uid://o65hxwd0ksrq" path="res://game/assets/sprites/mio/3C/Timeline 1_0008.png" id="6"]
 [ext_resource type="Texture2D" uid="uid://byyrxkbxlkpp7" path="res://game/assets/sprites/mio/StandHighHit/Timeline 1_0002.png" id="7"]
 [ext_resource type="Texture2D" uid="uid://ct0eofmcjaqh" path="res://game/assets/sprites/mio/Wakeup/Timeline 1_0002.png" id="8"]
@@ -59,7 +60,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1e+06),
+"transitions": PackedFloat32Array(1000000),
 "update": 0,
 "values": [Vector2(0, 100)]
 }
@@ -89,7 +90,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1e+06),
+"transitions": PackedFloat32Array(1000000),
 "update": 0,
 "values": [Vector2(0, 30)]
 }
@@ -119,7 +120,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1e+06),
+"transitions": PackedFloat32Array(1000000),
 "update": 0,
 "values": [Vector2(0, 50)]
 }
@@ -148,7 +149,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1e+06),
+"transitions": PackedFloat32Array(1000000),
 "update": 0,
 "values": [Vector2(0, 0)]
 }
@@ -178,7 +179,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1e+06),
+"transitions": PackedFloat32Array(1000000),
 "update": 0,
 "values": [Vector2(0, 130)]
 }
@@ -207,7 +208,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1e+06),
+"transitions": PackedFloat32Array(1000000),
 "update": 0,
 "values": [Vector2(0, -40)]
 }
@@ -236,7 +237,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1e+06),
+"transitions": PackedFloat32Array(1000000),
 "update": 0,
 "values": [Vector2(-450, -100)]
 }
@@ -265,7 +266,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1e+06),
+"transitions": PackedFloat32Array(1000000),
 "update": 0,
 "values": [Vector2(-40, 50)]
 }
@@ -294,7 +295,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1e+06),
+"transitions": PackedFloat32Array(1000000),
 "update": 0,
 "values": [Vector2(-30, 150)]
 }
@@ -323,7 +324,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1e+06),
+"transitions": PackedFloat32Array(1000000),
 "update": 0,
 "values": [Vector2(0, 150)]
 }
@@ -353,7 +354,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1e+06),
+"transitions": PackedFloat32Array(1000000),
 "update": 0,
 "values": [Vector2(-30, 50)]
 }
@@ -382,25 +383,25 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1e+06),
+"transitions": PackedFloat32Array(1000000),
 "update": 0,
 "values": [Vector2(-120, 100)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1gfh0"]
 _data = {
-"AirHit": SubResource("10"),
-"AssistAttack": SubResource("25"),
-"AssistSuper": SubResource("20"),
-"Burst": SubResource("14"),
-"Exit": SubResource("19"),
-"GuardCancel": SubResource("13"),
-"Idle": SubResource("12"),
-"Intro": SubResource("15"),
-"Knockdown": SubResource("8"),
-"LandingRecovery": SubResource("17"),
-"Pilot": SubResource("26"),
-"StandHighHit": SubResource("7")
+&"AirHit": SubResource("10"),
+&"AssistAttack": SubResource("25"),
+&"AssistSuper": SubResource("20"),
+&"Burst": SubResource("14"),
+&"Exit": SubResource("19"),
+&"GuardCancel": SubResource("13"),
+&"Idle": SubResource("12"),
+&"Intro": SubResource("15"),
+&"Knockdown": SubResource("8"),
+&"LandingRecovery": SubResource("17"),
+&"Pilot": SubResource("26"),
+&"StandHighHit": SubResource("7")
 }
 
 [node name="AssistSanaPlayer" type="SGCharacterBody2D"]
@@ -416,6 +417,8 @@ scale = Vector2(1.428, 1.428)
 texture = ExtResource("9")
 offset = Vector2(-120, 100)
 
+[node name="Shadow" parent="." instance=ExtResource("4_8tnd7")]
+
 [node name="Pushbox" type="SGCollisionShape2D" parent="."]
 shape = SubResource("1")
 fixed_position_y = -6881280
@@ -425,7 +428,7 @@ position = Vector2(0, -105)
 
 [node name="NetworkAnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_1gfh0")
+&"": SubResource("AnimationLibrary_1gfh0")
 }
 script = ExtResource("1")
 auto_reset = false

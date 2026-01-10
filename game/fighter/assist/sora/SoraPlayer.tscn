@@ -1,10 +1,11 @@
-[gd_scene load_steps=59 format=3 uid="uid://datk6jsq1vgku"]
+[gd_scene load_steps=60 format=3 uid="uid://datk6jsq1vgku"]
 
 [ext_resource type="Texture2D" uid="uid://47amdmbstwek" path="res://game/assets/sprites/assists/sora/Fence/Timeline 1_0001.png" id="1"]
 [ext_resource type="Script" uid="uid://bxmv1ls882bw0" path="res://game/fighter/assist/sora/SoraPlayer.gd" id="1_lyuip"]
 [ext_resource type="Texture2D" uid="uid://bgcnxw70j615g" path="res://game/assets/sprites/assists/sora/Fence/Timeline 1_0004.png" id="2"]
 [ext_resource type="Texture2D" uid="uid://wtf2ya2hnydh" path="res://game/assets/sprites/assists/sora/Fence/Timeline 1_0000.png" id="3"]
 [ext_resource type="Texture2D" uid="uid://brffcyn14lgj0" path="res://game/assets/sprites/assists/sora/StepPunch/Timeline 1_0000.png" id="4"]
+[ext_resource type="PackedScene" uid="uid://sdxa076t7wfp" path="res://game/fighter/effects/shadow.tscn" id="4_ho45h"]
 [ext_resource type="Texture2D" uid="uid://cuxb7gocnoy8x" path="res://game/assets/sprites/assists/sora/StepPunch/Timeline 1_0003.png" id="5"]
 [ext_resource type="Script" uid="uid://dv11pt6y7wasy" path="res://addons/godot-rollback-netcode/NetworkAnimationPlayer.gd" id="6"]
 [ext_resource type="Texture2D" uid="uid://dwa4abvuni1jr" path="res://game/assets/sprites/assists/sora/StepPunch/Timeline 1_0002.png" id="7"]
@@ -73,7 +74,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1e+06),
+"transitions": PackedFloat32Array(1000000),
 "update": 0,
 "values": [Vector2(0, 130)]
 }
@@ -102,7 +103,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1e+06),
+"transitions": PackedFloat32Array(1000000),
 "update": 0,
 "values": [Vector2(0, 200)]
 }
@@ -132,7 +133,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.85),
-"transitions": PackedFloat32Array(1e+06, 1),
+"transitions": PackedFloat32Array(1000000, 1),
 "update": 0,
 "values": [Vector2(-150, 200), Vector2(-500, -100)]
 }
@@ -161,7 +162,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1e+06),
+"transitions": PackedFloat32Array(1000000),
 "update": 0,
 "values": [Vector2(0, 100)]
 }
@@ -190,7 +191,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1e+06),
+"transitions": PackedFloat32Array(1000000),
 "update": 0,
 "values": [Vector2(0, 130)]
 }
@@ -219,7 +220,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1e+06),
+"transitions": PackedFloat32Array(1000000),
 "update": 0,
 "values": [Vector2(0, 200)]
 }
@@ -248,7 +249,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1e+06),
+"transitions": PackedFloat32Array(1000000),
 "update": 0,
 "values": [Vector2(0, 100)]
 }
@@ -277,7 +278,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1e+06),
+"transitions": PackedFloat32Array(1000000),
 "update": 0,
 "values": [Vector2(0, 130)]
 }
@@ -306,7 +307,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1e+06),
+"transitions": PackedFloat32Array(1000000),
 "update": 0,
 "values": [Vector2(0, 240)]
 }
@@ -335,7 +336,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1e+06),
+"transitions": PackedFloat32Array(1000000),
 "update": 0,
 "values": [Vector2(0, 50)]
 }
@@ -364,7 +365,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1e+06),
+"transitions": PackedFloat32Array(1000000),
 "update": 0,
 "values": [Vector2(0, 50)]
 }
@@ -393,7 +394,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1e+06),
+"transitions": PackedFloat32Array(1000000),
 "update": 0,
 "values": [Vector2(-50, 180)]
 }
@@ -426,6 +427,9 @@ position = Vector2(3, -503)
 scale = Vector2(1.428, 1.428)
 texture = ExtResource("13")
 offset = Vector2(0, 130)
+
+[node name="Shadow" parent="." instance=ExtResource("4_ho45h")]
+scale = Vector2(2.3363078, 1.7763066)
 
 [node name="Pushbox" type="SGCollisionShape2D" parent="."]
 shape = SubResource("1")

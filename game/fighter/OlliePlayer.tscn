@@ -1,9 +1,10 @@
-[gd_scene load_steps=251 format=3 uid="uid://enqykmcqocbq"]
+[gd_scene load_steps=252 format=3 uid="uid://enqykmcqocbq"]
 
 [ext_resource type="Texture2D" uid="uid://c73edt6xp2p55" path="res://game/assets/sprites/ollie/5B/Timeline 1_0001.png" id="1"]
 [ext_resource type="Script" uid="uid://pjo1td178t2f" path="res://game/fighter/OlliePlayer.gd" id="2"]
 [ext_resource type="Texture2D" uid="uid://wmppsla0hrfl" path="res://game/assets/sprites/ollie/Burst/Timeline 1_0002.png" id="3_osmoy"]
 [ext_resource type="Script" uid="uid://dv11pt6y7wasy" path="res://addons/godot-rollback-netcode/NetworkAnimationPlayer.gd" id="4"]
+[ext_resource type="PackedScene" uid="uid://sdxa076t7wfp" path="res://game/fighter/effects/shadow.tscn" id="4_nie01"]
 [ext_resource type="Material" uid="uid://bt3lvyqtd78u0" path="res://game/assets/shaders/ColorSwapMat.tres" id="5"]
 [ext_resource type="PackedScene" uid="uid://cwoqesvdf08m3" path="res://game/fighter/Hurtbox.tscn" id="6"]
 [ext_resource type="PackedScene" uid="uid://bvgu0aev8rq4g" path="res://game/fighter/Hitbox.tscn" id="7"]
@@ -1945,7 +1946,10 @@ material = ExtResource("5")
 position = Vector2(55, -413)
 scale = Vector2(1.428, 1.428)
 texture = ExtResource("3_osmoy")
-offset = Vector2(-50, 170)
+offset = Vector2(80, 180)
+
+[node name="Shadow" parent="." instance=ExtResource("4_nie01")]
+scale = Vector2(2.056, 1.776)
 
 [node name="Pushbox" type="SGCollisionShape2D" parent="."]
 shape = SubResource("1")

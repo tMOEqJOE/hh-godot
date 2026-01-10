@@ -336,6 +336,7 @@ func launcher_hurt(react_type: int, opponent_attack: Dictionary, leftface: bool,
 
 func skip_intro() -> void:
 	fighterState.change_state("Dormant")
+	warp_off_screen()
 	fighterState.state_transition()
 
 func hurtbox1_default_position_x() -> int:

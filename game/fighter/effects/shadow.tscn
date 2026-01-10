@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://sdxa076t7wfp"]
+
+[ext_resource type="Texture2D" uid="uid://cnfsijg31nys3" path="res://game/assets/sprites/VFX/DropShadow/Timeline 1_0000.png" id="1_31ygd"]
+[ext_resource type="Script" uid="uid://482jydu8f0dt" path="res://game/fighter/effects/shadow.gd" id="2_mptli"]
+
+[node name="Shadow" type="Sprite2D"]
+z_index = -100
+scale = Vector2(1.7763066, 1.7763066)
+texture = ExtResource("1_31ygd")
+script = ExtResource("2_mptli")

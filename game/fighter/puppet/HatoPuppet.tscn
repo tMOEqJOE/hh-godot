@@ -1,9 +1,10 @@
-[gd_scene load_steps=52 format=3 uid="uid://d2n505ahp1v4b"]
+[gd_scene load_steps=53 format=3 uid="uid://d2n505ahp1v4b"]
 
 [ext_resource type="Script" uid="uid://dmwt0jdrxharp" path="res://game/fighter/puppet/PuppetPlayer.gd" id="1"]
 [ext_resource type="Script" uid="uid://dv11pt6y7wasy" path="res://addons/godot-rollback-netcode/NetworkAnimationPlayer.gd" id="2"]
 [ext_resource type="Texture2D" uid="uid://do687u82bkwlx" path="res://game/assets/sprites/mio/HatoHurt/Timeline 1_0000.png" id="3"]
 [ext_resource type="Texture2D" uid="uid://clpl7rxvc2p30" path="res://game/assets/sprites/mio/HatoGongPunch/Timeline 1_0001.png" id="4"]
+[ext_resource type="PackedScene" uid="uid://sdxa076t7wfp" path="res://game/fighter/effects/shadow.tscn" id="4_oqx41"]
 [ext_resource type="Texture2D" uid="uid://3mq3jyy0cjgn" path="res://game/assets/sprites/mio/HatoGongPunch/Timeline 1_0002.png" id="5"]
 [ext_resource type="Texture2D" uid="uid://cclt6vk88123m" path="res://game/assets/sprites/mio/HatoGongPunch/Timeline 1_0000.png" id="6"]
 [ext_resource type="Texture2D" uid="uid://d1bm4gupfxo1g" path="res://game/assets/sprites/mio/HatoOra/Timeline 1_0000.png" id="7"]
@@ -346,7 +347,11 @@ material = ExtResource("29")
 position = Vector2(0, -362)
 scale = Vector2(1.428, 1.428)
 texture = ExtResource("39")
-offset = Vector2(-30, 10)
+offset = Vector2(-20, 20)
+
+[node name="Shadow" parent="." instance=ExtResource("4_oqx41")]
+position = Vector2(0, -21)
+scale = Vector2(2.4578905, 2.068038)
 
 [node name="Pushbox" type="SGCollisionShape2D" parent="."]
 shape = SubResource("1")
