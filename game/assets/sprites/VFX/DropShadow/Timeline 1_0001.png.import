@@ -2,22 +2,24 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d6kdfcklo2wh"
-path="res://.godot/imported/Timeline 1_0001.png-c552874bd6ee65c92c8cfc9b44b113df.ctex"
+uid="uid://c28sqlwlxlq01"
+path="res://.godot/imported/Timeline 1_0001.png-8793d43d1c68dc7cea3bd9da805942e3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/assets/sprites/suicopath/CrouchParry/Timeline 1_0001.png"
-dest_files=["res://.godot/imported/Timeline 1_0001.png-c552874bd6ee65c92c8cfc9b44b113df.ctex"]
+source_file="res://game/assets/sprites/VFX/DropShadow/Timeline 1_0001.png"
+dest_files=["res://.godot/imported/Timeline 1_0001.png-8793d43d1c68dc7cea3bd9da805942e3.ctex"]
 
 [params]
 
 compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
@@ -25,6 +27,10 @@ mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
+process/channel_remap/red=0
+process/channel_remap/green=1
+process/channel_remap/blue=2
+process/channel_remap/alpha=3
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

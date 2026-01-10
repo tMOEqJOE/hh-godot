@@ -77,14 +77,23 @@ func anchor_move() -> void:
 		self.fixed_position.y = opponent_anchor.fixed_position.y
 		sync_to_physics_engine()
 
-func summonVFX(VFXname: String, VFX) -> void: 
+func summonVFX(VFXname: String, VFX, use_color_palette:bool = false) -> void: 
 	var g_position = get_global_fixed_position()
-	SyncManager.spawn(VFXname, get_parent(), VFX,
-	{
-		position_x = g_position.x,
-		position_y = g_position.y,
-		leftface = currentState[Enums.StKey.leftface],
-	})
+	if (use_color_palette):
+		SyncManager.spawn(VFXname, get_parent(), VFX,
+		{
+			position_x = g_position.x,
+			position_y = g_position.y,
+			leftface = currentState[Enums.StKey.leftface],
+			color_palette = self.color_scheme,
+		})
+	else:
+		SyncManager.spawn(VFXname, get_parent(), VFX,
+		{
+			position_x = g_position.x,
+			position_y = g_position.y,
+			leftface = currentState[Enums.StKey.leftface],
+		})
 
 func summonHelper(entity: String) -> void:
 	if (not entity.is_empty()):
