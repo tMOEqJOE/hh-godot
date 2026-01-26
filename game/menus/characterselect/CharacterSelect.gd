@@ -314,6 +314,8 @@ func match_color(enumChara:int, is_assist=false) -> String:
 				color = "res://game/assets/sprites/assists/fubuki/ColorPalettes/"
 			Enums.AssistCharacters.Sora:
 				color = "res://game/assets/sprites/assists/sora/ColorPalettes/"
+			Enums.AssistCharacters.OkaKoro:
+				color = "res://game/assets/sprites/assists/okakoro/ColorPalettes/"
 			Enums.AssistCharacters.Subaru:
 				color = "res://game/assets/sprites/subaru/ColorPalettes/"
 			Enums.AssistCharacters.Mio:
@@ -438,7 +440,7 @@ func resolve_assist_portrait(row:int, col:int, is_p1:bool):
 			color = "res://game/assets/sprites/assists/sora/ColorPalettes/1.png"
 			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/SoraPortrait.png"
 		Enums.AssistCharacters.OkaKoro:
-			color = "res://game/assets/sprites/oga/ColorPalettes/1.png"
+			color = "res://game/assets/sprites/assists/okakoro/ColorPalettes/1.png"
 			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/OkakoroPortrait.png"
 		Enums.AssistCharacters.Hakka:
 			color = "res://game/assets/sprites/oga/ColorPalettes/1.png"

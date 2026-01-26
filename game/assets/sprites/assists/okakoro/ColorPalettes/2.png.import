@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3rfae41wb447"
-path="res://.godot/imported/Timeline 1_0001.png-8cf32a19d4aacfc71bf53828892ef176.ctex"
+uid="uid://c3j1cmu76n75p"
+path="res://.godot/imported/2.png-e09501bd04dc488f4ab237891cbaacfa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/assets/sprites/assists/okakoro/PowerBounce/Timeline 1_0001.png"
-dest_files=["res://.godot/imported/Timeline 1_0001.png-8cf32a19d4aacfc71bf53828892ef176.ctex"]
+source_file="res://game/assets/sprites/assists/okakoro/ColorPalettes/2.png"
+dest_files=["res://.godot/imported/2.png-e09501bd04dc488f4ab237891cbaacfa.ctex"]
 
 [params]
 

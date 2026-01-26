@@ -243,10 +243,10 @@ tracks/1/path = NodePath("Sprite2D:offset")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.85),
-"transitions": PackedFloat32Array(1000000, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1000000),
 "update": 0,
-"values": [Vector2(0, 150), Vector2(-500, -100)]
+"values": [Vector2(0, 150)]
 }
 
 [sub_resource type="Animation" id="14"]
@@ -571,8 +571,8 @@ script = ExtResource("1_sxk3n")
 material = ExtResource("5")
 position = Vector2(0, -362)
 scale = Vector2(1.428, 1.428)
-texture = ExtResource("49")
-offset = Vector2(0, 50)
+texture = ExtResource("39")
+offset = Vector2(0, 150)
 
 [node name="Shadow" parent="." instance=ExtResource("4_oguhe")]
 scale = Vector2(2.3363073, 1.7763066)
