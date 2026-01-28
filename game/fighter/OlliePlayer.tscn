@@ -1622,7 +1622,7 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.083333336, 0.13333334),
+"times": PackedFloat32Array(0, 0.05, 0.13333334),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [ExtResource("84"), ExtResource("171_l7xer"), ExtResource("172_nie01")]
@@ -1946,7 +1946,7 @@ material = ExtResource("5")
 position = Vector2(55, -413)
 scale = Vector2(1.428, 1.428)
 texture = ExtResource("3_osmoy")
-offset = Vector2(80, 180)
+offset = Vector2(-25, 110)
 
 [node name="Shadow" parent="." instance=ExtResource("4_nie01")]
 scale = Vector2(2.056, 1.776)
