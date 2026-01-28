@@ -4,8 +4,19 @@ class_name SubaruPlayer
 
 # Fields
 
+@onready var _shader_mat = get_node("Sprite2D").material
+
 const SubaruStarBall = preload("res://game/fighter/projectiles/SubaruStarball.tscn")
 const SubaruBatterSetBall = preload("res://game/fighter/projectiles/SubaruBatterSetBall.tscn")
+
+func tick() -> void:
+	super.tick()
+
+func start_glowing():
+	_shader_mat.set_shader_parameter("mode", 1)
+
+func stop_glowing():
+	_shader_mat.set_shader_parameter("mode", 0)
 
 func summonHelper(entity: String) -> void:
 	super.summonHelper(entity)
@@ -23,6 +34,9 @@ func summonHelper(entity: String) -> void:
 				if (round_counter.read_rounds_won() < opponent_round_counter.read_rounds_won()):
 					is_comeback = true
 			MainMenuMusicControl.play_angel_install_music(is_comeback)
+			start_glowing()
+		elif (entity == "AngelUninstall"):
+			stop_glowing()
 		elif (entity == "subarustarball"):
 			var g_position = get_global_fixed_position()
 			var playerData = PlayerSetup.new(

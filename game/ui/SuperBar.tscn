@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dp0x5uqfojaji" path="res://game/assets/sprites/UI/HPBarFull.png" id="1"]
 [ext_resource type="Texture2D" uid="uid://dpmfpn5ps78yp" path="res://game/assets/sprites/UI/HPBarOutline.png" id="2"]
-[ext_resource type="Script" path="res://game/ui/SuperBar.gd" id="3"]
+[ext_resource type="Script" uid="uid://bb2fvvxfg22qg" path="res://game/ui/SuperBar.gd" id="3"]
 [ext_resource type="Texture2D" uid="uid://cg07hyunw6do8" path="res://game/assets/sprites/UI/Meters/Level/Timeline 1_0000.png" id="4"]
 [ext_resource type="Texture2D" uid="uid://b1m8niy00f5ru" path="res://game/assets/sprites/VFX/BurstOK/Timeline 1_0002.png" id="5"]
 [ext_resource type="Texture2D" uid="uid://cveg4ujxc60pm" path="res://game/assets/sprites/VFX/BurstCost/Timeline 1_0000.png" id="6"]
@@ -11,6 +11,7 @@
 script = ExtResource("3")
 
 [node name="FullBar" type="TextureProgressBar" parent="."]
+anchors_preset = -1
 offset_top = -24.6809
 offset_right = 661.0
 offset_bottom = 30.3191
