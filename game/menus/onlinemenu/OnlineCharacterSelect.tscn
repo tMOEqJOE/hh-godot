@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://cjk3ktniihdud"]
+[gd_scene load_steps=79 format=3 uid="uid://cjk3ktniihdud"]
 
 [ext_resource type="Texture2D" uid="uid://lj1dcdy08xyo" path="res://game/assets/sprites/UI/CharacterSelect/MiniPortraits/KanataButton.png" id="1"]
 [ext_resource type="Script" uid="uid://bl4bfy15l04hj" path="res://game/menus/characterselect/Curtains.gd" id="2"]
@@ -60,13 +60,15 @@
 [ext_resource type="Texture2D" uid="uid://cfruvgwgalw1h" path="res://game/assets/sprites/UI/CharacterSelect/CurtainFlash/Timeline 1_0010.png" id="58"]
 [ext_resource type="Texture2D" uid="uid://csgb5113mmwtx" path="res://game/assets/sprites/UI/CharacterSelect/CurtainFlash/Timeline 1_0014.png" id="59"]
 [ext_resource type="PackedScene" path="res://game/menus/characterselect/AkiMC.tscn" id="60"]
-[ext_resource type="PackedScene" path="res://game/menus/characterselect/PlayerSelectFlash.tscn" id="61"]
+[ext_resource type="PackedScene" uid="uid://dqvlvwhflgwtg" path="res://game/menus/characterselect/PlayerSelectFlash.tscn" id="61"]
 [ext_resource type="PackedScene" uid="uid://c5xgqi0ik2bpc" path="res://game/ui/MatchWinCounter.tscn" id="62"]
 [ext_resource type="PackedScene" path="res://game/menus/characterselect/KNHLetter.tscn" id="63"]
 [ext_resource type="PackedScene" path="res://game/menus/characterselect/Rosetai.tscn" id="64"]
-[ext_resource type="PackedScene" path="res://game/menus/characterselect/CharacterPortrait.tscn" id="65"]
+[ext_resource type="PackedScene" uid="uid://b1vhgvt0bb4vq" path="res://game/menus/characterselect/CharacterPortrait.tscn" id="65"]
 [ext_resource type="Script" uid="uid://ds4bds8ylrmqi" path="res://game/menus/characterselect/PlayerSelectFlash.gd" id="66"]
+[ext_resource type="Shader" uid="uid://dinoskkj75qym" path="res://game/assets/shaders/ColorSwapAntiAlias.gdshader" id="66_fj7xv"]
 [ext_resource type="Script" uid="uid://bjc0r8bue6an" path="res://game/menus/onlinemenu/OnlineCharacterSelect.gd" id="67"]
+[ext_resource type="Texture2D" uid="uid://b77ycica4x4dk" path="res://game/assets/sprites/assists/hakka/ColorPalettes/2.png" id="67_q3mc5"]
 [ext_resource type="Script" uid="uid://cv1fa8k03ytiy" path="res://game/menus/characterselect/CurtainFlash.gd" id="68"]
 [ext_resource type="FontFile" uid="uid://d28sv0htum78d" path="res://game/assets/monogram_extended.ttf" id="69"]
 
@@ -91,6 +93,50 @@ tracks/0/keys = {
 _data = {
 &"Intro": SubResource("8")
 }
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n64dp"]
+resource_local_to_scene = true
+shader = ExtResource("66_fj7xv")
+shader_parameter/palette = ExtResource("67_q3mc5")
+shader_parameter/dimming = 1.0
+shader_parameter/shine_color = Color(1, 1, 1, 0.79607844)
+shader_parameter/alpha_limit = 0.0
+shader_parameter/cycle_speed = 20.0
+shader_parameter/full_pulse_cycle = false
+shader_parameter/mode = 0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7t3jj"]
+resource_local_to_scene = true
+shader = ExtResource("66_fj7xv")
+shader_parameter/palette = ExtResource("67_q3mc5")
+shader_parameter/dimming = 1.0
+shader_parameter/shine_color = Color(1, 1, 1, 0.79607844)
+shader_parameter/alpha_limit = 0.0
+shader_parameter/cycle_speed = 20.0
+shader_parameter/full_pulse_cycle = false
+shader_parameter/mode = 0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l4twh"]
+resource_local_to_scene = true
+shader = ExtResource("66_fj7xv")
+shader_parameter/palette = ExtResource("67_q3mc5")
+shader_parameter/dimming = 1.0
+shader_parameter/shine_color = Color(1, 1, 1, 0.79607844)
+shader_parameter/alpha_limit = 0.0
+shader_parameter/cycle_speed = 20.0
+shader_parameter/full_pulse_cycle = false
+shader_parameter/mode = 0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pkbnl"]
+resource_local_to_scene = true
+shader = ExtResource("66_fj7xv")
+shader_parameter/palette = ExtResource("67_q3mc5")
+shader_parameter/dimming = 1.0
+shader_parameter/shine_color = Color(1, 1, 1, 0.79607844)
+shader_parameter/alpha_limit = 0.0
+shader_parameter/cycle_speed = 20.0
+shader_parameter/full_pulse_cycle = false
+shader_parameter/mode = 0
 
 [sub_resource type="FontFile" id="9"]
 fallbacks = Array[Font]([ExtResource("69")])
@@ -154,6 +200,7 @@ position = Vector2(216, 357)
 texture = ExtResource("29")
 
 [node name="1" type="TextureRect" parent="CharacterIconsNode"]
+anchors_preset = -1
 offset_left = 1.0
 offset_top = 1.0
 offset_right = 137.0
@@ -161,18 +208,21 @@ offset_bottom = 169.0
 texture = ExtResource("5")
 
 [node name="2" type="TextureRect" parent="CharacterIconsNode"]
+anchors_preset = -1
 offset_left = 146.0
 offset_right = 282.0
 offset_bottom = 168.0
 texture = ExtResource("6")
 
 [node name="3" type="TextureRect" parent="CharacterIconsNode"]
+anchors_preset = -1
 offset_left = 292.0
 offset_right = 428.0
 offset_bottom = 168.0
 texture = ExtResource("1")
 
 [node name="4" type="TextureRect" parent="CharacterIconsNode"]
+anchors_preset = -1
 offset_left = -3.0
 offset_top = 177.0
 offset_right = 140.0
@@ -180,6 +230,7 @@ offset_bottom = 349.0
 texture = ExtResource("21")
 
 [node name="5" type="TextureRect" parent="CharacterIconsNode"]
+anchors_preset = -1
 offset_left = 146.0
 offset_top = 178.0
 offset_right = 282.0
@@ -187,6 +238,7 @@ offset_bottom = 346.0
 texture = ExtResource("8")
 
 [node name="6" type="TextureRect" parent="CharacterIconsNode"]
+anchors_preset = -1
 offset_left = 292.0
 offset_top = 178.0
 offset_right = 428.0
@@ -195,6 +247,7 @@ texture = ExtResource("33")
 
 [node name="7" type="TextureRect" parent="CharacterIconsNode"]
 visible = false
+anchors_preset = -1
 offset_left = 1.0
 offset_top = 357.0
 offset_right = 137.0
@@ -203,6 +256,7 @@ texture = ExtResource("11")
 
 [node name="8" type="TextureRect" parent="CharacterIconsNode"]
 visible = false
+anchors_preset = -1
 offset_left = 146.0
 offset_top = 356.0
 offset_right = 282.0
@@ -211,6 +265,7 @@ texture = ExtResource("32")
 
 [node name="9" type="TextureRect" parent="CharacterIconsNode"]
 visible = false
+anchors_preset = -1
 offset_left = 292.0
 offset_top = 356.0
 offset_right = 428.0
@@ -219,6 +274,7 @@ texture = ExtResource("30")
 
 [node name="10" type="TextureRect" parent="CharacterIconsNode"]
 visible = false
+anchors_preset = -1
 offset_left = 1.0
 offset_top = 535.0
 offset_right = 137.0
@@ -227,6 +283,7 @@ texture = ExtResource("31")
 
 [node name="11" type="TextureRect" parent="CharacterIconsNode"]
 visible = false
+anchors_preset = -1
 offset_left = 146.0
 offset_top = 534.0
 offset_right = 282.0
@@ -235,6 +292,7 @@ texture = ExtResource("9")
 
 [node name="12" type="TextureRect" parent="CharacterIconsNode"]
 visible = false
+anchors_preset = -1
 offset_left = 292.0
 offset_top = 534.0
 offset_right = 428.0
@@ -362,18 +420,21 @@ deselect_ok = false
 
 [node name="P1Portrait" parent="." instance=ExtResource("65")]
 z_index = 103
+material = SubResource("ShaderMaterial_n64dp")
 position = Vector2(396, 515)
 xOffset = 396
 speed = 5
 
 [node name="P2Portrait" parent="." instance=ExtResource("65")]
 z_index = 103
+material = SubResource("ShaderMaterial_7t3jj")
 position = Vector2(1535, 515)
 xOffset = 1535
 speed = -5
 
 [node name="A1Portrait" parent="." instance=ExtResource("65")]
 z_index = 104
+material = SubResource("ShaderMaterial_l4twh")
 position = Vector2(212, 400)
 scale = Vector2(0.8, 0.8)
 xOffset = 212
@@ -381,6 +442,7 @@ speed = 5
 
 [node name="A2Portrait" parent="." instance=ExtResource("65")]
 z_index = 104
+material = SubResource("ShaderMaterial_pkbnl")
 position = Vector2(1764, 400)
 scale = Vector2(0.8, 0.8)
 xOffset = 1764
@@ -405,17 +467,19 @@ texture = ExtResource("27")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="WinCounterP1" parent="CanvasLayer" instance=ExtResource("62")]
+anchors_preset = -1
 offset_left = -942.0
 offset_top = 11.0
 offset_right = -471.0
 offset_bottom = 61.0
 
 [node name="WinCounterP2" parent="CanvasLayer" instance=ExtResource("62")]
+anchors_preset = -1
 offset_left = 472.0
 offset_right = 943.0
 
 [node name="MessageLabel" type="Label" parent="CanvasLayer"]
-anchors_preset = 5
+anchors_preset = -1
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -954.0
@@ -427,7 +491,7 @@ theme_override_fonts/font = SubResource("9")
 text = "WOW"
 
 [node name="DebugLabel" type="Label" parent="CanvasLayer"]
-anchors_preset = 5
+anchors_preset = -1
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -954.0
@@ -439,7 +503,7 @@ theme_override_fonts/font = SubResource("9")
 text = "WOW"
 
 [node name="P1Name" type="Label" parent="CanvasLayer"]
-anchors_preset = 5
+anchors_preset = -1
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -940.0
@@ -452,7 +516,7 @@ text = "WOW"
 horizontal_alignment = 1
 
 [node name="P2Name" type="Label" parent="CanvasLayer"]
-anchors_preset = 5
+anchors_preset = -1
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = 292.0
@@ -465,7 +529,7 @@ text = "WOW"
 horizontal_alignment = 1
 
 [node name="RemainingTime" type="Label" parent="CanvasLayer"]
-anchors_preset = 5
+anchors_preset = -1
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -231.0
