@@ -44,6 +44,11 @@ var p2_ready:bool = false
 var p1_active_cursor
 var p2_active_cursor
 
+var p1_color_number: int = 1
+var p2_color_number: int = 1
+var a1_color_number: int = 1
+var a2_color_number: int = 1
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Global.load_queue.start()
@@ -75,28 +80,23 @@ func try_react_to_new_controller(event):
 func update_p1_portrait(row:int,col:int):
 	$P1Portrait.change_portrait_anim()
 	resolve_portrait(row, col, true)
-#	$P1Portrait.material.set_shader_param("palette", load(Global.PLAYER_1_COLOR[0]))
 
 func update_p2_portrait(row:int,col:int):
 	$P2Portrait.change_portrait_anim()
 	resolve_portrait(row, col, false)
-#	$P2Portrait.material.set_shader_param("palette", load(Global.PLAYER_2_COLOR[0]))
 
 func update_a1_portrait(row:int,col:int):
 	$A1Portrait.change_portrait_anim()
 	resolve_assist_portrait(row, col, true)
-#	$P1Portrait.material.set_shader_param("palette", load(Global.PLAYER_1_COLOR[0]))
 
 func update_a2_portrait(row:int,col:int):
 	$A2Portrait.change_portrait_anim()
 	resolve_assist_portrait(row, col, false)
-#	$P2Portrait.material.set_shader_param("palette", load(Global.PLAYER_2_COLOR[0]))
 
 func update_p1():
-#	Global.PLAYER_1_COLOR[0] = "res://game/assets/sprites/subaru/ColorPalettes/1.png"
-#	$P1Portrait.material.set_shader_param("palette", load(Global.PLAYER_1_COLOR[0]))
 	p1_assist_select = AssistSelect.instantiate() 
 	add_child(p1_assist_select)
+	p1_color_number = select_color($P1Cursor.input_prefix)
 	p1_active_cursor = p1_assist_select
 	p1_assist_select.position.x = 966
 	p1_assist_select.position.y = 300
@@ -107,18 +107,21 @@ func update_p1():
 	p1_assist_select.get_node("CharacterCursor").connect("select_chara", Callable($AkiMC, "p1_call"))
 	update_a1_portrait(p1_assist_select.cursor_row(), p1_assist_select.cursor_col())
 	var charaData = resolve_characters($P1Cursor.row, $P1Cursor.col)
+	
+	$P1Portrait.change_color_number(p1_color_number)
 	unload_character(charaData[0],true,false)
 	Global.PLAYER_1_NODE_PATH[0] = charaData[0]
 	Global.PLAYER_1_CHARACTER[0] = charaData[1]
 	Global.load_queue.queue_resource(Global.PLAYER_1_NODE_PATH[0])
 	if (Global.PLAYER_1_CHARACTER[0] == Enums.PointCharacters.Mio):
 		Global.load_queue.queue_resource(Global.PLAYER_1_NODE_PATH[2])
-
+	
 func update_p2():
 #	Global.PLAYER_2_COLOR[0] = "res://game/assets/sprites/subaru/ColorPalettes/2.png"
 #	$P2Portrait.material.set_shader_param("palette", load(Global.PLAYER_2_COLOR[0]))
 	p2_assist_select = AssistSelect.instantiate() 
 	add_child(p2_assist_select)
+	p2_color_number = select_color($P2Cursor.input_prefix)
 	p2_active_cursor = p2_assist_select
 	p2_assist_select.position.x = 966
 	p2_assist_select.position.y = 300
@@ -129,6 +132,7 @@ func update_p2():
 	p2_assist_select.get_node("CharacterCursor").connect("select_chara", Callable($AkiMC, "p2_call"))
 	update_a2_portrait(p2_assist_select.cursor_row(), p2_assist_select.cursor_col())
 	var charaData = resolve_characters($P2Cursor.row, $P2Cursor.col)
+	$P2Portrait.change_color_number(p2_color_number)
 	unload_character(charaData[0],false,false)
 	Global.PLAYER_2_NODE_PATH[0] = charaData[0]
 	Global.PLAYER_2_CHARACTER[0] = charaData[1]
@@ -136,12 +140,12 @@ func update_p2():
 	if (Global.PLAYER_2_CHARACTER[0] == Enums.PointCharacters.Mio):
 		Global.load_queue.queue_resource(Global.PLAYER_2_NODE_PATH[2])
 
-@rpc("any_peer", "call_local", "reliable")
+#@rpc("any_peer", "call_local", "reliable")
 func update_a1():
-#	Global.PLAYER_1_COLOR[0] = "res://game/assets/sprites/subaru/ColorPalettes/1.png"
-#	$P1Portrait.material.set_shader_param("palette", load(Global.PLAYER_1_COLOR[0]))
 	var charaData = resolve_assists(p1_assist_select.cursor_row(), p1_assist_select.cursor_col(), true)
 	unload_character(charaData[0], true,true)
+	a1_color_number = select_color(p1_assist_select.get_node("CharacterCursor").input_prefix)
+	$A1Portrait.change_color_number(a1_color_number)
 	p1_active_cursor = null
 	Global.PLAYER_1_NODE_PATH[1] = charaData[0]
 	Global.PLAYER_1_CHARACTER[1] = charaData[1]
@@ -150,10 +154,10 @@ func update_a1():
 	ready_up_peer()
 
 func update_a2():
-#	Global.PLAYER_2_COLOR[0] = "res://game/assets/sprites/subaru/ColorPalettes/2.png"
-#	$P2Portrait.material.set_shader_param("palette", load(Global.PLAYER_2_COLOR[0]))
 	var charaData = resolve_assists(p2_assist_select.cursor_row(), p2_assist_select.cursor_col(), false)
 	unload_character(charaData[0],false,true)
+	a2_color_number = select_color(p2_assist_select.get_node("CharacterCursor").input_prefix)
+	$A2Portrait.change_color_number(a2_color_number)
 	p2_active_cursor = null
 	Global.PLAYER_2_NODE_PATH[1] = charaData[0]
 	Global.PLAYER_2_CHARACTER[1] = charaData[1]
@@ -279,12 +283,16 @@ func resolve_colors():
 	var color2: String = ""
 	color1 = match_color(enumChara1)
 	color2 = match_color(enumChara2)
-	if (enumChara1 == enumChara2):
-		color1 += "1.png"
-		color2 += "2.png"
+	if (enumChara1 == enumChara2 and p1_color_number == p2_color_number):
+		if (p1_color_number == 1):
+			color1 += "1.png"
+			color2 += "2.png"
+		else:
+			color1 += str(p1_color_number)+".png"
+			color2 += "1.png"
 	else:
-		color1 += "1.png"
-		color2 += "1.png"
+		color1 += str(p1_color_number)+".png"
+		color2 += str(p2_color_number)+".png"
 	Global.PLAYER_1_COLOR[0] = color1
 	Global.PLAYER_2_COLOR[0] = color2
 	Global.load_new_color(true, false)
@@ -297,12 +305,16 @@ func resolve_assist_colors():
 	var color2: String = ""
 	color1 = match_color(enumChara1, true)
 	color2 = match_color(enumChara2, true)
-	if (enumChara1 == enumChara2):
-		color1 += "1.png"
-		color2 += "2.png"
+	if (enumChara1 == enumChara2 and a1_color_number == a2_color_number):
+		if (a1_color_number == 1):
+			color1 += "1.png"
+			color2 += "2.png"
+		else:
+			color1 += str(a1_color_number)+".png"
+			color2 += "1.png"
 	else:
-		color1 += "1.png"
-		color2 += "1.png"
+		color1 += str(a1_color_number)+".png"
+		color2 += str(a2_color_number)+".png"
 	Global.PLAYER_1_COLOR[1] = color1
 	Global.PLAYER_2_COLOR[1] = color2
 	Global.load_new_color(true, true)
@@ -431,6 +443,66 @@ func button_set_initiate(event):
 				p2_ready = false
 				p2_active_cursor = p2_assist_select
 				p2_assist_select.enable(false)
+
+
+func select_color(input_prefix) -> int:
+	var input_vector: Vector2 = Vector2(
+			-Input.get_action_strength(input_prefix+"left") + Input.get_action_strength(input_prefix+"right"), 
+			-Input.get_action_strength(input_prefix+"down") + Input.get_action_strength(input_prefix+"up"))
+	var input_vector_stick: Vector2 = Vector2(
+			-Input.get_action_strength(input_prefix+"left_stick") + Input.get_action_strength(input_prefix+"right_stick"), 
+			-Input.get_action_strength(input_prefix+"down_stick") + Input.get_action_strength(input_prefix+"up_stick"))
+	var bit_input = 0
+	var virtual_deadzone = 0
+
+	if (input_vector.x == 0 and input_vector.y == 0):
+		input_vector.x = input_vector_stick.x
+		input_vector.y = input_vector_stick.y
+	
+	if (input_vector.x < -virtual_deadzone):
+		bit_input |= Enums.InputFlags.LEFT
+	elif (input_vector.x > virtual_deadzone):
+		bit_input |= Enums.InputFlags.RIGHT
+
+	if (input_vector.y < -virtual_deadzone):
+		bit_input |= Enums.InputFlags.DOWN
+	elif (input_vector.y > virtual_deadzone):
+		bit_input |= Enums.InputFlags.UP
+
+	if (Input.get_action_strength(input_prefix+"a") > 0):
+		bit_input |= Enums.InputFlags.AHold
+	
+	if (Input.get_action_strength(input_prefix+"b") > 0):
+		bit_input |= Enums.InputFlags.BHold
+	
+	if (Input.get_action_strength(input_prefix+"c") > 0):
+		bit_input |= Enums.InputFlags.CHold
+		
+	if (Input.get_action_strength(input_prefix+"d") > 0):
+		bit_input |= Enums.InputFlags.DHold
+	
+	var color_number = 0
+	if (bit_input & Enums.InputFlags.AHold):
+		color_number += 1
+	elif (bit_input & Enums.InputFlags.BHold):
+		color_number += 2
+	elif (bit_input & Enums.InputFlags.CHold):
+		color_number += 3
+	elif (bit_input & Enums.InputFlags.DHold):
+		color_number += 0
+	
+	if (bit_input & Enums.InputFlags.DOWN):
+		color_number += (4*1)
+	elif (bit_input & Enums.InputFlags.UP):
+		color_number += (4*3)
+	elif (bit_input & Enums.InputFlags.LEFT):
+		color_number += (4*2)
+	elif (bit_input & Enums.InputFlags.RIGHT):
+		color_number += (4*4)
+	
+	color_number %= Util.MAX_COLOR_PALETTE_NUMBER
+	color_number += 1
+	return color_number
 
 func go_to_prev_scene():
 	get_tree().change_scene_to_file("res://game/menus/buttonmap/ControllerPickMenuScreen.tscn")

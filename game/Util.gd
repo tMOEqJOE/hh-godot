@@ -97,6 +97,8 @@ const SUPPORT_FIRST_HIT_SYNC_BOOST := SGFixed.ONE*20
 const ANGEL_METER_DRAIN := SGFixed.ONE*60
 const ANGEL_FAST_METER_DRAIN := SGFixed.ONE*80
 
+const MAX_COLOR_PALETTE_NUMBER := 2
+
 var left_axis_neutral: bool = true
 var right_axis_neutral: bool = true
 var up_axis_neutral: bool = true
