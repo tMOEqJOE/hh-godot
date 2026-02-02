@@ -30,14 +30,14 @@ func _init():
 			Enums.StKey.Hurt1Disable : true, Enums.StKey.Hurt2Disable : true,
 			Enums.StKey.hit_box_colliding_frame : 254, 
 			Enums.StKey.Hit1PosX : 27656194, Enums.StKey.Hit1PosY : -8650752,
-			Enums.StKey.Hit1ScaleX : 3994068, Enums.StKey.Hit1ScaleY : -820144,
+			Enums.StKey.Hit1ScaleX : 3994068, Enums.StKey.Hit1ScaleY : 1020144,
 			Enums.StKey.burst_OK: false,
 			Enums.StKey.min_damage:10,
 			Enums.StKey.chip_damage:10,
 			Enums.StKey.attack_damage: 60,
 			Enums.StKey.meter_build: 0,
 			Enums.StKey.hitstun: 25,
-			Enums.StKey.hitstop: 10, 
+			Enums.StKey.hitstop: 7, 
 			Enums.StKey.counter_hit: Enums.AttackType.GroundBouncer,
 			Enums.StKey.counter_hitstun: 60,
 			Enums.StKey.counter_launch_dir_x: 0,
@@ -47,34 +47,34 @@ func _init():
 			Enums.StKey.Hit1Disable : true,
 			Enums.StKey.Hurt1Disable : true, Enums.StKey.Hurt2Disable : true,
 			},
-		12 : { 
+		15 : { 
 			Enums.StKey.Hit1Disable : false,
 			Enums.StKey.Hurt1Disable : true, Enums.StKey.Hurt2Disable : true,
 			Enums.StKey.hit_box_colliding_frame : 254, 
 			Enums.StKey.Hit1PosX : 27656194, Enums.StKey.Hit1PosY : -8650752,
-			Enums.StKey.Hit1ScaleX : 3994068, Enums.StKey.Hit1ScaleY : -820144,
+			Enums.StKey.Hit1ScaleX : 3994068, Enums.StKey.Hit1ScaleY : 1020144,
 			Enums.StKey.burst_OK: false,
 			Enums.StKey.min_damage:10,
 			Enums.StKey.chip_damage:10,
 			Enums.StKey.attack_damage: 60,
 			Enums.StKey.meter_build: 0,
 			Enums.StKey.hitstun: 25,
-			Enums.StKey.hitstop: 10, 
+			Enums.StKey.hitstop: 7, 
 			Enums.StKey.counter_hit: Enums.AttackType.GroundBouncer,
 			Enums.StKey.counter_hitstun: 60,
 			Enums.StKey.counter_launch_dir_x: 0,
 			Enums.StKey.counter_launch_dir_y: SGFixed.ONE*40,
 			},
-		14 : { 
+		17 : { 
 			Enums.StKey.Hit1Disable : true,
 			Enums.StKey.Hurt1Disable : true, Enums.StKey.Hurt2Disable : true,
 			},
-		18 : {
+		24 : {
 			Enums.StKey.Hit1Disable : false,
 			Enums.StKey.Hurt1Disable : true, Enums.StKey.Hurt2Disable : true,
 			Enums.StKey.hit_box_colliding_frame : 254, 
 			Enums.StKey.Hit1PosX : 15663104, Enums.StKey.Hit1PosY : -12124159,
-			Enums.StKey.Hit1ScaleX : 2361402, Enums.StKey.Hit1ScaleY : -1246952,
+			Enums.StKey.Hit1ScaleX : 2361402, Enums.StKey.Hit1ScaleY : 1246952,
 			Enums.StKey.burst_OK: false,
 			Enums.StKey.min_damage:15,
 			Enums.StKey.chip_damage:10,
@@ -83,14 +83,14 @@ func _init():
 			Enums.StKey.hitstun: 80, 
 			Enums.StKey.hitstop: 12,
 			Enums.StKey.attack_type : Enums.AttackType.WallBouncer,
-			Enums.StKey.launch_dir_x : -SGFixed.ONE*50,
+			Enums.StKey.launch_dir_x : SGFixed.ONE*10,
 			Enums.StKey.launch_dir_y : -SGFixed.ONE*50,
 			Enums.StKey.counter_hit: Enums.AttackType.WallBouncer,
 			Enums.StKey.counter_hitstun: 60,
-			Enums.StKey.counter_launch_dir_x: -SGFixed.ONE*60,
-			Enums.StKey.counter_launch_dir_y: -SGFixed.ONE*50,
+			Enums.StKey.counter_launch_dir_x: -SGFixed.ONE*10,
+			Enums.StKey.counter_launch_dir_y: -SGFixed.ONE*70,
 			},
-		40 : { 
+		43 : { 
 			Enums.StKey.Hit1Disable : true,
 			Enums.StKey.Hurt1Disable : false, Enums.StKey.Hurt2Disable : true,
 			},
@@ -109,5 +109,5 @@ func enter(state: Dictionary) -> void:
 
 func physics_tick(state: Dictionary) -> void:
 	super.physics_tick(state)
-	if (state[Enums.StKey.frame] >= 16 and state[Enums.StKey.frame] < 35):
+	if (state[Enums.StKey.frame] >= 22 and state[Enums.StKey.frame] < 41):
 		state[Enums.StKey.velocity_x] = SGFixed.ONE*70

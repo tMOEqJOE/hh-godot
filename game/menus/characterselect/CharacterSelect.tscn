@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://b7q1hk8ukhhu2"]
+[gd_scene load_steps=66 format=3 uid="uid://b7q1hk8ukhhu2"]
 
 [ext_resource type="Texture2D" uid="uid://phq86ugkwrgi" path="res://game/assets/sprites/UI/CharacterSelect/CardboardFloor.png" id="1"]
 [ext_resource type="Texture2D" uid="uid://bmx8kcarubmxo" path="res://game/assets/sprites/UI/MainMenus/MenuTutorials/ButtonSelect.png" id="2"]
@@ -14,14 +14,9 @@
 [ext_resource type="PackedScene" path="res://game/menus/characterselect/CharacterPortrait.tscn" id="12"]
 [ext_resource type="PackedScene" path="res://game/menus/characterselect/AkiMC.tscn" id="14"]
 [ext_resource type="Texture2D" uid="uid://csm7c5dbea7x2" path="res://game/assets/sprites/UI/CharacterSelect/WOOD.png" id="15"]
-[ext_resource type="Texture2D" uid="uid://c3ahcg632gqqd" path="res://game/assets/sprites/UI/CharacterSelect/MiniPortraits/MukiNeoButton.png" id="16"]
 [ext_resource type="Texture2D" uid="uid://d302mjwqy8r6g" path="res://game/assets/sprites/UI/CharacterSelect/MiniPortraits/SubaruButton.png" id="19"]
 [ext_resource type="Texture2D" uid="uid://dtxwiyc72wl6n" path="res://game/assets/sprites/UI/CharacterSelect/MiniPortraits/OgaButton.png" id="21"]
-[ext_resource type="Texture2D" uid="uid://e5nkp6iv6sb8" path="res://game/assets/sprites/UI/CharacterSelect/MiniPortraits/AkigangerButton.png" id="22"]
-[ext_resource type="Texture2D" uid="uid://bdrrw6y2gsrvp" path="res://game/assets/sprites/UI/CharacterSelect/MiniPortraits/SummeryButton.png" id="23"]
-[ext_resource type="Texture2D" uid="uid://ds2u53rfp3f5i" path="res://game/assets/sprites/UI/CharacterSelect/MiniPortraits/RosetaiButton.png" id="24"]
 [ext_resource type="PackedScene" path="res://game/menus/characterselect/Rosetai.tscn" id="25"]
-[ext_resource type="Texture2D" uid="uid://byxe3cmt8n8r3" path="res://game/assets/sprites/UI/CharacterSelect/MiniPortraits/Brewski mini.png" id="26"]
 [ext_resource type="Texture2D" uid="uid://bcxls26tiktea" path="res://game/assets/sprites/UI/CharacterSelect/MiniPortraits/MioButton.png" id="27"]
 [ext_resource type="Script" uid="uid://irk3qummfdvc" path="res://game/menus/characterselect/CharacterIconsNode.gd" id="28"]
 [ext_resource type="PackedScene" uid="uid://c5xgqi0ik2bpc" path="res://game/ui/MatchWinCounter.tscn" id="29"]
@@ -67,7 +62,7 @@
 [ext_resource type="Texture2D" uid="uid://dyvfchnkof632" path="res://game/assets/sprites/UI/CharacterSelect/CurtainFlash/Timeline 1_0025.png" id="73"]
 [ext_resource type="Script" uid="uid://cv1fa8k03ytiy" path="res://game/menus/characterselect/CurtainFlash.gd" id="74"]
 [ext_resource type="Script" uid="uid://ds4bds8ylrmqi" path="res://game/menus/characterselect/PlayerSelectFlash.gd" id="75"]
-[ext_resource type="PackedScene" path="res://game/menus/characterselect/PlayerSelectFlash.tscn" id="76"]
+[ext_resource type="PackedScene" uid="uid://dqvlvwhflgwtg" path="res://game/menus/characterselect/PlayerSelectFlash.tscn" id="76"]
 
 [sub_resource type="Animation" id="8"]
 resource_name = "Intro"
@@ -145,6 +140,7 @@ position = Vector2(216, 357)
 texture = ExtResource("15")
 
 [node name="1" type="TextureRect" parent="CharacterIconsNode"]
+anchors_preset = -1
 offset_left = 1.0
 offset_top = 1.0
 offset_right = 137.0
@@ -152,18 +148,21 @@ offset_bottom = 169.0
 texture = ExtResource("4")
 
 [node name="2" type="TextureRect" parent="CharacterIconsNode"]
+anchors_preset = -1
 offset_left = 146.0
 offset_right = 282.0
 offset_bottom = 168.0
 texture = ExtResource("10")
 
 [node name="3" type="TextureRect" parent="CharacterIconsNode"]
+anchors_preset = -1
 offset_left = 292.0
 offset_right = 428.0
 offset_bottom = 168.0
 texture = ExtResource("9")
 
 [node name="4" type="TextureRect" parent="CharacterIconsNode"]
+anchors_preset = -1
 offset_left = -3.0
 offset_top = 177.0
 offset_right = 140.0
@@ -171,6 +170,7 @@ offset_bottom = 349.0
 texture = ExtResource("27")
 
 [node name="5" type="TextureRect" parent="CharacterIconsNode"]
+anchors_preset = -1
 offset_left = 146.0
 offset_top = 178.0
 offset_right = 282.0
@@ -178,6 +178,7 @@ offset_bottom = 346.0
 texture = ExtResource("19")
 
 [node name="6" type="TextureRect" parent="CharacterIconsNode"]
+anchors_preset = -1
 offset_left = 292.0
 offset_top = 178.0
 offset_right = 428.0
@@ -186,13 +187,14 @@ texture = ExtResource("21")
 
 [node name="7" type="TextureRect" parent="CharacterIconsNode"]
 visible = false
+anchors_preset = -1
 offset_left = 1.0
 offset_top = 357.0
 offset_right = 137.0
 offset_bottom = 525.0
-texture = ExtResource("26")
 
 [node name="8" type="TextureRect" parent="CharacterIconsNode"]
+anchors_preset = -1
 offset_left = 146.0
 offset_top = 356.0
 offset_right = 282.0
@@ -201,35 +203,35 @@ texture = ExtResource("11")
 
 [node name="9" type="TextureRect" parent="CharacterIconsNode"]
 visible = false
+anchors_preset = -1
 offset_left = 292.0
 offset_top = 356.0
 offset_right = 428.0
 offset_bottom = 524.0
-texture = ExtResource("16")
 
 [node name="10" type="TextureRect" parent="CharacterIconsNode"]
 visible = false
+anchors_preset = -1
 offset_left = 1.0
 offset_top = 535.0
 offset_right = 137.0
 offset_bottom = 703.0
-texture = ExtResource("22")
 
 [node name="11" type="TextureRect" parent="CharacterIconsNode"]
 visible = false
+anchors_preset = -1
 offset_left = 146.0
 offset_top = 534.0
 offset_right = 282.0
 offset_bottom = 702.0
-texture = ExtResource("24")
 
 [node name="12" type="TextureRect" parent="CharacterIconsNode"]
 visible = false
+anchors_preset = -1
 offset_left = 292.0
 offset_top = 534.0
 offset_right = 428.0
 offset_bottom = 702.0
-texture = ExtResource("23")
 
 [node name="KimiNoHiroin" type="Node2D" parent="."]
 z_index = 120
@@ -393,11 +395,13 @@ texture = ExtResource("44")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="WinCounterP1" parent="CanvasLayer" instance=ExtResource("29")]
+anchors_preset = -1
 offset_left = -942.0
 offset_top = 11.0
 offset_right = -471.0
 offset_bottom = 61.0
 
 [node name="WinCounterP2" parent="CanvasLayer" instance=ExtResource("29")]
+anchors_preset = -1
 offset_left = 472.0
 offset_right = 943.0

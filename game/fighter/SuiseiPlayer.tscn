@@ -1,4 +1,4 @@
-[gd_scene load_steps=326 format=3 uid="uid://bmn2buuipdmkn"]
+[gd_scene load_steps=328 format=3 uid="uid://bmn2buuipdmkn"]
 
 [ext_resource type="Texture2D" uid="uid://4lo4cemr486p" path="res://game/assets/sprites/suisei/Idle/Timeline 1_0000.png" id="1"]
 [ext_resource type="Script" uid="uid://dctxuxh3f2d6a" path="res://game/fighter/SuiseiPlayer.gd" id="2"]
@@ -112,8 +112,10 @@
 [ext_resource type="Texture2D" uid="uid://bp7ba57rna5hw" path="res://game/assets/sprites/suicopath/cB/Timeline 1_0002.png" id="119"]
 [ext_resource type="Texture2D" uid="uid://b2im4swmhuqo1" path="res://game/assets/sprites/suisei/Knockdown/Timeline 1_0000.png" id="119_lvk85"]
 [ext_resource type="Texture2D" uid="uid://cbsjev7vnb2gy" path="res://game/assets/sprites/suisei/j6B/Timeline 1_0000.png" id="120"]
+[ext_resource type="Texture2D" uid="uid://capqlhrde21ul" path="res://game/assets/sprites/suisei/Idle/Timeline 1_0001.png" id="120_77rog"]
 [ext_resource type="Texture2D" uid="uid://6wa3u0kdud8g" path="res://game/assets/sprites/suisei/Intro/Timeline 1_0000.png" id="120_jvy3p"]
 [ext_resource type="Texture2D" uid="uid://bi3egqfojuwwy" path="res://game/assets/sprites/suicopath/cB/Timeline 1_0000.png" id="121"]
+[ext_resource type="Texture2D" uid="uid://g8cfe0ccoqyv" path="res://game/assets/sprites/suisei/Idle/Timeline 1_0002.png" id="121_1tkd1"]
 [ext_resource type="Texture2D" uid="uid://dmtsjw5wqu1ty" path="res://game/assets/sprites/suisei/Intro/Timeline 1_0001.png" id="121_80hjc"]
 [ext_resource type="Texture2D" uid="uid://bormpfhjlt30l" path="res://game/assets/sprites/suisei/GatoKick/Timeline 1_0001.png" id="122"]
 [ext_resource type="Texture2D" uid="uid://c767hi0knapt6" path="res://game/assets/sprites/suisei/Intro/Timeline 1_0002.png" id="122_77rog"]
@@ -1922,7 +1924,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="42"]
 resource_name = "Idle"
-length = 0.933335
+length = 1.3333375
 loop_mode = 1
 step = 0.0166667
 tracks/0/type = "value"
@@ -1932,10 +1934,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.21666667, 0.31666666, 0.5833333, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("1")]
+"values": [ExtResource("1"), ExtResource("120_77rog"), ExtResource("121_1tkd1"), ExtResource("120_77rog"), ExtResource("1")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false

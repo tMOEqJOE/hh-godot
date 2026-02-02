@@ -316,14 +316,20 @@ func match_color(enumChara:int, is_assist=false) -> String:
 				color = "res://game/assets/sprites/assists/sora/ColorPalettes/"
 			Enums.AssistCharacters.OkaKoro:
 				color = "res://game/assets/sprites/assists/okakoro/ColorPalettes/"
+			Enums.AssistCharacters.Hakka:
+				color = "res://game/assets/sprites/assists/hakka/ColorPalettes/"
+			Enums.AssistCharacters.Sana:
+				color = "res://game/assets/sprites/assists/sana/ColorPalettes/"
 			Enums.AssistCharacters.Subaru:
 				color = "res://game/assets/sprites/subaru/ColorPalettes/"
 			Enums.AssistCharacters.Mio:
 				color = "res://game/assets/sprites/mio/ColorPalettes/"
 			Enums.AssistCharacters.Oga:
 				color = "res://game/assets/sprites/oga/ColorPalettes/"
+			Enums.AssistCharacters.Ollie:
+				color = "res://game/assets/sprites/ollie/ColorPalettes/"
 			_:
-				color = "res://game/assets/sprites/subaru/ColorPalettes/"
+				color = "res://game/assets/sprites/assists/fubuki/ColorPalettes/"
 	else:
 		match enumChara:
 			Enums.PointCharacters.Subaru:
@@ -332,6 +338,12 @@ func match_color(enumChara:int, is_assist=false) -> String:
 				color = "res://game/assets/sprites/mio/ColorPalettes/"
 			Enums.PointCharacters.Oga:
 				color = "res://game/assets/sprites/oga/ColorPalettes/"
+			Enums.PointCharacters.Ollie:
+				color = "res://game/assets/sprites/ollie/ColorPalettes/"
+			Enums.PointCharacters.Kanata:
+				color = "res://game/assets/sprites/kanata/ColorPalettes/"
+			Enums.PointCharacters.Suisei:
+				color = "res://game/assets/sprites/suisei/ColorPalettes/"
 			_:
 				color = "res://game/assets/sprites/subaru/ColorPalettes/"
 	return color
@@ -351,13 +363,13 @@ func resolve_portrait(row:int, col:int, is_p1:bool):
 			color = "res://game/assets/sprites/oga/ColorPalettes/1.png"
 			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/OgaPortrait.png"
 		Enums.PointCharacters.Ollie:
-			color = "res://game/assets/sprites/oga/ColorPalettes/1.png"
+			color = "res://game/assets/sprites/ollie/ColorPalettes/1.png"
 			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/OlliePortrait.png"
 		Enums.PointCharacters.Suisei:
-			color = "res://game/assets/sprites/oga/ColorPalettes/1.png"
+			color = "res://game/assets/sprites/suisei/ColorPalettes/1.png"
 			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/SuiseiPortrait.png"
 		Enums.PointCharacters.Kanata:
-			color = "res://game/assets/sprites/oga/ColorPalettes/1.png"
+			color = "res://game/assets/sprites/kanata/ColorPalettes/1.png"
 			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/KanataPortrait.png"
 		Enums.PointCharacters.Seven:
 			color = "res://game/assets/sprites/oga/ColorPalettes/1.png"
@@ -407,32 +419,32 @@ func resolve_assist_portrait(row:int, col:int, is_p1:bool):
 			color = "res://game/assets/sprites/oga/ColorPalettes/1.png"
 			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/OgaPortrait.png"
 		Enums.AssistCharacters.Ollie:
-			color = "res://game/assets/sprites/oga/ColorPalettes/1.png"
+			color = "res://game/assets/sprites/ollie/ColorPalettes/1.png"
 			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/OlliePortrait.png"
 		Enums.AssistCharacters.Suisei:
-			color = "res://game/assets/sprites/oga/ColorPalettes/1.png"
-			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/SubaruPortrait.png"
+			color = "res://game/assets/sprites/assists/fubuki/ColorPalettes/1.png"
+			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/FubukiPortrait.png"
 		Enums.AssistCharacters.Kanata:
-			color = "res://game/assets/sprites/oga/ColorPalettes/1.png"
-			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/SubaruPortrait.png"
+			color = "res://game/assets/sprites/assists/fubuki/ColorPalettes/1.png"
+			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/FubukiPortrait.png"
 		Enums.AssistCharacters.Seven:
-			color = "res://game/assets/sprites/oga/ColorPalettes/1.png"
-			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/SubaruPortrait.png"
+			color = "res://game/assets/sprites/assists/fubuki/ColorPalettes/1.png"
+			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/FubukiPortrait.png"
 		Enums.AssistCharacters.Eight:
-			color = "res://game/assets/sprites/oga/ColorPalettes/1.png"
-			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/SubaruPortrait.png"
+			color = "res://game/assets/sprites/assists/fubuki/ColorPalettes/1.png"
+			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/FubukiPortrait.png"
 		Enums.AssistCharacters.Nine:
-			color = "res://game/assets/sprites/oga/ColorPalettes/1.png"
-			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/SubaruPortrait.png"
+			color = "res://game/assets/sprites/assists/fubuki/ColorPalettes/1.png"
+			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/FubukiPortrait.png"
 		Enums.AssistCharacters.Ten:
-			color = "res://game/assets/sprites/oga/ColorPalettes/1.png"
-			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/SubaruPortrait.png"
+			color = "res://game/assets/sprites/assists/fubuki/ColorPalettes/1.png"
+			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/FubukiPortrait.png"
 		Enums.AssistCharacters.Eleven:
-			color = "res://game/assets/sprites/oga/ColorPalettes/1.png"
-			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/SubaruPortrait.png"
+			color = "res://game/assets/sprites/assists/fubuki/ColorPalettes/1.png"
+			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/FubukiPortrait.png"
 		Enums.AssistCharacters.Twelve:
-			color = "res://game/assets/sprites/oga/ColorPalettes/1.png"
-			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/SubaruPortrait.png"
+			color = "res://game/assets/sprites/assists/fubuki/ColorPalettes/1.png"
+			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/FubukiPortrait.png"
 		Enums.AssistCharacters.Fubuki:
 			color = "res://game/assets/sprites/assists/fubuki/ColorPalettes/1.png"
 			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/FubukiPortrait.png"
@@ -443,10 +455,10 @@ func resolve_assist_portrait(row:int, col:int, is_p1:bool):
 			color = "res://game/assets/sprites/assists/okakoro/ColorPalettes/1.png"
 			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/OkakoroPortrait.png"
 		Enums.AssistCharacters.Hakka:
-			color = "res://game/assets/sprites/oga/ColorPalettes/1.png"
+			color = "res://game/assets/sprites/hakka/ColorPalettes/1.png"
 			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/HakkaPortrait.png"
 		Enums.AssistCharacters.Sana:
-			color = "res://game/assets/sprites/oga/ColorPalettes/1.png"
+			color = "res://game/assets/sprites/sana/ColorPalettes/1.png"
 			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/SanaPortrait.png"
 		Enums.AssistCharacters.Random:
 			color = "res://game/assets/sprites/oga/ColorPalettes/1.png"
@@ -456,7 +468,7 @@ func resolve_assist_portrait(row:int, col:int, is_p1:bool):
 			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/FubukiPortrait.png"
 	if (is_p1):
 		Global.PLAYER_1_COLOR[1] = color
-		$A1Portrait.texture = load(portrait)
+		$A1Portrait.change_portrait(enumChara, color, isAssist=true) = load(portrait)
 	else:
 		Global.PLAYER_2_COLOR[1] = color
 		$A2Portrait.texture = load(portrait)
