@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://b7q1hk8ukhhu2"]
+[gd_scene load_steps=72 format=3 uid="uid://b7q1hk8ukhhu2"]
 
 [ext_resource type="Texture2D" uid="uid://phq86ugkwrgi" path="res://game/assets/sprites/UI/CharacterSelect/CardboardFloor.png" id="1"]
 [ext_resource type="Texture2D" uid="uid://bmx8kcarubmxo" path="res://game/assets/sprites/UI/MainMenus/MenuTutorials/ButtonSelect.png" id="2"]
@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://lj1dcdy08xyo" path="res://game/assets/sprites/UI/CharacterSelect/MiniPortraits/KanataButton.png" id="9"]
 [ext_resource type="Texture2D" uid="uid://dppcf4hqlvayd" path="res://game/assets/sprites/UI/CharacterSelect/MiniPortraits/SuiseiButton.png" id="10"]
 [ext_resource type="Texture2D" uid="uid://dtj3xj7tdcm7" path="res://game/assets/sprites/UI/CharacterSelect/MiniPortraits/UnknownButton.png" id="11"]
-[ext_resource type="PackedScene" path="res://game/menus/characterselect/CharacterPortrait.tscn" id="12"]
+[ext_resource type="PackedScene" uid="uid://b1vhgvt0bb4vq" path="res://game/menus/characterselect/CharacterPortrait.tscn" id="12"]
 [ext_resource type="PackedScene" path="res://game/menus/characterselect/AkiMC.tscn" id="14"]
 [ext_resource type="Texture2D" uid="uid://csm7c5dbea7x2" path="res://game/assets/sprites/UI/CharacterSelect/WOOD.png" id="15"]
 [ext_resource type="Texture2D" uid="uid://d302mjwqy8r6g" path="res://game/assets/sprites/UI/CharacterSelect/MiniPortraits/SubaruButton.png" id="19"]
@@ -48,7 +48,9 @@
 [ext_resource type="Texture2D" uid="uid://bw0ubw2v2pleb" path="res://game/assets/sprites/UI/CharacterSelect/CurtainFlash/Timeline 1_0008.png" id="59"]
 [ext_resource type="Texture2D" uid="uid://b825s3tye1bad" path="res://game/assets/sprites/UI/CharacterSelect/CurtainFlash/Timeline 1_0006.png" id="60"]
 [ext_resource type="Texture2D" uid="uid://cr3uk8bhhgsge" path="res://game/assets/sprites/UI/CharacterSelect/CurtainFlash/Timeline 1_0009.png" id="61"]
+[ext_resource type="Shader" uid="uid://dinoskkj75qym" path="res://game/assets/shaders/ColorSwapAntiAlias.gdshader" id="61_2akuf"]
 [ext_resource type="Texture2D" uid="uid://2okjuema2yb1" path="res://game/assets/sprites/UI/CharacterSelect/CurtainFlash/Timeline 1_0013.png" id="62"]
+[ext_resource type="Texture2D" uid="uid://b77ycica4x4dk" path="res://game/assets/sprites/assists/hakka/ColorPalettes/2.png" id="62_t5gci"]
 [ext_resource type="Texture2D" uid="uid://csgb5113mmwtx" path="res://game/assets/sprites/UI/CharacterSelect/CurtainFlash/Timeline 1_0014.png" id="63"]
 [ext_resource type="Texture2D" uid="uid://dk4ksvghwkmqq" path="res://game/assets/sprites/UI/CharacterSelect/CurtainFlash/Timeline 1_0024.png" id="64"]
 [ext_resource type="Texture2D" uid="uid://164s5hbm0pjl" path="res://game/assets/sprites/UI/CharacterSelect/CurtainFlash/Timeline 1_0019.png" id="65"]
@@ -85,6 +87,50 @@ tracks/0/keys = {
 _data = {
 &"Intro": SubResource("8")
 }
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wn7x5"]
+resource_local_to_scene = true
+shader = ExtResource("61_2akuf")
+shader_parameter/palette = ExtResource("62_t5gci")
+shader_parameter/dimming = 1.0
+shader_parameter/shine_color = Color(1, 1, 1, 0.79607844)
+shader_parameter/alpha_limit = 0.0
+shader_parameter/cycle_speed = 20.0
+shader_parameter/full_pulse_cycle = false
+shader_parameter/mode = 0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k8gbm"]
+resource_local_to_scene = true
+shader = ExtResource("61_2akuf")
+shader_parameter/palette = ExtResource("62_t5gci")
+shader_parameter/dimming = 1.0
+shader_parameter/shine_color = Color(1, 1, 1, 0.79607844)
+shader_parameter/alpha_limit = 0.0
+shader_parameter/cycle_speed = 20.0
+shader_parameter/full_pulse_cycle = false
+shader_parameter/mode = 0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ljspf"]
+resource_local_to_scene = true
+shader = ExtResource("61_2akuf")
+shader_parameter/palette = ExtResource("62_t5gci")
+shader_parameter/dimming = 1.0
+shader_parameter/shine_color = Color(1, 1, 1, 0.79607844)
+shader_parameter/alpha_limit = 0.0
+shader_parameter/cycle_speed = 20.0
+shader_parameter/full_pulse_cycle = false
+shader_parameter/mode = 0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xfsu4"]
+resource_local_to_scene = true
+shader = ExtResource("61_2akuf")
+shader_parameter/palette = ExtResource("62_t5gci")
+shader_parameter/dimming = 1.0
+shader_parameter/shine_color = Color(1, 1, 1, 0.79607844)
+shader_parameter/alpha_limit = 0.0
+shader_parameter/cycle_speed = 20.0
+shader_parameter/full_pulse_cycle = false
+shader_parameter/mode = 0
 
 [node name="CharacterSelectMenu" type="Node2D"]
 script = ExtResource("5")
@@ -352,18 +398,21 @@ start_row = 1
 
 [node name="P1Portrait" parent="." instance=ExtResource("12")]
 z_index = 103
+material = SubResource("ShaderMaterial_wn7x5")
 position = Vector2(396, 591)
 xOffset = 396
 speed = 5
 
 [node name="P2Portrait" parent="." instance=ExtResource("12")]
 z_index = 103
+material = SubResource("ShaderMaterial_k8gbm")
 position = Vector2(1535, 598)
 xOffset = 1535
 speed = -5
 
 [node name="A1Portrait" parent="." instance=ExtResource("12")]
 z_index = 104
+material = SubResource("ShaderMaterial_ljspf")
 position = Vector2(212, 400)
 scale = Vector2(0.8, 0.8)
 xOffset = 212
@@ -371,6 +420,7 @@ speed = 5
 
 [node name="A2Portrait" parent="." instance=ExtResource("12")]
 z_index = 104
+material = SubResource("ShaderMaterial_xfsu4")
 position = Vector2(1764, 400)
 scale = Vector2(0.8, 0.8)
 xOffset = 1764

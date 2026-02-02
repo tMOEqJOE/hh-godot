@@ -414,8 +414,8 @@ script = ExtResource("5")
 material = ExtResource("4")
 position = Vector2(0, -362)
 scale = Vector2(1.428, 1.428)
-texture = ExtResource("9")
-offset = Vector2(-120, 100)
+texture = ExtResource("15")
+offset = Vector2(-40, 50)
 
 [node name="Shadow" parent="." instance=ExtResource("4_8tnd7")]
 

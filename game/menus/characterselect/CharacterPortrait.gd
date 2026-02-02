@@ -20,6 +20,10 @@ func change_portrait_anim():
 	self.position.x = xOffset - (ticks * speed)
 	tick = ticks
 
+func clear_portrait():
+	self.texture = null
+	$Name.texture = null
+
 func change_color_number(color_number: int):
 	var color_texture = load(character_color_path+str(color_number)+".png")
 	self.material.set_shader_parameter("palette", color_texture)
