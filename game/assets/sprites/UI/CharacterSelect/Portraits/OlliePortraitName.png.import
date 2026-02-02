@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgwjh662b4dnf"
-path="res://.godot/imported/OgaPortrait.png-b7232a363fe1db2b8b8716f6fa21f094.ctex"
+uid="uid://syaf5dsxmtew"
+path="res://.godot/imported/OlliePortraitName.png-cf4ae32f897676221e8d588f50588bf0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/assets/sprites/UI/CharacterSelect/Portraits/OgaPortrait.png"
-dest_files=["res://.godot/imported/OgaPortrait.png-b7232a363fe1db2b8b8716f6fa21f094.ctex"]
+source_file="res://game/assets/sprites/UI/CharacterSelect/Portraits/OlliePortraitName.png"
+dest_files=["res://.godot/imported/OlliePortraitName.png-cf4ae32f897676221e8d588f50588bf0.ctex"]
 
 [params]
 

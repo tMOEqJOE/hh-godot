@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgwht6jk8hxhi"
-path="res://.godot/imported/SanaPortraitReal.png-05bc83f025467cc9ff68bb16f2eee38f.ctex"
+uid="uid://4hs3x3wjj0vy"
+path="res://.godot/imported/FubukiPortraitName.png-25a4ae2223777adaf084a0ed7f6fe4de.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/assets/sprites/UI/CharacterSelect/Portraits/SanaPortraitReal.png"
-dest_files=["res://.godot/imported/SanaPortraitReal.png-05bc83f025467cc9ff68bb16f2eee38f.ctex"]
+source_file="res://game/assets/sprites/UI/CharacterSelect/Portraits/FubukiPortraitName.png"
+dest_files=["res://.godot/imported/FubukiPortraitName.png-25a4ae2223777adaf084a0ed7f6fe4de.ctex"]
 
 [params]
 

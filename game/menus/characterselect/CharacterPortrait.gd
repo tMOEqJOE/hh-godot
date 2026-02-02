@@ -6,6 +6,8 @@ extends Sprite2D
 var ticks: int = 10
 var tick: int = 0
 
+var character_color_path: String = ""
+
 func _ready():
 	pass # Replace with function body.
 
@@ -18,65 +20,122 @@ func change_portrait_anim():
 	self.position.x = xOffset - (ticks * speed)
 	tick = ticks
 
-func change_color(color):
-	self.material.set_shader_parameter("palette", color)
+func change_color_number(color_number: int):
+	var color_texture = load(character_color_path+str(color_number)+".png")
+	self.material.set_shader_parameter("palette", color_texture)
 
-func change_portrait(enumChara: int, color, is_assist=false):
-	match enumChara:
-		Enums.AssistCharacters.Subaru:
-			color = "res://game/assets/sprites/subaru/ColorPalettes/1.png"
-			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/SubaruPortrait.png"
-		Enums.AssistCharacters.Mio:
-			color = "res://game/assets/sprites/mio/ColorPalettes/1.png"
-			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/MioPortrait.png"
-		Enums.AssistCharacters.Oga:
-			color = "res://game/assets/sprites/oga/ColorPalettes/1.png"
-			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/OgaPortrait.png"
-		Enums.AssistCharacters.Ollie:
-			color = "res://game/assets/sprites/ollie/ColorPalettes/1.png"
-			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/OlliePortrait.png"
-		Enums.AssistCharacters.Suisei:
-			color = "res://game/assets/sprites/assists/fubuki/ColorPalettes/1.png"
-			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/FubukiPortrait.png"
-		Enums.AssistCharacters.Kanata:
-			color = "res://game/assets/sprites/assists/fubuki/ColorPalettes/1.png"
-			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/FubukiPortrait.png"
-		Enums.AssistCharacters.Seven:
-			color = "res://game/assets/sprites/assists/fubuki/ColorPalettes/1.png"
-			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/FubukiPortrait.png"
-		Enums.AssistCharacters.Eight:
-			color = "res://game/assets/sprites/assists/fubuki/ColorPalettes/1.png"
-			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/FubukiPortrait.png"
-		Enums.AssistCharacters.Nine:
-			color = "res://game/assets/sprites/assists/fubuki/ColorPalettes/1.png"
-			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/FubukiPortrait.png"
-		Enums.AssistCharacters.Ten:
-			color = "res://game/assets/sprites/assists/fubuki/ColorPalettes/1.png"
-			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/FubukiPortrait.png"
-		Enums.AssistCharacters.Eleven:
-			color = "res://game/assets/sprites/assists/fubuki/ColorPalettes/1.png"
-			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/FubukiPortrait.png"
-		Enums.AssistCharacters.Twelve:
-			color = "res://game/assets/sprites/assists/fubuki/ColorPalettes/1.png"
-			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/FubukiPortrait.png"
-		Enums.AssistCharacters.Fubuki:
-			color = "res://game/assets/sprites/assists/fubuki/ColorPalettes/1.png"
-			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/FubukiPortrait.png"
-		Enums.AssistCharacters.Sora:
-			color = "res://game/assets/sprites/assists/sora/ColorPalettes/1.png"
-			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/SoraPortrait.png"
-		Enums.AssistCharacters.OkaKoro:
-			color = "res://game/assets/sprites/assists/okakoro/ColorPalettes/1.png"
-			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/OkakoroPortrait.png"
-		Enums.AssistCharacters.Hakka:
-			color = "res://game/assets/sprites/hakka/ColorPalettes/1.png"
-			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/HakkaPortrait.png"
-		Enums.AssistCharacters.Sana:
-			color = "res://game/assets/sprites/sana/ColorPalettes/1.png"
-			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/SanaPortrait.png"
-		Enums.AssistCharacters.Random:
-			color = "res://game/assets/sprites/oga/ColorPalettes/1.png"
-			portrait = "res://game/assets/sprites/UI/CharacterSelect/KimiNoHiroin/QuestionMark.png"
-		_:
-			color = "res://game/assets/sprites/assists/fubuki/ColorPalettes/1.png"
-			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/FubukiPortrait.png"
+func change_color_path(color):
+	var color_texture = load(color)
+	self.material.set_shader_parameter("palette", color_texture)
+
+func change_portrait(enumChara: int, is_assist=false):
+	var portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/SubaruPortrait"
+	var color = "res://game/assets/sprites/subaru/ColorPalettes/" 
+	if (is_assist):
+		match enumChara:
+			Enums.AssistCharacters.Subaru:
+				color = "res://game/assets/sprites/subaru/ColorPalettes/"
+				portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/SubaruPortrait"
+			Enums.AssistCharacters.Mio:
+				color = "res://game/assets/sprites/mio/ColorPalettes/"
+				portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/MioPortrait"
+			Enums.AssistCharacters.Oga:
+				color = "res://game/assets/sprites/oga/ColorPalettes/"
+				portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/OgaPortrait"
+			Enums.AssistCharacters.Ollie:
+				color = "res://game/assets/sprites/ollie/ColorPalettes/"
+				portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/OlliePortrait"
+			Enums.AssistCharacters.Suisei:
+				color = "res://game/assets/sprites/assists/fubuki/ColorPalettes/"
+				portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/FubukiPortrait"
+			Enums.AssistCharacters.Kanata:
+				color = "res://game/assets/sprites/assists/fubuki/ColorPalettes/"
+				portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/FubukiPortrait"
+			Enums.AssistCharacters.Seven:
+				color = "res://game/assets/sprites/assists/fubuki/ColorPalettes/"
+				portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/FubukiPortrait"
+			Enums.AssistCharacters.Eight:
+				color = "res://game/assets/sprites/assists/fubuki/ColorPalettes/"
+				portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/FubukiPortrait"
+			Enums.AssistCharacters.Nine:
+				color = "res://game/assets/sprites/assists/fubuki/ColorPalettes/"
+				portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/FubukiPortrait"
+			Enums.AssistCharacters.Ten:
+				color = "res://game/assets/sprites/assists/fubuki/ColorPalettes/"
+				portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/FubukiPortrait"
+			Enums.AssistCharacters.Eleven:
+				color = "res://game/assets/sprites/assists/fubuki/ColorPalettes/"
+				portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/FubukiPortrait"
+			Enums.AssistCharacters.Twelve:
+				color = "res://game/assets/sprites/assists/fubuki/ColorPalettes/"
+				portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/FubukiPortrait"
+			Enums.AssistCharacters.Fubuki:
+				color = "res://game/assets/sprites/assists/fubuki/ColorPalettes/"
+				portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/FubukiPortrait"
+			Enums.AssistCharacters.Sora:
+				color = "res://game/assets/sprites/assists/sora/ColorPalettes/"
+				portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/SoraPortrait"
+			Enums.AssistCharacters.OkaKoro:
+				color = "res://game/assets/sprites/assists/okakoro/ColorPalettes/"
+				portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/OkakoroPortrait"
+			Enums.AssistCharacters.Hakka:
+				color = "res://game/assets/sprites/assists/hakka/ColorPalettes/"
+				portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/HakkaPortrait"
+			Enums.AssistCharacters.Sana:
+				color = "res://game/assets/sprites/assists/sana/ColorPalettes/"
+				portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/SanaPortrait"
+			Enums.AssistCharacters.Random:
+				color = "res://game/assets/sprites/oga/ColorPalettes/"
+				portrait = "res://game/assets/sprites/UI/CharacterSelect/KimiNoHiroin/QuestionMark"
+			_:
+				color = "res://game/assets/sprites/assists/fubuki/ColorPalettes/"
+				portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/FubukiPortrait"
+	else:
+		match enumChara:
+			Enums.PointCharacters.Subaru:
+				color = "res://game/assets/sprites/subaru/ColorPalettes/"
+				portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/SubaruPortrait"
+			Enums.PointCharacters.Mio:
+				color = "res://game/assets/sprites/mio/ColorPalettes/"
+				portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/MioPortrait"
+			Enums.PointCharacters.Oga:
+				color = "res://game/assets/sprites/oga/ColorPalettes/"
+				portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/OgaPortrait"
+			Enums.PointCharacters.Ollie:
+				color = "res://game/assets/sprites/ollie/ColorPalettes/"
+				portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/OlliePortrait"
+			Enums.PointCharacters.Suisei:
+				color = "res://game/assets/sprites/suisei/ColorPalettes/"
+				portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/SuiseiPortrait"
+			Enums.PointCharacters.Kanata:
+				color = "res://game/assets/sprites/kanata/ColorPalettes/"
+				portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/KanataPortrait"
+			Enums.PointCharacters.Seven:
+				color = "res://game/assets/sprites/oga/ColorPalettes/"
+				portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/SubaruPortrait"
+			Enums.PointCharacters.Eight:
+				color = "res://game/assets/sprites/subaru/ColorPalettes/"
+				portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/SubaruPortrait"
+			Enums.PointCharacters.Nine:
+				color = "res://game/assets/sprites/oga/ColorPalettes/"
+				portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/SubaruPortrait"
+			Enums.PointCharacters.Ten:
+				color = "res://game/assets/sprites/oga/ColorPalettes/"
+				portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/SubaruPortrait"
+			Enums.PointCharacters.Eleven:
+				color = "res://game/assets/sprites/oga/ColorPalettes/"
+				portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/SubaruPortrait"
+			Enums.PointCharacters.Twelve:
+				color = "res://game/assets/sprites/oga/ColorPalettes/"
+				portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/SubaruPortrait"
+			Enums.PointCharacters.Random:
+				color = "res://game/assets/sprites/oga/ColorPalettes/"
+				portrait = "res://game/assets/sprites/UI/CharacterSelect/KimiNoHiroin/QuestionMark"
+			_:
+				color = "res://game/assets/sprites/subaru/ColorPalettes/"
+				portrait = "res://game/assets/sprites/subaru/SubaruPortrait"
+	
+	character_color_path = color
+	self.texture = load(portrait + ".png")
+	$Name.texture = load(portrait + "Name.png")
+	change_color_path(character_color_path+str(1)+".png")

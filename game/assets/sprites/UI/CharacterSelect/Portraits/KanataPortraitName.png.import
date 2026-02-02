@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgwjh662b4dnf"
-path="res://.godot/imported/OgaPortrait.png-b7232a363fe1db2b8b8716f6fa21f094.ctex"
+uid="uid://dpfgatyaf4ia"
+path="res://.godot/imported/KanataPortraitName.png-3ff4f65c5437b5f5044ddf0bf153a154.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://game/assets/sprites/UI/CharacterSelect/Portraits/OgaPortrait.png"
-dest_files=["res://.godot/imported/OgaPortrait.png-b7232a363fe1db2b8b8716f6fa21f094.ctex"]
+source_file="res://game/assets/sprites/UI/CharacterSelect/Portraits/KanataPortraitName.png"
+dest_files=["res://.godot/imported/KanataPortraitName.png-3ff4f65c5437b5f5044ddf0bf153a154.ctex"]
 
 [params]
 
