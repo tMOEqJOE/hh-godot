@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://de133l5uthaf0"]
+[gd_scene load_steps=48 format=3 uid="uid://de133l5uthaf0"]
 
 [ext_resource type="PackedScene" uid="uid://cwoqesvdf08m3" path="res://game/fighter/Hurtbox.tscn" id="1"]
 [ext_resource type="Script" uid="uid://dsnd2le21881u" path="res://game/fighter/assist/okakoro/OkakoroPlayer.gd" id="1_sxk3n"]
@@ -7,29 +7,18 @@
 [ext_resource type="PackedScene" uid="uid://sdxa076t7wfp" path="res://game/fighter/effects/shadow.tscn" id="4_oguhe"]
 [ext_resource type="Material" uid="uid://bt3lvyqtd78u0" path="res://game/assets/shaders/ColorSwapMat.tres" id="5"]
 [ext_resource type="Texture2D" uid="uid://ba1rwb06m5s7k" path="res://game/assets/sprites/assists/sora/HurtStand/Timeline 1_0001.png" id="6"]
-[ext_resource type="Texture2D" uid="uid://dqpqswstwsf8j" path="res://game/assets/sprites/assists/sora/Burst/Timeline 1_0005.png" id="7"]
 [ext_resource type="Texture2D" uid="uid://bh4urbuo0fgtf" path="res://game/assets/sprites/assists/sora/HurtStand/Timeline 1_0000.png" id="8"]
-[ext_resource type="Texture2D" uid="uid://dwgqs1bwt6ur2" path="res://game/assets/sprites/assists/sora/Burst/Timeline 1_0006.png" id="10"]
 [ext_resource type="Texture2D" uid="uid://dkh32po4r33ye" path="res://game/assets/sprites/assists/okakoro/EXJump/Timeline 1_0000.png" id="11"]
-[ext_resource type="Texture2D" uid="uid://i31tuku38gmn" path="res://game/assets/sprites/assists/sora/Burst/Timeline 1_0003.png" id="12"]
 [ext_resource type="Texture2D" uid="uid://bop0vkdvyvlhm" path="res://game/assets/sprites/assists/okakoro/EXJump/Timeline 1_0002.png" id="13"]
 [ext_resource type="Texture2D" uid="uid://d3711db04ryjt" path="res://game/assets/sprites/assists/sora/HurtStand/Timeline 1_0003.png" id="14"]
 [ext_resource type="Texture2D" uid="uid://7q7hff3erpin" path="res://game/assets/sprites/assists/sora/HurtStand/Timeline 1_0002.png" id="16"]
-[ext_resource type="Texture2D" uid="uid://dw0o7h1akpokn" path="res://game/assets/sprites/assists/sora/Burst/Timeline 1_0001.png" id="17"]
 [ext_resource type="Texture2D" uid="uid://tq7jpwpmpnav" path="res://game/assets/sprites/Empty_0000.png" id="18"]
-[ext_resource type="Texture2D" uid="uid://rtjsheuoocek" path="res://game/assets/sprites/assists/fubuki/AirHurt/Timeline 1_0003.png" id="19"]
 [ext_resource type="Texture2D" uid="uid://i2r5da5g50u2" path="res://game/assets/sprites/assists/okakoro/Hammer/Timeline 1_0002.png" id="20"]
 [ext_resource type="Texture2D" uid="uid://ds8txs4obnej3" path="res://game/assets/sprites/assists/okakoro/EXJump/Timeline 1_0001.png" id="22"]
-[ext_resource type="Texture2D" uid="uid://5apqwl5y2urs" path="res://game/assets/sprites/assists/sora/StepPunch/Timeline 1_0001.png" id="23"]
-[ext_resource type="Texture2D" uid="uid://bbmw7wmpjbl55" path="res://game/assets/sprites/assists/sora/Burst/Timeline 1_0000.png" id="26"]
 [ext_resource type="Texture2D" uid="uid://6ykkbrvpcsoo" path="res://game/assets/sprites/assists/okakoro/Hammer/Timeline 1_0003.png" id="28"]
-[ext_resource type="Texture2D" uid="uid://cd6kmy58yjbul" path="res://game/assets/sprites/assists/sora/Burst/Timeline 1_0004.png" id="29"]
-[ext_resource type="Texture2D" uid="uid://brpdbqjm105v0" path="res://game/assets/sprites/assists/sora/Burst/Timeline 1_0007.png" id="30"]
 [ext_resource type="Texture2D" uid="uid://bukw0v3frn3dq" path="res://game/assets/sprites/assists/okakoro/PowerBounce/Timeline 1_0000.png" id="35"]
 [ext_resource type="Texture2D" uid="uid://bluykl4a8lfgc" path="res://game/assets/sprites/assists/okakoro/PowerBounce/Timeline 1_0002.png" id="37"]
 [ext_resource type="Texture2D" uid="uid://b3rfae41wb447" path="res://game/assets/sprites/assists/okakoro/PowerBounce/Timeline 1_0001.png" id="39"]
-[ext_resource type="Texture2D" uid="uid://cuxb7gocnoy8x" path="res://game/assets/sprites/assists/sora/StepPunch/Timeline 1_0003.png" id="40"]
-[ext_resource type="Texture2D" uid="uid://mcp0ygmfon3v" path="res://game/assets/sprites/assists/sora/Burst/Timeline 1_0002.png" id="41"]
 [ext_resource type="Texture2D" uid="uid://dixiwm3rcnciy" path="res://game/assets/sprites/assists/okakoro/PowerBounceHit/Timeline 1_0001.png" id="43"]
 [ext_resource type="Texture2D" uid="uid://dc37h234q04ug" path="res://game/assets/sprites/assists/okakoro/Hammer/Timeline 1_0001.png" id="44"]
 [ext_resource type="Texture2D" uid="uid://dpu88470la4bc" path="res://game/assets/sprites/assists/okakoro/Hammer/Timeline 1_0004.png" id="45"]
@@ -99,7 +88,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1000000),
 "update": 0,
-"values": [Vector2(0, 50)]
+"values": [Vector2(-20, 80)]
 }
 
 [sub_resource type="Animation" id="21"]
@@ -128,7 +117,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1000000),
 "update": 0,
-"values": [Vector2(0, 50)]
+"values": [Vector2(-20, 80)]
 }
 
 [sub_resource type="Animation" id="20"]
@@ -154,10 +143,10 @@ tracks/1/path = NodePath("Sprite2D:offset")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1000000),
+"times": PackedFloat32Array(0, 0.13333334),
+"transitions": PackedFloat32Array(1000000, 1000000),
 "update": 0,
-"values": [Vector2(0, 50)]
+"values": [Vector2(-20, 50), Vector2(20, 80)]
 }
 
 [sub_resource type="Animation" id="18"]
@@ -201,7 +190,7 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0333333, 0.0833333),
+"times": PackedFloat32Array(0, 0.05, 0.1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [ExtResource("51"), ExtResource("43"), ExtResource("50")]
@@ -260,10 +249,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.133333, 0.216667, 0.8, 1.21667, 1.26667, 1.3, 1.35, 1.4, 1.48333, 1.6, 1.7, 1.75, 1.81667, 1.91667, 2, 2.08333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("26"), ExtResource("17"), ExtResource("41"), ExtResource("12"), ExtResource("29"), ExtResource("7"), ExtResource("10"), ExtResource("26"), ExtResource("7"), ExtResource("29"), ExtResource("10"), ExtResource("30"), ExtResource("29"), ExtResource("17"), ExtResource("41"), ExtResource("12"), ExtResource("26")]
+"values": [ExtResource("50")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -348,10 +337,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0666667),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.133333, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [ExtResource("23"), ExtResource("40")]
+"values": [ExtResource("47"), ExtResource("48"), ExtResource("49")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -360,10 +349,10 @@ tracks/1/path = NodePath("Sprite2D:offset")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1000000),
+"times": PackedFloat32Array(0, 0.13333334),
+"transitions": PackedFloat32Array(1000000, 1000000),
 "update": 0,
-"values": [Vector2(0, 100)]
+"values": [Vector2(-20, 50), Vector2(20, 80)]
 }
 
 [sub_resource type="Animation" id="12"]
@@ -450,7 +439,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1000000),
 "update": 0,
-"values": [Vector2(0, 100)]
+"values": [Vector2(-20, 60)]
 }
 
 [sub_resource type="Animation" id="8"]
@@ -467,7 +456,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("19")]
+"values": [ExtResource("50")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -479,7 +468,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1000000),
 "update": 0,
-"values": [Vector2(0, 100)]
+"values": [Vector2(0, 200)]
 }
 
 [sub_resource type="Animation" id="17"]
@@ -571,8 +560,8 @@ script = ExtResource("1_sxk3n")
 material = ExtResource("5")
 position = Vector2(0, -362)
 scale = Vector2(1.428, 1.428)
-texture = ExtResource("39")
-offset = Vector2(0, 150)
+texture = ExtResource("50")
+offset = Vector2(0, 230)
 
 [node name="Shadow" parent="." instance=ExtResource("4_oguhe")]
 scale = Vector2(2.3363073, 1.7763066)

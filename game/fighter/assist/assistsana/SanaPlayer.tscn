@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://c3i8yciwd8vmb"]
+[gd_scene load_steps=39 format=3 uid="uid://c3i8yciwd8vmb"]
 
 [ext_resource type="Script" uid="uid://dv11pt6y7wasy" path="res://addons/godot-rollback-netcode/NetworkAnimationPlayer.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://cwoqesvdf08m3" path="res://game/fighter/Hurtbox.tscn" id="2"]
@@ -6,13 +6,11 @@
 [ext_resource type="Material" uid="uid://bt3lvyqtd78u0" path="res://game/assets/shaders/ColorSwapMat.tres" id="4"]
 [ext_resource type="PackedScene" uid="uid://sdxa076t7wfp" path="res://game/fighter/effects/shadow.tscn" id="4_8tnd7"]
 [ext_resource type="Script" uid="uid://dhae8c4xx0bln" path="res://game/fighter/assist/assistsana/SanaPlayer.gd" id="5"]
-[ext_resource type="Texture2D" uid="uid://o65hxwd0ksrq" path="res://game/assets/sprites/mio/3C/Timeline 1_0008.png" id="6"]
 [ext_resource type="Texture2D" uid="uid://byyrxkbxlkpp7" path="res://game/assets/sprites/mio/StandHighHit/Timeline 1_0002.png" id="7"]
 [ext_resource type="Texture2D" uid="uid://ct0eofmcjaqh" path="res://game/assets/sprites/mio/Wakeup/Timeline 1_0002.png" id="8"]
 [ext_resource type="Texture2D" uid="uid://djwlo3dlskx78" path="res://game/assets/sprites/mio/StandHighHit/Timeline 1_0003.png" id="9"]
 [ext_resource type="Texture2D" uid="uid://dlaw60qq2n13h" path="res://game/assets/sprites/mio/StandHighHit/Timeline 1_0000.png" id="10"]
 [ext_resource type="Texture2D" uid="uid://2em1qq2ldboa" path="res://game/assets/sprites/mio/AirHit/Timeline 1_0000.png" id="12"]
-[ext_resource type="Texture2D" uid="uid://dys4qlqy5r63g" path="res://game/assets/sprites/mio/3C/Timeline 1_0004.png" id="13"]
 [ext_resource type="Texture2D" uid="uid://csottxil6gwk2" path="res://game/assets/sprites/mio/StandHighHit/Timeline 1_0001.png" id="14"]
 [ext_resource type="Texture2D" uid="uid://bqoe76g57nb3r" path="res://game/assets/sprites/assists/sana/Intro/Timeline 1_0000.png" id="15"]
 [ext_resource type="Texture2D" uid="uid://jknqi3812jax" path="res://game/assets/sprites/assists/sana/GravityWell/Timeline 1_0001.png" id="16"]
@@ -21,15 +19,11 @@
 [ext_resource type="Texture2D" uid="uid://bu7u0wm1pqe37" path="res://game/assets/sprites/mio/Crouch/Timeline 1_0002.png" id="19"]
 [ext_resource type="Texture2D" uid="uid://dh23imcnu8jm4" path="res://game/assets/sprites/assists/sana/GravityWell/Timeline 1_0000.png" id="20"]
 [ext_resource type="Texture2D" uid="uid://2pm5m7ru32sh" path="res://game/assets/sprites/mio/Wakeup/Timeline 1_0004.png" id="21"]
-[ext_resource type="Texture2D" uid="uid://b0ipricrl4cq7" path="res://game/assets/sprites/mio/3C/Timeline 1_0003.png" id="22"]
-[ext_resource type="Texture2D" uid="uid://bxk6l5ryqsa1f" path="res://game/assets/sprites/mio/Burst/Timeline 1_0001.png" id="23"]
 [ext_resource type="Texture2D" uid="uid://d3uqrq54i6tyt" path="res://game/assets/sprites/mio/Wakeup/Timeline 1_0003.png" id="24"]
 [ext_resource type="Texture2D" uid="uid://bd6c1p1lq0vof" path="res://game/assets/sprites/mio/AirHit/Timeline 1_0003.png" id="25"]
 [ext_resource type="Texture2D" uid="uid://dynprklihfisu" path="res://game/assets/sprites/mio/Wakeup/Timeline 1_0000.png" id="26"]
 [ext_resource type="Texture2D" uid="uid://bgiif8l0hucqt" path="res://game/assets/sprites/assists/sana/GravityWell/Timeline 1_0002.png" id="27"]
-[ext_resource type="Texture2D" uid="uid://ba15wmbc0idcm" path="res://game/assets/sprites/mio/3C/Timeline 1_0000.png" id="29"]
 [ext_resource type="Texture2D" uid="uid://bofmbk7babkvr" path="res://game/assets/sprites/mio/AirHit/Timeline 1_0001.png" id="30"]
-[ext_resource type="Texture2D" uid="uid://chbggc7gqnxr4" path="res://game/assets/sprites/mio/3C/Timeline 1_0002.png" id="32"]
 
 [sub_resource type="SGRectangleShape2D" id="1"]
 extents_x = 2063232
@@ -138,7 +132,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("23")]
+"values": [ExtResource("20")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -194,10 +188,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.233333, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.133333, 0.233333),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [ExtResource("29"), ExtResource("32"), ExtResource("22"), ExtResource("13"), ExtResource("6")]
+"values": [ExtResource("20"), ExtResource("16"), ExtResource("27")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -209,7 +203,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1000000),
 "update": 0,
-"values": [Vector2(0, -40)]
+"values": [Vector2(0, 0)]
 }
 
 [sub_resource type="Animation" id="12"]
@@ -413,8 +407,7 @@ script = ExtResource("5")
 material = ExtResource("4")
 position = Vector2(0, -362)
 scale = Vector2(1.428, 1.428)
-texture = ExtResource("12")
-offset = Vector2(0, 100)
+texture = ExtResource("27")
 
 [node name="Shadow" parent="." instance=ExtResource("4_8tnd7")]
 
