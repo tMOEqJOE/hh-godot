@@ -1,4 +1,4 @@
-[gd_scene load_steps=157 format=3 uid="uid://c0sr4wh64k6pt"]
+[gd_scene load_steps=151 format=3 uid="uid://c0sr4wh64k6pt"]
 
 [ext_resource type="Script" uid="uid://dgsx3duqjaeo5" path="res://game/fighter/PointPlayer.gd" id="2"]
 [ext_resource type="Script" uid="uid://dv11pt6y7wasy" path="res://addons/godot-rollback-netcode/NetworkAnimationPlayer.gd" id="4"]
@@ -88,16 +88,10 @@
 [ext_resource type="Texture2D" uid="uid://dp7lbu44027i1" path="res://game/assets/sprites/mio/jA/Timeline 1_0001.png" id="119"]
 [ext_resource type="Texture2D" uid="uid://dcrkvlikq1cuo" path="res://game/assets/sprites/mio/j2C/Timeline 1_0000.png" id="120"]
 [ext_resource type="Texture2D" uid="uid://dynprklihfisu" path="res://game/assets/sprites/mio/Wakeup/Timeline 1_0000.png" id="121"]
-[ext_resource type="Texture2D" uid="uid://po35p1qgaoo4" path="res://game/assets/sprites/mio/Wakeup/Timeline 1_0001.png" id="125"]
 [ext_resource type="Texture2D" uid="uid://breml32kg7aan" path="res://game/assets/sprites/mio/ThrowClash/Timeline 1_0000.png" id="127"]
 [ext_resource type="Texture2D" uid="uid://bsw5pvdjxy0kc" path="res://game/assets/sprites/mio/MioCannon/Timeline 1_0001.png" id="128"]
 [ext_resource type="Texture2D" uid="uid://cclt6vk88123m" path="res://game/assets/sprites/mio/HatoGongPunch/Timeline 1_0000.png" id="129"]
 [ext_resource type="Texture2D" uid="uid://du7gkjwp4xiey" path="res://game/assets/sprites/mio/Intro/Timeline 1_0000.png" id="132"]
-[ext_resource type="Texture2D" uid="uid://hj1gcw62geif" path="res://game/assets/sprites/mio/Intro/Timeline 1_0003.png" id="133"]
-[ext_resource type="Texture2D" uid="uid://b5aitvygthbf2" path="res://game/assets/sprites/mio/Intro/Timeline 1_0014.png" id="134"]
-[ext_resource type="Texture2D" uid="uid://c86fhxc0kvb0c" path="res://game/assets/sprites/mio/Intro/Timeline 1_0010.png" id="135"]
-[ext_resource type="Texture2D" uid="uid://5jj74hvfd3s8" path="res://game/assets/sprites/mio/Intro/Timeline 1_0002.png" id="136"]
-[ext_resource type="Texture2D" uid="uid://dohkveselyqa4" path="res://game/assets/sprites/mio/Intro/Timeline 1_0001.png" id="137"]
 [ext_resource type="Texture2D" uid="uid://bc7grmwgvgmu2" path="res://game/assets/sprites/mio/Backdash/Timeline 1_0003.png" id="138"]
 [ext_resource type="Texture2D" uid="uid://dg6rs0h0v4s8y" path="res://game/assets/sprites/mio/Backdash/Timeline 1_0002.png" id="139"]
 [ext_resource type="Texture2D" uid="uid://cscnnewfa4xjd" path="res://game/assets/sprites/mio/Backdash/Timeline 1_0001.png" id="140"]
@@ -572,10 +566,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.166667, 0.366667, 0.483333, 0.55, 0.933333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("132"), ExtResource("137"), ExtResource("136"), ExtResource("133"), ExtResource("135"), ExtResource("134")]
+"values": [ExtResource("132")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -971,7 +965,7 @@ script = ExtResource("2")
 material = ExtResource("5")
 position = Vector2(45, -345)
 scale = Vector2(1.428, 1.428)
-texture = ExtResource("125")
+texture = ExtResource("132")
 
 [node name="Shadow" parent="." instance=ExtResource("4_k05o5")]
 position = Vector2(1, 9)
