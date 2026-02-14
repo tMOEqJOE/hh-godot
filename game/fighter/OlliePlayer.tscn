@@ -1,4 +1,4 @@
-[gd_scene load_steps=252 format=3 uid="uid://enqykmcqocbq"]
+[gd_scene load_steps=257 format=3 uid="uid://enqykmcqocbq"]
 
 [ext_resource type="Texture2D" uid="uid://c73edt6xp2p55" path="res://game/assets/sprites/ollie/5B/Timeline 1_0001.png" id="1"]
 [ext_resource type="Script" uid="uid://pjo1td178t2f" path="res://game/fighter/OlliePlayer.gd" id="2"]
@@ -149,6 +149,11 @@
 [ext_resource type="Texture2D" uid="uid://cythoak0pe4yi" path="res://game/assets/sprites/ollie/2C/Timeline 1_0001.png" id="141"]
 [ext_resource type="Texture2D" uid="uid://dy6jlwimfeas7" path="res://game/assets/sprites/ollie/BackDash/Timeline 1_0002.png" id="142"]
 [ext_resource type="Texture2D" uid="uid://dluojd2p4d8ad" path="res://game/assets/sprites/ollie/2C/Timeline 1_0000.png" id="143"]
+[ext_resource type="Texture2D" uid="uid://ca6mh1qg3nnce" path="res://game/assets/sprites/ollie/Intro/Timeline 1_0001.png" id="143_pwxlo"]
+[ext_resource type="Texture2D" uid="uid://bhq0nf41jk3qo" path="res://game/assets/sprites/ollie/Intro/Timeline 1_0002.png" id="144_x3doy"]
+[ext_resource type="Texture2D" uid="uid://cphfw6spt15h7" path="res://game/assets/sprites/ollie/Intro/Timeline 1_0003.png" id="145_2oqox"]
+[ext_resource type="Texture2D" uid="uid://b065qutnwl8tp" path="res://game/assets/sprites/ollie/Intro/Timeline 1_0004.png" id="146_5ytdr"]
+[ext_resource type="Texture2D" uid="uid://bdvqr3g1a17ow" path="res://game/assets/sprites/ollie/Intro/Timeline 1_0005.png" id="147_b7ktn"]
 [ext_resource type="Texture2D" uid="uid://ba7wwo1vbswo3" path="res://game/assets/sprites/mio/cB/Timeline 1_0000.png" id="152"]
 [ext_resource type="Texture2D" uid="uid://cg0mpntjfyat3" path="res://game/assets/sprites/ollie/ProtonCannon/Timeline 1_0004.png" id="152_v2gbi"]
 [ext_resource type="Texture2D" uid="uid://s7j45hysjqh6" path="res://game/assets/sprites/ollie/ProtonCannon/Timeline 1_0005.png" id="153_l7xer"]
@@ -1258,10 +1263,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.6166667, 0.7166667, 0.9666667, 1.1, 1.1666666),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("124")]
+"values": [ExtResource("124"), ExtResource("143_pwxlo"), ExtResource("144_x3doy"), ExtResource("145_2oqox"), ExtResource("146_5ytdr"), ExtResource("147_b7ktn")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1273,7 +1278,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1000000),
 "update": 0,
-"values": [Vector2(30, 160)]
+"values": [Vector2(30, 170)]
 }
 
 [sub_resource type="Animation" id="11"]
@@ -1946,7 +1951,7 @@ material = ExtResource("5")
 position = Vector2(55, -413)
 scale = Vector2(1.428, 1.428)
 texture = ExtResource("3_osmoy")
-offset = Vector2(-40, 160)
+offset = Vector2(30, 170)
 
 [node name="Shadow" parent="." instance=ExtResource("4_nie01")]
 scale = Vector2(2.056, 1.776)

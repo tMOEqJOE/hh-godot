@@ -315,6 +315,7 @@ script = ExtResource("3")
 [node name="StageCage" parent="." instance=ExtResource("2")]
 fixed_scale_y = 948961
 visible = false
+scale = Vector2(18.87999, 14.479996)
 
 [node name="StageBackgroundArt" type="Node2D" parent="."]
 visible = false
@@ -423,7 +424,6 @@ position = Vector2(-99, -433)
 is_p1 = true
 
 [node name="IntroShutters" type="Node2D" parent="Camera3D/BattleUI"]
-visible = false
 modulate = Color(1, 0.741176, 0.592157, 1)
 scale = Vector2(4, 4)
 script = ExtResource("70")
