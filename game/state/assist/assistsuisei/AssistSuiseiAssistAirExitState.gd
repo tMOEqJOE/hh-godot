@@ -1,6 +1,6 @@
 extends AssistAirAttackState
 
-class_name AssistKanataAssistAirExitState
+class_name AssistSuiseiAssistAirExitState
 
 func _init():
 	endFrame = Util.ASSIST_EXIT_RECOVERY

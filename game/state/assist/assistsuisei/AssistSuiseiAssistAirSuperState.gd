@@ -1,23 +1,17 @@
-extends AssistAirAttackState
+extends AssistASuicoBaseAirAttackState
 
-class_name AssistKanataAirSuperState
+class_name AssistSuiseiAirSuperState
 
 func _init():
-	endFrame = 50
+	endFrame = 40
 	
 	anim_data = {
 		0 : {
-			Enums.StKey.counterOK : true,
 			Enums.StKey.Hit1Disable : true,
 			Enums.StKey.Hit2Disable : true,
 			Enums.StKey.Hurt1Disable : true,Enums.StKey.Hurt2Disable : true,
-			Enums.StKey.Hurt1PosX : 3866624, Enums.StKey.Hurt1PosY : -14417920,
-			Enums.StKey.Hurt1ScaleX : 871288, Enums.StKey.Hurt1ScaleY : 1034829,
-			Enums.StKey.Hurt2PosX : -6160384, Enums.StKey.Hurt2PosY : -13107201,
-			Enums.StKey.Hurt2ScaleX : 809242, Enums.StKey.Hurt2ScaleY : 718928,
-			Enums.StKey.Summon : "meterDump",
 			},
-		5 : {
+		1 : {
 			Enums.StKey.Summon : "superFlash",
 			Enums.StKey.Hurt1Disable : true,Enums.StKey.Hurt2Disable : true,
 			Enums.StKey.Hit1Disable : false,
@@ -28,42 +22,53 @@ func _init():
 			Enums.StKey.meter_build: 0,
 			Enums.StKey.attack_type : Enums.AttackType.BurstLock,
 			Enums.StKey.counter_hit : Enums.AttackType.BurstLock,
+		},
+		2 : {
+			Enums.StKey.Hit1Disable : false,
+			Enums.StKey.Hurt1Disable : true,Enums.StKey.Hurt2Disable : true,
+			Enums.StKey.hit_box_colliding_frame : 254,
+			Enums.StKey.burst_OK: false,
+			Enums.StKey.Hit1PosX : 9240576, Enums.StKey.Hit1PosY : -17595266,
+			Enums.StKey.Hit1ScaleX : 778531, Enums.StKey.Hit1ScaleY : 775360,
+			Enums.StKey.attack_type : Enums.AttackType.Launcher,
+			Enums.StKey.launch_dir_x : -SGFixed.ONE*20,
+			Enums.StKey.launch_dir_y : -SGFixed.ONE*20,
+			Enums.StKey.hitstun : 80,
+			Enums.StKey.attack_damage: 50,
+			Enums.StKey.min_damage: 5,
+			Enums.StKey.chip_damage: 5,
+			Enums.StKey.hitstop: 5,
+			Enums.StKey.counter_hit: Enums.AttackType.GroundBouncer,
+			Enums.StKey.counter_hitstun: 100,
+			Enums.StKey.meter_build: 0,
+			Enums.StKey.counter_launch_dir_x : -SGFixed.ONE*20,
+			Enums.StKey.counter_launch_dir_y : -SGFixed.ONE*20,
 			},
 		10 : {
-			Enums.StKey.counterOK : true,
 			Enums.StKey.Hit1Disable : false,
-			Enums.StKey.Hit2Disable : false,
-			Enums.StKey.Hit1PosX : 11272191, Enums.StKey.Hit1PosY : -27394046,
-			Enums.StKey.Hit1ScaleX : 997409, Enums.StKey.Hit1ScaleY : 1680399,
-			Enums.StKey.Hit2PosX : 1703936, Enums.StKey.Hit2PosY : -30408702,
-			Enums.StKey.Hit2ScaleX : 512521, Enums.StKey.Hit2ScaleY : 833886,
-			Enums.StKey.Hurt1Disable : false,Enums.StKey.Hurt2Disable : false,Enums.StKey.Hurt3Disable : false,
-			Enums.StKey.Hurt1PosX : -786432, Enums.StKey.Hurt1PosY : -8716288,
-			Enums.StKey.Hurt1ScaleX : 871288, Enums.StKey.Hurt1ScaleY : 1034829,
-			Enums.StKey.Hurt2PosX : 4980736, Enums.StKey.Hurt2PosY : -6684672,
-			Enums.StKey.Hurt2ScaleX : 809242, Enums.StKey.Hurt2ScaleY : 718928,
-			Enums.StKey.hit_box_colliding_frame : 2,
-			Enums.StKey.hitstop : 10,
-			Enums.StKey.attack_type : Enums.AttackType.GroundBouncer,
-			Enums.StKey.hitstun: 60,
-			Enums.StKey.launch_dir_x : -SGFixed.ONE*7,
-			Enums.StKey.launch_dir_y : -SGFixed.ONE*90,
-			Enums.StKey.min_damage: 10,
-			Enums.StKey.counter_hit: Enums.AttackType.GroundBouncer,
-			Enums.StKey.counter_hitstun: 110,
-			Enums.StKey.attack_damage: 50,
-			Enums.StKey.counter_launch_dir_x: -SGFixed.ONE*5,
-			Enums.StKey.counter_launch_dir_y: -SGFixed.ONE*100,
+			Enums.StKey.Hurt1Disable : true,Enums.StKey.Hurt2Disable : true,
+			Enums.StKey.hit_box_colliding_frame : 100,
+			Enums.StKey.burst_OK: false,
+			Enums.StKey.Hit1PosX : 9240576, Enums.StKey.Hit1PosY : -19595266,
+			Enums.StKey.Hit1ScaleX : 1578531, Enums.StKey.Hit1ScaleY : 1775360,
+			Enums.StKey.attack_type : Enums.AttackType.Launcher,
+			Enums.StKey.launch_dir_x : -SGFixed.ONE*25,
+			Enums.StKey.launch_dir_y : -SGFixed.ONE*70,
+			Enums.StKey.hitstun : 70,
+			Enums.StKey.attack_damage: 80,
+			Enums.StKey.min_damage: 5,
+			Enums.StKey.chip_damage: 5,
+			Enums.StKey.hitstop: 12,
+			Enums.StKey.counter_hit: Enums.AttackType.Launcher,
+			Enums.StKey.counter_hitstun: 30,
+			Enums.StKey.meter_build: 0,
+			Enums.StKey.counter_launch_dir_x: -SGFixed.ONE*2,
+			Enums.StKey.counter_launch_dir_y: -SGFixed.ONE*70,
 			},
-		17 : { 
+		15 : {
 			Enums.StKey.Hit1Disable : true,
-			Enums.StKey.Hit2Disable : true,
-			Enums.StKey.Hurt1Disable : false,Enums.StKey.Hurt2Disable : false,Enums.StKey.Hurt3Disable : false,
-			Enums.StKey.Hurt1PosX : 4587520, Enums.StKey.Hurt1PosY : -22544384,
-			Enums.StKey.Hurt1ScaleX : 871288, Enums.StKey.Hurt1ScaleY : 1034829,
-			Enums.StKey.Hurt2PosX : 2293760, Enums.StKey.Hurt2PosY : -5898242,
-			Enums.StKey.Hurt2ScaleX : 954510, Enums.StKey.Hurt2ScaleY : 708881,
-			},
+			Enums.StKey.Hurt1Disable : false,Enums.StKey.Hurt2Disable : false,
+		},
 	}
 
 # Writing _delta instead of delta here prevents the unused variable warning.
@@ -78,5 +83,5 @@ func enter(state: Dictionary) -> void:
 
 func physics_tick(state: Dictionary) -> void:
 	super.physics_tick(state)
-	if (state[Enums.StKey.frame] == 11):
-		anim.play("AssistSuperLoop")
+	if (state[Enums.StKey.frame] == 1):
+		state[Enums.StKey.velocity_x] = SGFixed.ONE*50

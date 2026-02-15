@@ -1,6 +1,6 @@
-extends "res://game/state/assist/assistkanata/AssistKanataAssistAirGuardCancelAttackState.gd"
+extends "res://game/state/assist/assistsuisei/AssistSuiseiAssistAirGuardCancelAttackState.gd"
 
-class_name AssistKanataAssistAirWeakGuardCancelAttackState
+class_name AssistSuiseiAssistAirWeakGuardCancelAttackState
 
 func _init():
 	super._init()

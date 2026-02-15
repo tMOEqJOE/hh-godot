@@ -1,54 +1,44 @@
 extends AssistAirAttackState
 
-class_name AssistKanataAssistAirAttackState
+class_name AssistSuiseiAssistAirAttackState
 
 func _init():
-	endFrame = 42
-	
+	endFrame = 30
+
 	anim_data = {
 		0 : {
 			Enums.StKey.Hit1Disable : true,
 			Enums.StKey.Hit2Disable : true,
-			Enums.StKey.Hurt1Disable : false, Enums.StKey.Hurt2Disable : true,
+			Enums.StKey.Hurt1Disable : false,Enums.StKey.Hurt2Disable : false,
 			},
-		5 : {
-			Enums.StKey.Hit1Disable : false,
-			Enums.StKey.Hurt1Disable : false, Enums.StKey.Hurt2Disable : true,
-			Enums.StKey.hit_box_colliding_frame : 254, 
-			Enums.StKey.Hit1PosX : 12845058, Enums.StKey.Hit1PosY : -23592960,
-			Enums.StKey.Hit1ScaleX : 1900968, Enums.StKey.Hit1ScaleY : 393792,
-			Enums.StKey.attack_type : Enums.AttackType.AirThrow,
-			Enums.StKey.counter_hit: Enums.AttackType.AirThrow,
-			Enums.StKey.burst_OK: false,
-			Enums.StKey.launch_dir_x : 0,
-			Enums.StKey.launch_dir_y : 0,
-			Enums.StKey.counter_launch_dir_x: 0,
-			Enums.StKey.counter_launch_dir_y: 0,
-			Enums.StKey.hitstun : 30,
-			Enums.StKey.hitstop: 1,
-			},
-		6 : { 
-			Enums.StKey.Hit1Disable : true,
-			Enums.StKey.Hit2Disable : true,
-			Enums.StKey.Hurt1Disable : false, Enums.StKey.Hurt2Disable : true,
+		6 : {
+			Enums.StKey.Hit1Disable : false, Enums.StKey.Hit2Disable : true,
+			Enums.StKey.Hit1PosX : 7471104, Enums.StKey.Hit1PosY : -19136512,
+			Enums.StKey.Hit1ScaleX : 758429, Enums.StKey.Hit1ScaleY : 871353,
+			Enums.StKey.Hurt1Disable : false,Enums.StKey.Hurt2Disable : false,
+			Enums.StKey.hit_box_colliding_frame : 3,
+			Enums.StKey.attack_damage: 20,
+			Enums.StKey.hitstun: 25,
+			Enums.StKey.min_damage: 3,
+			Enums.StKey.hitstop: 4,
+			Enums.StKey.counter_hit: Enums.AttackType.Strike,
+			Enums.StKey.counter_hitstun: 5,
 			},
 	}
+
 
 # Writing _delta instead of delta here prevents the unused variable warning.
 func enter(state: Dictionary) -> void:
 	super.enter(state)
 	state[Enums.StKey.velocity_x] = 0
 	state[Enums.StKey.velocity_y] = 0
-	state[Enums.StKey.drag_x] = Util.FRICTION
-	state[Enums.StKey.accel_y] = 0
+	state[Enums.StKey.drag_x] = 0
 	anim.stop(true)
 	anim.play("AssistAttack")
 
-
-func reaction(state: Dictionary, interpreter: InputInterpreter,event_cause: int) -> void:
-	if (event_cause == Enums.Reaction.ThrowHit):
-		change_state.call("AssistAirAttackFollowup")
-	elif (event_cause == Enums.Reaction.GroundLand and state[Enums.StKey.frame] <= 9):
-		pass
-	else:
-		super.reaction(state, interpreter, event_cause)
+func physics_tick(state: Dictionary) -> void:
+	super.physics_tick(state)
+	if (state[Enums.StKey.frame] == 6):
+		state[Enums.StKey.velocity_x] = Util.fixed_max(SGFixed.ONE*30, state[Enums.StKey.velocity_x])
+	elif (state[Enums.StKey.frame] == 14):
+		state[Enums.StKey.drag_x] = Util.FD_FRICTION

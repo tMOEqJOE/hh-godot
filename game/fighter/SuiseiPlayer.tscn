@@ -755,6 +755,35 @@ tracks/1/keys = {
 "values": [Vector2(0, -70)]
 }
 
+[sub_resource type="Animation" id="Animation_1tkd1"]
+resource_name = "AngelAirTech"
+length = 0.25
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.083333336, 0.16666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("60_80hjc"), ExtResource("61_77rog"), ExtResource("64_852js")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1000000),
+"update": 0,
+"values": [Vector2(-30, -40)]
+}
+
 [sub_resource type="Animation" id="75"]
 resource_name = "AngelAirThrowHit"
 length = 0.833335
@@ -3081,35 +3110,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1000000),
 "update": 0,
 "values": [Vector2(0, -60)]
-}
-
-[sub_resource type="Animation" id="Animation_1tkd1"]
-resource_name = "AngelAirTech"
-length = 0.25
-step = 0.0166667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.083333336, 0.16666667),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [ExtResource("60_80hjc"), ExtResource("61_77rog"), ExtResource("64_852js")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:offset")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1000000),
-"update": 0,
-"values": [Vector2(-30, -40)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6de0c"]
