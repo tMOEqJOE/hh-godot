@@ -273,6 +273,10 @@ func resolve_assists(row:int, col:int, is_p1):
 			return ["res://game/fighter/assist/assistoga/AssistOgaPlayer.tscn", Enums.AssistCharacters.Oga]
 		Enums.AssistCharacters.Ollie:
 			return ["res://game/fighter/assist/assistollie/AssistOlliePlayer.tscn", Enums.AssistCharacters.Ollie]
+		Enums.AssistCharacters.Kanata:
+			return ["res://game/fighter/assist/assistkanata/AssistKanataPlayer.tscn", Enums.AssistCharacters.Kanata]
+		Enums.AssistCharacters.Suisei:
+			return ["res://game/fighter/assist/assistsuisei/AssistSuiseiPlayer.tscn", Enums.AssistCharacters.Suisei]
 		_:
 			return ["res://game/fighter/assist/fubuki/FubukiPlayer.tscn", Enums.AssistCharacters.Fubuki]
 
@@ -342,6 +346,10 @@ func match_color(enumChara:int, is_assist=false) -> String:
 				color = "res://game/assets/sprites/oga/ColorPalettes/"
 			Enums.AssistCharacters.Ollie:
 				color = "res://game/assets/sprites/ollie/ColorPalettes/"
+			Enums.AssistCharacters.Kanata:
+				color = "res://game/assets/sprites/kanata/ColorPalettes/"
+			Enums.AssistCharacters.Suisei:
+				color = "res://game/assets/sprites/suisei/ColorPalettes/"
 			_:
 				color = "res://game/assets/sprites/assists/fubuki/ColorPalettes/"
 	else:

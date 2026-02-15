@@ -10,6 +10,12 @@ func enter(state: Dictionary) -> void:
 	state[Enums.StKey.velocity_y] = 0
 	state[Enums.StKey.accel_y] = 0
 
+func handle_input(state: Dictionary, interpreter: InputInterpreter) -> void:
+	super.handle_input(state, interpreter)
+	if (state[Enums.StKey.hitstun] <= 0):
+		state[Enums.StKey.throw_protect] = Util.THROW_PROTECT_FRAME
+		change_state.call("AngelAirTech")
+
 func meter_cancel(state: Dictionary, interpreter: InputInterpreter):
 	pass
 

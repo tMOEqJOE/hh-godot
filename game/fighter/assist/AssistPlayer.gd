@@ -118,6 +118,12 @@ func setup(playerData:PlayerSetup):
 			Enums.AssistCharacters.Ollie:
 				state_factory = load("res://game/state/assist/assistollie/assistolliestatefactory.gd").new()
 				dim_sprite()
+			Enums.AssistCharacters.Suisei:
+				state_factory = load("res://game/state/assist/assistsuisei/assistsuiseistatefactory.gd").new()
+				dim_sprite()
+			Enums.AssistCharacters.Kanata:
+				state_factory = load("res://game/state/assist/assistkanata/assistkanatastatefactory.gd").new()
+				dim_sprite()
 			_:
 				state_factory = FubukiStateFactory.new()
 				printerr("invalid assist character given")
@@ -127,10 +133,6 @@ func setup(playerData:PlayerSetup):
 func tick() -> void:
 	currentState["pilot_meter"] = pilot.currentState[Enums.StKey.super_meter]
 	super.tick()
-	
-	#var g_position = get_global_fixed_position()
-	#currentState["_pos_x"] = g_position.x
-	#currentState["_pos_y"] = g_position.y
 	if (currentState["_pos_y"] > Util.DEATH_PLANE_Y):
 		fighterState.change_state("Dormant")
 		fighterState.state_transition()
@@ -142,7 +144,6 @@ func getFirstFrameCollide() -> Dictionary:
 func tick_box_collisions() -> void:
 	for hitbox_name in ["Hitbox1", "Hitbox2"]:
 		get_node(hitbox_name).process_collisions()
-		#get_node(hitbox_name).update()
 
 func warp_off_screen() -> void:
 	var g_position = get_global_fixed_position()

@@ -50,11 +50,11 @@ func change_portrait(enumChara: int, is_assist=false):
 				color = "res://game/assets/sprites/ollie/ColorPalettes/"
 				portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/OlliePortrait"
 			Enums.AssistCharacters.Suisei:
-				color = "res://game/assets/sprites/assists/fubuki/ColorPalettes/"
-				portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/FubukiPortrait"
+				color = "res://game/assets/sprites/suisei/ColorPalettes/"
+				portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/SuiseiPortrait"
 			Enums.AssistCharacters.Kanata:
-				color = "res://game/assets/sprites/assists/fubuki/ColorPalettes/"
-				portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/FubukiPortrait"
+				color = "res://game/assets/sprites/kanata/ColorPalettes/"
+				portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/KanataPortrait"
 			Enums.AssistCharacters.Seven:
 				color = "res://game/assets/sprites/assists/fubuki/ColorPalettes/"
 				portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/FubukiPortrait"

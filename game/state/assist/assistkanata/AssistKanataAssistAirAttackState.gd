@@ -1,0 +1,74 @@
+extends AssistAirAttackState
+
+class_name AssistKanataAssistAirAttackState
+
+func _init():
+	endFrame = 42
+	
+	anim_data = {
+		0 : {
+			Enums.StKey.counterOK : true,
+			Enums.StKey.Hit1Disable : true,
+			Enums.StKey.Hit2Disable : true,
+			Enums.StKey.Hurt1Disable : true,Enums.StKey.Hurt2Disable : true,Enums.StKey.Hurt3Disable : true,
+			Enums.StKey.Hurt1PosX : -655360, Enums.StKey.Hurt1PosY : -23855102,
+			Enums.StKey.Hurt1ScaleX : 497627, Enums.StKey.Hurt1ScaleY : 523538,
+			Enums.StKey.Hurt2PosX : 3211265, Enums.StKey.Hurt2PosY : -15269887,
+			Enums.StKey.Hurt2ScaleX : 964115, Enums.StKey.Hurt2ScaleY : 370909,
+			Enums.StKey.Hurt3PosX : 65, Enums.StKey.Hurt3PosY : -10485760,
+			Enums.StKey.Hurt3ScaleX : 871288, Enums.StKey.Hurt3ScaleY : 1034829,
+			},
+		5 : {
+			Enums.StKey.counterOK : true,
+			Enums.StKey.Hit1Disable : false,
+			Enums.StKey.Hurt1Disable : false,Enums.StKey.Hurt2Disable : false, Enums.StKey.Hurt3Disable : false,
+			Enums.StKey.Hurt1PosX : -655360, Enums.StKey.Hurt1PosY : -23855102,
+			Enums.StKey.Hurt1ScaleX : 497627, Enums.StKey.Hurt1ScaleY : 523538,
+			Enums.StKey.Hurt2PosX : 3211265, Enums.StKey.Hurt2PosY : -15269887,
+			Enums.StKey.Hurt2ScaleX : 964115, Enums.StKey.Hurt2ScaleY : 370909,
+			Enums.StKey.Hurt3PosX : 65, Enums.StKey.Hurt3PosY : -10485760,
+			Enums.StKey.Hurt3ScaleX : 871288, Enums.StKey.Hurt3ScaleY : 1034829,
+			Enums.StKey.hit_box_colliding_frame : 254, 
+			Enums.StKey.Hit1PosX : 12845058, Enums.StKey.Hit1PosY : -23592960,
+			Enums.StKey.Hit1ScaleX : 1900968, Enums.StKey.Hit1ScaleY : 393792,
+			Enums.StKey.attack_type : Enums.AttackType.AirThrow,
+			Enums.StKey.counter_hit: Enums.AttackType.AirThrow,
+			Enums.StKey.burst_OK: false,
+			Enums.StKey.launch_dir_x : 0,
+			Enums.StKey.launch_dir_y : 0,
+			Enums.StKey.counter_launch_dir_x: 0,
+			Enums.StKey.counter_launch_dir_y: 0,
+			Enums.StKey.hitstun : 30,
+			Enums.StKey.hitstop: 1,
+			},
+		6 : { 
+			Enums.StKey.Hit1Disable : true,
+			Enums.StKey.Hit2Disable : true,
+			Enums.StKey.Hurt1Disable : false,Enums.StKey.Hurt2Disable : false,Enums.StKey.Hurt3Disable : false,
+			Enums.StKey.Hurt1PosX : -655360, Enums.StKey.Hurt1PosY : -23855102,
+			Enums.StKey.Hurt1ScaleX : 497627, Enums.StKey.Hurt1ScaleY : 523538,
+			Enums.StKey.Hurt2PosX : 3211265, Enums.StKey.Hurt2PosY : -15269887,
+			Enums.StKey.Hurt2ScaleX : 964115, Enums.StKey.Hurt2ScaleY : 370909,
+			Enums.StKey.Hurt3PosX : 65, Enums.StKey.Hurt3PosY : -10485760,
+			Enums.StKey.Hurt3ScaleX : 871288, Enums.StKey.Hurt3ScaleY : 1034829,
+			},
+	}
+
+# Writing _delta instead of delta here prevents the unused variable warning.
+func enter(state: Dictionary) -> void:
+	super.enter(state)
+	state[Enums.StKey.velocity_x] = 0
+	state[Enums.StKey.velocity_y] = 0
+	state[Enums.StKey.drag_x] = Util.FRICTION
+	state[Enums.StKey.accel_y] = 0
+	anim.stop(true)
+	anim.play("AssistAttack")
+
+
+func reaction(state: Dictionary, interpreter: InputInterpreter,event_cause: int) -> void:
+	if (event_cause == Enums.Reaction.ThrowHit):
+		change_state.call("AssistAirAttackFollowup")
+	elif (event_cause == Enums.Reaction.GroundLand and state[Enums.StKey.frame] <= 9):
+		pass
+	else:
+		super.reaction(state, interpreter, event_cause)
