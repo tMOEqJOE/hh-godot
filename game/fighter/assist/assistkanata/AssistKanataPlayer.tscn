@@ -28,11 +28,11 @@
 [ext_resource type="Texture2D" uid="uid://bfjs7f3sm00xo" path="res://game/assets/sprites/kanata/Intro/Timeline 1_0002.png" id="40_ouvw8"]
 [ext_resource type="Texture2D" uid="uid://lb4hgh46mjkt" path="res://game/assets/sprites/kanata/5C/Timeline 1_0000.png" id="41_wvx0e"]
 [ext_resource type="Texture2D" uid="uid://df2iyyj1gsj5" path="res://game/assets/sprites/kanata/5C/Timeline 1_0001.png" id="42_0234c"]
+[ext_resource type="Texture2D" uid="uid://b1vwk4eegb83i" path="res://game/assets/sprites/kanata/Idle/Timeline 1_0000.png" id="42_t6jx1"]
 [ext_resource type="Texture2D" uid="uid://g8ctl78jb83e" path="res://game/assets/sprites/kanata/FiftyThrow/Timeline 1_0000.png" id="42_vk4nt"]
 [ext_resource type="Texture2D" uid="uid://bfvxdgcrt6sf" path="res://game/assets/sprites/kanata/FiftyThrow/Timeline 1_0001.png" id="43_3glbj"]
 [ext_resource type="Texture2D" uid="uid://h2wmwnqlolfw" path="res://game/assets/sprites/kanata/5C/Timeline 1_0002.png" id="43_csq2d"]
 [ext_resource type="Texture2D" uid="uid://cblpemo3vl5cy" path="res://game/assets/sprites/kanata/5C/Timeline 1_0003.png" id="44_euv01"]
-[ext_resource type="Texture2D" uid="uid://dptbv704bv482" path="res://game/assets/sprites/kanata/FiftyThrow/Timeline 1_0003.png" id="44_y4uoj"]
 [ext_resource type="Texture2D" uid="uid://tq7jpwpmpnav" path="res://game/assets/sprites/Empty_0000.png" id="46_nv0ul"]
 [ext_resource type="Texture2D" uid="uid://dmwn24obshy0q" path="res://game/assets/sprites/kanata/Intro/Timeline 1_0000.png" id="47_p5k15"]
 [ext_resource type="Texture2D" uid="uid://g5jwe20ji2o8" path="res://game/assets/sprites/kanata/StandHurt/Timeline 1_0002.png" id="52_12sau"]
@@ -206,10 +206,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.266667, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.266667, 0.4, 0.5833333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("41_wvx0e"), ExtResource("42_0234c"), ExtResource("43_csq2d"), ExtResource("44_euv01")]
+"values": [ExtResource("41_wvx0e"), ExtResource("42_0234c"), ExtResource("43_csq2d"), ExtResource("44_euv01"), ExtResource("42_t6jx1")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -218,10 +218,10 @@ tracks/1/path = NodePath("Sprite2D:offset")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1000000),
+"times": PackedFloat32Array(0, 0.5833334),
+"transitions": PackedFloat32Array(1000000, 1000000),
 "update": 0,
-"values": [Vector2(-20, 90)]
+"values": [Vector2(-20, 90), Vector2(-60, 120)]
 }
 
 [sub_resource type="Animation" id="12"]
@@ -424,10 +424,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.16666667, 0.35, 0.41666666),
+"times": PackedFloat32Array(0, 0.16666667, 0.35, 0.4),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("42_vk4nt"), ExtResource("43_3glbj"), ExtResource("42_vk4nt"), ExtResource("44_y4uoj")]
+"values": [ExtResource("42_vk4nt"), ExtResource("43_3glbj"), ExtResource("42_vk4nt"), ExtResource("42_t6jx1")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -436,10 +436,10 @@ tracks/1/path = NodePath("Sprite2D:offset")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1000000),
+"times": PackedFloat32Array(0, 0.40000004),
+"transitions": PackedFloat32Array(1000000, 1000000),
 "update": 0,
-"values": [Vector2(-40, 60)]
+"values": [Vector2(-60, 60), Vector2(-60, 120)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4471x"]
@@ -471,7 +471,7 @@ material = ExtResource("2_csq2d")
 position = Vector2(86, -419)
 scale = Vector2(1.428, 1.428)
 texture = ExtResource("3_euv01")
-offset = Vector2(-40, 50)
+offset = Vector2(-60, 120)
 
 [node name="Shadow" parent="." instance=ExtResource("4_07pbg")]
 

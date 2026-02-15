@@ -866,6 +866,9 @@ func on_block(opponent_attack: Dictionary, leftface: bool) -> bool:
 					return true
 	return false
 
+func update_opponent_anchor(opponent: BasePlayer) -> void:
+	pass
+
 func ko() -> void:
 	fighterState.reaction(Enums.Reaction.KOHurt, input_interpreter)
 	fighterState.state_transition()

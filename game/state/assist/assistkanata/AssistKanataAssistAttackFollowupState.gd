@@ -3,7 +3,7 @@ extends AssistAttackState
 class_name AssistKanataAssistAttackFollowupState
 
 func _init():
-	endFrame = 30
+	endFrame = 60
 	
 	anim_data = {
 		0 : {
