@@ -1,4 +1,4 @@
-extends "res://game/state/assist/assistsuisei/AssistSuiseiAssistGuardCancelAttackState.gd"
+extends "res://game/state/assist/assistsuisei/AssistASuicoAssistGuardCancelAttackState.gd"
 
 class_name AssistASuicoAssistWeakGuardCancelAttackState
 

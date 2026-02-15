@@ -1,4 +1,4 @@
-extends AssistAttackState
+extends AssistASuicoBaseAttackState
 
 class_name AssistASuicoLandingRecoveryState
 

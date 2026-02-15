@@ -91,6 +91,384 @@
 extents_x = 2063232
 extents_y = 6847360
 
+[sub_resource type="Animation" id="Animation_mlqgx"]
+resource_name = "ASuicoAirHit"
+length = 0.500001
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.166667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("47_55tps"), ExtResource("48_5lxvs"), ExtResource("49_xdxsy")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1000000),
+"update": 0,
+"values": [Vector2(0, -80)]
+}
+
+[sub_resource type="Animation" id="Animation_eromn"]
+resource_name = "ASuicoAssistAirAttack"
+length = 1.1333373
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.366667, 0.433333, 0.5, 0.566667, 0.633333, 0.716667, 0.816667, 0.95),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("48_5ho80"), ExtResource("49_k8d6u"), ExtResource("50_ruji6"), ExtResource("49_k8d6u"), ExtResource("50_ruji6"), ExtResource("49_k8d6u"), ExtResource("50_ruji6"), ExtResource("49_k8d6u"), ExtResource("50_ruji6"), ExtResource("49_k8d6u")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1000000),
+"update": 0,
+"values": [Vector2(-10, -220)]
+}
+
+[sub_resource type="Animation" id="Animation_f262r"]
+resource_name = "ASuicoAssistAirAttackFollowup"
+length = 0.18333536
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("73_ruji6"), ExtResource("74_fen4a")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1000000),
+"update": 0,
+"values": [Vector2(-10, -120)]
+}
+
+[sub_resource type="Animation" id="Animation_htms6"]
+resource_name = "ASuicoAssistAirSuper"
+length = 1.0000036
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("50_5ho80")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1000000),
+"update": 0,
+"values": [Vector2(20, -30)]
+}
+
+[sub_resource type="Animation" id="Animation_n48xm"]
+resource_name = "ASuicoAssistAttack"
+length = 0.43333584
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.116667, 0.25, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("50_3np04"), ExtResource("51_4v25t"), ExtResource("52_5ihm0"), ExtResource("53_e0ql2")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1000000),
+"update": 0,
+"values": [Vector2(100, -90)]
+}
+
+[sub_resource type="Animation" id="Animation_55tps"]
+resource_name = "ASuicoAssistAttack2"
+length = 0.33333564
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.083333336, 0.16666667, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("50_bw2ko"), ExtResource("51_2h3ug"), ExtResource("52_sdj12"), ExtResource("53_cffn1")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1000000),
+"update": 0,
+"values": [Vector2(-10, -60)]
+}
+
+[sub_resource type="Animation" id="Animation_5lxvs"]
+resource_name = "ASuicoAssistSuper"
+length = 1.4166712
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.183333, 0.283333, 0.35, 0.416667, 0.483333, 0.55, 0.616667, 0.683333, 0.75, 0.816667, 0.8833334, 0.9500004, 1.0166674, 1.0821322, 1.1487992, 1.2154663, 1.2833333, 1.35, 1.4030282),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("59_ordk3"), ExtResource("60_htms6"), ExtResource("61_3avnx"), ExtResource("62_ewewa"), ExtResource("63_fh1ge"), ExtResource("61_3avnx"), ExtResource("62_ewewa"), ExtResource("63_fh1ge"), ExtResource("61_3avnx"), ExtResource("62_ewewa"), ExtResource("63_fh1ge"), ExtResource("61_3avnx"), ExtResource("62_ewewa"), ExtResource("63_fh1ge"), ExtResource("61_3avnx"), ExtResource("62_ewewa"), ExtResource("63_fh1ge"), ExtResource("61_3avnx"), ExtResource("62_ewewa"), ExtResource("63_fh1ge")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.23333333),
+"transitions": PackedFloat32Array(1000000, 1000000),
+"update": 0,
+"values": [Vector2(90, -30), Vector2(90, -60)]
+}
+
+[sub_resource type="Animation" id="Animation_xdxsy"]
+resource_name = "ASuicoBurst"
+length = 0.9333368
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.11666666, 0.2, 0.3, 0.39999998, 0.5, 0.6333333, 0.716667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("50_acdpx"), ExtResource("51_dd8ng"), ExtResource("52_oankh"), ExtResource("53_5u38m"), ExtResource("52_oankh"), ExtResource("53_5u38m"), ExtResource("51_dd8ng"), ExtResource("54_bw2ko")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1000000),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_g3ygc"]
+resource_name = "ASuicoExit"
+length = 0.36666906
+loop_mode = 1
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.26666668),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("64_cmdc3"), ExtResource("65_nf1tm"), ExtResource("66_npnst")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1000000),
+"update": 0,
+"values": [Vector2(-20, -80)]
+}
+
+[sub_resource type="Animation" id="Animation_mxauj"]
+resource_name = "ASuicoGuardCancel"
+length = 0.833335
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.18333334, 0.266667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("63_e0ql2"), ExtResource("64_5ho80"), ExtResource("65_k8d6u")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1000000),
+"update": 0,
+"values": [Vector2(80, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_acdpx"]
+resource_name = "ASuicoKnockdown"
+length = 0.333334
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.13333334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("59_ely77"), ExtResource("60_r0c8t"), ExtResource("59_ely77")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1000000),
+"update": 0,
+"values": [Vector2(20, 70)]
+}
+
+[sub_resource type="Animation" id="Animation_dd8ng"]
+resource_name = "ASuicoLandingRecovery"
+length = 0.483334
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("62_r0c8t")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1000000),
+"update": 0,
+"values": [Vector2(0, -70)]
+}
+
+[sub_resource type="Animation" id="Animation_oankh"]
+resource_name = "ASuicoStandHighHit"
+length = 0.383334
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.166667, 0.316667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("59_dqm3d"), ExtResource("60_2wxna"), ExtResource("61_ely77"), ExtResource("62_r0c8t")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1000000),
+"update": 0,
+"values": [Vector2(0, -70)]
+}
+
 [sub_resource type="Animation" id="10"]
 resource_name = "AirHit"
 length = 0.500001
@@ -118,6 +496,36 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1000000),
 "update": 0,
 "values": [Vector2(0, -30)]
+}
+
+[sub_resource type="Animation" id="Animation_lg00b"]
+resource_name = "AssistAirAttack"
+length = 0.30000225
+loop_mode = 1
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("43_5ihm0"), ExtResource("44_e0ql2"), ExtResource("43_5ihm0"), ExtResource("44_e0ql2"), ExtResource("43_5ihm0"), ExtResource("44_e0ql2")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1000000),
+"update": 0,
+"values": [Vector2(0, -60)]
 }
 
 [sub_resource type="Animation" id="9"]
@@ -149,9 +557,9 @@ tracks/1/keys = {
 "values": [Vector2(60, -30)]
 }
 
-[sub_resource type="Animation" id="18"]
-resource_name = "AssistSuper"
-length = 0.833335
+[sub_resource type="Animation" id="16"]
+resource_name = "AssistAttack2"
+length = 0.33333564
 step = 0.0166667
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -160,10 +568,39 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.13333334, 0.21666668),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.21666667),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [ExtResource("39_nbqnn"), ExtResource("41_1aje6"), ExtResource("16_5cawr"), ExtResource("17_lr1nc"), ExtResource("18_361ao")]
+"values": [ExtResource("39_nbqnn"), ExtResource("40_lg00b"), ExtResource("41_1aje6")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1000000),
+"update": 0,
+"values": [Vector2(0, -70)]
+}
+
+[sub_resource type="Animation" id="18"]
+resource_name = "AssistSuper"
+length = 0.30000225
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.21666668),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("41_1aje6"), ExtResource("16_5cawr"), ExtResource("17_lr1nc"), ExtResource("18_361ao")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -425,443 +862,6 @@ tracks/1/keys = {
 "values": [Vector2(0, -30)]
 }
 
-[sub_resource type="Animation" id="16"]
-resource_name = "AssistAttack2"
-length = 0.25000215
-step = 0.0166667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.083333336, 0.166667),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [ExtResource("39_nbqnn"), ExtResource("40_lg00b"), ExtResource("41_1aje6")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:offset")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1000000),
-"update": 0,
-"values": [Vector2(0, -70)]
-}
-
-[sub_resource type="Animation" id="Animation_lg00b"]
-resource_name = "AssistAirAttack"
-length = 0.30000225
-loop_mode = 1
-step = 0.0166667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("43_5ihm0"), ExtResource("44_e0ql2"), ExtResource("43_5ihm0"), ExtResource("44_e0ql2"), ExtResource("43_5ihm0"), ExtResource("44_e0ql2")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:offset")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1000000),
-"update": 0,
-"values": [Vector2(0, -60)]
-}
-
-[sub_resource type="Animation" id="Animation_mlqgx"]
-resource_name = "ASuicoAirHit"
-length = 0.500001
-step = 0.0166667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 0.166667),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [ExtResource("47_55tps"), ExtResource("48_5lxvs"), ExtResource("49_xdxsy")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:offset")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1000000),
-"update": 0,
-"values": [Vector2(0, -80)]
-}
-
-[sub_resource type="Animation" id="Animation_eromn"]
-resource_name = "ASuicoAssistAirAttack"
-length = 1.1333373
-step = 0.0166667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.366667, 0.433333, 0.5, 0.566667, 0.633333, 0.716667, 0.816667, 0.95),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("48_5ho80"), ExtResource("49_k8d6u"), ExtResource("50_ruji6"), ExtResource("49_k8d6u"), ExtResource("50_ruji6"), ExtResource("49_k8d6u"), ExtResource("50_ruji6"), ExtResource("49_k8d6u"), ExtResource("50_ruji6"), ExtResource("49_k8d6u")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:offset")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1000000),
-"update": 0,
-"values": [Vector2(-10, -220)]
-}
-
-[sub_resource type="Animation" id="Animation_n48xm"]
-resource_name = "ASuicoAssistAttack"
-length = 0.43333584
-step = 0.0166667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.116667, 0.25, 0.333333),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("50_3np04"), ExtResource("51_4v25t"), ExtResource("52_5ihm0"), ExtResource("53_e0ql2")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:offset")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1000000),
-"update": 0,
-"values": [Vector2(100, -90)]
-}
-
-[sub_resource type="Animation" id="Animation_55tps"]
-resource_name = "ASuicoAssistAttack2"
-length = 0.25000215
-step = 0.0166667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.06666667, 0.11666667, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("50_bw2ko"), ExtResource("51_2h3ug"), ExtResource("52_sdj12"), ExtResource("53_cffn1")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:offset")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1000000),
-"update": 0,
-"values": [Vector2(-10, -60)]
-}
-
-[sub_resource type="Animation" id="Animation_5lxvs"]
-resource_name = "ASuicoAssistSuper"
-length = 1.0000036
-step = 0.0166667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.183333, 0.283333, 0.35, 0.416667, 0.483333, 0.55, 0.616667, 0.683333, 0.75, 0.816667, 0.866667, 0.95),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("59_ordk3"), ExtResource("60_htms6"), ExtResource("61_3avnx"), ExtResource("62_ewewa"), ExtResource("63_fh1ge"), ExtResource("61_3avnx"), ExtResource("62_ewewa"), ExtResource("63_fh1ge"), ExtResource("61_3avnx"), ExtResource("62_ewewa"), ExtResource("63_fh1ge"), ExtResource("60_htms6"), ExtResource("59_ordk3")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:offset")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.23333333, 0.9166667),
-"transitions": PackedFloat32Array(1000000, 1000000, 1000000),
-"update": 0,
-"values": [Vector2(90, -30), Vector2(90, -60), Vector2(90, -30)]
-}
-
-[sub_resource type="Animation" id="Animation_xdxsy"]
-resource_name = "ASuicoBurst"
-length = 0.9333368
-step = 0.0166667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.11666666, 0.2, 0.3, 0.39999998, 0.5, 0.6333333, 0.716667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("50_acdpx"), ExtResource("51_dd8ng"), ExtResource("52_oankh"), ExtResource("53_5u38m"), ExtResource("52_oankh"), ExtResource("53_5u38m"), ExtResource("51_dd8ng"), ExtResource("54_bw2ko")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:offset")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1000000),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_g3ygc"]
-resource_name = "ASuicoExit"
-length = 0.36666906
-loop_mode = 1
-step = 0.0166667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.13333334, 0.26666668),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [ExtResource("64_cmdc3"), ExtResource("65_nf1tm"), ExtResource("66_npnst")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:offset")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1000000),
-"update": 0,
-"values": [Vector2(-20, -80)]
-}
-
-[sub_resource type="Animation" id="Animation_mxauj"]
-resource_name = "ASuicoGuardCancel"
-length = 0.833335
-step = 0.0166667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.18333334, 0.266667),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [ExtResource("63_e0ql2"), ExtResource("64_5ho80"), ExtResource("65_k8d6u")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:offset")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1000000),
-"update": 0,
-"values": [Vector2(80, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_acdpx"]
-resource_name = "ASuicoKnockdown"
-length = 0.333334
-step = 0.0166667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.13333334),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [ExtResource("59_ely77"), ExtResource("60_r0c8t"), ExtResource("59_ely77")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:offset")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1000000),
-"update": 0,
-"values": [Vector2(20, 70)]
-}
-
-[sub_resource type="Animation" id="Animation_dd8ng"]
-resource_name = "ASuicoLandingRecovery"
-length = 0.483334
-step = 0.0166667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("62_r0c8t")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:offset")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1000000),
-"update": 0,
-"values": [Vector2(0, -70)]
-}
-
-[sub_resource type="Animation" id="Animation_oankh"]
-resource_name = "ASuicoStandHighHit"
-length = 0.383334
-step = 0.0166667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 0.166667, 0.316667),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("59_dqm3d"), ExtResource("60_2wxna"), ExtResource("61_ely77"), ExtResource("62_r0c8t")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:offset")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1000000),
-"update": 0,
-"values": [Vector2(0, -70)]
-}
-
-[sub_resource type="Animation" id="Animation_f262r"]
-resource_name = "ASuicoAssistAirAttackFollowup"
-length = 0.18333536
-step = 0.0166667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.13333334),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [ExtResource("73_ruji6"), ExtResource("74_fen4a")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:offset")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1000000),
-"update": 0,
-"values": [Vector2(-10, -120)]
-}
-
-[sub_resource type="Animation" id="Animation_htms6"]
-resource_name = "ASuicoAssistAirSuper"
-length = 1.0000036
-step = 0.0166667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("50_5ho80")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:offset")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1000000),
-"update": 0,
-"values": [Vector2(20, -30)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4471x"]
 _data = {
 &"ASuicoAirHit": SubResource("Animation_mlqgx"),
@@ -904,10 +904,10 @@ material = ExtResource("2_jvixi")
 position = Vector2(11, -196)
 scale = Vector2(1.428, 1.428)
 texture = ExtResource("3_2beis")
-offset = Vector2(90, -30)
+offset = Vector2(50, -110)
 
 [node name="Shadow" parent="." instance=ExtResource("4_hpm6l")]
-scale = Vector2(2.1432192, 1.7763066)
+scale = Vector2(2.4232197, 1.7763066)
 
 [node name="Pushbox" type="SGCollisionShape2D" parent="."]
 shape = SubResource("1")

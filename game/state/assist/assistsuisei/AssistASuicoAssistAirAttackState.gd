@@ -23,10 +23,10 @@ func _init():
 			Enums.StKey.Hurt1ScaleX : 838229, Enums.StKey.Hurt1ScaleY : 1522967,
 			Enums.StKey.hit_box_colliding_frame : 254,
 			Enums.StKey.hitstun : 30,
-			Enums.StKey.attack_damage: 50,
-			Enums.StKey.attack_type : Enums.AttackType.GroundBouncer,
+			Enums.StKey.attack_damage: 40,
+			Enums.StKey.attack_type : Enums.AttackType.Launcher,
 			Enums.StKey.launch_dir_x : -SGFixed.ONE*5,
-			Enums.StKey.launch_dir_y : SGFixed.ONE*50,
+			Enums.StKey.launch_dir_y : -SGFixed.ONE*50,
 			Enums.StKey.hitstop: 10,
 			Enums.StKey.meter_build: 0,
 			Enums.StKey.min_damage: 5,
@@ -53,13 +53,13 @@ func _init():
 			Enums.StKey.Hurt1ScaleX : 838229, Enums.StKey.Hurt1ScaleY : 1522967,
 			Enums.StKey.hit_box_colliding_frame : 5,
 			Enums.StKey.hitstun : 80,
-			Enums.StKey.attack_damage: 450,
+			Enums.StKey.attack_damage: 40,
 			Enums.StKey.attack_type : Enums.AttackType.Launcher,
-			Enums.StKey.launch_dir_x : 0,
+			Enums.StKey.launch_dir_x : -SGFixed.ONE*8,
 			Enums.StKey.launch_dir_y : -SGFixed.ONE*30,
 			Enums.StKey.hitstop: 3,
 			Enums.StKey.meter_build: 0,
-			Enums.StKey.min_damage:8,
+			Enums.StKey.min_damage:3,
 			Enums.StKey.chip_damage:2,
 			Enums.StKey.counter_hit: Enums.AttackType.GroundBouncer,
 			Enums.StKey.counter_hitstun: 100,
@@ -84,7 +84,7 @@ func enter(state: Dictionary) -> void:
 	state[Enums.StKey.drag_x] = Util.FRICTION
 	state[Enums.StKey.accel_y] = 0
 	anim.stop(true)
-	anim.play("ASuicoAssistAttack")
+	anim.play("ASuicoAssistAirAttack")
 
 func physics_tick(state: Dictionary) -> void:
 	super.physics_tick(state)
@@ -92,7 +92,7 @@ func physics_tick(state: Dictionary) -> void:
 		state[Enums.StKey.drag_x] = Util.SLIPPERY_FRICTION
 		state[Enums.StKey.velocity_y] = -SGFixed.ONE*20
 	elif (state[Enums.StKey.frame] == 4):
-		state[Enums.StKey.velocity_x] = SGFixed.ONE*35
+		state[Enums.StKey.velocity_x] = SGFixed.ONE*45
 		state[Enums.StKey.drag_x] = Util.SLIPPERY_FRICTION
 		state[Enums.StKey.velocity_y] = -SGFixed.ONE*60
 		state[Enums.StKey.accel_y] = 155536

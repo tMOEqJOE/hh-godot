@@ -53,7 +53,7 @@ func enter(state: Dictionary) -> void:
 	state[Enums.StKey.hitStopFrame] = 0 # whiff cancel OK
 	state[Enums.StKey.velocity_y] = 0
 	anim.stop(true)
-	anim.play("Burst")
+	anim.play("ASuicoBurst")
 
 func physics_tick(state: Dictionary) -> void:
 	super.physics_tick(state)

@@ -1,4 +1,4 @@
-extends AssistASuicoBaseAirAttackState
+extends AssistASuicoBaseAttackState
 
 class_name AssistASuicoAssistAirAttackState
 
@@ -64,4 +64,4 @@ func enter(state: Dictionary) -> void:
 	state[Enums.StKey.drag_x] = Util.FRICTION
 	state[Enums.StKey.accel_y] = 0
 	anim.stop(true)
-	anim.play("ASuicoAssistAttackFollowup")
+	anim.play("ASuicoAssistAirAttackFollowup")

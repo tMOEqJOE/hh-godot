@@ -1,34 +1,25 @@
 extends AssistASuicoBaseAirAttackState
 
 class_name AssistASuicoAssistAirGuardCancelAttackState
+
 func _init():
 	endFrame = 30
 	
 	anim_data = {
 		0 : {
-			Enums.StKey.counterOK : true,
 			Enums.StKey.Hit1Disable : true,
 			Enums.StKey.Hit2Disable : true,
-			Enums.StKey.Hurt1Disable : false,Enums.StKey.Hurt2Disable : false,Enums.StKey.Hurt3Disable : true,
-			Enums.StKey.Hurt1PosX : 0, Enums.StKey.Hurt1PosY : -9109504,
-			Enums.StKey.Hurt1ScaleX : 1249216, Enums.StKey.Hurt1ScaleY : 870269,
-			Enums.StKey.Hurt2PosX : -1572863, Enums.StKey.Hurt2PosY : -18677760,
-			Enums.StKey.Hurt2ScaleX : 577283, Enums.StKey.Hurt2ScaleY : 391120,
-			Enums.StKey.Hurt3PosX : 19595264, Enums.StKey.Hurt3PosY : -12845056,
-			Enums.StKey.Hurt3ScaleX : 776686, Enums.StKey.Hurt3ScaleY : 377347,
+			Enums.StKey.Hurt1Disable : true,Enums.StKey.Hurt2Disable : true,
 			},
 		11 : {
-			Enums.StKey.counterOK : true,
 			Enums.StKey.Hit1Disable : false,
 			Enums.StKey.Hit1PosX : 13893633, Enums.StKey.Hit1PosY : -13107199,
 			Enums.StKey.Hit1ScaleX : 1770297, Enums.StKey.Hit1ScaleY : 269438,
-			Enums.StKey.Hurt1Disable : false,Enums.StKey.Hurt2Disable : true,Enums.StKey.Hurt3Disable : false,
+			Enums.StKey.Hurt1Disable : true,Enums.StKey.Hurt2Disable : true,
 			Enums.StKey.Hurt1PosX : 0, Enums.StKey.Hurt1PosY : -9109504,
 			Enums.StKey.Hurt1ScaleX : 1249216, Enums.StKey.Hurt1ScaleY : 870269,
 			Enums.StKey.Hurt2PosX : -1572863, Enums.StKey.Hurt2PosY : -18677760,
 			Enums.StKey.Hurt2ScaleX : 577283, Enums.StKey.Hurt2ScaleY : 391120,
-			Enums.StKey.Hurt3PosX : 19595264, Enums.StKey.Hurt3PosY : -12845056,
-			Enums.StKey.Hurt3ScaleX : 776686, Enums.StKey.Hurt3ScaleY : 377347,
 			Enums.StKey.hit_box_colliding_frame : 254,
 			Enums.StKey.guard: Enums.GuardType.Mid,
 			Enums.StKey.attack_type : Enums.AttackType.WallBouncer,
@@ -38,20 +29,17 @@ func _init():
 			Enums.StKey.attack_damage: 0,
 			Enums.StKey.min_damage:0,
 			Enums.StKey.counter_hit: Enums.AttackType.GroundBouncer,
-			Enums.StKey.counter_hitstun: 30,
 			Enums.StKey.counter_launch_dir_x: -SGFixed.ONE*20,
 			Enums.StKey.counter_launch_dir_y: SGFixed.ONE*50,
 			},
 		16 : { 
 			Enums.StKey.Hit1Disable : true,
 			Enums.StKey.Hit2Disable : true,
-			Enums.StKey.Hurt1Disable : false,Enums.StKey.Hurt2Disable : false,Enums.StKey.Hurt3Disable : false,
+			Enums.StKey.Hurt1Disable : false,Enums.StKey.Hurt2Disable : false,
 			Enums.StKey.Hurt1PosX : 0, Enums.StKey.Hurt1PosY : -9109504,
 			Enums.StKey.Hurt1ScaleX : 1249216, Enums.StKey.Hurt1ScaleY : 870269,
 			Enums.StKey.Hurt2PosX : -1572863, Enums.StKey.Hurt2PosY : -18677760,
 			Enums.StKey.Hurt2ScaleX : 577283, Enums.StKey.Hurt2ScaleY : 391120,
-			Enums.StKey.Hurt3PosX : 19595264, Enums.StKey.Hurt3PosY : -12845056,
-			Enums.StKey.Hurt3ScaleX : 776686, Enums.StKey.Hurt3ScaleY : 377347,
 			},
 	}
 # Writing _delta instead of delta here prevents the unused variable warning.

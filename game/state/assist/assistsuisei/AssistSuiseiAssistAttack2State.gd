@@ -3,7 +3,7 @@ extends AssistASuicoBaseAttackState
 class_name AssistSuiseiAssistAttack2State
 
 func _init():
-	endFrame = 30
+	endFrame = 20
 	
 	anim_data = {
 		0 : {
@@ -21,7 +21,7 @@ func _init():
 			Enums.StKey.Hurt1Disable : false,Enums.StKey.Hurt2Disable : false,
 			Enums.StKey.hit_box_colliding_frame : 254,
 			Enums.StKey.guard: Enums.GuardType.Mid,
-			Enums.StKey.attack_damage: 50,
+			Enums.StKey.attack_damage: 10,
 			Enums.StKey.hitstun: 40,
 			Enums.StKey.attack_type : Enums.AttackType.Launcher,
 			Enums.StKey.launch_dir_x: 0,
