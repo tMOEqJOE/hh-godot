@@ -640,7 +640,7 @@ func resolve_collision_interactions(fight_entities, allFirstFrameCollide):
 					var hurt_left_face = left_face_calculation(teamLeadHitNode.fixed_position.x, hurtNode.fixed_position.x, teamLeadHitNode.currentState[Enums.StKey.leftface], hurtNode.currentState[Enums.StKey.leftface])
 					var hitData = hurtNode.on_attack_hurt(react_type, hitNode.attackData, hurt_left_face, hitNode.currentState[Enums.StKey.leftface])
 					hitNode.on_attack_hit(fight_entity.attackData[Enums.StKey.attack_type], hitData)
-					if (react_type == Enums.ReactTypeCategory.Throw):
+					if (react_type == Enums.Reaction.ThrowHurt or react_type == Enums.Reaction.AirThrowHurt):
 						hurtNode.update_opponent_anchor(hitNode)
 
 		#if (allFirstFrameCollide.has(name) and not allFirstFrameCollide[name].is_empty()):
