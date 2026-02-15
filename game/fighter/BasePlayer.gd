@@ -8,6 +8,8 @@ var Hurtbox1
 var Hurtbox2
 var Hurtbox3
 
+@onready var _shader_mat = get_node("Sprite2D").material
+
 signal strike_hurt (damage, hitCount, invalid, block, guard)
 
 signal combo_exit () # invalid combo
@@ -879,6 +881,12 @@ func remove_cancel_option() -> void:
 func skip_intro() -> void:
 	fighterState.change_state("Stand")
 	fighterState.state_transition()
+
+func start_glowing():
+	_shader_mat.set_shader_parameter("mode", 1)
+
+func stop_glowing():
+	_shader_mat.set_shader_parameter("mode", 0)
 
 func freeze_player_sim() -> void:
 	$NetworkAnimationPlayer.speed_scale = 0

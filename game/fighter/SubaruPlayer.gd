@@ -4,19 +4,11 @@ class_name SubaruPlayer
 
 # Fields
 
-@onready var _shader_mat = get_node("Sprite2D").material
-
 const SubaruStarBall = preload("res://game/fighter/projectiles/SubaruStarball.tscn")
 const SubaruBatterSetBall = preload("res://game/fighter/projectiles/SubaruBatterSetBall.tscn")
 
 func tick() -> void:
 	super.tick()
-
-func start_glowing():
-	_shader_mat.set_shader_parameter("mode", 1)
-
-func stop_glowing():
-	_shader_mat.set_shader_parameter("mode", 0)
 
 func summonHelper(entity: String) -> void:
 	super.summonHelper(entity)

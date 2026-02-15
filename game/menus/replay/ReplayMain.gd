@@ -273,6 +273,7 @@ func exit():
 func reset():
 	sync_clear()
 	#reload_scene()
+	fighter_game.stop_glowing_characters()
 	get_tree().reload_current_scene()
 
 func control_the_dummy(is_p1):

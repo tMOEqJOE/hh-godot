@@ -493,7 +493,7 @@ const SuiseiMoveList: = [
 	["Specials"],
 	["Supers"],
 	["Note:", "", "", "Suicopath cannot build super meter"],
-	["63214A", "", "Level 1", "Invul advancing launcher"],
+	["63214A", "Kyou mo Hasami", "Level 1", "Invul advancing launcher"],
 	["632146B", "Next Color Chainsaw", "Level 2", "lockdown projectile"],
 ]
 
@@ -582,5 +582,31 @@ const AssistOllieMoveList: = [
 	["5D", "Head Dango", "", ""],
 	["2D", "Idol's hair pin", "", ""],
 	["236[D]", "Bzzt Boom Replica", "Level 1 and 2 assist stocks", ""],
+	["6D Guard Cancel", "", "Level 1 and 2 assist stocks", ""],
+]
+
+const AssistKanataMoveList: = [
+	["Assist: Amane Kanata"],
+	["Attacks"],
+	["5D", "Fifty KG Grip Strength", "", ""],
+	["2D", "", "", ""],
+	["236[D]", "Super Ginger Crusher", "Level 1 and 2 assist stocks", ""],
+	["6D Guard Cancel", "", "Level 1 and 2 assist stocks", ""],
+]
+
+const AssistSuiseiMoveList: = [
+	["Assist: Hoshimachi Suisei"],
+	["Attacks"],
+	["5D", "Caramel Thrust", "", ""],
+	["jD", "", "", ""],
+	["2D", "Bibbidi", "", "Change to Suicopath Mode"],
+	["236[D]", "", "Level 1 and 2 assist stocks", "Change to Suicopath Mode"],
+	["6D Guard Cancel", "", "Level 1 and 2 assist stocks", ""],
+	["Suicopath Mode"],
+	["5D", "", "", ""],
+	["jD", "Four Lines Crash", "", ""],
+	["2D", "Bobbidi", "", "Change to Suisei Mode"],
+	["236[D]", "Kyou mo Hasami", "Level 1 and 2 assist stocks", ""],
+	["j236[D]", "Stellar Stellar", "Level 1 and 2 assist stocks", ""],
 	["6D Guard Cancel", "", "Level 1 and 2 assist stocks", ""],
 ]
