@@ -25,3 +25,5 @@ func _on_NetworkTimer_timeout():
 func skip():
 	enabled = false
 	$NetworkTimer.wait_ticks = 1
+	$NetworkAnimationPlayer.stop()
+	_on_NetworkTimer_timeout()

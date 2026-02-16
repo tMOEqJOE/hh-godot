@@ -168,8 +168,8 @@ func reset_to_game_start():
 	ClientPlayer.round_counter = $Camera3D/BattleUI/ClientRoundCounter
 	ClientPlayer.opponent_round_counter = $Camera3D/BattleUI/ServerRoundCounter
 	
-	ServerPlayer.opponent_anchor = ClientPlayer
-	ClientPlayer.opponent_anchor = ServerPlayer
+	ServerPlayer.update_opponent_anchor(ClientPlayer)
+	ClientPlayer.update_opponent_anchor(ServerPlayer)
 
 	$Camera3D/BattleUI/ServerPortrait.load_portrait(Global.PLAYER_1_CHARACTER[0], Global.PLAYER_1_COLOR_INSTANCE[0], Global.PLAYER_1_CHARACTER[1], Global.PLAYER_1_COLOR_INSTANCE[1])
 	$Camera3D/BattleUI/ClientPortrait.load_portrait(Global.PLAYER_2_CHARACTER[0], Global.PLAYER_2_COLOR_INSTANCE[0], Global.PLAYER_2_CHARACTER[1], Global.PLAYER_2_COLOR_INSTANCE[1])
@@ -379,6 +379,7 @@ func signal_connect():
 	$Camera3D/BattleUI/WinScreenManager.connect("rematch_ok", Callable(self, "rematch_ok_run"))
 
 	$Camera3D/BattleUI/WinScreenManager.connect("freeze_game", Callable(self, "permaFreeze"))
+	$Camera3D/BattleUI/WinScreenManager.connect("freeze_game", Callable(self, "stop_glowing_characters"))
 	$Camera3D/BattleUI/WinScreenManager.connect("freeze_game", Callable(MainMenuMusicControl, "play_win_song"))
 	
 	ServerPlayer.connect("super_freeze", Callable(self, "super_flash"))
@@ -392,10 +393,6 @@ func ko_signal_connect():
 	if (ko_enabled):
 		$Camera3D/BattleUI/ServerHPBar.connect("ko", Callable(ServerPlayer, "ko"))
 		$Camera3D/BattleUI/ClientHPBar.connect("ko", Callable(ClientPlayer, "ko"))
-		#$Camera3D/BattleUI/ServerHPBar.connect("ko", Callable($Camera3D/BattleUI/ServerHPBar, "disable_hp"))
-		#$Camera3D/BattleUI/ClientHPBar.connect("ko", Callable($Camera3D/BattleUI/ServerHPBar, "disable_hp"))
-		#$Camera3D/BattleUI/ServerHPBar.connect("ko", Callable($Camera3D/BattleUI/ClientHPBar, "disable_hp"))
-		#$Camera3D/BattleUI/ClientHPBar.connect("ko", Callable($Camera3D/BattleUI/ClientHPBar, "disable_hp"))
 		$Camera3D/BattleUI/ServerHPBar.connect("ko", Callable(self, "koStart"))
 		$Camera3D/BattleUI/ClientHPBar.connect("ko", Callable(self, "koStart"))
 
@@ -487,6 +484,10 @@ func round_freeze() -> void:
 	if (Hato2 != null):
 		Hato2.remove_cancel_option()
 	freeze_game_sim()
+
+func stop_glowing_characters():
+	ServerPlayer.stop_glowing()
+	ClientPlayer.stop_glowing()
 
 func permaFreeze() -> void:
 	frozen = true
@@ -640,6 +641,8 @@ func resolve_collision_interactions(fight_entities, allFirstFrameCollide):
 					var hurt_left_face = left_face_calculation(teamLeadHitNode.fixed_position.x, hurtNode.fixed_position.x, teamLeadHitNode.currentState[Enums.StKey.leftface], hurtNode.currentState[Enums.StKey.leftface])
 					var hitData = hurtNode.on_attack_hurt(react_type, hitNode.attackData, hurt_left_face, hitNode.currentState[Enums.StKey.leftface])
 					hitNode.on_attack_hit(fight_entity.attackData[Enums.StKey.attack_type], hitData)
+					if (react_type == Enums.Reaction.ThrowHurt or react_type == Enums.Reaction.AirThrowHurt):
+						hurtNode.update_opponent_anchor(hitNode)
 
 		#if (allFirstFrameCollide.has(name) and not allFirstFrameCollide[name].is_empty()):
 			#print(name, str(allFirstFrameCollide[name]))

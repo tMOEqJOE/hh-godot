@@ -133,6 +133,7 @@ func exit():
 func reset():
 	sync_clear()
 	$CanvasLayer/TrainingOptionsMenu.hide()
+	fighter_game.stop_glowing_characters()
 	reload_scene()
 	#get_tree().reload_current_scene()
 

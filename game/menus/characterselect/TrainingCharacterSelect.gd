@@ -63,6 +63,7 @@ func physics_tick():
 			elif ($P2Cursor.enabled and $P2Cursor.selected):
 				p2_assist_select.queue_free()
 				remove_child(p2_assist_select)
+				$A2Portrait.clear_portrait()
 				p2_assist_select = null
 				p1_active_cursor = $P2Cursor
 				$P2Cursor.deselect()
@@ -74,6 +75,7 @@ func physics_tick():
 			else:
 				p1_assist_select.queue_free()
 				remove_child(p1_assist_select)
+				$A1Portrait.clear_portrait()
 				p1_assist_select = null
 				p1_active_cursor = $P1Cursor
 				$P1Cursor.deselect()
@@ -88,6 +90,7 @@ func physics_tick():
 			elif ($P1Cursor.enabled and $P1Cursor.selected):
 				p1_assist_select.queue_free()
 				remove_child(p1_assist_select)
+				$A1Portrait.clear_portrait()
 				p1_assist_select = null
 				p2_active_cursor = $P1Cursor
 				$P1Cursor.deselect()
@@ -99,6 +102,7 @@ func physics_tick():
 			else:
 				p2_assist_select.queue_free()
 				remove_child(p2_assist_select)
+				$A2Portrait.clear_portrait()
 				p2_assist_select = null
 				p2_active_cursor = $P2Cursor
 				$P2Cursor.deselect()

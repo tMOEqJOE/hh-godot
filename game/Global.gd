@@ -1,6 +1,6 @@
 extends Node
 
-const BATTLE_ENGINE_VERSION = "HHv0.7.0012"
+const BATTLE_ENGINE_VERSION = "HHv0.8.0001"
 
 func get_battle_version() -> String:
 	if (len(Build.INTERNAL_BATTLE_ENGINE_KEY) < 50):
@@ -148,6 +148,7 @@ const BGM_LIST = [
 	'Heroine Audition',
 	'WIM',
 	'This MU is (2-8) At Best',
+	'THIS MU SUCKS by AZININE',
 ]
 const BGM_UID_LIST = [
 	'uid://63an0yld6m2s', # Unused: Auto
@@ -170,6 +171,7 @@ const BGM_UID_LIST = [
 	'uid://bta8h85cknuxa', #'Heroine Audition',
 	'uid://dpprd47eukupb', #'WIM',
 	'uid://63an0yld6m2s', #'This MU is (2-8) At Best',
+	'uid://bv6mk21u5x8ns' #'THIS MU SUCKS',
 ]
 
 var p1_device_id: int = 0

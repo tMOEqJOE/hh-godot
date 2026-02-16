@@ -4,8 +4,8 @@
 [ext_resource type="Script" uid="uid://dv11pt6y7wasy" path="res://addons/godot-rollback-netcode/NetworkAnimationPlayer.gd" id="2"]
 [ext_resource type="Script" uid="uid://b3vinramtp4ia" path="res://game/fighter/projectiles/ProjectilePlayer.gd" id="3"]
 [ext_resource type="PackedScene" uid="uid://cwoqesvdf08m3" path="res://game/fighter/Hurtbox.tscn" id="4"]
+[ext_resource type="Texture2D" uid="uid://dg02or5066hdu" path="res://game/assets/sprites/mio/Card/Timeline 1_0000.png" id="4_twq30"]
 [ext_resource type="Texture2D" uid="uid://tq7jpwpmpnav" path="res://game/assets/sprites/Empty_0000.png" id="5"]
-[ext_resource type="Texture2D" uid="uid://b8a4nr02pla40" path="res://game/assets/sprites/mio/ForwardAirDash/Timeline 1_0000.png" id="7"]
 [ext_resource type="Material" uid="uid://bt3lvyqtd78u0" path="res://game/assets/shaders/ColorSwapMat.tres" id="40"]
 [ext_resource type="PackedScene" uid="uid://bvgu0aev8rq4g" path="res://game/fighter/Hitbox.tscn" id="44"]
 
@@ -27,7 +27,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.0166667),
 "transitions": PackedFloat32Array(1000000, 1000000),
 "update": 1,
-"values": [ExtResource("5"), ExtResource("7")]
+"values": [ExtResource("5"), ExtResource("4_twq30")]
 }
 
 [sub_resource type="Animation" id="3"]
@@ -59,8 +59,9 @@ script = ExtResource("3")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = ExtResource("40")
 position = Vector2(280, 14)
-scale = Vector2(1.51119, 0.608707)
-texture = ExtResource("7")
+rotation = 0.022916876
+scale = Vector2(3.6194139, 1.1408476)
+texture = ExtResource("4_twq30")
 
 [node name="Pushbox" type="SGCollisionShape2D" parent="."]
 shape = SubResource("1")

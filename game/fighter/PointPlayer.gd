@@ -8,8 +8,6 @@ signal summon(x, y, left_face, grounded)
 signal summonPuppet(x, y, left_face)
 signal unsummonPuppet()
 
-var opponent_anchor: BasePlayer
-
 var yCameraOffset = 0
 var hp_bar: Node2D
 
@@ -24,14 +22,14 @@ func _init():
 	currentState[Enums.StKey.burst_OK] = true
 	currentState[Enums.StKey.kara_OK] = true
 	currentState[Enums.StKey.burst_cost] = 1
-	currentState[Enums.StKey.capture_anchor] = -1
+	currentState[Enums.StKey.capture_anchor] = ""
 	currentState[Enums.StKey.throw_protect] = 0
 
 func reset_to_game_start():
 	super.reset_to_game_start()
 	currentState[Enums.StKey.burst_OK] = true
 	currentState[Enums.StKey.burst_cost] = 1
-	currentState[Enums.StKey.capture_anchor] = -1
+	currentState[Enums.StKey.capture_anchor] = ""
 	currentState[Enums.StKey.throw_protect] = 0
 	currentState[Enums.StKey.kara_OK] = true
 
@@ -39,7 +37,7 @@ func _save_state() -> Dictionary:
 	var state = super._save_state()
 	state[Enums.StKey.burst_OK] = currentState.get(Enums.StKey.burst_OK, true)
 	state[Enums.StKey.burst_cost] = currentState.get(Enums.StKey.burst_cost, 1)
-	state[Enums.StKey.capture_anchor] = currentState.get(Enums.StKey.capture_anchor, -1)
+	state[Enums.StKey.capture_anchor] = currentState.get(Enums.StKey.capture_anchor, "")
 	state[Enums.StKey.throw_protect] = currentState.get(Enums.StKey.throw_protect, 0)
 	state[Enums.StKey.kara_OK] = currentState.get(Enums.StKey.kara_OK, true)
 	return state
@@ -47,10 +45,15 @@ func _save_state() -> Dictionary:
 func _load_state(state: Dictionary) -> void:
 	currentState[Enums.StKey.burst_OK] = state.get(Enums.StKey.burst_OK, true)
 	currentState[Enums.StKey.burst_cost] = state.get(Enums.StKey.burst_cost, 1)
-	currentState[Enums.StKey.capture_anchor] = state.get(Enums.StKey.capture_anchor, -1)
+	currentState[Enums.StKey.capture_anchor] = state.get(Enums.StKey.capture_anchor, "")
 	currentState[Enums.StKey.throw_protect] = state.get(Enums.StKey.throw_protect, 0)
 	currentState[Enums.StKey.kara_OK] = state.get(Enums.StKey.kara_OK, true)
 	super._load_state(state)
+
+func update_opponent_anchor(opponent: BasePlayer) -> void:
+	var path : String = opponent.get_path()
+	currentState[Enums.StKey.capture_anchor] = path
+
 
 func anim_updates() -> void:
 	super.anim_updates()
@@ -71,20 +74,30 @@ func tick() -> void:
 func anchor_move() -> void:
 	if (fighterState.has_property(Enums.StateProperty.Capture)):
 		var x_offset = 5026464
+		var opponent_anchor:BasePlayer = get_node(currentState[Enums.StKey.capture_anchor])
 		if (opponent_anchor.currentState[Enums.StKey.leftface]):
 			x_offset *= -1
 		self.fixed_position.x = opponent_anchor.fixed_position.x + x_offset
 		self.fixed_position.y = opponent_anchor.fixed_position.y
 		sync_to_physics_engine()
 
-func summonVFX(VFXname: String, VFX) -> void: 
+func summonVFX(VFXname: String, VFX, use_color_palette:bool = false) -> void: 
 	var g_position = get_global_fixed_position()
-	SyncManager.spawn(VFXname, get_parent(), VFX,
-	{
-		position_x = g_position.x,
-		position_y = g_position.y,
-		leftface = currentState[Enums.StKey.leftface],
-	})
+	if (use_color_palette):
+		SyncManager.spawn(VFXname, get_parent(), VFX,
+		{
+			position_x = g_position.x,
+			position_y = g_position.y,
+			leftface = currentState[Enums.StKey.leftface],
+			color_palette = self.color_scheme,
+		})
+	else:
+		SyncManager.spawn(VFXname, get_parent(), VFX,
+		{
+			position_x = g_position.x,
+			position_y = g_position.y,
+			leftface = currentState[Enums.StKey.leftface],
+		})
 
 func summonHelper(entity: String) -> void:
 	if (not entity.is_empty()):

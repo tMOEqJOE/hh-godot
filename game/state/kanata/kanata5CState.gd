@@ -14,9 +14,9 @@ func _init():
 			Enums.StKey.Hurt1PosX : -1114112, Enums.StKey.Hurt1PosY : -10485760,
 			Enums.StKey.Hurt1ScaleX : 871288, Enums.StKey.Hurt1ScaleY : 1034829,
 			Enums.StKey.Hurt2PosX : 8126464, Enums.StKey.Hurt2PosY : -18677760,
-			Enums.StKey.Hurt2ScaleX : 1024561, Enums.StKey.Hurt2ScaleY : -708704,
+			Enums.StKey.Hurt2ScaleX : 1024561, Enums.StKey.Hurt2ScaleY : 708704,
 			Enums.StKey.Hurt3PosX : -9830400, Enums.StKey.Hurt3PosY : -25100288,
-			Enums.StKey.Hurt3ScaleX : 1150714, Enums.StKey.Hurt3ScaleY : -810479,
+			Enums.StKey.Hurt3ScaleX : 1150714, Enums.StKey.Hurt3ScaleY : 810479,
 			},
 		12 : {
 			Enums.StKey.counterOK : true,
@@ -27,9 +27,9 @@ func _init():
 			Enums.StKey.Hurt1PosX : 5046272, Enums.StKey.Hurt1PosY : -18939904,
 			Enums.StKey.Hurt1ScaleX : 871288, Enums.StKey.Hurt1ScaleY : 1034829,
 			Enums.StKey.Hurt2PosX : -262144, Enums.StKey.Hurt2PosY : -30605312,
-			Enums.StKey.Hurt2ScaleX : 834792, Enums.StKey.Hurt2ScaleY : -665103,
+			Enums.StKey.Hurt2ScaleX : 834792, Enums.StKey.Hurt2ScaleY : 665103,
 			Enums.StKey.Hurt3PosX : 18022400, Enums.StKey.Hurt3PosY : -7143424,
-			Enums.StKey.Hurt3ScaleX : 1150714, Enums.StKey.Hurt3ScaleY : -810479,
+			Enums.StKey.Hurt3ScaleX : 1150714, Enums.StKey.Hurt3ScaleY : 810479,
 			Enums.StKey.hit_box_colliding_frame : 254,
 			Enums.StKey.hitstop : 10,
 			Enums.StKey.attack_damage: 70,
@@ -52,9 +52,9 @@ func _init():
 			Enums.StKey.Hurt1PosX : 5046272, Enums.StKey.Hurt1PosY : -18939904,
 			Enums.StKey.Hurt1ScaleX : 871288, Enums.StKey.Hurt1ScaleY : 1034829,
 			Enums.StKey.Hurt2PosX : -262144, Enums.StKey.Hurt2PosY : -30605312,
-			Enums.StKey.Hurt2ScaleX : 834792, Enums.StKey.Hurt2ScaleY : -665103,
+			Enums.StKey.Hurt2ScaleX : 834792, Enums.StKey.Hurt2ScaleY : 665103,
 			Enums.StKey.Hurt3PosX : 18022400, Enums.StKey.Hurt3PosY : -7143424,
-			Enums.StKey.Hurt3ScaleX : 1150714, Enums.StKey.Hurt3ScaleY : -810479,
+			Enums.StKey.Hurt3ScaleX : 1150714, Enums.StKey.Hurt3ScaleY : 810479,
 			},
 		32 : {
 			Enums.StKey.Hit1Disable : true,
@@ -76,10 +76,6 @@ func enter(state: Dictionary) -> void:
 
 func gatling_cancel(state: Dictionary, interpreter: InputInterpreter):
 	if (state[Enums.StKey.hitStopFrame] >= 0):
-#		if (interpreter.is_dashing(true, state[Enums.StKey.leftface])):
-#			state[Enums.StKey.cancelState] = "Run"
-#		elif (interpreter.is_dashing(false, state[Enums.StKey.leftface])):
-#			state[Enums.StKey.cancelState] = "BackDash"
 		if (interpreter.is_holding_a_direction(Enums.Numpad.N6, state[Enums.StKey.leftface]) and 
 				interpreter.is_button_down(Enums.InputFlags.CDown)):
 			state[Enums.StKey.cancelState] = "Stand6C"

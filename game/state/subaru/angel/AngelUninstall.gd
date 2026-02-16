@@ -9,6 +9,7 @@ func _init():
 	
 	anim_data = {
 		0 : {
+			Enums.StKey.Summon: "AngelUninstall",
 			Enums.StKey.counterOK : true,
 			Enums.StKey.Hit1Disable : true,
 			Enums.StKey.Hit2Disable : true,

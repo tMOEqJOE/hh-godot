@@ -44,6 +44,11 @@ var p2_ready:bool = false
 var p1_active_cursor
 var p2_active_cursor
 
+var p1_color_number: int = 1
+var p2_color_number: int = 1
+var a1_color_number: int = 1
+var a2_color_number: int = 1
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Global.load_queue.start()
@@ -75,28 +80,23 @@ func try_react_to_new_controller(event):
 func update_p1_portrait(row:int,col:int):
 	$P1Portrait.change_portrait_anim()
 	resolve_portrait(row, col, true)
-#	$P1Portrait.material.set_shader_param("palette", load(Global.PLAYER_1_COLOR[0]))
 
 func update_p2_portrait(row:int,col:int):
 	$P2Portrait.change_portrait_anim()
 	resolve_portrait(row, col, false)
-#	$P2Portrait.material.set_shader_param("palette", load(Global.PLAYER_2_COLOR[0]))
 
 func update_a1_portrait(row:int,col:int):
 	$A1Portrait.change_portrait_anim()
 	resolve_assist_portrait(row, col, true)
-#	$P1Portrait.material.set_shader_param("palette", load(Global.PLAYER_1_COLOR[0]))
 
 func update_a2_portrait(row:int,col:int):
 	$A2Portrait.change_portrait_anim()
 	resolve_assist_portrait(row, col, false)
-#	$P2Portrait.material.set_shader_param("palette", load(Global.PLAYER_2_COLOR[0]))
 
 func update_p1():
-#	Global.PLAYER_1_COLOR[0] = "res://game/assets/sprites/subaru/ColorPalettes/1.png"
-#	$P1Portrait.material.set_shader_param("palette", load(Global.PLAYER_1_COLOR[0]))
 	p1_assist_select = AssistSelect.instantiate() 
 	add_child(p1_assist_select)
+	p1_color_number = select_color($P1Cursor.input_prefix)
 	p1_active_cursor = p1_assist_select
 	p1_assist_select.position.x = 966
 	p1_assist_select.position.y = 300
@@ -107,18 +107,21 @@ func update_p1():
 	p1_assist_select.get_node("CharacterCursor").connect("select_chara", Callable($AkiMC, "p1_call"))
 	update_a1_portrait(p1_assist_select.cursor_row(), p1_assist_select.cursor_col())
 	var charaData = resolve_characters($P1Cursor.row, $P1Cursor.col)
+	
+	$P1Portrait.change_color_number(p1_color_number)
 	unload_character(charaData[0],true,false)
 	Global.PLAYER_1_NODE_PATH[0] = charaData[0]
 	Global.PLAYER_1_CHARACTER[0] = charaData[1]
 	Global.load_queue.queue_resource(Global.PLAYER_1_NODE_PATH[0])
 	if (Global.PLAYER_1_CHARACTER[0] == Enums.PointCharacters.Mio):
 		Global.load_queue.queue_resource(Global.PLAYER_1_NODE_PATH[2])
-
+	
 func update_p2():
 #	Global.PLAYER_2_COLOR[0] = "res://game/assets/sprites/subaru/ColorPalettes/2.png"
 #	$P2Portrait.material.set_shader_param("palette", load(Global.PLAYER_2_COLOR[0]))
 	p2_assist_select = AssistSelect.instantiate() 
 	add_child(p2_assist_select)
+	p2_color_number = select_color($P2Cursor.input_prefix)
 	p2_active_cursor = p2_assist_select
 	p2_assist_select.position.x = 966
 	p2_assist_select.position.y = 300
@@ -129,6 +132,7 @@ func update_p2():
 	p2_assist_select.get_node("CharacterCursor").connect("select_chara", Callable($AkiMC, "p2_call"))
 	update_a2_portrait(p2_assist_select.cursor_row(), p2_assist_select.cursor_col())
 	var charaData = resolve_characters($P2Cursor.row, $P2Cursor.col)
+	$P2Portrait.change_color_number(p2_color_number)
 	unload_character(charaData[0],false,false)
 	Global.PLAYER_2_NODE_PATH[0] = charaData[0]
 	Global.PLAYER_2_CHARACTER[0] = charaData[1]
@@ -136,12 +140,12 @@ func update_p2():
 	if (Global.PLAYER_2_CHARACTER[0] == Enums.PointCharacters.Mio):
 		Global.load_queue.queue_resource(Global.PLAYER_2_NODE_PATH[2])
 
-@rpc("any_peer", "call_local", "reliable")
+#@rpc("any_peer", "call_local", "reliable")
 func update_a1():
-#	Global.PLAYER_1_COLOR[0] = "res://game/assets/sprites/subaru/ColorPalettes/1.png"
-#	$P1Portrait.material.set_shader_param("palette", load(Global.PLAYER_1_COLOR[0]))
 	var charaData = resolve_assists(p1_assist_select.cursor_row(), p1_assist_select.cursor_col(), true)
 	unload_character(charaData[0], true,true)
+	a1_color_number = select_color(p1_assist_select.get_node("CharacterCursor").input_prefix)
+	$A1Portrait.change_color_number(a1_color_number)
 	p1_active_cursor = null
 	Global.PLAYER_1_NODE_PATH[1] = charaData[0]
 	Global.PLAYER_1_CHARACTER[1] = charaData[1]
@@ -150,10 +154,10 @@ func update_a1():
 	ready_up_peer()
 
 func update_a2():
-#	Global.PLAYER_2_COLOR[0] = "res://game/assets/sprites/subaru/ColorPalettes/2.png"
-#	$P2Portrait.material.set_shader_param("palette", load(Global.PLAYER_2_COLOR[0]))
 	var charaData = resolve_assists(p2_assist_select.cursor_row(), p2_assist_select.cursor_col(), false)
 	unload_character(charaData[0],false,true)
+	a2_color_number = select_color(p2_assist_select.get_node("CharacterCursor").input_prefix)
+	$A2Portrait.change_color_number(a2_color_number)
 	p2_active_cursor = null
 	Global.PLAYER_2_NODE_PATH[1] = charaData[0]
 	Global.PLAYER_2_CHARACTER[1] = charaData[1]
@@ -198,6 +202,7 @@ func physics_tick():
 			else:
 				p1_assist_select.queue_free()
 				remove_child(p1_assist_select)
+				$A1Portrait.clear_portrait()
 				p1_assist_select = null
 				p1_active_cursor = $P1Cursor
 				$P1Cursor.deselect()
@@ -212,6 +217,7 @@ func physics_tick():
 			else:
 				p2_assist_select.queue_free()
 				remove_child(p2_assist_select)
+				$A2Portrait.clear_portrait()
 				p2_assist_select = null
 				p2_active_cursor = $P2Cursor
 				$P2Cursor.deselect()
@@ -267,6 +273,10 @@ func resolve_assists(row:int, col:int, is_p1):
 			return ["res://game/fighter/assist/assistoga/AssistOgaPlayer.tscn", Enums.AssistCharacters.Oga]
 		Enums.AssistCharacters.Ollie:
 			return ["res://game/fighter/assist/assistollie/AssistOlliePlayer.tscn", Enums.AssistCharacters.Ollie]
+		Enums.AssistCharacters.Kanata:
+			return ["res://game/fighter/assist/assistkanata/AssistKanataPlayer.tscn", Enums.AssistCharacters.Kanata]
+		Enums.AssistCharacters.Suisei:
+			return ["res://game/fighter/assist/assistsuisei/AssistSuiseiPlayer.tscn", Enums.AssistCharacters.Suisei]
 		_:
 			return ["res://game/fighter/assist/fubuki/FubukiPlayer.tscn", Enums.AssistCharacters.Fubuki]
 
@@ -277,12 +287,16 @@ func resolve_colors():
 	var color2: String = ""
 	color1 = match_color(enumChara1)
 	color2 = match_color(enumChara2)
-	if (enumChara1 == enumChara2):
-		color1 += "1.png"
-		color2 += "2.png"
+	if (enumChara1 == enumChara2 and p1_color_number == p2_color_number):
+		if (p1_color_number == 1):
+			color1 += "1.png"
+			color2 += "2.png"
+		else:
+			color1 += str(p1_color_number)+".png"
+			color2 += "1.png"
 	else:
-		color1 += "1.png"
-		color2 += "1.png"
+		color1 += str(p1_color_number)+".png"
+		color2 += str(p2_color_number)+".png"
 	Global.PLAYER_1_COLOR[0] = color1
 	Global.PLAYER_2_COLOR[0] = color2
 	Global.load_new_color(true, false)
@@ -295,12 +309,16 @@ func resolve_assist_colors():
 	var color2: String = ""
 	color1 = match_color(enumChara1, true)
 	color2 = match_color(enumChara2, true)
-	if (enumChara1 == enumChara2):
-		color1 += "1.png"
-		color2 += "2.png"
+	if (enumChara1 == enumChara2 and a1_color_number == a2_color_number):
+		if (a1_color_number == 1):
+			color1 += "1.png"
+			color2 += "2.png"
+		else:
+			color1 += str(a1_color_number)+".png"
+			color2 += "1.png"
 	else:
-		color1 += "1.png"
-		color2 += "1.png"
+		color1 += str(a1_color_number)+".png"
+		color2 += str(a2_color_number)+".png"
 	Global.PLAYER_1_COLOR[1] = color1
 	Global.PLAYER_2_COLOR[1] = color2
 	Global.load_new_color(true, true)
@@ -314,14 +332,26 @@ func match_color(enumChara:int, is_assist=false) -> String:
 				color = "res://game/assets/sprites/assists/fubuki/ColorPalettes/"
 			Enums.AssistCharacters.Sora:
 				color = "res://game/assets/sprites/assists/sora/ColorPalettes/"
+			Enums.AssistCharacters.OkaKoro:
+				color = "res://game/assets/sprites/assists/okakoro/ColorPalettes/"
+			Enums.AssistCharacters.Hakka:
+				color = "res://game/assets/sprites/assists/hakka/ColorPalettes/"
+			Enums.AssistCharacters.Sana:
+				color = "res://game/assets/sprites/assists/sana/ColorPalettes/"
 			Enums.AssistCharacters.Subaru:
 				color = "res://game/assets/sprites/subaru/ColorPalettes/"
 			Enums.AssistCharacters.Mio:
 				color = "res://game/assets/sprites/mio/ColorPalettes/"
 			Enums.AssistCharacters.Oga:
 				color = "res://game/assets/sprites/oga/ColorPalettes/"
+			Enums.AssistCharacters.Ollie:
+				color = "res://game/assets/sprites/ollie/ColorPalettes/"
+			Enums.AssistCharacters.Kanata:
+				color = "res://game/assets/sprites/kanata/ColorPalettes/"
+			Enums.AssistCharacters.Suisei:
+				color = "res://game/assets/sprites/suisei/ColorPalettes/"
 			_:
-				color = "res://game/assets/sprites/subaru/ColorPalettes/"
+				color = "res://game/assets/sprites/assists/fubuki/ColorPalettes/"
 	else:
 		match enumChara:
 			Enums.PointCharacters.Subaru:
@@ -330,63 +360,23 @@ func match_color(enumChara:int, is_assist=false) -> String:
 				color = "res://game/assets/sprites/mio/ColorPalettes/"
 			Enums.PointCharacters.Oga:
 				color = "res://game/assets/sprites/oga/ColorPalettes/"
+			Enums.PointCharacters.Ollie:
+				color = "res://game/assets/sprites/ollie/ColorPalettes/"
+			Enums.PointCharacters.Kanata:
+				color = "res://game/assets/sprites/kanata/ColorPalettes/"
+			Enums.PointCharacters.Suisei:
+				color = "res://game/assets/sprites/suisei/ColorPalettes/"
 			_:
 				color = "res://game/assets/sprites/subaru/ColorPalettes/"
 	return color
 
 func resolve_portrait(row:int, col:int, is_p1:bool):
 	var enumChara: int = character[row][col]
-	var color: String = ""
 	var portrait: String = ""
-	match enumChara:
-		Enums.PointCharacters.Subaru:
-			color = "res://game/assets/sprites/subaru/ColorPalettes/1.png"
-			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/SubaruPortrait.png"
-		Enums.PointCharacters.Mio:
-			color = "res://game/assets/sprites/mio/ColorPalettes/1.png"
-			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/MioPortrait.png"
-		Enums.PointCharacters.Oga:
-			color = "res://game/assets/sprites/oga/ColorPalettes/1.png"
-			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/OgaPortrait.png"
-		Enums.PointCharacters.Ollie:
-			color = "res://game/assets/sprites/oga/ColorPalettes/1.png"
-			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/OlliePortrait.png"
-		Enums.PointCharacters.Suisei:
-			color = "res://game/assets/sprites/oga/ColorPalettes/1.png"
-			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/SuiseiPortrait.png"
-		Enums.PointCharacters.Kanata:
-			color = "res://game/assets/sprites/oga/ColorPalettes/1.png"
-			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/KanataPortrait.png"
-		Enums.PointCharacters.Seven:
-			color = "res://game/assets/sprites/oga/ColorPalettes/1.png"
-			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/SubaruPortrait.png"
-		Enums.PointCharacters.Eight:
-			color = "res://game/assets/sprites/subaru/ColorPalettes/1.png"
-			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/SubaruPortrait.png"
-		Enums.PointCharacters.Nine:
-			color = "res://game/assets/sprites/oga/ColorPalettes/1.png"
-			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/SubaruPortrait.png"
-		Enums.PointCharacters.Ten:
-			color = "res://game/assets/sprites/oga/ColorPalettes/1.png"
-			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/SubaruPortrait.png"
-		Enums.PointCharacters.Eleven:
-			color = "res://game/assets/sprites/oga/ColorPalettes/1.png"
-			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/SubaruPortrait.png"
-		Enums.PointCharacters.Twelve:
-			color = "res://game/assets/sprites/oga/ColorPalettes/1.png"
-			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/SubaruPortrait.png"
-		Enums.PointCharacters.Random:
-			color = "res://game/assets/sprites/oga/ColorPalettes/1.png"
-			portrait = "res://game/assets/sprites/UI/CharacterSelect/KimiNoHiroin/QuestionMark.png"
-		_:
-			color = "res://game/assets/sprites/subaru/ColorPalettes/1.png"
-			portrait = "res://game/assets/sprites/subaru/SubaruPortrait.png"
 	if (is_p1):
-		Global.PLAYER_1_COLOR[0] = color
-		$P1Portrait.texture = load(portrait)
+		$P1Portrait.change_portrait(enumChara)
 	else:
-		Global.PLAYER_2_COLOR[0] = color
-		$P2Portrait.texture = load(portrait)
+		$P2Portrait.change_portrait(enumChara)
 
 func resolve_assist_portrait(row:int, col:int, is_p1:bool):
 	var enumChara: int = assist2[row][col]
@@ -394,70 +384,10 @@ func resolve_assist_portrait(row:int, col:int, is_p1:bool):
 		enumChara = assist1[row][col]
 	var color: String = ""
 	var portrait: String = ""
-	match enumChara:
-		Enums.AssistCharacters.Subaru:
-			color = "res://game/assets/sprites/subaru/ColorPalettes/1.png"
-			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/SubaruPortrait.png"
-		Enums.AssistCharacters.Mio:
-			color = "res://game/assets/sprites/mio/ColorPalettes/1.png"
-			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/MioPortrait.png"
-		Enums.AssistCharacters.Oga:
-			color = "res://game/assets/sprites/oga/ColorPalettes/1.png"
-			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/OgaPortrait.png"
-		Enums.AssistCharacters.Ollie:
-			color = "res://game/assets/sprites/oga/ColorPalettes/1.png"
-			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/OlliePortrait.png"
-		Enums.AssistCharacters.Suisei:
-			color = "res://game/assets/sprites/oga/ColorPalettes/1.png"
-			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/SubaruPortrait.png"
-		Enums.AssistCharacters.Kanata:
-			color = "res://game/assets/sprites/oga/ColorPalettes/1.png"
-			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/SubaruPortrait.png"
-		Enums.AssistCharacters.Seven:
-			color = "res://game/assets/sprites/oga/ColorPalettes/1.png"
-			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/SubaruPortrait.png"
-		Enums.AssistCharacters.Eight:
-			color = "res://game/assets/sprites/oga/ColorPalettes/1.png"
-			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/SubaruPortrait.png"
-		Enums.AssistCharacters.Nine:
-			color = "res://game/assets/sprites/oga/ColorPalettes/1.png"
-			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/SubaruPortrait.png"
-		Enums.AssistCharacters.Ten:
-			color = "res://game/assets/sprites/oga/ColorPalettes/1.png"
-			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/SubaruPortrait.png"
-		Enums.AssistCharacters.Eleven:
-			color = "res://game/assets/sprites/oga/ColorPalettes/1.png"
-			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/SubaruPortrait.png"
-		Enums.AssistCharacters.Twelve:
-			color = "res://game/assets/sprites/oga/ColorPalettes/1.png"
-			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/SubaruPortrait.png"
-		Enums.AssistCharacters.Fubuki:
-			color = "res://game/assets/sprites/assists/fubuki/ColorPalettes/1.png"
-			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/FubukiPortrait.png"
-		Enums.AssistCharacters.Sora:
-			color = "res://game/assets/sprites/assists/sora/ColorPalettes/1.png"
-			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/SoraPortrait.png"
-		Enums.AssistCharacters.OkaKoro:
-			color = "res://game/assets/sprites/oga/ColorPalettes/1.png"
-			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/OkakoroPortrait.png"
-		Enums.AssistCharacters.Hakka:
-			color = "res://game/assets/sprites/oga/ColorPalettes/1.png"
-			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/HakkaPortrait.png"
-		Enums.AssistCharacters.Sana:
-			color = "res://game/assets/sprites/oga/ColorPalettes/1.png"
-			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/SanaPortrait.png"
-		Enums.AssistCharacters.Random:
-			color = "res://game/assets/sprites/oga/ColorPalettes/1.png"
-			portrait = "res://game/assets/sprites/UI/CharacterSelect/KimiNoHiroin/QuestionMark.png"
-		_:
-			color = "res://game/assets/sprites/assists/fubuki/ColorPalettes/1.png"
-			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/FubukiPortrait.png"
 	if (is_p1):
-		Global.PLAYER_1_COLOR[1] = color
-		$A1Portrait.texture = load(portrait)
+		$A1Portrait.change_portrait(enumChara, true)
 	else:
-		Global.PLAYER_2_COLOR[1] = color
-		$A2Portrait.texture = load(portrait)
+		$A2Portrait.change_portrait(enumChara, true)
 
 func button_set_complete(is_p1:bool):
 	if (is_p1):
@@ -521,6 +451,66 @@ func button_set_initiate(event):
 				p2_ready = false
 				p2_active_cursor = p2_assist_select
 				p2_assist_select.enable(false)
+
+
+func select_color(input_prefix) -> int:
+	var input_vector: Vector2 = Vector2(
+			-Input.get_action_strength(input_prefix+"left") + Input.get_action_strength(input_prefix+"right"), 
+			-Input.get_action_strength(input_prefix+"down") + Input.get_action_strength(input_prefix+"up"))
+	var input_vector_stick: Vector2 = Vector2(
+			-Input.get_action_strength(input_prefix+"left_stick") + Input.get_action_strength(input_prefix+"right_stick"), 
+			-Input.get_action_strength(input_prefix+"down_stick") + Input.get_action_strength(input_prefix+"up_stick"))
+	var bit_input = 0
+	var virtual_deadzone = 0
+
+	if (input_vector.x == 0 and input_vector.y == 0):
+		input_vector.x = input_vector_stick.x
+		input_vector.y = input_vector_stick.y
+	
+	if (input_vector.x < -virtual_deadzone):
+		bit_input |= Enums.InputFlags.LEFT
+	elif (input_vector.x > virtual_deadzone):
+		bit_input |= Enums.InputFlags.RIGHT
+
+	if (input_vector.y < -virtual_deadzone):
+		bit_input |= Enums.InputFlags.DOWN
+	elif (input_vector.y > virtual_deadzone):
+		bit_input |= Enums.InputFlags.UP
+
+	if (Input.get_action_strength(input_prefix+"a") > 0):
+		bit_input |= Enums.InputFlags.AHold
+	
+	if (Input.get_action_strength(input_prefix+"b") > 0):
+		bit_input |= Enums.InputFlags.BHold
+	
+	if (Input.get_action_strength(input_prefix+"c") > 0):
+		bit_input |= Enums.InputFlags.CHold
+		
+	if (Input.get_action_strength(input_prefix+"d") > 0):
+		bit_input |= Enums.InputFlags.DHold
+	
+	var color_number = 0
+	if (bit_input & Enums.InputFlags.AHold):
+		color_number += 1
+	elif (bit_input & Enums.InputFlags.BHold):
+		color_number += 2
+	elif (bit_input & Enums.InputFlags.CHold):
+		color_number += 3
+	elif (bit_input & Enums.InputFlags.DHold):
+		color_number += 0
+	
+	if (bit_input & Enums.InputFlags.DOWN):
+		color_number += (4*1)
+	elif (bit_input & Enums.InputFlags.UP):
+		color_number += (4*3)
+	elif (bit_input & Enums.InputFlags.LEFT):
+		color_number += (4*2)
+	elif (bit_input & Enums.InputFlags.RIGHT):
+		color_number += (4*4)
+	
+	color_number %= Util.MAX_COLOR_PALETTE_NUMBER
+	color_number += 1
+	return color_number
 
 func go_to_prev_scene():
 	get_tree().change_scene_to_file("res://game/menus/buttonmap/ControllerPickMenuScreen.tscn")

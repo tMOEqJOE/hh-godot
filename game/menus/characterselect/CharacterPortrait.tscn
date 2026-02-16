@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=3 uid="uid://b1vhgvt0bb4vq"]
 
-[ext_resource path="res://game/menus/characterselect/CharacterPortrait.gd" type="Script" id=3]
+[ext_resource type="Material" uid="uid://bt3lvyqtd78u0" path="res://game/assets/shaders/ColorSwapMat.tres" id="1_vf1ou"]
+[ext_resource type="Script" uid="uid://vo5jxwygaq2n" path="res://game/menus/characterselect/CharacterPortrait.gd" id="3"]
 
 [node name="P1Portrait" type="Sprite2D"]
-script = ExtResource( 3 )
+material = ExtResource("1_vf1ou")
+script = ExtResource("3")
+
+[node name="Name" type="Sprite2D" parent="."]
+z_index = 1

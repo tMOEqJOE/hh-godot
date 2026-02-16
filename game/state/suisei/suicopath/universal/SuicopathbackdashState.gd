@@ -12,7 +12,7 @@ func _init():
 			Enums.StKey.Hurt2Disable : true,
 			Enums.StKey.Hurt3Disable : true,
 			},
-		10 : {
+		14 : {
 			Enums.StKey.Hit1Disable : true,
 			Enums.StKey.Hit2Disable : true,
 			Enums.StKey.Hurt1Disable : false,Enums.StKey.Hurt2Disable : true,Enums.StKey.Hurt3Disable : true,

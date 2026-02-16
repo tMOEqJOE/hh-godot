@@ -7,6 +7,9 @@ class_name SubaruPlayer
 const SubaruStarBall = preload("res://game/fighter/projectiles/SubaruStarball.tscn")
 const SubaruBatterSetBall = preload("res://game/fighter/projectiles/SubaruBatterSetBall.tscn")
 
+func tick() -> void:
+	super.tick()
+
 func summonHelper(entity: String) -> void:
 	super.summonHelper(entity)
 	if (not entity.is_empty()):
@@ -23,6 +26,9 @@ func summonHelper(entity: String) -> void:
 				if (round_counter.read_rounds_won() < opponent_round_counter.read_rounds_won()):
 					is_comeback = true
 			MainMenuMusicControl.play_angel_install_music(is_comeback)
+			start_glowing()
+		elif (entity == "AngelUninstall"):
+			stop_glowing()
 		elif (entity == "subarustarball"):
 			var g_position = get_global_fixed_position()
 			var playerData = PlayerSetup.new(

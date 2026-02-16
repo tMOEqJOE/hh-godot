@@ -37,7 +37,7 @@ func _init():
 			Enums.StKey.hitstop: 9,
 			Enums.StKey.counter_hitstun: 5,
 			},
-		18 : {
+		20 : {
 			Enums.StKey.Hit1Disable : true,
 			Enums.StKey.Hit2Disable : true,
 			Enums.StKey.Hurt1Disable : false,Enums.StKey.Hurt2Disable : false,Enums.StKey.Hurt3Disable : false,

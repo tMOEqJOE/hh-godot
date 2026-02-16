@@ -36,4 +36,3 @@ func handle_input(state: Dictionary, interpreter: InputInterpreter) -> void:
 			)
 		):
 		common_idle_transitions(state, interpreter)
-

@@ -1,9 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://ertehvroal70"]
+[gd_scene load_steps=12 format=3 uid="uid://ertehvroal70"]
 
 [ext_resource type="Script" uid="uid://b3vinramtp4ia" path="res://game/fighter/projectiles/ProjectilePlayer.gd" id="1_ixr0b"]
 [ext_resource type="Material" uid="uid://bt3lvyqtd78u0" path="res://game/assets/shaders/ColorSwapMat.tres" id="2_erdaq"]
 [ext_resource type="Texture2D" uid="uid://tq7jpwpmpnav" path="res://game/assets/sprites/Empty_0000.png" id="3_3a3eh"]
-[ext_resource type="Texture2D" uid="uid://b8a4nr02pla40" path="res://game/assets/sprites/mio/ForwardAirDash/Timeline 1_0000.png" id="4_dft4x"]
 [ext_resource type="Script" uid="uid://dv11pt6y7wasy" path="res://addons/godot-rollback-netcode/NetworkAnimationPlayer.gd" id="5_mat6h"]
 [ext_resource type="PackedScene" uid="uid://bvgu0aev8rq4g" path="res://game/fighter/Hitbox.tscn" id="6_pte66"]
 [ext_resource type="PackedScene" uid="uid://cwoqesvdf08m3" path="res://game/fighter/Hurtbox.tscn" id="7_y1x4n"]
@@ -24,10 +23,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0166667),
-"transitions": PackedFloat32Array(1000000, 1000000),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1000000),
 "update": 1,
-"values": [ExtResource("3_3a3eh"), ExtResource("4_dft4x")]
+"values": [ExtResource("3_3a3eh")]
 }
 
 [sub_resource type="Animation" id="3"]

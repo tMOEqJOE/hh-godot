@@ -13,6 +13,12 @@ func enter(state: Dictionary) -> void:
 func meter_cancel(_state: Dictionary, _interpreter: InputInterpreter):
 	pass
 
+func handle_input(state: Dictionary, interpreter: InputInterpreter) -> void:
+	super.handle_input(state, interpreter)
+	if (state[Enums.StKey.hitstun] <= 0):
+		state[Enums.StKey.throw_protect] = Util.THROW_PROTECT_FRAME
+		change_state.call("AirTech")
+
 func has_property(state: Dictionary,property: int) -> bool:
 	match property:
 		Enums.StateProperty.Capture:

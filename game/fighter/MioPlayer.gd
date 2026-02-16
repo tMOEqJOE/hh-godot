@@ -30,5 +30,5 @@ func summonHelper(entity: String) -> void:
 				"MioCards",
 				playerData)
 		elif (entity == "miosupercannon"):
-			summonVFX("MioSuperCannon", MioSuperCannon)
+			summonVFX("MioSuperCannon", MioSuperCannon, true)
 		

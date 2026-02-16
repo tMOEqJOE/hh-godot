@@ -139,7 +139,7 @@ func _on_OnlineMatch_match_ready(players: Dictionary) -> void:
 ### Remote Character Select
 
 @rpc("any_peer")
-func remote_peer_select(row:int, col:int):
+func remote_peer_select(row:int, col:int, color_number:int):
 	var peer = multiplayer.get_remote_sender_id()
 	message_label.text = str(peer) + " " + str(row) + " " + str(col)
 	var charaData = resolve_characters(row, col)
@@ -149,19 +149,23 @@ func remote_peer_select(row:int, col:int):
 		Global.load_queue.queue_resource(Global.PLAYER_1_NODE_PATH[0])
 		if (Global.PLAYER_1_CHARACTER[0] == Enums.PointCharacters.Mio):
 			Global.load_queue.queue_resource(Global.PLAYER_1_NODE_PATH[2])
+		p1_color_number = color_number
 		update_p1_portrait(row, col)
+		$P1Portrait.change_color_number(p1_color_number)
 		$P1SelectFlash.player_call()
 	else:
 		Global.PLAYER_2_NODE_PATH[0] = charaData[0]
 		Global.PLAYER_2_CHARACTER[0] = charaData[1]
+		p2_color_number = color_number
 		Global.load_queue.queue_resource(Global.PLAYER_2_NODE_PATH[0])
 		if (Global.PLAYER_2_CHARACTER[0] == Enums.PointCharacters.Mio):
 			Global.load_queue.queue_resource(Global.PLAYER_2_NODE_PATH[2])
 		update_p2_portrait(row, col)
+		$P2Portrait.change_color_number(p2_color_number)
 		$P2SelectFlash.player_call()
 
 @rpc("any_peer") 
-func remote_peer_assist_select(row:int, col:int):
+func remote_peer_assist_select(row:int, col:int, color_number:int):
 	var peer = multiplayer.get_remote_sender_id()
 	message_label.text = str(peer) + " " + str(row) + " " + str(col)
 	if peer == 1:
@@ -169,14 +173,18 @@ func remote_peer_assist_select(row:int, col:int):
 		Global.PLAYER_1_NODE_PATH[1] = charaData[0]
 		Global.PLAYER_1_CHARACTER[1] = charaData[1]
 		Global.load_queue.queue_resource(Global.PLAYER_1_NODE_PATH[1])
+		a1_color_number = color_number
 		update_a1_portrait(row, col)
+		$A1Portrait.change_color_number(a1_color_number)
 		$P1SelectFlash.player_call()
 	else:
 		var charaData = resolve_assists(row, col, false)
 		Global.PLAYER_2_NODE_PATH[1] = charaData[0]
 		Global.PLAYER_2_CHARACTER[1] = charaData[1]
 		Global.load_queue.queue_resource(Global.PLAYER_2_NODE_PATH[1])
+		a2_color_number = color_number
 		update_a2_portrait(row, col)
+		$A2Portrait.change_color_number(a2_color_number)
 		$P2SelectFlash.player_call()
 
 func players_ready():
@@ -187,14 +195,12 @@ func players_ready():
 		return peer_ready and p2_ready
 
 func update_p1():
-#	Global.PLAYER_1_COLOR[0] = "res://game/assets/sprites/subaru/ColorPalettes/1.png"
-#	$P1Portrait.material.set_shader_param("palette", load(Global.PLAYER_1_COLOR[0]))
 	message_label.text = "p1 update"
 	p1_cursor_pos_row = $P1Cursor.row
 	p1_cursor_pos_col = $P1Cursor.col
-	#rset("p1_cursor_pos_row", $P1Cursor.row)
-	#rset("p1_cursor_pos_col", $P1Cursor.col)
-	rpc("remote_peer_select", $P1Cursor.row, $P1Cursor.col)
+	p1_color_number = select_color($P1Cursor.input_prefix)
+	$P1Portrait.change_color_number(p1_color_number)
+	rpc("remote_peer_select", $P1Cursor.row, $P1Cursor.col, p1_color_number)
 	var charaData = resolve_characters($P1Cursor.row, $P1Cursor.col)
 	Global.PLAYER_1_NODE_PATH[0] = charaData[0]
 	Global.PLAYER_1_CHARACTER[0] = charaData[1]
@@ -214,14 +220,12 @@ func update_p1():
 		Global.load_queue.queue_resource(Global.PLAYER_1_NODE_PATH[2])
 
 func update_p2():
-#	Global.PLAYER_2_COLOR[0] = "res://game/assets/sprites/subaru/ColorPalettes/2.png"
-#	$P2Portrait.material.set_shader_param("palette", load(Global.PLAYER_2_COLOR[0]))
 	message_label.text = "p2 update"
 	p2_cursor_pos_row = $P2Cursor.row
 	p2_cursor_pos_col = $P2Cursor.col
-	#rset("p2_cursor_pos_row", $P2Cursor.row)
-	#rset("p2_cursor_pos_col", $P2Cursor.col)
-	rpc("remote_peer_select", $P2Cursor.row, $P2Cursor.col)
+	p2_color_number = select_color($P2Cursor.input_prefix)
+	$P2Portrait.change_color_number(p2_color_number)
+	rpc("remote_peer_select", $P2Cursor.row, $P2Cursor.col, p2_color_number)
 	var charaData = resolve_characters($P2Cursor.row, $P2Cursor.col)
 	Global.PLAYER_2_NODE_PATH[0] = charaData[0]
 	Global.PLAYER_2_CHARACTER[0] = charaData[1]
@@ -241,8 +245,6 @@ func update_p2():
 		Global.load_queue.queue_resource(Global.PLAYER_1_NODE_PATH[2])
 
 @rpc("any_peer") func update_a1():
-#	Global.PLAYER_1_COLOR[0] = "res://game/assets/sprites/subaru/ColorPalettes/1.png"
-#	$P1Portrait.material.set_shader_param("palette", load(Global.PLAYER_1_COLOR[0]))
 	message_label.text = "a1 update"
 	var charaData = resolve_assists(p1_assist_select.cursor_row(), p1_assist_select.cursor_col(), true)
 	Global.PLAYER_1_NODE_PATH[1] = charaData[0]
@@ -251,16 +253,14 @@ func update_p2():
 	
 	p1_assist_pos_row = p1_assist_select.cursor_row()
 	p1_assist_pos_col = p1_assist_select.cursor_col()
-	#rset("p1_assist_pos_row", p1_assist_select.cursor_row())
-	#rset("p1_assist_pos_col", p1_assist_select.cursor_col())
-	rpc("remote_peer_assist_select", p1_assist_select.cursor_row(), p1_assist_select.cursor_col())
+	a1_color_number = select_color(p1_assist_select.get_node("CharacterCursor").input_prefix)
+	$A1Portrait.change_color_number(p1_color_number)
+	rpc("remote_peer_assist_select", p1_assist_select.cursor_row(), p1_assist_select.cursor_col(), a1_color_number)
 	p1_ready = true
 	rpc("ready_up_peer")
 	local_ready()
 
 func update_a2():
-#	Global.PLAYER_2_COLOR[0] = "res://game/assets/sprites/subaru/ColorPalettes/2.png"
-#	$P2Portrait.material.set_shader_param("palette", load(Global.PLAYER_2_COLOR[0]))
 	message_label.text = "a2 update"
 	var charaData = resolve_assists(p2_assist_select.cursor_row(), p2_assist_select.cursor_col(), false)
 	Global.PLAYER_2_NODE_PATH[1] = charaData[0]
@@ -269,9 +269,9 @@ func update_a2():
 	
 	p2_assist_pos_row = p2_assist_select.cursor_row()
 	p2_assist_pos_col = p2_assist_select.cursor_col()
-	#rset("p2_assist_pos_row", p2_assist_select.cursor_row())
-	#rset("p2_assist_pos_col", p2_assist_select.cursor_col())
-	rpc("remote_peer_assist_select", p2_assist_select.cursor_row(), p2_assist_select.cursor_col())
+	a2_color_number = select_color(p2_assist_select.get_node("CharacterCursor").input_prefix)
+	$A2Portrait.change_color_number(p2_color_number)
+	rpc("remote_peer_assist_select", p2_assist_select.cursor_row(), p2_assist_select.cursor_col(), a2_color_number)
 	p2_ready = true
 	rpc("ready_up_peer")
 	local_ready()

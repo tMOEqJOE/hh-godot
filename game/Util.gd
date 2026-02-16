@@ -85,6 +85,8 @@ const AIR_DASH_STARTUP := 3
 const AIR_DASH_CANCEL_FRAME := 6 # 7
 const BOOST_CANCEL_RECOVERY := 2
 
+const SHADOW_POSITION_Y = 443
+
 const GROUND_BOUNCE_HITSTOP = 3
 const GROUND_BOUNCE_POWER_DECAY = -60536
 
@@ -94,6 +96,8 @@ const SUPPORT_FIRST_HIT_SYNC_BOOST := SGFixed.ONE*20
 
 const ANGEL_METER_DRAIN := SGFixed.ONE*60
 const ANGEL_FAST_METER_DRAIN := SGFixed.ONE*80
+
+const MAX_COLOR_PALETTE_NUMBER := 2
 
 var left_axis_neutral: bool = true
 var right_axis_neutral: bool = true

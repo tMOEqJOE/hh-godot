@@ -57,10 +57,6 @@ func handle_input(state: Dictionary, interpreter: InputInterpreter) -> void:
 				change_state.call("AngelAirParryWhiff")
 			elif (interpreter.is_blocking(state[Enums.StKey.leftface]) and interpreter.is_button_down(Enums.InputFlags.BDown | Enums.InputFlags.CDown)):
 				change_state.call("AngelAirFDStance")
-			elif (state[Enums.StKey.airDash] > 0 and interpreter.is_button_dashing(true, state[Enums.StKey.leftface])):
-				change_state.call("AngelForwardAirDash")
-			elif (state[Enums.StKey.airDash] > 0 and interpreter.is_button_dashing(false, state[Enums.StKey.leftface])):
-				change_state.call("AngelBackwardAirDash")
 			state[Enums.StKey.kara_OK] = false
 		if (burst_OK(state, interpreter)):
 			change_state.call("AngelBurst")
