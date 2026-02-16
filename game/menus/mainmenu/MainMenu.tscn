@@ -294,6 +294,7 @@ texture_normal = ExtResource("16")
 texture_focused = ExtResource("22")
 
 [node name="DebugRollback" type="TextureButton" parent="CanvasLayer/MainMenuButtons"]
+visible = false
 layout_mode = 2
 focus_neighbor_top = NodePath("../Credits")
 texture_normal = ExtResource("26")
