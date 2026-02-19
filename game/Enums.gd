@@ -229,6 +229,7 @@ enum TrainingBlockType { NONE, NORMAL, IB, FD, IFD, PARRY }
 enum TrainingRecovery { NEUTRAL, FORWARD, BACKWARD, OFF }
 enum TrainingCounterHit { OFF, ON, ASSIST_DANGER }
 enum TrainingStance { STAND, CROUCH, JUMP }
+enum TrainingHitboxes { NONE, ALL }
 
 
 enum PlayerInput {

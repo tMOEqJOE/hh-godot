@@ -152,14 +152,13 @@ script = null
 [node name="TrainingInputDisplay" parent="CanvasLayer" instance=ExtResource("12")]
 
 [node name="TrainingOptionsMenu" type="GridContainer" parent="CanvasLayer"]
-visible = false
 modulate = Color(1, 1, 1, 0.964706)
 anchors_preset = -1
 offset_left = 122.0
 offset_top = 53.0
 offset_right = 622.0
 offset_bottom = 373.0
-scale = Vector2(2.33282, 2.30915)
+scale = Vector2(2.33282, 2.10915)
 columns = 3
 script = ExtResource("5")
 
@@ -396,6 +395,22 @@ layout_mode = 2
 text = "Command List"
 
 [node name="CommandListNumber" type="Label" parent="CanvasLayer/TrainingOptionsMenu"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("2")
+
+[node name="HideHitboxesLabel" type="Label" parent="CanvasLayer/TrainingOptionsMenu"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("2")
+
+[node name="HideHitboxesButton" type="Button" parent="CanvasLayer/TrainingOptionsMenu"]
+layout_mode = 2
+text = "Toggle Hitboxes"
+
+[node name="HideHitboxesNumber" type="Label" parent="CanvasLayer/TrainingOptionsMenu"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)

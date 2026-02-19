@@ -203,11 +203,13 @@ func on_attack_hit(attack_type: int, opponent_hit_data: Dictionary) -> void:
 			$NetworkAnimationPlayer.speed_scale = 0
 		Enums.AttackType.Throw:
 			if (opponent_hit_data["hitType"] == Enums.HitType.Throw):
-				new_sync_rate += SGFixed.ONE*5
+				if (opponent_hit_data[Enums.StKey.comboTime] < 1):
+					new_sync_rate += Util.SUPPORT_FIRST_HIT_SYNC_BOOST
 				fighterState.reaction(Enums.Reaction.ThrowHit, input_interpreter)
 		Enums.AttackType.AirThrow:
 			if (opponent_hit_data["hitType"] == Enums.HitType.Throw):
-				new_sync_rate += SGFixed.ONE*7
+				if (opponent_hit_data[Enums.StKey.comboTime] < 1):
+					new_sync_rate += Util.SUPPORT_FIRST_HIT_SYNC_BOOST
 				fighterState.reaction(Enums.Reaction.ThrowHit, input_interpreter)
 		Enums.AttackType.BurstLock:
 			pass

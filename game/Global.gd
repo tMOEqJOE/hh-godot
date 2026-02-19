@@ -148,7 +148,7 @@ const BGM_LIST = [
 	'Heroine Audition',
 	'WIM',
 	'This MU is (2-8) At Best',
-	'THIS MU SUCKS by AZININE',
+	'THIS MU SUCKS by miyaakka',
 ]
 const BGM_UID_LIST = [
 	'uid://63an0yld6m2s', # Unused: Auto

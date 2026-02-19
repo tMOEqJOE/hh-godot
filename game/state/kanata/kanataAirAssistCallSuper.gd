@@ -34,4 +34,3 @@ func _init():
 func battery_meter(state: Dictionary) -> void:
 	state[Enums.StKey.assist_meter] -= Util.ASSIST_STOCK*2
 	state[Enums.StKey.sync_rate] = SGFixed.mul(state[Enums.StKey.sync_rate], 5536)
-

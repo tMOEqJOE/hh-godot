@@ -49,7 +49,7 @@ func connect_to_nakama() -> void:
 		if nakama_session.is_exception():
 			print ("Unable to connect to Nakama")
 			print (nakama_session.get_exception().message)
-			$CanvasLayer/MessageLabel.text = "Unable to connect to server"
+			$CanvasLayer/MessageLabel.text = "Unable to connect to server and update username"
 			return
 		
 	# Open a realtime socket to Nakama.
