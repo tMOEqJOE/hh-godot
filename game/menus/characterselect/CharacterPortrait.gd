@@ -89,8 +89,8 @@ func change_portrait(enumChara: int, is_assist=false):
 				color = "res://game/assets/sprites/assists/sana/ColorPalettes/"
 				portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/SanaPortrait"
 			Enums.AssistCharacters.Random:
-				color = "res://game/assets/sprites/oga/ColorPalettes/"
-				portrait = "res://game/assets/sprites/UI/CharacterSelect/KimiNoHiroin/QuestionMark"
+				color = "res://game/assets/sprites/subaru/ColorPalettes/"
+				portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/RandomPortrait"
 			_:
 				color = "res://game/assets/sprites/assists/fubuki/ColorPalettes/"
 				portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/FubukiPortrait"
@@ -133,8 +133,8 @@ func change_portrait(enumChara: int, is_assist=false):
 				color = "res://game/assets/sprites/oga/ColorPalettes/"
 				portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/SubaruPortrait"
 			Enums.PointCharacters.Random:
-				color = "res://game/assets/sprites/oga/ColorPalettes/"
-				portrait = "res://game/assets/sprites/UI/CharacterSelect/KimiNoHiroin/QuestionMark"
+				color = "res://game/assets/sprites/subaru/ColorPalettes/"
+				portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/RandomPortrait"
 			_:
 				color = "res://game/assets/sprites/subaru/ColorPalettes/"
 				portrait = "res://game/assets/sprites/subaru/SubaruPortrait"
