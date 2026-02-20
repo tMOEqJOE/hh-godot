@@ -18,14 +18,14 @@ func summonHelper(entity: String) -> void:
 		if (currentState[Enums.StKey.leftface]):
 			emit_signal("projectilespawn", 
 				g_position.x + (SGFixed.ONE*150),
-				g_position.y - (SGFixed.ONE*150), 
+				g_position.y - (SGFixed.ONE*190), 
 				AssistSubaruStarBall,
 				"AssistSubaruStarBall",
 				playerData)
 		else:
 			emit_signal("projectilespawn", 
 				g_position.x - (SGFixed.ONE*150),
-				g_position.y - (SGFixed.ONE*150), 
+				g_position.y - (SGFixed.ONE*190), 
 				AssistSubaruStarBall,
 				"AssistSubaruStarBall",
 				playerData)

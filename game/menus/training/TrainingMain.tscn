@@ -152,6 +152,7 @@ script = null
 [node name="TrainingInputDisplay" parent="CanvasLayer" instance=ExtResource("12")]
 
 [node name="TrainingOptionsMenu" type="GridContainer" parent="CanvasLayer"]
+visible = false
 modulate = Color(1, 1, 1, 0.964706)
 anchors_preset = -1
 offset_left = 122.0
@@ -393,7 +394,7 @@ text = "Assist Meter Build"
 
 [node name="AssistBuildButton" type="Button" parent="CanvasLayer/TrainingOptionsMenu"]
 layout_mode = 2
-text = "FROZEN"
+text = "OFF"
 
 [node name="AssistBuildNumber" type="Label" parent="CanvasLayer/TrainingOptionsMenu"]
 layout_mode = 2

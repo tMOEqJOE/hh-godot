@@ -74,8 +74,8 @@ script = ExtResource("2_1icdc")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = ExtResource("1_saqvy")
 position = Vector2(80, -49)
-scale = Vector2(1.7, 1.7)
-texture = ExtResource("3_k3n5m")
+scale = Vector2(1.8395245, 1.8395245)
+texture = ExtResource("4_pufqo")
 
 [node name="Pushbox" type="SGCollisionShape2D" parent="."]
 shape = SubResource("1")
@@ -96,18 +96,18 @@ auto_reset = false
 [node name="Hitbox1" parent="." instance=ExtResource("19_0v7ar")]
 fixed_position_x = 5177343
 fixed_position_y = -3538944
-fixed_scale_x = 500115
-fixed_scale_y = 455660
-position = Vector2(79, -54)
-scale = Vector2(7.63115, 6.95282)
+fixed_scale_x = 651400
+fixed_scale_y = 651400
+position = Vector2(78.999985, -54)
+scale = Vector2(9.939575, 9.939575)
 
 [node name="Hurtbox1" parent="." instance=ExtResource("20_dtl6t")]
 fixed_position_x = 5242880
 fixed_position_y = -3276800
-fixed_scale_x = 517235
-fixed_scale_y = 551400
+fixed_scale_x = 651400
+fixed_scale_y = 651400
 position = Vector2(80, -50)
-scale = Vector2(7.89238, 8.4137)
+scale = Vector2(9.939575, 9.939575)
 
 [node name="ExplosionTimer" type="Node" parent="."]
 script = ExtResource("21_4cgrp")

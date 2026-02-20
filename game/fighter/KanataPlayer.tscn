@@ -1,4 +1,4 @@
-[gd_scene load_steps=219 format=3 uid="uid://jn7rbmbm6c2w"]
+[gd_scene load_steps=220 format=3 uid="uid://jn7rbmbm6c2w"]
 
 [ext_resource type="Texture2D" uid="uid://b6hv4pgvya0vc" path="res://game/assets/sprites/kanata/5B/Timeline 1_0001.png" id="1"]
 [ext_resource type="Script" uid="uid://dgsx3duqjaeo5" path="res://game/fighter/PointPlayer.gd" id="2"]
@@ -1258,10 +1258,10 @@ tracks/1/path = NodePath("Sprite2D:offset")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1000000),
+"times": PackedFloat32Array(0, 0.5, 0.5166667, 0.53333336),
+"transitions": PackedFloat32Array(1000000, 1000000, 1000000, 1000000),
 "update": 0,
-"values": [Vector2(-40, 60)]
+"values": [Vector2(-40, 60), Vector2(-40, 160), Vector2(-40, 210), Vector2(-40, 230)]
 }
 
 [sub_resource type="Animation" id="71"]
@@ -2019,6 +2019,34 @@ tracks/1/keys = {
 "values": [Vector2(-10, 40)]
 }
 
+[sub_resource type="Animation" id="Animation_ilw5w"]
+resource_name = "KanataAirFiftyHit"
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.26666668, 0.29999998, 0.33333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("3"), ExtResource("9"), ExtResource("3"), ExtResource("89"), ExtResource("12")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.33333334, 0.35000005, 0.3666667),
+"transitions": PackedFloat32Array(1000000, 1000000, 1000000, 1000000),
+"update": 0,
+"values": [Vector2(-40, 60), Vector2(-40, 160), Vector2(-40, 210), Vector2(-40, 230)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wc0pe"]
 _data = {
 &"2A": SubResource("44"),
@@ -2058,6 +2086,7 @@ _data = {
 &"Jump": SubResource("11"),
 &"JumpFall": SubResource("61"),
 &"KO": SubResource("35"),
+&"KanataAirFiftyHit": SubResource("Animation_ilw5w"),
 &"KanataFiftyHit": SubResource("70"),
 &"KanataFiftyHitFollowUp": SubResource("71"),
 &"KanataFiftyWhiff": SubResource("66"),

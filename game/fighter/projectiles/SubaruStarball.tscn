@@ -75,7 +75,7 @@ script = ExtResource("3")
 material = ExtResource("40")
 position = Vector2(80, -49)
 scale = Vector2(1.7, 1.7)
-texture = ExtResource("22")
+texture = ExtResource("5")
 
 [node name="Pushbox" type="SGCollisionShape2D" parent="."]
 shape = SubResource("1")
