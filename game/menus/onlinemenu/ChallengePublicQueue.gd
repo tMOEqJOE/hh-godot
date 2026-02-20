@@ -20,7 +20,7 @@ func update_ping(new_ping: int, msg):
 
 func set_from_queue(p_from: OnlineMatch.Player):
 	from_queue = p_from
-	update_ui(from_queue.username)
+	update_ui(Util.display_username(from_queue.username))
 
 func get_from_queue() -> OnlineMatch.Player:
 	return from_queue
@@ -29,7 +29,7 @@ func get_session_id() -> String:
 	return from_queue.session_id
 
 func update_ui(name: String):
-	$CanvasLayer/GridContainer/ChallengerName.set_text(from_queue.username)
+	$CanvasLayer/GridContainer/ChallengerName.set_text(Util.display_username(from_queue.username))
 
 func _on_accept_challenge_pressed():
 	SyncManager.set_input_delay(int($CanvasLayer/GridContainer/InputDelayMeter.value))

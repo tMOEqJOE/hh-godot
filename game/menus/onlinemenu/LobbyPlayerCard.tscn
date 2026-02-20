@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cxwnal0g2p8nl"]
 
-[ext_resource type="Script" path="res://game/menus/onlinemenu/LobbyPlayerCard.gd" id="1"]
+[ext_resource type="Script" uid="uid://das5vuoolldrk" path="res://game/menus/onlinemenu/LobbyPlayerCard.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://biq18vleavg8w" path="res://game/assets/sprites/UI/MainMenus/WIMScreen.png" id="12"]
 
 [node name="LobbyPlayerCard" type="HBoxContainer"]
@@ -26,7 +26,6 @@ text = "Spectate"
 [node name="PingLabel" type="Label" parent="."]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Ping: ???ms"
 
 [node name="StatusLabel" type="Label" parent="."]
 layout_mode = 2

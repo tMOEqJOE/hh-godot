@@ -463,20 +463,20 @@ func _on_OnlineButton_pressed():
 	else:
 		$CanvasLayer/SpectatorLabel.text = ""
 		
-	$CanvasLayer/P1Name.text = try_get_player_name(1)
+	$CanvasLayer/P1Name.text = Util.display_username(try_get_player_name(1))
 	if (multiplayer.is_server()):
 #       for testing rollbacks with 1 CPU player
 #		fighter_game.get_node("ServerInputInterpreter").set_script(CPUInputInterpreter)
 		$FighterGame/ServerInputInterpreter.set_multiplayer_authority(1)
 		$FighterGame/ClientInputInterpreter.set_multiplayer_authority(get_opponent_peer_id())
-		$CanvasLayer/P2Name.text = try_get_player_name(get_opponent_peer_id())
+		$CanvasLayer/P2Name.text = Util.display_username(try_get_player_name(get_opponent_peer_id()))
 	else:
 		if SyncManager.spectating:
 			$FighterGame/ClientInputInterpreter.set_multiplayer_authority(get_client_player_peer_id())
-			$CanvasLayer/P2Name.text = try_get_player_name(get_client_player_peer_id())
+			$CanvasLayer/P2Name.text = Util.display_username(try_get_player_name(get_client_player_peer_id()))
 		else:
 			$FighterGame/ClientInputInterpreter.set_multiplayer_authority(multiplayer.get_unique_id())
-			$CanvasLayer/P2Name.text = try_get_player_name(multiplayer.get_unique_id())
+			$CanvasLayer/P2Name.text = Util.display_username(try_get_player_name(multiplayer.get_unique_id()))
 	SyncManager.reset_network_adaptor()
 	
 	message_label.text = "Game loaded"

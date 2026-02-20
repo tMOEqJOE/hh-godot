@@ -39,7 +39,7 @@ func update_status(new_status: int):
 		$Background.self_modulate = Color("#146c76")
 
 func set_player(p_player: OnlineLobby.Player):
-	$NameLabel.set_text(p_player.username)
+	$NameLabel.set_text(Util.display_username(p_player.username))
 	$PingLabel.set_text(str(p_player.peer_id))
 	player = p_player
 
