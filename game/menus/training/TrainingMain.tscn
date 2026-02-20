@@ -157,15 +157,15 @@ anchors_preset = -1
 offset_left = 122.0
 offset_top = 53.0
 offset_right = 622.0
-offset_bottom = 373.0
-scale = Vector2(2.33282, 2.10915)
+offset_bottom = 509.0
+scale = Vector2(2.8483367, 1.8152132)
 columns = 3
 script = ExtResource("5")
 
 [node name="Background" type="Sprite2D" parent="CanvasLayer/TrainingOptionsMenu"]
 modulate = Color(0.172549, 0.121569, 0.121569, 0.411765)
 position = Vector2(172.305, 200.957)
-scale = Vector2(1.01874, 0.564336)
+scale = Vector2(-2.583444, 2.5909083)
 texture = ExtResource("6")
 
 [node name="SaveStateLabel" type="Label" parent="CanvasLayer/TrainingOptionsMenu"]
@@ -384,6 +384,40 @@ theme_override_fonts/font = SubResource("2")
 text = "100"
 script = ExtResource("8")
 
+[node name="AssistBuildLabel" type="Label" parent="CanvasLayer/TrainingOptionsMenu"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("2")
+text = "Assist Meter Build"
+
+[node name="AssistBuildButton" type="Button" parent="CanvasLayer/TrainingOptionsMenu"]
+layout_mode = 2
+text = "FROZEN"
+
+[node name="AssistBuildNumber" type="Label" parent="CanvasLayer/TrainingOptionsMenu"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("2")
+
+[node name="MeterResetLabel" type="Label" parent="CanvasLayer/TrainingOptionsMenu"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("2")
+text = "Meter Refill"
+
+[node name="MeterResetButton" type="Button" parent="CanvasLayer/TrainingOptionsMenu"]
+layout_mode = 2
+text = "ON"
+
+[node name="MeterResetNumber" type="Label" parent="CanvasLayer/TrainingOptionsMenu"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("2")
+
 [node name="CommandListLabel" type="Label" parent="CanvasLayer/TrainingOptionsMenu"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -481,6 +515,8 @@ scale = Vector2(2.87118, 3.02479)
 [connection signal="value_changed" from="CanvasLayer/TrainingOptionsMenu/SuperMeter" to="CanvasLayer/TrainingOptionsMenu/SuperMeterNumber" method="_on_SuperMeter_value_changed"]
 [connection signal="value_changed" from="CanvasLayer/TrainingOptionsMenu/AssistMeter" to="CanvasLayer/TrainingOptionsMenu/AssistMeterNumber" method="_on_AssistMeter_value_changed"]
 [connection signal="value_changed" from="CanvasLayer/TrainingOptionsMenu/SyncRate" to="CanvasLayer/TrainingOptionsMenu/SyncRateNumber" method="_on_SyncRate_value_changed"]
+[connection signal="pressed" from="CanvasLayer/TrainingOptionsMenu/AssistBuildButton" to="CanvasLayer/TrainingOptionsMenu" method="_on_AssistBuildButton_pressed"]
+[connection signal="pressed" from="CanvasLayer/TrainingOptionsMenu/MeterResetButton" to="CanvasLayer/TrainingOptionsMenu" method="_on_MeterResetButton_pressed"]
 [connection signal="pressed" from="CanvasLayer/TrainingOptionsMenu/CommandListButton" to="CanvasLayer/TrainingOptionsMenu" method="_on_CommandListButton_pressed"]
 [connection signal="pressed" from="CanvasLayer/TrainingOptionsMenu/HideHitboxesButton" to="CanvasLayer/TrainingOptionsMenu" method="_on_hide_hitboxes_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/TrainingOptionsMenu/ResetButton" to="CanvasLayer/TrainingOptionsMenu" method="_on_ResetButton_pressed"]
