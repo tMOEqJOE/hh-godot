@@ -207,6 +207,7 @@ var replay_logging_enabled: bool = true
 var IS_TRAINING: bool = false
 var TRAINING_P1: bool = true
 var HITBOX_DISPLAY: bool = false
+var TRAINING_HITBOX_ON = false
 var REPLAY_FILE_NAME: String = ""
 var IS_REPLAY: bool = false
 

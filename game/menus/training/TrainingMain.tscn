@@ -482,6 +482,7 @@ scale = Vector2(2.87118, 3.02479)
 [connection signal="value_changed" from="CanvasLayer/TrainingOptionsMenu/AssistMeter" to="CanvasLayer/TrainingOptionsMenu/AssistMeterNumber" method="_on_AssistMeter_value_changed"]
 [connection signal="value_changed" from="CanvasLayer/TrainingOptionsMenu/SyncRate" to="CanvasLayer/TrainingOptionsMenu/SyncRateNumber" method="_on_SyncRate_value_changed"]
 [connection signal="pressed" from="CanvasLayer/TrainingOptionsMenu/CommandListButton" to="CanvasLayer/TrainingOptionsMenu" method="_on_CommandListButton_pressed"]
+[connection signal="pressed" from="CanvasLayer/TrainingOptionsMenu/HideHitboxesButton" to="CanvasLayer/TrainingOptionsMenu" method="_on_hide_hitboxes_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/TrainingOptionsMenu/ResetButton" to="CanvasLayer/TrainingOptionsMenu" method="_on_ResetButton_pressed"]
 [connection signal="pressed" from="CanvasLayer/TrainingOptionsMenu/CloseButton" to="CanvasLayer/TrainingOptionsMenu" method="_on_CloseButton_pressed"]
 [connection signal="pressed" from="CanvasLayer/TrainingOptionsMenu/ExitButton" to="CanvasLayer/TrainingOptionsMenu" method="_on_ExitButton_pressed"]

@@ -138,3 +138,6 @@ func input_helper(event):
 	elif event.is_action_pressed("player1_cancel") or event.is_action_pressed("player2_cancel"):
 		if (not command_list.is_enabled()):
 			_on_CloseButton_pressed()
+
+func _on_hide_hitboxes_button_pressed() -> void:
+	Global.TRAINING_HITBOX_ON = not Global.TRAINING_HITBOX_ON
