@@ -915,3 +915,18 @@ func is_gamepad_button_event(input_event):
 		if input_event.axis == JOY_AXIS_TRIGGER_RIGHT or input_event.axis == JOY_AXIS_TRIGGER_LEFT:
 			return true
 	return false
+
+const USERNAME_PREFIX_LENGTH = 20
+func display_username(raw_username:String) -> String:
+	if (raw_username.length() <= USERNAME_PREFIX_LENGTH):
+		return "?"
+	raw_username = raw_username.substr(USERNAME_PREFIX_LENGTH, raw_username.length() - USERNAME_PREFIX_LENGTH)
+	return raw_username
+
+func create_username(id:String, displayname:String) -> String:
+	if (id.length() > USERNAME_PREFIX_LENGTH):
+		id = id.substr(0, USERNAME_PREFIX_LENGTH)
+	elif (id.length() < USERNAME_PREFIX_LENGTH):
+		for i in range (USERNAME_PREFIX_LENGTH-id.length()):
+			id += "*"
+	return id+displayname
