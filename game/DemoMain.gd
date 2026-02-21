@@ -262,6 +262,10 @@ func _on_SyncManager_sync_started() -> void:
 			"assist_node_1" : Global.PLAYER_1_NODE_PATH[1],
 			"assist_2" : Global.PLAYER_2_CHARACTER[1],
 			"assist_node_2" : Global.PLAYER_2_NODE_PATH[1],
+			"point_1_color" : Global.PLAYER_1_COLOR[0],
+			"assist_1_color" : Global.PLAYER_1_COLOR[1],
+			"point_2_color" : Global.PLAYER_2_COLOR[0],
+			"assist_2_color" : Global.PLAYER_2_COLOR[1],
 		}
 	if logging_enabled and not SyncReplay.active:
 		var dir = DirAccess.open(LOG_FILE_DIRECTORY)
@@ -406,6 +410,16 @@ func setup_match_for_replay(my_peer_id: int, peer_ids: Array, match_info: Dictio
 	Global.PLAYER_1_NODE_PATH[1] = match_info["assist_node_1"]
 	Global.PLAYER_2_CHARACTER[1] = match_info["assist_2"]
 	Global.PLAYER_2_NODE_PATH[1] = match_info["assist_node_2"]
+	
+	Global.PLAYER_1_COLOR[0] = match_info["point_1_color"]
+	Global.PLAYER_1_COLOR[1] = match_info["assist_1_color"]
+	Global.PLAYER_2_COLOR[0] = match_info["point_2_color"]
+	Global.PLAYER_2_COLOR[1] = match_info["assist_2_color"]
+	
+	Global.load_new_color(true, true)
+	Global.load_new_color(false, false)
+	Global.load_new_color(true, false)
+	Global.load_new_color(false, true)
 	
 	Global.PLAYER_1_NODE[0] = load(Global.PLAYER_1_NODE_PATH[0])
 	Global.PLAYER_1_NODE_INSTANCE[0] = Global.PLAYER_1_NODE[0].instantiate()
