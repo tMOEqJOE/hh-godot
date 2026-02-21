@@ -16,6 +16,8 @@ var record_left_face_ref: bool
 
 var recording_machine
 
+var current_tick: int = 0
+
 func _init() -> void:
 	super._init()
 	logging_enabled = false
@@ -27,15 +29,22 @@ func _init() -> void:
 	game_mode_root = "/root/TrainingMain/FighterGame"
 	fighter_game.ko_enabled = false
 	Global.HITBOX_DISPLAY = true
+	Global.TRAINING_HITBOX_ON = true
 	savestate = {}
 	state_history = []
 	fillWith(state_history, {}, 3)
+	
+	current_tick = -SyncManager.input_delay
+
+func setup_mechanized():
+	SyncManager.mechanized = true
 
 func fillWith(array, contents, size):
 	for i in range(size):
 		array.push_back(contents)
 
 func _ready() -> void:
+	setup_mechanized()
 	super._ready()
 	setup_training()
 	$CanvasLayer/TrainingOptionsMenu.connect("close_menu", Callable(self, "set_new_training_options"))
@@ -82,6 +91,42 @@ func _physics_process(delta):
 				execute_loadstate()
 	input_helper(null)
 
+	_do_execute_frame_mechanized(current_tick, delta)
+	current_tick += 1
+
+func _do_execute_frame_mechanized(tick, delta) -> bool:
+	var input_frames_received: Dictionary = {}
+	var p1_input_dict = {}
+	var p2_input_dict = {}
+	var peer_dict = {}
+	var p1_input_package = {}
+	var p2_input_package = {}
+	p1_input_dict = get_input_vector(true)
+	p2_input_dict = get_input_vector(false)
+	peer_dict[game_mode_root+"/ServerInputInterpreter"] = p1_input_dict
+	peer_dict[game_mode_root+"/ClientInputInterpreter"] = p2_input_dict
+	p1_input_package[SyncManager.current_tick + SyncManager.input_delay+1] = peer_dict
+	p2_input_package[SyncManager.current_tick + SyncManager.input_delay+1] = peer_dict
+	input_frames_received[1] = p1_input_package
+	input_frames_received[2] = p2_input_package
+	SyncManager.mechanized_input_received = input_frames_received
+	SyncManager.mechanized_rollback_ticks = 0
+	SyncManager.execute_mechanized_tick()
+	SyncManager.execute_mechanized_interpolation_frame(delta)
+	
+	if (SyncManager.current_tick >= 0):
+		return true
+	return false
+
+func get_input_vector(is_p1: bool) -> Dictionary:
+	var input_interpreter : InputInterpreter = player_input
+	if (is_p1 and dummy_input.name == "ServerInputInterpreter"):
+		input_interpreter = dummy_input
+	elif (not is_p1 and dummy_input.name == "ClientInputInterpreter"):
+		input_interpreter = dummy_input
+	var out = input_interpreter.read_input()
+	return out
+
 func execute_savestate():
 	savestate = SyncManager._call_save_state()
 	
@@ -103,6 +148,7 @@ func load_reaction_state():
 			input_frame.players[key].input["/root/TrainingMain/FighterGame/ServerInputInterpreter"] = dummy_input.hurt_response_override(i)
 		else:
 			input_frame.players[key].input["/root/TrainingMain/FighterGame/ClientInputInterpreter"] = dummy_input.hurt_response_override(i)
+		#SyncManager.mechanized_rollback_ticks = state_history.size()
 		SyncManager._call_network_process(input_frame)
 
 func loadstate():
@@ -134,6 +180,7 @@ func reset():
 	sync_clear()
 	$CanvasLayer/TrainingOptionsMenu.hide()
 	fighter_game.stop_glowing_characters()
+	current_tick = 0
 	reload_scene()
 	#get_tree().reload_current_scene()
 
@@ -212,7 +259,7 @@ func setup_training():
 		dummy_input.input_prefix = "player1_"
 		$CanvasLayer/DamageCounter.hp_bar = fighter_game.get_node("Camera3D/BattleUI/ServerHPBar")
 	return_control_to_player()
-	skip_training_intro()
+	call_deferred("skip_training_intro")
 
 func skip_training_intro():
 	fighter_game.get_node("Camera3D/BattleUI/NowLoadingText").skip()
@@ -225,6 +272,12 @@ func skip_training_intro():
 		$CanvasLayer/TrainingOptionsMenu.get_super_meter(),
 		$CanvasLayer/TrainingOptionsMenu.get_assist_meter(),
 		$CanvasLayer/TrainingOptionsMenu.get_sync_rate())
+	var assist_build = $CanvasLayer/TrainingOptionsMenu.get_assist_build_option()
+	var meter_reset_option = $CanvasLayer/TrainingOptionsMenu.get_meter_reset_option()
+	fighter_game.ServerPlayer.assist_meter_build_frozen = not assist_build
+	fighter_game.ClientPlayer.assist_meter_build_frozen = not assist_build
+	meter_refresher.assist_build = assist_build
+	meter_refresher.meter_reset_option = meter_reset_option
 
 func _on_SyncManager_sync_started() -> void:
 	super._on_SyncManager_sync_started()
@@ -248,6 +301,8 @@ func set_new_training_options():
 	var block_type = $CanvasLayer/TrainingOptionsMenu.get_block_type()
 	var air_recovery = $CanvasLayer/TrainingOptionsMenu.get_air_recovery()
 	var counter_hit = $CanvasLayer/TrainingOptionsMenu.get_counter_hit()
+	var assist_build = $CanvasLayer/TrainingOptionsMenu.get_assist_build_option()
+	var meter_reset_option = $CanvasLayer/TrainingOptionsMenu.get_meter_reset_option()
 	
 	dummy_input.stance = stance
 	dummy_input.blocking = blocking
@@ -255,6 +310,12 @@ func set_new_training_options():
 	dummy_input.block_type = block_type
 	dummy_input.air_recovery = air_recovery
 	dummy_input.counter_hit = counter_hit
+	
+	fighter_game.ServerPlayer.assist_meter_build_frozen = not assist_build
+	fighter_game.ClientPlayer.assist_meter_build_frozen = not assist_build
+	
+	meter_refresher.assist_build = assist_build
+	meter_refresher.meter_reset_option = meter_reset_option
 
 ### RECORDING 
 
