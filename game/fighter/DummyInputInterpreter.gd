@@ -23,6 +23,7 @@ var bit_input: int = 0
 
 var load_frame_delay: int = 0 
 
+var in_rollback: bool = false
 var strike_hurt_frame_delay = 0 # pretty sure this exists due to bugs when rolling back on hitstop?
 var strike_hurt_frame_cooldown = 0
 
@@ -41,21 +42,22 @@ func prep_for_replay():
 
 func hurt_response(damage: int, hitCount: int, invalid: bool, block: bool, guard:int) -> void:
 	self.guard_type = guard
-	if (strike_hurt_frame_cooldown <= 0):
-		if (blocking == Enums.TrainingBlock.ALL):
-			if (not block):
-				strike_hurt_frame_delay = 1
-				strike_hurt_frame_cooldown = 0
-			if (block_type == Enums.TrainingBlockType.FD or
-				block_type == Enums.TrainingBlockType.IB or
-				block_type == Enums.TrainingBlockType.IFD or
-				block_type == Enums.TrainingBlockType.PARRY):
+	if (not in_rollback):
+		if (strike_hurt_frame_cooldown <= 0):
+			if (blocking == Enums.TrainingBlock.ALL):
+				if (not block):
+					strike_hurt_frame_delay = 1
+					strike_hurt_frame_cooldown = 0
+				if (block_type == Enums.TrainingBlockType.FD or
+					block_type == Enums.TrainingBlockType.IB or
+					block_type == Enums.TrainingBlockType.IFD or
+					block_type == Enums.TrainingBlockType.PARRY):
+						strike_hurt_frame_delay = 1
+						strike_hurt_frame_cooldown = 3
+			elif (counter_hit != Enums.TrainingCounterHit.OFF):
+				if (not block):
 					strike_hurt_frame_delay = 1
 					strike_hurt_frame_cooldown = 3
-		elif (counter_hit != Enums.TrainingCounterHit.OFF):
-			if (not block):
-				strike_hurt_frame_delay = 1
-				strike_hurt_frame_cooldown = 3
 
 # return the forced rollback's inputs
 func hurt_response_override(tick: int) -> Dictionary:
@@ -115,20 +117,25 @@ func clear_input():
 #	dump_ordered_input_history()
 	load_frame_delay = SyncManager.input_delay
 
+func _network_process(input: Dictionary) -> void:
+	super._network_process(input)
+	if (load_frame_delay > 0):
+		load_frame_delay -= 1
+	if (not in_rollback):
+		if (not is_replaying):
+			if (strike_hurt_frame_cooldown > 0):
+				strike_hurt_frame_cooldown -= 1
+			if (strike_hurt_frame_delay > 0):
+				strike_hurt_frame_delay -= 1
+				emit_signal("strike_hurt")
+
 func read_input() -> Dictionary:
 	var input := {}
 	if (load_frame_delay > 0):
-		load_frame_delay -= 1
 		bit_input = 0
 		input[Enums.PlayerInput.InputVector] = bit_input
 		return input
 	if (not is_replaying):
-		if (strike_hurt_frame_cooldown > 0):
-			strike_hurt_frame_cooldown -= 1
-		if (strike_hurt_frame_delay > 0):
-			strike_hurt_frame_delay -= 1
-			emit_signal("strike_hurt")
-	
 		if (player.currentState[Enums.StKey.comboTime] > 0):
 			bit_input = tech(bit_input, air_recovery)
 		

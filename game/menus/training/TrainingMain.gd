@@ -16,8 +16,6 @@ var record_left_face_ref: bool
 
 var recording_machine
 
-var current_tick: int = 0
-
 func _init() -> void:
 	super._init()
 	logging_enabled = false
@@ -33,8 +31,6 @@ func _init() -> void:
 	savestate = {}
 	state_history = []
 	fillWith(state_history, {}, 3)
-	
-	current_tick = -SyncManager.input_delay
 
 func setup_mechanized():
 	SyncManager.mechanized = true
@@ -91,8 +87,7 @@ func _physics_process(delta):
 				execute_loadstate()
 	input_helper(null)
 
-	_do_execute_frame_mechanized(current_tick, delta)
-	current_tick += 1
+	_do_execute_frame_mechanized(SyncManager.current_tick, delta)
 
 func _do_execute_frame_mechanized(tick, delta) -> bool:
 	var input_frames_received: Dictionary = {}
@@ -138,18 +133,35 @@ func update_reaction_save_state():
 		reaction_save_state = savestate
 
 func load_reaction_state():
-	SyncManager._call_load_state(reaction_save_state)
+	#SyncManager._call_load_state(reaction_save_state)
 	var input_frame
 	var key = 1
-	for i in range(state_history.size()-1, -1, -1):
+	var input_frames_received: Dictionary = {}
+	var p1_input_package = {}
+	var p2_input_package = {}
+	for i in range(state_history.size()):
 		input_frame = SyncManager.get_input_frame(SyncManager.current_tick - i)
-		key = input_frame.players.keys()[0]
-		if (dummy_input.name == "ServerInputInterpreter"):
-			input_frame.players[key].input["/root/TrainingMain/FighterGame/ServerInputInterpreter"] = dummy_input.hurt_response_override(i)
-		else:
-			input_frame.players[key].input["/root/TrainingMain/FighterGame/ClientInputInterpreter"] = dummy_input.hurt_response_override(i)
-		#SyncManager.mechanized_rollback_ticks = state_history.size()
-		SyncManager._call_network_process(input_frame)
+		if (not input_frame.players.is_empty()):
+			key = input_frame.players.keys()[0]
+			var p1_input_dict = {}
+			var p2_input_dict = {}
+			var peer_dict = {}
+			if (dummy_input.name == "ServerInputInterpreter"):
+				peer_dict[game_mode_root+"/ClientInputInterpreter"] = input_frame.players[key].input[game_mode_root+"/ClientInputInterpreter"]
+				peer_dict[game_mode_root+"/ServerInputInterpreter"] = dummy_input.hurt_response_override(i-1)
+			else:
+				peer_dict[game_mode_root+"/ServerInputInterpreter"] = input_frame.players[key].input[game_mode_root+"/ServerInputInterpreter"]
+				peer_dict[game_mode_root+"/ClientInputInterpreter"] = dummy_input.hurt_response_override(i-1)
+			p1_input_package[SyncManager.current_tick - i] = peer_dict
+			p2_input_package[SyncManager.current_tick - i] = peer_dict
+			input_frames_received[1] = p1_input_package
+			input_frames_received[2] = p2_input_package
+	SyncManager.mechanized_input_received = input_frames_received
+	SyncManager.mechanized_rollback_ticks = state_history.size()
+	dummy_input.in_rollback = true
+	SyncManager.execute_mechanized_tick()
+	SyncManager.execute_mechanized_interpolation_frame(1/60)
+	dummy_input.in_rollback = false
 
 func loadstate():
 	load_state_delay = SyncManager.input_delay
@@ -180,7 +192,6 @@ func reset():
 	sync_clear()
 	$CanvasLayer/TrainingOptionsMenu.hide()
 	fighter_game.stop_glowing_characters()
-	current_tick = 0
 	reload_scene()
 	#get_tree().reload_current_scene()
 
