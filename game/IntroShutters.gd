@@ -2,6 +2,9 @@ extends Node2D
 
 const ShutterSound = preload("res://game/assets/sfx/WhiffLvl2.wav")
 
+func _init():
+	z_index = 1000
+
 func _ready():
 	$NetworkAnimationPlayer.play("Wait")
 	reset()

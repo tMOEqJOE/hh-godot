@@ -361,10 +361,13 @@ position = Vector2(-0.111017, -0.499951)
 texture = ExtResource("23")
 
 [node name="ServerSyncRateBar" parent="Camera3D/BattleUI" instance=ExtResource("1")]
-position = Vector2(-663, -400)
+z_index = -1
+position = Vector2(-677, -406)
 
 [node name="ClientSyncRateBar" parent="Camera3D/BattleUI" instance=ExtResource("1")]
-position = Vector2(650, -402)
+z_index = -1
+position = Vector2(662, -402)
+flip = true
 
 [node name="ClientHPBar" parent="Camera3D/BattleUI" instance=ExtResource("8")]
 position = Vector2(802, -511)
@@ -425,6 +428,7 @@ is_p1 = true
 
 [node name="IntroShutters" type="Node2D" parent="Camera3D/BattleUI"]
 modulate = Color(1, 0.741176, 0.592157, 1)
+z_index = -100
 scale = Vector2(4, 4)
 script = ExtResource("70")
 
@@ -436,7 +440,6 @@ libraries = {
 script = ExtResource("22")
 
 [node name="Sprite2D" type="Sprite2D" parent="Camera3D/BattleUI/IntroShutters"]
-z_index = 1000
 position = Vector2(0, -1)
 texture = ExtResource("22_yl1ep")
 
