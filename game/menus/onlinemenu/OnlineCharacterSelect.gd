@@ -111,16 +111,16 @@ func _on_OnlineMatch_match_joined(match_id: String) -> void:
 func _on_OnlineMatch_matchmaker_matched(players: Dictionary) -> void:
 	print("Joined match via matchmaker")
 	for player in players.values():
-		print ("Player joined: %s" % player.username)
+		print ("Player joined: %s" % Util.display_username(player.username))
 
 func _on_OnlineMatch_player_joined(player: OnlineMatch.Player) -> void:
-	print("Player joined: %s" % player.username)
+	print("Player joined: %s" % Util.display_username(player.username))
 
 func _on_OnlineMatch_player_left(player: OnlineMatch.Player) -> void:
-	print("Player left: %s" % player.username)
+	print("Player left: %s" % Util.display_username(player.username))
 
 func _on_OnlineMatch_player_status_changed(player: OnlineMatch.Player, status) -> void:
-	print("Player status changed: %s -> %s" % [player.username, status])
+	print("Player status changed: %s -> %s" % [Util.display_username(player.username), status])
 	if player.peer_id != SyncManager.network_adaptor.get_unique_id() && status == OnlineMatch.PlayerStatus.CONNECTED:
 		rpc_id(player.peer_id, "receive_message", "Hi! We're connected now :-)")
 
@@ -134,7 +134,7 @@ func _on_OnlineMatch_match_not_ready() -> void:
 func _on_OnlineMatch_match_ready(players: Dictionary) -> void:
 	print("The match is ready to start! Here are players:")
 	for player in players.values():
-		print ("- %s" % player.username)
+		print ("- %s" % Util.display_username(player.username))
 
 ### Remote Character Select
 
@@ -434,14 +434,14 @@ func get_client_player_peer_id() -> int:
 	return 1
 
 func set_player_names():
-	$CanvasLayer/P1Name.text = try_get_player_name(1)
+	$CanvasLayer/P1Name.text = Util.display_username(try_get_player_name(1))
 	if (multiplayer.is_server()):
-		$CanvasLayer/P2Name.text = try_get_player_name(get_opponent_peer_id())
+		$CanvasLayer/P2Name.text = Util.display_username(try_get_player_name(get_opponent_peer_id()))
 	else:
 		if SyncManager.spectating:
-			$CanvasLayer/P2Name.text = try_get_player_name(get_client_player_peer_id())
+			$CanvasLayer/P2Name.text = Util.display_username(try_get_player_name(get_client_player_peer_id()))
 		else:
-			$CanvasLayer/P2Name.text = try_get_player_name(multiplayer.get_unique_id())
+			$CanvasLayer/P2Name.text = Util.display_username(try_get_player_name(multiplayer.get_unique_id()))
 
 func try_get_player_name(peer_id: int) -> String:
 	var result = OnlineMatch.get_player_names_by_peer_id()

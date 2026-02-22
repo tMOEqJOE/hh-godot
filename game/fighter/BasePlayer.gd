@@ -27,6 +27,8 @@ var input_interpreter: InputInterpreter
 var old_super_meter: int = 0
 var old_assist_meter: int = 0
 
+var assist_meter_build_frozen: bool = false
+
 var color_scheme = null
 
 var attackData: Dictionary = {
@@ -319,17 +321,16 @@ func movement_physics_tick() -> void:
 			currentState[Enums.StKey.modify_x] += Util.fixed_min(Util.MOD_FRICTION, -currentState[Enums.StKey.modify_x])
 		else:
 			currentState[Enums.StKey.modify_x] -= Util.fixed_max(Util.MOD_FRICTION, -currentState[Enums.StKey.modify_x])
-	currentState[Enums.StKey.assist_meter] = currentState.get(Enums.StKey.assist_meter, 0) + SGFixed.mul(currentState.get(Enums.StKey.sync_rate, 0), 45536)
-	if (currentState[Enums.StKey.sync_rate] < Util.BASE_SYNC_RATE):
-		currentState[Enums.StKey.sync_rate] -= SGFixed.mul(currentState[Enums.StKey.sync_rate]-Util.BASE_SYNC_RATE, 350)
-	else:
-		currentState[Enums.StKey.sync_rate] -= SGFixed.mul(currentState[Enums.StKey.sync_rate]-Util.BASE_SYNC_RATE, 150)
+	if (not assist_meter_build_frozen):
+		currentState[Enums.StKey.assist_meter] = currentState.get(Enums.StKey.assist_meter, 0) + SGFixed.mul(currentState.get(Enums.StKey.sync_rate, 0), 45536)
+		if (currentState[Enums.StKey.sync_rate] < Util.BASE_SYNC_RATE):
+			currentState[Enums.StKey.sync_rate] -= SGFixed.mul(currentState[Enums.StKey.sync_rate]-Util.BASE_SYNC_RATE, 350)
+		else:
+			currentState[Enums.StKey.sync_rate] -= SGFixed.mul(currentState[Enums.StKey.sync_rate]-Util.BASE_SYNC_RATE, 150)
 	if (currentState.get(Enums.StKey.assist_meter, 0) < 0):
 		currentState[Enums.StKey.assist_meter] = 0
 	elif (currentState.get(Enums.StKey.assist_meter, 0) >= Util.MAX_ASSIST_METER):
 		currentState[Enums.StKey.assist_meter] = Util.MAX_ASSIST_METER
-#	else:
-#		currentState[Enums.StKey.assist_meter] = Util.MAX_ASSIST_METER
 
 	if (currentState.get(Enums.StKey.super_meter, 0) < 0):
 		currentState[Enums.StKey.super_meter] = 0

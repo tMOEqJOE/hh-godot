@@ -24,7 +24,7 @@ func _init():
 			Enums.StKey.launch_dir_y : 0,
 			Enums.StKey.counter_launch_dir_x: 0,
 			Enums.StKey.counter_launch_dir_y: 0,
-			Enums.StKey.hitstun : 30,
+			Enums.StKey.hitstun : 15,
 			Enums.StKey.hitstop: 1,
 			},
 		6 : { 

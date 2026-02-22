@@ -107,7 +107,7 @@ func process_message(match_info: Dictionary):
 func setup_mechanized():
 	SyncManager.mechanized = true
 
-func _do_execute_frame_mechanized(tick) -> bool:
+func _do_execute_frame_mechanized(tick, delta) -> bool:
 	if (tick <= log_data.max_tick):
 		if ((tick-1) % state_tick_gap == 0):
 			state[tick] = SyncManager._call_save_state()
@@ -141,6 +141,7 @@ func _do_execute_frame_mechanized(tick) -> bool:
 		SyncManager.mechanized_input_received = input_frames_received
 		SyncManager.mechanized_rollback_ticks = 0
 		SyncManager.execute_mechanized_tick()
+		SyncManager.execute_mechanized_interpolation_frame(delta)
 		if (SyncManager.current_tick >= 0):
 			return true
 	else:
@@ -159,7 +160,7 @@ func _physics_process(delta):
 		
 	if (setup_complete):
 		for i in range(replay_speed):
-			completed = _do_execute_frame_mechanized(current_tick)
+			completed = _do_execute_frame_mechanized(current_tick, delta)
 			
 			if (completed):
 				current_tick += 1

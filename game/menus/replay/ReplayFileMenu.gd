@@ -18,7 +18,7 @@ func _on_focus_changed(control:Control) -> void:
 func make_replay_item(file_name):
 	var newButton = Button.new()
 	newButton.text = file_name
-	$CanvasLayer/GridContainer/GridContainer.add_child(newButton)
+	$CanvasLayer/GridContainer/GridContainer.add_child(newButton, InternalMode.INTERNAL_MODE_BACK)
 	if (most_recent_focus == null):
 		most_recent_focus = newButton
 		newButton.grab_focus()
@@ -46,15 +46,17 @@ func dir_contents():
 	create_replay_dir_if_empty()
 	var dir = DirAccess.open(REPLAY_LOG_FILE_DIRECTORY)
 	if dir:
-		dir.list_dir_begin() # TODOConverter3To4 fill missing arguments https://github.com/godotengine/godot/pull/40547
+		dir.list_dir_begin() # TODO: Converter3To4 fill missing arguments https://github.com/godotengine/godot/pull/40547
 		var file_name = dir.get_next()
+		var files_list = []
 		while file_name != "":
 			if dir.current_is_dir():
 				pass
 			else:
-#				print("Found file: " + file_name)
-				make_replay_item(file_name)
+				files_list.push_front(file_name)
 			file_name = dir.get_next()
+		for file in files_list:
+			make_replay_item(file)
 	else:
 		print("An error occurred when trying to access the path.")
 		$CanvasLayer/ErrorLabel.text = "Can't open replay directory"
@@ -82,7 +84,6 @@ func next_scene():
 func prev_scene():
 	MainMenuMusicControl.play_cursor_deselect()
 	get_tree().change_scene_to_file("res://game/menus/buttonmap/ReplayControllerPickMenuScreen.tscn")
-
 
 func _on_DeleteModeButton_pressed():
 	delete_mode = !delete_mode

@@ -74,19 +74,19 @@ func _on_OnlineMatch_match_joined(match_id: String) -> void:
 func _on_OnlineMatch_matchmaker_matched(players: Dictionary) -> void:
 	print("Joined match via matchmaker")
 	for player in players.values():
-		print ("Player joined: %s" % player.username)
+		print ("Player joined: %s" % Util.display_username(player.username))
 
 func _on_OnlineMatch_player_joined(player: OnlineMatch.Player) -> void:
-	print("Player joined: %s" % player.username)
-	$CanvasLayer/MessageLabel.text = "Player joined: " + player.username
+	print("Player joined: %s" % Util.display_username(player.username))
+	$CanvasLayer/MessageLabel.text = "Player joined: " + Util.display_username(player.username)
 
 func _on_OnlineMatch_player_left(player: OnlineMatch.Player) -> void:
-	print("Player left: %s" % player.username)
+	print("Player left: %s" % Util.display_username(player.username))
 	reset()
-	$CanvasLayer/MessageLabel.text = "Player left: " + player.username
+	$CanvasLayer/MessageLabel.text = "Player left: " + Util.display_username(player.username)
 
 func _on_OnlineMatch_player_status_changed(player: OnlineMatch.Player, status) -> void:
-	print("Player status changed: %s -> %s" % [player.username, status])
+	print("Player status changed: %s -> %s" % [Util.display_username(player.username), status])
 	if player.peer_id != SyncManager.network_adaptor.get_unique_id() && status == OnlineMatch.PlayerStatus.CONNECTED:
 		rpc_id(player.peer_id, "receive_message", "Hi! We're connected now :-)")
 		SyncManager.add_peer(player.peer_id)
@@ -107,7 +107,7 @@ func _on_OnlineMatch_match_ready(players: Dictionary) -> void:
 	print("The match is ready to start! Here are players:")
 	$CanvasLayer/MessageLabel.text = "Match is starting!"
 	for player in players.values():
-		print ("- %s" % player.username)
+		print ("- %s" % Util.display_username(player.username))
 		print ("- %s" % player.session_id)
 		print ("- %s" % player.peer_id)
 

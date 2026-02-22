@@ -11,6 +11,9 @@ var most_recent_focus:Control
 
 var command_list
 
+var assist_build_option: bool = false
+var meter_reset_option: bool = true
+
 func _on_focus_changed(control:Control) -> void:
 	#if control is PopupMenu:
 		#return
@@ -138,3 +141,26 @@ func input_helper(event):
 	elif event.is_action_pressed("player1_cancel") or event.is_action_pressed("player2_cancel"):
 		if (not command_list.is_enabled()):
 			_on_CloseButton_pressed()
+
+func _on_hide_hitboxes_button_pressed() -> void:
+	Global.TRAINING_HITBOX_ON = not Global.TRAINING_HITBOX_ON
+
+func get_assist_build_option() -> bool:
+	return assist_build_option
+
+func _on_AssistBuildButton_pressed() -> void:
+	assist_build_option = not assist_build_option
+	if (assist_build_option):
+		$AssistBuildButton.text = "ON"
+	else:
+		$AssistBuildButton.text = "OFF"
+
+func get_meter_reset_option() -> bool:
+	return meter_reset_option
+
+func _on_MeterResetButton_pressed() -> void:
+	meter_reset_option = not meter_reset_option
+	if (meter_reset_option):
+		$MeterResetButton.text = "ON"
+	else:
+		$MeterResetButton.text = "OFF"

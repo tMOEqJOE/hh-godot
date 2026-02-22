@@ -38,7 +38,7 @@ func get_session_id() -> String:
 	return from.session_id
 
 func update_ui(name: String):
-	$CanvasLayer/GridContainer/ChallengerName.set_text(from.username)
+	$CanvasLayer/GridContainer/ChallengerName.set_text(Util.display_username(from.username))
 
 func _on_accept_challenge_pressed():
 	SyncManager.set_input_delay(int($CanvasLayer/GridContainer/InputDelayMeter.value))

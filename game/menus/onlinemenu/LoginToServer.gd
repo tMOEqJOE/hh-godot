@@ -35,7 +35,7 @@ func connect_to_nakama() -> void:
 		$CanvasLayer/MessageLabel.text = "Unable to connect to server"
 		return
 		
-	var name_update = await nakama_client.update_account_async(nakama_session, Global.user_display_name, Global.user_display_name)
+	var name_update = await nakama_client.update_account_async(nakama_session, Util.create_username(device_id, Global.user_display_name), Global.user_display_name)
 	if name_update.is_exception():
 		print ("Unable to create display name")
 		print (name_update.get_exception().message)
@@ -43,13 +43,13 @@ func connect_to_nakama() -> void:
 		return
 #		get_tree().quit()
 
-	if (nakama_session.username != Global.user_display_name):
-		print("Name updated : oldname: " + nakama_session.username + " new name: "+Global.user_display_name)
+	if (nakama_session.username != Util.create_username(device_id,Global.user_display_name)):
+		print("Name updated : oldname: " + Util.display_username(nakama_session.username) + " new name: "+Global.user_display_name)
 		nakama_session = await nakama_client.authenticate_device_async(device_id, device_id)
 		if nakama_session.is_exception():
 			print ("Unable to connect to Nakama")
 			print (nakama_session.get_exception().message)
-			$CanvasLayer/MessageLabel.text = "Unable to connect to server"
+			$CanvasLayer/MessageLabel.text = "Unable to connect to server and update username"
 			return
 		
 	# Open a realtime socket to Nakama.

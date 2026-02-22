@@ -14,7 +14,7 @@ const credits = {
 		"leafer",
 		],
 	"Guest Composer" : [
-		"AZININE",
+		"miyaakka",
 	],
 	"Infinite and Bug Hunters" : [
 		"りてら",
@@ -55,7 +55,7 @@ const credits = {
 		],
 	"Original Music By":
 		[
-		"THIS MU SUCKS - AZININE",
+		"THIS MU SUCKS - miyaakka",
 		"Mogu Mogu Yummy - PinocchioP, Nekomata Okayu",
 		"Saikyo Tensai Wonderland - Ogura Asuka, Inugami Korone",
 		"Spiral Tones - Rikka and Calliope Mori",

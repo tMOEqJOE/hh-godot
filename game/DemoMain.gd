@@ -262,6 +262,10 @@ func _on_SyncManager_sync_started() -> void:
 			"assist_node_1" : Global.PLAYER_1_NODE_PATH[1],
 			"assist_2" : Global.PLAYER_2_CHARACTER[1],
 			"assist_node_2" : Global.PLAYER_2_NODE_PATH[1],
+			"point_1_color" : Global.PLAYER_1_COLOR[0],
+			"assist_1_color" : Global.PLAYER_1_COLOR[1],
+			"point_2_color" : Global.PLAYER_2_COLOR[0],
+			"assist_2_color" : Global.PLAYER_2_COLOR[1],
 		}
 	if logging_enabled and not SyncReplay.active:
 		var dir = DirAccess.open(LOG_FILE_DIRECTORY)
@@ -407,6 +411,16 @@ func setup_match_for_replay(my_peer_id: int, peer_ids: Array, match_info: Dictio
 	Global.PLAYER_2_CHARACTER[1] = match_info["assist_2"]
 	Global.PLAYER_2_NODE_PATH[1] = match_info["assist_node_2"]
 	
+	Global.PLAYER_1_COLOR[0] = match_info.get("point_1_color", "res://game/assets/sprites/oga/ColorPalettes/1.png")
+	Global.PLAYER_1_COLOR[1] = match_info.get("assist_1_color", "res://game/assets/sprites/oga/ColorPalettes/1.png")
+	Global.PLAYER_2_COLOR[0] = match_info.get("point_2_color", "res://game/assets/sprites/oga/ColorPalettes/1.png")
+	Global.PLAYER_2_COLOR[1] = match_info.get("assist_2_color", "res://game/assets/sprites/oga/ColorPalettes/1.png")
+	
+	Global.load_new_color(true, true)
+	Global.load_new_color(false, false)
+	Global.load_new_color(true, false)
+	Global.load_new_color(false, true)
+	
 	Global.PLAYER_1_NODE[0] = load(Global.PLAYER_1_NODE_PATH[0])
 	Global.PLAYER_1_NODE_INSTANCE[0] = Global.PLAYER_1_NODE[0].instantiate()
 	
@@ -463,20 +477,20 @@ func _on_OnlineButton_pressed():
 	else:
 		$CanvasLayer/SpectatorLabel.text = ""
 		
-	$CanvasLayer/P1Name.text = try_get_player_name(1)
+	$CanvasLayer/P1Name.text = Util.display_username(try_get_player_name(1))
 	if (multiplayer.is_server()):
 #       for testing rollbacks with 1 CPU player
 #		fighter_game.get_node("ServerInputInterpreter").set_script(CPUInputInterpreter)
 		$FighterGame/ServerInputInterpreter.set_multiplayer_authority(1)
 		$FighterGame/ClientInputInterpreter.set_multiplayer_authority(get_opponent_peer_id())
-		$CanvasLayer/P2Name.text = try_get_player_name(get_opponent_peer_id())
+		$CanvasLayer/P2Name.text = Util.display_username(try_get_player_name(get_opponent_peer_id()))
 	else:
 		if SyncManager.spectating:
 			$FighterGame/ClientInputInterpreter.set_multiplayer_authority(get_client_player_peer_id())
-			$CanvasLayer/P2Name.text = try_get_player_name(get_client_player_peer_id())
+			$CanvasLayer/P2Name.text = Util.display_username(try_get_player_name(get_client_player_peer_id()))
 		else:
 			$FighterGame/ClientInputInterpreter.set_multiplayer_authority(multiplayer.get_unique_id())
-			$CanvasLayer/P2Name.text = try_get_player_name(multiplayer.get_unique_id())
+			$CanvasLayer/P2Name.text = Util.display_username(try_get_player_name(multiplayer.get_unique_id()))
 	SyncManager.reset_network_adaptor()
 	
 	message_label.text = "Game loaded"

@@ -132,8 +132,8 @@ func _on_OnlineLobby_match_joined(match_id: String) -> void:
 	update_ui()
 
 func _on_OnlineLobby_player_joined(player: OnlineLobby.Player) -> void:
-	print("Player joined: %s" % player.username)
-	update_message_log("Player joined: " + player.username)
+	print("Player joined: %s" % Util.display_username(player.username))
+	update_message_log("Player joined: " + Util.display_username(player.username))
 	update_ui()
 
 	if (player.session_id != OnlineLobby.my_session_id):
@@ -141,7 +141,7 @@ func _on_OnlineLobby_player_joined(player: OnlineLobby.Player) -> void:
 
 func update_ui() -> void:
 	$CanvasLayer/SpectatorLabel.text = get_spectator_ids()
-	$CanvasLayer/NameLabel.text = Global.nakama_session.username
+	$CanvasLayer/NameLabel.text = Util.display_username(Global.nakama_session.username)
 	$CanvasLayer/DebugLabel.text = get_debug_session_ids()
 	if (challenge_state == OnlineLobby.CHALLENGE_STATE.IN_GAME):
 		$Background.self_modulate = Color("#6f0f08")
@@ -163,17 +163,17 @@ func get_debug_session_ids() -> String:
 func get_spectator_ids() -> String:
 	var output = "Spectators:\n"
 	for key in OnlineLobby.my_spectators.keys():
-		output += str(OnlineLobby.players[key].username) + "\n"
+		output += str(Util.display_username(OnlineLobby.players[key].username)) + "\n"
 	return output
 
 func _on_OnlineLobby_player_left(player: OnlineLobby.Player) -> void:
-	print("Player left lobby: %s" % player.username)
-	update_message_log("Player left lobby: " + player.username)
+	print("Player left lobby: %s" % Util.display_username(player.username))
+	update_message_log("Player left lobby: " + Util.display_username(player.username))
 	remove_player_list(player)
 	update_ui()
 
 func _on_OnlineLobby_player_status_changed(player: OnlineLobby.Player, status) -> void:
-	print("Player status changed: %s -> %s" % [player.username, status])
+	print("Player status changed: %s -> %s" % [Util.display_username(player.username), status])
 	update_ui()
 
 func _on_OnlineLobby_lobby_status_changed(session_id: String, status: int) -> void:
@@ -271,14 +271,14 @@ func _on_OnlineMatch_match_ready(players: Dictionary) -> void:
 	update_message_log("Match is ready")
 	print(get_tree().get_multiplayer().get_peers())
 	for player in players.values():
-		print ("- %s" % player.username)
+		print ("- %s" % Util.display_username(player.username))
 	update_ui()
 
 func _on_OnlineMatch_match_player_joined(player: OnlineMatch.Player) -> void:
 	update_message_log("Joined: " + str(player.peer_id) + " " + str(player.session_id))
 
 func _on_OnlineMatch_player_status_changed(player: OnlineMatch.Player, status) -> void:
-	print("Player status changed: %s -> %s" % [player.username, status])
+	print("Player status changed: %s -> %s" % [Util.display_username(player.username), status])
 	#update_message_log("My Sync ID: " + str(SyncManager.network_adaptor.get_unique_id()))
 	if player.peer_id != SyncManager.network_adaptor.get_unique_id() && status == OnlineMatch.PlayerStatus.CONNECTED:
 		update_message_log("Connected: " + str(player.peer_id))
@@ -331,7 +331,7 @@ func _on_OnlineLobby_match_ready(players: Dictionary) -> void:
 
 	update_message_log("Lobby is starting!")
 	for player in players.values():
-		print ("- %s" % player.username)
+		print ("- %s" % Util.display_username(player.username))
 	update_ui()
 
 func _on_SyncManager_peer_added(peer_id) -> void:

@@ -1,6 +1,6 @@
 extends Node
 
-const BATTLE_ENGINE_VERSION = "HHv0.8.0001"
+const BATTLE_ENGINE_VERSION = "HHv0.8.0002"
 
 func get_battle_version() -> String:
 	if (len(Build.INTERNAL_BATTLE_ENGINE_KEY) < 50):
@@ -148,7 +148,7 @@ const BGM_LIST = [
 	'Heroine Audition',
 	'WIM',
 	'This MU is (2-8) At Best',
-	'THIS MU SUCKS by AZININE',
+	'THIS MU SUCKS by miyaakka',
 ]
 const BGM_UID_LIST = [
 	'uid://63an0yld6m2s', # Unused: Auto
@@ -207,6 +207,7 @@ var replay_logging_enabled: bool = true
 var IS_TRAINING: bool = false
 var TRAINING_P1: bool = true
 var HITBOX_DISPLAY: bool = false
+var TRAINING_HITBOX_ON = false
 var REPLAY_FILE_NAME: String = ""
 var IS_REPLAY: bool = false
 

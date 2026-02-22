@@ -73,9 +73,3 @@ func enter(state: Dictionary) -> void:
 	state[Enums.StKey.accel_y] = 0
 	anim.stop(true)
 	anim.play("AssistSuper")
-
-
-func physics_tick(state: Dictionary) -> void:
-	super.physics_tick(state)
-	if (state[Enums.StKey.frame] == 11):
-		anim.play("AssistSuperLoop")

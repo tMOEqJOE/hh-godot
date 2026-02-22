@@ -71,7 +71,6 @@ const PARRY_SUPER_METER_BOOST := SGFixed.ONE*1500
 const PARRY_WINDOW := 8 # 6
 const PARRY_METER_COST := 0 # SGFixed.ONE*3500 and 2500
 const JUST_BLOCK_WINDOW := 8
-const TRAINING_DUMMY_JUST_BLOCK_WINDOW := 1
 const RED_PARRY_WINDOW := 3
 
 const INPUT_BUFFER_LENIANCY := 1
@@ -915,3 +914,18 @@ func is_gamepad_button_event(input_event):
 		if input_event.axis == JOY_AXIS_TRIGGER_RIGHT or input_event.axis == JOY_AXIS_TRIGGER_LEFT:
 			return true
 	return false
+
+const USERNAME_PREFIX_LENGTH = 20
+func display_username(raw_username:String) -> String:
+	if (raw_username.length() <= USERNAME_PREFIX_LENGTH):
+		return "?"
+	raw_username = raw_username.substr(USERNAME_PREFIX_LENGTH, raw_username.length() - USERNAME_PREFIX_LENGTH)
+	return raw_username
+
+func create_username(id:String, displayname:String) -> String:
+	if (id.length() > USERNAME_PREFIX_LENGTH):
+		id = id.substr(0, USERNAME_PREFIX_LENGTH)
+	elif (id.length() < USERNAME_PREFIX_LENGTH):
+		for i in range (USERNAME_PREFIX_LENGTH-id.length()):
+			id += "*"
+	return id+displayname

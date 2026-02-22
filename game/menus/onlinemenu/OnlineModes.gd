@@ -5,7 +5,7 @@ var button_menu
 
 func _ready() -> void:
 	MainMenuMusicControl.play_main_menu_music()
-	$CanvasLayer/NameLabel.text = Global.nakama_session.username
+	$CanvasLayer/NameLabel.text = Util.display_username(Global.nakama_session.username)
 	$CanvasLayer/GridContainer/CreateRoomButton.grab_focus()
 	if (Global.IS_PUBLIC_LOBBY):
 		$CanvasLayer/GridContainer/CreatePublicRoomButton.grab_focus()

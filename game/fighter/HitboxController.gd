@@ -79,7 +79,7 @@ func update():
 
 func _draw() -> void:
 	var opac = 0
-	if (not collision_shape.disabled and Global.HITBOX_DISPLAY):
+	if (not collision_shape.disabled and Global.HITBOX_DISPLAY and Global.TRAINING_HITBOX_ON):
 		opac = 0.35
 		draw_rect(
 			Rect2(
