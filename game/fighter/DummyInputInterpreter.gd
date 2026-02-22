@@ -6,6 +6,7 @@ signal strike_hurt()
 
 var player: PointPlayer
 
+
 var stance = 0
 var blocking = 0
 var block_switch = 0
@@ -85,7 +86,7 @@ func hurt_response_override(tick: int) -> Dictionary:
 				bit_input = release_stick(bit_input)
 		elif (block_type == Enums.TrainingBlockType.PARRY):
 			bit_input = release_stick(bit_input)
-			if (tick <= 1):
+			if (tick <= 0):
 				if (block_switch == Enums.TrainingBlockSwitch.ENABLED):
 					if (guard_type == Enums.GuardType.Low):
 						bit_input = change_stance(bit_input, Enums.TrainingStance.CROUCH)
@@ -136,7 +137,7 @@ func read_input() -> Dictionary:
 		input[Enums.PlayerInput.InputVector] = bit_input
 		return input
 	if (not is_replaying):
-		if (player.currentState[Enums.StKey.comboTime] > 0):
+		if (player.currentState[Enums.StKey.comboTime] > 0 and player.currentState[Enums.StKey.hitstun] < 5):
 			bit_input = tech(bit_input, air_recovery)
 		
 		bit_input = change_stance(bit_input, stance)
@@ -218,10 +219,13 @@ func release_stick(bit_input: int):
 
 func is_just_blocking(leftface) -> bool:
 	# override for just block window
-	var bit_direction = Enums.InputFlags.LEFT
-	if (leftface):
-		bit_direction = Enums.InputFlags.RIGHT
-	for i in range(Util.TRAINING_DUMMY_JUST_BLOCK_WINDOW):
-		if (tap_switch_direction(i, bit_direction)):
-			return true
+	if (block_type == Enums.TrainingBlockType.IFD or block_type == Enums.TrainingBlockType.IB):
+		var TRAINING_DUMMY_JUST_BLOCK_WINDOW = 2
+		var bit_direction = Enums.InputFlags.LEFT
+		if (leftface):
+			bit_direction = Enums.InputFlags.RIGHT
+		for i in range(TRAINING_DUMMY_JUST_BLOCK_WINDOW):
+			if (tap_switch_direction(i, bit_direction)):
+				return true
+		return false
 	return false

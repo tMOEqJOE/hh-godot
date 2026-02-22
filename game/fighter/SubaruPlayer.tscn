@@ -4094,7 +4094,7 @@ material = ExtResource("5")
 position = Vector2(-15, -259)
 scale = Vector2(1.428, 1.428)
 texture = ExtResource("176")
-offset = Vector2(-80, 0)
+offset = Vector2(60, 100)
 
 [node name="Shadow" parent="." instance=ExtResource("4_sc1r3")]
 position = Vector2(0, 6)

@@ -411,10 +411,10 @@ func setup_match_for_replay(my_peer_id: int, peer_ids: Array, match_info: Dictio
 	Global.PLAYER_2_CHARACTER[1] = match_info["assist_2"]
 	Global.PLAYER_2_NODE_PATH[1] = match_info["assist_node_2"]
 	
-	Global.PLAYER_1_COLOR[0] = match_info["point_1_color"]
-	Global.PLAYER_1_COLOR[1] = match_info["assist_1_color"]
-	Global.PLAYER_2_COLOR[0] = match_info["point_2_color"]
-	Global.PLAYER_2_COLOR[1] = match_info["assist_2_color"]
+	Global.PLAYER_1_COLOR[0] = match_info.get("point_1_color", "res://game/assets/sprites/oga/ColorPalettes/1.png")
+	Global.PLAYER_1_COLOR[1] = match_info.get("assist_1_color", "res://game/assets/sprites/oga/ColorPalettes/1.png")
+	Global.PLAYER_2_COLOR[0] = match_info.get("point_2_color", "res://game/assets/sprites/oga/ColorPalettes/1.png")
+	Global.PLAYER_2_COLOR[1] = match_info.get("assist_2_color", "res://game/assets/sprites/oga/ColorPalettes/1.png")
 	
 	Global.load_new_color(true, true)
 	Global.load_new_color(false, false)

@@ -32,7 +32,7 @@ func _init() -> void:
 	Global.TRAINING_HITBOX_ON = true
 	savestate = {}
 	state_history = []
-	fillWith(state_history, {}, 3)
+	fillWith(state_history, {}, 3+SyncManager.input_delay)
 
 func setup_mechanized():
 	SyncManager.mechanized = true
@@ -148,7 +148,7 @@ func load_reaction_state():
 	var p1_input_package = {}
 	var p2_input_package = {}
 	for i in range(state_history.size()):
-		var tick = SyncManager.current_tick + -i
+		var tick = SyncManager.current_tick + -i + SyncManager.input_delay
 		input_frame = SyncManager.get_input_frame(tick)
 		if (not input_frame.players.is_empty()):
 			key = input_frame.players.keys()[0]
@@ -157,10 +157,10 @@ func load_reaction_state():
 			var peer_dict = {}
 			if (dummy_input.name == "ServerInputInterpreter"):
 				peer_dict[game_mode_root+"/ClientInputInterpreter"] = input_frame.players[key].input[game_mode_root+"/ClientInputInterpreter"].duplicate(true)
-				peer_dict[game_mode_root+"/ServerInputInterpreter"] = dummy_input.hurt_response_override(i-1)
+				peer_dict[game_mode_root+"/ServerInputInterpreter"] = dummy_input.hurt_response_override(i-SyncManager.input_delay-2)
 			else:
 				peer_dict[game_mode_root+"/ServerInputInterpreter"] = input_frame.players[key].input[game_mode_root+"/ServerInputInterpreter"].duplicate(true)
-				peer_dict[game_mode_root+"/ClientInputInterpreter"] = dummy_input.hurt_response_override(i-1)
+				peer_dict[game_mode_root+"/ClientInputInterpreter"] = dummy_input.hurt_response_override(i-SyncManager.input_delay-2)
 			p1_input_package[tick] = peer_dict
 			p2_input_package[tick] = peer_dict
 			_input_frames_received[1] = p1_input_package
