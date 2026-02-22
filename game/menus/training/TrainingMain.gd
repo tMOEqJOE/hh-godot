@@ -16,6 +16,8 @@ var record_left_face_ref: bool
 
 var recording_machine
 
+var _input_frames_received: Dictionary = {}
+
 func _init() -> void:
 	super._init()
 	logging_enabled = false
@@ -90,28 +92,34 @@ func _physics_process(delta):
 	_do_execute_frame_mechanized(SyncManager.current_tick, delta)
 
 func _do_execute_frame_mechanized(tick, delta) -> bool:
-	var input_frames_received: Dictionary = {}
 	var p1_input_dict = {}
 	var p2_input_dict = {}
 	var peer_dict = {}
 	var p1_input_package = {}
 	var p2_input_package = {}
+	
+	if (not _input_frames_received.is_empty()):
+		p1_input_package = _input_frames_received[1]
+		p2_input_package = _input_frames_received[2]
+		SyncManager.mechanized_rollback_ticks = p1_input_package.size()+1
+		dummy_input.in_rollback = true
 	p1_input_dict = get_input_vector(true)
 	p2_input_dict = get_input_vector(false)
 	peer_dict[game_mode_root+"/ServerInputInterpreter"] = p1_input_dict
 	peer_dict[game_mode_root+"/ClientInputInterpreter"] = p2_input_dict
+	
 	p1_input_package[SyncManager.current_tick + SyncManager.input_delay+1] = peer_dict
 	p2_input_package[SyncManager.current_tick + SyncManager.input_delay+1] = peer_dict
-	input_frames_received[1] = p1_input_package
-	input_frames_received[2] = p2_input_package
-	SyncManager.mechanized_input_received = input_frames_received
-	SyncManager.mechanized_rollback_ticks = 0
+	_input_frames_received[1] = p1_input_package
+	_input_frames_received[2] = p2_input_package
+	SyncManager.mechanized_input_received = _input_frames_received
 	SyncManager.execute_mechanized_tick()
 	SyncManager.execute_mechanized_interpolation_frame(delta)
 	
-	if (SyncManager.current_tick >= 0):
-		return true
-	return false
+	dummy_input.in_rollback = false
+	_input_frames_received = {}
+	SyncManager.reset_mechanized_data()
+	return true
 
 func get_input_vector(is_p1: bool) -> Dictionary:
 	var input_interpreter : InputInterpreter = player_input
@@ -134,35 +142,35 @@ func update_reaction_save_state():
 
 func load_reaction_state():
 	#SyncManager._call_load_state(reaction_save_state)
+	_input_frames_received = {}
 	var input_frame
 	var key = 1
-	var input_frames_received: Dictionary = {}
 	var p1_input_package = {}
 	var p2_input_package = {}
 	for i in range(state_history.size()):
-		input_frame = SyncManager.get_input_frame(SyncManager.current_tick - i)
+		var tick = SyncManager.current_tick + -i
+		input_frame = SyncManager.get_input_frame(tick)
 		if (not input_frame.players.is_empty()):
 			key = input_frame.players.keys()[0]
 			var p1_input_dict = {}
 			var p2_input_dict = {}
 			var peer_dict = {}
 			if (dummy_input.name == "ServerInputInterpreter"):
-				peer_dict[game_mode_root+"/ClientInputInterpreter"] = input_frame.players[key].input[game_mode_root+"/ClientInputInterpreter"]
+				peer_dict[game_mode_root+"/ClientInputInterpreter"] = input_frame.players[key].input[game_mode_root+"/ClientInputInterpreter"].duplicate(true)
 				peer_dict[game_mode_root+"/ServerInputInterpreter"] = dummy_input.hurt_response_override(i-1)
 			else:
-				peer_dict[game_mode_root+"/ServerInputInterpreter"] = input_frame.players[key].input[game_mode_root+"/ServerInputInterpreter"]
+				peer_dict[game_mode_root+"/ServerInputInterpreter"] = input_frame.players[key].input[game_mode_root+"/ServerInputInterpreter"].duplicate(true)
 				peer_dict[game_mode_root+"/ClientInputInterpreter"] = dummy_input.hurt_response_override(i-1)
-			p1_input_package[SyncManager.current_tick - i] = peer_dict
-			p2_input_package[SyncManager.current_tick - i] = peer_dict
-			input_frames_received[1] = p1_input_package
-			input_frames_received[2] = p2_input_package
-	SyncManager.mechanized_input_received = input_frames_received
-	SyncManager.mechanized_rollback_ticks = state_history.size()
-	dummy_input.in_rollback = true
-	SyncManager.execute_mechanized_tick()
-	SyncManager.execute_mechanized_interpolation_frame(1/60)
-	dummy_input.in_rollback = false
+			p1_input_package[tick] = peer_dict
+			p2_input_package[tick] = peer_dict
+			_input_frames_received[1] = p1_input_package
+			_input_frames_received[2] = p2_input_package
+	store_rollback_state.call_deferred(_input_frames_received, state_history.size())
 
+func store_rollback_state(p_input_frames_received, rollback_ticks):
+	_input_frames_received = p_input_frames_received.duplicate(true)
+	SyncManager.mechanized_rollback_ticks = rollback_ticks
+	
 func loadstate():
 	load_state_delay = SyncManager.input_delay
 	dummy_input.clear_input()

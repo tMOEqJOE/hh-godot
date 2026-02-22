@@ -76,12 +76,12 @@ func hurt_response_override(tick: int) -> Dictionary:
 		if (block_type == Enums.TrainingBlockType.FD):
 			bit_input = BC_hold(bit_input)
 		elif (block_type == Enums.TrainingBlockType.IFD):
-			if (tick != 0):
+			if (tick > 0):
 				bit_input = release_stick(bit_input)
 			else:
 				bit_input = BC_hold(bit_input)
 		elif (block_type == Enums.TrainingBlockType.IB):
-			if (tick != 0):
+			if (tick > 0):
 				bit_input = release_stick(bit_input)
 		elif (block_type == Enums.TrainingBlockType.PARRY):
 			bit_input = release_stick(bit_input)
