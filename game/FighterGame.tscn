@@ -307,6 +307,7 @@ _data = {
 
 [node name="FighterGame" type="SGFixedNode2D"]
 script = ExtResource("3")
+metadata/_edit_vertical_guides_ = [-113.0, 123.0]
 
 [node name="ServerInputInterpreter" parent="." instance=ExtResource("6")]
 
@@ -362,11 +363,11 @@ texture = ExtResource("23")
 
 [node name="ServerSyncRateBar" parent="Camera3D/BattleUI" instance=ExtResource("1")]
 z_index = -1
-position = Vector2(-677, -406)
+position = Vector2(-677, -403)
 
 [node name="ClientSyncRateBar" parent="Camera3D/BattleUI" instance=ExtResource("1")]
 z_index = -1
-position = Vector2(662, -402)
+position = Vector2(662, -404)
 flip = true
 
 [node name="ClientHPBar" parent="Camera3D/BattleUI" instance=ExtResource("8")]
@@ -385,7 +386,7 @@ scale = Vector2(-1.2, 1.1)
 position = Vector2(-694, -449)
 
 [node name="ServerSuperBar" parent="Camera3D/BattleUI" instance=ExtResource("19")]
-position = Vector2(-828, 476)
+position = Vector2(-822, 476)
 scale = Vector2(1, 0.77)
 p1_side = true
 
