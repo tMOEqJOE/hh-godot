@@ -11,8 +11,6 @@ func _ready():
 		$P2Cursor.enable(false)
 		$P2Cursor.visible = false
 		$CanvasLayer/WinStreak.text = "Win streak: "+str(Global.P1_WIN_STREAK)
-#		if (Global.p1_is_gamepad):
-#			Util.load_cont
 	else:
 		$P1Cursor.input_prefix = "player2_"
 		$P2Cursor.input_prefix = "player2_"
