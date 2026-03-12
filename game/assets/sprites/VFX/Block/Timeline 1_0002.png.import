@@ -2,21 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bed7wmntg35pn"
-path.s3tc="res://.godot/imported/Timeline 1_0002.png-672b53bce9920cce70e950ecaa39be1b.s3tc.ctex"
+uid="uid://dkhwnok3nuvml"
+path="res://.godot/imported/Timeline 1_0002.png-672b53bce9920cce70e950ecaa39be1b.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://game/assets/sprites/VFX/Block/Timeline 1_0002.png"
-dest_files=["res://.godot/imported/Timeline 1_0002.png-672b53bce9920cce70e950ecaa39be1b.s3tc.ctex"]
+dest_files=["res://.godot/imported/Timeline 1_0002.png-672b53bce9920cce70e950ecaa39be1b.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
