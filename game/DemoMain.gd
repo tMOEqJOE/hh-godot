@@ -18,11 +18,10 @@ var replay_logging_enabled := true
 var set_match_total: int = 0
 var p1_win_total: int = 0
 
-var match_disconnected: bool = false
-var peer_ready:Dictionary = {}
-
 var fighter_game: FighterGame
 var game_mode_root: String
+
+var match_connection = preload("res://game/components/netplay_manager/MatchConnectionManager.gd").new()
 
 func _init() -> void:
 	replay_logging_enabled = Global.replay_logging_enabled
@@ -68,6 +67,8 @@ func signal_connect() -> void:
 		$FighterGame.connect("chara_select", Callable(self, "chara_select"))
 		$FighterGame.connect("main_menu", Callable(self, "main_menu"))
 		$FighterGame.connect("update_win_counts", Callable(self, "update_win_counts"))
+		
+		match_connection.all_peers_ready.connect(all_peers_ready)
 	$CanvasLayer/WinCounterP1.update_win_count(true)
 	$CanvasLayer/WinCounterP2.update_win_count(false)
 
@@ -80,9 +81,7 @@ func first_time_setup() -> void:
 	setup_main()
 
 func setup_main() -> void:
-	match_disconnected = false
-	peer_ready = {}
-	
+	match_connection.init()
 	$FighterGame/ServerInputInterpreter.set_multiplayer_authority(1)
 	
 	if (Global.NETPLAY_MODE != Global.NETPLAY_MODES.OFFLINE):
@@ -90,32 +89,21 @@ func setup_main() -> void:
 		if not multiplayer.is_server():
 			rpc_id(1, "connect_peer_ready")
 		else:
-			peer_ready[1] = true
-			if (all_peers_ready()):
-				start_game()
+			match_connection.peer_setup_complete(1)
 	else:
 		$CanvasLayer/PingLabel.hide()
 		$CanvasLayer/RollbackFrameLabel.hide()
 		_on_LocalButton_pressed()
 
 func all_peers_ready():
-	if (Global.NETPLAY_MODE != Global.NETPLAY_MODES.OFFLINE and not Global.DEBUG):
-		return peer_ready.size() >= SyncManager.peers.size() + 1
-	else:
-		return true
+	start_game()
 
 func manual_disconnect():
 	print("Manual disconnect")
 	quit_online_hard()
 	main_menu()
 
-@rpc("any_peer", "call_local") func connect_peer_ready() -> void:
-	var peer_id = multiplayer.get_remote_sender_id()
-	if multiplayer.is_server():
-		peer_ready[peer_id] = true
-		message_label.text = "# of Peers loaded: " + str(len(peer_ready))
-		if (all_peers_ready()):
-			rpc("start_game")
+
 
 @rpc("any_peer", "call_local") func start_game() -> void:
 	if multiplayer.is_server():
