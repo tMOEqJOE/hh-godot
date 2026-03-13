@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bkfxnlo7wwe7r"
+path="res://.godot/imported/sui_yes please step aside.wav-87149d4c8a5defc65780f2b985ab8825.sample"
+
+[deps]
+
+source_file="res://game/assets/voice/suisei/sui_yes please step aside.wav"
+dest_files=["res://.godot/imported/sui_yes please step aside.wav-87149d4c8a5defc65780f2b985ab8825.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=true
+force/max_rate=true
+force/max_rate_hz=22100.0
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

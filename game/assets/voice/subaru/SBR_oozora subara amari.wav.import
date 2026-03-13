@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dt08knf26m5fx"
+path="res://.godot/imported/SBR_oozora subara amari.wav-480e94a84bece906f1420562c0cecd39.sample"
+
+[deps]
+
+source_file="res://game/assets/voice/subaru/SBR_oozora subara amari.wav"
+dest_files=["res://.godot/imported/SBR_oozora subara amari.wav-480e94a84bece906f1420562c0cecd39.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=true
+force/max_rate=true
+force/max_rate_hz=22100.0
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://plim3xt1n0lk"
+path="res://.godot/imported/sui_show ga hajimattaze.wav-608673bbb2f6fdab74d99a0594356458.sample"
+
+[deps]
+
+source_file="res://game/assets/voice/suisei/sui_show ga hajimattaze.wav"
+dest_files=["res://.godot/imported/sui_show ga hajimattaze.wav-608673bbb2f6fdab74d99a0594356458.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=true
+force/max_rate=true
+force/max_rate_hz=22100.0
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ds2gtt2kwtio"
+path="res://.godot/imported/fbk_kurokami wasurero beam.wav-520f2c590a5dd530f5565c93fca10a6b.sample"
+
+[deps]
+
+source_file="res://game/assets/voice/fubuki/fbk_kurokami wasurero beam.wav"
+dest_files=["res://.godot/imported/fbk_kurokami wasurero beam.wav-520f2c590a5dd530f5565c93fca10a6b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=true
+force/max_rate=true
+force/max_rate_hz=22100.0
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

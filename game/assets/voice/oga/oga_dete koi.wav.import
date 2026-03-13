@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://i025y82j3y84"
+path="res://.godot/imported/oga_dete koi.wav-0343f949e343ee520a7399babfa1ae19.sample"
+
+[deps]
+
+source_file="res://game/assets/voice/oga/oga_dete koi.wav"
+dest_files=["res://.godot/imported/oga_dete koi.wav-0343f949e343ee520a7399babfa1ae19.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=true
+force/max_rate=true
+force/max_rate_hz=22100.0
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

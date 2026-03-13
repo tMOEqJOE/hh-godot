@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://8qdv4ipt62fo"
+path="res://.godot/imported/SBR_Naisu MAZUI.wav-6ecb5891017188e0d17070dcc124c03e.sample"
+
+[deps]
+
+source_file="res://game/assets/voice/subaru/SBR_Naisu MAZUI.wav"
+dest_files=["res://.godot/imported/SBR_Naisu MAZUI.wav-6ecb5891017188e0d17070dcc124c03e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=true
+force/max_rate=true
+force/max_rate_hz=22100.0
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

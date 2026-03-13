@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://crmm14c3odfyh"
+path="res://.godot/imported/mio_dan dan dan dan.wav-465a1e0a186ebe1649879dd4f508d92d.sample"
+
+[deps]
+
+source_file="res://game/assets/voice/mio/mio_dan dan dan dan.wav"
+dest_files=["res://.godot/imported/mio_dan dan dan dan.wav-465a1e0a186ebe1649879dd4f508d92d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=true
+force/max_rate=true
+force/max_rate_hz=22100.0
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

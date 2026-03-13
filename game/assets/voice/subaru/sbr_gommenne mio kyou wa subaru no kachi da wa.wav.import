@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dccxuamgovq4p"
+path="res://.godot/imported/sbr_gommenne mio kyou wa subaru no kachi da wa.wav-ea4b2b073a849c39a75a144f571925c0.sample"
+
+[deps]
+
+source_file="res://game/assets/voice/subaru/sbr_gommenne mio kyou wa subaru no kachi da wa.wav"
+dest_files=["res://.godot/imported/sbr_gommenne mio kyou wa subaru no kachi da wa.wav-ea4b2b073a849c39a75a144f571925c0.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=true
+force/max_rate=true
+force/max_rate_hz=22100.0
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

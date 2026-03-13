@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dxb7toskiilkd"
+path="res://.godot/imported/mxf_artrus cleared for takeoff.wav-ebcd5b763f2014915af9598a01a07bc3.sample"
+
+[deps]
+
+source_file="res://game/assets/voice/flayon/mxf_artrus cleared for takeoff.wav"
+dest_files=["res://.godot/imported/mxf_artrus cleared for takeoff.wav-ebcd5b763f2014915af9598a01a07bc3.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=true
+force/max_rate=true
+force/max_rate_hz=22100.0
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

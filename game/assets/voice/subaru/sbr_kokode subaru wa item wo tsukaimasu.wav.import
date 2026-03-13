@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://btxfpo7to1wh0"
+path="res://.godot/imported/sbr_kokode subaru wa item wo tsukaimasu.wav-64f9ed256b60a685800e75a0810b82ec.sample"
+
+[deps]
+
+source_file="res://game/assets/voice/subaru/sbr_kokode subaru wa item wo tsukaimasu.wav"
+dest_files=["res://.godot/imported/sbr_kokode subaru wa item wo tsukaimasu.wav-64f9ed256b60a685800e75a0810b82ec.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=true
+force/max_rate=true
+force/max_rate_hz=22100.0
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

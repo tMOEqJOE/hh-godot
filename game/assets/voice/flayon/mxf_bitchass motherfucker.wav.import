@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://phntiwykyi18"
+path="res://.godot/imported/mxf_bitchass motherfucker.wav-047d797faa0bd7cca0f7cbc8e6b1b792.sample"
+
+[deps]
+
+source_file="res://game/assets/voice/flayon/mxf_bitchass motherfucker.wav"
+dest_files=["res://.godot/imported/mxf_bitchass motherfucker.wav-047d797faa0bd7cca0f7cbc8e6b1b792.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=true
+force/max_rate=true
+force/max_rate_hz=22100.0
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

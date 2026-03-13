@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bq8bss2pdo1c7"
+path="res://.godot/imported/BZN_I am the greatest.wav-5194b3a304eca0150f6d06ec831c1129.sample"
+
+[deps]
+
+source_file="res://game/assets/voice/hakka/BZN_I am the greatest.wav"
+dest_files=["res://.godot/imported/BZN_I am the greatest.wav-5194b3a304eca0150f6d06ec831c1129.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=true
+force/max_rate=true
+force/max_rate_hz=22100.0
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

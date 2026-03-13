@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bw0cq0et4crtp"
+path="res://.godot/imported/fbk_kurokami haaa(q).wav-6b3c6dcf65949d858ac51d4982a80cf8.sample"
+
+[deps]
+
+source_file="res://game/assets/voice/fubuki/fbk_kurokami haaa(q).wav"
+dest_files=["res://.godot/imported/fbk_kurokami haaa(q).wav-6b3c6dcf65949d858ac51d4982a80cf8.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=true
+force/max_rate=true
+force/max_rate_hz=22100.0
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

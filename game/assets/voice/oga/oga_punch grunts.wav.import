@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d4ifw4i8gsfgr"
+path="res://.godot/imported/oga_punch grunts.wav-ba462453114b15ff877d4c2b39437e58.sample"
+
+[deps]
+
+source_file="res://game/assets/voice/oga/oga_punch grunts.wav"
+dest_files=["res://.godot/imported/oga_punch grunts.wav-ba462453114b15ff877d4c2b39437e58.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=true
+force/max_rate=true
+force/max_rate_hz=22100.0
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

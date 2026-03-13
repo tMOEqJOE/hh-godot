@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cvbn6d1vay4dk"
+path="res://.godot/imported/BZN_Evil Laugh.wav-ce19355b3aad46a3048c94fa1b46a890.sample"
+
+[deps]
+
+source_file="res://game/assets/voice/hakka/BZN_Evil Laugh.wav"
+dest_files=["res://.godot/imported/BZN_Evil Laugh.wav-ce19355b3aad46a3048c94fa1b46a890.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=true
+force/max_rate=true
+force/max_rate_hz=22100.0
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

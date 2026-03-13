@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://s7g41mpqsa8c"
+path="res://.godot/imported/MXF_Take this.wav-61ce35d5423fcece9c2b72bd39bc7be8.sample"
+
+[deps]
+
+source_file="res://game/assets/voice/flayon/MXF_Take this.wav"
+dest_files=["res://.godot/imported/MXF_Take this.wav-61ce35d5423fcece9c2b72bd39bc7be8.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=true
+force/max_rate=true
+force/max_rate_hz=22100.0
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

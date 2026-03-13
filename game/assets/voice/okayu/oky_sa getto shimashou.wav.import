@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cmliiafx5n3jn"
+path="res://.godot/imported/oky_sa getto shimashou.wav-ac0f34b4aecafaedf5324b222edd7b28.sample"
+
+[deps]
+
+source_file="res://game/assets/voice/okayu/oky_sa getto shimashou.wav"
+dest_files=["res://.godot/imported/oky_sa getto shimashou.wav-ac0f34b4aecafaedf5324b222edd7b28.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=true
+force/max_rate=true
+force/max_rate_hz=22100.0
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

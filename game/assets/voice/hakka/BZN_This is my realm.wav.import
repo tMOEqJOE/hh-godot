@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cwclft20mwn4k"
+path="res://.godot/imported/BZN_This is my realm.wav-75335e96a1455498cc9899ce1ebb3f46.sample"
+
+[deps]
+
+source_file="res://game/assets/voice/hakka/BZN_This is my realm.wav"
+dest_files=["res://.godot/imported/BZN_This is my realm.wav-75335e96a1455498cc9899ce1ebb3f46.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=true
+force/max_rate=true
+force/max_rate_hz=22100.0
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

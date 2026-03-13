@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ctp3lfv8lx3o1"
+path="res://.godot/imported/mxf_what are you waiting for.wav-18bd23aa36af4773afffbcdbbda23f21.sample"
+
+[deps]
+
+source_file="res://game/assets/voice/flayon/mxf_what are you waiting for.wav"
+dest_files=["res://.godot/imported/mxf_what are you waiting for.wav-18bd23aa36af4773afffbcdbbda23f21.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=true
+force/max_rate=true
+force/max_rate_hz=22100.0
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

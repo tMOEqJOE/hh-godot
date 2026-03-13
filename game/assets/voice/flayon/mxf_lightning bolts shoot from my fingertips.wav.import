@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://df01utw6fvegj"
+path="res://.godot/imported/mxf_lightning bolts shoot from my fingertips.wav-10e88275704e97de1b33f3d1074e32bf.sample"
+
+[deps]
+
+source_file="res://game/assets/voice/flayon/mxf_lightning bolts shoot from my fingertips.wav"
+dest_files=["res://.godot/imported/mxf_lightning bolts shoot from my fingertips.wav-10e88275704e97de1b33f3d1074e32bf.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=true
+force/max_rate=true
+force/max_rate_hz=22100.0
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

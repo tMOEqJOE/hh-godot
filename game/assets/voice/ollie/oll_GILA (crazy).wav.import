@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://xsk7okl6opgo"
+path="res://.godot/imported/oll_GILA (crazy).wav-77c65555a9654da4fd6e625e6026ec68.sample"
+
+[deps]
+
+source_file="res://game/assets/voice/ollie/oll_GILA (crazy).wav"
+dest_files=["res://.godot/imported/oll_GILA (crazy).wav-77c65555a9654da4fd6e625e6026ec68.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=true
+force/max_rate=true
+force/max_rate_hz=22100.0
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

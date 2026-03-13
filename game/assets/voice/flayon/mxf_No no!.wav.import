@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://sdstd58jtwdh"
+path="res://.godot/imported/mxf_No no!.wav-11414b5fe997599b14f65cf3394cd57c.sample"
+
+[deps]
+
+source_file="res://game/assets/voice/flayon/mxf_No no!.wav"
+dest_files=["res://.godot/imported/mxf_No no!.wav-11414b5fe997599b14f65cf3394cd57c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=true
+force/max_rate=true
+force/max_rate_hz=22100.0
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cx5ajhhbw7qdg"
+path="res://.godot/imported/amk_ 50kg grip strength.wav-1115243f6eb4adf311e632401c002934.sample"
+
+[deps]
+
+source_file="res://game/assets/voice/kanata/amk_ 50kg grip strength.wav"
+dest_files=["res://.godot/imported/amk_ 50kg grip strength.wav-1115243f6eb4adf311e632401c002934.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=true
+force/max_rate=true
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
