@@ -148,6 +148,11 @@ cache/0/24/0/descent = 0.0
 cache/0/24/0/underline_position = 0.0
 cache/0/24/0/underline_thickness = 0.0
 cache/0/24/0/scale = 1.0
+cache/0/32/0/ascent = 0.0
+cache/0/32/0/descent = 0.0
+cache/0/32/0/underline_position = 0.0
+cache/0/32/0/underline_thickness = 0.0
+cache/0/32/0/scale = 1.0
 
 [sub_resource type="Animation" id="2"]
 resource_name = "Idle"
@@ -208,14 +213,15 @@ text = "Your Name:"
 anchors_preset = -1
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -168.0
-offset_top = 930.0
-offset_right = -66.0001
-offset_bottom = 953.0
+offset_left = -170.0
+offset_top = 937.99994
+offset_right = 34.0
+offset_bottom = 963.99994
 grow_horizontal = 2
-scale = Vector2(3.90789, 7.36215)
+scale = Vector2(2.8532681, 3.5325994)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("1")
+theme_override_font_sizes/font_size = 32
 text = "Join our discord!"
 
 [node name="DiscordButton" type="TextureButton" parent="CanvasLayer"]
@@ -294,7 +300,6 @@ texture_normal = ExtResource("16")
 texture_focused = ExtResource("22")
 
 [node name="DebugRollback" type="TextureButton" parent="CanvasLayer/MainMenuButtons"]
-visible = false
 layout_mode = 2
 focus_neighbor_top = NodePath("../Credits")
 texture_normal = ExtResource("26")

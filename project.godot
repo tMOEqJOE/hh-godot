@@ -90,6 +90,10 @@ fps=false
 font=false
 canvas=false
 
+[gui]
+
+theme/default_font_multichannel_signed_distance_field=true
+
 [importer_defaults]
 
 texture={
