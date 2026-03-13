@@ -81,7 +81,7 @@ func common_idle_transitions(state: Dictionary, interpreter: InputInterpreter) -
 	change_state.call("AngelUninstall")
 
 func gatling_cancel(state: Dictionary, interpreter: InputInterpreter):
-	if (state[Enums.StKey.hitStopFrame] >= 0):
+	if (state[Enums.StKey.hitStopFrame] > 0):
 		if (interpreter.is_button_down(Enums.InputFlags.ADown)):
 			state[Enums.StKey.cancelState] = "AngelHH2"
 		elif (interpreter.is_button_down(Enums.InputFlags.BDown)):
