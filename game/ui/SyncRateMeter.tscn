@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://nxgrm333e3ym" path="res://game/assets/sprites/UI/Meters/SyncRate.png" id="1"]
 [ext_resource type="Script" uid="uid://diwe117f52v7r" path="res://game/ui/SyncRateMeter.gd" id="3"]
-[ext_resource type="Texture2D" uid="uid://cgw5cmog7pbq5" path="res://game/assets/sprites/UI/Meters/SyncRateText.png" id="3_otexp"]
+[ext_resource type="Texture2D" uid="uid://cfuawhe18ww5u" path="res://game/assets/sprites/UI/Meters/SyncRateText.png" id="3_otexp"]
 
 [node name="SyncRateBar" type="Node2D"]
 script = ExtResource("3")

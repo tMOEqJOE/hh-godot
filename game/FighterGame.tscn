@@ -1,10 +1,10 @@
-[gd_scene load_steps=65 format=3 uid="uid://bngmafg6y7eqk"]
+[gd_scene load_steps=64 format=3 uid="uid://bngmafg6y7eqk"]
 
 [ext_resource type="PackedScene" uid="uid://bee7pcc18xndp" path="res://game/ui/SyncRateMeter.tscn" id="1"]
 [ext_resource type="PackedScene" uid="uid://btifqf7jlg8wh" path="res://game/StageCage.tscn" id="2"]
 [ext_resource type="Script" uid="uid://cpebuvk2oc2i1" path="res://game/FighterGame.gd" id="3"]
 [ext_resource type="Script" uid="uid://ba76tnqyqqueq" path="res://game/StageBackgroundArt.gd" id="4"]
-[ext_resource type="Script" uid="uid://qcfjxk2q4k1t" path="res://game/BattleCamera.gd" id="5"]
+[ext_resource type="Script" uid="uid://qcfjxk2q4k1t" path="res://game/components/BattleCamera.gd" id="5"]
 [ext_resource type="PackedScene" path="res://game/fighter/InputInterpreter.tscn" id="6"]
 [ext_resource type="PackedScene" uid="uid://5gsrso7qn0ff" path="res://game/ui/ComboCounter.tscn" id="7"]
 [ext_resource type="PackedScene" uid="uid://dlpdov1eot246" path="res://game/ui/RoundTimer.tscn" id="7_yl1ep"]
@@ -44,7 +44,6 @@
 [ext_resource type="Texture2D" uid="uid://b0e6kfn07guey" path="res://game/assets/sprites/UI/WIN/Timeline 1_0000.png" id="41"]
 [ext_resource type="Animation" path="res://game/assets/anim/gameWIN.tres" id="42"]
 [ext_resource type="PackedScene" uid="uid://caiesl5miifd5" path="res://game/ui/BattlePointPortrait.tscn" id="43"]
-[ext_resource type="Script" uid="uid://8bt3h44ryda0" path="res://game/BattleUIPosition.gd" id="44"]
 [ext_resource type="Texture2D" uid="uid://dnmluq3uvo6i0" path="res://game/assets/sprites/UI/DOWN/Timeline 1_0008.png" id="45"]
 [ext_resource type="Texture2D" uid="uid://4foqq7s4s8x7" path="res://game/assets/sprites/UI/DOWN/Timeline 1_0011.png" id="46"]
 [ext_resource type="Script" uid="uid://du0hv4v6goj1k" path="res://game/IntroShutters.gd" id="70"]
@@ -332,7 +331,6 @@ smooth_y_speed = 20.0
 
 [node name="BattleUI" type="Node2D" parent="Camera3D"]
 z_index = -10
-script = ExtResource("44")
 
 [node name="RoundTimer" parent="Camera3D/BattleUI" instance=ExtResource("7_yl1ep")]
 position = Vector2(-2, -484)
