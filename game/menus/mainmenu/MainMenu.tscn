@@ -1,14 +1,13 @@
-[gd_scene load_steps=33 format=3 uid="uid://dwajufq80dc4w"]
+[gd_scene load_steps=32 format=3 uid="uid://dwajufq80dc4w"]
 
 [ext_resource type="Script" uid="uid://by6hd156nj55l" path="res://game/menus/mainmenu/MainMenu.gd" id="1"]
 [ext_resource type="FontFile" uid="uid://d28sv0htum78d" path="res://game/assets/monogram_extended.ttf" id="2"]
 [ext_resource type="Texture2D" uid="uid://by45ex2wcjuue" path="res://game/assets/sprites/UI/MainMenus/MainScreen.png" id="3"]
 [ext_resource type="Texture2D" uid="uid://b1ea6fsk5opag" path="res://game/assets/sprites/UI/MainMenus/Buttons/ONLINE/Timeline 1_0001.png" id="4"]
-[ext_resource type="Texture2D" uid="uid://pd1ioalh5pnr" path="res://game/assets/sprites/UI/Discord.PNG" id="4_xbiuh"]
+[ext_resource type="Texture2D" uid="uid://comfacrindw3" path="res://game/assets/sprites/UI/MainMenus/Buttons/DISCORD/Timeline 1_0001.png" id="4_xbiuh"]
 [ext_resource type="Texture2D" uid="uid://c4mhu80u1vk3h" path="res://game/assets/sprites/UI/MainMenus/Buttons/VERSUS/Timeline 1_0001.png" id="5"]
-[ext_resource type="Texture2D" uid="uid://caiyvlpgqli4c" path="res://game/assets/sprites/UI/ClickDiscord.png" id="5_xvd7n"]
+[ext_resource type="Texture2D" uid="uid://d2h1mk6od7hmp" path="res://game/assets/sprites/UI/MainMenus/Buttons/DISCORD/Timeline 1_0000.png" id="5_kh4bg"]
 [ext_resource type="Texture2D" uid="uid://djwfju56r655s" path="res://game/assets/sprites/UI/MainMenus/Buttons/ONLINE/Timeline 1_0000.png" id="6"]
-[ext_resource type="Texture2D" uid="uid://ehoojppb2xpp" path="res://game/assets/sprites/UI/HighlightDiscord.png" id="6_vmtg1"]
 [ext_resource type="Texture2D" uid="uid://c00be1qdhieom" path="res://game/assets/sprites/UI/MainMenus/Buttons/OPTIONS/Timeline 1_0001.png" id="7"]
 [ext_resource type="Texture2D" uid="uid://d3jnh37mq4dor" path="res://game/assets/sprites/UI/MainMenus/AruDJ/Timeline 1_0000.png" id="8"]
 [ext_resource type="Texture2D" uid="uid://0s6t47kre3f" path="res://game/assets/sprites/UI/MainMenus/HoloheavenLP.png" id="9"]
@@ -226,16 +225,16 @@ text = "Join our discord!"
 
 [node name="DiscordButton" type="TextureButton" parent="CanvasLayer"]
 anchors_preset = -1
-offset_left = 664.0
+offset_left = 600.0
 offset_top = 933.0
-offset_right = 794.0
-offset_bottom = 991.0
+offset_right = 730.0
+offset_bottom = 999.0
 scale = Vector2(1.87412, 1.87412)
 focus_neighbor_top = NodePath("../MainMenuButtons/Credits")
 texture_normal = ExtResource("4_xbiuh")
-texture_pressed = ExtResource("5_xvd7n")
-texture_hover = ExtResource("6_vmtg1")
-texture_focused = ExtResource("6_vmtg1")
+texture_pressed = ExtResource("4_xbiuh")
+texture_hover = ExtResource("5_kh4bg")
+texture_focused = ExtResource("5_kh4bg")
 
 [node name="YourNameEdit" type="LineEdit" parent="CanvasLayer"]
 anchors_preset = -1
@@ -300,6 +299,7 @@ texture_normal = ExtResource("16")
 texture_focused = ExtResource("22")
 
 [node name="DebugRollback" type="TextureButton" parent="CanvasLayer/MainMenuButtons"]
+visible = false
 layout_mode = 2
 focus_neighbor_top = NodePath("../Credits")
 texture_normal = ExtResource("26")
