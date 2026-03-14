@@ -246,7 +246,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="14"]
 resource_name = "3C"
-length = 0.5000026
+length = 0.6666696
 step = 0.0166667
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -255,7 +255,7 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.166667, 0.233333, 0.266667, 0.31666666, 0.41666666),
+"times": PackedFloat32Array(0, 0.1, 0.166667, 0.233333, 0.28333333, 0.35, 0.45),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [ExtResource("29"), ExtResource("30"), ExtResource("84"), ExtResource("82"), ExtResource("95"), ExtResource("90"), ExtResource("94")]
@@ -1236,6 +1236,34 @@ tracks/1/keys = {
 "values": [Vector2(-40, 90)]
 }
 
+[sub_resource type="Animation" id="Animation_ilw5w"]
+resource_name = "KanataAirFiftyHit"
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.26666668, 0.29999998, 0.33333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("3"), ExtResource("9"), ExtResource("3"), ExtResource("89"), ExtResource("12")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.33333334, 0.35000005, 0.3666667),
+"transitions": PackedFloat32Array(1000000, 1000000, 1000000, 1000000),
+"update": 0,
+"values": [Vector2(-40, 60), Vector2(-40, 160), Vector2(-40, 210), Vector2(-40, 230)]
+}
+
 [sub_resource type="Animation" id="70"]
 resource_name = "KanataFiftyHit"
 step = 0.0166667
@@ -2017,34 +2045,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(-10, 40)]
-}
-
-[sub_resource type="Animation" id="Animation_ilw5w"]
-resource_name = "KanataAirFiftyHit"
-step = 0.0166667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.16666667, 0.26666668, 0.29999998, 0.33333334),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("3"), ExtResource("9"), ExtResource("3"), ExtResource("89"), ExtResource("12")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:offset")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.33333334, 0.35000005, 0.3666667),
-"transitions": PackedFloat32Array(1000000, 1000000, 1000000, 1000000),
-"update": 0,
-"values": [Vector2(-40, 60), Vector2(-40, 160), Vector2(-40, 210), Vector2(-40, 230)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wc0pe"]
