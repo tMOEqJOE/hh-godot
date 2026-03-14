@@ -1,0 +1,113 @@
+[gd_scene load_steps=10 format=3 uid="uid://delgirqnq1vas"]
+
+[ext_resource type="Script" uid="uid://irk3qummfdvc" path="res://game/menus/characterselect/CharacterIconsNode.gd" id="1_5l5au"]
+[ext_resource type="Texture2D" uid="uid://csm7c5dbea7x2" path="res://game/assets/sprites/UI/CharacterSelect/WOOD.png" id="2_g6j5k"]
+[ext_resource type="Texture2D" uid="uid://djoyr0hnf5eju" path="res://game/assets/sprites/UI/CharacterSelect/MiniPortraits/OllieButton.png" id="3_o3dsl"]
+[ext_resource type="Texture2D" uid="uid://dppcf4hqlvayd" path="res://game/assets/sprites/UI/CharacterSelect/MiniPortraits/SuiseiButton.png" id="4_xyxf4"]
+[ext_resource type="Texture2D" uid="uid://lj1dcdy08xyo" path="res://game/assets/sprites/UI/CharacterSelect/MiniPortraits/KanataButton.png" id="5_36d71"]
+[ext_resource type="Texture2D" uid="uid://bcxls26tiktea" path="res://game/assets/sprites/UI/CharacterSelect/MiniPortraits/MioButton.png" id="6_amqb8"]
+[ext_resource type="Texture2D" uid="uid://d302mjwqy8r6g" path="res://game/assets/sprites/UI/CharacterSelect/MiniPortraits/SubaruButton.png" id="7_bx3fi"]
+[ext_resource type="Texture2D" uid="uid://dtxwiyc72wl6n" path="res://game/assets/sprites/UI/CharacterSelect/MiniPortraits/OgaButton.png" id="8_0juh2"]
+[ext_resource type="Texture2D" uid="uid://dtj3xj7tdcm7" path="res://game/assets/sprites/UI/CharacterSelect/MiniPortraits/UnknownButton.png" id="9_qrcdu"]
+
+[node name="CharacterIconsNode" type="Node2D"]
+z_index = 100
+script = ExtResource("1_5l5au")
+
+[node name="WOOD" type="Sprite2D" parent="."]
+position = Vector2(216, 357)
+texture = ExtResource("2_g6j5k")
+
+[node name="1" type="TextureRect" parent="."]
+anchors_preset = -1
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 137.0
+offset_bottom = 169.0
+texture = ExtResource("3_o3dsl")
+
+[node name="2" type="TextureRect" parent="."]
+anchors_preset = -1
+offset_left = 146.0
+offset_right = 282.0
+offset_bottom = 168.0
+texture = ExtResource("4_xyxf4")
+
+[node name="3" type="TextureRect" parent="."]
+anchors_preset = -1
+offset_left = 292.0
+offset_right = 428.0
+offset_bottom = 168.0
+texture = ExtResource("5_36d71")
+
+[node name="4" type="TextureRect" parent="."]
+anchors_preset = -1
+offset_left = -3.0
+offset_top = 177.0
+offset_right = 140.0
+offset_bottom = 349.0
+texture = ExtResource("6_amqb8")
+
+[node name="5" type="TextureRect" parent="."]
+anchors_preset = -1
+offset_left = 146.0
+offset_top = 178.0
+offset_right = 282.0
+offset_bottom = 346.0
+texture = ExtResource("7_bx3fi")
+
+[node name="6" type="TextureRect" parent="."]
+anchors_preset = -1
+offset_left = 292.0
+offset_top = 178.0
+offset_right = 428.0
+offset_bottom = 346.0
+texture = ExtResource("8_0juh2")
+
+[node name="7" type="TextureRect" parent="."]
+visible = false
+anchors_preset = -1
+offset_left = 1.0
+offset_top = 357.0
+offset_right = 137.0
+offset_bottom = 525.0
+
+[node name="8" type="TextureRect" parent="."]
+anchors_preset = -1
+offset_left = 146.0
+offset_top = 356.0
+offset_right = 282.0
+offset_bottom = 524.0
+texture = ExtResource("9_qrcdu")
+
+[node name="9" type="TextureRect" parent="."]
+visible = false
+anchors_preset = -1
+offset_left = 292.0
+offset_top = 356.0
+offset_right = 428.0
+offset_bottom = 524.0
+
+[node name="10" type="TextureRect" parent="."]
+visible = false
+anchors_preset = -1
+offset_left = 1.0
+offset_top = 535.0
+offset_right = 137.0
+offset_bottom = 703.0
+
+[node name="11" type="TextureRect" parent="."]
+visible = false
+anchors_preset = -1
+offset_left = 146.0
+offset_top = 534.0
+offset_right = 282.0
+offset_bottom = 702.0
+
+[node name="12" type="TextureRect" parent="."]
+visible = false
+anchors_preset = -1
+offset_left = 292.0
+offset_top = 534.0
+offset_right = 428.0
+offset_bottom = 702.0

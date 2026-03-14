@@ -13,6 +13,7 @@ config_version=5
 config/name="HoloHeaven"
 run/main_scene="uid://p50nsj8hxh5e"
 config/features=PackedStringArray("4.5")
+run/max_fps=60
 config/icon="res://AngelSubaruICO.png"
 config/windows_native_icon="res://icon.ico"
 
@@ -89,6 +90,10 @@ force=false
 fps=false
 font=false
 canvas=false
+
+[gui]
+
+theme/default_font_multichannel_signed_distance_field=true
 
 [importer_defaults]
 

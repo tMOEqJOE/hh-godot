@@ -11,14 +11,13 @@
 [node name="TrainingControllerPickScreen" type="Node2D"]
 script = ExtResource("2")
 
-[node name="Background2" type="Sprite2D" parent="."]
-modulate = Color(0.470588, 0.329412, 0, 1)
+[node name="Background" type="Sprite2D" parent="."]
+material = ExtResource("4")
 position = Vector2(960, 540)
 texture = ExtResource("8")
 
-[node name="Background" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 1, 0.2)
-material = ExtResource("4")
+[node name="Background2" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.5803922)
 position = Vector2(960, 540)
 texture = ExtResource("8")
 

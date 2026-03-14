@@ -471,7 +471,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1000000),
 "update": 0,
-"values": [Vector2(0, 50)]
+"values": [Vector2(0, 60)]
 }
 
 [sub_resource type="Animation" id="23"]
@@ -965,7 +965,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1000000),
 "update": 0,
-"values": [Vector2(0, 50)]
+"values": [Vector2(0, 60)]
 }
 
 [sub_resource type="Animation" id="67"]
@@ -3919,7 +3919,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1000000),
 "update": 0,
-"values": [Vector2(30, 0)]
+"values": [Vector2(40, 0)]
 }
 
 [sub_resource type="Animation" id="24"]
@@ -4094,7 +4094,7 @@ material = ExtResource("5")
 position = Vector2(-15, -259)
 scale = Vector2(1.428, 1.428)
 texture = ExtResource("176")
-offset = Vector2(60, 100)
+offset = Vector2(0, -70)
 
 [node name="Shadow" parent="." instance=ExtResource("4_sc1r3")]
 position = Vector2(0, 6)

@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://b2r5e3xh3yjho"]
 
 [ext_resource type="Texture2D" uid="uid://djahwkdvu1cpx" path="res://game/assets/sprites/UI/MainMenus/MenuTutorials/ControllerPick.png" id="1"]
-[ext_resource type="Script" path="res://game/menus/buttonmap/VersusCPUControllerPickMenuScreen.gd" id="2"]
+[ext_resource type="Script" uid="uid://dyk2tvwtnra01" path="res://game/menus/buttonmap/VersusCPUControllerPickMenuScreen.gd" id="2"]
 [ext_resource type="Texture2D" uid="uid://dlqknfiwiii01" path="res://game/assets/sprites/UI/MainMenus/MenuTutorials/OK.png" id="3"]
-[ext_resource type="Material" path="res://game/assets/shaders/EarthBoundV2.tres" id="4"]
+[ext_resource type="Material" uid="uid://cffvtcw31hg4s" path="res://game/assets/shaders/EarthBoundV2.tres" id="4"]
 [ext_resource type="Texture2D" uid="uid://b6k86wramlylm" path="res://game/assets/sprites/UI/MainMenus/MenuTutorials/OKController.png" id="5"]
 [ext_resource type="Texture2D" uid="uid://bb1ay2q3kixt1" path="res://game/assets/sprites/UI/CharacterSelect/Cursors/BigP1/Timeline 1_0000.png" id="6"]
 [ext_resource type="Texture2D" uid="uid://ba6f4fx263cmu" path="res://game/assets/sprites/UI/CharacterSelect/Cursors/BigP2/Timeline 1_0000.png" id="7"]

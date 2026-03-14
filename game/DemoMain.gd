@@ -84,16 +84,6 @@ func setup_main() -> void:
 	peer_ready = {}
 	
 	$FighterGame/ServerInputInterpreter.set_multiplayer_authority(1)
-
-	#if (Global.DEBUG): # Global.DEBUG is unused?
-		#var cmdline_args = OS.get_cmdline_args()
-		#message_label.text = str(cmdline_args)
-		#if ("server" in cmdline_args):
-			#Global.NETPLAY_MODE = Global.NETPLAY_MODES.PUBLIC_QUEUE
-			#_on_ServerButton_pressed()
-		#elif ("client" in cmdline_args):
-			#Global.NETPLAY_MODE = Global.NETPLAY_MODES.PUBLIC_QUEUE
-			#_on_ClientButton_pressed()
 	
 	if (Global.NETPLAY_MODE != Global.NETPLAY_MODES.OFFLINE):
 		_on_OnlineButton_pressed()

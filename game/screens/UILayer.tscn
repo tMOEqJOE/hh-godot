@@ -1,0 +1,65 @@
+[gd_scene load_steps=5 format=3 uid="uid://7hfyforyu7i4"]
+
+[ext_resource type="Script" uid="uid://dxi4s8mnh2luq" path="res://game/screens/UILayer.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://w010v48ikf80" path="res://game/assets/sprites/UI/RoundCounterFull.png" id="3"]
+[ext_resource type="Script" uid="uid://c2j2yrb1l5dom" path="res://game/ui/menu_ui/TransparentButton.gd" id="4"]
+[ext_resource type="PackedScene" uid="uid://c5hqytyjdg815" path="res://game/ui/menu_ui/Alert.tscn" id="6"]
+
+[node name="UILayer" type="CanvasLayer" groups=["network_sync"]]
+script = ExtResource("2")
+
+[node name="Screens" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Overlay" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Cover" type="ColorRect" parent="Overlay"]
+visible = false
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 0.501961)
+
+[node name="Message" type="Label" parent="Overlay"]
+visible = false
+layout_mode = 0
+anchor_right = 1.0
+text = "Waiting for players..."
+horizontal_alignment = 1
+clip_text = true
+max_lines_visible = 1
+
+[node name="BackButton" type="Button" parent="Overlay"]
+layout_mode = 0
+anchor_left = 1.0
+anchor_right = 1.0
+icon = ExtResource("3")
+script = ExtResource("4")
+button_type = 1
+
+[node name="Alert" parent="Overlay" instance=ExtResource("6")]
+visible = false
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[connection signal="pressed" from="Overlay/BackButton" to="." method="_on_BackButton_pressed"]
+[connection signal="completed" from="Overlay/Alert" to="." method="_on_Alert_completed"]
