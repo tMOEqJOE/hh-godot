@@ -30,4 +30,4 @@ func handle_input(state: Dictionary, interpreter: InputInterpreter) -> void:
 		anim.stop(true)
 		change_state.call(state[Enums.StKey.cancelState])
 	
-	gatling_cancel(state, interpreter)
+	#gatling_cancel(state, interpreter)

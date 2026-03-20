@@ -15,19 +15,20 @@ func _init():
 			Enums.StKey.Hit1Disable : false,
 			Enums.StKey.Hurt1Disable : true, Enums.StKey.Hurt2Disable : true,
 			Enums.StKey.hit_box_colliding_frame : 1,
-			Enums.StKey.Hit1PosX : 5111807, Enums.StKey.Hit1PosY : -17170434,
-			Enums.StKey.Hit1ScaleX : 1030702, Enums.StKey.Hit1ScaleY : 1849446,
+			Enums.StKey.Hit1PosX : 2111807, Enums.StKey.Hit1PosY : -17170434,
+			Enums.StKey.Hit1ScaleX : 1630703, Enums.StKey.Hit1ScaleY : 1849446,
 			Enums.StKey.hitstun : 80,
+			Enums.StKey.hitstop : 9,
 			Enums.StKey.attack_damage: 60,
 			Enums.StKey.attack_type : Enums.AttackType.GroundBouncer,
 			Enums.StKey.launch_dir_x : -SGFixed.ONE*5,
 			Enums.StKey.launch_dir_y : SGFixed.ONE*65,
-			Enums.StKey.min_damage:8,
+			Enums.StKey.min_damage:10,
 			Enums.StKey.chip_damage:8,
 			Enums.StKey.counter_hit: Enums.AttackType.GroundBouncer,
 			Enums.StKey.counter_hitstun: 120,
 			Enums.StKey.counter_launch_dir_x: -SGFixed.ONE*5,
-			Enums.StKey.counter_launch_dir_y: -SGFixed.ONE*10,
+			Enums.StKey.counter_launch_dir_y: -SGFixed.ONE*65,
 #			Enums.StKey.counter_hitstun: 5,
 			},
 		14 : { 
@@ -50,10 +51,13 @@ func enter(state: Dictionary) -> void:
 func physics_tick(state: Dictionary) -> void:
 	super.physics_tick(state)
 	if (state[Enums.StKey.frame] == 1):
-		state[Enums.StKey.velocity_x] = SGFixed.ONE*40
-		state[Enums.StKey.drag_x] = Util.FRICTION
+		state[Enums.StKey.velocity_x] = SGFixed.ONE*45
+		state[Enums.StKey.drag_x] = Util.SKID_FRICTION
 
 func tag_cancel(state: Dictionary, interpreter: InputInterpreter):
 	super.tag_cancel(state, interpreter)
 	if (state["tag_attack"] == 2 or state["tag_attack"] == 1 or state["tag_attack"] == 3):
 		change_state.call("AssistAirAttack2")
+
+func combo_pushback(comboTime: int) -> int:
+	return 0
