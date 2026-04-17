@@ -23,8 +23,10 @@ var peer_ready:Dictionary = {}
 
 var fighter_game: FighterGame
 var game_mode_root: String
+var load_complete: bool
 
 func _init() -> void:
+	load_complete = false
 	replay_logging_enabled = Global.replay_logging_enabled
 	fighter_game = Global.FIGHTER_GAME.instantiate()
 	game_mode_root = "/root/Main/FighterGame"
@@ -84,7 +86,7 @@ func setup_main() -> void:
 	peer_ready = {}
 	
 	$FighterGame/ServerInputInterpreter.set_multiplayer_authority(1)
-	
+	load_complete = true
 	if (Global.NETPLAY_MODE != Global.NETPLAY_MODES.OFFLINE):
 		_on_OnlineButton_pressed()
 		if not multiplayer.is_server():
@@ -100,16 +102,16 @@ func setup_main() -> void:
 
 func all_peers_ready():
 	if (Global.NETPLAY_MODE != Global.NETPLAY_MODES.OFFLINE and not Global.DEBUG):
-		return peer_ready.size() >= SyncManager.peers.size() + 1
+		return load_complete and peer_ready.size() >= SyncManager.peers.size() + 1
 	else:
-		return true
+		return load_complete and true
 
 func manual_disconnect():
 	print("Manual disconnect")
 	quit_online_hard()
 	main_menu()
 
-@rpc("any_peer", "call_local") func connect_peer_ready() -> void:
+@rpc("any_peer", "call_local", "reliable") func connect_peer_ready() -> void:
 	var peer_id = multiplayer.get_remote_sender_id()
 	if multiplayer.is_server():
 		peer_ready[peer_id] = true
@@ -117,7 +119,7 @@ func manual_disconnect():
 		if (all_peers_ready()):
 			rpc("start_game")
 
-@rpc("any_peer", "call_local") func start_game() -> void:
+@rpc("any_peer", "call_local", "reliable") func start_game() -> void:
 	if multiplayer.is_server():
 		multiplayer.multiplayer_peer.refuse_new_connections = true
 		
@@ -187,6 +189,7 @@ func rematch():
 
 func reload_scene():
 	#free_main()
+	load_complete = false
 	fighter_game.reset_to_game_start()
 	setup_main()
 
