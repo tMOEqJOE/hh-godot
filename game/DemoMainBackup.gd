@@ -1,12 +1,10 @@
 extends Node2D
 
-class_name DemoMain
+class_name DemoMainBackup
 
 const DummyNetworkAdaptor = preload("res://addons/godot-rollback-netcode/DummyNetworkAdaptor.gd")
 const ReplayLogger = preload("res://game/menus/replay/ReplayLogger.gd")
 var replay_logger
-const MatchConnector = preload("res://game/components/netplay_manager/MatchStartConnector.gd")
-var match_connector
 
 @onready var message_label = $CanvasLayer/MessageLabel
 @onready var sync_lost_label = $CanvasLayer/SyncLostLabel
@@ -76,8 +74,6 @@ func signal_connect() -> void:
 	$CanvasLayer/WinCounterP2.update_win_count(false)
 
 func first_time_setup() -> void:
-	match_connector = MatchConnector.new()
-	match_connector.connected.connect(start_game)
 	if (not Global.ROLLBACK_LOGS_ENABLED):
 		logging_enabled = false
 	if (not is_replay()):
@@ -121,7 +117,7 @@ func manual_disconnect():
 		peer_ready[peer_id] = true
 		message_label.text = "# of Peers loaded: " + str(len(peer_ready))
 		if (all_peers_ready()):
-			match_connector.send_start_signal()
+			rpc("start_game")
 
 @rpc("any_peer", "call_local", "reliable") func start_game() -> void:
 	if multiplayer.is_server():
@@ -194,7 +190,6 @@ func rematch():
 func reload_scene():
 	#free_main()
 	load_complete = false
-	match_connector.clear_received_message()
 	fighter_game.reset_to_game_start()
 	setup_main()
 
@@ -238,7 +233,7 @@ func _on_network_peer_disconnected(peer_id: int):
 		if (peer_ready.has(peer_id)):
 			peer_ready.erase(peer_id)
 			if (all_peers_ready() and not match_disconnected and not SyncManager.started):
-				match_connector.send_start_signal()
+				rpc("start_game")
 	else:
 		print("SyncManager disconnected doesn't have this peer id")
 
