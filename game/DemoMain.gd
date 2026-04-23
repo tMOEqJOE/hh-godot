@@ -42,9 +42,9 @@ func free_main() -> void:
 	fighter_game = null
 
 func _on_SyncManager_peer_pinged_back(peer: SyncManager.Peer) -> void:
-	$CanvasLayer/PingLabel.set_text("Ping: " + str(peer.rtt/2) +" ms")
+	$CanvasLayer/PingLabel.set_text("Ping: " + str((int)(peer.rtt/2.0)) +" ms")
 	#var rollback_frame:int = SyncManager.rollback_ticks
-	var rollback_frame:int = int(peer.rtt/(16.666)) - SyncManager.input_delay
+	var rollback_frame:int = int(peer.rtt/(33.3333)) - SyncManager.input_delay
 	if (rollback_frame < 0):
 		rollback_frame = 0
 	$CanvasLayer/RollbackFrameLabel.set_text("RollbackFrame: " + str(rollback_frame) +"F")
@@ -127,8 +127,8 @@ func manual_disconnect():
 	if multiplayer.is_server():
 		multiplayer.multiplayer_peer.refuse_new_connections = true
 		
-		#message_label.text = ""
-		#await get_tree().create_timer(2.0).timeout
+		message_label.text = ""
+		await get_tree().create_timer(1.0).timeout
 		SyncManager.start()
 
 func _on_ServerButton_pressed() -> void:
@@ -238,6 +238,7 @@ func _on_network_peer_disconnected(peer_id: int):
 		if (peer_ready.has(peer_id)):
 			peer_ready.erase(peer_id)
 			if (all_peers_ready() and not match_disconnected and not SyncManager.started):
+				await get_tree().create_timer(1.0).timeout
 				match_connector.send_start_signal()
 	else:
 		print("SyncManager disconnected doesn't have this peer id")

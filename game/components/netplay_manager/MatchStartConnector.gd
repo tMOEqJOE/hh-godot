@@ -20,7 +20,6 @@ func start_game_client() -> void:
 		connected.emit()
 
 func start_game_server() -> void:
-	#await get_tree().create_timer(2.0).timeout
 	received_message = true
 	connected.emit()
 
