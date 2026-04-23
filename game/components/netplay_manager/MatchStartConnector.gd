@@ -2,7 +2,7 @@ extends Node
 
 signal connected
 
-var MESSAGE_COUNT:int = 5
+var MESSAGE_COUNT:int = 10
 var received_message:bool
 
 func _init() -> void:
