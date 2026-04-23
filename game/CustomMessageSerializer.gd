@@ -4,10 +4,6 @@ const input_path_mapping := {
 	'/root/Main/FighterGame/ServerInputInterpreter': 1,
 	'/root/Main/FighterGame/ClientInputInterpreter': 2,
 }
-#const input_path_mapping := {
-#	'/root/WebRTCConnect/WebRTCMain/FighterGame/ServerInputInterpreter': 1,
-#	'/root/WebRTCConnect/WebRTCMain/FighterGame/ClientInputInterpreter': 2,
-#}
 
 enum HeaderFlags {
 	HAS_INPUT_VECTOR = 1 << 0,

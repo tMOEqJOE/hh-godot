@@ -21,13 +21,15 @@ func _init():
 		"AssistAirSuperFall" : preload("res://game/state/assist/okakoro/OkakoroAirSuperPowerBounceRollingFallState.gd"),
 		"AssistAttack2" : preload("res://game/state/assist/okakoro/OkakoroAssistAttack2State.gd"),
 		"AssistAirAttack2" : preload("res://game/state/assist/okakoro/OkakoroAssistAirAttack2State.gd"),
-		"LandAttackRecovery" : SoraLandingRecoveryState,
-		"AssistExit": SoraAssistExitState,
-		"AssistAirExit": SoraAssistAirExitState,
-		"AssistGuardCancelAttack" : SoraAssistGuardCancelAttackState,
-		"AssistAirGuardCancelAttack" : SoraAssistAirGuardCancelAttackState,
-		"AssistWeakGuardCancelAttack" : SoraAssistWeakGuardCancelAttackState,
-		"AssistAirWeakGuardCancelAttack" : SoraAssistAirWeakGuardCancelAttackState,
+		"LandAttackRecovery" : OkakoroLandingRecoveryState,
+		"AssistFail": OkakoroAssistFailState,
+		"AssistAirFail": OkakoroAirFailState,
+		"AssistExit": OkakoroAssistExitState,
+		"AssistAirExit": OkakoroAirExitState,
+		"AssistGuardCancelAttack" : OkakoroAssistGuardCancelAttackState,
+		"AssistAirGuardCancelAttack" : OkakoroAssistAirGuardCancelAttackState,
+		"AssistWeakGuardCancelAttack" : OkakoroAssistWeakGuardCancelAttackState,
+		"AssistAirWeakGuardCancelAttack" : OkakoroAssistAirWeakGuardCancelAttackState,
 	}
 	
 	merge_state_dictionary(new_states)

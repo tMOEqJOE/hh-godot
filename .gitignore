@@ -12,6 +12,9 @@ override.cfg
 .import/
 *.import
 
+# vscode
+.vscode
+
 # *.uid
 export.cfg
 export_presets.cfg

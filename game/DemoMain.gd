@@ -5,6 +5,8 @@ class_name DemoMain
 const DummyNetworkAdaptor = preload("res://addons/godot-rollback-netcode/DummyNetworkAdaptor.gd")
 const ReplayLogger = preload("res://game/menus/replay/ReplayLogger.gd")
 var replay_logger
+const MatchConnector = preload("res://game/components/netplay_manager/MatchStartConnector.gd")
+var match_connector
 
 @onready var message_label = $CanvasLayer/MessageLabel
 @onready var sync_lost_label = $CanvasLayer/SyncLostLabel
@@ -23,8 +25,10 @@ var peer_ready:Dictionary = {}
 
 var fighter_game: FighterGame
 var game_mode_root: String
+var load_complete: bool
 
 func _init() -> void:
+	load_complete = false
 	replay_logging_enabled = Global.replay_logging_enabled
 	fighter_game = Global.FIGHTER_GAME.instantiate()
 	game_mode_root = "/root/Main/FighterGame"
@@ -38,9 +42,9 @@ func free_main() -> void:
 	fighter_game = null
 
 func _on_SyncManager_peer_pinged_back(peer: SyncManager.Peer) -> void:
-	$CanvasLayer/PingLabel.set_text("Ping: " + str(peer.rtt/2) +" ms")
+	$CanvasLayer/PingLabel.set_text("Ping: " + str((int)(peer.rtt/2.0)) +" ms")
 	#var rollback_frame:int = SyncManager.rollback_ticks
-	var rollback_frame:int = int(peer.rtt/(16.666)) - SyncManager.input_delay
+	var rollback_frame:int = int(peer.rtt/(33.3333)) - SyncManager.input_delay
 	if (rollback_frame < 0):
 		rollback_frame = 0
 	$CanvasLayer/RollbackFrameLabel.set_text("RollbackFrame: " + str(rollback_frame) +"F")
@@ -72,6 +76,8 @@ func signal_connect() -> void:
 	$CanvasLayer/WinCounterP2.update_win_count(false)
 
 func first_time_setup() -> void:
+	match_connector = MatchConnector.new()
+	match_connector.connected.connect(start_game)
 	if (not Global.ROLLBACK_LOGS_ENABLED):
 		logging_enabled = false
 	if (not is_replay()):
@@ -84,7 +90,7 @@ func setup_main() -> void:
 	peer_ready = {}
 	
 	$FighterGame/ServerInputInterpreter.set_multiplayer_authority(1)
-	
+	load_complete = true
 	if (Global.NETPLAY_MODE != Global.NETPLAY_MODES.OFFLINE):
 		_on_OnlineButton_pressed()
 		if not multiplayer.is_server():
@@ -100,29 +106,29 @@ func setup_main() -> void:
 
 func all_peers_ready():
 	if (Global.NETPLAY_MODE != Global.NETPLAY_MODES.OFFLINE and not Global.DEBUG):
-		return peer_ready.size() >= SyncManager.peers.size() + 1
+		return load_complete and peer_ready.size() >= SyncManager.peers.size() + 1
 	else:
-		return true
+		return load_complete and true
 
 func manual_disconnect():
 	print("Manual disconnect")
 	quit_online_hard()
 	main_menu()
 
-@rpc("any_peer", "call_local") func connect_peer_ready() -> void:
+@rpc("any_peer", "call_local", "reliable") func connect_peer_ready() -> void:
 	var peer_id = multiplayer.get_remote_sender_id()
 	if multiplayer.is_server():
 		peer_ready[peer_id] = true
 		message_label.text = "# of Peers loaded: " + str(len(peer_ready))
 		if (all_peers_ready()):
-			rpc("start_game")
+			match_connector.send_start_signal()
 
-@rpc("any_peer", "call_local") func start_game() -> void:
+@rpc("any_peer", "call_local", "reliable") func start_game() -> void:
 	if multiplayer.is_server():
 		multiplayer.multiplayer_peer.refuse_new_connections = true
 		
-		#message_label.text = ""
-		#await get_tree().create_timer(2.0).timeout
+		message_label.text = ""
+		await get_tree().create_timer(1.0).timeout
 		SyncManager.start()
 
 func _on_ServerButton_pressed() -> void:
@@ -187,6 +193,8 @@ func rematch():
 
 func reload_scene():
 	#free_main()
+	load_complete = false
+	match_connector.clear_received_message()
 	fighter_game.reset_to_game_start()
 	setup_main()
 
@@ -230,7 +238,8 @@ func _on_network_peer_disconnected(peer_id: int):
 		if (peer_ready.has(peer_id)):
 			peer_ready.erase(peer_id)
 			if (all_peers_ready() and not match_disconnected and not SyncManager.started):
-				rpc("start_game")
+				await get_tree().create_timer(1.0).timeout
+				match_connector.send_start_signal()
 	else:
 		print("SyncManager disconnected doesn't have this peer id")
 

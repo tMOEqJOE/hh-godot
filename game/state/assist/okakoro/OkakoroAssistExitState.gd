@@ -21,6 +21,9 @@ func enter(state: Dictionary) -> void:
 func physics_tick(state: Dictionary) -> void:
 	pass
 
+func exit_state():
+	change_state.call("Dormant")
+
 func handle_input(state: Dictionary, interpreter: InputInterpreter) -> void:
 	if (state[Enums.StKey.frame] == endFrame):
 		change_state.call("Dormant")
@@ -30,4 +33,4 @@ func handle_input(state: Dictionary, interpreter: InputInterpreter) -> void:
 		anim.stop(true)
 		change_state.call(state[Enums.StKey.cancelState])
 	
-	gatling_cancel(state, interpreter)
+	#gatling_cancel(state, interpreter)

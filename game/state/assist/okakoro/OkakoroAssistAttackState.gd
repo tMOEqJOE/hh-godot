@@ -6,7 +6,7 @@ var voice = preload("res://game/assets/voice/korone/kor_huh(q).wav")
 var voice2 = preload("res://game/assets/voice/korone/kor_ko'one.wav")
 
 func _init():
-	endFrame = 75
+	endFrame = 82 #75
 	
 	anim_data = {
 		0 : {
@@ -49,6 +49,9 @@ func gatling_cancel(state: Dictionary, interpreter: InputInterpreter):
 			change_state.call("HammerFollowup")
 		else:
 			pass
+
+func exit_state():
+	change_state.call("AssistFail")
 
 func tag_cancel(state: Dictionary, interpreter: InputInterpreter):
 	super.tag_cancel(state, interpreter)
