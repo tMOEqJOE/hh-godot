@@ -14,12 +14,13 @@ func _all_peers_ready():
 		all_peers_ready.emit()
 
 @rpc("any_peer", "call_local") func connect_peer_ready() -> void:
-	var peer_id = multiplayer.get_remote_sender_id()
-	if multiplayer.is_server():
-		peer_ready[peer_id] = true
-		message_label.text = "# of Peers loaded: " + str(len(peer_ready))
-		if (all_peers_ready()):
-			rpc("start_game")
+	pass
+	#var peer_id = multiplayer.get_remote_sender_id()
+	#if multiplayer.is_server():
+		#peer_ready[peer_id] = true
+		#message_label.text = "# of Peers loaded: " + str(len(peer_ready))
+		#if (all_peers_ready()):
+			#rpc("start_game")
 
 func init():
 	match_disconnected = false
