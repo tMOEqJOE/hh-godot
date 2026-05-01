@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bnl3qh62uwfe0" path="res://game/menus/optionsmenu/Credits.gd" id="1"]
 [ext_resource type="FontFile" path="res://game/assets/CreditsFont.tres" id="2"]
-[ext_resource type="Texture2D" uid="uid://by45ex2wcjuue" path="res://game/assets/sprites/UI/MainMenus/MainScreen.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://riy1v55umyl3" path="res://game/assets/sprites/UI/MainMenus/MainScreen.png" id="3"]
 [ext_resource type="Material" uid="uid://cffvtcw31hg4s" path="res://game/assets/shaders/EarthBoundV2.tres" id="4"]
 
 [node name="Credits" type="Node2D"]

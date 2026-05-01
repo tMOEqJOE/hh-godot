@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://biul0qb0a8swa"]
 
-[ext_resource type="Script" uid="uid://dhsqrre5fnxc5" path="res://game/DemoMainBackup.gd" id="1_m35yc"]
+[ext_resource type="Script" uid="uid://b66p3r0mf1itt" path="res://game/DemoMain.gd" id="1_m35yc"]
 [ext_resource type="PackedScene" path="res://game/ui/FPSCounter.tscn" id="2"]
 [ext_resource type="FontFile" uid="uid://b7kcdcuqo7r5j" path="res://game/assets/monogram_extended.ttf" id="3"]
 [ext_resource type="PackedScene" uid="uid://c5xgqi0ik2bpc" path="res://game/ui/MatchWinCounter.tscn" id="4"]
