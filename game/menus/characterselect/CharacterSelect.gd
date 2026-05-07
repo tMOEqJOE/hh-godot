@@ -242,6 +242,8 @@ func resolve_characters(row: int, col: int):
 			return ["res://game/fighter/KanataPlayer.tscn", Enums.PointCharacters.Kanata]
 		Enums.PointCharacters.Suisei:
 			return ["res://game/fighter/SuiseiPlayer.tscn", Enums.PointCharacters.Suisei]
+		Enums.PointCharacters.Flayon:
+			return ["res://game/fighter/FlayonPlayer.tscn", Enums.PointCharacters.Flayon]
 		_:
 			return ["res://game/fighter/SubaruPlayer.tscn", Enums.PointCharacters.Subaru]
 
@@ -277,6 +279,8 @@ func resolve_assists(row:int, col:int, is_p1):
 			return ["res://game/fighter/assist/assistkanata/AssistKanataPlayer.tscn", Enums.AssistCharacters.Kanata]
 		Enums.AssistCharacters.Suisei:
 			return ["res://game/fighter/assist/assistsuisei/AssistSuiseiPlayer.tscn", Enums.AssistCharacters.Suisei]
+		Enums.AssistCharacters.Flayon:
+			return ["res://game/fighter/assist/fubuki/FubukiPlayer.tscn", Enums.AssistCharacters.Fubuki]
 		_:
 			return ["res://game/fighter/assist/fubuki/FubukiPlayer.tscn", Enums.AssistCharacters.Fubuki]
 
@@ -350,6 +354,8 @@ func match_color(enumChara:int, is_assist=false) -> String:
 				color = "res://game/assets/sprites/kanata/ColorPalettes/"
 			Enums.AssistCharacters.Suisei:
 				color = "res://game/assets/sprites/suisei/ColorPalettes/"
+			Enums.AssistCharacters.Flayon:
+				color = "res://game/assets/sprites/assists/fubuki/ColorPalettes/"
 			_:
 				color = "res://game/assets/sprites/assists/fubuki/ColorPalettes/"
 	else:
@@ -366,6 +372,8 @@ func match_color(enumChara:int, is_assist=false) -> String:
 				color = "res://game/assets/sprites/kanata/ColorPalettes/"
 			Enums.PointCharacters.Suisei:
 				color = "res://game/assets/sprites/suisei/ColorPalettes/"
+			Enums.PointCharacters.Flayon:
+				color = "res://game/assets/sprites/subaru/ColorPalettes/"
 			_:
 				color = "res://game/assets/sprites/subaru/ColorPalettes/"
 	return color
