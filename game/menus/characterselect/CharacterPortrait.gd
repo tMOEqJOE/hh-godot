@@ -55,7 +55,7 @@ func change_portrait(enumChara: int, is_assist=false):
 			Enums.AssistCharacters.Kanata:
 				color = "res://game/assets/sprites/kanata/ColorPalettes/"
 				portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/KanataPortrait"
-			Enums.AssistCharacters.Seven:
+			Enums.AssistCharacters.Flayon:
 				color = "res://game/assets/sprites/assists/fubuki/ColorPalettes/"
 				portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/FubukiPortrait"
 			Enums.AssistCharacters.Eight:
@@ -114,7 +114,7 @@ func change_portrait(enumChara: int, is_assist=false):
 			Enums.PointCharacters.Kanata:
 				color = "res://game/assets/sprites/kanata/ColorPalettes/"
 				portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/KanataPortrait"
-			Enums.PointCharacters.Seven:
+			Enums.PointCharacters.Flayon:
 				color = "res://game/assets/sprites/oga/ColorPalettes/"
 				portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/SubaruPortrait"
 			Enums.PointCharacters.Eight:

@@ -42,7 +42,7 @@
 [ext_resource type="Texture2D" uid="uid://ddtfy01eyw8h1" path="res://game/assets/sprites/UI/CharacterSelect/CurtainFlash/Timeline 1_0009.png" id="61"]
 [ext_resource type="Shader" uid="uid://dinoskkj75qym" path="res://game/assets/shaders/ColorSwapAntiAlias.gdshader" id="61_2akuf"]
 [ext_resource type="Texture2D" uid="uid://bynxr6w0fbs81" path="res://game/assets/sprites/UI/CharacterSelect/CurtainFlash/Timeline 1_0013.png" id="62"]
-[ext_resource type="Texture2D" uid="uid://bdvcyyxqbn8yx" path="res://game/assets/sprites/assists/hakka/ColorPalettes/2.png" id="62_t5gci"]
+[ext_resource type="Texture2D" uid="uid://c20a1dyp507ju" path="res://game/assets/sprites/assists/hakka/ColorPalettes/2.png" id="62_t5gci"]
 [ext_resource type="Texture2D" uid="uid://xiygn7kixwa2" path="res://game/assets/sprites/UI/CharacterSelect/CurtainFlash/Timeline 1_0014.png" id="63"]
 [ext_resource type="Texture2D" uid="uid://pckdl47cdx5j" path="res://game/assets/sprites/UI/CharacterSelect/CurtainFlash/Timeline 1_0024.png" id="64"]
 [ext_resource type="Texture2D" uid="uid://dtcwu8ykqh567" path="res://game/assets/sprites/UI/CharacterSelect/CurtainFlash/Timeline 1_0019.png" id="65"]
