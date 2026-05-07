@@ -35,7 +35,7 @@ func physics_tick(state: Dictionary) -> void:
 		SyncManager.play_sound("skid", Global.SkidSound, {"bus": "Sound"})
 	state[Enums.StKey.sync_rate] += SGFixed.mul(state[Enums.StKey.velocity_x], 4536)
 	if (state[Enums.StKey.frame] == 3):
-		state[Enums.StKey.velocity_x] = -SGFixed.ONE*22
+		state[Enums.StKey.velocity_x] = -SGFixed.ONE*24 # 22
 		state[Enums.StKey.drag_x] = SGFixed.ONE*1
 
 func handle_input(state: Dictionary, interpreter: InputInterpreter) -> void:
@@ -43,7 +43,7 @@ func handle_input(state: Dictionary, interpreter: InputInterpreter) -> void:
 		state[Enums.StKey.leftfaceOK] = false
 	if (state[Enums.StKey.frame] == 20):
 		common_idle_transitions(state, interpreter)
-	elif (state[Enums.StKey.frame] >= 10): 
+	elif (state[Enums.StKey.frame] >= 7): 
 		if (not (interpreter.is_button_down(Enums.InputFlags.ADown) or
 				interpreter.is_button_down(Enums.InputFlags.BDown) or
 				interpreter.is_button_down(Enums.InputFlags.CDown) or

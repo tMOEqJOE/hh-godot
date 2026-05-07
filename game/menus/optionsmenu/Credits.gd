@@ -16,6 +16,9 @@ const credits = {
 	"Guest Composer" : [
 		"miyaakka",
 	],
+	"Guest Developer" : [
+		"Keyboard Noah",
+	],
 	"Infinite and Bug Hunters" : [
 		"りてら",
 		"J.Comet Bravo",

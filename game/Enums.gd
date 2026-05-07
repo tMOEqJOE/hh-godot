@@ -89,7 +89,6 @@ enum StKey {
 	hit_box_colliding_frame_attack_data,
 }
 
-
 enum PointCharacters {
 	Subaru,
 	Mio,
@@ -97,7 +96,7 @@ enum PointCharacters {
 	Ollie,
 	Suisei,
 	Kanata,
-	Seven,
+	Flayon,
 	Eight,
 	Nine,
 	Ten,
@@ -118,7 +117,7 @@ enum AssistCharacters {
 	Ollie,
 	Suisei,
 	Kanata,
-	Seven,
+	Flayon,
 	Eight,
 	Nine,
 	Ten,

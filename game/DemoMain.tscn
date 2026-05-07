@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://biul0qb0a8swa"]
 
-[ext_resource type="Script" uid="uid://b66p3r0mf1itt" path="res://game/DemoMain.gd" id="1"]
+[ext_resource type="Script" uid="uid://b66p3r0mf1itt" path="res://game/DemoMain.gd" id="1_m35yc"]
 [ext_resource type="PackedScene" path="res://game/ui/FPSCounter.tscn" id="2"]
-[ext_resource type="FontFile" uid="uid://d28sv0htum78d" path="res://game/assets/monogram_extended.ttf" id="3"]
+[ext_resource type="FontFile" uid="uid://b7kcdcuqo7r5j" path="res://game/assets/monogram_extended.ttf" id="3"]
 [ext_resource type="PackedScene" uid="uid://c5xgqi0ik2bpc" path="res://game/ui/MatchWinCounter.tscn" id="4"]
 
 [sub_resource type="FontFile" id="1"]
@@ -37,7 +37,7 @@ cache/0/16/0/underline_thickness = 0.0
 cache/0/16/0/scale = 1.0
 
 [node name="Main" type="Node2D"]
-script = ExtResource("1")
+script = ExtResource("1_m35yc")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

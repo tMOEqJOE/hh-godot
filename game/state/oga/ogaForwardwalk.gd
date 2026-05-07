@@ -27,8 +27,8 @@ func physics_tick(state: Dictionary) -> void:
 			state[Enums.StKey.velocity_x] = SGFixed.ONE*5
 			state[Enums.StKey.drag_x] = 0
 	else:
-		if (state[Enums.StKey.velocity_x] < SGFixed.ONE*10):
-			state[Enums.StKey.velocity_x] = SGFixed.ONE*10
+		if (state[Enums.StKey.velocity_x] < SGFixed.ONE*11):
+			state[Enums.StKey.velocity_x] = SGFixed.ONE*11
 			state[Enums.StKey.drag_x] = 0
 
 func handle_input(state: Dictionary, interpreter: InputInterpreter) -> void:
@@ -41,4 +41,3 @@ func handle_input(state: Dictionary, interpreter: InputInterpreter) -> void:
 			)
 		):
 		common_idle_transitions(state, interpreter)
-

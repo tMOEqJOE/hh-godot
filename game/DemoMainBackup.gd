@@ -1,10 +1,12 @@
 extends Node2D
 
-class_name DemoMainBackup
+class_name DemoMainRefactor
 
 const DummyNetworkAdaptor = preload("res://addons/godot-rollback-netcode/DummyNetworkAdaptor.gd")
-const ReplayLogger = preload("res://game/menus/replay/ReplayLogger.gd")
-var replay_logger
+const MatchConnector = preload("res://game/components/netplay_manager/MatchStartConnector.gd")
+var match_connector
+const ReplaySaver = preload("res://game/components/replay/replaysaver.gd")
+var replay_saver
 
 @onready var message_label = $CanvasLayer/MessageLabel
 @onready var sync_lost_label = $CanvasLayer/SyncLostLabel
@@ -74,6 +76,8 @@ func signal_connect() -> void:
 	$CanvasLayer/WinCounterP2.update_win_count(false)
 
 func first_time_setup() -> void:
+	match_connector = MatchConnector.new()
+	match_connector.connected.connect(start_game)
 	if (not Global.ROLLBACK_LOGS_ENABLED):
 		logging_enabled = false
 	if (not is_replay()):
@@ -117,14 +121,13 @@ func manual_disconnect():
 		peer_ready[peer_id] = true
 		message_label.text = "# of Peers loaded: " + str(len(peer_ready))
 		if (all_peers_ready()):
-			rpc("start_game")
+			match_connector.send_start_signal()
 
 @rpc("any_peer", "call_local", "reliable") func start_game() -> void:
 	if multiplayer.is_server():
 		multiplayer.multiplayer_peer.refuse_new_connections = true
 		
-		#message_label.text = ""
-		#await get_tree().create_timer(2.0).timeout
+		message_label.text = ""
 		await get_tree().create_timer(1.0).timeout
 		SyncManager.start()
 
@@ -191,6 +194,7 @@ func rematch():
 func reload_scene():
 	#free_main()
 	load_complete = false
+	match_connector.clear_received_message()
 	fighter_game.reset_to_game_start()
 	setup_main()
 
@@ -234,7 +238,8 @@ func _on_network_peer_disconnected(peer_id: int):
 		if (peer_ready.has(peer_id)):
 			peer_ready.erase(peer_id)
 			if (all_peers_ready() and not match_disconnected and not SyncManager.started):
-				rpc("start_game")
+				await get_tree().create_timer(1.0).timeout
+				match_connector.send_start_signal()
 	else:
 		print("SyncManager disconnected doesn't have this peer id")
 
@@ -247,123 +252,15 @@ func _on_server_disconnected() -> void:
 
 func _on_SyncManager_sync_started() -> void:
 	message_label.text = ""
-	var match_info: Dictionary = {
-			"point_1" : Global.PLAYER_1_CHARACTER[0],
-			"point_node_1" : Global.PLAYER_1_NODE_PATH[0],
-			"point_2" : Global.PLAYER_2_CHARACTER[0],
-			"point_node_2" : Global.PLAYER_2_NODE_PATH[0],
-			"assist_1" : Global.PLAYER_1_CHARACTER[1],
-			"assist_node_1" : Global.PLAYER_1_NODE_PATH[1],
-			"assist_2" : Global.PLAYER_2_CHARACTER[1],
-			"assist_node_2" : Global.PLAYER_2_NODE_PATH[1],
-			"point_1_color" : Global.PLAYER_1_COLOR[0],
-			"assist_1_color" : Global.PLAYER_1_COLOR[1],
-			"point_2_color" : Global.PLAYER_2_COLOR[0],
-			"assist_2_color" : Global.PLAYER_2_COLOR[1],
-		}
 	if logging_enabled and not SyncReplay.active:
-		var dir = DirAccess.open(LOG_FILE_DIRECTORY)
-		if not dir.dir_exists(LOG_FILE_DIRECTORY):
-			dir.make_dir(LOG_FILE_DIRECTORY)
-		
-		var datetime = Time.get_datetime_dict_from_system(true)
-		var matchup_name = get_match_up_name(
-				Global.PLAYER_1_CHARACTER[0],
-				Global.PLAYER_1_CHARACTER[1],
-				Global.PLAYER_2_CHARACTER[0],
-				Global.PLAYER_2_CHARACTER[1])
-		var log_file_name = "%04d%02d%02d-%02d%02d%02d-peer-%d" % [
-			datetime['year'],
-			datetime['month'],
-			datetime['day'],
-			datetime['hour'],
-			datetime['minute'],
-			datetime['second'],
-			SyncManager.network_adaptor.get_unique_id(),
-		]
-		log_file_name = log_file_name+matchup_name+".log"
-		SyncManager.start_logging(LOG_FILE_DIRECTORY + '/' + log_file_name, match_info)
-	if (replay_logging_enabled):
-		var dir = DirAccess.open(REPLAY_LOG_FILE_DIRECTORY)
-		if not dir.dir_exists(REPLAY_LOG_FILE_DIRECTORY):
-			dir.make_dir(REPLAY_LOG_FILE_DIRECTORY)
-		
-		var datetime = Time.get_datetime_dict_from_system(true)
-		var matchup_name = get_match_up_name(
-				Global.PLAYER_1_CHARACTER[0],
-				Global.PLAYER_1_CHARACTER[1],
-				Global.PLAYER_2_CHARACTER[0],
-				Global.PLAYER_2_CHARACTER[1])
-		var log_file_name = "%04d%02d%02d-%02d%02d%02d" % [
-			datetime['year'],
-			datetime['month'],
-			datetime['day'],
-			datetime['hour'],
-			datetime['minute'],
-			datetime['second'],
-		]
-		log_file_name = log_file_name+matchup_name+".log"
-		replay_logger = ReplayLogger.new(SyncManager, game_mode_root)
-		if replay_logger.start(REPLAY_LOG_FILE_DIRECTORY + '/' + log_file_name, match_info) != OK:
-			print("Failed to start replay logger")
-			message_label.text = "Failed to start replay logger"
-			replay_logger.stop()
+		replay_saver.create_log()
 	$FighterGame.start_game()
-
-func point_name_abbrev(point) -> String:
-	match point:
-		Enums.PointCharacters.Subaru:
-			return "SUB"
-		Enums.PointCharacters.Mio:
-			return "MIO"
-		Enums.PointCharacters.Oga:
-			return "OGA"
-		Enums.PointCharacters.Ollie:
-			return "OLL"
-		Enums.PointCharacters.Kanata:
-			return "KAN"
-		Enums.PointCharacters.Suisei:
-			return "SUI"
-		_:
-			printerr("invalid point character given")
-			return "???"
-
-func assist_name_abbrev(assist) -> String:
-	match assist:
-		Enums.AssistCharacters.Fubuki:
-			return "FUB"
-		Enums.AssistCharacters.Sora:
-			return "SOR"
-		Enums.AssistCharacters.OkaKoro:
-			return "OKO"
-		Enums.AssistCharacters.Sana:
-			return "SNA"
-		Enums.AssistCharacters.Hakka:
-			return "HAK"
-		Enums.AssistCharacters.Subaru:
-			return "SUB"
-		Enums.AssistCharacters.Mio:
-			return "MIO"
-		Enums.AssistCharacters.Oga: 
-			return "OGA"
-		Enums.AssistCharacters.Ollie: 
-			return "OLL"
-		Enums.AssistCharacters.Kanata: 
-			return "KAN"
-		Enums.AssistCharacters.Suisei: 
-			return "SUI"
-		_:
-			printerr("invalid assist character given")
-			return "???"
-
-func get_match_up_name(point1, assist1, point2, assist2) -> String:
-	return point_name_abbrev(point1) + assist_name_abbrev(assist1) + "v" + point_name_abbrev(point2) + assist_name_abbrev(assist2)
-
+	
 func _on_SyncManager_sync_stopped() -> void:
 	if logging_enabled:
 		SyncManager.stop_logging()
 	if replay_logging_enabled:
-		replay_logger.stop()
+		replay_saver.stop()
 	$FighterGame.rematch_on_sync_stopped()
 
 func _on_SyncManager_sync_lost() -> void:
