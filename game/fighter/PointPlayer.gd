@@ -306,6 +306,9 @@ func setup(playerData:PlayerSetup):
 			Enums.PointCharacters.Suisei:
 				state_factory = load("res://game/state/suisei/suiseistatefactory.gd").new()
 				yCameraOffset = 993088
+			Enums.PointCharacters.Flayon:
+				state_factory = load("res://game/state/kanata/kanatastatefactory.gd").new()
+				yCameraOffset = 11993088
 			_:
 				printerr("invalid point character given")
 		super.state_factory_setup(state_factory)
