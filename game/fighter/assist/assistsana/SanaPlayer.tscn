@@ -443,7 +443,6 @@ auto_reset = false
 fixed_position_y = -17301504
 fixed_scale_x = 632553
 fixed_scale_y = 1737996
-visible = false
 position = Vector2(0, -264)
 scale = Vector2(9.65199, 26.5197)
 
@@ -452,7 +451,6 @@ fixed_position_x = 65536
 fixed_position_y = -17694720
 fixed_scale_x = 626914
 fixed_scale_y = 1808126
-visible = false
 position = Vector2(1, -270)
 scale = Vector2(9.56595, 27.5898)
 
@@ -461,7 +459,6 @@ fixed_position_x = 15663104
 fixed_position_y = -12124159
 fixed_scale_x = 2361402
 fixed_scale_y = -1246952
-visible = false
 position = Vector2(239, -185)
 scale = Vector2(36.0321, -19.027)
 
@@ -470,6 +467,5 @@ fixed_position_x = 19857410
 fixed_position_y = -12451842
 fixed_scale_x = 942229
 fixed_scale_y = -901102
-visible = false
 position = Vector2(303, -190)
 scale = Vector2(14.3773, -13.7497)

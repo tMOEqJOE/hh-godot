@@ -69,7 +69,7 @@ func _init():
 			Enums.StKey.launch_dir_y : SGFixed.ONE*30,
 			Enums.StKey.hitstop: 3,
 			Enums.StKey.meter_build: 0,
-			Enums.StKey.min_damage:4,
+			Enums.StKey.min_damage:2,
 			Enums.StKey.chip_damage:2,
 			Enums.StKey.counter_hit: Enums.AttackType.GroundBouncer,
 			Enums.StKey.counter_hitstun: 100,
