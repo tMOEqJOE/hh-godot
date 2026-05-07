@@ -3,24 +3,24 @@
 [ext_resource type="Script" uid="uid://dv11pt6y7wasy" path="res://addons/godot-rollback-netcode/NetworkAnimationPlayer.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://cwoqesvdf08m3" path="res://game/fighter/Hurtbox.tscn" id="2"]
 [ext_resource type="PackedScene" uid="uid://bvgu0aev8rq4g" path="res://game/fighter/Hitbox.tscn" id="3"]
-[ext_resource type="Texture2D" uid="uid://diuuqbl528564" path="res://game/assets/sprites/assists/sana/StandHurt/Timeline 1_0002.png" id="3_6un6v"]
-[ext_resource type="Texture2D" uid="uid://5dcs10psxu8x" path="res://game/assets/sprites/assists/sana/AirHurt/Timeline 1_0003.png" id="3_tkkmc"]
+[ext_resource type="Texture2D" uid="uid://cpx4etflm8i6m" path="res://game/assets/sprites/assists/sana/StandHurt/Timeline 1_0002.png" id="3_6un6v"]
+[ext_resource type="Texture2D" uid="uid://fntcmiv7hlin" path="res://game/assets/sprites/assists/sana/AirHurt/Timeline 1_0003.png" id="3_tkkmc"]
 [ext_resource type="Material" uid="uid://bt3lvyqtd78u0" path="res://game/assets/shaders/ColorSwapMat.tres" id="4"]
 [ext_resource type="PackedScene" uid="uid://sdxa076t7wfp" path="res://game/fighter/effects/shadow.tscn" id="4_8tnd7"]
 [ext_resource type="Script" uid="uid://dhae8c4xx0bln" path="res://game/fighter/assist/assistsana/SanaPlayer.gd" id="5"]
-[ext_resource type="Texture2D" uid="uid://syr3m6tpaggi" path="res://game/assets/sprites/assists/sana/AirHurt/Timeline 1_0000.png" id="5_dm0j0"]
-[ext_resource type="Texture2D" uid="uid://dog6by58g7o6i" path="res://game/assets/sprites/assists/sana/AirHurt/Timeline 1_0001.png" id="6_dm0j0"]
-[ext_resource type="Texture2D" uid="uid://bevihflewm4o" path="res://game/assets/sprites/assists/sana/AirHurt/Timeline 1_0002.png" id="7_n4w6o"]
-[ext_resource type="Texture2D" uid="uid://c8tfdb3p8kljx" path="res://game/assets/sprites/assists/sana/Knockdown/Timeline 1_0000.png" id="14_hw2jd"]
-[ext_resource type="Texture2D" uid="uid://bqoe76g57nb3r" path="res://game/assets/sprites/assists/sana/Intro/Timeline 1_0000.png" id="15"]
-[ext_resource type="Texture2D" uid="uid://guvahwgpxnyd" path="res://game/assets/sprites/assists/sana/Knockdown/Timeline 1_0001.png" id="15_tkkmc"]
-[ext_resource type="Texture2D" uid="uid://jknqi3812jax" path="res://game/assets/sprites/assists/sana/GravityWell/Timeline 1_0001.png" id="16"]
-[ext_resource type="Texture2D" uid="uid://tq7jpwpmpnav" path="res://game/assets/sprites/Empty_0000.png" id="17"]
-[ext_resource type="Texture2D" uid="uid://4ytrrayb3iil" path="res://game/assets/sprites/assists/sana/StandHurt/Timeline 1_0003.png" id="17_dm0j0"]
-[ext_resource type="Texture2D" uid="uid://88j08tk5lxf2" path="res://game/assets/sprites/assists/sana/StandHurt/Timeline 1_0000.png" id="18_n4w6o"]
-[ext_resource type="Texture2D" uid="uid://gee0i2k0em0j" path="res://game/assets/sprites/assists/sana/StandHurt/Timeline 1_0001.png" id="19_di4s5"]
-[ext_resource type="Texture2D" uid="uid://dh23imcnu8jm4" path="res://game/assets/sprites/assists/sana/GravityWell/Timeline 1_0000.png" id="20"]
-[ext_resource type="Texture2D" uid="uid://bgiif8l0hucqt" path="res://game/assets/sprites/assists/sana/GravityWell/Timeline 1_0002.png" id="27"]
+[ext_resource type="Texture2D" uid="uid://djp5p38l7b5dw" path="res://game/assets/sprites/assists/sana/AirHurt/Timeline 1_0000.png" id="5_dm0j0"]
+[ext_resource type="Texture2D" uid="uid://1n2iqm4mjrhw" path="res://game/assets/sprites/assists/sana/AirHurt/Timeline 1_0001.png" id="6_dm0j0"]
+[ext_resource type="Texture2D" uid="uid://cr4dwusgqb1nq" path="res://game/assets/sprites/assists/sana/AirHurt/Timeline 1_0002.png" id="7_n4w6o"]
+[ext_resource type="Texture2D" uid="uid://v1dojp0mpbhj" path="res://game/assets/sprites/assists/sana/Knockdown/Timeline 1_0000.png" id="14_hw2jd"]
+[ext_resource type="Texture2D" uid="uid://crpygq7fk2yn5" path="res://game/assets/sprites/assists/sana/Intro/Timeline 1_0000.png" id="15"]
+[ext_resource type="Texture2D" uid="uid://buc3d1lx1s35m" path="res://game/assets/sprites/assists/sana/Knockdown/Timeline 1_0001.png" id="15_tkkmc"]
+[ext_resource type="Texture2D" uid="uid://c4kxt3rasxiba" path="res://game/assets/sprites/assists/sana/GravityWell/Timeline 1_0001.png" id="16"]
+[ext_resource type="Texture2D" uid="uid://c3h40i4mamblw" path="res://game/assets/sprites/Empty_0000.png" id="17"]
+[ext_resource type="Texture2D" uid="uid://dkbq2v1oikxb" path="res://game/assets/sprites/assists/sana/StandHurt/Timeline 1_0003.png" id="17_dm0j0"]
+[ext_resource type="Texture2D" uid="uid://coks756mvt6qm" path="res://game/assets/sprites/assists/sana/StandHurt/Timeline 1_0000.png" id="18_n4w6o"]
+[ext_resource type="Texture2D" uid="uid://xbt75hb1c6h1" path="res://game/assets/sprites/assists/sana/StandHurt/Timeline 1_0001.png" id="19_di4s5"]
+[ext_resource type="Texture2D" uid="uid://bjumm7mbfsrdv" path="res://game/assets/sprites/assists/sana/GravityWell/Timeline 1_0000.png" id="20"]
+[ext_resource type="Texture2D" uid="uid://bd7n6wbgy056l" path="res://game/assets/sprites/assists/sana/GravityWell/Timeline 1_0002.png" id="27"]
 
 [sub_resource type="SGRectangleShape2D" id="1"]
 extents_x = 2063232
@@ -349,6 +349,21 @@ tracks/1/keys = {
 "values": [Vector2(-30, 50)]
 }
 
+[sub_resource type="Animation" id="Animation_6un6v"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("20")]
+}
+
 [sub_resource type="Animation" id="7"]
 resource_name = "StandHighHit"
 length = 0.383334
@@ -376,21 +391,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1000000),
 "update": 0,
 "values": [Vector2(0, 80)]
-}
-
-[sub_resource type="Animation" id="Animation_6un6v"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("20")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1gfh0"]
@@ -421,7 +421,7 @@ material = ExtResource("4")
 position = Vector2(0, -362)
 scale = Vector2(1.428, 1.428)
 texture = ExtResource("20")
-offset = Vector2(-10, 140)
+offset = Vector2(-40, 50)
 
 [node name="Shadow" parent="." instance=ExtResource("4_8tnd7")]
 
@@ -443,6 +443,7 @@ auto_reset = false
 fixed_position_y = -17301504
 fixed_scale_x = 632553
 fixed_scale_y = 1737996
+visible = false
 position = Vector2(0, -264)
 scale = Vector2(9.65199, 26.5197)
 
@@ -451,6 +452,7 @@ fixed_position_x = 65536
 fixed_position_y = -17694720
 fixed_scale_x = 626914
 fixed_scale_y = 1808126
+visible = false
 position = Vector2(1, -270)
 scale = Vector2(9.56595, 27.5898)
 
@@ -459,6 +461,7 @@ fixed_position_x = 15663104
 fixed_position_y = -12124159
 fixed_scale_x = 2361402
 fixed_scale_y = -1246952
+visible = false
 position = Vector2(239, -185)
 scale = Vector2(36.0321, -19.027)
 
@@ -467,5 +470,6 @@ fixed_position_x = 19857410
 fixed_position_y = -12451842
 fixed_scale_x = 942229
 fixed_scale_y = -901102
+visible = false
 position = Vector2(303, -190)
 scale = Vector2(14.3773, -13.7497)
