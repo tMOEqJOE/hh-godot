@@ -1,9 +1,9 @@
-extends FlayonCrouchAttackState
+extends FlayonAirAttackState
 
 class_name Flayon3CState
 
 func _init():
-	endFrame = 45
+	endFrame = 40
 	
 	anim_data = {
 		0 : {
@@ -16,7 +16,7 @@ func _init():
 			Enums.StKey.Hurt3PosX : 655360, Enums.StKey.Hurt3PosY : -1835008,
 			Enums.StKey.Hurt3ScaleX : 1161459, Enums.StKey.Hurt3ScaleY : -231611,
 			},
-		10 : {
+		12 : {
 			Enums.StKey.counterOK : true,
 			Enums.StKey.Hit1Disable : false,
 			Enums.StKey.Hit2Disable : false,
@@ -60,5 +60,17 @@ func enter(state: Dictionary) -> void:
 	super.enter(state)
 	anim.play("3C")
 
+func physics_tick(state: Dictionary) -> void:
+	super.physics_tick(state)
+	if (state[Enums.StKey.frame] == 10):
+		state[Enums.StKey.velocity_y] = -SGFixed.ONE*40
+		state[Enums.StKey.velocity_x] = Util.fixed_max(SGFixed.ONE*10, state[Enums.StKey.velocity_x])
+
 func gatling_cancel(state: Dictionary, interpreter: InputInterpreter):
 	pass
+
+func reaction(state: Dictionary, interpreter: InputInterpreter, event_cause: int) -> void:
+	if (event_cause == Enums.Reaction.GroundLand and state[Enums.StKey.frame] <= 13):
+		pass
+	else:
+		super.reaction(state, interpreter, event_cause)

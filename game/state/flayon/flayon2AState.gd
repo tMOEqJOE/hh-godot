@@ -3,7 +3,7 @@ extends FlayonCrouchAttackState
 class_name Flayon2AState
 
 func _init():
-	endFrame = 16
+	endFrame = 13
 	
 	anim_data = {
 		0 : {
@@ -72,9 +72,6 @@ func gatling_cancel(state: Dictionary, interpreter: InputInterpreter):
 		if (interpreter.is_holding_a_direction(Enums.Numpad.N6, state[Enums.StKey.leftface]) and 
 				interpreter.is_button_down(Enums.InputFlags.CDown)):
 			state[Enums.StKey.cancelState] = "Stand6C"
-		elif (interpreter.is_holding_a_direction(Enums.Numpad.N6, state[Enums.StKey.leftface]) and 
-				interpreter.is_button_down(Enums.InputFlags.ADown)):
-			state[Enums.StKey.cancelState] = "Stand6A"
 		elif (interpreter.is_holding_a_direction(Enums.Numpad.N3, state[Enums.StKey.leftface]) and 
 				interpreter.is_button_down(Enums.InputFlags.CDown)):
 			state[Enums.StKey.cancelState] = "Crouch3C"
@@ -97,3 +94,5 @@ func gatling_cancel(state: Dictionary, interpreter: InputInterpreter):
 			state[Enums.StKey.cancelState] = "Stand5C"
 		elif (interpreter.is_button_down(Enums.InputFlags.BDown)):
 			state[Enums.StKey.cancelState] = "Stand5B"
+		elif (interpreter.is_button_down(Enums.InputFlags.ADown)):
+			state[Enums.StKey.cancelState] = "Stand5A"

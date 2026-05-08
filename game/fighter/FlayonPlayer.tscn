@@ -262,7 +262,7 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.16666667, 0.233333),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.26666635),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [ExtResource("16_5mqlr"), ExtResource("17_raupg"), ExtResource("18_3rtld"), ExtResource("19_5murs")]
@@ -320,7 +320,7 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.13333334, 0.18333334, 0.25, 0.28333333),
+"times": PackedFloat32Array(0, 0.1, 0.15, 0.21666667, 0.25),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": [ExtResource("23_5i547"), ExtResource("24_xpm3i"), ExtResource("25_ta16v"), ExtResource("26_kpeac"), ExtResource("27_f32ml")]
@@ -422,7 +422,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1000000),
 "update": 0,
-"values": [Vector2(10, 120)]
+"values": [Vector2(-20, 120)]
 }
 
 [sub_resource type="Animation" id="53"]
@@ -2154,12 +2154,12 @@ script = ExtResource("150_1jibv")
 auto_reset = false
 
 [node name="Hitbox1" parent="." instance=ExtResource("151_0ymqg")]
-fixed_position_x = 17629186
-fixed_position_y = -17760254
-fixed_scale_x = 1226496
-fixed_scale_y = 2150290
-position = Vector2(269, -271)
-scale = Vector2(18.7148, 32.8108)
+fixed_position_x = 9629186
+fixed_position_y = -9760254
+fixed_scale_x = 626496
+fixed_scale_y = 1050290
+position = Vector2(146.92972, -148.92966)
+scale = Vector2(9.55957, 16.026154)
 
 [node name="Hitbox2" parent="." instance=ExtResource("151_0ymqg")]
 fixed_position_x = 40435712
