@@ -21,7 +21,7 @@ func _init():
 	
 func enter(state: Dictionary) -> void:
 	super.enter(state)
-	state[Enums.StKey.velocity_x] = Util.fixed_max(SGFixed.ONE*13, state[Enums.StKey.velocity_x])
+	state[Enums.StKey.velocity_x] = Util.fixed_max(SGFixed.ONE*14, state[Enums.StKey.velocity_x])
 	state[Enums.StKey.accel_x] = 55536
 	state[Enums.StKey.leftfaceOK] = true
 	anim.play("Run")
@@ -33,11 +33,11 @@ func physics_tick(state: Dictionary) -> void:
 	elif (negative_penalty(state)):
 		state[Enums.StKey.sync_rate] -= SGFixed.mul(state[Enums.StKey.velocity_x], 1036)
 
-	if (state[Enums.StKey.frame] >= 12):
+	if (state[Enums.StKey.frame] >= 10):
 		SyncManager.play_sound("step", Global.StepSound, {"bus": "Sound"})
 		state[Enums.StKey.frame] = 1
-	if (state[Enums.StKey.velocity_x] > SGFixed.ONE*49):
-		state[Enums.StKey.velocity_x] = SGFixed.ONE*49
+	if (state[Enums.StKey.velocity_x] > SGFixed.ONE*52):
+		state[Enums.StKey.velocity_x] = SGFixed.ONE*52
 
 func handle_input(state: Dictionary, interpreter: InputInterpreter) -> void:
 	if (state[Enums.StKey.frame] == 0):

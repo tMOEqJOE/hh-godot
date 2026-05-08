@@ -3,7 +3,7 @@ extends FlayonCrouchAttackState
 class_name Flayon2CState
 
 func _init():
-	endFrame = 30
+	endFrame = 36
 	
 	anim_data = {
 		0 : {
@@ -38,7 +38,7 @@ func _init():
 			Enums.StKey.attack_type : Enums.AttackType.Launcher,
 			Enums.StKey.launch_dir_x: -SGFixed.ONE*12,
 			Enums.StKey.launch_dir_y: -SGFixed.ONE*30,
-			Enums.StKey.attack_damage: 54,
+			Enums.StKey.attack_damage: 40,
 			Enums.StKey.hitstun: 60,
 			Enums.StKey.counter_hit: Enums.AttackType.GroundBouncer,
 			Enums.StKey.counter_hitstun: 60,
@@ -69,3 +69,20 @@ func gatling_cancel(state: Dictionary, interpreter: InputInterpreter):
 		elif (interpreter.is_holding_a_direction(Enums.Numpad.N3, state[Enums.StKey.leftface]) and 
 				interpreter.is_button_down(Enums.InputFlags.CDown)):
 			state[Enums.StKey.cancelState] = "Crouch3C"
+		elif ((interpreter.is_holding_a_direction(Enums.Numpad.N1, state[Enums.StKey.leftface]) or
+				interpreter.is_holding_a_direction(Enums.Numpad.N2, state[Enums.StKey.leftface]) or
+				interpreter.is_holding_a_direction(Enums.Numpad.N3, state[Enums.StKey.leftface])) and 
+				interpreter.is_button_down(Enums.InputFlags.BDown)):
+			state[Enums.StKey.cancelState] = "Crouch2B"
+		elif ((interpreter.is_holding_a_direction(Enums.Numpad.N1, state[Enums.StKey.leftface]) or
+				interpreter.is_holding_a_direction(Enums.Numpad.N2, state[Enums.StKey.leftface]) or
+				interpreter.is_holding_a_direction(Enums.Numpad.N3, state[Enums.StKey.leftface])) and 
+				interpreter.is_button_down(Enums.InputFlags.ADown)):
+			state[Enums.StKey.cancelState] = "Crouch2A"
+		elif (interpreter.is_button_down(Enums.InputFlags.BDown)):
+			state[Enums.StKey.cancelState] = "Stand5B"
+		elif (interpreter.is_button_down(Enums.InputFlags.ADown)):
+			state[Enums.StKey.cancelState] = "Stand5A"
+
+func jump_cancel(state: Dictionary, interpreter: InputInterpreter):
+	pass

@@ -20,7 +20,7 @@ func _init():
 			Enums.StKey.Hurt3PosX : 196608, Enums.StKey.Hurt3PosY : -14286847,
 			Enums.StKey.Hurt3ScaleX : 608053, Enums.StKey.Hurt3ScaleY : -670102,
 			},
-		13 : {
+		11 : {
 			Enums.StKey.counterOK : true,
 			Enums.StKey.Hit1Disable : false,
 			Enums.StKey.Hit2Disable : false,
@@ -35,7 +35,7 @@ func _init():
 			Enums.StKey.Hurt2PosX : 0, Enums.StKey.Hurt2PosY : -16471104,
 			Enums.StKey.Hurt2ScaleX : 1005536, Enums.StKey.Hurt2ScaleY : 1005536,
 			Enums.StKey.guard: Enums.GuardType.High,
-			Enums.StKey.attack_damage: 45,
+			Enums.StKey.attack_damage: 40,
 			Enums.StKey.counter_hit: Enums.AttackType.Strike,
 			Enums.StKey.counter_hitstun: 10,
 			},
@@ -72,3 +72,7 @@ func gatling_cancel(state: Dictionary, interpreter: InputInterpreter):
 		elif (interpreter.is_holding_a_direction(Enums.Numpad.N6, state[Enums.StKey.leftface]) and 
 				interpreter.is_button_down(Enums.InputFlags.CDown)):
 			state[Enums.StKey.cancelState] = "Jump6C"
+		elif (interpreter.is_button_down(Enums.InputFlags.BDown)):
+			state[Enums.StKey.cancelState] = "Jump5B"
+		elif (interpreter.is_button_down(Enums.InputFlags.ADown)):
+			state[Enums.StKey.cancelState] = "Jump5A"

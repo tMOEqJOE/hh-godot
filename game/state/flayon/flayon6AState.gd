@@ -41,7 +41,7 @@ func _init():
 			Enums.StKey.Hurt1Disable : false,Enums.StKey.Hurt2Disable : true,Enums.StKey.Hurt3Disable : true,
 			Enums.StKey.Hurt1PosX : 2097152, Enums.StKey.Hurt1PosY : -2555901,
 			Enums.StKey.Hurt1ScaleX : 1244010, Enums.StKey.Hurt1ScaleY : 402320,
-			Enums.StKey.attack_damage: 40,
+			Enums.StKey.attack_damage: 30,
 			},
 		11 : { 
 			Enums.StKey.Hit1Disable : true,

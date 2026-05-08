@@ -36,7 +36,7 @@ func _init():
 			Enums.StKey.hitstop: 8,
 			Enums.StKey.hit_box_colliding_frame : 254,
 			Enums.StKey.guard: Enums.GuardType.High,
-			Enums.StKey.attack_damage: 30,
+			Enums.StKey.attack_damage: 20,
 			Enums.StKey.counter_hit: Enums.AttackType.Strike,
 			Enums.StKey.hitstun: Util.DEFAULT_LIGHT_HITSTUN,
 			Enums.StKey.blockstun: Util.DEFAULT_LIGHT_BLOCKSTUN,

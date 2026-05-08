@@ -3,7 +3,7 @@ extends FlayonAttackState
 class_name Flayon5BState
 
 func _init():
-	endFrame = 21
+	endFrame = 30
 	
 	anim_data = {
 		0 : {
@@ -18,7 +18,7 @@ func _init():
 			Enums.StKey.Hurt3PosX : -1376256, Enums.StKey.Hurt3PosY : -6553600,
 			Enums.StKey.Hurt3ScaleX : 537867, Enums.StKey.Hurt3ScaleY : -688237,
 			},
-		7 : {
+		11 : {
 			Enums.StKey.counterOK : true,
 			Enums.StKey.Hit1Disable : false,
 			Enums.StKey.Hit1PosX : 21037056, Enums.StKey.Hit1PosY : -13828095,
@@ -31,12 +31,12 @@ func _init():
 			Enums.StKey.Hurt3PosX : 65536, Enums.StKey.Hurt3PosY : -3932160,
 			Enums.StKey.Hurt3ScaleX : 591882, Enums.StKey.Hurt3ScaleY : -447191,
 			Enums.StKey.hit_box_colliding_frame : 254,
-			Enums.StKey.attack_damage: 40,
+			Enums.StKey.attack_damage: 38,
 			Enums.StKey.counter_hit: Enums.AttackType.Strike,
 			Enums.StKey.hitstun: 18,
 			Enums.StKey.counter_hitstun: 5,
 			},
-		10 : { 
+		15 : { 
 			Enums.StKey.Hit1Disable : true,
 			Enums.StKey.Hit2Disable : true,
 			Enums.StKey.Hurt1Disable : false,Enums.StKey.Hurt2Disable : false,Enums.StKey.Hurt3Disable : false,
@@ -72,5 +72,15 @@ func gatling_cancel(state: Dictionary, interpreter: InputInterpreter):
 				interpreter.is_holding_a_direction(Enums.Numpad.N3, state[Enums.StKey.leftface])) and 
 				interpreter.is_button_down(Enums.InputFlags.BDown)):
 			state[Enums.StKey.cancelState] = "Crouch2B"
+		elif ((interpreter.is_holding_a_direction(Enums.Numpad.N1, state[Enums.StKey.leftface]) or
+				interpreter.is_holding_a_direction(Enums.Numpad.N2, state[Enums.StKey.leftface]) or
+				interpreter.is_holding_a_direction(Enums.Numpad.N3, state[Enums.StKey.leftface])) and 
+				interpreter.is_button_down(Enums.InputFlags.ADown)):
+			state[Enums.StKey.cancelState] = "Crouch2A"
 		elif (interpreter.is_button_down(Enums.InputFlags.CDown)):
 			state[Enums.StKey.cancelState] = "Stand5C"
+		elif (interpreter.is_button_down(Enums.InputFlags.ADown)):
+			state[Enums.StKey.cancelState] = "Stand5A"
+
+func jump_cancel(state: Dictionary, interpreter: InputInterpreter):
+	pass

@@ -3,7 +3,7 @@ extends FlayonCrouchAttackState
 class_name Flayon2BState
 
 func _init():
-	endFrame = 22
+	endFrame = 32
 	
 	anim_data = {
 		0 : {
@@ -34,11 +34,31 @@ func _init():
 			Enums.StKey.Hurt3PosX : 10747904, Enums.StKey.Hurt3PosY : -3276800,
 			Enums.StKey.Hurt3ScaleX : 1263663, Enums.StKey.Hurt3ScaleY : -349887,
 			Enums.StKey.hit_box_colliding_frame : 254,
-			Enums.StKey.guard: Enums.GuardType.Low,
-			Enums.StKey.attack_damage: 38,
+			Enums.StKey.guard: Enums.GuardType.Mid,
+			Enums.StKey.attack_damage: 29,
 			Enums.StKey.counter_hit: Enums.AttackType.Strike,
 			},
-		10 : { 
+		12 : {
+			Enums.StKey.counterOK : true,
+			Enums.StKey.Hit1Disable : false,
+			Enums.StKey.Hit2Disable : false,
+			Enums.StKey.Hit1PosX : 17104898, Enums.StKey.Hit1PosY : -1376256,
+			Enums.StKey.Hit1ScaleX : 1170480, Enums.StKey.Hit1ScaleY : -167990,
+			Enums.StKey.Hit2PosX : 9633793, Enums.StKey.Hit2PosY : -3014657,
+			Enums.StKey.Hit2ScaleX : 711968, Enums.StKey.Hit2ScaleY : -321020,
+			Enums.StKey.Hurt1Disable : false,Enums.StKey.Hurt2Disable : false,Enums.StKey.Hurt3Disable : false,
+			Enums.StKey.Hurt1PosX : 2883584, Enums.StKey.Hurt1PosY : -3276800,
+			Enums.StKey.Hurt1ScaleX : 334968, Enums.StKey.Hurt1ScaleY : 357786,
+			Enums.StKey.Hurt2PosX : -524288, Enums.StKey.Hurt2PosY : -7471104,
+			Enums.StKey.Hurt2ScaleX : 446568, Enums.StKey.Hurt2ScaleY : -774072,
+			Enums.StKey.Hurt3PosX : 10747904, Enums.StKey.Hurt3PosY : -3276800,
+			Enums.StKey.Hurt3ScaleX : 1263663, Enums.StKey.Hurt3ScaleY : -349887,
+			Enums.StKey.hit_box_colliding_frame : 254,
+			Enums.StKey.guard: Enums.GuardType.Mid,
+			Enums.StKey.attack_damage: 32,
+			Enums.StKey.counter_hit: Enums.AttackType.Strike,
+			},
+		15 : { 
 			Enums.StKey.Hit1Disable : true,
 			Enums.StKey.Hit2Disable : true,
 			Enums.StKey.Hurt1Disable : false,Enums.StKey.Hurt2Disable : false,Enums.StKey.Hurt3Disable : true,
@@ -69,8 +89,16 @@ func gatling_cancel(state: Dictionary, interpreter: InputInterpreter):
 				interpreter.is_holding_a_direction(Enums.Numpad.N3, state[Enums.StKey.leftface])) and 
 				interpreter.is_button_down(Enums.InputFlags.CDown)):
 			state[Enums.StKey.cancelState] = "Crouch2C"
+		elif ((interpreter.is_holding_a_direction(Enums.Numpad.N1, state[Enums.StKey.leftface]) or
+				interpreter.is_holding_a_direction(Enums.Numpad.N2, state[Enums.StKey.leftface]) or
+				interpreter.is_holding_a_direction(Enums.Numpad.N3, state[Enums.StKey.leftface])) and 
+				interpreter.is_button_down(Enums.InputFlags.ADown)):
+			state[Enums.StKey.cancelState] = "Crouch2A"
 		elif (interpreter.is_button_down(Enums.InputFlags.CDown)):
 			state[Enums.StKey.cancelState] = "Stand5C"
+		elif (interpreter.is_button_down(Enums.InputFlags.ADown)):
+			state[Enums.StKey.cancelState] = "Stand5A"
+		
 
 func jump_cancel(state: Dictionary, interpreter: InputInterpreter):
 	pass

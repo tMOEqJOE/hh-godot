@@ -31,10 +31,10 @@ func _init():
 			Enums.StKey.Hurt3PosX : 851968, Enums.StKey.Hurt3PosY : -4521984,
 			Enums.StKey.Hurt3ScaleX : 397190, Enums.StKey.Hurt3ScaleY : -382619,
 			Enums.StKey.hit_box_colliding_frame : 254,
-			Enums.StKey.attack_damage: 20,
+			Enums.StKey.attack_damage: 10,
 			Enums.StKey.hitstop: 8,
 			Enums.StKey.hitstun: Util.DEFAULT_LIGHT_HITSTUN,
-			Enums.StKey.blockstun: Util.DEFAULT_LIGHT_BLOCKSTUN,
+			Enums.StKey.blockstun: Util.DEFAULT_LIGHT_BLOCKSTUN - 3,
 			Enums.StKey.attack_type : Enums.AttackType.Strike,
 			Enums.StKey.counter_hit: Enums.AttackType.Strike,
 			Enums.StKey.counter_launch_dir_x: Util.BASE_SHORT_STRIKE_X_PUSHBACK,
@@ -62,13 +62,6 @@ func enter(state: Dictionary) -> void:
 	super.enter(state)
 	state[Enums.StKey.drag_x] = Util.FRICTION
 	anim.play("5A")
-
-func physics_tick(state: Dictionary) -> void:
-	super.physics_tick(state)
-	if (state[Enums.StKey.frame] == 3):
-		state[Enums.StKey.velocity_x] = Util.fixed_max(state[Enums.StKey.velocity_x], SGFixed.ONE*30)
-#	if (state[Enums.StKey.frame] == 8):
-#		state[Enums.StKey.hitStopFrame] = 0
 
 func gatling_cancel(state: Dictionary, interpreter: InputInterpreter):
 	if (state[Enums.StKey.hitStopFrame] >= 0):
@@ -98,8 +91,7 @@ func gatling_cancel(state: Dictionary, interpreter: InputInterpreter):
 			state[Enums.StKey.cancelState] = "Crouch2A"
 		elif (interpreter.is_button_down(Enums.InputFlags.CDown)):
 			state[Enums.StKey.cancelState] = "Stand5C"
-		elif (state[Enums.StKey.distance_to_opponent] <= Util.PROXY_NORMAL and
-				interpreter.is_button_down(Enums.InputFlags.BDown)):
-			state[Enums.StKey.cancelState] = "StandcB"
 		elif (interpreter.is_button_down(Enums.InputFlags.BDown)):
 			state[Enums.StKey.cancelState] = "Stand5B"
+		elif (interpreter.is_button_down(Enums.InputFlags.ADown)):
+			state[Enums.StKey.cancelState] = "Stand5A"

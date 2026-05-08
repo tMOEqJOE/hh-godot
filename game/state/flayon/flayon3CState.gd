@@ -3,7 +3,7 @@ extends FlayonCrouchAttackState
 class_name Flayon3CState
 
 func _init():
-	endFrame = 32
+	endFrame = 45
 	
 	anim_data = {
 		0 : {
@@ -16,7 +16,7 @@ func _init():
 			Enums.StKey.Hurt3PosX : 655360, Enums.StKey.Hurt3PosY : -1835008,
 			Enums.StKey.Hurt3ScaleX : 1161459, Enums.StKey.Hurt3ScaleY : -231611,
 			},
-		8 : {
+		10 : {
 			Enums.StKey.counterOK : true,
 			Enums.StKey.Hit1Disable : false,
 			Enums.StKey.Hit2Disable : false,
@@ -38,11 +38,11 @@ func _init():
 			Enums.StKey.launch_dir_y : -SGFixed.ONE*50,
 			Enums.StKey.counter_hit: Enums.AttackType.WallBouncer,
 			Enums.StKey.counter_hitstun: 100,
-			Enums.StKey.attack_damage: 45,
+			Enums.StKey.attack_damage: 35,
 			Enums.StKey.counter_launch_dir_x: -SGFixed.ONE*5,
 			Enums.StKey.counter_launch_dir_y: -SGFixed.ONE*50,
 			},
-		13 : { 
+		14 : { 
 			Enums.StKey.Hit1Disable : true,
 			Enums.StKey.Hit2Disable : true,
 			Enums.StKey.Hurt1Disable : false,Enums.StKey.Hurt2Disable : false,Enums.StKey.Hurt3Disable : false,
