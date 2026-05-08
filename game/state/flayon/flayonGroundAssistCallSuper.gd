@@ -3,7 +3,7 @@ extends FlayonGroundAssistCallState
 class_name FlayonGroundAssistCallSuperState
 
 func _init():
-	CallSound = preload("res://game/assets/voice/flayon/sbr_yatta.wav")
+	CallSound = preload("res://game/assets/voice/flayon/mxf_I've been waiting for this2.wav")
 	endFrame = Util.BASE_ASSIST_RECOVERY
 	
 	anim_data = {

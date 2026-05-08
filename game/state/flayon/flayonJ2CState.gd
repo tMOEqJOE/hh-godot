@@ -2,7 +2,7 @@ extends FlayonAirAttackState
 
 class_name Flayonj2CState
 
-var voice = preload("res://game/assets/voice/flayon/sbr_Bread.wav")
+var voice = preload("res://game/assets/voice/flayon/mxf_grunt.wav")
 
 func _init():
 	endFrame = 24

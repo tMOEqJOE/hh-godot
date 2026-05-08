@@ -2,7 +2,7 @@ extends IntroState
 
 class_name FlayonIntroState
 
-var voice = preload("res://game/assets/voice/flayon/sbr_kokode flayon wa item wo tsukaimasu.wav")
+var voice = preload("res://game/assets/voice/flayon/mxf_artrus cleared for takeoff.wav")
 
 # Writing _delta instead of delta here prevents the unused variable warning.
 func physics_tick(state: Dictionary) -> void:

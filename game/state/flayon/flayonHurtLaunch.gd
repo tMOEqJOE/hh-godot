@@ -4,7 +4,7 @@ class_name FlayonHurtLaunchState
 
 func _init() -> void:
 	super._init()
-	HurtSound = preload("res://game/assets/voice/flayon/FlayonYaya.wav")
+	HurtSound = preload("res://game/assets/voice/flayon/mxf_Augh.wav")
 
 func enter(state: Dictionary) -> void:
 	super.enter(state)

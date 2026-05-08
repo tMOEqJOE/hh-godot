@@ -2,8 +2,7 @@ extends FlayonAirAttackState
 
 class_name Flayonj6CState
 
-var voice = preload("res://game/assets/voice/flayon/sbr_hayaku koi.wav")
-var clean = preload("res://game/assets/sfx/CleanBatHit.wav")
+var voice = preload("res://game/assets/voice/flayon/mxf_grunt.wav")
 
 func _init():
 	endFrame = 60
@@ -114,17 +113,4 @@ func gatling_cancel(state: Dictionary, interpreter: InputInterpreter):
 
 func jump_cancel(state: Dictionary, interpreter: InputInterpreter):
 	pass
-
-func reaction(state: Dictionary, interpreter: InputInterpreter, event_cause: int) -> void:
-	if (event_cause == Enums.Reaction.StrikeHit):
-		if (state[Enums.StKey.frame] == 7):
-			SyncManager.play_sound("CleanBatHit", clean, {"bus": "Sound"})
-
-	if (event_cause == Enums.Reaction.GroundLand):
-		if (state[Enums.StKey.hitStopFrame] <= 0):
-			state[Enums.StKey.doubleJump] = 1
-			state[Enums.StKey.airDash] = 1
-			change_state.call("LandingRecovery")
-	else:
-		super.reaction(state, interpreter, event_cause)
 	

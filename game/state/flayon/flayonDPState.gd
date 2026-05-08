@@ -2,7 +2,7 @@ extends FlayonAirAttackState
 
 class_name FlayonDPState
 
-var DPSound = preload("res://game/assets/voice/flayon/sbr_kore.wav")
+var DPSound = preload("res://game/assets/voice/flayon/MXF_Take this.wav")
 
 func _init():
 	endFrame = 120

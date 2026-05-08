@@ -3,7 +3,7 @@ extends FlayonAirAssistCallState
 class_name FlayonAirAssistCall2State
 
 func _init():
-	CallSound = preload("res://game/assets/voice/flayon/FlayonOra.wav")
+	CallSound = preload("res://game/assets/voice/flayon/mxf_that's right.wav")
 	endFrame = Util.BASE_AIR_ASSIST_RECOVERY
 	anim_data = {
 		0 : {

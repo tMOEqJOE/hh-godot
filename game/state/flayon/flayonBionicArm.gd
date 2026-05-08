@@ -2,7 +2,7 @@ extends FlayonAttackState
 
 class_name FlayonBionicArmState
 
-var CallSound = preload("res://game/assets/voice/flayon/sbr_shriek2.wav")
+var CallSound = preload("res://game/assets/voice/flayon/mxf_Deus ex machina1.wav")
 
 func _init():
 	endFrame = 60

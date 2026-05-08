@@ -2,8 +2,6 @@ extends AngelAttackState
 
 class_name FlayonAngelInstallState
 
-var CallSound = preload("res://game/assets/voice/flayon/sbr_akirameruna.wav")
-
 func _init():
 	endFrame = 30
 	
@@ -50,8 +48,6 @@ func enter(state: Dictionary) -> void:
 func physics_tick(state: Dictionary) -> void:
 	super.physics_tick(state)
 	state[Enums.StKey.super_meter] += Util.MAX_SUPER_METER
-	if (state[Enums.StKey.frame] == 5):
-		SyncManager.play_sound("sbr_install", CallSound, {"bus": "Voice"})
 
 
 func meter_cancel(state: Dictionary, interpreter: InputInterpreter):
