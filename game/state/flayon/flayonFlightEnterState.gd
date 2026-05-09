@@ -41,6 +41,11 @@ func physics_tick(state: Dictionary) -> void:
 		state[Enums.StKey.velocity_y] = 0
 		state[Enums.StKey.accel_y] = 0
 
+func handle_input(state: Dictionary, interpreter: InputInterpreter) -> void:
+	super.handle_input(state, interpreter)
+	if (state[Enums.StKey.frame] == endFrame):
+		change_state.call("Flight")
+
 func jump_cancel(state: Dictionary, interpreter: InputInterpreter):
 	pass
 

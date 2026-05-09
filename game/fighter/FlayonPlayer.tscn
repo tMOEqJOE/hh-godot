@@ -1,4 +1,4 @@
-[gd_scene load_steps=227 format=3 uid="uid://cbwy2j4nbkk2j"]
+[gd_scene load_steps=239 format=3 uid="uid://cbwy2j4nbkk2j"]
 
 [ext_resource type="Script" uid="uid://dgsx3duqjaeo5" path="res://game/fighter/PointPlayer.gd" id="1_m4qvm"]
 [ext_resource type="Material" uid="uid://bt3lvyqtd78u0" path="res://game/assets/shaders/ColorSwapMat.tres" id="2_xm7kd"]
@@ -109,6 +109,7 @@
 [ext_resource type="Texture2D" uid="uid://5a0ngxvn3mdj" path="res://game/assets/sprites/kanata/Moonkick/Timeline 1_0000.png" id="108_ne0am"]
 [ext_resource type="Texture2D" uid="uid://b0yqshyd7vlik" path="res://game/assets/sprites/kanata/Moonkick/Timeline 1_0001.png" id="109_2iksg"]
 [ext_resource type="Texture2D" uid="uid://bxl1bm3tewtyl" path="res://game/assets/sprites/flayon/StandHurt/Timeline 1_0002.png" id="109_wkc6h"]
+[ext_resource type="Texture2D" uid="uid://bad4me2l0t4iw" path="res://game/assets/sprites/flayon/Skid/Timeline 1_0000.png" id="110_4p678"]
 [ext_resource type="Texture2D" uid="uid://clc5laoa1chbr" path="res://game/assets/sprites/flayon/StandHurt/Timeline 1_0003.png" id="110_d6y3q"]
 [ext_resource type="Texture2D" uid="uid://chvxbyjajt5t" path="res://game/assets/sprites/kanata/Moonkick/Timeline 1_0002.png" id="110_n0s4g"]
 [ext_resource type="Texture2D" uid="uid://dt38qkyrh1g2v" path="res://game/assets/sprites/kanata/Fly/Timeline 1_0000.png" id="111_ywl51"]
@@ -158,6 +159,14 @@
 [ext_resource type="PackedScene" uid="uid://cwoqesvdf08m3" path="res://game/fighter/Hurtbox.tscn" id="152_d42n6"]
 [ext_resource type="Texture2D" uid="uid://dy5lvvgr3h4a5" path="res://game/assets/sprites/flayon/jC/Timeline 1_0002.png" id="153_o4gjw"]
 [ext_resource type="Texture2D" uid="uid://bb7hhb7y2iujk" path="res://game/assets/sprites/flayon/jC/Timeline 1_0003.png" id="154_66wdp"]
+[ext_resource type="Texture2D" uid="uid://2w78ew6mbmc0" path="res://game/assets/sprites/flayon/FlightA/Timeline 1_0000.png" id="157_weqwf"]
+[ext_resource type="Texture2D" uid="uid://i171qq7l1wgd" path="res://game/assets/sprites/flayon/FlightA/Timeline 1_0001.png" id="158_s1gn8"]
+[ext_resource type="Texture2D" uid="uid://xb4p1qilx6i5" path="res://game/assets/sprites/flayon/FlightA/Timeline 1_0002.png" id="159_pbemb"]
+[ext_resource type="Texture2D" uid="uid://deh8bghykkf1h" path="res://game/assets/sprites/flayon/FlightB/Timeline 1_0000.png" id="160_4r26g"]
+[ext_resource type="Texture2D" uid="uid://bcabb014e2os3" path="res://game/assets/sprites/flayon/FlightC/Timeline 1_0000.png" id="161_4r26g"]
+[ext_resource type="Texture2D" uid="uid://dv54pr20ikwut" path="res://game/assets/sprites/flayon/FlightB/Timeline 1_0001.png" id="161_7c5e4"]
+[ext_resource type="Texture2D" uid="uid://wbfnqdgxu37r" path="res://game/assets/sprites/flayon/FlightC/Timeline 1_0001.png" id="162_7c5e4"]
+[ext_resource type="Texture2D" uid="uid://dpurgeoqegsvw" path="res://game/assets/sprites/flayon/FlightC/Timeline 1_0002.png" id="163_o4gjw"]
 
 [sub_resource type="SGRectangleShape2D" id="1"]
 extents_x = 2063232
@@ -919,6 +928,65 @@ tracks/1/keys = {
 "values": [Vector2(-30, 140)]
 }
 
+[sub_resource type="Animation" id="Animation_8hpu6"]
+resource_name = "Flight"
+length = 0.11666856
+loop_mode = 1
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("122_8hpu6"), ExtResource("123_4p678")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1000000),
+"update": 0,
+"values": [Vector2(-80, 110)]
+}
+
+[sub_resource type="Animation" id="Animation_4p678"]
+resource_name = "FlightEnter"
+length = 0.25000215
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.049999997, 0.15),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("73_f32ml"), ExtResource("122_8hpu6"), ExtResource("123_4p678")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1000000),
+"update": 0,
+"values": [Vector2(-80, 110)]
+}
+
 [sub_resource type="Animation" id="19"]
 resource_name = "ForwardAirDash"
 length = 0.2
@@ -1514,7 +1582,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("112_bw0nq")]
+"values": [ExtResource("110_4p678")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1526,7 +1594,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1000000),
 "update": 0,
-"values": [Vector2(-50, 200)]
+"values": [Vector2(-70, 150)]
 }
 
 [sub_resource type="Animation" id="9"]
@@ -2024,10 +2092,9 @@ tracks/1/keys = {
 "values": [Vector2(0, 100)]
 }
 
-[sub_resource type="Animation" id="Animation_8hpu6"]
-resource_name = "Flight"
-length = 0.11666856
-loop_mode = 1
+[sub_resource type="Animation" id="Animation_wkc6h"]
+resource_name = "FlightA"
+length = 0.25000215
 step = 0.0166667
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -2036,10 +2103,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.06666667),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [ExtResource("122_8hpu6"), ExtResource("123_4p678")]
+"values": [ExtResource("157_weqwf"), ExtResource("158_s1gn8"), ExtResource("159_pbemb")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -2054,9 +2121,9 @@ tracks/1/keys = {
 "values": [Vector2(-80, 110)]
 }
 
-[sub_resource type="Animation" id="Animation_4p678"]
-resource_name = "FlightEnter"
-length = 0.25000215
+[sub_resource type="Animation" id="Animation_7c5e4"]
+resource_name = "FlightB"
+length = 0.41666916
 step = 0.0166667
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -2065,10 +2132,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.049999997, 0.15),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.18333334, 0.25743797, 0.36899444),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("73_f32ml"), ExtResource("122_8hpu6"), ExtResource("123_4p678")]
+"values": [ExtResource("157_weqwf"), ExtResource("160_4r26g"), ExtResource("161_7c5e4"), ExtResource("160_4r26g"), ExtResource("161_7c5e4")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -2081,6 +2148,35 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1000000),
 "update": 0,
 "values": [Vector2(-80, 110)]
+}
+
+[sub_resource type="Animation" id="Animation_66wdp"]
+resource_name = "FlightC"
+length = 0.30000225
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("161_4r26g"), ExtResource("162_7c5e4"), ExtResource("163_o4gjw")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1000000),
+"update": 0,
+"values": [Vector2(10, 100)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wc0pe"]
@@ -2112,6 +2208,9 @@ _data = {
 &"CrouchParry": SubResource("50"),
 &"CrouchParryCatch": SubResource("57"),
 &"Flight": SubResource("Animation_8hpu6"),
+&"FlightA": SubResource("Animation_wkc6h"),
+&"FlightB": SubResource("Animation_7c5e4"),
+&"FlightC": SubResource("Animation_66wdp"),
 &"FlightEnter": SubResource("Animation_4p678"),
 &"ForwardAirDash": SubResource("19"),
 &"ForwardWalk": SubResource("38"),

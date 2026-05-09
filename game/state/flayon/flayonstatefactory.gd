@@ -68,6 +68,7 @@ func _init():
 		"AirAssistCallSuper": FlayonAirAssistCallSuperState,
 
 		"FlightEnter": FlayonFlightEnterState,
+		"Flight": FlayonFlightState,
 		"DuckPunch": FlayonDPState,
 		"LightDuckPunch": preload("res://game/state/flayon/flayonLightDPState.gd"),
 		
