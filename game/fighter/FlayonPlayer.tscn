@@ -119,11 +119,10 @@
 [ext_resource type="Texture2D" uid="uid://8cv5nyfms5di" path="res://game/assets/sprites/kanata/Wakeup/Timeline 1_0001.png" id="119_kktry"]
 [ext_resource type="Texture2D" uid="uid://bylxsrlks258s" path="res://game/assets/sprites/kanata/Wakeup/Timeline 1_0002.png" id="120_67ja3"]
 [ext_resource type="Texture2D" uid="uid://cy4qvghs753ic" path="res://game/assets/sprites/kanata/Wakeup/Timeline 1_0003.png" id="121_ebagi"]
+[ext_resource type="Texture2D" uid="uid://qcgw14mhvy7f" path="res://game/assets/sprites/flayon/Flight/Timeline 1_0000.png" id="122_8hpu6"]
 [ext_resource type="Texture2D" uid="uid://1xmyyay6yvq4" path="res://game/assets/sprites/kanata/HAAAA/Timeline 1_0000.png" id="122_pi8s3"]
+[ext_resource type="Texture2D" uid="uid://buvpxkha6v2ry" path="res://game/assets/sprites/flayon/Flight/Timeline 1_0001.png" id="123_4p678"]
 [ext_resource type="Texture2D" uid="uid://04vxiyrt0ry7" path="res://game/assets/sprites/kanata/HAAAA/Timeline 1_0001.png" id="123_iwfbl"]
-[ext_resource type="Texture2D" uid="uid://cddy5wiymvguk" path="res://game/assets/sprites/kanata/WingStance/Timeline 1_0000.png" id="124_5git3"]
-[ext_resource type="Texture2D" uid="uid://dv4uaw3pytfbt" path="res://game/assets/sprites/kanata/WingStance/Timeline 1_0001.png" id="125_xb0ox"]
-[ext_resource type="Texture2D" uid="uid://bi55a8d3cxx7o" path="res://game/assets/sprites/kanata/WingStance/Timeline 1_0002.png" id="126_lciet"]
 [ext_resource type="Texture2D" uid="uid://ht67i7qppv0" path="res://game/assets/sprites/kanata/WingStanceA/Timeline 1_0000.png" id="127_3sff8"]
 [ext_resource type="Texture2D" uid="uid://ce1fnac5wrfb1" path="res://game/assets/sprites/kanata/WingStanceA/Timeline 1_0001.png" id="128_ho8vh"]
 [ext_resource type="Texture2D" uid="uid://dkw6uxerh5km2" path="res://game/assets/sprites/kanata/WingStanceA/Timeline 1_0002.png" id="129_f4los"]
@@ -918,35 +917,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1000000),
 "update": 0,
 "values": [Vector2(-30, 140)]
-}
-
-[sub_resource type="Animation" id="Animation_fwiuq"]
-resource_name = "DodgeRoll"
-length = 0.666668
-step = 0.0166667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.116667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [ExtResource("3_ujttm"), ExtResource("85_toqvb")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:offset")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-60, 140)]
 }
 
 [sub_resource type="Animation" id="19"]
@@ -1764,7 +1734,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="29"]
 resource_name = "WingStance"
-length = 0.166669
+length = 0.11666856
 loop_mode = 1
 step = 0.0166667
 tracks/0/type = "value"
@@ -1774,10 +1744,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0500001, 0.116667),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.06666667),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ExtResource("124_5git3"), ExtResource("125_xb0ox"), ExtResource("126_lciet")]
+"values": [ExtResource("122_8hpu6"), ExtResource("123_4p678")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1789,7 +1759,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1000000),
 "update": 0,
-"values": [Vector2(-100, 110)]
+"values": [Vector2(-80, 110)]
 }
 
 [sub_resource type="Animation" id="63"]
@@ -2054,6 +2024,65 @@ tracks/1/keys = {
 "values": [Vector2(0, 100)]
 }
 
+[sub_resource type="Animation" id="Animation_8hpu6"]
+resource_name = "Flight"
+length = 0.11666856
+loop_mode = 1
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("122_8hpu6"), ExtResource("123_4p678")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1000000),
+"update": 0,
+"values": [Vector2(-80, 110)]
+}
+
+[sub_resource type="Animation" id="Animation_4p678"]
+resource_name = "FlightEnter"
+length = 0.25000215
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.049999997, 0.15),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("73_f32ml"), ExtResource("122_8hpu6"), ExtResource("123_4p678")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1000000),
+"update": 0,
+"values": [Vector2(-80, 110)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wc0pe"]
 _data = {
 &"2A": SubResource("44"),
@@ -2082,7 +2111,8 @@ _data = {
 &"CrouchHurt": SubResource("47"),
 &"CrouchParry": SubResource("50"),
 &"CrouchParryCatch": SubResource("57"),
-&"DodgeRoll": SubResource("Animation_fwiuq"),
+&"Flight": SubResource("Animation_8hpu6"),
+&"FlightEnter": SubResource("Animation_4p678"),
 &"ForwardAirDash": SubResource("19"),
 &"ForwardWalk": SubResource("38"),
 &"GroundAssist": SubResource("5"),
@@ -2154,12 +2184,12 @@ script = ExtResource("150_1jibv")
 auto_reset = false
 
 [node name="Hitbox1" parent="." instance=ExtResource("151_0ymqg")]
-fixed_position_x = 9629186
-fixed_position_y = -9760254
-fixed_scale_x = 626496
+fixed_position_x = 5629186
+fixed_position_y = -16760254
+fixed_scale_x = 826496
 fixed_scale_y = 1050290
-position = Vector2(146.92972, -148.92966)
-scale = Vector2(9.55957, 16.026154)
+position = Vector2(85.89456, -255.74118)
+scale = Vector2(12.611328, 16.026154)
 
 [node name="Hitbox2" parent="." instance=ExtResource("151_0ymqg")]
 fixed_position_x = 40435712

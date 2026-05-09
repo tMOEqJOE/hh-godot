@@ -67,16 +67,9 @@ func _init():
 		"AirAssistCall2": FlayonAirAssistCall2State,
 		"AirAssistCallSuper": FlayonAirAssistCallSuperState,
 
-		"Stinger": FlayonStingerState,
+		"FlightEnter": FlayonFlightEnterState,
 		"DuckPunch": FlayonDPState,
 		"LightDuckPunch": preload("res://game/state/flayon/flayonLightDPState.gd"),
-		"LightStarBall": FlayonStarBallState,
-		"BatterSet": preload("res://game/state/flayon/flayonBatterSetState.gd"),
-		"BatterSwing": preload("res://game/state/flayon/flayonBatterSwingState.gd"),
-		"AirStinger": FlayonAirStingerState,
-		"AirLightStarBall": FlayonAirStarBallState,
-		"AirBatterSet": preload("res://game/state/flayon/flayonAirBatterSetState.gd"),
-		"AirBatterSwing": preload("res://game/state/flayon/flayonAirBatterSwingState.gd"),
 		
 		"EXStarBall": FlayonEXStarBallState,
 		"AirEXStarBall": FlayonAirEXStarBallState,
@@ -124,14 +117,10 @@ func common_idle_transitions(state: Dictionary, interpreter: InputInterpreter) -
 		return "DuckPunch"
 	elif (interpreter.special_input_button(Enums.SpecialInput.M623, Enums.InputFlags.ADown, state[Enums.StKey.leftface])):
 		return "LightDuckPunch"
-	elif (interpreter.special_input_button(Enums.SpecialInput.M214, Enums.InputFlags.BDown, state[Enums.StKey.leftface])):
-		return "Stinger"
-	elif (interpreter.special_input_button(Enums.SpecialInput.M214, Enums.InputFlags.ADown, state[Enums.StKey.leftface])):
-		return "BatterSwing"
-	elif (interpreter.special_input_button(Enums.SpecialInput.M236, Enums.InputFlags.BDown, state[Enums.StKey.leftface])):
-		return "BatterSet"
-	elif (interpreter.special_input_button(Enums.SpecialInput.M236, Enums.InputFlags.ADown, state[Enums.StKey.leftface])):
-		return "LightStarBall"
+	elif (interpreter.special_input_button(Enums.SpecialInput.M214, Enums.InputFlags.ADown, state[Enums.StKey.leftface]) or 
+			interpreter.special_input_button(Enums.SpecialInput.M214, Enums.InputFlags.BDown, state[Enums.StKey.leftface]) or 
+			interpreter.special_input_button(Enums.SpecialInput.M214, Enums.InputFlags.CDown, state[Enums.StKey.leftface])):
+		return "FlightEnter"
 	elif (interpreter.is_stick_dashing(true, state[Enums.StKey.leftface]) and state[Enums.StKey.stateName] != "Run"):
 		return "Run"
 	elif (interpreter.is_button_dashing(true, state[Enums.StKey.leftface])):
@@ -227,14 +216,10 @@ func common_jump_transitions_default(state: Dictionary, interpreter: InputInterp
 		return "DuckPunch"
 	elif (interpreter.special_input_button(Enums.SpecialInput.M623, Enums.InputFlags.ADown, state[Enums.StKey.leftface])):
 		return "LightDuckPunch"
-	elif (interpreter.special_input_button(Enums.SpecialInput.M214, Enums.InputFlags.BDown, state[Enums.StKey.leftface])):
-		return "AirStinger"
-	elif (interpreter.special_input_button(Enums.SpecialInput.M214, Enums.InputFlags.ADown, state[Enums.StKey.leftface])):
-		return "AirBatterSwing"
-	elif (interpreter.special_input_button(Enums.SpecialInput.M236, Enums.InputFlags.BDown, state[Enums.StKey.leftface])):
-		return "AirBatterSet"
-	elif (interpreter.special_input_button(Enums.SpecialInput.M236, Enums.InputFlags.ADown, state[Enums.StKey.leftface])):
-		return "AirLightStarBall"
+	elif (interpreter.special_input_button(Enums.SpecialInput.M214, Enums.InputFlags.ADown, state[Enums.StKey.leftface]) or 
+			interpreter.special_input_button(Enums.SpecialInput.M214, Enums.InputFlags.BDown, state[Enums.StKey.leftface]) or 
+			interpreter.special_input_button(Enums.SpecialInput.M214, Enums.InputFlags.CDown, state[Enums.StKey.leftface])):
+		return "FlightEnter"
 	elif (state[Enums.StKey.airDash] > 0 and interpreter.is_air_dashing(true, state[Enums.StKey.leftface])):
 		return "ForwardAirDash"
 	elif (state[Enums.StKey.airDash] > 0 and interpreter.is_air_dashing(false, state[Enums.StKey.leftface])):
