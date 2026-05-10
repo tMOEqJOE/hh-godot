@@ -18,7 +18,7 @@ func _init():
 			Enums.StKey.Hurt3PosX : 3473407, Enums.StKey.Hurt3PosY : -4063231,
 			Enums.StKey.Hurt3ScaleX : 1171400, Enums.StKey.Hurt3ScaleY : -464723,
 			},
-		12 : {
+		21 : {
 			Enums.StKey.counterOK : true,
 			Enums.StKey.Hit2Disable : false,
 			Enums.StKey.Hurt1Disable : false,Enums.StKey.Hurt2Disable : false,Enums.StKey.Hurt3Disable : false,
@@ -38,7 +38,7 @@ func _init():
 			Enums.StKey.counter_hit: Enums.AttackType.Strike,
 			Enums.StKey.counter_hitstun: 10,
 			},
-		30 : { 
+		45 : { 
 			Enums.StKey.Hit1Disable : true,
 			Enums.StKey.Hit2Disable : true,
 			Enums.StKey.Hurt1Disable : false,Enums.StKey.Hurt2Disable : false,Enums.StKey.Hurt3Disable : false,
@@ -62,7 +62,7 @@ func physics_tick(state: Dictionary) -> void:
 	super.physics_tick(state)
 	if (state[Enums.StKey.frame] >= 10 and state[Enums.StKey.frame] <= 30):
 		state[Enums.StKey.drag_x] = Util.SKID_FRICTION
-		state[Enums.StKey.velocity_x] = Util.fixed_max(SGFixed.ONE*20, state[Enums.StKey.velocity_x])
+		state[Enums.StKey.velocity_x] = Util.fixed_max(SGFixed.ONE*24, state[Enums.StKey.velocity_x])
 
 func jump_cancel(state: Dictionary, interpreter: InputInterpreter):
 	pass

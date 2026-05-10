@@ -32,11 +32,11 @@ func _init():
 			Enums.StKey.Hurt1ScaleX : 1535050, Enums.StKey.Hurt1ScaleY : 1036934,
 			Enums.StKey.Hurt2PosX : 12976128, Enums.StKey.Hurt2PosY : -20774912,
 			Enums.StKey.Hurt2ScaleX : 1535050, Enums.StKey.Hurt2ScaleY : 643629,
-			Enums.StKey.attack_damage: 52,
-			Enums.StKey.min_damage: 7,
+			Enums.StKey.attack_damage: 39,
+			Enums.StKey.min_damage: 8,
 			Enums.StKey.guard: Enums.GuardType.High,
 			Enums.StKey.attack_type : Enums.AttackType.WallBouncer,
-			Enums.StKey.hitstun: 35,
+			Enums.StKey.hitstun: Util.DEFAULT_HITSTUN + 13,
 			Enums.StKey.launch_dir_x : -SGFixed.ONE*25,
 			Enums.StKey.launch_dir_y : -SGFixed.ONE*35,
 			Enums.StKey.counter_hit: Enums.AttackType.WallBouncer,
@@ -61,6 +61,7 @@ func enter(state: Dictionary) -> void:
 	super.enter(state)
 	anim.play("FlightC")
 	state[Enums.StKey.drag_x] = Util.FRICTION
+	state[Enums.StKey.kara_OK] = true
 	state[Enums.StKey.accel_y] = 0
 	state[Enums.StKey.accel_x] = 0
 	state[Enums.StKey.velocity_y] = 0
@@ -68,15 +69,40 @@ func enter(state: Dictionary) -> void:
 
 func physics_tick(state: Dictionary) -> void:
 	super.physics_tick(state)
-	state[Enums.StKey.super_meter] -= Util.FLIGHT_METER_DRAIN
+	state[Enums.StKey.super_meter] -= Util.FLIGHT_FAST_METER_DRAIN
 
 func handle_input(state: Dictionary, interpreter: InputInterpreter) -> void:
-	super.handle_input(state, interpreter)
+	if (state[Enums.StKey.frame] == 0):
+		if (state[Enums.StKey.kara_OK]):
+			# Kara Cancel section
+			if (boost_OK(state, interpreter)):
+				change_state.call("AirBoostCancel")
+			elif (interpreter.is_button_dashing(Enums.Numpad.N6, state[Enums.StKey.leftface])):
+				state[Enums.StKey.cancelState] = "FlightForwardAirdash"
+			elif (interpreter.is_button_dashing(Enums.Numpad.N4, state[Enums.StKey.leftface])):
+				state[Enums.StKey.cancelState] = "FlightBackwardAirdash"
+			elif (interpreter.is_button_dashing(Enums.Numpad.N2, state[Enums.StKey.leftface])):
+				state[Enums.StKey.cancelState] = "FlightDownwardAirdash"
+			elif (interpreter.is_button_dashing(Enums.Numpad.N8, state[Enums.StKey.leftface])):
+				state[Enums.StKey.cancelState] = "FlightUpwardAirdash"
+		if (burst_OK(state, interpreter)):
+			change_state.call("Burst")
+
+	if (state[Enums.StKey.hitStopFrame] == 0 and not state[Enums.StKey.cancelState].is_empty()):
+		# is out of hitstop, and cancellable
+		# delay cancel state
+		anim.stop(true)
+		change_state.call(state[Enums.StKey.cancelState])
+
+	gatling_cancel(state, interpreter)
+	special_cancel(state, interpreter)
+	jump_cancel(state, interpreter)
+	meter_cancel(state, interpreter)
+
 	if (state[Enums.StKey.frame] >= endFrame-1):
 		change_state.call("Flight")
 	if (state[Enums.StKey.super_meter] <= 0):
 		change_state.call("FlightNoFuel")
-
 
 func jump_cancel(state: Dictionary, interpreter: InputInterpreter):
 	pass
@@ -95,6 +121,14 @@ func special_cancel(state: Dictionary, interpreter: InputInterpreter):
 				interpreter.special_input_button(Enums.SpecialInput.M214, Enums.InputFlags.BDown, state[Enums.StKey.leftface]) or 
 				interpreter.special_input_button(Enums.SpecialInput.M214, Enums.InputFlags.CDown, state[Enums.StKey.leftface])):
 			state[Enums.StKey.cancelState] = "FlightExit"
+		elif (interpreter.is_air_dashing_four_way(Enums.Numpad.N6, state[Enums.StKey.leftface])):
+			state[Enums.StKey.cancelState] = "FlightForwardAirdash"
+		elif (interpreter.is_air_dashing_four_way(Enums.Numpad.N4, state[Enums.StKey.leftface])):
+			state[Enums.StKey.cancelState] = "FlightBackwardAirdash"
+		elif (interpreter.is_air_dashing_four_way(Enums.Numpad.N2, state[Enums.StKey.leftface])):
+			state[Enums.StKey.cancelState] = "FlightDownwardAirdash"
+		elif (interpreter.is_air_dashing_four_way(Enums.Numpad.N8, state[Enums.StKey.leftface])):
+			state[Enums.StKey.cancelState] = "FlightUpwardAirdash"
 
 
 func reaction(state: Dictionary, interpreter: InputInterpreter, event_cause: int) -> void:

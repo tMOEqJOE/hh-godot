@@ -71,6 +71,10 @@ func _init():
 		"Flight": FlayonFlightState,
 		"FlightExit": FlayonFlightExitState,
 		"FlightNoFuel": FlayonFlightNoFuelState,
+		"FlightForwardAirdash": FlayonFlightForwardAirdashState,
+		"FlightBackwardAirdash": FlayonFlightBackwardAirdashState,
+		"FlightUpwardAirdash": FlayonFlightUpwardAirdashState,
+		"FlightDownwardAirdash": FlayonFlightDownwardAirdashState,
 
 		"Flight5A": FlayonFlightAState,
 		"Flight5B": FlayonFlightBState,

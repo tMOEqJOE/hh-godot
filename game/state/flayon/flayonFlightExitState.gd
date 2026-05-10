@@ -22,7 +22,7 @@ func enter(state: Dictionary) -> void:
 	state[Enums.StKey.drag_x] = Util.FRICTION
 	state[Enums.StKey.accel_y] = 0
 	state[Enums.StKey.accel_x] = 0
-	state[Enums.StKey.velocity_y] = 0
+	state[Enums.StKey.velocity_y] = -SGFixed.ONE*10
 	state[Enums.StKey.velocity_x] = 0
 
 func jump_cancel(state: Dictionary, interpreter: InputInterpreter):

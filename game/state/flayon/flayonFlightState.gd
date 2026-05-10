@@ -3,7 +3,7 @@ extends FlayonAirAttackState
 class_name FlayonFlightState
 
 const ACCEL = SGFixed.ONE*5
-const SPEED = SGFixed.ONE*16
+const SPEED = SGFixed.ONE*17
 
 func _init():
 	endFrame = 180
@@ -101,6 +101,29 @@ func special_cancel(state: Dictionary, interpreter: InputInterpreter):
 				interpreter.special_input_button(Enums.SpecialInput.M214, Enums.InputFlags.BDown, state[Enums.StKey.leftface]) or 
 				interpreter.special_input_button(Enums.SpecialInput.M214, Enums.InputFlags.CDown, state[Enums.StKey.leftface])):
 			state[Enums.StKey.cancelState] = "FlightExit"
+		elif (interpreter.is_air_dashing_four_way(Enums.Numpad.N6, state[Enums.StKey.leftface])):
+			state[Enums.StKey.cancelState] = "FlightForwardAirdash"
+		elif (interpreter.is_air_dashing_four_way(Enums.Numpad.N4, state[Enums.StKey.leftface])):
+			state[Enums.StKey.cancelState] = "FlightBackwardAirdash"
+		elif (interpreter.is_air_dashing_four_way(Enums.Numpad.N2, state[Enums.StKey.leftface])):
+			state[Enums.StKey.cancelState] = "FlightDownwardAirdash"
+		elif (interpreter.is_air_dashing_four_way(Enums.Numpad.N8, state[Enums.StKey.leftface])):
+			state[Enums.StKey.cancelState] = "FlightUpwardAirdash"
+
+func meter_cancel(state: Dictionary, interpreter: InputInterpreter):
+	if (state[Enums.StKey.hitStopFrame] >= 0):
+		if (boost_OK(state, interpreter)):
+			state[Enums.StKey.cancelState] = "AirBoostCancel"
+		elif (assist_ok(state, interpreter) and state[Enums.StKey.cancelState] != "AirBoostCancel"):
+			if (interpreter.is_low_blocking(state[Enums.StKey.leftface])):
+				state[Enums.StKey.cancelState] = "AirAssistCall2"
+			elif (level_1_OK(state) and super_assist_meter_ok(state)  and interpreter.special_input_button(Enums.SpecialInput.M236, Enums.InputFlags.DDown, state[Enums.StKey.leftface])):
+				state[Enums.StKey.cancelState] = "AirAssistCallSuper"
+			else:
+				state[Enums.StKey.cancelState] = "AirAssistCall"
+	else:
+		if (boost_OK(state, interpreter)):
+			change_state.call("AirBoostCancel")
 
 func reaction(state: Dictionary, interpreter: InputInterpreter, event_cause: int) -> void:
 	if (event_cause == Enums.Reaction.GroundLand):

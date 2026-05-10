@@ -1,4 +1,4 @@
-[gd_scene load_steps=229 format=3 uid="uid://cbwy2j4nbkk2j"]
+[gd_scene load_steps=222 format=3 uid="uid://cbwy2j4nbkk2j"]
 
 [ext_resource type="Script" uid="uid://dgsx3duqjaeo5" path="res://game/fighter/PointPlayer.gd" id="1_m4qvm"]
 [ext_resource type="Material" uid="uid://bt3lvyqtd78u0" path="res://game/assets/shaders/ColorSwapMat.tres" id="2_xm7kd"]
@@ -106,13 +106,9 @@
 [ext_resource type="Texture2D" uid="uid://blbri08jcqx8k" path="res://game/assets/sprites/flayon/StandHurt/Timeline 1_0000.png" id="107_8hpu6"]
 [ext_resource type="Texture2D" uid="uid://c5nudevkgon7k" path="res://game/assets/sprites/kanata/FiftyWhiff/Timeline 1_0003.png" id="107_ce7ch"]
 [ext_resource type="Texture2D" uid="uid://bqpyoldx8w30y" path="res://game/assets/sprites/flayon/StandHurt/Timeline 1_0001.png" id="108_4p678"]
-[ext_resource type="Texture2D" uid="uid://5a0ngxvn3mdj" path="res://game/assets/sprites/kanata/Moonkick/Timeline 1_0000.png" id="108_ne0am"]
-[ext_resource type="Texture2D" uid="uid://b0yqshyd7vlik" path="res://game/assets/sprites/kanata/Moonkick/Timeline 1_0001.png" id="109_2iksg"]
 [ext_resource type="Texture2D" uid="uid://bxl1bm3tewtyl" path="res://game/assets/sprites/flayon/StandHurt/Timeline 1_0002.png" id="109_wkc6h"]
 [ext_resource type="Texture2D" uid="uid://bad4me2l0t4iw" path="res://game/assets/sprites/flayon/Skid/Timeline 1_0000.png" id="110_4p678"]
 [ext_resource type="Texture2D" uid="uid://clc5laoa1chbr" path="res://game/assets/sprites/flayon/StandHurt/Timeline 1_0003.png" id="110_d6y3q"]
-[ext_resource type="Texture2D" uid="uid://chvxbyjajt5t" path="res://game/assets/sprites/kanata/Moonkick/Timeline 1_0002.png" id="110_n0s4g"]
-[ext_resource type="Texture2D" uid="uid://dt38qkyrh1g2v" path="res://game/assets/sprites/kanata/Fly/Timeline 1_0000.png" id="111_ywl51"]
 [ext_resource type="Texture2D" uid="uid://pp24qmurxg4g" path="res://game/assets/sprites/kanata/StandParryCatch/Timeline 1_0000.png" id="112_bw0nq"]
 [ext_resource type="Texture2D" uid="uid://hogccimxoci7" path="res://game/assets/sprites/kanata/StandBlock/Timeline 1_0000.png" id="113_gtvn8"]
 [ext_resource type="Texture2D" uid="uid://d4d32oc88j7rp" path="res://game/assets/sprites/kanata/StandParryCatch/Timeline 1_0001.png" id="117_vn47g"]
@@ -124,10 +120,7 @@
 [ext_resource type="Texture2D" uid="uid://buvpxkha6v2ry" path="res://game/assets/sprites/flayon/Flight/Timeline 1_0001.png" id="123_4p678"]
 [ext_resource type="Texture2D" uid="uid://5s4kik71b" path="res://game/assets/sprites/flayon/PizzaCutter/Timeline 1_0000.png" id="135_0rw8g"]
 [ext_resource type="Texture2D" uid="uid://cic0f3dvu8m8s" path="res://game/assets/sprites/flayon/PizzaCutter/Timeline 1_0001.png" id="136_8hpu6"]
-[ext_resource type="Texture2D" uid="uid://dtr6vnhccamu2" path="res://game/assets/sprites/kanata/CB/Timeline 1_0000.png" id="136_36j8g"]
 [ext_resource type="Texture2D" uid="uid://toc42132uhgm" path="res://game/assets/sprites/flayon/PizzaCutter/Timeline 1_0002.png" id="137_4p678"]
-[ext_resource type="Texture2D" uid="uid://cge7q8f25qg1e" path="res://game/assets/sprites/kanata/CB/Timeline 1_0001.png" id="137_y8i5p"]
-[ext_resource type="Texture2D" uid="uid://cq01852oj51br" path="res://game/assets/sprites/kanata/CB/Timeline 1_0002.png" id="138_itqrv"]
 [ext_resource type="Texture2D" uid="uid://bsy7j7q6dp8jl" path="res://game/assets/sprites/flayon/jA/Timeline 1_0000.png" id="140_kpeac"]
 [ext_resource type="Texture2D" uid="uid://nbm44nfsn080" path="res://game/assets/sprites/kanata/J6C/Timeline 1_0000.png" id="140_niu3x"]
 [ext_resource type="Texture2D" uid="uid://7vkasrwe68wv" path="res://game/assets/sprites/flayon/jA/Timeline 1_0001.png" id="141_f32ml"]
@@ -142,6 +135,7 @@
 [ext_resource type="Texture2D" uid="uid://gedhejy643hc" path="res://game/assets/sprites/flayon/jB/Timeline 1_0004.png" id="149_s1gn8"]
 [ext_resource type="Script" uid="uid://dv11pt6y7wasy" path="res://addons/godot-rollback-netcode/NetworkAnimationPlayer.gd" id="150_1jibv"]
 [ext_resource type="Texture2D" uid="uid://5s22vymgbue7" path="res://game/assets/sprites/flayon/jB/Timeline 1_0005.png" id="150_pbemb"]
+[ext_resource type="Texture2D" uid="uid://cd6vb5noxqfml" path="res://game/assets/sprites/flayon/TohnoDP/Timeline 1_0000.png" id="150_xm7kd"]
 [ext_resource type="PackedScene" uid="uid://bvgu0aev8rq4g" path="res://game/fighter/Hitbox.tscn" id="151_0ymqg"]
 [ext_resource type="Texture2D" uid="uid://lqrq53pl5qd" path="res://game/assets/sprites/flayon/jC/Timeline 1_0000.png" id="151_4r26g"]
 [ext_resource type="Texture2D" uid="uid://cfnvicobxvnm7" path="res://game/assets/sprites/flayon/jC/Timeline 1_0001.png" id="152_7c5e4"]
@@ -1532,35 +1526,6 @@ tracks/1/keys = {
 "values": [Vector2(-80, 200)]
 }
 
-[sub_resource type="Animation" id="68"]
-resource_name = "Moonkick"
-length = 0.383334
-step = 0.0166667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.13333334, 0.21666667),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [ExtResource("108_ne0am"), ExtResource("109_2iksg"), ExtResource("110_n0s4g")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:offset")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1000000),
-"update": 0,
-"values": [Vector2(-40, 130)]
-}
-
 [sub_resource type="Animation" id="10"]
 resource_name = "PreJump"
 length = 0.0833335
@@ -1575,7 +1540,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("111_ywl51")]
+"values": [ExtResource("73_f32ml")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1850,35 +1815,6 @@ tracks/1/keys = {
 "values": [Vector2(-90, 140), Vector2(-90, 150)]
 }
 
-[sub_resource type="Animation" id="33"]
-resource_name = "cB"
-length = 0.2
-step = 0.0166667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 0.133333),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [ExtResource("136_36j8g"), ExtResource("137_y8i5p"), ExtResource("138_itqrv")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:offset")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1000000),
-"update": 0,
-"values": [Vector2(0, 140)]
-}
-
 [sub_resource type="Animation" id="25"]
 resource_name = "j2C"
 length = 0.166667
@@ -2112,6 +2048,35 @@ tracks/1/keys = {
 "values": [Vector2(-60, 110)]
 }
 
+[sub_resource type="Animation" id="Animation_ujttm"]
+resource_name = "DP"
+length = 0.916668
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("150_xm7kd")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1000000),
+"update": 0,
+"values": [Vector2(0, 90)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wc0pe"]
 _data = {
 &"2A": SubResource("44"),
@@ -2140,6 +2105,7 @@ _data = {
 &"CrouchHurt": SubResource("47"),
 &"CrouchParry": SubResource("50"),
 &"CrouchParryCatch": SubResource("57"),
+&"DP": SubResource("Animation_ujttm"),
 &"Flight": SubResource("Animation_8hpu6"),
 &"FlightA": SubResource("Animation_wkc6h"),
 &"FlightB": SubResource("Animation_7c5e4"),
@@ -2164,7 +2130,6 @@ _data = {
 &"KanataFiftyWhiff": SubResource("66"),
 &"Knockdown": SubResource("27"),
 &"LandingRecovery": SubResource("73"),
-&"Moonkick": SubResource("68"),
 &"PreJump": SubResource("10"),
 &"RESET": SubResource("Animation_janba"),
 &"Run": SubResource("21"),
@@ -2175,7 +2140,6 @@ _data = {
 &"StandParryCatch": SubResource("69"),
 &"ThrowHurt": SubResource("8"),
 &"Wakeup": SubResource("28"),
-&"cB": SubResource("33"),
 &"j2C": SubResource("25"),
 &"j6C": SubResource("72"),
 &"jA": SubResource("26"),

@@ -286,6 +286,8 @@ const SpecialInput: Dictionary = {
 	"BDash" : [15, [Numpad.N4, Numpad.N5, Numpad.N4]],
 	"FAirDash" : [17, [Numpad.N6, Numpad.N5, Numpad.N6], [Numpad.N6, Numpad.N5, Numpad.N9], [Numpad.N6, Numpad.N5, Numpad.N8, Numpad.N9], [Numpad.N6, Numpad.N5, Numpad.N6, Numpad.N9]],
 	"BAirDash" : [17, [Numpad.N4, Numpad.N5, Numpad.N4], [Numpad.N4, Numpad.N5, Numpad.N7], [Numpad.N4, Numpad.N5, Numpad.N8, Numpad.N7], [Numpad.N4, Numpad.N5, Numpad.N4, Numpad.N7]],
+	"UAirDash" : [17, [Numpad.N8, Numpad.N5, Numpad.N8]],
+	"DAirDash" : [17, [Numpad.N2, Numpad.N5, Numpad.N2]],
 	"M236" : [20, [Numpad.N6, Numpad.N3, Numpad.N2], [Numpad.N5, Numpad.N6, Numpad.N3, Numpad.N2], [Numpad.N9, Numpad.N6, Numpad.N3, Numpad.N2]],
 	"M214" : [20, [Numpad.N4, Numpad.N1, Numpad.N2], [Numpad.N5, Numpad.N4, Numpad.N1, Numpad.N2], [Numpad.N7, Numpad.N4, Numpad.N1, Numpad.N2]],
 	"M214Strict" : [20, [Numpad.N4, Numpad.N1, Numpad.N2], [Numpad.N7, Numpad.N4, Numpad.N1, Numpad.N2]],
