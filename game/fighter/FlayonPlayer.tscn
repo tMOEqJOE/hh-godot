@@ -1,4 +1,4 @@
-[gd_scene load_steps=239 format=3 uid="uid://cbwy2j4nbkk2j"]
+[gd_scene load_steps=223 format=3 uid="uid://cbwy2j4nbkk2j"]
 
 [ext_resource type="Script" uid="uid://dgsx3duqjaeo5" path="res://game/fighter/PointPlayer.gd" id="1_m4qvm"]
 [ext_resource type="Material" uid="uid://bt3lvyqtd78u0" path="res://game/assets/shaders/ColorSwapMat.tres" id="2_xm7kd"]
@@ -121,19 +121,8 @@
 [ext_resource type="Texture2D" uid="uid://bylxsrlks258s" path="res://game/assets/sprites/kanata/Wakeup/Timeline 1_0002.png" id="120_67ja3"]
 [ext_resource type="Texture2D" uid="uid://cy4qvghs753ic" path="res://game/assets/sprites/kanata/Wakeup/Timeline 1_0003.png" id="121_ebagi"]
 [ext_resource type="Texture2D" uid="uid://qcgw14mhvy7f" path="res://game/assets/sprites/flayon/Flight/Timeline 1_0000.png" id="122_8hpu6"]
-[ext_resource type="Texture2D" uid="uid://1xmyyay6yvq4" path="res://game/assets/sprites/kanata/HAAAA/Timeline 1_0000.png" id="122_pi8s3"]
 [ext_resource type="Texture2D" uid="uid://buvpxkha6v2ry" path="res://game/assets/sprites/flayon/Flight/Timeline 1_0001.png" id="123_4p678"]
-[ext_resource type="Texture2D" uid="uid://04vxiyrt0ry7" path="res://game/assets/sprites/kanata/HAAAA/Timeline 1_0001.png" id="123_iwfbl"]
-[ext_resource type="Texture2D" uid="uid://ht67i7qppv0" path="res://game/assets/sprites/kanata/WingStanceA/Timeline 1_0000.png" id="127_3sff8"]
-[ext_resource type="Texture2D" uid="uid://ce1fnac5wrfb1" path="res://game/assets/sprites/kanata/WingStanceA/Timeline 1_0001.png" id="128_ho8vh"]
-[ext_resource type="Texture2D" uid="uid://dkw6uxerh5km2" path="res://game/assets/sprites/kanata/WingStanceA/Timeline 1_0002.png" id="129_f4los"]
-[ext_resource type="Texture2D" uid="uid://hh7jo6pthldp" path="res://game/assets/sprites/kanata/WingStanceA/Timeline 1_0003.png" id="130_a06qg"]
-[ext_resource type="Texture2D" uid="uid://b71qwrbmmkl3u" path="res://game/assets/sprites/kanata/WingStanceB/Timeline 1_0000.png" id="131_8wk2e"]
-[ext_resource type="Texture2D" uid="uid://bvp8uw1gip7d1" path="res://game/assets/sprites/kanata/WingStanceB/Timeline 1_0001.png" id="132_3m240"]
-[ext_resource type="Texture2D" uid="uid://dkj24e4deow62" path="res://game/assets/sprites/kanata/WingStanceB/Timeline 1_0002.png" id="133_j8j6i"]
-[ext_resource type="Texture2D" uid="uid://6ug7ukwwjxq7" path="res://game/assets/sprites/kanata/WingStanceB/Timeline 1_0003.png" id="134_5cubf"]
 [ext_resource type="Texture2D" uid="uid://5s4kik71b" path="res://game/assets/sprites/flayon/PizzaCutter/Timeline 1_0000.png" id="135_0rw8g"]
-[ext_resource type="Texture2D" uid="uid://v278igcfcdb5" path="res://game/assets/sprites/kanata/WingStanceC/Timeline 1_0000.png" id="135_8fe0g"]
 [ext_resource type="Texture2D" uid="uid://cic0f3dvu8m8s" path="res://game/assets/sprites/flayon/PizzaCutter/Timeline 1_0001.png" id="136_8hpu6"]
 [ext_resource type="Texture2D" uid="uid://dtr6vnhccamu2" path="res://game/assets/sprites/kanata/CB/Timeline 1_0000.png" id="136_36j8g"]
 [ext_resource type="Texture2D" uid="uid://toc42132uhgm" path="res://game/assets/sprites/flayon/PizzaCutter/Timeline 1_0002.png" id="137_4p678"]
@@ -958,6 +947,93 @@ tracks/1/keys = {
 "values": [Vector2(-80, 110)]
 }
 
+[sub_resource type="Animation" id="Animation_wkc6h"]
+resource_name = "FlightA"
+length = 0.25000215
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("157_weqwf"), ExtResource("158_s1gn8"), ExtResource("159_pbemb")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1000000),
+"update": 0,
+"values": [Vector2(-80, 110)]
+}
+
+[sub_resource type="Animation" id="Animation_7c5e4"]
+resource_name = "FlightB"
+length = 0.41666916
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.18333334, 0.25743797, 0.36899444),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("157_weqwf"), ExtResource("160_4r26g"), ExtResource("161_7c5e4"), ExtResource("160_4r26g"), ExtResource("161_7c5e4")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1000000),
+"update": 0,
+"values": [Vector2(-80, 110)]
+}
+
+[sub_resource type="Animation" id="Animation_66wdp"]
+resource_name = "FlightC"
+length = 0.30000225
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("161_4r26g"), ExtResource("162_7c5e4"), ExtResource("163_o4gjw")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1000000),
+"update": 0,
+"values": [Vector2(10, 100)]
+}
+
 [sub_resource type="Animation" id="Animation_4p678"]
 resource_name = "FlightEnter"
 length = 0.25000215
@@ -1771,152 +1847,6 @@ tracks/1/keys = {
 "values": [Vector2(-90, 140), Vector2(-90, 150)]
 }
 
-[sub_resource type="Animation" id="67"]
-resource_name = "WingHazard"
-length = 0.500001
-step = 0.0166667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0833333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [ExtResource("122_pi8s3"), ExtResource("123_iwfbl")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:offset")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1000000),
-"update": 0,
-"values": [Vector2(200, 50)]
-}
-
-[sub_resource type="Animation" id="29"]
-resource_name = "WingStance"
-length = 0.11666856
-loop_mode = 1
-step = 0.0166667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.06666667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [ExtResource("122_8hpu6"), ExtResource("123_4p678")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:offset")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1000000),
-"update": 0,
-"values": [Vector2(-80, 110)]
-}
-
-[sub_resource type="Animation" id="63"]
-resource_name = "WingStanceA"
-length = 0.766668
-step = 0.0166667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.13333334, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("127_3sff8"), ExtResource("128_ho8vh"), ExtResource("129_f4los"), ExtResource("130_a06qg")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:offset")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1000000),
-"update": 0,
-"values": [Vector2(-80, 150)]
-}
-
-[sub_resource type="Animation" id="64"]
-resource_name = "WingStanceB"
-length = 0.83333665
-step = 0.0166667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.16666663, 0.24999994, 0.33333328, 0.41666663, 0.53333324, 0.68333334),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("131_8wk2e"), ExtResource("132_3m240"), ExtResource("133_j8j6i"), ExtResource("134_5cubf"), ExtResource("132_3m240"), ExtResource("133_j8j6i"), ExtResource("134_5cubf")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:offset")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1000000),
-"update": 0,
-"values": [Vector2(-100, 130)]
-}
-
-[sub_resource type="Animation" id="65"]
-resource_name = "WingStanceC"
-length = 0.033335064
-step = 0.0166667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("135_8fe0g")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:offset")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1000000),
-"update": 0,
-"values": [Vector2(-100, 180)]
-}
-
 [sub_resource type="Animation" id="33"]
 resource_name = "cB"
 length = 0.2
@@ -2092,93 +2022,6 @@ tracks/1/keys = {
 "values": [Vector2(0, 100)]
 }
 
-[sub_resource type="Animation" id="Animation_wkc6h"]
-resource_name = "FlightA"
-length = 0.25000215
-step = 0.0166667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.06666667, 0.13333334),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [ExtResource("157_weqwf"), ExtResource("158_s1gn8"), ExtResource("159_pbemb")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:offset")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1000000),
-"update": 0,
-"values": [Vector2(-80, 110)]
-}
-
-[sub_resource type="Animation" id="Animation_7c5e4"]
-resource_name = "FlightB"
-length = 0.41666916
-step = 0.0166667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.18333334, 0.25743797, 0.36899444),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("157_weqwf"), ExtResource("160_4r26g"), ExtResource("161_7c5e4"), ExtResource("160_4r26g"), ExtResource("161_7c5e4")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:offset")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1000000),
-"update": 0,
-"values": [Vector2(-80, 110)]
-}
-
-[sub_resource type="Animation" id="Animation_66wdp"]
-resource_name = "FlightC"
-length = 0.30000225
-step = 0.0166667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.13333334, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [ExtResource("161_4r26g"), ExtResource("162_7c5e4"), ExtResource("163_o4gjw")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:offset")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1000000),
-"update": 0,
-"values": [Vector2(10, 100)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wc0pe"]
 _data = {
 &"2A": SubResource("44"),
@@ -2239,11 +2082,6 @@ _data = {
 &"StandParryCatch": SubResource("69"),
 &"ThrowHurt": SubResource("8"),
 &"Wakeup": SubResource("28"),
-&"WingHazard": SubResource("67"),
-&"WingStance": SubResource("29"),
-&"WingStanceA": SubResource("63"),
-&"WingStanceB": SubResource("64"),
-&"WingStanceC": SubResource("65"),
 &"cB": SubResource("33"),
 &"j2C": SubResource("25"),
 &"j6C": SubResource("72"),

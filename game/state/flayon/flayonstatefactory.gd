@@ -69,6 +69,13 @@ func _init():
 
 		"FlightEnter": FlayonFlightEnterState,
 		"Flight": FlayonFlightState,
+		"FlightExit": FlayonFlightExitState,
+		"FlightNoFuel": FlayonFlightNoFuelState,
+
+		"Flight5A": FlayonFlightAState,
+		"Flight5B": FlayonFlightBState,
+		"Flight5C": FlayonFlightCState,
+
 		"DuckPunch": FlayonDPState,
 		"LightDuckPunch": preload("res://game/state/flayon/flayonLightDPState.gd"),
 		
