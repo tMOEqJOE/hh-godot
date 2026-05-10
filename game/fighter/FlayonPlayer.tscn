@@ -1,4 +1,4 @@
-[gd_scene load_steps=223 format=3 uid="uid://cbwy2j4nbkk2j"]
+[gd_scene load_steps=229 format=3 uid="uid://cbwy2j4nbkk2j"]
 
 [ext_resource type="Script" uid="uid://dgsx3duqjaeo5" path="res://game/fighter/PointPlayer.gd" id="1_m4qvm"]
 [ext_resource type="Material" uid="uid://bt3lvyqtd78u0" path="res://game/assets/shaders/ColorSwapMat.tres" id="2_xm7kd"]
@@ -147,7 +147,10 @@
 [ext_resource type="Texture2D" uid="uid://cfnvicobxvnm7" path="res://game/assets/sprites/flayon/jC/Timeline 1_0001.png" id="152_7c5e4"]
 [ext_resource type="PackedScene" uid="uid://cwoqesvdf08m3" path="res://game/fighter/Hurtbox.tscn" id="152_d42n6"]
 [ext_resource type="Texture2D" uid="uid://dy5lvvgr3h4a5" path="res://game/assets/sprites/flayon/jC/Timeline 1_0002.png" id="153_o4gjw"]
+[ext_resource type="Texture2D" uid="uid://dm077yo3in30x" path="res://game/assets/sprites/flayon/FlightForwardAirdash/Timeline 1_0000.png" id="154_4p678"]
 [ext_resource type="Texture2D" uid="uid://bb7hhb7y2iujk" path="res://game/assets/sprites/flayon/jC/Timeline 1_0003.png" id="154_66wdp"]
+[ext_resource type="Texture2D" uid="uid://mfiws7sjikcb" path="res://game/assets/sprites/flayon/FlightBackwardAirdash/Timeline 1_0000.png" id="155_wkc6h"]
+[ext_resource type="Texture2D" uid="uid://c22sxj0qly5ts" path="res://game/assets/sprites/flayon/FlightDownwardAirdash/Timeline 1_0000.png" id="156_4p678"]
 [ext_resource type="Texture2D" uid="uid://2w78ew6mbmc0" path="res://game/assets/sprites/flayon/FlightA/Timeline 1_0000.png" id="157_weqwf"]
 [ext_resource type="Texture2D" uid="uid://i171qq7l1wgd" path="res://game/assets/sprites/flayon/FlightA/Timeline 1_0001.png" id="158_s1gn8"]
 [ext_resource type="Texture2D" uid="uid://xb4p1qilx6i5" path="res://game/assets/sprites/flayon/FlightA/Timeline 1_0002.png" id="159_pbemb"]
@@ -2022,6 +2025,93 @@ tracks/1/keys = {
 "values": [Vector2(0, 100)]
 }
 
+[sub_resource type="Animation" id="Animation_qfokg"]
+resource_name = "FlightForwardAirdash"
+length = 0.25000215
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("154_4p678")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1000000),
+"update": 0,
+"values": [Vector2(-80, 110)]
+}
+
+[sub_resource type="Animation" id="Animation_weqwf"]
+resource_name = "FlightBackwardAirdash"
+length = 0.25000215
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("155_wkc6h")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1000000),
+"update": 0,
+"values": [Vector2(-80, 110)]
+}
+
+[sub_resource type="Animation" id="Animation_s1gn8"]
+resource_name = "FlightDownwardAirdash"
+length = 0.25000215
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("156_4p678")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1000000),
+"update": 0,
+"values": [Vector2(-60, 110)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wc0pe"]
 _data = {
 &"2A": SubResource("44"),
@@ -2053,8 +2143,11 @@ _data = {
 &"Flight": SubResource("Animation_8hpu6"),
 &"FlightA": SubResource("Animation_wkc6h"),
 &"FlightB": SubResource("Animation_7c5e4"),
+&"FlightBackwardAirdash": SubResource("Animation_weqwf"),
 &"FlightC": SubResource("Animation_66wdp"),
+&"FlightDownwardAirdash": SubResource("Animation_s1gn8"),
 &"FlightEnter": SubResource("Animation_4p678"),
+&"FlightForwardAirdash": SubResource("Animation_qfokg"),
 &"ForwardAirDash": SubResource("19"),
 &"ForwardWalk": SubResource("38"),
 &"GroundAssist": SubResource("5"),
