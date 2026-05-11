@@ -34,7 +34,7 @@ func enter(state: Dictionary) -> void:
 
 func physics_tick(state: Dictionary) -> void:
 	super.physics_tick(state)
-	state[Enums.StKey.super_meter] -= Util.FLIGHT_FAST_METER_DRAIN
+	state[Enums.StKey.super_meter] -= Util.FLIGHT_ATTACK_METER_DRAIN
 	if (state[Enums.StKey.frame] == 2):
 		state[Enums.StKey.velocity_y] = -SGFixed.ONE*25
 		state[Enums.StKey.accel_y] = 65536
