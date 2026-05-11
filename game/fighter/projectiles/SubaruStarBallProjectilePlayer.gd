@@ -26,7 +26,7 @@ func setup(playerData:PlayerSetup):
 		super.state_factory_setup(state_factory)
 	self.fighterState.change_state("Active")
 
-func on_attack_hurt(react_type: int, opponent_attack: Dictionary, leftface: bool, attack_leftface: bool) -> Dictionary:
+func on_attack_hurt(react_type: int, opponent_attack: Dictionary, leftface: bool, attack_leftface: bool, hitbox_name: String = "Unknown") -> Dictionary:
 	var hit_data : Dictionary = {
 		Enums.StKey.hitCount: 1,
 		Enums.StKey.comboTime: 1,
