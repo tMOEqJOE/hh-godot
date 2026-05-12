@@ -30,8 +30,12 @@ func physics_tick(state: Dictionary) -> void:
 	if (state[Enums.StKey.frame] == 1):
 		state[Enums.StKey.velocity_x] = 0
 		state[Enums.StKey.velocity_y] = -SGFixed.ONE*27
-	elif (state[Enums.StKey.frame] == 4):
+	elif (state[Enums.StKey.frame] == 2):
 		state[Enums.StKey.hitStopFrame] = 0
-	if (state[Enums.StKey.frame] == Util.AIR_DASH_STARTUP):
 		SyncManager.play_sound("airdash", Global.AirdashSound, {"bus": "Sound"})
 	
+func special_cancel(state: Dictionary, interpreter: InputInterpreter):
+	super.special_cancel(state,interpreter)
+	if (state[Enums.StKey.hitStopFrame] >= 0):
+		if (interpreter.is_air_dashing_four_way(Enums.Numpad.N8, state[Enums.StKey.leftface])):
+			state[Enums.StKey.cancelState] = ""
