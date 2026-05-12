@@ -1,4 +1,4 @@
-[gd_scene load_steps=224 format=3 uid="uid://cbwy2j4nbkk2j"]
+[gd_scene load_steps=223 format=3 uid="uid://cbwy2j4nbkk2j"]
 
 [ext_resource type="Script" uid="uid://dgsx3duqjaeo5" path="res://game/fighter/PointPlayer.gd" id="1_m4qvm"]
 [ext_resource type="Material" uid="uid://bt3lvyqtd78u0" path="res://game/assets/shaders/ColorSwapMat.tres" id="2_xm7kd"]
@@ -110,7 +110,6 @@
 [ext_resource type="Texture2D" uid="uid://bad4me2l0t4iw" path="res://game/assets/sprites/flayon/Skid/Timeline 1_0000.png" id="110_4p678"]
 [ext_resource type="Texture2D" uid="uid://clc5laoa1chbr" path="res://game/assets/sprites/flayon/StandHurt/Timeline 1_0003.png" id="110_d6y3q"]
 [ext_resource type="Texture2D" uid="uid://pp24qmurxg4g" path="res://game/assets/sprites/kanata/StandParryCatch/Timeline 1_0000.png" id="112_bw0nq"]
-[ext_resource type="Texture2D" uid="uid://hogccimxoci7" path="res://game/assets/sprites/kanata/StandBlock/Timeline 1_0000.png" id="113_gtvn8"]
 [ext_resource type="Texture2D" uid="uid://d4d32oc88j7rp" path="res://game/assets/sprites/kanata/StandParryCatch/Timeline 1_0001.png" id="117_vn47g"]
 [ext_resource type="Texture2D" uid="uid://slf4iuiu7paf" path="res://game/assets/sprites/kanata/StandParryCatch/Timeline 1_0002.png" id="118_b1luh"]
 [ext_resource type="Texture2D" uid="uid://8cv5nyfms5di" path="res://game/assets/sprites/kanata/Wakeup/Timeline 1_0001.png" id="119_kktry"]
@@ -1818,7 +1817,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="3"]
 resource_name = "StandHighHit"
-length = 0.433334
+length = 0.6666696
 step = 0.0166667
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -1827,10 +1826,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.20000002, 0.26666668, 0.35),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.083333336, 0.133333, 0.20000002, 0.26666668, 0.35, 0.46666667, 0.6166667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("107_8hpu6"), ExtResource("108_4p678"), ExtResource("109_wkc6h"), ExtResource("110_d6y3q"), ExtResource("109_wkc6h"), ExtResource("110_d6y3q")]
+"values": [ExtResource("107_8hpu6"), ExtResource("108_4p678"), ExtResource("109_wkc6h"), ExtResource("110_d6y3q"), ExtResource("109_wkc6h"), ExtResource("110_d6y3q"), ExtResource("109_wkc6h"), ExtResource("110_d6y3q")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1859,7 +1858,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("113_gtvn8")]
+"values": [ExtResource("106_0rw8g")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
