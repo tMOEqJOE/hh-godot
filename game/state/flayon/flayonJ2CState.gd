@@ -5,7 +5,7 @@ class_name Flayonj2CState
 var voice = preload("res://game/assets/voice/flayon/mxf_grunt.wav")
 
 func _init():
-	endFrame = 24
+	endFrame = 30
 	
 	anim_data = {
 		0 : {
@@ -38,11 +38,11 @@ func _init():
 			Enums.StKey.attack_damage: 18,
 			Enums.StKey.launch_dir_x : -SGFixed.ONE*30,
 			Enums.StKey.launch_dir_y : -SGFixed.ONE*40,
-			Enums.StKey.min_damage:5,
+			Enums.StKey.min_damage:3,
 			Enums.StKey.chip_damage:2,
 			Enums.StKey.counter_hit: Enums.AttackType.Strike,
 			},
-		23 : {
+		29 : {
 			Enums.StKey.Hit1Disable : true,
 			Enums.StKey.Hit2Disable : true,
 			Enums.StKey.Hurt1Disable : false,Enums.StKey.Hurt2Disable : false,Enums.StKey.Hurt3Disable : false,

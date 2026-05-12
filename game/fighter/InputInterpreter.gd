@@ -222,10 +222,11 @@ func button_dash(forward:bool, left_face:bool) -> bool:
 
 func button_dash_four_way(numpad: int, left_face:bool) -> bool:
 	for i in range(Util.INPUT_BUFFER_LENIANCY):
-		if (kara_check(i, Enums.InputFlags.ADown | Enums.InputFlags.BDown) or 
-				kara_check(i, Enums.InputFlags.BDown | Enums.InputFlags.CDown) or 
-				kara_check(i, Enums.InputFlags.ADown | Enums.InputFlags.CDown)):
-			return is_holding_a_direction_index(i, numpad, left_face)
+		if (is_holding_a_direction_index(i, numpad, left_face)):
+			if (kara_check(i, Enums.InputFlags.ADown | Enums.InputFlags.BDown)): 
+					#kara_check(i, Enums.InputFlags.BDown | Enums.InputFlags.CDown) or 
+					#kara_check(i, Enums.InputFlags.ADown | Enums.InputFlags.CDown)):
+				return true
 	return false
 
 func is_dashing(forward:bool, left_face:bool) -> bool:

@@ -19,11 +19,11 @@ func _init():
 func enter(state: Dictionary) -> void:
 	super.enter(state)
 	anim.play("Flight")
-	state[Enums.StKey.drag_x] = Util.FRICTION
+	state[Enums.StKey.drag_x] = 0
 	state[Enums.StKey.accel_y] = 0
 	state[Enums.StKey.accel_x] = 0
-	state[Enums.StKey.velocity_y] = -SGFixed.ONE*10
-	state[Enums.StKey.velocity_x] = 0
+	state[Enums.StKey.velocity_y] = SGFixed.mul(state[Enums.StKey.velocity_y], 35536)
+	state[Enums.StKey.velocity_x] = SGFixed.mul(state[Enums.StKey.velocity_x], 35536)
 
 func jump_cancel(state: Dictionary, interpreter: InputInterpreter):
 	pass
