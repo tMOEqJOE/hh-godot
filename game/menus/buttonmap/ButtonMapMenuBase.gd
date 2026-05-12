@@ -14,7 +14,7 @@ var max_button_cooldown: int
 var button_cooldown: int
 
 @onready var arrow_sprite = $ButtonMapBase/Arrow
-const ARROW_SPRITE_JUMP: int = 56
+var ARROW_SPRITE_JUMP: int = 51
 
 func _ready():
 	ready_for_inputs = false
