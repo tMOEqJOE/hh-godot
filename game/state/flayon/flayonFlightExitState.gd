@@ -22,7 +22,10 @@ func enter(state: Dictionary) -> void:
 	state[Enums.StKey.drag_x] = 0
 	state[Enums.StKey.accel_y] = 0
 	state[Enums.StKey.accel_x] = 0
-	state[Enums.StKey.velocity_y] = SGFixed.mul(state[Enums.StKey.velocity_y], 35536)
+	if (state[Enums.StKey.velocity_y] >= -SGFixed.ONE*20):
+		state[Enums.StKey.velocity_y] = -SGFixed.ONE*20
+	else:
+		state[Enums.StKey.velocity_y] = SGFixed.mul(state[Enums.StKey.velocity_y], 35536)
 	state[Enums.StKey.velocity_x] = SGFixed.mul(state[Enums.StKey.velocity_x], 35536)
 
 func jump_cancel(state: Dictionary, interpreter: InputInterpreter):
