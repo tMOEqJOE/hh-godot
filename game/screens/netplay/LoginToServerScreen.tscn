@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://cb215mqewgiow"]
+
+[ext_resource type="Script" uid="uid://cctu10r4tdqye" path="res://game/screens/netplay/login_to_server_screen.gd" id="1_pm16b"]
+
+[node name="LoginToServerScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_pm16b")
+
+[node name="MessageLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 218.0
+offset_top = 208.0
+offset_right = 689.0
+offset_bottom = 338.0
+scale = Vector2(2, 2)
+text = "Logging in to Server..."

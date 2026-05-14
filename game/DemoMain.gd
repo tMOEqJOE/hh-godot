@@ -1,7 +1,7 @@
 
 extends Node2D
 
-class_name DemoMainBackup
+class_name DemoMain
 
 const DummyNetworkAdaptor = preload("res://addons/godot-rollback-netcode/DummyNetworkAdaptor.gd")
 const ReplayLogger = preload("res://game/menus/replay/ReplayLogger.gd")
@@ -513,4 +513,3 @@ func _on_LocalButton_pressed():
 
 func is_replay() -> bool:
 	return Global.IS_REPLAY or ("replay" in OS.get_cmdline_args())
-

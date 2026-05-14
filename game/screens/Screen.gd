@@ -1,5 +1,7 @@
 extends Control
 
+class_name Screen
+
 var ui_layer: UILayer
 
 func _setup_screen(_ui_layer: UILayer) -> void:

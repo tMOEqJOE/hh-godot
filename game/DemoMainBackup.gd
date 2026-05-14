@@ -1,7 +1,7 @@
 
 extends Node2D
 
-class_name DemoMain
+class_name DemoMainBackup
 
 const DummyNetworkAdaptor = preload("res://addons/godot-rollback-netcode/DummyNetworkAdaptor.gd")
 const MatchConnector = preload("res://game/components/netplay_manager/MatchStartConnector.gd")
