@@ -36,7 +36,7 @@ func _init():
 			Enums.StKey.Hurt2ScaleX : 1005536, Enums.StKey.Hurt2ScaleY : 1005536,
 			Enums.StKey.guard: Enums.GuardType.High,
 			Enums.StKey.attack_damage: 40,
-			Enums.StKey.min_damage: 3,
+			Enums.StKey.min_damage: 4,
 			Enums.StKey.counter_hit: Enums.AttackType.Strike,
 			Enums.StKey.counter_hitstun: 10,
 			},

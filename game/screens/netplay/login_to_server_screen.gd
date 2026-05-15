@@ -1,14 +1,16 @@
 extends Screen
 
-#var login_success = false
+@onready var name_label = $NameLabel
+@onready var message_label = $MessageLabel
+@onready var aru_dj_animator = $AruDJAnimator
 
 func _ready() -> void:
 	MainMenuMusicControl.play_main_menu_music()
 	OnlineLobby.leave()
 	OnlineMatch.leave()
-	$CanvasLayer/NameLabel.text = Global.user_display_name
+	name_label.text = Global.user_display_name
 	Global.NETPLAY_MODE = Global.NETPLAY_MODES.PRIVATE_ROOM
-	$AruDJAnimator.play("Idle")
+	aru_dj_animator.play("Idle")
 	connect_to_nakama()
 
 var nakama_client: NakamaClient
@@ -16,13 +18,13 @@ var nakama_session: NakamaSession
 var nakama_socket: NakamaSocket
 
 func connect_to_nakama() -> void:
-	$CanvasLayer/MessageLabel.text = "Connecting to server"
+	message_label.text = "Connecting to server"
 	# Connect to a local Nakama instance using all the default settings.
 	if (not Global.LOCAL_SERVER):
 		nakama_client = Nakama.create_client(Build.SERVER_KEY, Build.SERVER_IP, Build.SERVER_PORT, 'http', 
 			Nakama.DEFAULT_TIMEOUT, NakamaLogger.LOG_LEVEL.ERROR)
 	else:
-		$CanvasLayer/MessageLabel.text = "connecting to local server"
+		message_label.text = "connecting to local server"
 		print("connecting to local server")
 		nakama_client = Nakama.create_client(Build.SERVER_KEY, '127.0.0.1', Build.SERVER_PORT, 'http', 
 			Nakama.DEFAULT_TIMEOUT, NakamaLogger.LOG_LEVEL.ERROR)
@@ -32,14 +34,14 @@ func connect_to_nakama() -> void:
 	if nakama_session.is_exception():
 		print ("Unable to connect to Nakama")
 		print (nakama_session.get_exception().message)
-		$CanvasLayer/MessageLabel.text = "Unable to connect to server"
+		message_label.text = "Unable to connect to server"
 		return
 		
 	var name_update = await nakama_client.update_account_async(nakama_session, Util.create_username(device_id, Global.user_display_name), Global.user_display_name)
 	if name_update.is_exception():
 		print ("Unable to create display name")
 		print (name_update.get_exception().message)
-		$CanvasLayer/MessageLabel.text = "Unable to create username, try changing your name on the main menu"
+		message_label.text = "Unable to create username, try changing your name on the main menu"
 		return
 #		get_tree().quit()
 
@@ -49,7 +51,7 @@ func connect_to_nakama() -> void:
 		if nakama_session.is_exception():
 			print ("Unable to connect to Nakama")
 			print (nakama_session.get_exception().message)
-			$CanvasLayer/MessageLabel.text = "Unable to connect to server and update username"
+			message_label.text = "Unable to connect to server and update username"
 			return
 		
 	# Open a realtime socket to Nakama.
@@ -60,7 +62,7 @@ func connect_to_nakama() -> void:
 	Global.nakama_session = nakama_session
 	
 	print ("Connected to Nakama!")
-	$CanvasLayer/MessageLabel.text = "Connected to server"
+	message_label.text = "Connected to server"
 	
 	get_tree().change_scene_to_file("res://game/menus/onlinemenu/OnlineModes.tscn")
 
