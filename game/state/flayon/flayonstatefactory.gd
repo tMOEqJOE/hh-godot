@@ -43,6 +43,8 @@ func _init():
 		
 		"ForwardAirDash": FlayonForwardAirDashState,
 		"BackwardAirDash": FlayonBackwardAirDashState,
+
+		"BackDash": FlayonBackDashState,
 		
 		"Stand5A": Flayon5AState,
 		"Stand5B": Flayon5BState,

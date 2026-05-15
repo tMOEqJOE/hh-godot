@@ -1,4 +1,4 @@
-[gd_scene load_steps=219 format=3 uid="uid://cbwy2j4nbkk2j"]
+[gd_scene load_steps=218 format=3 uid="uid://cbwy2j4nbkk2j"]
 
 [ext_resource type="Script" uid="uid://dgsx3duqjaeo5" path="res://game/fighter/PointPlayer.gd" id="1_m4qvm"]
 [ext_resource type="Material" uid="uid://bt3lvyqtd78u0" path="res://game/assets/shaders/ColorSwapMat.tres" id="2_xm7kd"]
@@ -72,7 +72,6 @@
 [ext_resource type="Texture2D" uid="uid://bb7aeodkocdos" path="res://game/assets/sprites/kanata/ThrowWhiff/Timeline 1_0000.png" id="66_b8id3"]
 [ext_resource type="Texture2D" uid="uid://d25indahdv1tp" path="res://game/assets/sprites/flayon/Walk/Timeline 1_0000.png" id="66_ujttm"]
 [ext_resource type="Texture2D" uid="uid://b0nu4qxsuqlpn" path="res://game/assets/sprites/kanata/ThrowWhiff/Timeline 1_0002.png" id="67_3n00h"]
-[ext_resource type="Texture2D" uid="uid://6yfpssiuw5pp" path="res://game/assets/sprites/kanata/BackDash/Timeline 1_0000.png" id="68_6nk0p"]
 [ext_resource type="Texture2D" uid="uid://bebbakox21hbv" path="res://game/assets/sprites/flayon/CrouchBlock/Timeline 1_0000.png" id="71_8hpu6"]
 [ext_resource type="Texture2D" uid="uid://cixyt7er3ms0t" path="res://game/assets/sprites/flayon/Crouch/Timeline 1_0000.png" id="73_f32ml"]
 [ext_resource type="Texture2D" uid="uid://dlwo1cgh0b2ov" path="res://game/assets/sprites/flayon/CrouchHurt/Timeline 1_0000.png" id="73_jefqy"]
@@ -652,36 +651,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="31"]
 resource_name = "BackDash"
-length = 0.08333516
-step = 0.0166667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("68_6nk0p")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:offset")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1000000),
-"update": 0,
-"values": [Vector2(-80, 140)]
-}
-
-[sub_resource type="Animation" id="20"]
-resource_name = "BackwardAirDash"
-length = 0.25000215
+length = 0.20000206
 loop_mode = 1
 step = 0.0166667
 tracks/0/type = "value"
@@ -691,7 +661,7 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.18333334),
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [ExtResource("61_ta16v"), ExtResource("62_kpeac"), ExtResource("63_f32ml")]
@@ -706,7 +676,36 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1000000),
 "update": 0,
-"values": [Vector2(-30, 80)]
+"values": [Vector2(-50, 100)]
+}
+
+[sub_resource type="Animation" id="20"]
+resource_name = "BackwardAirDash"
+length = 0.066668466
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("110_4p678")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1000000),
+"update": 0,
+"values": [Vector2(-70, 120)]
 }
 
 [sub_resource type="Animation" id="39"]
@@ -1556,6 +1555,35 @@ tracks/1/keys = {
 "values": [Vector2(-80, 200)]
 }
 
+[sub_resource type="Animation" id="Animation_m4qvm"]
+resource_name = "LightDP"
+length = 0.916668
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("150_xm7kd")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1000000),
+"update": 0,
+"values": [Vector2(0, 90)]
+}
+
 [sub_resource type="Animation" id="10"]
 resource_name = "PreJump"
 length = 0.0833335
@@ -1989,35 +2017,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(0, 100)]
-}
-
-[sub_resource type="Animation" id="Animation_m4qvm"]
-resource_name = "LightDP"
-length = 0.916668
-step = 0.0166667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("150_xm7kd")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:offset")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1000000),
-"update": 0,
-"values": [Vector2(0, 90)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wc0pe"]
