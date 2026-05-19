@@ -20,7 +20,7 @@ func enter(state: Dictionary) -> void:
 	super.enter(state)
 	anim.play("JumpFall")
 	state[Enums.StKey.drag_x] = Util.FRICTION
-	state[Enums.StKey.velocity_y] = 0
+	state[Enums.StKey.velocity_y] = -SGFixed.ONE*20
 	state[Enums.StKey.velocity_x] = 0
 
 func jump_cancel(state: Dictionary, interpreter: InputInterpreter):

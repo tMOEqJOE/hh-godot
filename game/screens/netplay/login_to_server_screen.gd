@@ -4,6 +4,8 @@ extends Screen
 @onready var message_label = $MessageLabel
 @onready var aru_dj_animator = $AruDJAnimator
 
+signal nakama_session_created
+
 func _ready() -> void:
 	MainMenuMusicControl.play_main_menu_music()
 	OnlineLobby.leave()
@@ -63,6 +65,8 @@ func connect_to_nakama() -> void:
 	
 	print ("Connected to Nakama!")
 	message_label.text = "Connected to server"
+	
+	nakama_session_created.emit(nakama_client, nakama_session, nakama_socket)
 	
 	get_tree().change_scene_to_file("res://game/menus/onlinemenu/OnlineModes.tscn")
 
