@@ -62,7 +62,7 @@ func _init():
 # Writing _delta instead of delta here prevents the unused variable warning.
 func enter(state: Dictionary) -> void:
 	super.enter(state)
-	anim.play("jC")
+	anim.play("j6C")
 
 func physics_tick(state: Dictionary) -> void:
 	super.physics_tick(state)

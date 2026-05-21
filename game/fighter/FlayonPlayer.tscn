@@ -1,8 +1,7 @@
-[gd_scene load_steps=194 format=3 uid="uid://cbwy2j4nbkk2j"]
+[gd_scene load_steps=192 format=3 uid="uid://cbwy2j4nbkk2j"]
 
 [ext_resource type="Script" uid="uid://dgsx3duqjaeo5" path="res://game/fighter/PointPlayer.gd" id="1_m4qvm"]
 [ext_resource type="Material" uid="uid://bt3lvyqtd78u0" path="res://game/assets/shaders/ColorSwapMat.tres" id="2_xm7kd"]
-[ext_resource type="Texture2D" uid="uid://bvojyi2id0pf3" path="res://game/assets/sprites/kanata/JC/Timeline 1_0003.png" id="3_ujttm"]
 [ext_resource type="PackedScene" uid="uid://sdxa076t7wfp" path="res://game/fighter/effects/shadow.tscn" id="4_c5h4h"]
 [ext_resource type="Texture2D" uid="uid://dunfwtuq5b438" path="res://game/assets/sprites/flayon/2A/Timeline 1_0000.png" id="5_rgqmm"]
 [ext_resource type="Texture2D" uid="uid://fsi47tjlnwln" path="res://game/assets/sprites/flayon/2A/Timeline 1_0001.png" id="6_m4qvm"]
@@ -101,7 +100,6 @@
 [ext_resource type="Texture2D" uid="uid://bsy7j7q6dp8jl" path="res://game/assets/sprites/flayon/jA/Timeline 1_0000.png" id="140_kpeac"]
 [ext_resource type="Texture2D" uid="uid://7vkasrwe68wv" path="res://game/assets/sprites/flayon/jA/Timeline 1_0001.png" id="141_f32ml"]
 [ext_resource type="Texture2D" uid="uid://y41gx3e5esq2" path="res://game/assets/sprites/flayon/jA/Timeline 1_0002.png" id="142_rgqmm"]
-[ext_resource type="Texture2D" uid="uid://ftog8a6vwoko" path="res://game/assets/sprites/flayon/jB/Timeline 1_0000.png" id="145_wkc6h"]
 [ext_resource type="Texture2D" uid="uid://c1py26j0q60hh" path="res://game/assets/sprites/flayon/jB/Timeline 1_0001.png" id="146_d6y3q"]
 [ext_resource type="Texture2D" uid="uid://61p4xclt2y64" path="res://game/assets/sprites/flayon/jB/Timeline 1_0002.png" id="147_qfokg"]
 [ext_resource type="Texture2D" uid="uid://cflq57800axpu" path="res://game/assets/sprites/flayon/jB/Timeline 1_0003.png" id="148_weqwf"]
@@ -1603,7 +1601,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("3_ujttm")]
+"values": [ExtResource("99_fw7s0")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1950,10 +1948,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.083333336, 0.15, 0.21666667, 0.25, 0.33333334),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.11666667, 0.18333334, 0.23333333, 0.33333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("145_wkc6h"), ExtResource("146_d6y3q"), ExtResource("147_qfokg"), ExtResource("148_weqwf"), ExtResource("149_s1gn8"), ExtResource("150_pbemb")]
+"values": [ExtResource("146_d6y3q"), ExtResource("147_qfokg"), ExtResource("148_weqwf"), ExtResource("149_s1gn8"), ExtResource("150_pbemb")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -2075,7 +2073,7 @@ script = ExtResource("1_m4qvm")
 material = ExtResource("2_xm7kd")
 position = Vector2(85, -363.99997)
 scale = Vector2(1.428, 1.428)
-texture = ExtResource("3_ujttm")
+texture = ExtResource("99_fw7s0")
 offset = Vector2(-50, 150)
 
 [node name="Shadow" parent="." instance=ExtResource("4_c5h4h")]
@@ -2112,25 +2110,24 @@ position = Vector2(617, -292)
 scale = Vector2(23.204, 13.8866)
 
 [node name="Hurtbox1" parent="." instance=ExtResource("152_d42n6")]
-fixed_position_x = 8500000
-fixed_position_y = -10087936
+fixed_position_y = -15087936
 fixed_scale_x = 603537
-fixed_scale_y = 971143
-position = Vector2(129.6997, -153.92969)
-scale = Vector2(9.209244, 14.818466)
+fixed_scale_y = 1071143
+position = Vector2(0, -230.22363)
+scale = Vector2(9.209244, 16.344345)
 
 [node name="Hurtbox2" parent="." instance=ExtResource("152_d42n6")]
-fixed_position_x = 17546271
-fixed_position_y = -10362432
-fixed_scale_x = 1445784
-fixed_scale_y = 1065625
-position = Vector2(267.73486, -158.11816)
-scale = Vector2(22.060913, 16.260147)
+fixed_position_x = 11546271
+fixed_position_y = -19362432
+fixed_scale_x = 445784
+fixed_scale_y = 765625
+position = Vector2(176.18211, -295.44727)
+scale = Vector2(6.802124, 11.68251)
 
 [node name="Hurtbox3" parent="." instance=ExtResource("152_d42n6")]
-fixed_position_x = 4092544
-fixed_position_y = -15187392
+fixed_position_x = -1220000
+fixed_position_y = -8187392
 fixed_scale_x = 878601
-fixed_scale_y = 896011
-position = Vector2(62.447266, -231.74121)
-scale = Vector2(13.406387, 13.672043)
+fixed_scale_y = 596011
+position = Vector2(-18.615723, -124.92969)
+scale = Vector2(13.406387, 9.094406)

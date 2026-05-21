@@ -2,7 +2,6 @@ extends FlayonFlightBaseState
 
 class_name FlayonFlightState
 
-const ACCEL = SGFixed.ONE*5
 const SPEED = SGFixed.ONE*15
 const UP_SPEED = SGFixed.ONE*6
 
@@ -16,7 +15,7 @@ func _init():
 			Enums.StKey.Hit2Disable : true,
 			Enums.StKey.Hurt1Disable : false,Enums.StKey.Hurt2Disable : true,Enums.StKey.Hurt3Disable : true,
 			Enums.StKey.Hurt1PosX : -262144, Enums.StKey.Hurt1PosY : -13471104,
-			Enums.StKey.Hurt1ScaleX : 822078, Enums.StKey.Hurt1ScaleY : 1436954,
+			Enums.StKey.Hurt1ScaleX : 822078, Enums.StKey.Hurt1ScaleY : 1236954,
 			},
 	}
 
@@ -39,20 +38,12 @@ func handle_input(state: Dictionary, interpreter: InputInterpreter) -> void:
 			interpreter.is_holding_a_direction(Enums.Numpad.N4, state[Enums.StKey.leftface]) or 
 			interpreter.is_holding_a_direction(Enums.Numpad.N7, state[Enums.StKey.leftface]))
 			):
-		if (state[Enums.StKey.velocity_x] > -SPEED):
-			state[Enums.StKey.accel_x] = -ACCEL
-		else:
-			state[Enums.StKey.accel_x] = 0
 			state[Enums.StKey.velocity_x] = -SPEED 
 	elif ( 
 			(interpreter.is_holding_a_direction(Enums.Numpad.N3, state[Enums.StKey.leftface]) or 
 			interpreter.is_holding_a_direction(Enums.Numpad.N6, state[Enums.StKey.leftface]) or 
 			interpreter.is_holding_a_direction(Enums.Numpad.N9, state[Enums.StKey.leftface]))
 			):
-		if (state[Enums.StKey.velocity_x] < SPEED):
-			state[Enums.StKey.accel_x] = ACCEL
-		else:
-			state[Enums.StKey.accel_x] = 0
 			state[Enums.StKey.velocity_x] = SPEED
 	else:
 		state[Enums.StKey.accel_x] = 0
@@ -63,20 +54,12 @@ func handle_input(state: Dictionary, interpreter: InputInterpreter) -> void:
 			interpreter.is_holding_a_direction(Enums.Numpad.N8, state[Enums.StKey.leftface]) or 
 			interpreter.is_holding_a_direction(Enums.Numpad.N9, state[Enums.StKey.leftface]))
 			):
-		if (state[Enums.StKey.velocity_y] > -UP_SPEED):
-			state[Enums.StKey.accel_y] = -ACCEL
-		else:
-			state[Enums.StKey.accel_y] = 0
 			state[Enums.StKey.velocity_y] = -UP_SPEED
 	elif (
 			(interpreter.is_holding_a_direction(Enums.Numpad.N1, state[Enums.StKey.leftface]) or 
 			interpreter.is_holding_a_direction(Enums.Numpad.N2, state[Enums.StKey.leftface]) or 
 			interpreter.is_holding_a_direction(Enums.Numpad.N3, state[Enums.StKey.leftface]))
 			):
-		if (state[Enums.StKey.velocity_y] < SPEED):
-			state[Enums.StKey.accel_y] = ACCEL
-		else:
-			state[Enums.StKey.accel_y] = 0
 			state[Enums.StKey.velocity_y] = SPEED
 	else:
 		state[Enums.StKey.accel_y] = 0
