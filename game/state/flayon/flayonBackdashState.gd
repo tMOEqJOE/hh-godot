@@ -3,7 +3,7 @@ extends FlayonAirIdleState
 class_name FlayonBackDashState
 
 func _init():
-	endFrame = 15
+	endFrame = 18
 	anim_data = {
 		0 : { 
 			Enums.StKey.Hit1Disable : true,
@@ -18,7 +18,7 @@ func _init():
 			Enums.StKey.Hit2Disable : true,
 			Enums.StKey.Hurt1Disable : false,Enums.StKey.Hurt2Disable : true,Enums.StKey.Hurt3Disable : true,
 			Enums.StKey.Hurt1PosX : -2545184, Enums.StKey.Hurt1PosY : -16087936,
-			Enums.StKey.Hurt1ScaleX : 803537, Enums.StKey.Hurt1ScaleY : 1171143,
+			Enums.StKey.Hurt1ScaleX : 803537, Enums.StKey.Hurt1ScaleY : 871143,
 			},
 		18 : {
 			Enums.StKey.Hit1Disable : true,

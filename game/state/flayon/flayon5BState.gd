@@ -3,18 +3,18 @@ extends FlayonAttackState
 class_name Flayon5BState
 
 func _init():
-	endFrame = 30
+	endFrame = 32
 	
 	anim_data = {
 		0 : {
 			Enums.StKey.counterOK : true,
 			Enums.StKey.Hit1Disable : true,
 			Enums.StKey.Hit2Disable : true,
-			Enums.StKey.Hurt1Disable : false,Enums.StKey.Hurt2Disable : true,Enums.StKey.Hurt3Disable : true,
-			Enums.StKey.Hurt1PosX : 1546271, Enums.StKey.Hurt1PosY : -10362432,
-			Enums.StKey.Hurt1ScaleX : 745784, Enums.StKey.Hurt1ScaleY : 1065625,
-			Enums.StKey.Hurt2PosX : 8500000, Enums.StKey.Hurt2PosY : -10087936,
-			Enums.StKey.Hurt2ScaleX : 603537, Enums.StKey.Hurt2ScaleY : 971143,
+			Enums.StKey.Hurt1Disable : false,Enums.StKey.Hurt2Disable : false,Enums.StKey.Hurt3Disable : true,
+			Enums.StKey.Hurt1PosX : 0, Enums.StKey.Hurt1PosY : -10087936,
+			Enums.StKey.Hurt1ScaleX : 603537, Enums.StKey.Hurt1ScaleY : 1071143,
+			Enums.StKey.Hurt2PosX : 6546270, Enums.StKey.Hurt2PosY : -5362431,
+			Enums.StKey.Hurt2ScaleX : 645783, Enums.StKey.Hurt2ScaleY : 665625,
 			},
 		9 : {
 			Enums.StKey.counterOK : true,
@@ -22,12 +22,12 @@ func _init():
 			Enums.StKey.Hit1PosX : 20037056, Enums.StKey.Hit1PosY : -13828095,
 			Enums.StKey.Hit1ScaleX : 1507117, Enums.StKey.Hit1ScaleY : 668088,
 			Enums.StKey.Hurt1Disable : false,Enums.StKey.Hurt2Disable : false,Enums.StKey.Hurt3Disable : false,
-			Enums.StKey.Hurt1PosX : 1546271, Enums.StKey.Hurt1PosY : -10362432,
-			Enums.StKey.Hurt1ScaleX : 745784, Enums.StKey.Hurt1ScaleY : 1065625,
-			Enums.StKey.Hurt2PosX : 8500000, Enums.StKey.Hurt2PosY : -10087936,
-			Enums.StKey.Hurt2ScaleX : 603537, Enums.StKey.Hurt2ScaleY : 971143,
-			Enums.StKey.Hurt3PosX : 65536, Enums.StKey.Hurt3PosY : -3932160,
-			Enums.StKey.Hurt3ScaleX : 591882, Enums.StKey.Hurt3ScaleY : 447191,
+			Enums.StKey.Hurt1PosX : 0, Enums.StKey.Hurt1PosY : -10087936,
+			Enums.StKey.Hurt1ScaleX : 603537, Enums.StKey.Hurt1ScaleY : 1071143,
+			Enums.StKey.Hurt2PosX : 11546270, Enums.StKey.Hurt2PosY : -10362432,
+			Enums.StKey.Hurt2ScaleX : 645783, Enums.StKey.Hurt2ScaleY : 965625,
+			Enums.StKey.Hurt3PosX : 20037056, Enums.StKey.Hurt3PosY : -13828095,
+			Enums.StKey.Hurt3ScaleX : 1607117, Enums.StKey.Hurt3ScaleY : 768088,
 			Enums.StKey.hit_box_colliding_frame : 254,
 			Enums.StKey.attack_damage: 30,
 			Enums.StKey.counter_hit: Enums.AttackType.Strike,
@@ -38,10 +38,10 @@ func _init():
 			Enums.StKey.Hit1Disable : true,
 			Enums.StKey.Hit2Disable : true,
 			Enums.StKey.Hurt1Disable : false,Enums.StKey.Hurt2Disable : false,Enums.StKey.Hurt3Disable : true,
-			Enums.StKey.Hurt1PosX : 1546271, Enums.StKey.Hurt1PosY : -10362432,
-			Enums.StKey.Hurt1ScaleX : 745784, Enums.StKey.Hurt1ScaleY : 1065625,
-			Enums.StKey.Hurt2PosX : 8500000, Enums.StKey.Hurt2PosY : -10087936,
-			Enums.StKey.Hurt2ScaleX : 603537, Enums.StKey.Hurt2ScaleY : 971143,
+			Enums.StKey.Hurt1PosX : 0, Enums.StKey.Hurt1PosY : -10087936,
+			Enums.StKey.Hurt1ScaleX : 603537, Enums.StKey.Hurt1ScaleY : 1071143,
+			Enums.StKey.Hurt2PosX : 11546270, Enums.StKey.Hurt2PosY : -10362432,
+			Enums.StKey.Hurt2ScaleX : 645783, Enums.StKey.Hurt2ScaleY : 965625,
 			},
 	}
 

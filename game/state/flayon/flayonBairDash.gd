@@ -8,17 +8,15 @@ func _init():
 		0 : { 
 			Enums.StKey.Hit1Disable : true,
 			Enums.StKey.Hit2Disable : true,
-			Enums.StKey.Hurt1Disable : false,Enums.StKey.Hurt2Disable : false,Enums.StKey.Hurt3Disable : false,
-			Enums.StKey.Hurt1PosX : -5570559, Enums.StKey.Hurt1PosY : -14483456,
-			Enums.StKey.Hurt1ScaleX : 536711, Enums.StKey.Hurt1ScaleY : 244563,
-			Enums.StKey.Hurt2PosX : 2818047, Enums.StKey.Hurt2PosY : -10944512,
-			Enums.StKey.Hurt2ScaleX : 924253, Enums.StKey.Hurt2ScaleY : -367041,
-			Enums.StKey.Hurt3PosX : -7471104, Enums.StKey.Hurt3PosY : -15007745,
-			Enums.StKey.Hurt3ScaleX : 608053, Enums.StKey.Hurt3ScaleY : -670102,
+			Enums.StKey.Hurt1Disable : false,Enums.StKey.Hurt2Disable : true,Enums.StKey.Hurt3Disable : true,
+			Enums.StKey.Hurt1PosX : -262144, Enums.StKey.Hurt1PosY : -13471104,
+			Enums.StKey.Hurt1ScaleX : 1222078, Enums.StKey.Hurt1ScaleY : 836954,
 			},
 		4 : {
 			Enums.StKey.Summon : "bairdash",
-			Enums.StKey.Hurt1Disable : false,Enums.StKey.Hurt2Disable : false,Enums.StKey.Hurt3Disable : false,
+			Enums.StKey.Hurt1Disable : false,Enums.StKey.Hurt2Disable : true,Enums.StKey.Hurt3Disable : true,
+			Enums.StKey.Hurt1PosX : -262144, Enums.StKey.Hurt1PosY : -13471104,
+			Enums.StKey.Hurt1ScaleX : 1222078, Enums.StKey.Hurt1ScaleY : 836954,
 		},
 	}
 
