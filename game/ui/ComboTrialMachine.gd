@@ -38,13 +38,17 @@ func _ready() -> void:
 	load_combo(0)
 
 func load_combo(index: int) -> void:
-	if index >= ComboDatabase.COMBOS.size():
-		print("All combo trials complete!")
-		return
-
 	current_combo_index = index
-
-	combo_trial = ComboDatabase.COMBOS[index].duplicate()
+	if Global.TRAINING_P1:
+		if index >= ComboDatabase.COMBOS[Global.PLAYER_1_CHARACTER[0]].size():
+			print("All combo trials complete!")
+			return
+		combo_trial = ComboDatabase.COMBOS[Global.PLAYER_1_CHARACTER[0]][index].duplicate()
+	else:
+		if index >= ComboDatabase.COMBOS[Global.PLAYER_2_CHARACTER[0]].size():
+			print("All combo trials complete!")
+			return
+		combo_trial = ComboDatabase.COMBOS[Global.PLAYER_2_CHARACTER[0]][index].duplicate()
 
 	current_combo_position = 0
 	current_step_progress = 0

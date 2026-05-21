@@ -1,7 +1,7 @@
 extends Resource
 
-const COMBOS := [ #Sample Subaru Combos
-    {0: "Jump5C", #spammable button into knockdown
+const COMBOS : Dictionary = { #Sample Subaru Combos
+    Enums.PointCharacters.Subaru: [{0: "Jump5C", #spammable button into knockdown
     1: "Crouch2B",
     2: "Crouch2C",
     3: "DUMMY: [i] \nHint: Use Jump5C as you are falling."},
@@ -13,7 +13,7 @@ const COMBOS := [ #Sample Subaru Combos
     1: "DUMMY: [i] \nHint: Quickly move the directions first and then press the attack button!"}, #motion input
     {0: "Crouch2B", #special cancel
     1:"Stinger",
-    2:"DUMMY: [i] \nHint: You can start preparing the directions for the special move as Down B is happening.\n\nThe Down in Crouch2B counts for Stinger !"},
+    2:"DUMMY: [i] \nHint: You can start preparing the directions for the special move as Crouch2B is happening.\n\nThe Down in Crouch2B counts for Stinger !"},
     {
     0:"Crouch3C", #universal anti air combo into air throw
     1:"DUMMY: [i] jump [/i]",
@@ -23,7 +23,7 @@ const COMBOS := [ #Sample Subaru Combos
     5:"DUMMY: [i] double jump [/i]",
     6:"AirThrowHit",
     7: "DUMMY: [i] \nHint: Hit up as soon as you hit the opponent! [/i]"},
-    {0:"Crouch2A", #universal air combo into special
+    {0:"Crouch2A", #universal air combo into special/knockdown
     1:"StandcB",
     2:"Crouch3C",
     3:"DUMMY: [i] jump [/i]",
@@ -41,6 +41,26 @@ const COMBOS := [ #Sample Subaru Combos
     4: "AirStinger"},
     {0: "BionicArm",
     1: "BionicArm"},
+    {0:"DUMMY: [color=yellow]Corner Only[/color]\nHint: Land and jump again after each Jump2C ! [/i]",
+    1:"StandcB",
+    2:"Stand5C",
+    3:"Crouch3C",
+    4:"Jump5B",
+    5:"Jump5C",
+    6:"Jump2C",
+    7:"Jump5B",
+    8:"Jump5C",
+    9:"Jump2C",
+    10:"Jump5B",
+    11:"Jump5C",
+    12:"Jump2C",
+    13:"Jump5B",
+    14:"Jump5C",
+    15:"Jump2C",
+    16:"Stand5B",
+    17:"Stand5C",
+    18:"Stinger",
+},
     {0: "DUMMY: AngelInstall",
     1: "AngelHH1",
     2: "AngelHH1",
@@ -78,4 +98,97 @@ const COMBOS := [ #Sample Subaru Combos
 	19: "BionicArm",
 	20: "BionicArm",
 	21: "DUMMY: [i] \nHint: try and air dash as fast as possible! [/i]"}
-]
+],
+Enums.PointCharacters.Mio: [
+    {0: "Jump5C", #spammable button into knockdown
+    1: "Crouch2B",
+    2: "Crouch2C",
+    3: "DUMMY: [i] \nHint: Use Jump5C as you are falling."},
+    {0: "Crouch2A", #chain into knockdown
+    1: "StandcB",
+    2: "Stand5C",
+    3: "Crouch2C",
+    4: "Stand6C"},
+    {0:"MioCards",
+    1: "DUMMY: [i] \nHint: Quickly move the directions first and then press the attack button!"},
+    {0: "Crouch2B", #special cancel
+    1:"Stand6C",
+    2:"MioCards",
+    3:"DUMMY: [i] \nHint: You can start preparing the directions for the special move as Stand6C is happening.\n\nThe Right in Stand6C counts for MioCards !"},
+    {
+    0:"Crouch3C", #universal anti air combo into air throw
+    1:"DUMMY: [i] jump [/i]",
+    2:"Jump5A",
+    3:"Jump5B",
+    4:"Jump5C",
+    5:"DUMMY: [i] double jump [/i]",
+    6:"AirThrowHit",
+    7: "DUMMY: [i] \nHint: Hit up as soon as you hit the opponent! [/i]"},
+    {0:"Crouch2A", #universal air combo into special
+    1:"StandcB",
+    2:"Crouch3C",
+    3:"DUMMY: [i] jump [/i]",
+    4:"Jump5B",
+    5:"Jump5B",
+    6:"Jump5C",
+    7:"DUMMY: [i] double jump [/i]",
+    8:"Jump5A",
+    9:"Jump5C",
+    10:"Jump2C"},
+    {0:"DUMMY: [i] \nHint: Hatotaurus attacks when you [color=yellow]release[/color] attack buttons! [/i]",
+    1:"DUMMY: SummonHato",
+    2:"DUMMY: Hold C",
+    3:"DUMMY: Release C",
+    4:"Stand5C",
+    5:"Stand5C",
+    6:"Stand5C",
+    7:"Stand5C",
+    8:"Stand5C",
+    9:"Stand5C"},
+    {0: "GroundThrowHit",
+    1: "DUMMY: A + B + C [i] during throw hit [/i]",
+    2: "Stand5B",
+    3: "Stand5C",
+    4: "Stand6C",
+    5: "DUMMY: [i] Bonus: SummonHato [/i]"},
+    {0: "DUMMY: SummonHato",
+    1: "GroundThrowHit",
+    2: "DUMMY: Hold GroundThrowHit",
+    3: "DUMMY: Hold B",
+    4: "DUMMY: Release B",
+    5: "Stand5B",
+    6: "Jump5B",
+    7: "Jump5B",
+    8: "DUMMY: Hold B",
+    9: "Jump5C",
+    10: "DUMMY: Release B",
+    11: "Stand5B"},
+    {0: "DUMMY: SummonHato",
+    1: "DUMMY: Hold C",
+    2: "HatoCards",
+    3: "HatoCards",
+    4: "HatoCards"},
+],
+Enums.PointCharacters.Oga: [
+    {0: "Jump5B", #spammable button into knockdown
+    1: "Crouch2B",
+    2: "Crouch2C",
+    3: "DUMMY: [i] \nHint: Use Jump5B as you are falling."},
+],
+Enums.PointCharacters.Ollie: [
+    {0:"Crouch2C"}
+],
+Enums.PointCharacters.Suisei: [
+    {0:"Jump5B",
+    1:"Crouch2B",
+    2: "DUMMY: [i] \nHint: Use Jump5B as you are falling."}
+],
+Enums.PointCharacters.Kanata: [
+    {0: "Jump5B", #spammable button into knockdown
+    2: "Stand2B",
+    3: "Crouch2C",
+    4: "DUMMY: [i] \nHint: Use Jump5B as you are falling."},
+],
+Enums.PointCharacters.Flayon: [
+    {}
+]}

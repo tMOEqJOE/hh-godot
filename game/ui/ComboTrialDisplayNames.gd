@@ -15,7 +15,7 @@ const DISPLAY_NAMES: Dictionary = {
 	"Jump5B": "B air",
 	"Jump2C": "Down C air",
 	"Jump5C": "C air",
-	"DuckPunch": "Right Down DownRight B (air ok)",
+	"DuckPunch": "Right Down DownRight B (air ok)", "MioCards":"Right Down DownRight B (air ok)",
 	"SubaruStarBall": "Down DownRight Right A (air ok)",
 	"Stinger": "Down DownLeft Left B",
 	"AirStinger": "Down DownLeft Left B air",
@@ -23,5 +23,7 @@ const DISPLAY_NAMES: Dictionary = {
 	"AngelInstall": "Down DownLeft Left Down DownLeft Left C",
     "AngelHH1": "Right DownRight Down DownLeft Left Right A",
     "AngelHH9": "Down DownLeft Left C",
-    "AngelHH10": "Down DownRight Right D"
+    "AngelHH10": "Down DownRight Right D",
+    "SummonHato": "Down DownRight Right B",
+    "HatoCards": "Right Down DownRight Release C (air ok)"
 }
