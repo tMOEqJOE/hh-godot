@@ -17,44 +17,10 @@ const ICON_PATHS: Dictionary = {
 	"DownLeft": "res://game/assets/sprites/UI/MainMenus/MenuTutorials/Input_0010.png",
 }
 
-@export var combo_trial: Dictionary = { #Sample Combo
-	0: "Stand5A",
-	1: "StandcB",
-	2: "Crouch3C",
-	3: "DUMMY: Right + A + B air dash",
-	4: "Jump2C",
-	5: "Jump5B",
-	6: "Jump5C",
-	7: "Jump2C",
-	8: "Jump5B",
-	9: "Jump5C",
-	10: "Jump2C",
-	11: "Jump5B",
-	12: "Jump5C",
-	13: "Jump2C",
-	14: "SubaruStarBall",
-	15: "DUMMY: [i] landing cancel [/i]",
-	16: "StandcB",
-	17: "Stand5C",
-	18: "Stand6C",
-	19: "BionicArm",
-	20: "BionicArm",
-	21: "DUMMY: [i] Hint: try and air dash as fast as possible! [/i]"
-}
-
-@export var display_names: Dictionary = {
-	"Stand5A": "A",
-	"StandcB": "B close",
-	"Stand5B": "B",
-	"Stand5C": "C",
-	"Stand6C": "Right C",
-	"Crouch3C": "DownRight C",
-	"Jump2C": "Down C air",
-	"Jump5B": "B air",
-	"Jump5C": "C air",
-	"SubaruStarBall": "Down DownRight Right A (air ok)",
-	"BionicArm": "Right DownRight Down DownLeft Left Right C",
-}
+var ComboDatabase = load("res://game/ui/ComboTrials.gd")
+var display_names: Dictionary = load("res://game/ui/ComboTrialDisplayNames.gd").DISPLAY_NAMES
+var combo_trial: Dictionary = {}
+var current_combo_index = 0
 
 var processed_combo: Array = []
 var current_combo_position: int = 0
@@ -69,6 +35,21 @@ func _ready() -> void:
 	combo_list_label.bbcode_enabled = true
 	combo_list_label.scroll_active = false
 	combo_list_label.scroll_following = false
+	load_combo(0)
+
+func load_combo(index: int) -> void:
+	if index >= ComboDatabase.COMBOS.size():
+		print("All combo trials complete!")
+		return
+
+	current_combo_index = index
+
+	combo_trial = ComboDatabase.COMBOS[index].duplicate()
+
+	current_combo_position = 0
+	current_step_progress = 0
+	showing_complete_message = false
+
 	refresh_combo_ui()
 
 
@@ -115,7 +96,7 @@ func refresh_combo_ui() -> void:
 	_skip_dummy_steps()
 
 	var lines: Array[String] = []
-	lines.append("Inputs are performed while facing right")
+	lines.append("[color=yellow]Inputs are performed while facing right[/color]")
 
 	for idx in range(processed_combo.size()):
 		var item = processed_combo[idx]
@@ -135,9 +116,9 @@ func refresh_combo_ui() -> void:
 		elif idx < current_combo_position:
 			if item["count"] > 1:
 				var progress_text = "%d/%d" % [item["count"], item["count"]]
-				lines.append("[[color=green]✓[/color]] " + display + " (" + progress_text + ")")
+				lines.append("[bgcolor=green]" + display + " (" + progress_text + ") [/bgcolor]")
 			else:
-				lines.append("[[color=green]✓[/color]] " + display)
+				lines.append("[bgcolor=green]" + display + "[/bgcolor]")
 
 		elif idx == current_combo_position:
 			if item["count"] > 1:
@@ -146,17 +127,17 @@ func refresh_combo_ui() -> void:
 					item["count"]
 				]
 
-				lines.append("[color=yellow]> " + display + " (" + progress_text + ")[/color]")
+				lines.append("[color=gray][bgcolor=yellow] " + display + " (" + progress_text + ")[/bgcolor][/color]")
 			else:
-				lines.append("[color=yellow]> " + display + "[/color]")
+				lines.append("[color=gray][bgcolor=yellow] " + display + "[/bgcolor][/color]")
 
 		else:
 			if item["count"] > 1:
 				lines.append(
-					"[ ] " + display + " (0/" + str(item["count"]) + ")"
+					display + " (0/" + str(item["count"]) + ")"
 				)
 			else:
-				lines.append("[ ] " + display)
+				lines.append(display)
 
 	combo_list_label.text = "\n".join(lines)
 	var sb := combo_list_label.get_v_scroll_bar()
@@ -201,6 +182,8 @@ func _dummy_text(step: String) -> String:
 	for token in tokens:
 		if ICON_PATHS.has(token):
 			parts.append(_bbcode_icon(token))
+		elif display_names.has(token):
+			parts.append(_format_display_text(display_names.get(token, token)))
 		else:
 			parts.append(token)
 
@@ -243,7 +226,7 @@ func attack_hurt(hitbox_name: String) -> void:
 					current_combo_position = 0
 					current_step_progress = 0
 
-					refresh_combo_ui()
+					load_combo(current_combo_index + 1)
 
 					return
 

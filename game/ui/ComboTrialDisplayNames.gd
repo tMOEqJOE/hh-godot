@@ -1,0 +1,27 @@
+extends Resource
+const DISPLAY_NAMES: Dictionary = {
+    "GroundThrowHit": "Right A + D",
+	"AirThrowHit": "A + D air",
+	"Stand5A": "A", "AngelHH2": "A", "AngelHH5": "A", "AngelHH7": "A",
+	"StandcB": "B close",
+	"Stand5B": "B", "AngelHH4": "B", "AngelHH8": "B",
+	"Stand5C": "C", "AngelHH3": "C", "AngelHH6": "C",
+	"Stand6C": "Right C",
+	"Crouch2A": "Down A",
+	"Crouch2B": "Down B",
+	"Crouch2C": "Down C",
+	"Crouch3C": "DownRight C",
+	"Jump5A": "A air",
+	"Jump5B": "B air",
+	"Jump2C": "Down C air",
+	"Jump5C": "C air",
+	"DuckPunch": "Right Down DownRight B (air ok)",
+	"SubaruStarBall": "Down DownRight Right A (air ok)",
+	"Stinger": "Down DownLeft Left B",
+	"AirStinger": "Down DownLeft Left B air",
+	"BionicArm": "Right DownRight Down DownLeft Left Right C",
+	"AngelInstall": "Down DownLeft Left Down DownLeft Left C",
+    "AngelHH1": "Right DownRight Down DownLeft Left Right A",
+    "AngelHH9": "Down DownLeft Left C",
+    "AngelHH10": "Down DownRight Right D"
+}
