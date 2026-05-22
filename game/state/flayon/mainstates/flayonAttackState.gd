@@ -28,13 +28,7 @@ func jump_cancel(state: Dictionary, interpreter: InputInterpreter):
 
 func special_cancel(state: Dictionary, interpreter: InputInterpreter):
 	if (state[Enums.StKey.hitStopFrame] >= 0):
-		if (level_2_OK(state) and interpreter.special_input_button(Enums.SpecialInput.M632146, Enums.InputFlags.CDown, state[Enums.StKey.leftface])):
-			state[Enums.StKey.cancelState] = "BionicArm"
-		elif (level_1_OK(state) and interpreter.special_input_button(Enums.SpecialInput.M236, Enums.InputFlags.CDown, state[Enums.StKey.leftface])):
-			state[Enums.StKey.cancelState] = "EXStarBall"
-		elif (level_5_OK(state) and interpreter.special_input_button(Enums.SpecialInput.M214214, Enums.InputFlags.CDown, state[Enums.StKey.leftface])):
-			state[Enums.StKey.cancelState] = "AngelInstall"
-		elif (interpreter.special_input_button(Enums.SpecialInput.M623, Enums.InputFlags.BDown, state[Enums.StKey.leftface])):
+		if (interpreter.special_input_button(Enums.SpecialInput.M623, Enums.InputFlags.BDown, state[Enums.StKey.leftface])):
 			state[Enums.StKey.cancelState] = "DuckPunch"
 		elif (interpreter.special_input_button(Enums.SpecialInput.M623, Enums.InputFlags.ADown, state[Enums.StKey.leftface])):
 			state[Enums.StKey.cancelState] = "LightDuckPunch"

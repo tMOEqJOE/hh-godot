@@ -38,32 +38,31 @@
 [ext_resource type="Texture2D" uid="uid://c6vadqdnyq8ep" path="res://game/assets/sprites/flayon/6C/Timeline 1_0004.png" id="37_xpm3i"]
 [ext_resource type="Texture2D" uid="uid://1g8ugtwo0p4n" path="res://game/assets/sprites/flayon/AirAssistCall/Timeline 1_0000.png" id="38_5i547"]
 [ext_resource type="Texture2D" uid="uid://dwg8ish1iwijd" path="res://game/assets/sprites/flayon/AirAssistCall/Timeline 1_0001.png" id="39_xpm3i"]
+[ext_resource type="Texture2D" uid="uid://diec5j5shtid1" path="res://game/assets/sprites/flayon/AirBlock/Timeline 1_0000.png" id="40_t00t0"]
 [ext_resource type="Texture2D" uid="uid://0ahdpg634fox" path="res://game/assets/sprites/flayon/AirHurt/Timeline 1_0000.png" id="42_xpm3i"]
 [ext_resource type="Texture2D" uid="uid://hmsdm3e4lsix" path="res://game/assets/sprites/flayon/AirHurt/Timeline 1_0001.png" id="43_ta16v"]
 [ext_resource type="Texture2D" uid="uid://sievhdrjqgxj" path="res://game/assets/sprites/flayon/AirHurt/Timeline 1_0002.png" id="44_kpeac"]
 [ext_resource type="Texture2D" uid="uid://brihktpdhj24j" path="res://game/assets/sprites/flayon/AirHurt/Timeline 1_0003.png" id="45_f32ml"]
 [ext_resource type="Texture2D" uid="uid://dgm50gy35vbkt" path="res://game/assets/sprites/flayon/AirParry/Timeline 1_0000.png" id="46_en3gp"]
-[ext_resource type="Texture2D" uid="uid://benov63g0f15a" path="res://game/assets/sprites/kanata/AirBlock/Timeline 1_0000.png" id="47_0kshd"]
 [ext_resource type="Texture2D" uid="uid://cxje3mk2fhcg6" path="res://game/assets/sprites/kanata/AirHurt/Timeline 1_0000.png" id="48_lqksc"]
 [ext_resource type="Texture2D" uid="uid://n67moi5p1rpf" path="res://game/assets/sprites/kanata/AirHurt/Timeline 1_0001.png" id="49_4r5l5"]
 [ext_resource type="Texture2D" uid="uid://dwkqlubkohr38" path="res://game/assets/sprites/kanata/AirHurt/Timeline 1_0002.png" id="50_fituu"]
 [ext_resource type="Texture2D" uid="uid://cl6vkmct4tcg6" path="res://game/assets/sprites/kanata/AirHurt/Timeline 1_0003.png" id="51_lqcph"]
 [ext_resource type="Texture2D" uid="uid://civum72y5c4k3" path="res://game/assets/sprites/flayon/ThrowWhiff/Timeline 1_0000.png" id="52_fw7s0"]
+[ext_resource type="Texture2D" uid="uid://bm7snof4wwoyf" path="res://game/assets/sprites/flayon/Burst/Timeline 1_0000.png" id="57_mrj0t"]
+[ext_resource type="Texture2D" uid="uid://cqdk1owmfd528" path="res://game/assets/sprites/flayon/Burst/Timeline 1_0001.png" id="58_t00t0"]
 [ext_resource type="Texture2D" uid="uid://bu8ufwlv8wp2h" path="res://game/assets/sprites/flayon/AirDash/Timeline 1_0002.png" id="61_ta16v"]
 [ext_resource type="Texture2D" uid="uid://bxpowiqwqay7i" path="res://game/assets/sprites/flayon/AirDash/Timeline 1_0000.png" id="62_kpeac"]
 [ext_resource type="Texture2D" uid="uid://u1rynvv2jbro" path="res://game/assets/sprites/flayon/AirDash/Timeline 1_0001.png" id="63_f32ml"]
 [ext_resource type="Texture2D" uid="uid://ddslrqsj1skn7" path="res://game/assets/sprites/flayon/Walk/Timeline 1_0002.png" id="64_m4qvm"]
-[ext_resource type="Texture2D" uid="uid://c11tuq0iliedo" path="res://game/assets/sprites/kanata/Fly/Timeline 1_0002.png" id="65_vlnda"]
 [ext_resource type="Texture2D" uid="uid://6oexsrfbjd0c" path="res://game/assets/sprites/flayon/Walk/Timeline 1_0001.png" id="65_xm7kd"]
 [ext_resource type="Texture2D" uid="uid://d25indahdv1tp" path="res://game/assets/sprites/flayon/Walk/Timeline 1_0000.png" id="66_ujttm"]
+[ext_resource type="Texture2D" uid="uid://da3w1rl4dfpuk" path="res://game/assets/sprites/flayon/TohnoDP/Timeline 1_0001.png" id="69_lfwk2"]
 [ext_resource type="Texture2D" uid="uid://bebbakox21hbv" path="res://game/assets/sprites/flayon/CrouchBlock/Timeline 1_0000.png" id="71_8hpu6"]
 [ext_resource type="Texture2D" uid="uid://cixyt7er3ms0t" path="res://game/assets/sprites/flayon/Crouch/Timeline 1_0000.png" id="73_f32ml"]
 [ext_resource type="Texture2D" uid="uid://dlwo1cgh0b2ov" path="res://game/assets/sprites/flayon/CrouchHurt/Timeline 1_0000.png" id="73_jefqy"]
-[ext_resource type="Texture2D" uid="uid://d0vr2h5k673p4" path="res://game/assets/sprites/kanata/Burst/Timeline 1_0000.png" id="73_usesl"]
 [ext_resource type="Texture2D" uid="uid://cmdloci1l5bys" path="res://game/assets/sprites/flayon/CrouchHurt/Timeline 1_0001.png" id="74_0rw8g"]
-[ext_resource type="Texture2D" uid="uid://ekjb1ipniu02" path="res://game/assets/sprites/kanata/Burst/Timeline 1_0001.png" id="74_xey44"]
 [ext_resource type="Texture2D" uid="uid://vnp62frk4uc3" path="res://game/assets/sprites/flayon/CrouchHurt/Timeline 1_0002.png" id="75_8hpu6"]
-[ext_resource type="Texture2D" uid="uid://iv4bhjb703gx" path="res://game/assets/sprites/kanata/Burst/Timeline 1_0002.png" id="75_gulyj"]
 [ext_resource type="Texture2D" uid="uid://g0ecn43rfbdm" path="res://game/assets/sprites/flayon/CrouchHurt/Timeline 1_0003.png" id="76_4p678"]
 [ext_resource type="Texture2D" uid="uid://dyv4tyjdnyr1t" path="res://game/assets/sprites/flayon/CrouchParry/Timeline 1_0000.png" id="77_ujttm"]
 [ext_resource type="Texture2D" uid="uid://cddwp02mtkunj" path="res://game/assets/sprites/flayon/ForwardAirdash/Timeline 1_0000.png" id="79_4p678"]
@@ -406,7 +405,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("47_0kshd")]
+"values": [ExtResource("40_t00t0")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -418,7 +417,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.0166667, 0.0333333, 0.05, 0.0833333, 0.116667, 0.15),
 "transitions": PackedFloat32Array(1000000, 1000000, 1000000, 1000000, 1000000, 1000000, 1000000),
 "update": 0,
-"values": [Vector2(-5, 80), Vector2(5, 80), Vector2(-5, 80), Vector2(3, 80), Vector2(-3, 80), Vector2(3, 80), Vector2(0, 80)]
+"values": [Vector2(-55, 80), Vector2(-45, 80), Vector2(-55, 80), Vector2(-47, 80), Vector2(-53, 80), Vector2(-47, 80), Vector2(-50, 80)]
 }
 
 [sub_resource type="Animation" id="15"]
@@ -464,7 +463,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("47_0kshd")]
+"values": [ExtResource("40_t00t0")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -474,9 +473,9 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1000000),
 "update": 0,
-"values": [Vector2(-40, 70)]
+"values": [Vector2(-50, 80)]
 }
 
 [sub_resource type="Animation" id="58"]
@@ -696,10 +695,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.28333333, 0.78333336, 0.85, 0.8833333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.28333333, 0.7833333, 0.8333333, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("73_usesl"), ExtResource("74_xey44"), ExtResource("75_gulyj"), ExtResource("74_xey44"), ExtResource("73_usesl"), ExtResource("65_vlnda")]
+"values": [ExtResource("57_mrj0t"), ExtResource("58_t00t0"), ExtResource("106_m4qvm"), ExtResource("88_0rw8g"), ExtResource("107_rgqmm")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -870,10 +869,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.28333333, 0.41666666, 0.53333336),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("150_xm7kd")]
+"values": [ExtResource("150_xm7kd"), ExtResource("69_lfwk2"), ExtResource("106_m4qvm"), ExtResource("88_0rw8g")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -882,10 +881,10 @@ tracks/1/path = NodePath("Sprite2D:offset")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1000000),
+"times": PackedFloat32Array(0, 0.41666672),
+"transitions": PackedFloat32Array(1000000, 1000000),
 "update": 0,
-"values": [Vector2(0, 90)]
+"values": [Vector2(-20, 90), Vector2(-70, 90)]
 }
 
 [sub_resource type="Animation" id="Animation_8hpu6"]
@@ -1502,35 +1501,6 @@ tracks/1/keys = {
 "values": [Vector2(-100, 160)]
 }
 
-[sub_resource type="Animation" id="Animation_m4qvm"]
-resource_name = "LightDP"
-length = 0.916668
-step = 0.0166667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("150_xm7kd")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:offset")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1000000),
-"update": 0,
-"values": [Vector2(0, 90)]
-}
-
 [sub_resource type="Animation" id="10"]
 resource_name = "PreJump"
 length = 0.0833335
@@ -1966,6 +1936,64 @@ tracks/1/keys = {
 "values": [Vector2(0, 100)]
 }
 
+[sub_resource type="Animation" id="Animation_mrj0t"]
+resource_name = "AirSuper"
+length = 0.916668
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.28333333, 0.7833333, 0.8333333, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("57_mrj0t"), ExtResource("58_t00t0"), ExtResource("106_m4qvm"), ExtResource("88_0rw8g"), ExtResource("107_rgqmm")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1000000),
+"update": 0,
+"values": [Vector2(-70, 90)]
+}
+
+[sub_resource type="Animation" id="Animation_t00t0"]
+resource_name = "AirStomp"
+length = 0.916668
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("156_4p678")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1000000),
+"update": 0,
+"values": [Vector2(-60, 90)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wc0pe"]
 _data = {
 &"2A": SubResource("44"),
@@ -1981,6 +2009,8 @@ _data = {
 &"AirHit": SubResource("15"),
 &"AirParry": SubResource("49"),
 &"AirParryCatch": SubResource("58"),
+&"AirStomp": SubResource("Animation_t00t0"),
+&"AirSuper": SubResource("Animation_mrj0t"),
 &"AirTech": SubResource("32"),
 &"AirThrowHit": SubResource("17"),
 &"AirThrowWhiff": SubResource("16"),
@@ -2015,7 +2045,6 @@ _data = {
 &"KO": SubResource("35"),
 &"Knockdown": SubResource("27"),
 &"LandingRecovery": SubResource("73"),
-&"LightDP": SubResource("Animation_m4qvm"),
 &"PreJump": SubResource("10"),
 &"RESET": SubResource("Animation_janba"),
 &"Run": SubResource("21"),
@@ -2064,12 +2093,12 @@ script = ExtResource("150_1jibv")
 auto_reset = false
 
 [node name="Hitbox1" parent="." instance=ExtResource("151_0ymqg")]
-fixed_position_x = 17629186
-fixed_position_y = -12760254
-fixed_scale_x = 1526496
-fixed_scale_y = 1350290
-position = Vector2(269.00003, -194.70602)
-scale = Vector2(23.29248, 20.60379)
+fixed_position_x = 8629186
+fixed_position_y = -17760254
+fixed_scale_x = 526496
+fixed_scale_y = 1150290
+position = Vector2(131.67093, -270.99997)
+scale = Vector2(8.033691, 17.552032)
 
 [node name="Hitbox2" parent="." instance=ExtResource("151_0ymqg")]
 fixed_position_x = 40435712
@@ -2088,10 +2117,10 @@ scale = Vector2(9.209244, 16.344345)
 
 [node name="Hurtbox2" parent="." instance=ExtResource("152_d42n6")]
 fixed_position_x = 6546270
-fixed_position_y = -5362431
+fixed_position_y = -20362431
 fixed_scale_x = 645783
 fixed_scale_y = 665625
-position = Vector2(99.88815, -81.8242)
+position = Vector2(99.88815, -310.70605)
 scale = Vector2(9.853867, 10.156631)
 
 [node name="Hurtbox3" parent="." instance=ExtResource("152_d42n6")]

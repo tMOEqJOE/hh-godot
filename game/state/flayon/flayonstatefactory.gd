@@ -82,13 +82,10 @@ func _init():
 		"Flight5B": FlayonFlightBState,
 		"Flight5C": FlayonFlightCState,
 
-		"DuckPunch": FlayonDPState,
+		"DuckPunch": preload("res://game/state/flayon/flayonLightDPState.gd"),
 		"LightDuckPunch": preload("res://game/state/flayon/flayonLightDPState.gd"),
-		
-		"EXStarBall": FlayonEXStarBallState,
-		"AirEXStarBall": FlayonAirEXStarBallState,
-		"BionicArm" : FlayonBionicArmState,
-		"AngelInstall" : FlayonBionicArmState,
+
+		"AirStomp": FlayonAirStompState,
 		
 		"LandingRecovery": preload("res://game/state/flayon/flayonLandingRecovery.gd"),
 		
@@ -121,12 +118,6 @@ func common_idle_transitions(state: Dictionary, interpreter: InputInterpreter) -
 		return "CrouchParryWhiff"
 	elif (interpreter.is_holding_a_direction(Enums.Numpad.N5, state[Enums.StKey.leftface]) and interpreter.is_button_down(Enums.InputFlags.BDown | Enums.InputFlags.CDown)):
 		return "StandParryWhiff"
-	elif (Global.level_2_OK(state) and interpreter.special_input_button(Enums.SpecialInput.M632146, Enums.InputFlags.CDown, state[Enums.StKey.leftface])):
-		return "BionicArm"
-	elif (Global.level_1_OK(state) and interpreter.special_input_button(Enums.SpecialInput.M236, Enums.InputFlags.CDown, state[Enums.StKey.leftface])):
-		return "EXStarBall"
-	elif (Global.level_5_OK(state) and interpreter.special_input_button(Enums.SpecialInput.M214214, Enums.InputFlags.CDown, state[Enums.StKey.leftface])):
-		return "AngelInstall"
 	elif (interpreter.special_input_button(Enums.SpecialInput.M623, Enums.InputFlags.BDown, state[Enums.StKey.leftface])):
 		return "DuckPunch"
 	elif (interpreter.special_input_button(Enums.SpecialInput.M623, Enums.InputFlags.ADown, state[Enums.StKey.leftface])):
@@ -225,7 +216,7 @@ func common_jump_transitions_default(state: Dictionary, interpreter: InputInterp
 			interpreter.is_button_down(Enums.InputFlags.CDown)):
 		return "Jump2C"
 	elif (Global.level_1_OK(state) and interpreter.special_input_button(Enums.SpecialInput.M236, Enums.InputFlags.CDown, state[Enums.StKey.leftface])):
-		return "AirEXStarBall"
+		return "AirStomp"
 	elif (interpreter.special_input_button(Enums.SpecialInput.M623, Enums.InputFlags.BDown, state[Enums.StKey.leftface])):
 		return "DuckPunch"
 	elif (interpreter.special_input_button(Enums.SpecialInput.M623, Enums.InputFlags.ADown, state[Enums.StKey.leftface])):

@@ -101,8 +101,8 @@ func common_flight_transitions(state: Dictionary, interpreter: InputInterpreter)
 			change_state.call("AirAssistCallSuper")
 		else:
 			change_state.call("AirAssistCall")
-	if (level_1_OK(state) and interpreter.special_input_button(Enums.SpecialInput.M236, Enums.InputFlags.CDown, state[Enums.StKey.leftface])):
-		change_state.call("AirEXStarBall")
+	if (level_2_OK(state) and interpreter.special_input_button(Enums.SpecialInput.M236, Enums.InputFlags.CDown, state[Enums.StKey.leftface])):
+		change_state.call("AirStomp")
 	elif (interpreter.special_input_button(Enums.SpecialInput.M623, Enums.InputFlags.BDown, state[Enums.StKey.leftface])):
 		change_state.call("DuckPunch")
 	elif (interpreter.special_input_button(Enums.SpecialInput.M623, Enums.InputFlags.ADown, state[Enums.StKey.leftface])):

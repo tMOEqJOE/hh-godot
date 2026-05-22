@@ -24,12 +24,7 @@ func _init():
 
 func special_cancel(state: Dictionary, interpreter: InputInterpreter):
 	if (state[Enums.StKey.hitStopFrame] >= 0):
-		if (level_2_OK(state) and interpreter.special_input_button(Enums.SpecialInput.M632146, Enums.InputFlags.CDown, state[Enums.StKey.leftface])):
-			change_state.call("BionicArm")
-		elif (level_1_OK(state) and interpreter.special_input_button(Enums.SpecialInput.M236, Enums.InputFlags.CDown, state[Enums.StKey.leftface])):
-			change_state.call("EXStarBall")
-		elif (level_5_OK(state) and interpreter.special_input_button(Enums.SpecialInput.M214214, Enums.InputFlags.CDown, state[Enums.StKey.leftface])):
-			change_state.call("AngelInstall")
+		pass
 	if (state[Enums.StKey.frame] >= 5):
 		if (assist_ok(state, interpreter)):
 			if (interpreter.is_low_blocking(state[Enums.StKey.leftface])):
