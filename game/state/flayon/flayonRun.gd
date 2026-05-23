@@ -8,14 +8,14 @@ func _init():
 			Enums.StKey.Hit1Disable : true,
 			Enums.StKey.Hit2Disable : true,
 			Enums.StKey.Hurt1Disable : false,Enums.StKey.Hurt2Disable : true,Enums.StKey.Hurt3Disable : true,
-			Enums.StKey.Hurt1PosX : 0, Enums.StKey.Hurt1PosY : -12471104,
-			Enums.StKey.Hurt1ScaleX : 922078, Enums.StKey.Hurt1ScaleY : 1336954,
+			Enums.StKey.Hurt1PosX : 0, Enums.StKey.Hurt1PosY : -10087936,
+			Enums.StKey.Hurt1ScaleX : 922078, Enums.StKey.Hurt1ScaleY : 1171143,
 			},
 		1 : {
 			Enums.StKey.Summon : "rundust",
 			Enums.StKey.Hurt1Disable : false,Enums.StKey.Hurt2Disable : true,Enums.StKey.Hurt3Disable : true,
-			Enums.StKey.Hurt1PosX : 0, Enums.StKey.Hurt1PosY : -12471104,
-			Enums.StKey.Hurt1ScaleX : 922078, Enums.StKey.Hurt1ScaleY : 1336954,
+			Enums.StKey.Hurt1PosX : 0, Enums.StKey.Hurt1PosY : -10087936,
+			Enums.StKey.Hurt1ScaleX : 922078, Enums.StKey.Hurt1ScaleY : 1171143,
 		},
 	}
 	

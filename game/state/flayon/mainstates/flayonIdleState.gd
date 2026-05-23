@@ -9,11 +9,11 @@ func _init():
 			Enums.StKey.Hit2Disable : true,
 			Enums.StKey.Hurt1Disable : false,Enums.StKey.Hurt2Disable : false,Enums.StKey.Hurt3Disable : false,
 			Enums.StKey.Hurt1PosX : 327680, Enums.StKey.Hurt1PosY : -22085634,
-			Enums.StKey.Hurt1ScaleX : 257090, Enums.StKey.Hurt1ScaleY : 604574,
+			Enums.StKey.Hurt1ScaleX : 357090, Enums.StKey.Hurt1ScaleY : 554574,
 			Enums.StKey.Hurt2PosX : 131072, Enums.StKey.Hurt2PosY : -14352384,
-			Enums.StKey.Hurt2ScaleX : 401098, Enums.StKey.Hurt2ScaleY : -853100,
+			Enums.StKey.Hurt2ScaleX : 401098, Enums.StKey.Hurt2ScaleY : 853100,
 			Enums.StKey.Hurt3PosX : 262144, Enums.StKey.Hurt3PosY : -3538944,
-			Enums.StKey.Hurt3ScaleX : 783139, Enums.StKey.Hurt3ScaleY : -370037,
+			Enums.StKey.Hurt3ScaleX : 783139, Enums.StKey.Hurt3ScaleY : 370037,
 			},
 	}
 
