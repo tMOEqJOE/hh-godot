@@ -147,6 +147,8 @@ func refresh_combo_ui() -> void:
 	var sb := combo_list_label.get_v_scroll_bar()
 	await get_tree().process_frame  # let layout update first
 	var target_value := sb.max_value * float(current_combo_position) / float(max(1, combo_list_label.get_line_count() - 1))
+	if current_combo_position == 0 or current_combo_position == 1:
+		target_value = 0
 	create_tween().tween_property(sb, "value", target_value, 0.1)
 
 func _format_display_text(text: String) -> String:
