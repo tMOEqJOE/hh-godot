@@ -69,6 +69,10 @@ func _init():
 		"AirAssistCall2": FlayonAirAssistCall2State,
 		"AirAssistCallSuper": FlayonAirAssistCallSuperState,
 
+		"AirGrapple": FlayonAirGrappleState,
+		"Grapple": FlayonGrappleState,
+		"GrappleFollowup": FlayonGrappleFollowupState,
+
 		"FlightEnter": FlayonFlightEnterState,
 		"Flight": FlayonFlightState,
 		"FlightExit": FlayonFlightExitState,
@@ -125,6 +129,9 @@ func common_idle_transitions(state: Dictionary, interpreter: InputInterpreter) -
 		return "DuckPunch"
 	elif (interpreter.special_input_button(Enums.SpecialInput.M623, Enums.InputFlags.ADown, state[Enums.StKey.leftface])):
 		return "LightDuckPunch"
+	elif (interpreter.special_input_button(Enums.SpecialInput.M236, Enums.InputFlags.ADown, state[Enums.StKey.leftface]) or 
+			interpreter.special_input_button(Enums.SpecialInput.M236, Enums.InputFlags.BDown, state[Enums.StKey.leftface])):
+		return "Grapple"
 	elif (interpreter.special_input_button(Enums.SpecialInput.M214, Enums.InputFlags.ADown, state[Enums.StKey.leftface]) or 
 			interpreter.special_input_button(Enums.SpecialInput.M214, Enums.InputFlags.BDown, state[Enums.StKey.leftface]) or 
 			interpreter.special_input_button(Enums.SpecialInput.M214, Enums.InputFlags.CDown, state[Enums.StKey.leftface])):
@@ -224,6 +231,9 @@ func common_jump_transitions_default(state: Dictionary, interpreter: InputInterp
 		return "DuckPunch"
 	elif (interpreter.special_input_button(Enums.SpecialInput.M623, Enums.InputFlags.ADown, state[Enums.StKey.leftface])):
 		return "LightDuckPunch"
+	elif (interpreter.special_input_button(Enums.SpecialInput.M236, Enums.InputFlags.ADown, state[Enums.StKey.leftface]) or 
+			interpreter.special_input_button(Enums.SpecialInput.M236, Enums.InputFlags.BDown, state[Enums.StKey.leftface])):
+		return "AirGrapple"
 	elif (interpreter.special_input_button(Enums.SpecialInput.M214, Enums.InputFlags.ADown, state[Enums.StKey.leftface]) or 
 			interpreter.special_input_button(Enums.SpecialInput.M214, Enums.InputFlags.BDown, state[Enums.StKey.leftface]) or 
 			interpreter.special_input_button(Enums.SpecialInput.M214, Enums.InputFlags.CDown, state[Enums.StKey.leftface])):
