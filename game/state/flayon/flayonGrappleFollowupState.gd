@@ -48,6 +48,7 @@ func _init():
 func enter(state: Dictionary) -> void:
 	super.enter(state)
 	anim.play("GrappleFollowup")
+	state[Enums.StKey.velocity_x] = 0
 	state[Enums.StKey.velocity_y] = 0
 	state[Enums.StKey.accel_y] = 0
 
@@ -71,9 +72,6 @@ func meter_cancel(state: Dictionary, interpreter: InputInterpreter):
 				state[Enums.StKey.cancelState] = "AirAssistCall"
 
 func special_cancel(state: Dictionary, interpreter: InputInterpreter):
-	pass
-
-func gatling_cancel(state: Dictionary, interpreter: InputInterpreter):
 	pass
 
 func reaction(state: Dictionary, interpreter: InputInterpreter, event_cause: int) -> void:
