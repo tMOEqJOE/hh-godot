@@ -104,9 +104,9 @@ func common_flight_transitions(state: Dictionary, interpreter: InputInterpreter)
 	if (level_2_OK(state) and interpreter.special_input_button(Enums.SpecialInput.M236, Enums.InputFlags.CDown, state[Enums.StKey.leftface])):
 		change_state.call("AirStomp")
 	elif (interpreter.special_input_button(Enums.SpecialInput.M623, Enums.InputFlags.BDown, state[Enums.StKey.leftface])):
-		change_state.call("DuckPunch")
+		change_state.call("RyukenShiki")
 	elif (interpreter.special_input_button(Enums.SpecialInput.M623, Enums.InputFlags.ADown, state[Enums.StKey.leftface])):
-		change_state.call("LightDuckPunch")
+		change_state.call("RyukenShiki")
 	elif (interpreter.special_input_button(Enums.SpecialInput.M236, Enums.InputFlags.ADown, state[Enums.StKey.leftface]) or 
 			interpreter.special_input_button(Enums.SpecialInput.M236, Enums.InputFlags.BDown, state[Enums.StKey.leftface])):
 		change_state.call("AirGrapple")

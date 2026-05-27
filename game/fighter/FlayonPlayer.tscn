@@ -1277,6 +1277,64 @@ tracks/1/keys = {
 "values": [Vector2(-70, 120)]
 }
 
+[sub_resource type="Animation" id="Animation_gsj2t"]
+resource_name = "Grapple"
+length = 0.6666696
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.28333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("129_6wc6i"), ExtResource("130_gsj2t")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1000000),
+"update": 0,
+"values": [Vector2(-40, 150)]
+}
+
+[sub_resource type="Animation" id="Animation_l8yul"]
+resource_name = "GrappleFollowup"
+length = 0.6666696
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.21666667, 0.28333333, 0.33333334, 0.43333334, 0.48333332),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("129_ukakn"), ExtResource("146_d6y3q"), ExtResource("147_qfokg"), ExtResource("148_weqwf"), ExtResource("149_s1gn8"), ExtResource("150_pbemb")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1000000),
+"update": 0,
+"values": [Vector2(-20, 70)]
+}
+
 [sub_resource type="Animation" id="5"]
 resource_name = "GroundAssist"
 length = 0.20000206
@@ -2031,64 +2089,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(0, 100)]
-}
-
-[sub_resource type="Animation" id="Animation_l8yul"]
-resource_name = "GrappleFollowup"
-length = 0.6666696
-step = 0.0166667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.21666667, 0.28333333, 0.33333334, 0.43333334, 0.48333332),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("129_ukakn"), ExtResource("146_d6y3q"), ExtResource("147_qfokg"), ExtResource("148_weqwf"), ExtResource("149_s1gn8"), ExtResource("150_pbemb")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:offset")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1000000),
-"update": 0,
-"values": [Vector2(-20, 70)]
-}
-
-[sub_resource type="Animation" id="Animation_gsj2t"]
-resource_name = "Grapple"
-length = 0.6666696
-step = 0.0166667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.28333333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [ExtResource("129_6wc6i"), ExtResource("130_gsj2t")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:offset")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1000000),
-"update": 0,
-"values": [Vector2(-40, 150)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wc0pe"]

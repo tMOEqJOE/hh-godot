@@ -86,8 +86,7 @@ func _init():
 		"Flight5B": FlayonFlightBState,
 		"Flight5C": FlayonFlightCState,
 
-		"DuckPunch": preload("res://game/state/flayon/flayonLightDPState.gd"),
-		"LightDuckPunch": preload("res://game/state/flayon/flayonLightDPState.gd"),
+		"RyukenShiki": preload("res://game/state/flayon/flayonLightDPState.gd"),
 
 		"AirStomp": FlayonAirStompState,
 		"DeusExMachina": FlayonRTrusState,
@@ -126,9 +125,9 @@ func common_idle_transitions(state: Dictionary, interpreter: InputInterpreter) -
 	elif (Global.level_2_OK(state) and interpreter.special_input_button(Enums.SpecialInput.M236, Enums.InputFlags.CDown, state[Enums.StKey.leftface])):
 		return "DeusExMachina"
 	elif (interpreter.special_input_button(Enums.SpecialInput.M623, Enums.InputFlags.BDown, state[Enums.StKey.leftface])):
-		return "DuckPunch"
+		return "RyukenShiki"
 	elif (interpreter.special_input_button(Enums.SpecialInput.M623, Enums.InputFlags.ADown, state[Enums.StKey.leftface])):
-		return "LightDuckPunch"
+		return "RyukenShiki"
 	elif (interpreter.special_input_button(Enums.SpecialInput.M236, Enums.InputFlags.ADown, state[Enums.StKey.leftface]) or 
 			interpreter.special_input_button(Enums.SpecialInput.M236, Enums.InputFlags.BDown, state[Enums.StKey.leftface])):
 		return "Grapple"
@@ -228,9 +227,9 @@ func common_jump_transitions_default(state: Dictionary, interpreter: InputInterp
 	elif (Global.level_2_OK(state) and interpreter.special_input_button(Enums.SpecialInput.M236, Enums.InputFlags.CDown, state[Enums.StKey.leftface])):
 		return "AirStomp"
 	elif (interpreter.special_input_button(Enums.SpecialInput.M623, Enums.InputFlags.BDown, state[Enums.StKey.leftface])):
-		return "DuckPunch"
+		return "RyukenShiki"
 	elif (interpreter.special_input_button(Enums.SpecialInput.M623, Enums.InputFlags.ADown, state[Enums.StKey.leftface])):
-		return "LightDuckPunch"
+		return "RyukenShiki"
 	elif (interpreter.special_input_button(Enums.SpecialInput.M236, Enums.InputFlags.ADown, state[Enums.StKey.leftface]) or 
 			interpreter.special_input_button(Enums.SpecialInput.M236, Enums.InputFlags.BDown, state[Enums.StKey.leftface])):
 		return "AirGrapple"

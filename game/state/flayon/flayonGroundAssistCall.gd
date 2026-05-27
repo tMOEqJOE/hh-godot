@@ -3,7 +3,7 @@ extends GroundAssistCallState
 class_name FlayonGroundAssistCallState
 
 func _init():
-	CallSound = preload("res://game/assets/voice/flayon/mxf_that's right.wav")
+	CallSound = preload("res://game/assets/voice/flayon/mxf_thats_right.wav")
 	endFrame = Util.BASE_ASSIST_RECOVERY
 	
 	anim_data = {
@@ -24,7 +24,8 @@ func _init():
 
 func special_cancel(state: Dictionary, interpreter: InputInterpreter):
 	if (state[Enums.StKey.hitStopFrame] >= 0):
-		pass
+		if (level_2_OK(state) and interpreter.special_input_button(Enums.SpecialInput.M236, Enums.InputFlags.CDown, state[Enums.StKey.leftface])):
+			change_state.call("DeusExMachina")
 	if (state[Enums.StKey.frame] >= 5):
 		if (assist_ok(state, interpreter)):
 			if (interpreter.is_low_blocking(state[Enums.StKey.leftface])):

@@ -40,8 +40,8 @@ func _init():
 			Enums.StKey.attack_type : Enums.AttackType.WallBouncer,
 			Enums.StKey.launch_dir_x : -SGFixed.ONE*75,
 			Enums.StKey.launch_dir_y : -SGFixed.ONE*80,
-			Enums.StKey.chip_damage: 6,
-			Enums.StKey.min_damage: 12,
+			Enums.StKey.chip_damage: 8,
+			Enums.StKey.min_damage: 22,
 			Enums.StKey.attack_damage: 55,
 			Enums.StKey.hitstop: 22,
 			Enums.StKey.hitstun: 120,
@@ -77,31 +77,7 @@ func physics_tick(state: Dictionary) -> void:
 		SyncManager.play_sound("FlayonVoiceReverb", VoiceSound, {"bus": "ReverbVoice"})
 
 func gatling_cancel(state: Dictionary, interpreter: InputInterpreter):
-	if (state[Enums.StKey.hitStopFrame] >= 0):
-		if (interpreter.is_holding_a_direction(Enums.Numpad.N6, state[Enums.StKey.leftface]) and 
-				interpreter.is_button_down(Enums.InputFlags.CDown)):
-			state[Enums.StKey.cancelState] = "Stand6C"
-		elif (interpreter.is_holding_a_direction(Enums.Numpad.N6, state[Enums.StKey.leftface]) and 
-				interpreter.is_button_down(Enums.InputFlags.ADown)):
-			state[Enums.StKey.cancelState] = "Stand6A"
-		elif (interpreter.is_holding_a_direction(Enums.Numpad.N3, state[Enums.StKey.leftface]) and 
-				interpreter.is_button_down(Enums.InputFlags.CDown)):
-			state[Enums.StKey.cancelState] = "Crouch3C"
-		elif ((interpreter.is_holding_a_direction(Enums.Numpad.N1, state[Enums.StKey.leftface]) or
-				interpreter.is_holding_a_direction(Enums.Numpad.N2, state[Enums.StKey.leftface]) or
-				interpreter.is_holding_a_direction(Enums.Numpad.N3, state[Enums.StKey.leftface])) and 
-				interpreter.is_button_down(Enums.InputFlags.CDown)):
-			state[Enums.StKey.cancelState] = "Crouch2C"
-		elif ((interpreter.is_holding_a_direction(Enums.Numpad.N1, state[Enums.StKey.leftface]) or
-				interpreter.is_holding_a_direction(Enums.Numpad.N2, state[Enums.StKey.leftface]) or
-				interpreter.is_holding_a_direction(Enums.Numpad.N3, state[Enums.StKey.leftface])) and 
-				interpreter.is_button_down(Enums.InputFlags.BDown)):
-			state[Enums.StKey.cancelState] = "Crouch2B"
-		elif (interpreter.is_button_down(Enums.InputFlags.CDown)):
-			state[Enums.StKey.cancelState] = "Stand5C"
-		elif (interpreter.is_button_down(Enums.InputFlags.BDown)):
-			state[Enums.StKey.cancelState] = "Stand5B"
-
+	pass
 
 func jump_cancel(state: Dictionary, interpreter: InputInterpreter):
 	pass

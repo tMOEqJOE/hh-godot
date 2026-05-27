@@ -499,6 +499,35 @@ const SuiseiMoveList: = [
 	["632146B", "Next Color Chainsaw", "Level 2", "lockdown projectile"],
 ]
 
+const FlayonMoveList: = [
+	["Machina X Flayon"],
+	["Unique Movement"],
+	["Backdash", "", "", "Backflips and recovers midair"],
+	["Unique Normals"],
+	["6A", "Missing", "", ""],
+	["cB", "Missing", "", ""],
+	["Reverse Chains", "", "", "Can cancel any normal into any different normal"],
+	["Air Throw Cancel", "", "", "Can cancel air normals into air throw"],
+	["Jump Cancels", "", "", "Only A normals are jump cancel OK"],
+	["Command Normals"],
+	["No reverse chains on command normals", "", "", ""],
+	["3C", "", "", "Universal launcher, Jump cancel OK"],
+	["6C", "", "", "only cancels into 3C"],
+	["j2C", "Pizza Cutter", "", "Multi hit crossup"],
+	["j6C", "", "", ""],
+	["Specials"],
+	["236A or B (Air OK)", "Grappler's Soul", "", "Command Grab, cancel into normals or jump on hit"],
+	["623A or B (Air OK)", "Ryuken-shiki", "", "DP, delay cancels into air throw"],
+	["Flight"],
+	["214X (Air OK)", "Flight", "", "Spend super meter to fly"],
+	["Airdash cancel", "", "", "Cancel Flight normals into 4 way airdash"],
+	["Reverse Chains", "", "", "Flight Normals are reverse chain OK"],
+	["Flight > 214X", "Flight Exit", "", ""],
+	["Supers"],
+	["j236C (Air Only)", "", "Level 2", "Hits before superflash"],
+	["236C", "Deus EX Machina", "Level 2", "Invincible Super"],
+]
+
 const FubukiMoveList: = [
 	["Assist: Shirakami Fubuki"],
 	["Attacks"],
