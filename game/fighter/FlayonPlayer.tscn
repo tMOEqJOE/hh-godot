@@ -1,4 +1,4 @@
-[gd_scene load_steps=204 format=3 uid="uid://cbwy2j4nbkk2j"]
+[gd_scene load_steps=200 format=3 uid="uid://cbwy2j4nbkk2j"]
 
 [ext_resource type="Script" uid="uid://dgsx3duqjaeo5" path="res://game/fighter/PointPlayer.gd" id="1_m4qvm"]
 [ext_resource type="Material" uid="uid://bt3lvyqtd78u0" path="res://game/assets/shaders/ColorSwapMat.tres" id="2_xm7kd"]
@@ -44,10 +44,6 @@
 [ext_resource type="Texture2D" uid="uid://sievhdrjqgxj" path="res://game/assets/sprites/flayon/AirHurt/Timeline 1_0002.png" id="44_kpeac"]
 [ext_resource type="Texture2D" uid="uid://brihktpdhj24j" path="res://game/assets/sprites/flayon/AirHurt/Timeline 1_0003.png" id="45_f32ml"]
 [ext_resource type="Texture2D" uid="uid://dgm50gy35vbkt" path="res://game/assets/sprites/flayon/AirParry/Timeline 1_0000.png" id="46_en3gp"]
-[ext_resource type="Texture2D" uid="uid://cxje3mk2fhcg6" path="res://game/assets/sprites/kanata/AirHurt/Timeline 1_0000.png" id="48_lqksc"]
-[ext_resource type="Texture2D" uid="uid://n67moi5p1rpf" path="res://game/assets/sprites/kanata/AirHurt/Timeline 1_0001.png" id="49_4r5l5"]
-[ext_resource type="Texture2D" uid="uid://dwkqlubkohr38" path="res://game/assets/sprites/kanata/AirHurt/Timeline 1_0002.png" id="50_fituu"]
-[ext_resource type="Texture2D" uid="uid://cl6vkmct4tcg6" path="res://game/assets/sprites/kanata/AirHurt/Timeline 1_0003.png" id="51_lqcph"]
 [ext_resource type="Texture2D" uid="uid://civum72y5c4k3" path="res://game/assets/sprites/flayon/ThrowWhiff/Timeline 1_0000.png" id="52_fw7s0"]
 [ext_resource type="Texture2D" uid="uid://bm7snof4wwoyf" path="res://game/assets/sprites/flayon/Burst/Timeline 1_0000.png" id="57_mrj0t"]
 [ext_resource type="Texture2D" uid="uid://cqdk1owmfd528" path="res://game/assets/sprites/flayon/Burst/Timeline 1_0001.png" id="58_t00t0"]
@@ -1551,10 +1547,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 0.266667, 0.416667, 0.6, 0.866667, 1.21667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.0666667, 0.28333333, 0.43333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("48_lqksc"), ExtResource("49_4r5l5"), ExtResource("50_fituu"), ExtResource("51_lqcph"), ExtResource("49_4r5l5"), ExtResource("50_fituu"), ExtResource("51_lqcph")]
+"values": [ExtResource("42_xpm3i"), ExtResource("43_ta16v"), ExtResource("44_kpeac"), ExtResource("45_f32ml")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1566,7 +1562,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-40, 90)]
+"values": [Vector2(-40, 145)]
 }
 
 [sub_resource type="Animation" id="27"]
