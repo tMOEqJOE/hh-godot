@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://fhvwp2xfa544" path="res://game/menus/buttonmap/ButtonMapMenuBase.tscn" id="1"]
 [ext_resource type="Script" uid="uid://n7rk1x7y5qog" path="res://game/menus/buttonmap/ButtonMapMenu.gd" id="2"]
-[ext_resource type="Texture2D" uid="uid://by0jdcp4y7to8" path="res://game/assets/sprites/UI/MainMenus/MenuTutorials/Controller.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://cmkg8mwmwu0tr" path="res://game/assets/sprites/UI/MainMenus/MenuTutorials/Controller.png" id="3"]
 
 [node name="ButtonMap" type="Node2D"]
 z_index = 2000
@@ -12,6 +12,7 @@ script = ExtResource("2")
 position = Vector2(2, -1)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(480, 42)
+visible = false
+position = Vector2(532, 34)
 scale = Vector2(1.06925, 0.735248)
 texture = ExtResource("3")
