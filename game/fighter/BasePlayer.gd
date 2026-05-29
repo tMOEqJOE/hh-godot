@@ -12,6 +12,8 @@ var Hurtbox3
 
 signal strike_hurt (damage, hitCount, invalid, block, guard)
 
+signal attack_hurt(hitbox_name)
+
 signal combo_exit () # invalid combo
 
 signal super_freeze (x, y, leftface)
@@ -627,7 +629,7 @@ func just_strike_block(opponent_attack: Dictionary, hit_data: Dictionary) -> voi
 #		currentState[Enums.StKey.sync_rate] -= 5536*(attack_damage+10)
 		emit_signal("strike_hurt", chip_damage, currentState[Enums.StKey.hitCount], false, true, opponent_attack[Enums.StKey.guard])
 
-func on_attack_hurt(react_type: int, opponent_attack: Dictionary, leftface: bool, attack_leftface: bool) -> Dictionary:
+func on_attack_hurt(react_type: int, opponent_attack: Dictionary, leftface: bool, attack_leftface: bool, hitbox_name: String = "Unknown") -> Dictionary:
 	var hit_data : Dictionary = {
 		Enums.StKey.hitCount: currentState[Enums.StKey.hitCount],
 		Enums.StKey.comboTime: currentState[Enums.StKey.comboTime],
@@ -636,6 +638,7 @@ func on_attack_hurt(react_type: int, opponent_attack: Dictionary, leftface: bool
 		"counter": false,
 		"otg": false,
 	}
+	emit_signal("attack_hurt", hitbox_name)
 	if (opponent_attack[Enums.StKey.counter_hit] != Enums.AttackType.BurstLock and
 		(currentState[Enums.StKey.counterOK] || (not on_block(opponent_attack, leftface) and currentState[Enums.StKey.assist_meter] < Util.ASSIST_STOCK ))):
 		if (currentState[Enums.StKey.assist_meter] < Util.ASSIST_STOCK):

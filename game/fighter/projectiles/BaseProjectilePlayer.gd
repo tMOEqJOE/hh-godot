@@ -223,7 +223,7 @@ func on_attack_hit(attack_type: int, opponent_hit_data: Dictionary) -> void:
 		new_sync_rate = 0
 	emit_signal("battery_player", new_super_meter, new_sync_rate, new_assist_meter)
 
-func on_attack_hurt(react_type: int, _opponent_attack: Dictionary, _leftface: bool, _attack_leftface: bool) -> Dictionary:
+func on_attack_hurt(react_type: int, _opponent_attack: Dictionary, _leftface: bool, _attack_leftface: bool, hitbox_name: String = "Unknown") -> Dictionary:
 	var hit_data : Dictionary = {
 		Enums.StKey.hitCount: 1,
 		Enums.StKey.comboTime: 1,
