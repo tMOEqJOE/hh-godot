@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://cobvjjtlmc7d"]
+
+[ext_resource type="PackedScene" uid="uid://7hfyforyu7i4" path="res://game/screens/UILayer.tscn" id="1_4rlay"]
+[ext_resource type="Script" uid="uid://iicbqvwyid1b" path="res://game/screens/netplay/netplay_screen.gd" id="1_xhlqy"]
+[ext_resource type="Material" uid="uid://bofoucuf31088" path="res://game/assets/shaders/EarthBoundV1.tres" id="3_as7ib"]
+[ext_resource type="PackedScene" uid="uid://cb215mqewgiow" path="res://game/screens/netplay/LoginToServerScreen.tscn" id="3_cn5ca"]
+[ext_resource type="Texture2D" uid="uid://doomqcq3aygwy" path="res://game/assets/sprites/UI/MainMenus/WIMScreen.png" id="4_cn5ca"]
+
+[node name="NetplayScreen" type="Node2D"]
+script = ExtResource("1_xhlqy")
+
+[node name="UILayer" parent="." instance=ExtResource("1_4rlay")]
+
+[node name="LoginToServerScreen" parent="UILayer/Screens" index="0" instance=ExtResource("3_cn5ca")]
+layout_mode = 0
+
+[node name="Message" parent="UILayer/Overlay" index="1"]
+anchors_preset = -1
+offset_bottom = 22.333334
+
+[node name="BackButton" parent="UILayer/Overlay" index="2"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = -8.0
+offset_bottom = 8.0
+grow_horizontal = 0
+
+[node name="Background" type="Sprite2D" parent="."]
+self_modulate = Color(0.0862745, 0.176471, 0.411765, 1)
+texture_repeat = 3
+material = ExtResource("3_as7ib")
+position = Vector2(961, 539)
+texture = ExtResource("4_cn5ca")
+
+[editable path="UILayer"]

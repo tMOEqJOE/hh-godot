@@ -39,3 +39,10 @@ func handle_input(state: Dictionary, interpreter: InputInterpreter) -> void:
 			state[Enums.StKey.kara_OK] = false
 		if (burst_OK(state, interpreter)):
 			change_state.call("Burst")
+
+
+func reaction(state: Dictionary, interpreter: InputInterpreter, event_cause: int) -> void:
+	if (event_cause == Enums.Reaction.GroundLand):
+		pass
+	else:
+		super.reaction(state, interpreter, event_cause)

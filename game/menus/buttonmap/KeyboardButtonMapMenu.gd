@@ -4,7 +4,7 @@ class_name KeyboardButtonMapMenu
 
 func _ready():
 	super._ready()
-	#$ButtonMapBase/GridContainer.modulate = "#00ffc9"
+	ARROW_SPRITE_JUMP = 52
 
 func free_button_menu():
 	queue_free()

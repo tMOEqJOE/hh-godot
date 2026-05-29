@@ -13,7 +13,7 @@ var character = [
 	[Enums.PointCharacters.Ollie, Enums.PointCharacters.Suisei, Enums.PointCharacters.Kanata],
 	[Enums.PointCharacters.Mio, Enums.PointCharacters.Subaru, Enums.PointCharacters.Oga],
 	[Enums.PointCharacters.Random, Enums.PointCharacters.Random, Enums.PointCharacters.Random],
-	[Enums.PointCharacters.Random, Enums.PointCharacters.Random, Enums.PointCharacters.Random]
+	[Enums.PointCharacters.Flayon, Enums.PointCharacters.Random, Enums.PointCharacters.Random]
 	]
 
 var assist2 = [

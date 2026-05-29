@@ -1,18 +1,19 @@
-[gd_scene load_steps=15 format=3 uid="uid://crkvty0v7xv45"]
+[gd_scene load_steps=16 format=3 uid="uid://crkvty0v7xv45"]
 
 [ext_resource type="Script" uid="uid://c3crr8e8iawl" path="res://game/menus/training/TrainingMain.gd" id="1"]
 [ext_resource type="PackedScene" path="res://game/ui/FPSCounter.tscn" id="2"]
 [ext_resource type="Script" uid="uid://bpq5gaa5mv3gf" path="res://game/menus/training/LoadedStateLabel.gd" id="2_34aeq"]
-[ext_resource type="FontFile" uid="uid://d28sv0htum78d" path="res://game/assets/monogram_extended.ttf" id="3"]
+[ext_resource type="FontFile" uid="uid://b2jogmfxodv6o" path="res://game/assets/monogram_extended.ttf" id="3"]
 [ext_resource type="PackedScene" uid="uid://c5xgqi0ik2bpc" path="res://game/ui/MatchWinCounter.tscn" id="4"]
 [ext_resource type="Script" uid="uid://c2ba4562pur36" path="res://game/menus/training/TrainingOptionsMenu.gd" id="5"]
-[ext_resource type="Texture2D" uid="uid://csm7c5dbea7x2" path="res://game/assets/sprites/UI/CharacterSelect/WOOD.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://bvaehcl811u1" path="res://game/assets/sprites/UI/CharacterSelect/WOOD.png" id="6"]
 [ext_resource type="Script" uid="uid://bqourwt6u6d5m" path="res://game/menus/training/FastSlider.gd" id="7"]
 [ext_resource type="Script" uid="uid://cljcn86ml7wo6" path="res://game/menus/training/MeterNumber.gd" id="8"]
 [ext_resource type="Script" uid="uid://c6wx1x7lf5yw1" path="res://game/ui/DamageCounter.gd" id="9"]
-[ext_resource type="Texture2D" uid="uid://df4xd4vjlbvnt" path="res://game/assets/sprites/UI/CharacterSelect/MiniPortraits/SoraButton.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://vuvyurs2s2yb" path="res://game/assets/sprites/UI/CharacterSelect/MiniPortraits/SoraButton.png" id="10"]
 [ext_resource type="PackedScene" path="res://game/menus/training/CommandList.tscn" id="11"]
-[ext_resource type="PackedScene" path="res://game/menus/training/TrainingInputDisplay.tscn" id="12"]
+[ext_resource type="Theme" uid="uid://of3afybns5hm" path="res://game/menus/default_menu.tres" id="11_s221j"]
+[ext_resource type="PackedScene" uid="uid://cnx2a5iq536el" path="res://game/menus/training/TrainingInputDisplay.tscn" id="12"]
 
 [sub_resource type="FontFile" id="2"]
 fallbacks = Array[Font]([ExtResource("3")])
@@ -160,6 +161,7 @@ offset_top = 53.0
 offset_right = 622.0
 offset_bottom = 509.0
 scale = Vector2(2.8483367, 1.8152132)
+theme = ExtResource("11_s221j")
 columns = 3
 script = ExtResource("5")
 

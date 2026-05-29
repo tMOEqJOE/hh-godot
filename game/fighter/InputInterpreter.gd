@@ -220,6 +220,15 @@ func button_dash(forward:bool, left_face:bool) -> bool:
 				return is_holding_a_direction_index(i, Enums.Numpad.N4, left_face)
 	return false
 
+func button_dash_four_way(numpad: int, left_face:bool) -> bool:
+	for i in range(Util.INPUT_BUFFER_LENIANCY):
+		if (is_holding_a_direction_index(i, numpad, left_face)):
+			if (long_kara_check(i, Enums.InputFlags.ADown | Enums.InputFlags.BDown) or 
+					long_kara_check(i, Enums.InputFlags.BDown | Enums.InputFlags.CDown) or 
+					long_kara_check(i, Enums.InputFlags.ADown | Enums.InputFlags.CDown)):
+				return true
+	return false
+
 func is_dashing(forward:bool, left_face:bool) -> bool:
 	return (is_stick_dashing(forward, left_face) or button_dash(forward, left_face))
 
@@ -234,12 +243,27 @@ func is_button_dashing(forward:bool, left_face:bool) -> bool:
 
 func is_air_dashing(forward:bool, left_face:bool) -> bool:
 	return (is_stick_air_dashing(forward, left_face) or button_dash(forward, left_face))
+
+func is_air_dashing_four_way(numpad:int, left_face:bool) -> bool:
+	return (is_stick_air_dashing_four_way(numpad, left_face) or button_dash_four_way(numpad, left_face))
 	
 func is_stick_air_dashing(forward:bool, left_face:bool) -> bool:
 	if (forward):
 		return special_input_no_hold(Enums.SpecialInput.FAirDash, left_face)
 	else:
 		return special_input_no_hold(Enums.SpecialInput.BAirDash, left_face)
+
+func is_stick_air_dashing_four_way(numpad:int, left_face:bool) -> bool:
+	if (numpad == Enums.Numpad.N6):
+		return special_input_no_hold(Enums.SpecialInput.FAirDash, left_face)
+	elif (numpad == Enums.Numpad.N4):
+		return special_input_no_hold(Enums.SpecialInput.BAirDash, left_face)
+	elif (numpad == Enums.Numpad.N8):
+		return special_input_no_hold(Enums.SpecialInput.UAirDash, left_face)
+	elif (numpad == Enums.Numpad.N2):
+		return special_input_no_hold(Enums.SpecialInput.DAirDash, left_face)
+	else:
+		return false
 
 func special_input_button(input, buttons, left_face) -> bool:
 	if (is_button_down(buttons)):
