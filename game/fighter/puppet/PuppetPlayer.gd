@@ -134,7 +134,7 @@ func normal_strike_hurt(react_type: int, opponent_attack: Dictionary, leftface: 
 	})
 	emit_signal("strike_hurt", 1, 1, false, false, opponent_attack[Enums.StKey.guard])
 
-func on_attack_hurt(react_type: int, opponent_attack: Dictionary, leftface: bool, attack_leftface: bool) -> Dictionary:
+func on_attack_hurt(react_type: int, opponent_attack: Dictionary, leftface: bool, attack_leftface: bool, hitbox_name: String = "Unknown") -> Dictionary:
 	var hit_data : Dictionary = {
 		Enums.StKey.hitCount: 1,
 		Enums.StKey.comboTime: 1,

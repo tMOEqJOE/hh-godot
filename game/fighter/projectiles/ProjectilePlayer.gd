@@ -67,7 +67,7 @@ func on_attack_hit(attack_type: int, opponent_hit_data: Dictionary) -> void:
 		currentState[Enums.StKey.projectile_hp] -= 1
 	play_projectile_sound()
 
-func on_attack_hurt(react_type: int, opponent_attack: Dictionary, leftface: bool, attack_leftface: bool) -> Dictionary:
+func on_attack_hurt(react_type: int, opponent_attack: Dictionary, leftface: bool, attack_leftface: bool , hitbox_name: String = "Unknown") -> Dictionary:
 	var hit_data : Dictionary = {
 		Enums.StKey.hitCount: 1,
 		Enums.StKey.comboTime: 1,
