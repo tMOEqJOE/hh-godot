@@ -1,13 +1,14 @@
 [remap]
 
 importer="wav"
-type="AudioStreamSample"
-path="res://.import/mxf_crazyy reel.wav-8785c6f89cf134b39f8183297f63e8be.sample"
+type="AudioStreamWAV"
+uid="uid://bwb2xp26k06jt"
+path="res://.godot/imported/mxf_crazyy reel.wav-8785c6f89cf134b39f8183297f63e8be.sample"
 
 [deps]
 
 source_file="res://game/assets/voice/flayon/mxf_crazyy reel.wav"
-dest_files=[ "res://.import/mxf_crazyy reel.wav-8785c6f89cf134b39f8183297f63e8be.sample" ]
+dest_files=["res://.godot/imported/mxf_crazyy reel.wav-8785c6f89cf134b39f8183297f63e8be.sample"]
 
 [params]
 

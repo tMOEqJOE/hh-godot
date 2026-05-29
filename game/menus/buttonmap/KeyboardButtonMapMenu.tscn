@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cje1j3rhm7y68" path="res://game/menus/buttonmap/KeyboardButtonMapMenuBase.tscn" id="1"]
 [ext_resource type="Script" uid="uid://ds18l7gu2tqaf" path="res://game/menus/buttonmap/KeyboardButtonMapMenu.gd" id="2"]
-[ext_resource type="Texture2D" uid="uid://df4xd4vjlbvnt" path="res://game/assets/sprites/UI/CharacterSelect/MiniPortraits/SoraButton.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://vuvyurs2s2yb" path="res://game/assets/sprites/UI/CharacterSelect/MiniPortraits/SoraButton.png" id="3"]
 
 [node name="KeyboardButtonMap" type="Node2D"]
 z_index = 2000
@@ -11,6 +11,7 @@ script = ExtResource("2")
 [node name="ButtonMapBase" parent="." instance=ExtResource("1")]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(485, 42.0001)
 scale = Vector2(1.36794, 0.389091)
 texture = ExtResource("3")

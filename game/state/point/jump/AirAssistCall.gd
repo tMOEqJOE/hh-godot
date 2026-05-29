@@ -65,3 +65,10 @@ func jump_cancel(state: Dictionary, interpreter: InputInterpreter):
 
 func gatling_cancel(state: Dictionary, interpreter: InputInterpreter):
 	pass
+
+
+func reaction(state: Dictionary, interpreter: InputInterpreter, event_cause: int) -> void:
+	if (event_cause == Enums.Reaction.GroundLand and state[Enums.StKey.frame] <= 2):
+		pass
+	else:
+		super.reaction(state, interpreter, event_cause)

@@ -83,6 +83,8 @@ func point_name_abbrev(point) -> String:
 			return "KAN"
 		Enums.PointCharacters.Suisei:
 			return "SUI"
+		Enums.PointCharacters.Flayon: 
+			return "FLA"
 		_:
 			printerr("invalid point character given")
 			return "???"
@@ -111,6 +113,8 @@ func assist_name_abbrev(assist) -> String:
 			return "KAN"
 		Enums.AssistCharacters.Suisei: 
 			return "SUI"
+		Enums.AssistCharacters.Flayon: 
+			return "FLA"
 		_:
 			printerr("invalid assist character given")
 			return "???"

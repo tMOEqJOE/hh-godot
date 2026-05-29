@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://bngmafg6y7eqk"]
+[gd_scene load_steps=63 format=3 uid="uid://bngmafg6y7eqk"]
 
 [ext_resource type="PackedScene" uid="uid://bee7pcc18xndp" path="res://game/ui/SyncRateMeter.tscn" id="1"]
 [ext_resource type="PackedScene" uid="uid://btifqf7jlg8wh" path="res://game/StageCage.tscn" id="2"]
@@ -10,42 +10,41 @@
 [ext_resource type="PackedScene" uid="uid://dlpdov1eot246" path="res://game/ui/RoundTimer.tscn" id="7_yl1ep"]
 [ext_resource type="PackedScene" path="res://game/ui/HPBar.tscn" id="8"]
 [ext_resource type="PackedScene" path="res://game/ui/RoundCounter.tscn" id="9"]
-[ext_resource type="Texture2D" uid="uid://phia8rmjqc86" path="res://game/assets/sprites/UI/DOWN/Timeline 1_0012.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://y8k5ejxk6e5h" path="res://game/assets/sprites/UI/DOWN/Timeline 1_0012.png" id="11"]
 [ext_resource type="PackedScene" uid="uid://cqee8xg8vov1x" path="res://game/StageCollision.tscn" id="12"]
-[ext_resource type="Texture2D" uid="uid://ffkpavam854b" path="res://game/assets/sprites/UI/DOWN/Timeline 1_0010.png" id="14"]
-[ext_resource type="Texture2D" uid="uid://ckncp6jnc2dsd" path="res://game/assets/sprites/UI/DOWN/Timeline 1_0009.png" id="15"]
-[ext_resource type="Texture2D" uid="uid://cr7d3fg22mrc" path="res://game/assets/sprites/UI/DOWN/Timeline 1_0007.png" id="16"]
+[ext_resource type="Texture2D" uid="uid://c4hst45norjyb" path="res://game/assets/sprites/UI/DOWN/Timeline 1_0010.png" id="14"]
+[ext_resource type="Texture2D" uid="uid://bsb1tff03s6x2" path="res://game/assets/sprites/UI/DOWN/Timeline 1_0009.png" id="15"]
+[ext_resource type="Texture2D" uid="uid://d0mlmrovahouk" path="res://game/assets/sprites/UI/DOWN/Timeline 1_0007.png" id="16"]
 [ext_resource type="Script" uid="uid://dfen0xbj6phr" path="res://game/VisualCamera.gd" id="17"]
 [ext_resource type="PackedScene" path="res://game/ui/AssistBar.tscn" id="18"]
 [ext_resource type="PackedScene" uid="uid://dliwkyac5ynat" path="res://game/ui/SuperBar.tscn" id="19"]
 [ext_resource type="Script" uid="uid://xbwpdr64o4cf" path="res://game/WinScreenManager.gd" id="20"]
-[ext_resource type="Texture2D" uid="uid://cobiaw7xhjpuj" path="res://game/assets/sprites/UI/DOWN/Timeline 1_0001.png" id="21"]
+[ext_resource type="Texture2D" uid="uid://fjqxn6itm6kx" path="res://game/assets/sprites/UI/DOWN/Timeline 1_0001.png" id="21"]
 [ext_resource type="Script" uid="uid://dv11pt6y7wasy" path="res://addons/godot-rollback-netcode/NetworkAnimationPlayer.gd" id="22"]
-[ext_resource type="Texture2D" uid="uid://cq2apjw8dcaqs" path="res://game/assets/sprites/UI/MainMenus/LoadingScreen.png" id="22_yl1ep"]
-[ext_resource type="Texture2D" uid="uid://c3qxlrpsshysw" path="res://game/assets/sprites/UI/FadeScreen.png" id="23"]
-[ext_resource type="Texture2D" uid="uid://bjt6c3wo20xi7" path="res://game/assets/sprites/UI/DOWN/Timeline 1_0002.png" id="24"]
-[ext_resource type="Texture2D" uid="uid://cmrr784esd3to" path="res://game/assets/sprites/UI/DOWN/Timeline 1_0000.png" id="25"]
-[ext_resource type="Texture2D" uid="uid://dwrah3a0efdab" path="res://game/assets/sprites/UI/DOWN/Timeline 1_0003.png" id="26"]
-[ext_resource type="Texture2D" uid="uid://dm761d7n2ydot" path="res://game/assets/sprites/UI/DOWN/Timeline 1_0004.png" id="27"]
-[ext_resource type="Texture2D" uid="uid://bacr1nok7kbtt" path="res://game/assets/sprites/UI/DOWN/Timeline 1_0005.png" id="28"]
-[ext_resource type="Texture2D" uid="uid://nj813edjhqg2" path="res://game/assets/sprites/UI/DOWN/Timeline 1_0006.png" id="29"]
+[ext_resource type="Texture2D" uid="uid://b8fjm23pf545c" path="res://game/assets/sprites/UI/MainMenus/LoadingScreen.png" id="22_yl1ep"]
+[ext_resource type="Texture2D" uid="uid://cdafs0r4x8kd8" path="res://game/assets/sprites/UI/FadeScreen.png" id="23"]
+[ext_resource type="Texture2D" uid="uid://b1vuoi03p8e7e" path="res://game/assets/sprites/UI/DOWN/Timeline 1_0002.png" id="24"]
+[ext_resource type="Texture2D" uid="uid://j8tejo21qbns" path="res://game/assets/sprites/UI/DOWN/Timeline 1_0000.png" id="25"]
+[ext_resource type="Texture2D" uid="uid://pl237vifm5se" path="res://game/assets/sprites/UI/DOWN/Timeline 1_0003.png" id="26"]
+[ext_resource type="Texture2D" uid="uid://bgecw122jbjde" path="res://game/assets/sprites/UI/DOWN/Timeline 1_0004.png" id="27"]
+[ext_resource type="Texture2D" uid="uid://c85x1vk0ytff6" path="res://game/assets/sprites/UI/DOWN/Timeline 1_0005.png" id="28"]
+[ext_resource type="Texture2D" uid="uid://d0nuyuk2q3d5d" path="res://game/assets/sprites/UI/DOWN/Timeline 1_0006.png" id="29"]
 [ext_resource type="Script" uid="uid://cpf7xgu0reaiu" path="res://game/DownText.gd" id="30"]
 [ext_resource type="Script" uid="uid://b010dt6v25trf" path="res://addons/godot-rollback-netcode/NetworkTimer.gd" id="31"]
 [ext_resource type="Script" uid="uid://byuc10p5mpce" path="res://game/NowLoadingText.gd" id="32"]
-[ext_resource type="Texture2D" uid="uid://6183e5lbwa5h" path="res://game/assets/sprites/UI/NOWLOADING/Timeline 1_0000.png" id="33"]
-[ext_resource type="Texture2D" uid="uid://cfimqn4jbon38" path="res://game/assets/sprites/UI/NOWLOADING/Timeline 1_0002.png" id="34"]
-[ext_resource type="Texture2D" uid="uid://cpfo851cbaeg7" path="res://game/assets/sprites/UI/NOWLOADING/Timeline 1_0001.png" id="35"]
-[ext_resource type="Texture2D" uid="uid://tq7jpwpmpnav" path="res://game/assets/sprites/Empty_0000.png" id="35_yl1ep"]
-[ext_resource type="Texture2D" uid="uid://c8vnryjx11k30" path="res://game/assets/sprites/UI/NOWLOADING/Timeline 1_0007.png" id="36"]
-[ext_resource type="Texture2D" uid="uid://bselgvo8osjiu" path="res://game/assets/sprites/UI/NOWLOADING/Timeline 1_0003.png" id="37"]
-[ext_resource type="Texture2D" uid="uid://bdys3jxqvuno7" path="res://game/assets/sprites/UI/NOWLOADING/Timeline 1_0004.png" id="38"]
-[ext_resource type="Texture2D" uid="uid://c8nr6wmrmvmnu" path="res://game/assets/sprites/UI/NOWLOADING/Timeline 1_0005.png" id="39"]
-[ext_resource type="Texture2D" uid="uid://dcyxauh4vgla1" path="res://game/assets/sprites/UI/NOWLOADING/Timeline 1_0006.png" id="40"]
-[ext_resource type="Texture2D" uid="uid://b0e6kfn07guey" path="res://game/assets/sprites/UI/WIN/Timeline 1_0000.png" id="41"]
+[ext_resource type="Texture2D" uid="uid://buhqujtr12mh3" path="res://game/assets/sprites/UI/NOWLOADING/Timeline 1_0000.png" id="33"]
+[ext_resource type="Texture2D" uid="uid://dj14s3nmevck6" path="res://game/assets/sprites/UI/NOWLOADING/Timeline 1_0002.png" id="34"]
+[ext_resource type="Texture2D" uid="uid://v7o53gfqmews" path="res://game/assets/sprites/UI/NOWLOADING/Timeline 1_0001.png" id="35"]
+[ext_resource type="Texture2D" uid="uid://c3h40i4mamblw" path="res://game/assets/sprites/Empty_0000.png" id="35_yl1ep"]
+[ext_resource type="Texture2D" uid="uid://c4emtl2edbvmq" path="res://game/assets/sprites/UI/NOWLOADING/Timeline 1_0007.png" id="36"]
+[ext_resource type="Texture2D" uid="uid://c10djkruq4htc" path="res://game/assets/sprites/UI/NOWLOADING/Timeline 1_0003.png" id="37"]
+[ext_resource type="Texture2D" uid="uid://5lael8762wrm" path="res://game/assets/sprites/UI/NOWLOADING/Timeline 1_0004.png" id="38"]
+[ext_resource type="Texture2D" uid="uid://c4f7wagplpcdy" path="res://game/assets/sprites/UI/NOWLOADING/Timeline 1_0005.png" id="39"]
+[ext_resource type="Texture2D" uid="uid://cnkqqpsx6ygb3" path="res://game/assets/sprites/UI/NOWLOADING/Timeline 1_0006.png" id="40"]
 [ext_resource type="Animation" path="res://game/assets/anim/gameWIN.tres" id="42"]
 [ext_resource type="PackedScene" uid="uid://caiesl5miifd5" path="res://game/ui/BattlePointPortrait.tscn" id="43"]
-[ext_resource type="Texture2D" uid="uid://dnmluq3uvo6i0" path="res://game/assets/sprites/UI/DOWN/Timeline 1_0008.png" id="45"]
-[ext_resource type="Texture2D" uid="uid://4foqq7s4s8x7" path="res://game/assets/sprites/UI/DOWN/Timeline 1_0011.png" id="46"]
+[ext_resource type="Texture2D" uid="uid://cu8bjxaqtqxuo" path="res://game/assets/sprites/UI/DOWN/Timeline 1_0008.png" id="45"]
+[ext_resource type="Texture2D" uid="uid://b6ohjprgkrs3q" path="res://game/assets/sprites/UI/DOWN/Timeline 1_0011.png" id="46"]
 [ext_resource type="Script" uid="uid://du0hv4v6goj1k" path="res://game/IntroShutters.gd" id="70"]
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0donp"]
@@ -404,8 +403,8 @@ position = Vector2(-0.111017, -0.499951)
 texture = ExtResource("23")
 
 [node name="WinSprite" type="Sprite2D" parent="Camera3D/BattleUI/WinScreenManager"]
-scale = Vector2(3.34, 3.34)
-texture = ExtResource("41")
+position = Vector2(-4, 0)
+scale = Vector2(3.38, 3.38)
 
 [node name="NetworkTimer" type="Node" parent="Camera3D/BattleUI/WinScreenManager"]
 script = ExtResource("31")
@@ -439,7 +438,6 @@ libraries = {
 script = ExtResource("22")
 
 [node name="Sprite2D" type="Sprite2D" parent="Camera3D/BattleUI/IntroShutters"]
-position = Vector2(0, -1)
 texture = ExtResource("22_yl1ep")
 
 [node name="NetworkTimer" type="Node" parent="Camera3D/BattleUI/IntroShutters"]

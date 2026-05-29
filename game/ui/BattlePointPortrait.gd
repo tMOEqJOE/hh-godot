@@ -18,6 +18,8 @@ func load_portrait(enum_point_chara, point_color, enum_assist_chara, assist_colo
 			portrait = "res://game/assets/sprites/UI/CharacterSelect/MiniPortraits/KanataButtonReal.png"
 		Enums.PointCharacters.Suisei:
 			portrait = "res://game/assets/sprites/UI/CharacterSelect/MiniPortraits/SuiseiButtonReal.png"
+		Enums.PointCharacters.Flayon:
+			portrait = "res://game/assets/sprites/UI/CharacterSelect/MiniPortraits/FlayonButtonReal.png"
 		_:
 			portrait = "res://game/assets/sprites/UI/CharacterSelect/MiniPortraits/SubaruButtonReal.png"
 	character_sprite.texture = load(portrait)
@@ -46,6 +48,8 @@ func load_portrait(enum_point_chara, point_color, enum_assist_chara, assist_colo
 			portrait = "res://game/assets/sprites/UI/CharacterSelect/MiniPortraits/KanataButtonReal.png"
 		Enums.AssistCharacters.Suisei:
 			portrait = "res://game/assets/sprites/UI/CharacterSelect/MiniPortraits/SuiseiButtonReal.png"
+		Enums.AssistCharacters.Flayon:
+			portrait = "res://game/assets/sprites/UI/CharacterSelect/MiniPortraits/FlayonButtonReal.png"
 		_:
 			portrait = "res://game/assets/sprites/UI/CharacterSelect/MiniPortraits/FubukiButtonReal.png"
 	$AssistBattlePortrait/Sprite2D.texture = load(portrait)

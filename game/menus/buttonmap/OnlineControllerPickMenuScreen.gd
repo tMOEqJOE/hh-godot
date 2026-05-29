@@ -19,3 +19,4 @@ func next_scene():
 	Global.NETPLAY_MODE = Global.NETPLAY_MODES.PRIVATE_ROOM
 	Global.IS_TRAINING = false
 	get_tree().change_scene_to_file("res://game/menus/onlinemenu/LoginToServer.tscn")
+	# get_tree().change_scene_to_file("res://game/screens/netplay/NetplayScreen.tscn")

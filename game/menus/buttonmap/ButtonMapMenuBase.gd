@@ -13,6 +13,9 @@ var OK_delay: int # because OK would select your character also currently
 var max_button_cooldown: int
 var button_cooldown: int
 
+@onready var arrow_sprite = $ButtonMapBase/Arrow
+var ARROW_SPRITE_JUMP: int = 51
+
 func _ready():
 	ready_for_inputs = false
 	OK_delay = 0
@@ -77,50 +80,24 @@ func valid_unmap_action(event):
 func advance_to_next_button():
 	if (current_button < len(input_map_actions)):
 		current_button += 1
-		$ButtonMapBase/Sprite2D.position.y += 55
+		arrow_sprite.position.y += ARROW_SPRITE_JUMP
 	else:
 		current_button = 0
-		$ButtonMapBase/Sprite2D.position.y -= 55 * (len(input_map_actions))
+		arrow_sprite.position.y -= ARROW_SPRITE_JUMP * (len(input_map_actions))
 
 func advance_to_prev_button():
 	if (current_button > 0):
 		current_button -= 1
-		$ButtonMapBase/Sprite2D.position.y -= 55
+		arrow_sprite.position.y -= ARROW_SPRITE_JUMP
 	else:
 		current_button = len(input_map_actions)
-		$ButtonMapBase/Sprite2D.position.y += 55 * (len(input_map_actions))
+		arrow_sprite.position.y += ARROW_SPRITE_JUMP * (len(input_map_actions))
 
 func prep_new_button(button: int):
 	button_cooldown = max_button_cooldown
-	# TODO: delete if OK to delete
-	#var new_event = InputEventJoypadButton.new()
-	#if (is_p1):
-		#new_event.device = Global.p1_device_id
-	#else:
-		#new_event.device = Global.p2_device_id
-	#new_event.button_index = button
-	## switch events if new_event is the same button as existing event 
-	#var action_index = find_button_by_action(new_event.button_index)
-	#if (action_index != -1):
-		#var old_event = actions_to_buttons[current_button]
-		#actions_to_buttons[action_index] = old_event
-		#display_button(action_index, old_event.button_index)
-	#actions_to_buttons[current_button] = new_event
-	#display_button(current_button, new_event.button_index)
 
 func unmap_button():
 	button_cooldown = max_button_cooldown
-	# TODO: delete if OK to delete
-	#var new_event = InputEventJoypadButton.new()
-	#if (is_p1):
-		#new_event.device = Global.p1_device_id
-	#else:
-		#new_event.device = Global.p2_device_id
-	#new_event.button_index = 127
-	## switch events if new_event is the same button as existing event 
-	#actions_to_buttons[current_button] = new_event
-	#display_button(current_button, new_event.button_index)
-
 
 func find_button_by_action(button_index):
 	for i in range(0, len(actions_to_buttons)):
@@ -132,16 +109,11 @@ func set_new_buttons():
 	for i in range(0, len(input_map_actions)):
 		var input_action: String = input_map_actions[i]
 		var event_action = actions_to_buttons[i]
-#		InputMap.action_erase_events(input_action)
-#		InputMap.action_add_event(input_action, event_action)
 		var appended = false
 		for input_event in InputMap.action_get_events(input_action): 
 			if (input_event is InputEventJoypadButton):
 				input_event.button_index = event_action.button_index
 				appended = true
-			#elif (input_event is InputEventJoypadMotion):
-				#input_event.axis = event_action.
-				#appended = true
 		if (not appended):
 			InputMap.action_add_event(input_action, event_action)
 	var is_key = true

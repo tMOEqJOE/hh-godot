@@ -155,6 +155,7 @@ offset_top = 53.0
 offset_right = 622.0
 offset_bottom = 509.0
 scale = Vector2(2.8483367, 1.8152132)
+theme = ExtResource("11_s221j")
 columns = 3
 script = ExtResource("5")
 
