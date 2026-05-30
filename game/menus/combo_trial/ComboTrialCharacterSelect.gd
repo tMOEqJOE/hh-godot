@@ -4,159 +4,94 @@ class_name ComboTrialCharacterSelect
 
 func _ready():
 	super._ready()
-	load_next_scenes()
+	
 	MainMenuMusicControl.reset_seek()
 	if (Global.TRAINING_P1):
-		$P1Cursor.input_prefix = "player1_"
-		$P2Cursor.input_prefix = "player1_"
-		$P2Cursor.enable(false)
+		P1Cursor.input_prefix = "player1_"
+		P2Cursor.input_prefix = "player1_"
+		P2Cursor.enable(false)
+		P2Cursor.visible = false
 	else:
-		$P1Cursor.input_prefix = "player2_"
-		$P2Cursor.input_prefix = "player2_"
-		$P1Cursor.enable(false)
+		P1Cursor.input_prefix = "player2_"
+		P2Cursor.input_prefix = "player2_"
+		P1Cursor.enable(false)
+		P1Cursor.visible = false
 
-func load_next_scenes():
-	next_scene_packed = load("res://game/menus/stagemusicselect/TrainingStageMusicSelect.tscn")
-	prev_scene_packed = load("res://game/menus/buttonmap/TrainingControllerPickMenuScreen.tscn")
-
-func update_p1():
-	super.update_p1()
-	if (Global.TRAINING_P1):
-		p1_assist_select.get_node("CharacterCursor").input_prefix = "player1_"
-	else:
-		p1_assist_select.get_node("CharacterCursor").input_prefix = "player2_"
-		p2_active_cursor = p1_assist_select
-
-func update_p2():
-	super.update_p2()
-	if (Global.TRAINING_P1):
-		p2_assist_select.get_node("CharacterCursor").input_prefix = "player1_"
-		p1_active_cursor = p2_assist_select
-	else:
-		p2_assist_select.get_node("CharacterCursor").input_prefix = "player2_"
+func connect_ui_elements():
+	P1Cursor = $PresentationLayer/P1Cursor
+	P2Cursor = $PresentationLayer/P2Cursor
+	A1Portrait = $PresentationLayer/A1Portrait
+	A2Portrait = $PresentationLayer/A2Portrait
+	P1Portrait = $PresentationLayer/P1Portrait
+	P2Portrait = $PresentationLayer/P2Portrait
+	AkiMC = $PresentationLayer/AkiMC
+	P1SelectFlash = $PresentationLayer/P1SelectFlash
+	P2SelectFlash = $PresentationLayer/P2SelectFlash
+	KimiNoHiroin = $PresentationLayer/KimiNoHiroin
+	WinCounterP1 = $PresentationLayer/CanvasLayer/WinCounterP1
+	WinCounterP2 = $PresentationLayer/CanvasLayer/WinCounterP2
 
 func update_a1():
-	super.update_a1()
 	if (Global.TRAINING_P1):
-		p1_active_cursor = $P2Cursor
-		$P2Cursor.enable(true)
-	else:
-		p2_active_cursor = null
+		super.update_a1()
+		p1_active_cursor = P2Cursor
+		pick_default_opponent(3, 0)
 
 func update_a2():
-	super.update_a2()
 	if (not Global.TRAINING_P1):
-		p2_active_cursor = $P1Cursor
-		$P1Cursor.enable(true)
-	else:
-		p1_active_cursor = null
+		super.update_a2()
+		p2_active_cursor = P1Cursor
+		pick_default_opponent(3, 0)
 
-func physics_tick():
-	if (Global.TRAINING_P1 and p1_button_map == null and Input.is_action_just_pressed("player1_cancel")):
-		if (not $P1Cursor.selected):
-			go_to_prev_scene()
-		else:
-			if (p2_assist_select != null and p2_assist_select.is_selected()):
-				p2_assist_select.deselect()
-				p1_active_cursor = p2_assist_select
-				p2_ready = false
-			elif ($P2Cursor.enabled and $P2Cursor.selected):
-				p2_assist_select.queue_free()
-				remove_child(p2_assist_select)
-				$A2Portrait.clear_portrait()
-				p2_assist_select = null
-				p1_active_cursor = $P2Cursor
-				$P2Cursor.deselect()
-			elif ($P2Cursor.enabled and not $P2Cursor.selected):
-				$P2Cursor.enable(false)
-				p1_assist_select.deselect()
-				p1_active_cursor = p1_assist_select
-				p1_ready = false
-			else:
-				p1_assist_select.queue_free()
-				remove_child(p1_assist_select)
-				$A1Portrait.clear_portrait()
-				p1_assist_select = null
-				p1_active_cursor = $P1Cursor
-				$P1Cursor.deselect()
-	elif ((not Global.TRAINING_P1) and p2_button_map == null and Input.is_action_just_pressed("player2_cancel")):
-		if (not $P2Cursor.selected):
-			go_to_prev_scene()
-		else:
-			if (p1_assist_select != null and p1_assist_select.is_selected()):
-				p1_assist_select.deselect()
-				p2_active_cursor = p1_assist_select
-				p1_ready = false
-			elif ($P1Cursor.enabled and $P1Cursor.selected):
-				p1_assist_select.queue_free()
-				remove_child(p1_assist_select)
-				$A1Portrait.clear_portrait()
-				p1_assist_select = null
-				p2_active_cursor = $P1Cursor
-				$P1Cursor.deselect()
-			elif ($P1Cursor.enabled and not $P1Cursor.selected):
-				$P1Cursor.enable(false)
-				p2_assist_select.deselect()
-				p2_active_cursor = p2_assist_select
-				p2_ready = false
-			else:
-				p2_assist_select.queue_free()
-				remove_child(p2_assist_select)
-				$A2Portrait.clear_portrait()
-				p2_assist_select = null
-				p2_active_cursor = $P2Cursor
-				$P2Cursor.deselect()
+func pick_default_opponent(row, col):
+	var randRow = row
+	var randCol = col
+	if (Global.TRAINING_P1):
+		var charaData = resolve_characters(randRow, randCol)
+		unload_character(charaData[0],false,false)
+		Global.PLAYER_2_NODE_PATH[0] = charaData[0]
+		Global.PLAYER_2_CHARACTER[0] = charaData[1]
+		Global.load_queue.queue_resource(Global.PLAYER_2_NODE_PATH[0])
+		if (Global.PLAYER_2_CHARACTER[0] == Enums.PointCharacters.Mio):
+			Global.load_queue.queue_resource(Global.PLAYER_2_NODE_PATH[2])
+		
+		charaData = resolve_assists(randRow, randCol, false)
+		unload_character(charaData[0],false,true)
+		p2_active_cursor = null
+		Global.PLAYER_2_NODE_PATH[1] = charaData[0]
+		Global.PLAYER_2_CHARACTER[1] = charaData[1]
+		Global.load_queue.queue_resource(Global.PLAYER_2_NODE_PATH[1])
+		p2_ready = true
+		p1_ready = true
+		ready_up_peer()
+	else:
+		var charaData = resolve_characters(randRow, randCol)
+		unload_character(charaData[0],true,false)
+		Global.PLAYER_1_NODE_PATH[0] = charaData[0]
+		Global.PLAYER_1_CHARACTER[0] = charaData[1]
+		Global.load_queue.queue_resource(Global.PLAYER_1_NODE_PATH[0])
+		if (Global.PLAYER_1_CHARACTER[0] == Enums.PointCharacters.Mio):
+			Global.load_queue.queue_resource(Global.PLAYER_1_NODE_PATH[2])
+		
+		randRow = row
+		randCol = col #p2_assist_select.cursor.gridX - 2
+		charaData = resolve_assists(randRow, randCol, true)
+		unload_character(charaData[0], true,true)
+		p1_active_cursor = null
+		Global.PLAYER_1_NODE_PATH[1] = charaData[0]
+		Global.PLAYER_1_CHARACTER[1] = charaData[1]
+		Global.load_queue.queue_resource(Global.PLAYER_1_NODE_PATH[1])
+		p1_ready = true
+		p2_ready = true
+		ready_up_peer()
+
+func start_loading_process():
+	resolve_colors()
+	resolve_assist_colors()
+	go_to_next_scene()
 
 func go_to_prev_scene():
-	get_tree().change_scene_to_packed(prev_scene_packed)
+	get_tree().change_scene_to_file("res://game/menus/buttonmap/ComboTrialControllerPickMenuScreen.tscn")
 
 func go_to_next_scene():
-	get_tree().change_scene_to_packed(next_scene_packed)
-
-func button_set_initiate(event):
-	if event.is_action_pressed("player1_start"):
-		if (p1_button_map == null):
-			if (event is InputEventJoypadButton and Global.p1_is_gamepad):
-				p1_button_map = ButtonMap.instantiate()
-			elif (event is InputEventKey and not Global.p1_is_gamepad):
-				p1_button_map = KeyButtonMap.instantiate()
-			else:
-				return
-			add_child(p1_button_map)
-			p1_button_map.position.x = 50
-			p1_button_map.position.y = 50
-			p1_button_map.set_is_p1(true)
-			p1_button_map.connect("button_set_complete", Callable(self, "button_set_complete"))
-			if (p1_active_cursor != null):
-				p1_active_cursor.enable(false)
-	if event.is_action_pressed("player2_start"):
-		if (p2_button_map == null):
-			if (event is InputEventJoypadButton and Global.p2_is_gamepad):
-				p2_button_map = ButtonMap.instantiate()
-			elif (event is InputEventKey and not Global.p2_is_gamepad):
-				p2_button_map = KeyButtonMap.instantiate()
-			else:
-				return
-			add_child(p2_button_map)
-			p2_button_map.position.x = 1150
-			p2_button_map.position.y = 50
-			p2_button_map.set_is_p1(false)
-			p2_button_map.connect("button_set_complete", Callable(self, "button_set_complete"))
-			if (p2_active_cursor != null):
-				p2_active_cursor.enable(false)
-
-func button_set_complete(is_p1:bool):
-	if (is_p1):
-		p1_button_map.free_button_menu()
-		remove_child(p1_button_map)
-		p1_button_map = null
-	else:
-		p2_button_map.free_button_menu()
-		remove_child(p2_button_map)
-		p2_button_map = null
-	if (is_p1):
-		if (p1_active_cursor != null):
-			p1_active_cursor.enable(true)
-	else:
-		if (p2_active_cursor != null):
-			p2_active_cursor.enable(true)
+	get_tree().change_scene_to_file("res://game/menus/stagemusicselect/ComboTrialStageMusicSelect.tscn")

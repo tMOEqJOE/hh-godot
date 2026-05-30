@@ -285,7 +285,6 @@ texture_normal = ExtResource("6")
 texture_focused = ExtResource("4")
 
 [node name="Trials" type="TextureButton" parent="CanvasLayer/MainMenuButtons"]
-visible = false
 layout_mode = 2
 focus_neighbor_top = NodePath("../Online")
 focus_neighbor_bottom = NodePath("../Replay")
@@ -353,6 +352,7 @@ texture = ExtResource("18")
 [connection signal="button_down" from="CanvasLayer/MainMenuButtons/Offline" to="." method="_on_Offline_button_down"]
 [connection signal="button_down" from="CanvasLayer/MainMenuButtons/Training" to="." method="_on_Training_button_down"]
 [connection signal="button_down" from="CanvasLayer/MainMenuButtons/Online" to="." method="_on_Online_button_down"]
+[connection signal="button_down" from="CanvasLayer/MainMenuButtons/Trials" to="." method="_on_Trials_button_down"]
 [connection signal="button_down" from="CanvasLayer/MainMenuButtons/Replay" to="." method="_on_Replay_button_down"]
 [connection signal="button_down" from="CanvasLayer/MainMenuButtons/Options" to="." method="_on_Options_button_down"]
 [connection signal="button_down" from="CanvasLayer/MainMenuButtons/Credits" to="." method="_on_Credits_button_down"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://crkvty0v7xv45"]
+[gd_scene load_steps=17 format=3 uid="uid://crkvty0v7xv45"]
 
 [ext_resource type="Script" uid="uid://c3crr8e8iawl" path="res://game/menus/training/TrainingMain.gd" id="1"]
 [ext_resource type="PackedScene" path="res://game/ui/FPSCounter.tscn" id="2"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" path="res://game/menus/training/CommandList.tscn" id="11"]
 [ext_resource type="Theme" uid="uid://of3afybns5hm" path="res://game/menus/default_menu.tres" id="11_s221j"]
 [ext_resource type="PackedScene" uid="uid://cnx2a5iq536el" path="res://game/menus/training/TrainingInputDisplay.tscn" id="12"]
+[ext_resource type="PackedScene" uid="uid://bk1lasncttige" path="res://game/components/combo_trial/combo_trial_listener.tscn" id="15_xuqk6"]
 
 [sub_resource type="FontFile" id="2"]
 fallbacks = Array[Font]([ExtResource("3")])
@@ -153,7 +154,6 @@ script = null
 [node name="TrainingInputDisplay" parent="CanvasLayer" instance=ExtResource("12")]
 
 [node name="TrainingOptionsMenu" type="GridContainer" parent="CanvasLayer"]
-visible = false
 modulate = Color(1, 1, 1, 0.964706)
 anchors_preset = -1
 offset_left = 122.0
@@ -207,6 +207,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("2")
 
 [node name="StanceLabel" type="Label" parent="CanvasLayer/TrainingOptionsMenu"]
+visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -214,17 +215,20 @@ theme_override_fonts/font = SubResource("2")
 text = "Stance"
 
 [node name="StanceOptions" type="OptionButton" parent="CanvasLayer/TrainingOptionsMenu"]
+visible = false
 layout_mode = 2
 toggle_mode = false
 action_mode = 1
 
 [node name="StanceBlockNumber" type="Label" parent="CanvasLayer/TrainingOptionsMenu"]
+visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("2")
 
 [node name="CounterHitLabel" type="Label" parent="CanvasLayer/TrainingOptionsMenu"]
+visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -232,11 +236,13 @@ theme_override_fonts/font = SubResource("2")
 text = "CounterHit"
 
 [node name="CounterHitOptions" type="OptionButton" parent="CanvasLayer/TrainingOptionsMenu"]
+visible = false
 layout_mode = 2
 toggle_mode = false
 action_mode = 1
 
 [node name="CounterHitNumber" type="Label" parent="CanvasLayer/TrainingOptionsMenu"]
+visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -264,6 +270,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("2")
 
 [node name="BlockSwitchLabel" type="Label" parent="CanvasLayer/TrainingOptionsMenu"]
+visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -271,17 +278,20 @@ theme_override_fonts/font = SubResource("2")
 text = "Block Switching"
 
 [node name="BlockSwitchOptions" type="OptionButton" parent="CanvasLayer/TrainingOptionsMenu"]
+visible = false
 layout_mode = 2
 toggle_mode = false
 action_mode = 1
 
 [node name="BlockSwitchNumber" type="Label" parent="CanvasLayer/TrainingOptionsMenu"]
+visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("2")
 
 [node name="BlockTypeLabel" type="Label" parent="CanvasLayer/TrainingOptionsMenu"]
+visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -289,17 +299,20 @@ theme_override_fonts/font = SubResource("2")
 text = "Block Type"
 
 [node name="BlockTypeOptions" type="OptionButton" parent="CanvasLayer/TrainingOptionsMenu"]
+visible = false
 layout_mode = 2
 toggle_mode = false
 action_mode = 1
 
 [node name="BlockTypeNumber" type="Label" parent="CanvasLayer/TrainingOptionsMenu"]
+visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("2")
 
 [node name="RecoveryLabel" type="Label" parent="CanvasLayer/TrainingOptionsMenu"]
+visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -307,17 +320,20 @@ theme_override_fonts/font = SubResource("2")
 text = "Air Recovery"
 
 [node name="RecoveryOptions" type="OptionButton" parent="CanvasLayer/TrainingOptionsMenu"]
+visible = false
 layout_mode = 2
 toggle_mode = false
 action_mode = 1
 
 [node name="RecoveryNumber" type="Label" parent="CanvasLayer/TrainingOptionsMenu"]
+visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("2")
 
 [node name="SuperMeterLabel" type="Label" parent="CanvasLayer/TrainingOptionsMenu"]
+visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -325,6 +341,7 @@ theme_override_fonts/font = SubResource("2")
 text = "Super Meter"
 
 [node name="SuperMeter" type="HSlider" parent="CanvasLayer/TrainingOptionsMenu"]
+visible = false
 layout_mode = 2
 max_value = 500.0
 step = 5.0
@@ -334,6 +351,7 @@ ticks_on_borders = true
 script = ExtResource("7")
 
 [node name="SuperMeterNumber" type="Label" parent="CanvasLayer/TrainingOptionsMenu"]
+visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -342,6 +360,7 @@ text = "500"
 script = ExtResource("8")
 
 [node name="AssistMeterLabel" type="Label" parent="CanvasLayer/TrainingOptionsMenu"]
+visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -349,6 +368,7 @@ theme_override_fonts/font = SubResource("2")
 text = "Assist Meter"
 
 [node name="AssistMeter" type="HSlider" parent="CanvasLayer/TrainingOptionsMenu"]
+visible = false
 layout_mode = 2
 max_value = 400.0
 step = 4.0
@@ -358,6 +378,7 @@ ticks_on_borders = true
 script = ExtResource("7")
 
 [node name="AssistMeterNumber" type="Label" parent="CanvasLayer/TrainingOptionsMenu"]
+visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -366,6 +387,7 @@ text = "400"
 script = ExtResource("8")
 
 [node name="SyncRateLabel" type="Label" parent="CanvasLayer/TrainingOptionsMenu"]
+visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -373,6 +395,7 @@ theme_override_fonts/font = SubResource("2")
 text = "Sync Rate"
 
 [node name="SyncRate" type="HSlider" parent="CanvasLayer/TrainingOptionsMenu"]
+visible = false
 layout_mode = 2
 value = 10.0
 tick_count = 11
@@ -380,6 +403,7 @@ ticks_on_borders = true
 script = ExtResource("7")
 
 [node name="SyncRateNumber" type="Label" parent="CanvasLayer/TrainingOptionsMenu"]
+visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -388,6 +412,7 @@ text = "100"
 script = ExtResource("8")
 
 [node name="AssistBuildLabel" type="Label" parent="CanvasLayer/TrainingOptionsMenu"]
+visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -395,16 +420,19 @@ theme_override_fonts/font = SubResource("2")
 text = "Assist Meter Build"
 
 [node name="AssistBuildButton" type="Button" parent="CanvasLayer/TrainingOptionsMenu"]
+visible = false
 layout_mode = 2
 text = "OFF"
 
 [node name="AssistBuildNumber" type="Label" parent="CanvasLayer/TrainingOptionsMenu"]
+visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("2")
 
 [node name="MeterResetLabel" type="Label" parent="CanvasLayer/TrainingOptionsMenu"]
+visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -412,10 +440,12 @@ theme_override_fonts/font = SubResource("2")
 text = "Meter Refill"
 
 [node name="MeterResetButton" type="Button" parent="CanvasLayer/TrainingOptionsMenu"]
+visible = false
 layout_mode = 2
 text = "ON"
 
 [node name="MeterResetNumber" type="Label" parent="CanvasLayer/TrainingOptionsMenu"]
+visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -512,6 +542,9 @@ offset_top = 19.0
 offset_right = 109.0
 offset_bottom = 43.0
 scale = Vector2(2.87118, 3.02479)
+
+[node name="ComboTrialListener" parent="CanvasLayer" instance=ExtResource("15_xuqk6")]
+position = Vector2(302, 424)
 
 [connection signal="pressed" from="CanvasLayer/TrainingOptionsMenu/SaveStateButton" to="CanvasLayer/TrainingOptionsMenu" method="_on_SaveStateButton_pressed"]
 [connection signal="pressed" from="CanvasLayer/TrainingOptionsMenu/LoadStateButton" to="CanvasLayer/TrainingOptionsMenu" method="_on_LoadStateButton_pressed"]
