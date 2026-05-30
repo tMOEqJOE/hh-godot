@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://crkvty0v7xv45"]
 
-[ext_resource type="Script" uid="uid://c3crr8e8iawl" path="res://game/menus/training/TrainingMain.gd" id="1"]
+[ext_resource type="Script" uid="uid://bpwlotk1q2het" path="res://game/menus/combo_trial/ComboTrialMain.gd" id="1_xuqk6"]
 [ext_resource type="PackedScene" path="res://game/ui/FPSCounter.tscn" id="2"]
 [ext_resource type="Script" uid="uid://bpq5gaa5mv3gf" path="res://game/menus/training/LoadedStateLabel.gd" id="2_34aeq"]
 [ext_resource type="FontFile" uid="uid://b2jogmfxodv6o" path="res://game/assets/monogram_extended.ttf" id="3"]
@@ -26,7 +26,7 @@ cache/0/16/0/scale = 1.0
 cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 
 [node name="TrainingMain" type="Node2D"]
-script = ExtResource("1")
+script = ExtResource("1_xuqk6")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -154,6 +154,7 @@ script = null
 [node name="TrainingInputDisplay" parent="CanvasLayer" instance=ExtResource("12")]
 
 [node name="TrainingOptionsMenu" type="GridContainer" parent="CanvasLayer"]
+visible = false
 modulate = Color(1, 1, 1, 0.964706)
 anchors_preset = -1
 offset_left = 122.0

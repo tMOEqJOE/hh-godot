@@ -28,20 +28,52 @@ func connect_ui_elements():
 	P1SelectFlash = $PresentationLayer/P1SelectFlash
 	P2SelectFlash = $PresentationLayer/P2SelectFlash
 	KimiNoHiroin = $PresentationLayer/KimiNoHiroin
-	WinCounterP1 = $PresentationLayer/CanvasLayer/WinCounterP1
-	WinCounterP2 = $PresentationLayer/CanvasLayer/WinCounterP2
+	#WinCounterP1 = $PresentationLayer/CanvasLayer/WinCounterP1
+	#WinCounterP2 = $PresentationLayer/CanvasLayer/WinCounterP2
 
-func update_a1():
-	if (Global.TRAINING_P1):
-		super.update_a1()
-		p1_active_cursor = P2Cursor
-		pick_default_opponent(3, 0)
+func update_p1():
+	p1_color_number = select_color(P1Cursor.input_prefix)
+	var charaData = resolve_characters(P1Cursor.row, P1Cursor.col)
+	
+	P1Portrait.change_color_number(p1_color_number)
+	unload_character(charaData[0],true,false)
+	Global.PLAYER_1_NODE_PATH[0] = charaData[0]
+	Global.PLAYER_1_CHARACTER[0] = charaData[1]
+	Global.load_queue.queue_resource(Global.PLAYER_1_NODE_PATH[0])
+	if (Global.PLAYER_1_CHARACTER[0] == Enums.PointCharacters.Mio):
+		Global.load_queue.queue_resource(Global.PLAYER_1_NODE_PATH[2])
+	load_assist(0, 0, true)
+	
+func update_p2():
+	p2_color_number = select_color(P2Cursor.input_prefix)
+	var charaData = resolve_characters(P2Cursor.row, P2Cursor.col)
+	
+	P2Portrait.change_color_number(p2_color_number)
+	unload_character(charaData[0],false,false)
+	Global.PLAYER_2_NODE_PATH[0] = charaData[0]
+	Global.PLAYER_2_CHARACTER[0] = charaData[1]
+	Global.load_queue.queue_resource(Global.PLAYER_2_NODE_PATH[0])
+	if (Global.PLAYER_2_CHARACTER[0] == Enums.PointCharacters.Mio):
+		Global.load_queue.queue_resource(Global.PLAYER_2_NODE_PATH[2])
+	load_assist(0, 0, false)
 
-func update_a2():
-	if (not Global.TRAINING_P1):
-		super.update_a2()
-		p2_active_cursor = P1Cursor
-		pick_default_opponent(3, 0)
+func load_assist(row, col, is_p1=true):
+	if (is_p1):
+		var charaData = resolve_assists(row, col, is_p1)
+		unload_character(charaData[0], true,true)
+		Global.PLAYER_1_NODE_PATH[1] = charaData[0]
+		Global.PLAYER_1_CHARACTER[1] = charaData[1]
+		Global.load_queue.queue_resource(Global.PLAYER_1_NODE_PATH[1])
+		p1_ready = true
+	else:
+		var charaData = resolve_assists(row, col, is_p1)
+		unload_character(charaData[0], false,true)
+		Global.PLAYER_2_NODE_PATH[1] = charaData[0]
+		Global.PLAYER_2_CHARACTER[1] = charaData[1]
+		Global.load_queue.queue_resource(Global.PLAYER_2_NODE_PATH[1])
+		p2_ready = true
+	ready_up_peer()
+	pick_default_opponent(3, 0)
 
 func pick_default_opponent(row, col):
 	var randRow = row

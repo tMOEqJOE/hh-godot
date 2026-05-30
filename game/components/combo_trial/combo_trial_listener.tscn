@@ -7,7 +7,7 @@
 script = ExtResource("1_53nv2")
 
 [node name="Background" type="Sprite2D" parent="."]
-modulate = Color(0.172549, 0.121569, 0.121569, 0.411765)
+modulate = Color(0.17254902, 0.12156863, 0.12156863, 0.24313726)
 position = Vector2(-17.025707, 73.29001)
 rotation = 3.1415927
 scale = Vector2(0.8, 1)

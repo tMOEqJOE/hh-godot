@@ -69,10 +69,12 @@ material = SubResource("ShaderMaterial_ertxd")
 material = SubResource("ShaderMaterial_vubeb")
 
 [node name="AssistCharacterIcons" parent="." instance=ExtResource("5_dsoce")]
+visible = false
 z_index = 100
 position = Vector2(232, 306)
 
 [node name="AssistPointCharacterIconsNode" parent="." instance=ExtResource("6_2hk1s")]
+visible = false
 modulate = Color(0.7323408, 0.7655551, 1, 1)
 position = Vector2(1193, 144)
 
@@ -83,4 +85,5 @@ visible = false
 visible = false
 
 [editable path="PresentationLayer"]
+[editable path="PresentationLayer/CharacterIconsNode"]
 [editable path="AssistPointCharacterIconsNode"]
