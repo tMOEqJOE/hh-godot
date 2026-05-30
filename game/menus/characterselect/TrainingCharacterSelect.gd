@@ -1,6 +1,6 @@
 extends CharacterSelect
 
-class_name TrainingCharacterSelect
+class_name ComboTrialCharacterSelect
 
 func _ready():
 	super._ready()
