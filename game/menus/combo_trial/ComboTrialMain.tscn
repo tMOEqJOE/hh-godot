@@ -153,6 +153,10 @@ script = null
 
 [node name="TrainingInputDisplay" parent="CanvasLayer" instance=ExtResource("12")]
 
+[node name="InputLog" parent="CanvasLayer/TrainingInputDisplay/CanvasLayer" index="0"]
+offset_left = 1606.0
+offset_right = 1756.0
+
 [node name="TrainingOptionsMenu" type="GridContainer" parent="CanvasLayer"]
 visible = false
 modulate = Color(1, 1, 1, 0.964706)
@@ -202,6 +206,38 @@ layout_mode = 2
 text = "(Back button also works)"
 
 [node name="LoadStateEmpty" type="Label" parent="CanvasLayer/TrainingOptionsMenu"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("2")
+
+[node name="PrevLabel" type="Label" parent="CanvasLayer/TrainingOptionsMenu"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("2")
+
+[node name="PrevButton" type="Button" parent="CanvasLayer/TrainingOptionsMenu"]
+layout_mode = 2
+text = "Prev Trial"
+
+[node name="PrevEmpty" type="Label" parent="CanvasLayer/TrainingOptionsMenu"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("2")
+
+[node name="NextLabel" type="Label" parent="CanvasLayer/TrainingOptionsMenu"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("2")
+
+[node name="NextButton" type="Button" parent="CanvasLayer/TrainingOptionsMenu"]
+layout_mode = 2
+text = "Next Trial"
+
+[node name="NextEmpty" type="Label" parent="CanvasLayer/TrainingOptionsMenu"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -545,10 +581,13 @@ offset_bottom = 43.0
 scale = Vector2(2.87118, 3.02479)
 
 [node name="ComboTrialListener" parent="CanvasLayer" instance=ExtResource("15_xuqk6")]
+z_index = -1
 position = Vector2(302, 424)
 
 [connection signal="pressed" from="CanvasLayer/TrainingOptionsMenu/SaveStateButton" to="CanvasLayer/TrainingOptionsMenu" method="_on_SaveStateButton_pressed"]
 [connection signal="pressed" from="CanvasLayer/TrainingOptionsMenu/LoadStateButton" to="CanvasLayer/TrainingOptionsMenu" method="_on_LoadStateButton_pressed"]
+[connection signal="button_down" from="CanvasLayer/TrainingOptionsMenu/PrevButton" to="." method="_on_prev_trial_button_button_down"]
+[connection signal="button_down" from="CanvasLayer/TrainingOptionsMenu/NextButton" to="." method="_on_next_trial_button_button_down"]
 [connection signal="value_changed" from="CanvasLayer/TrainingOptionsMenu/SuperMeter" to="CanvasLayer/TrainingOptionsMenu/SuperMeterNumber" method="_on_SuperMeter_value_changed"]
 [connection signal="value_changed" from="CanvasLayer/TrainingOptionsMenu/AssistMeter" to="CanvasLayer/TrainingOptionsMenu/AssistMeterNumber" method="_on_AssistMeter_value_changed"]
 [connection signal="value_changed" from="CanvasLayer/TrainingOptionsMenu/SyncRate" to="CanvasLayer/TrainingOptionsMenu/SyncRateNumber" method="_on_SyncRate_value_changed"]
@@ -559,3 +598,5 @@ position = Vector2(302, 424)
 [connection signal="pressed" from="CanvasLayer/TrainingOptionsMenu/ResetButton" to="CanvasLayer/TrainingOptionsMenu" method="_on_ResetButton_pressed"]
 [connection signal="pressed" from="CanvasLayer/TrainingOptionsMenu/CloseButton" to="CanvasLayer/TrainingOptionsMenu" method="_on_CloseButton_pressed"]
 [connection signal="pressed" from="CanvasLayer/TrainingOptionsMenu/ExitButton" to="CanvasLayer/TrainingOptionsMenu" method="_on_ExitButton_pressed"]
+
+[editable path="CanvasLayer/TrainingInputDisplay"]

@@ -32,6 +32,7 @@ func _init() -> void:
 	replay_logging_enabled = false
 	game_mode_root = "/root/ReplayMain/FighterGame"
 	Global.HITBOX_DISPLAY = true
+	Global.TRAINING_HITBOX_ON = false
 	is_waiting = true
 	setup_complete = false
 
