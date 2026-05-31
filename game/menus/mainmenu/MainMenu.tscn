@@ -341,11 +341,11 @@ position = Vector2(258, 911)
 texture = ExtResource("8")
 
 [node name="A OK" type="Sprite2D" parent="."]
-position = Vector2(682, 573)
+position = Vector2(682, 647)
 texture = ExtResource("17")
 
 [node name="Cancel" type="Sprite2D" parent="."]
-position = Vector2(734, 613)
+position = Vector2(734, 687)
 texture = ExtResource("18")
 
 [connection signal="button_down" from="CanvasLayer/DiscordButton" to="." method="_on_discord_button_down"]
