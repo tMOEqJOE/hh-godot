@@ -89,6 +89,29 @@ enum StKey {
 	hit_box_colliding_frame_attack_data,
 }
 
+enum AllCharacters {
+	Subaru,
+	Mio,
+	Oga,
+	Ollie,
+	Suisei,
+	Kanata,
+	Flayon,
+	Fubuki,
+	Sora,
+	Sana,
+	OkaKoro,
+	Hakka,
+	AssistSubaru,
+	AssistMio,
+	AssistOga,
+	AssistOllie,
+	AssistSuisei,
+	AssistKanata,
+	AssistFlayon,
+	Random,
+}
+
 enum PointCharacters {
 	Subaru,
 	Mio,

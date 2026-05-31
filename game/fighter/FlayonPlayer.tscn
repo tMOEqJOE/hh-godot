@@ -306,7 +306,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1000000),
 "update": 0,
-"values": [Vector2(20, 110)]
+"values": [Vector2(30, 110)]
 }
 
 [sub_resource type="Animation" id="42"]
@@ -1182,6 +1182,35 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1000000),
 "update": 0,
 "values": [Vector2(-80, 110)]
+}
+
+[sub_resource type="Animation" id="Animation_fw7s0"]
+resource_name = "FlightNoFuel"
+length = 0.6666696
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.16666667, 0.23333333, 0.33333334, 0.4, 0.46666667, 0.5166667, 0.6341153),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("42_xpm3i"), ExtResource("43_ta16v"), ExtResource("44_kpeac"), ExtResource("45_f32ml"), ExtResource("61_ta16v"), ExtResource("62_kpeac"), ExtResource("63_f32ml"), ExtResource("88_0rw8g"), ExtResource("107_rgqmm")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.33333334, 0.5166667),
+"transitions": PackedFloat32Array(1000000, 1000000, 1000000),
+"update": 0,
+"values": [Vector2(-50, 110), Vector2(-50, 100), Vector2(-80, 110)]
 }
 
 [sub_resource type="Animation" id="Animation_c5h4h"]
@@ -2085,35 +2114,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(0, 100)]
-}
-
-[sub_resource type="Animation" id="Animation_fw7s0"]
-resource_name = "FlightNoFuel"
-length = 0.6666696
-step = 0.0166667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.06666667, 0.16666667, 0.23333333, 0.33333334, 0.4, 0.46666667, 0.5166667, 0.6341153),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("42_xpm3i"), ExtResource("43_ta16v"), ExtResource("44_kpeac"), ExtResource("45_f32ml"), ExtResource("61_ta16v"), ExtResource("62_kpeac"), ExtResource("63_f32ml"), ExtResource("88_0rw8g"), ExtResource("107_rgqmm")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:offset")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.33333334, 0.5166667),
-"transitions": PackedFloat32Array(1000000, 1000000, 1000000),
-"update": 0,
-"values": [Vector2(-50, 110), Vector2(-50, 100), Vector2(-80, 110)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wc0pe"]

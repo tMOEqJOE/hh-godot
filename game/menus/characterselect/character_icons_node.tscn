@@ -15,8 +15,8 @@ z_index = 100
 script = ExtResource("1_5l5au")
 
 [node name="WOOD" type="Sprite2D" parent="."]
-position = Vector2(216, 279.75)
-scale = Vector2(1, 0.81541216)
+position = Vector2(220, 267.00003)
+scale = Vector2(1.0059077, 0.7606589)
 texture = ExtResource("2_g6j5k")
 
 [node name="1" type="TextureRect" parent="."]

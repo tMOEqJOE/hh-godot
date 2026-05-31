@@ -29,7 +29,7 @@ func _init() -> void:
 	game_mode_root = "/root/TrainingMain/FighterGame"
 	fighter_game.ko_enabled = false
 	Global.HITBOX_DISPLAY = true
-	Global.TRAINING_HITBOX_ON = true
+	Global.TRAINING_HITBOX_ON = false
 	savestate = {}
 	state_history = []
 	fillWith(state_history, {}, 3+SyncManager.input_delay)
