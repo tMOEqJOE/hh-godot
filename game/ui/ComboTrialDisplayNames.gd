@@ -8,6 +8,7 @@ const DISPLAY_NAMES: Dictionary = {
 	"AssistAirSuper": "Down DownRight Right D air",
 	
 	"GroundThrowHit": "Right A + D",
+	"GroundBackThrowHit": "Left A + D",
 	"AirThrowHit": "A + D air", "AngelAirThrowHit": "A + D air",
 	"Stand5A": "A", "AngelHH2": "A", "AngelHH5": "A", "AngelHH7": "A",
 	"Stand6A": "Right A", "AngelStand6A": "Right A",
@@ -73,4 +74,27 @@ const DISPLAY_NAMES: Dictionary = {
 	"Flight5B": "B flight",
 	"Flight5C": "C flight",
 	"FlightEnter": "Down DownLeft Left A or B or C",
+
+	"HammerStartup" : "Tap D then Hold Left",
+	"HammerFollowup" : "Release Left Early",
+	"HammerJustFollowup" : "Release Left Perfect",
+	"AirHammerFollowup" : "Release Left air Early",
+	"AirHammerJustFollowup" : "Release Left air Perfect",
+	"JumpStartup" : "Tap D then Hold Down",
+	"JumpFollowup" : "Release Down Early",
+	"JumpJustFollowup" : "Release Down Perfect",
+	"AssistAirSuperAttack" : "Release A or B or C",
+
+	"Assist5B": "Release B",
+	"Assist5C": "Release C",
+
+	"AirSuperCharge1": "Release D (Charge 1)",
+	"AirSuperCharge2": "Release D (Charge 2)",
+	"AirSuperCharge3": "Release D (Charge 3)",
+	"HakkaTags": "D",
+
+	"ASuicoAssistAirAttack2": "Down D stance air",
+	"ASuicoAssistAttack2": "Down D stance",
+	"ASuicoAssistAirAttack": "D stance air",
+	"ASuicoAssistAttack": "D stance", 
 }

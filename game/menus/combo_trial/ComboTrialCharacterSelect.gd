@@ -106,18 +106,20 @@ func update_p1():
 		Global.ASSIST_COMBO_TRIAL = true
 		charaData = ["res://game/fighter/SubaruPlayer.tscn", Enums.PointCharacters.Subaru, false]
 
-	P1Portrait.change_color_number(p1_color_number)
 	unload_character(charaData[0],true,false)
 	Global.PLAYER_1_NODE_PATH[0] = charaData[0]
 	Global.PLAYER_1_CHARACTER[0] = charaData[1]
+
+	if (Global.ASSIST_COMBO_TRIAL):
+		a1_color_number = p1_color_number
+		p1_color_number = 1
+		load_assist(P1Cursor.row, P1Cursor.col, true)
+	else:
+		load_assist(1, 1, true)
 	Global.load_queue.queue_resource(Global.PLAYER_1_NODE_PATH[0])
 	if (Global.PLAYER_1_CHARACTER[0] == Enums.PointCharacters.Mio):
 		Global.load_queue.queue_resource(Global.PLAYER_1_NODE_PATH[2])
 	
-	if (Global.ASSIST_COMBO_TRIAL):
-		load_assist(P1Cursor.row, P1Cursor.col, true)
-	else:
-		load_assist(1, 1, true)
 	
 func update_p2():
 	p2_color_number = select_color(P2Cursor.input_prefix)
@@ -127,18 +129,20 @@ func update_p2():
 		Global.ASSIST_COMBO_TRIAL = true
 		charaData = ["res://game/fighter/SubaruPlayer.tscn", Enums.PointCharacters.Subaru, false]
 
-	P2Portrait.change_color_number(p2_color_number)
 	unload_character(charaData[0],false,false)
 	Global.PLAYER_2_NODE_PATH[0] = charaData[0]
 	Global.PLAYER_2_CHARACTER[0] = charaData[1]
+	
+	if (Global.ASSIST_COMBO_TRIAL):
+		a2_color_number = p2_color_number
+		p2_color_number = 1
+		load_assist(P2Cursor.row, P2Cursor.col, false)
+	else:
+		load_assist(1, 1, false)
 	Global.load_queue.queue_resource(Global.PLAYER_2_NODE_PATH[0])
 	if (Global.PLAYER_2_CHARACTER[0] == Enums.PointCharacters.Mio):
 		Global.load_queue.queue_resource(Global.PLAYER_2_NODE_PATH[2])
 	
-	if (Global.ASSIST_COMBO_TRIAL):
-		load_assist(P2Cursor.row, P2Cursor.col, false)
-	else:
-		load_assist(1, 1, false)
 	
 
 func load_assist(row, col, is_p1=true):
