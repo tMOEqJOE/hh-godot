@@ -211,6 +211,8 @@ var TRAINING_HITBOX_ON = false
 var REPLAY_FILE_NAME: String = ""
 var IS_REPLAY: bool = false
 
+var ASSIST_COMBO_TRIAL: bool = false
+
 var ROLLBACK_LOGS_ENABLED: bool = false
 var DEBUG: bool = false
 
