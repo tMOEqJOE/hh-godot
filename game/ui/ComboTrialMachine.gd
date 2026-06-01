@@ -49,6 +49,10 @@ func load_combo(index: int) -> void:
 		character_index = Global.PLAYER_1_CHARACTER[0]
 	if Global.ASSIST_COMBO_TRIAL:
 		combo_database = ComboDatabase.ASSIST_COMBOS
+		character_index = Global.PLAYER_2_CHARACTER[1]
+		if Global.TRAINING_P1:
+			character_index = Global.PLAYER_1_CHARACTER[1]
+	
 	
 	trials_size = combo_database[character_index].size()
 
