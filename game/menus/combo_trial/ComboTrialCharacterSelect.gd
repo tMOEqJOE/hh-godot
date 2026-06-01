@@ -6,7 +6,7 @@ var all_characters = [
 	[Enums.AllCharacters.Hakka, Enums.AllCharacters.Fubuki, Enums.AllCharacters.Ollie, Enums.AllCharacters.Suisei, Enums.AllCharacters.Kanata, Enums.AllCharacters.AssistOllie, Enums.AllCharacters.AssistSuisei, Enums.AllCharacters.AssistKanata,],
 	[Enums.AllCharacters.OkaKoro, Enums.AllCharacters.Fubuki, Enums.AllCharacters.Mio, Enums.AllCharacters.Subaru, Enums.AllCharacters.Oga, Enums.AllCharacters.AssistMio, Enums.AllCharacters.AssistSubaru, Enums.AllCharacters.AssistOga],
 	[Enums.AllCharacters.Sana, Enums.AllCharacters.Sora, Enums.AllCharacters.Random, Enums.AllCharacters.Random, Enums.AllCharacters.Random, Enums.AllCharacters.Random, Enums.AllCharacters.Random, Enums.AllCharacters.Random],
-	[Enums.AllCharacters.Fubuki, Enums.AllCharacters.Fubuki, Enums.AllCharacters.Flayon, Enums.AllCharacters.Random, Enums.PointCharacters.Random, Enums.AllCharacters.Flayon, Enums.AllCharacters.Random, Enums.PointCharacters.Random]
+	[Enums.AllCharacters.Fubuki, Enums.AllCharacters.Fubuki, Enums.AllCharacters.Flayon, Enums.AllCharacters.Random, Enums.PointCharacters.Random, Enums.AllCharacters.Flayon, Enums.AllCharacters.Random, Enums.AllCharacters.Random]
 	]
 
 func _ready():
@@ -39,7 +39,7 @@ func connect_ui_elements():
 func resolve_characters(row: int, col: int):
 	var enumChara: int = all_characters[row][col]
 	
-	if (enumChara == Enums.PointCharacters.Random):
+	if (enumChara == Enums.AllCharacters.Random):
 		enumChara = rng.randi_range(0, 5)
 		print("RANDOM POINT " + str(enumChara))
 	
@@ -66,7 +66,7 @@ func resolve_assists(row:int, col:int, is_p1):
 	if (is_p1):
 		enumChara = all_characters[row][col]
 	
-	if (enumChara == Enums.AssistCharacters.Random):
+	if (enumChara == Enums.AllCharacters.Random):
 		enumChara = rng.randi_range(0, 8)
 		print("RANDOM ASSIST " + str(enumChara))
 	

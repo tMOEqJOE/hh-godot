@@ -6,6 +6,7 @@ const DISPLAY_NAMES: Dictionary = {
 	"AssistAirAttack": "D air",
 	"AssistAirAttack2": "Down D air",
 	"AssistAirSuper": "Down DownRight Right D air",
+	"AssistAirSuperFollowup": "Release D", # A.Oga's super
 	
 	"GroundThrowHit": "Right A + D",
 	"GroundBackThrowHit": "Left A + D",
@@ -85,6 +86,8 @@ const DISPLAY_NAMES: Dictionary = {
 	"JumpJustFollowup" : "Release Down Perfect",
 	"AssistAirSuperAttack" : "Release A or B or C",
 
+	"AssistSubaruStarBall": "D",
+	
 	"Assist5B": "Release B",
 	"Assist5C": "Release C",
 
