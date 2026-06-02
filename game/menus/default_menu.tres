@@ -1,3 +1,7 @@
-[gd_resource type="Theme" format=3 uid="uid://of3afybns5hm"]
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://of3afybns5hm"]
+
+[ext_resource type="FontFile" uid="uid://ubo1dqjqq8fk" path="res://game/assets/HandwritingJoe.otf" id="1_0w15m"]
 
 [resource]
+default_font = ExtResource("1_0w15m")
+/fonts/font = ExtResource("1_0w15m")
