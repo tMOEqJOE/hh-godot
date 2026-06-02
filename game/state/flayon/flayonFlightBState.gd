@@ -27,11 +27,11 @@ func _init():
 			Enums.StKey.Hurt1ScaleX : 822078, Enums.StKey.Hurt1ScaleY : 1236954,
 			Enums.StKey.hit_box_colliding_frame : 254,
 			Enums.StKey.attack_damage: 45,
-			Enums.StKey.min_damage: 8,
+			Enums.StKey.min_damage: 7,
 			Enums.StKey.guard: Enums.GuardType.High,
 			Enums.StKey.attack_type : Enums.AttackType.Launcher,
 			Enums.StKey.hitstun: Util.DEFAULT_HITSTUN + 4,
-			Enums.StKey.launch_dir_x : -SGFixed.ONE*5,
+			Enums.StKey.launch_dir_x : -SGFixed.ONE*4,
 			Enums.StKey.launch_dir_y : -SGFixed.ONE*45,
 			Enums.StKey.counter_hit: Enums.AttackType.GroundBouncer,
 			Enums.StKey.counter_hitstun: 20,
@@ -58,7 +58,12 @@ func physics_tick(state: Dictionary) -> void:
 
 func gatling_cancel(state: Dictionary, interpreter: InputInterpreter):
 	if (state[Enums.StKey.hitStopFrame] >= 0):
-		if (interpreter.is_button_down(Enums.InputFlags.CDown)):
+		if ((interpreter.is_holding_a_direction(Enums.Numpad.N1, state[Enums.StKey.leftface]) or
+				interpreter.is_holding_a_direction(Enums.Numpad.N2, state[Enums.StKey.leftface]) or
+				interpreter.is_holding_a_direction(Enums.Numpad.N3, state[Enums.StKey.leftface])) and 
+				interpreter.is_button_down(Enums.InputFlags.CDown)):
+			state[Enums.StKey.cancelState] = "Flight2C"
+		elif (interpreter.is_button_down(Enums.InputFlags.CDown)):
 			state[Enums.StKey.cancelState] = "Flight5C"
 		elif (interpreter.is_button_down(Enums.InputFlags.ADown)):
 			state[Enums.StKey.cancelState] = "Flight5A"
