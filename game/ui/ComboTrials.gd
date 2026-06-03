@@ -436,17 +436,17 @@ Enums.PointCharacters.Flayon: [
 	{
 	1: "DUMMY: FlightEnter",
 	2: "Flight5A",
-	3: "Flight5C",
+	3: "Flight5CEarly",
 	4: "Flight5A",
 	5: "DUMMY: [i] airdash [/i]",
 	6: "Flight5A",
-	7: "Flight5C",
+	7: "Flight5CEarly",
 	},
 	{0: "Stand6C",
 	1: "Crouch3C",
 	2: "DUMMY: FlightEnter",
 	3: "Flight5A",
-	4: "Flight5B",
+	4: "Flight5BEarly",
 	},
 ]}
 
