@@ -72,8 +72,8 @@ const DISPLAY_NAMES: Dictionary = {
 	"AirGrapple": "Down DownRight Right A or B air",
 	"Grapple": "Down DownRight Right A or B",
 	"Flight5A": "A flight",
-	"Flight5B": "B flight",
-	"Flight5C": "C flight",
+	"Flight5BEarly": "B flight",
+	"Flight5CEarly": "C flight",
 	"FlightEnter": "Down DownLeft Left A or B or C",
 
 	"HammerStartup" : "Tap D then Hold Left",
