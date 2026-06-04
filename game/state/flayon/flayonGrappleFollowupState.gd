@@ -72,7 +72,12 @@ func meter_cancel(state: Dictionary, interpreter: InputInterpreter):
 				state[Enums.StKey.cancelState] = "AirAssistCall"
 
 func special_cancel(state: Dictionary, interpreter: InputInterpreter):
-	pass
+	if (state[Enums.StKey.hitStopFrame] >= 0):
+		if (interpreter.special_input_button(Enums.SpecialInput.M214, Enums.InputFlags.ADown, state[Enums.StKey.leftface]) or 
+				interpreter.special_input_button(Enums.SpecialInput.M214, Enums.InputFlags.BDown, state[Enums.StKey.leftface]) or 
+				interpreter.special_input_button(Enums.SpecialInput.M214, Enums.InputFlags.CDown, state[Enums.StKey.leftface])):
+			state[Enums.StKey.cancelState] = "AirFlightEnter"
+
 
 func reaction(state: Dictionary, interpreter: InputInterpreter, event_cause: int) -> void:
 	if (state[Enums.StKey.frame] < 18 and event_cause == Enums.Reaction.GroundLand):
