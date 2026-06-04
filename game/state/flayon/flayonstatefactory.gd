@@ -74,6 +74,7 @@ func _init():
 		"GrappleFollowup": FlayonGrappleFollowupState,
 
 		"FlightEnter": FlayonFlightEnterState,
+		"AirFlightEnter": FlayonAirFlightEnterState,
 		"Flight": FlayonFlightState,
 		"FlightExit": FlayonFlightExitState,
 		"FlightNoFuel": FlayonFlightNoFuelState,
@@ -243,7 +244,7 @@ func common_jump_transitions_default(state: Dictionary, interpreter: InputInterp
 	elif (interpreter.special_input_button(Enums.SpecialInput.M214, Enums.InputFlags.ADown, state[Enums.StKey.leftface]) or 
 			interpreter.special_input_button(Enums.SpecialInput.M214, Enums.InputFlags.BDown, state[Enums.StKey.leftface]) or 
 			interpreter.special_input_button(Enums.SpecialInput.M214, Enums.InputFlags.CDown, state[Enums.StKey.leftface])):
-		return "FlightEnter"
+		return "AirFlightEnter"
 	elif (state[Enums.StKey.airDash] > 0 and interpreter.is_air_dashing(true, state[Enums.StKey.leftface])):
 		return "ForwardAirDash"
 	elif (state[Enums.StKey.airDash] > 0 and interpreter.is_air_dashing(false, state[Enums.StKey.leftface])):
