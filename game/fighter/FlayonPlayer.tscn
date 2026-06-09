@@ -370,7 +370,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1000000),
 "update": 0,
-"values": [Vector2(-20, 120)]
+"values": [Vector2(20, 130)]
 }
 
 [sub_resource type="Animation" id="53"]
@@ -2497,19 +2497,19 @@ auto_reset = false
 
 [node name="Hitbox1" parent="." instance=ExtResource("151_0ymqg")]
 fixed_position_x = 8629186
-fixed_position_y = -17760254
-fixed_scale_x = 526496
-fixed_scale_y = 1150290
-position = Vector2(131.67093, -270.99997)
-scale = Vector2(8.033691, 17.552032)
+fixed_position_y = -8760254
+fixed_scale_x = 826496
+fixed_scale_y = 850290
+position = Vector2(131.67093, -133.67087)
+scale = Vector2(12.611328, 12.974396)
 
 [node name="Hitbox2" parent="." instance=ExtResource("151_0ymqg")]
-fixed_position_x = 40435712
-fixed_position_y = -19136510
-fixed_scale_x = 1520696
-fixed_scale_y = 910074
-position = Vector2(617, -292)
-scale = Vector2(23.204, 13.8866)
+fixed_position_x = 18435712
+fixed_position_y = -5136510
+fixed_scale_x = 820696
+fixed_scale_y = 510074
+position = Vector2(281.30664, -78.37692)
+scale = Vector2(12.522827, 7.7831116)
 
 [node name="Hurtbox1" parent="." instance=ExtResource("152_d42n6")]
 fixed_position_y = -10087936

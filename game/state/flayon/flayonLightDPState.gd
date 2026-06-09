@@ -3,6 +3,7 @@ extends FlayonAirAttackState
 class_name FlayonLightDPState
 
 var DPSound = preload("res://game/assets/voice/flayon/mxf_shock.wav")
+const delay_cancel_frame = 12
 
 func _init():
 	endFrame = 120
@@ -43,11 +44,11 @@ func _init():
 			Enums.StKey.Hurt2PosX : 6546270, Enums.StKey.Hurt2PosY : -20362431,
 			Enums.StKey.Hurt2ScaleX : 645783, Enums.StKey.Hurt2ScaleY : 665625,
 			Enums.StKey.attack_type : Enums.AttackType.Launcher,
-			Enums.StKey.launch_dir_x : -SGFixed.ONE*18,
+			Enums.StKey.launch_dir_x : -SGFixed.ONE*28,
 			Enums.StKey.launch_dir_y : -SGFixed.ONE*55,
 			Enums.StKey.chip_damage: 5,
 			Enums.StKey.min_damage: 10,
-			Enums.StKey.attack_damage: 30,
+			Enums.StKey.attack_damage: 20,
 			Enums.StKey.hitstun: 35,
 			Enums.StKey.counter_hit: Enums.AttackType.Launcher,
 			Enums.StKey.counter_hitstun: 60,
@@ -76,7 +77,7 @@ func physics_tick(state: Dictionary) -> void:
 	super.physics_tick(state)
 	if (state[Enums.StKey.frame] == 7):
 		state[Enums.StKey.velocity_y] = -SGFixed.ONE * 50
-		state[Enums.StKey.velocity_x] = Util.fixed_max(SGFixed.ONE * 1, state[Enums.StKey.velocity_x])
+		state[Enums.StKey.velocity_x] = Util.fixed_max(SGFixed.ONE * 12, state[Enums.StKey.velocity_x])
 #		state[Enums.StKey.drag_x] = 85536
 	elif (state[Enums.StKey.frame] == 3):
 		SyncManager.play_sound("FlayonVoice", DPSound, {"bus": "Voice"})
@@ -94,7 +95,7 @@ func meter_cancel(state: Dictionary, interpreter: InputInterpreter):
 	if (state[Enums.StKey.hitStopFrame] >= 0):
 		if (boost_OK(state, interpreter)):
 			state[Enums.StKey.cancelState] = "AirBoostCancel"
-		elif (state[Enums.StKey.frame] >= 15 and interpreter.is_button_down(Enums.InputFlags.ADown | Enums.InputFlags.DDown)):
+		elif (state[Enums.StKey.frame] >= delay_cancel_frame and interpreter.is_button_down(Enums.InputFlags.ADown | Enums.InputFlags.DDown)):
 			if ((interpreter.is_holding_a_direction(Enums.Numpad.N4, state[Enums.StKey.leftface]) or
 					interpreter.is_holding_a_direction(Enums.Numpad.N1, state[Enums.StKey.leftface]) or 
 					interpreter.is_holding_a_direction(Enums.Numpad.N7, state[Enums.StKey.leftface]))):
@@ -117,8 +118,17 @@ func gatling_cancel(state: Dictionary, interpreter: InputInterpreter):
 
 func special_cancel(state: Dictionary, interpreter: InputInterpreter):
 	if (state[Enums.StKey.hitStopFrame] >= 0):
-		if (interpreter.special_input_button(Enums.SpecialInput.M214, Enums.InputFlags.ADown, state[Enums.StKey.leftface]) or 
-				interpreter.special_input_button(Enums.SpecialInput.M214, Enums.InputFlags.BDown, state[Enums.StKey.leftface]) or 
-				interpreter.special_input_button(Enums.SpecialInput.M214, Enums.InputFlags.CDown, state[Enums.StKey.leftface])):
-			state[Enums.StKey.cancelState] = "AirFlightEnter"
-
+		if (state[Enums.StKey.frame] >= delay_cancel_frame):
+			if (level_2_OK(state) and interpreter.special_input_button(Enums.SpecialInput.M236, Enums.InputFlags.CDown, state[Enums.StKey.leftface])):
+				state[Enums.StKey.cancelState] = "AirStomp"
+			elif (interpreter.special_input_button(Enums.SpecialInput.M236, Enums.InputFlags.ADown, state[Enums.StKey.leftface]) or 
+				interpreter.special_input_button(Enums.SpecialInput.M236, Enums.InputFlags.BDown, state[Enums.StKey.leftface])):
+				state[Enums.StKey.cancelState] = "AirGrapple"
+			elif (interpreter.special_input_button(Enums.SpecialInput.M214, Enums.InputFlags.ADown, state[Enums.StKey.leftface]) or 
+					interpreter.special_input_button(Enums.SpecialInput.M214, Enums.InputFlags.BDown, state[Enums.StKey.leftface]) or 
+					interpreter.special_input_button(Enums.SpecialInput.M214, Enums.InputFlags.CDown, state[Enums.StKey.leftface])):
+				state[Enums.StKey.cancelState] = "AirFlightEnter"
+		else:
+			if (interpreter.special_input_button(Enums.SpecialInput.M236, Enums.InputFlags.ADown, state[Enums.StKey.leftface]) or 
+				interpreter.special_input_button(Enums.SpecialInput.M236, Enums.InputFlags.BDown, state[Enums.StKey.leftface])):
+				state[Enums.StKey.cancelState] = "AirGrapple"

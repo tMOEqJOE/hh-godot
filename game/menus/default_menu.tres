@@ -1,7 +1,16 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://of3afybns5hm"]
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://of3afybns5hm"]
 
 [ext_resource type="FontFile" uid="uid://ubo1dqjqq8fk" path="res://game/assets/HandwritingJoe.otf" id="1_0w15m"]
+[ext_resource type="Texture2D" uid="uid://ckqbw4wvt2ax3" path="res://game/assets/sprites/UI/MainMenus/Buttons/OfflineButton.png" id="2_um6sl"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kyuue"]
+texture = ExtResource("2_um6sl")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_co60m"]
+texture = ExtResource("2_um6sl")
 
 [resource]
 default_font = ExtResource("1_0w15m")
 /fonts/font = ExtResource("1_0w15m")
+Button/styles/hover = SubResource("StyleBoxTexture_kyuue")
+Button/styles/normal = SubResource("StyleBoxTexture_co60m")
