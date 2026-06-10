@@ -3,7 +3,7 @@ extends FlayonFlightBaseState
 class_name FlayonFlightDownwardAirdashState
 
 func _init():
-	endFrame = 12
+	endFrame = 16
 	
 	anim_data = {
 		0 : {

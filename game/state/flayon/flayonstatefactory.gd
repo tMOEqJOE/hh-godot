@@ -93,6 +93,7 @@ func _init():
 		"Flight5CEarly": FlayonFlightCEarlyState,
 		"Flight5BIncrease": FlayonFlightBIncreaseState,
 		"Flight5CIncrease": FlayonFlightCIncreaseState,
+		"Flight8C": FlayonFlight8CState,
 
 		"RyukenShiki": preload("res://game/state/flayon/flayonLightDPState.gd"),
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=216 format=3 uid="uid://cbwy2j4nbkk2j"]
+[gd_scene load_steps=215 format=3 uid="uid://cbwy2j4nbkk2j"]
 
 [ext_resource type="Script" uid="uid://dgsx3duqjaeo5" path="res://game/fighter/PointPlayer.gd" id="1_m4qvm"]
 [ext_resource type="Material" uid="uid://bt3lvyqtd78u0" path="res://game/assets/shaders/ColorSwapMat.tres" id="2_xm7kd"]
@@ -1221,8 +1221,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_6ljmy"]
 resource_name = "FlightBash"
-length = 0.13333526
-loop_mode = 1
+length = 0.6666696
 step = 0.0166667
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -1231,39 +1230,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.05, 0.083333336, 0.13333334, 0.16666667, 0.2, 0.23333335, 0.3, 0.38333336),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("84_gsj2t"), ExtResource("85_l8yul")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:offset")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1000000),
-"update": 0,
-"values": [Vector2(-50, 110)]
-}
-
-[sub_resource type="Animation" id="Animation_3rtld"]
-resource_name = "FlightBashRelease"
-length = 0.18333536
-step = 0.0166667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.06666667, 0.15),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [ExtResource("84_gsj2t"), ExtResource("132_vkwte"), ExtResource("133_6ljmy")]
+"values": [ExtResource("84_gsj2t"), ExtResource("85_l8yul"), ExtResource("84_gsj2t"), ExtResource("85_l8yul"), ExtResource("84_gsj2t"), ExtResource("85_l8yul"), ExtResource("84_gsj2t"), ExtResource("132_vkwte"), ExtResource("133_6ljmy")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -2424,7 +2394,6 @@ _data = {
 &"FlightBStartup": SubResource("Animation_5mqlr"),
 &"FlightBackwardAirdash": SubResource("Animation_weqwf"),
 &"FlightBash": SubResource("Animation_6ljmy"),
-&"FlightBashRelease": SubResource("Animation_3rtld"),
 &"FlightC": SubResource("Animation_66wdp"),
 &"FlightCIncrease": SubResource("Animation_6wc6i"),
 &"FlightCStartup": SubResource("Animation_23vwi"),
@@ -2496,20 +2465,20 @@ script = ExtResource("150_1jibv")
 auto_reset = false
 
 [node name="Hitbox1" parent="." instance=ExtResource("151_0ymqg")]
-fixed_position_x = 8629186
-fixed_position_y = -8760254
-fixed_scale_x = 826496
+fixed_position_x = 2629186
+fixed_position_y = -12760256
+fixed_scale_x = 1026496
 fixed_scale_y = 850290
-position = Vector2(131.67093, -133.67087)
-scale = Vector2(12.611328, 12.974396)
+position = Vector2(40.118195, -194.70605)
+scale = Vector2(15.663086, 12.974396)
 
 [node name="Hitbox2" parent="." instance=ExtResource("151_0ymqg")]
-fixed_position_x = 18435712
-fixed_position_y = -5136510
-fixed_scale_x = 820696
-fixed_scale_y = 510074
-position = Vector2(281.30664, -78.37692)
-scale = Vector2(12.522827, 7.7831116)
+fixed_position_x = -14435712
+fixed_position_y = -8136510
+fixed_scale_x = 220696
+fixed_scale_y = 910074
+position = Vector2(-220.27148, -124.15329)
+scale = Vector2(3.3675537, 13.886627)
 
 [node name="Hurtbox1" parent="." instance=ExtResource("152_d42n6")]
 fixed_position_y = -10087936

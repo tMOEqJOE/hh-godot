@@ -19,20 +19,20 @@ func _init():
 			Enums.StKey.Hit1Disable : false,
 			Enums.StKey.Hit2Disable : false,
 			Enums.StKey.hit_box_colliding_frame : 254, 
-			Enums.StKey.Hit1PosX : 14629186, Enums.StKey.Hit1PosY : -18760254,
-			Enums.StKey.Hit1ScaleX : 1426496, Enums.StKey.Hit1ScaleY : 850290,
-			Enums.StKey.Hit2PosX : 12155775, Enums.StKey.Hit2PosY : -17468801,
-			Enums.StKey.Hit2ScaleX : 997940, Enums.StKey.Hit2ScaleY : 947094,
+			Enums.StKey.Hit1PosX : 4629186, Enums.StKey.Hit1PosY : -12760256,
+			Enums.StKey.Hit1ScaleX : 1026496, Enums.StKey.Hit1ScaleY : 850290,
+			Enums.StKey.Hit2PosX : 15435712, Enums.StKey.Hit2PosY : -7136510,
+			Enums.StKey.Hit2ScaleX : 820696, Enums.StKey.Hit2ScaleY : 810074,
 			Enums.StKey.Hurt1Disable : false,Enums.StKey.Hurt2Disable : false,Enums.StKey.Hurt3Disable : true,
 			Enums.StKey.Hurt1PosX : -262144, Enums.StKey.Hurt1PosY : -13471104,
 			Enums.StKey.Hurt1ScaleX : 822078, Enums.StKey.Hurt1ScaleY : 1236954,
-			Enums.StKey.Hurt2PosX : 12976128, Enums.StKey.Hurt2PosY : -20774912,
-			Enums.StKey.Hurt2ScaleX : 1535050, Enums.StKey.Hurt2ScaleY : 643629,
+			Enums.StKey.Hurt2PosX : 15435712, Enums.StKey.Hurt2PosY : -7136510,
+			Enums.StKey.Hurt2ScaleX : 920696, Enums.StKey.Hurt2ScaleY : 910074,
 			Enums.StKey.attack_damage: 50,
 			Enums.StKey.min_damage: 15,
 			Enums.StKey.guard: Enums.GuardType.High,
 			Enums.StKey.attack_type : Enums.AttackType.Launcher,
-			Enums.StKey.hitstun: Util.DEFAULT_HITSTUN + 4,
+			Enums.StKey.hitstun: Util.DEFAULT_HITSTUN + 20,
 			Enums.StKey.launch_dir_x : -SGFixed.ONE*35,
 			Enums.StKey.launch_dir_y : SGFixed.ONE*45,
 			Enums.StKey.counter_hit: Enums.AttackType.GroundBouncer,
@@ -44,9 +44,11 @@ func _init():
 			Enums.StKey.counterOK : true,
 			Enums.StKey.Hit1Disable : true,
 			Enums.StKey.Hit2Disable : true,
-			Enums.StKey.Hurt1Disable : false,Enums.StKey.Hurt2Disable : true,Enums.StKey.Hurt3Disable : true,
+			Enums.StKey.Hurt1Disable : false,Enums.StKey.Hurt2Disable : false,Enums.StKey.Hurt3Disable : true,
 			Enums.StKey.Hurt1PosX : -262144, Enums.StKey.Hurt1PosY : -13471104,
 			Enums.StKey.Hurt1ScaleX : 822078, Enums.StKey.Hurt1ScaleY : 1236954,
+			Enums.StKey.Hurt2PosX : 15435712, Enums.StKey.Hurt2PosY : -7136510,
+			Enums.StKey.Hurt2ScaleX : 920696, Enums.StKey.Hurt2ScaleY : 910074,
 			},
 	}
 
@@ -61,7 +63,12 @@ func physics_tick(state: Dictionary) -> void:
 
 func gatling_cancel(state: Dictionary, interpreter: InputInterpreter):
 	if (state[Enums.StKey.hitStopFrame] >= 0):
-		if (interpreter.is_button_down(Enums.InputFlags.CDown)):
+		if ((interpreter.is_holding_a_direction(Enums.Numpad.N7, state[Enums.StKey.leftface]) or
+				interpreter.is_holding_a_direction(Enums.Numpad.N8, state[Enums.StKey.leftface]) or
+				interpreter.is_holding_a_direction(Enums.Numpad.N9, state[Enums.StKey.leftface])) and 
+				interpreter.is_button_down(Enums.InputFlags.CDown)):
+			state[Enums.StKey.cancelState] = "Flight8C"
+		elif (interpreter.is_button_down(Enums.InputFlags.CDown)):
 			state[Enums.StKey.cancelState] = "Flight5C"
 		elif (interpreter.is_button_down(Enums.InputFlags.BDown)):
 			state[Enums.StKey.cancelState] = "Flight5B"

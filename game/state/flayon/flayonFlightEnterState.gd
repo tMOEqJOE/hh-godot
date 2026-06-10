@@ -28,7 +28,7 @@ func _init():
 func enter(state: Dictionary) -> void:
 	super.enter(state)
 	anim.play("FlightEnter")
-	state[Enums.StKey.drag_x] = Util.FRICTION
+	state[Enums.StKey.drag_x] = 0 #Util.ICE_FRICTION
 	state[Enums.StKey.accel_y] = 0
 	state[Enums.StKey.super_meter] -= SGFixed.ONE*500
 
