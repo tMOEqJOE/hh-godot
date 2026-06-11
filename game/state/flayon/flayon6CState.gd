@@ -90,6 +90,8 @@ func gatling_cancel(state: Dictionary, interpreter: InputInterpreter):
 				interpreter.is_holding_a_direction(Enums.Numpad.N3, state[Enums.StKey.leftface])) and 
 				interpreter.is_button_down(Enums.InputFlags.ADown)):
 			state[Enums.StKey.cancelState] = "Crouch2A"
+		elif (interpreter.is_button_down(Enums.InputFlags.CDown)):
+			state[Enums.StKey.cancelState] = "Stand5C"
 		elif (interpreter.is_button_down(Enums.InputFlags.BDown)):
 			state[Enums.StKey.cancelState] = "Stand5B"
 		elif (interpreter.is_button_down(Enums.InputFlags.ADown)):

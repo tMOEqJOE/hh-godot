@@ -1,6 +1,6 @@
 extends FlayonAirAttackState
 
-class_name FlayonFlightEnterState
+class_name FlayonAirFlightEnterState
 
 func _init():
 	endFrame = 10
@@ -28,7 +28,7 @@ func _init():
 func enter(state: Dictionary) -> void:
 	super.enter(state)
 	anim.play("FlightEnter")
-	state[Enums.StKey.drag_x] = Util.FRICTION
+	state[Enums.StKey.drag_x] = 0
 	state[Enums.StKey.accel_y] = 0
 	state[Enums.StKey.super_meter] -= SGFixed.ONE*500
 
@@ -36,11 +36,10 @@ func physics_tick(state: Dictionary) -> void:
 	super.physics_tick(state)
 	state[Enums.StKey.super_meter] -= Util.FLIGHT_ATTACK_METER_DRAIN
 	if (state[Enums.StKey.frame] == 2):
-		state[Enums.StKey.velocity_y] = -SGFixed.ONE*25
+		state[Enums.StKey.velocity_y] = Util.fixed_min(-SGFixed.ONE*25, state[Enums.StKey.velocity_y])
 		state[Enums.StKey.accel_y] = 65536
-	elif (state[Enums.StKey.frame] == 12):
-		state[Enums.StKey.velocity_y] = 0
-		state[Enums.StKey.accel_y] = 0
+	elif (state[Enums.StKey.frame] == 3):
+		state[Enums.StKey.hitStopFrame] = 0
 
 func handle_input(state: Dictionary, interpreter: InputInterpreter) -> void:
 	super.handle_input(state, interpreter)
