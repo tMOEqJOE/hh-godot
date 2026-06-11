@@ -3,7 +3,7 @@ extends FlayonAirAttackState
 class_name FlayonAirStompState
 
 func _init():
-	endFrame = 50
+	endFrame = 60
 	
 	anim_data = {
 		0 : {
@@ -94,7 +94,7 @@ func enter(state: Dictionary) -> void:
 func physics_tick(state: Dictionary) -> void:
 	super.physics_tick(state)
 	if (state[Enums.StKey.frame] == 5):
-		state[Enums.StKey.velocity_y] =	-SGFixed.ONE*35
+		state[Enums.StKey.velocity_y] =	-SGFixed.ONE*40
 		state[Enums.StKey.accel_y] = Util.GRAVITY
 
 func meter_cancel(state: Dictionary, interpreter: InputInterpreter):
