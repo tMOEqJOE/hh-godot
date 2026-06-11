@@ -61,6 +61,7 @@ func _init():
 
 func enter(state: Dictionary) -> void:
 	super.enter(state)
+	state[Enums.StKey.drag_x] = 0
 	state[Enums.StKey.kara_OK] = false
 	anim.play("Flight2CIncrease")
 
