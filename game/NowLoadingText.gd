@@ -6,6 +6,10 @@ const NOWLOADINGSound = preload("res://game/assets/sfx/WhiffLvl3.wav")
 
 const GOSound = preload("res://game/assets/sfx/GO.wav")
 
+const GOVoice1 = preload("res://game/assets/sfx/GO.wav")
+const GOVoice2 = preload("res://game/assets/sfx/GO.wav")
+const GOVoice3 = preload("res://game/assets/sfx/GO.wav")
+
 var enabled: bool = true
 
 func start():
@@ -14,6 +18,12 @@ func start():
 		$NetworkAnimationPlayer.play("LOADING")
 		$Fade.visible = true
 		SyncManager.play_sound("nowloading", NOWLOADINGSound, {"bus": "Sound"})
+
+
+func _on_Announcer_timeout():
+	# $NetworkTimer.stop()
+	if (enabled):
+		SyncManager.play_sound("go_voice", GOVoice1, {"bus": "Voice"})
 
 func _on_NetworkTimer_timeout():
 	emit_signal("end_pre_round")
