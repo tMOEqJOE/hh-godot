@@ -295,6 +295,7 @@ const SuperJumpDustVFX = preload("res://game/fighter/effects/SuperJumpDust.tscn"
 const FDBubbleVFX = preload("res://game/fighter/effects/FDBubble.tscn")
 const RedParryFlashVFX = preload("res://game/fighter/effects/RedParryFlash.tscn")
 const ParryWhiffVFX = preload("res://game/fighter/effects/ParryWhiffFlash.tscn")
+const IncreaseFlashVFX = preload("res://game/fighter/effects/IncreaseFlash.tscn")
 const TagVFX = preload("res://game/fighter/effects/AssistTag.tscn")
 const RCSound = preload("res://game/assets/sfx/RomanCancel.wav")
 const WhiffSound = preload("res://game/assets/sfx/Whiff.wav")

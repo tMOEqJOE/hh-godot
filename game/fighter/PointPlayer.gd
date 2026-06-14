@@ -218,6 +218,8 @@ func summonHelper(entity: String) -> void:
 			summonVFX("SuperJumpDustVFX", Global.SuperJumpDustVFX)
 		elif (entity == "FDBubble"):
 			summonVFX("FDBubbleVFX", Global.FDBubbleVFX)
+		elif (entity == "IncreaseFlash"):
+			summonVFX("IncreaseFlashVFX", Global.IncreaseFlashVFX)
 		elif (entity == "ParryWhiff"):
 			summonVFX("ParryWhiff", Global.ParryWhiffVFX)
 		elif (entity == "RedParryFlash"):
