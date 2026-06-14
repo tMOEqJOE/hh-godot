@@ -16,7 +16,7 @@ func _init():
 			},
 		4 : {
 			Enums.StKey.counterOK : true,
-			Enums.StKey.Summon : "ParryWhiff",
+			Enums.StKey.Summon : "IncreaseFlash",
 			Enums.StKey.Hit1Disable : true,
 			Enums.StKey.Hit2Disable : true,
 			Enums.StKey.Hurt1Disable : false,Enums.StKey.Hurt2Disable : true,Enums.StKey.Hurt3Disable : true,
@@ -39,6 +39,7 @@ func _init():
 			Enums.StKey.Hurt2ScaleX : 920696, Enums.StKey.Hurt2ScaleY : 910074,
 			Enums.StKey.attack_damage: 40,
 			Enums.StKey.min_damage: 7,
+			Enums.StKey.chip_damage: 4,
 			Enums.StKey.guard: Enums.GuardType.Mid,
 			Enums.StKey.attack_type : Enums.AttackType.GroundBouncer,
 			Enums.StKey.hitstun: Util.DEFAULT_HITSTUN + 90,
