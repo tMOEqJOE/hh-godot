@@ -61,7 +61,7 @@ const MAX_SUPER_METER := LEVEL_ONE_SUPER*5
 const ASSIST_STOCK := SGFixed.ONE*10000
 const MAX_ASSIST_METER := ASSIST_STOCK*4
 const BASE_SYNC_RATE := SGFixed.ONE*30
-const MAX_HP := 56 #563 # have confidence
+const MAX_HP := 563 #563 # have confidence
 
 const PARRY_HIT_STOP := 11
 const PARRY_ATTACKER_EXTRA_HIT_STOP := 4
