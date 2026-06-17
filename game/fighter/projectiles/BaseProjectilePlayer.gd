@@ -77,7 +77,7 @@ func _load_state(state: Dictionary) -> void:
 	currentState[Enums.StKey.frame] = state.get(Enums.StKey.frame, 0)
 	currentState[Enums.StKey.last_anim_frame] = state.get(Enums.StKey.last_anim_frame, 0)
 	currentState[Enums.StKey.hitStopFrame] = state.get(Enums.StKey.hitStopFrame, -1)
-	currentState[Enums.StKey.hit_cooldown] = state.get(Enums.StKey.hit_cooldown, {})
+	currentState[Enums.StKey.hit_cooldown] = state.get(Enums.StKey.hit_cooldown, {}).duplicate()
 	currentState[Enums.StKey.hit_box_colliding_frame] = state.get(Enums.StKey.hit_box_colliding_frame, -1)
 	fighterState.update_rollback_state(currentState)
 	fighterState.rollback_state_transition(currentState.get(Enums.StKey.stateName, "Neutral"))
