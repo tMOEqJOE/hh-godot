@@ -9,7 +9,6 @@
 anchors_preset = -1
 offset_right = 47.0
 offset_bottom = 20.0
-theme = ExtResource("1_7ye67")
 script = ExtResource("1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -29,6 +28,7 @@ texture = ExtResource("4_7ye67")
 
 [node name="CloseButton" type="Button" parent="."]
 layout_mode = 2
+theme = ExtResource("1_7ye67")
 text = "Close"
 
 [node name="Moves" type="GridContainer" parent="."]
