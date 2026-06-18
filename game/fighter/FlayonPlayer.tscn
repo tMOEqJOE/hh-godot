@@ -868,7 +868,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1000000),
 "update": 0,
-"values": [Vector2(-100, 180)]
+"values": [Vector2(-100, 160)]
 }
 
 [sub_resource type="Animation" id="50"]
