@@ -1,4 +1,4 @@
-[gd_scene load_steps=216 format=3 uid="uid://cbwy2j4nbkk2j"]
+[gd_scene load_steps=215 format=3 uid="uid://cbwy2j4nbkk2j"]
 
 [ext_resource type="Script" uid="uid://dgsx3duqjaeo5" path="res://game/fighter/PointPlayer.gd" id="1_m4qvm"]
 [ext_resource type="Material" uid="uid://bt3lvyqtd78u0" path="res://game/assets/shaders/ColorSwapMat.tres" id="2_xm7kd"]
@@ -59,7 +59,6 @@
 [ext_resource type="Texture2D" uid="uid://dlwo1cgh0b2ov" path="res://game/assets/sprites/flayon/CrouchHurt/Timeline 1_0000.png" id="73_jefqy"]
 [ext_resource type="Texture2D" uid="uid://cmdloci1l5bys" path="res://game/assets/sprites/flayon/CrouchHurt/Timeline 1_0001.png" id="74_0rw8g"]
 [ext_resource type="Texture2D" uid="uid://vnp62frk4uc3" path="res://game/assets/sprites/flayon/CrouchHurt/Timeline 1_0002.png" id="75_8hpu6"]
-[ext_resource type="Texture2D" uid="uid://g0ecn43rfbdm" path="res://game/assets/sprites/flayon/CrouchHurt/Timeline 1_0003.png" id="76_4p678"]
 [ext_resource type="Texture2D" uid="uid://dyv4tyjdnyr1t" path="res://game/assets/sprites/flayon/CrouchParry/Timeline 1_0000.png" id="77_ujttm"]
 [ext_resource type="Texture2D" uid="uid://cddwp02mtkunj" path="res://game/assets/sprites/flayon/ForwardAirdash/Timeline 1_0000.png" id="79_4p678"]
 [ext_resource type="Texture2D" uid="uid://dnocesnhvbxy0" path="res://game/assets/sprites/flayon/FlightB/Timeline 1_0002.png" id="83_6ljmy"]
@@ -853,10 +852,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.083333336, 0.283333, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.083333336, 0.283333),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [ExtResource("73_jefqy"), ExtResource("74_0rw8g"), ExtResource("75_8hpu6"), ExtResource("76_4p678")]
+"values": [ExtResource("73_jefqy"), ExtResource("74_0rw8g"), ExtResource("75_8hpu6")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
