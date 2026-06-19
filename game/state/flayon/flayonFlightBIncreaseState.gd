@@ -38,6 +38,7 @@ func _init():
 			Enums.StKey.attack_damage: 40,
 			Enums.StKey.min_damage: 6,
 			Enums.StKey.chip_damage:3,
+			Enums.StKey.meter_build: SGFixed.ONE*1800,
 			Enums.StKey.guard: Enums.GuardType.High,
 			Enums.StKey.attack_type : Enums.AttackType.WallBouncer,
 			Enums.StKey.hitstun: Util.DEFAULT_HITSTUN + 15,
