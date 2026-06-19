@@ -40,6 +40,7 @@ func _init():
 			Enums.StKey.attack_damage: 40,
 			Enums.StKey.min_damage: 7,
 			Enums.StKey.chip_damage: 4,
+			Enums.StKey.meter_build: SGFixed.ONE*1000,
 			Enums.StKey.guard: Enums.GuardType.Mid,
 			Enums.StKey.attack_type : Enums.AttackType.GroundBouncer,
 			Enums.StKey.hitstun: Util.DEFAULT_HITSTUN + 90,
@@ -79,11 +80,10 @@ func gatling_cancel(state: Dictionary, interpreter: InputInterpreter):
 	pass
 
 func reaction(state: Dictionary, _interpreter: InputInterpreter, event_cause: int) -> void:
-	if (state[Enums.StKey.hitStopFrame] <= 0):
-		if (event_cause == Enums.Reaction.GroundLand):
-			state[Enums.StKey.doubleJump] = 1
-			state[Enums.StKey.airDash] = 1
-			state[Enums.StKey.leftfaceOK] = true
-			change_state.call("Stand")
+	if (state[Enums.StKey.hitStopFrame] <= 0 and event_cause == Enums.Reaction.GroundLand):
+		state[Enums.StKey.doubleJump] = 1
+		state[Enums.StKey.airDash] = 1
+		state[Enums.StKey.leftfaceOK] = true
+		change_state.call("Stand")
 	else:
 		super.reaction(state, _interpreter, event_cause)
