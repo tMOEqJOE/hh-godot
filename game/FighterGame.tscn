@@ -464,8 +464,9 @@ texture = ExtResource("35_yl1ep")
 script = ExtResource("31")
 wait_ticks = 60
 
-[node name="NowLoadingText" type="Node2D" parent="Camera3D/BattleUI"]
+[node name="NowLoadingText" type="Node2D" parent="Camera3D/BattleUI" node_paths=PackedStringArray("announcer_timer")]
 script = ExtResource("32")
+announcer_timer = NodePath("AnnouncerTimer")
 
 [node name="NetworkAnimationPlayer" type="AnimationPlayer" parent="Camera3D/BattleUI/NowLoadingText"]
 libraries = {
@@ -476,6 +477,10 @@ script = ExtResource("22")
 [node name="NetworkTimer" type="Node" parent="Camera3D/BattleUI/NowLoadingText"]
 script = ExtResource("31")
 wait_ticks = 191
+
+[node name="AnnouncerTimer" type="Node" parent="Camera3D/BattleUI/NowLoadingText"]
+script = ExtResource("31")
+wait_ticks = 135
 
 [node name="Fade" type="Node2D" parent="Camera3D/BattleUI/NowLoadingText"]
 visible = false
@@ -545,3 +550,4 @@ scale = Vector2(108.701, 673.875)
 [connection signal="timeout" from="Camera3D/BattleUI/WinScreenManager/NetworkTimer" to="Camera3D/BattleUI/WinScreenManager" method="_on_NetworkTimer_timeout"]
 [connection signal="timeout" from="Camera3D/BattleUI/DownText/NetworkTimer" to="Camera3D/BattleUI/DownText" method="_on_NetworkTimer_timeout"]
 [connection signal="timeout" from="Camera3D/BattleUI/NowLoadingText/NetworkTimer" to="Camera3D/BattleUI/NowLoadingText" method="_on_NetworkTimer_timeout"]
+[connection signal="timeout" from="Camera3D/BattleUI/NowLoadingText/AnnouncerTimer" to="Camera3D/BattleUI/NowLoadingText" method="_on_announcer_timer_timeout"]

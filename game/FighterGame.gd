@@ -393,6 +393,7 @@ func ko_signal_connect():
 
 func connect_dependencies() -> void:
 	$Camera3D/BattleUI/DownText.round_tracker = $Camera3D/BattleUI/RoundTracker
+	$Camera3D/BattleUI/NowLoadingText.round_tracker = $Camera3D/BattleUI/RoundTracker
 	$Camera3D/BattleUI/ServerRoundCounter.round_tracker = $Camera3D/BattleUI/RoundTracker
 	$Camera3D/BattleUI/ClientRoundCounter.round_tracker = $Camera3D/BattleUI/RoundTracker
 	$Camera3D/BattleUI/ServerRoundCounter.setup_signal()
@@ -649,9 +650,6 @@ func resolve_collision_interactions(fight_entities, allFirstFrameCollide):
 					hitNode.on_attack_hit(fight_entity.attackData[Enums.StKey.attack_type], hitData)
 					if (react_type == Enums.Reaction.ThrowHurt or react_type == Enums.Reaction.AirThrowHurt):
 						hurtNode.update_opponent_anchor(hitNode)
-
-		#if (allFirstFrameCollide.has(name) and not allFirstFrameCollide[name].is_empty()):
-			#print(name, str(allFirstFrameCollide[name]))
 	
 func left_face_calculation(pos1:int, pos2:int, left1:bool, left2:bool) -> bool:
 	var pivot1:int
@@ -676,7 +674,6 @@ func is_pushboxes_colliding():
 			ServerPlayer.fixed_position.y + height > ClientPlayer.fixed_position.y):
 		return true
 	return false
-#	return ServerPlayer.standing_on_player() or ClientPlayer.standing_on_player()
 
 func pushbox_collision():
 	# Pushbox on pushbox collision
@@ -834,7 +831,6 @@ func _network_process(input: Dictionary) -> void:
 			un_freeze_game_sim()
 		else:
 			pass # permafreeze
-#	BattleCamera.camera_sync_to_physics_engine()
 
 func point_left_face_calculation(is_server_player: bool) -> bool: 
 	# confusingly, true is Serverplayer.leftface = true
