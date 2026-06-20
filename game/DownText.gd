@@ -42,6 +42,3 @@ func _on_NetworkTimer_timeout():
 		$NetworkAnimationPlayer.play("EMPTY")
 		$NetworkTimer.stop()
 		emit_signal("end_down")
-		# TODO: change logic to read in match win counts at this moment and determine end of match
-		# better yet, maybe make a new component to handle this logic?
-		# the new solution will be rollback safe in practice (no rollback longer than the KO freeze)

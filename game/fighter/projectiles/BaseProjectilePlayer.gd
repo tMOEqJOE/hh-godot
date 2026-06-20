@@ -260,6 +260,7 @@ func has_property(property: int) -> bool:
 #####################
 
 func _network_spawn(data: Dictionary) -> void:
+	reset_state()
 	visible = true
 	var spawn_position : SGFixedVector2 = SGFixedVector2.new()
 	spawn_position.x = data['position_x']
@@ -353,7 +354,6 @@ func anim_updates() -> void:
 		Hurtbox1.fixed_scale.x = anim_frame.get(Enums.StKey.Hurt1ScaleX, Hurtbox1.fixed_scale.x)
 		Hurtbox1.fixed_scale.y = anim_frame.get(Enums.StKey.Hurt1ScaleY, Hurtbox1.fixed_scale.y)
 		if (anim_frame.get(Enums.StKey.Destroy, false)):
-#			queue_free() # TODO: is this rollback safe? we'll need to respawn and despawn repeatedly
 			SyncManager.despawn(self)
 	
 	attackData[Enums.StKey.attack_type] = anim_frame.get(Enums.StKey.attack_type, Enums.AttackType.Strike)
