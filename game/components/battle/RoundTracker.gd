@@ -6,7 +6,6 @@ signal win()
 signal rounds_updated()
 
 var roundData: Dictionary
-var roundsWon: int
 var roundsToWin: int = 2
 
 enum State {
