@@ -73,6 +73,18 @@ func physics_tick(state: Dictionary) -> void:
 		SyncManager.play_sound("FlayonVoice", VoiceSound, {"bus": "Voice"})
 		SyncManager.play_sound("FlayonVoiceReverb", VoiceSound, {"bus": "ReverbVoice"})
 
+
+func meter_cancel(state: Dictionary, interpreter: InputInterpreter):
+	if (state[Enums.StKey.hitStopFrame] >= 0):
+		if (boost_OK(state, interpreter)):
+			state[Enums.StKey.cancelState] = "BoostCancel"
+		elif (assist_ok(state, interpreter) and state[Enums.StKey.cancelState] != "BoostCancel"):
+			if (level_1_OK(state) and super_assist_meter_ok(state)  and interpreter.special_input_button(Enums.SpecialInput.M236, Enums.InputFlags.DDown, state[Enums.StKey.leftface])):
+				state[Enums.StKey.cancelState] = "GroundAssistCallSuper"
+	else:
+		if (boost_OK(state, interpreter)):
+			change_state.call("BoostCancel")
+
 func gatling_cancel(state: Dictionary, interpreter: InputInterpreter):
 	pass
 
@@ -81,3 +93,6 @@ func jump_cancel(state: Dictionary, interpreter: InputInterpreter):
 
 func special_cancel(state: Dictionary, interpreter: InputInterpreter):
 	pass
+
+func combo_pushback(comboTime: int) -> int:
+	return 0

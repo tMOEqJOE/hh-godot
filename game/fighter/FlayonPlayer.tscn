@@ -1,4 +1,4 @@
-[gd_scene load_steps=215 format=3 uid="uid://cbwy2j4nbkk2j"]
+[gd_scene load_steps=216 format=3 uid="uid://cbwy2j4nbkk2j"]
 
 [ext_resource type="Script" uid="uid://dgsx3duqjaeo5" path="res://game/fighter/PointPlayer.gd" id="1_m4qvm"]
 [ext_resource type="Material" uid="uid://bt3lvyqtd78u0" path="res://game/assets/shaders/ColorSwapMat.tres" id="2_xm7kd"]
@@ -65,6 +65,7 @@
 [ext_resource type="Texture2D" uid="uid://bo562v3563dg4" path="res://game/assets/sprites/flayon/FlightBash/Timeline 1_0000.png" id="84_gsj2t"]
 [ext_resource type="Texture2D" uid="uid://dss0seirbe0ct" path="res://game/assets/sprites/flayon/FlightBash/Timeline 1_0001.png" id="85_l8yul"]
 [ext_resource type="Texture2D" uid="uid://bbd4cc4k6nr32" path="res://game/assets/sprites/flayon/Jump/Timeline 1_0001.png" id="88_0rw8g"]
+[ext_resource type="Texture2D" uid="uid://v3fk1axwr0l6" path="res://game/assets/sprites/flayon/Flightj2C/Timeline 1_0000.png" id="90_6ljmy"]
 [ext_resource type="Texture2D" uid="uid://c8xkbdhf2g580" path="res://game/assets/sprites/flayon/Idle/Timeline 1_0000.png" id="90_f32ml"]
 [ext_resource type="Texture2D" uid="uid://denmdjsgv2ybh" path="res://game/assets/sprites/flayon/ForwardWalk/Timeline 1_0000.png" id="93_0rw8g"]
 [ext_resource type="Texture2D" uid="uid://2vip13x80bvx" path="res://game/assets/sprites/flayon/ForwardWalk/Timeline 1_0001.png" id="94_8hpu6"]
@@ -1001,7 +1002,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.083333336, 0.18333334),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [ExtResource("161_4r26g"), ExtResource("128_ukakn"), ExtResource("129_gsj2t")]
+"values": [ExtResource("90_6ljmy"), ExtResource("128_ukakn"), ExtResource("129_gsj2t")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1030,7 +1031,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.13333334, 0.33333334),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [ExtResource("161_4r26g"), ExtResource("128_ukakn"), ExtResource("129_gsj2t")]
+"values": [ExtResource("90_6ljmy"), ExtResource("128_ukakn"), ExtResource("129_gsj2t")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1059,7 +1060,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("161_4r26g")]
+"values": [ExtResource("90_6ljmy")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
