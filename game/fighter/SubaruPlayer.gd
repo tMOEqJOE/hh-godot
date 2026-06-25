@@ -22,7 +22,7 @@ func summonHelper(entity: String) -> void:
 		elif (entity == "angelInstallMusic"):
 			var is_comeback = false
 			if (is_instance_valid(round_counter) and round_counter != null):
-				if (round_counter.read_rounds_won(self.team) < round_counter.read_rounds_won(not self.team)):
+				if (round_counter.read_rounds_won(not self.team) < round_counter.read_rounds_won(self.team)):
 					is_comeback = true
 			MainMenuMusicControl.play_angel_install_music(is_comeback)
 			start_glowing()
