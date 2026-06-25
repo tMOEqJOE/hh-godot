@@ -100,9 +100,6 @@ func tick() -> void:
 	movement_physics_tick()
 	anim_updates() # super flash needs to happen last
 
-
-# TODO: the rare giga slowdown was assist / puppet tick related. maybe here?
-# It seems to be a universal sync_to_physics_engine slowdown
 func movement_physics_tick() -> void:
 	var x_dir = 1
 	if (currentState[Enums.StKey.leftface]):
@@ -139,7 +136,6 @@ func getFirstFrameCollide() -> Dictionary:
 func tick_box_collisions() -> void:
 	for hitbox_name in ["Hitbox1"]:
 		get_node(hitbox_name).process_collisions()
-		#get_node(hitbox_name).update()
 
 func normal_strike_hit(_attack_type: int, opponent_hit_data: Dictionary) -> void:
 	if (opponent_hit_data["hitType"] == Enums.HitType.PushBlock):
