@@ -37,6 +37,3 @@ func handle_input(state: Dictionary, interpreter: InputInterpreter) -> void:
 		change_state.call("Travel")
 	if (interpreter.is_button_down(Enums.InputFlags.DHold)):
 		state[Enums.StKey.frame] = 0
-
-func reaction(state: Dictionary, interpreter: InputInterpreter, event_cause: int) -> void:
-	pass
