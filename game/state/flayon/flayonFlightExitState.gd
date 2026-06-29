@@ -22,6 +22,7 @@ func enter(state: Dictionary) -> void:
 	state[Enums.StKey.drag_x] = 0
 	state[Enums.StKey.accel_y] = 0
 	state[Enums.StKey.accel_x] = 0
+	state[Enums.StKey.kara_OK] = false # No instant air kara
 	if (state[Enums.StKey.velocity_y] >= -SGFixed.ONE*15):
 		state[Enums.StKey.velocity_y] = -SGFixed.ONE*15
 	else:

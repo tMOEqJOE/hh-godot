@@ -3,7 +3,7 @@ extends FlayonAirAttackState
 class_name FlayonLightDPState
 
 var DPSound = preload("res://game/assets/voice/flayon/mxf_shock.wav")
-const delay_cancel_frame = 8 #12
+const delay_cancel_frame = 8 # 12
 
 func _init():
 	endFrame = 120
@@ -71,6 +71,7 @@ func enter(state: Dictionary) -> void:
 	super.enter(state)
 	state[Enums.StKey.super_meter] += SGFixed.ONE*200
 	state[Enums.StKey.velocity_y] = 0
+	state[Enums.StKey.kara_OK] = false # No instant air kara 
 	anim.play("DP")
 
 func physics_tick(state: Dictionary) -> void:
