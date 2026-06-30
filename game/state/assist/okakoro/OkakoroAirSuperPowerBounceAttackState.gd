@@ -3,7 +3,6 @@ extends AssistAirAttackState
 class_name OkakoroAirPowerBounceAttackState
 
 var voice2 = preload("res://game/assets/voice/okayu/oky_oi.wav")
-var voicefail = preload("res://game/assets/voice/okayu/oky_korewa muzukashiiyone.wav")
 
 func _init():
 	endFrame = 60
@@ -71,7 +70,6 @@ func combo_pushback(comboTime: int) -> int:
 func reaction(state: Dictionary, interpreter: InputInterpreter, event_cause: int) -> void:
 	if (event_cause == Enums.Reaction.GroundLand):
 		if (state[Enums.StKey.hitStopFrame] <= 0):
-#			SyncManager.play_sound("OkakoroPowerBounceAttack", voicefail, {"bus": "Voice"})
 			change_state.call("LandAttackRecovery")
 	else:
 		super.reaction(state, interpreter, event_cause)
