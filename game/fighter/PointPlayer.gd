@@ -192,14 +192,8 @@ func summonHelper(entity: String, uninterrupted:bool=true) -> void:
 				summonVFX("JumpDustVFX", Global.JumpDustVFX)
 			elif (entity == "superjumpdust"):
 				summonVFX("SuperJumpDustVFX", Global.SuperJumpDustVFX)
-			elif (entity == "FDBubble"):
-				summonVFX("FDBubbleVFX", Global.FDBubbleVFX)
 			elif (entity == "IncreaseFlash"):
 				summonVFX("IncreaseFlashVFX", Global.IncreaseFlashVFX)
-			elif (entity == "ParryWhiff"):
-				summonVFX("ParryWhiff", Global.ParryWhiffVFX)
-			elif (entity == "RedParryFlash"):
-				summonVFX("RedParryFlash", Global.RedParryFlashVFX)
 			elif (entity == "superFlash"):
 				emit_signal("super_freeze", get_global_fixed_position().x, get_global_fixed_position().y, currentState[Enums.StKey.leftface])
 				SyncManager.play_sound("superflash", Global.SuperFlashSound, {"bus": "Sound"})
@@ -223,6 +217,12 @@ func summonHelper(entity: String, uninterrupted:bool=true) -> void:
 						currentState[Enums.StKey.leftface],
 						false,
 						12)
+		elif (entity == "ParryWhiff"):
+			summonVFX("ParryWhiff", Global.ParryWhiffVFX)
+		elif (entity == "RedParryFlash"):
+			summonVFX("RedParryFlash", Global.RedParryFlashVFX)
+		elif (entity == "FDBubble"):
+			summonVFX("FDBubbleVFX", Global.FDBubbleVFX)
 
 func delay_summon():
 	var anim_frame : Dictionary = fighterState.state.anim_data.get(currentState[Enums.StKey.frame], {})
