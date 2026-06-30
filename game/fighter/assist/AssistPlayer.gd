@@ -250,12 +250,12 @@ func summonHelper(entity: String, uninterrupted:bool=true) -> void:
 				SyncManager.play_sound("superflash", Global.SuperFlashSound, {"bus": "Sound"})
 			elif (entity == "meterDump"):
 				emit_signal("battery_player", -Util.LEVEL_ONE_SUPER, 0, 0)
-			elif (entity == "burst"):
-				summonVFX("BurstVFX", Global.BurstVFX)
 		if (entity == "knockdowndust"):
 			summonVFX("KnockdownVFX", Global.KnockdownDustVFX)
 		elif (entity == "WallBounceDust"):
 			summonVFX("WallBounceDustVFX", Global.WallBounceDustVFX)
+		elif (entity == "burst"):
+			summonVFX("BurstVFX", Global.BurstVFX)
 		
 
 func tag_in(x : int, y : int, left_face : bool, grounded : bool, tag_attack: int) -> void:

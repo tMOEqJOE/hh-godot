@@ -178,22 +178,6 @@ func summonHelper(entity: String, uninterrupted:bool=true) -> void:
 					currentState[Enums.StKey.leftface])
 			elif (entity == "hatoUnsummon"):
 				emit_signal("unsummonPuppet")
-			elif (entity == "burst"):
-				summonVFX("BurstVFX", Global.BurstVFX)
-				if (Util.assist_burst_exhausted(currentState)):
-					emit_signal("summon", 
-						fixed_position.x, 
-						fixed_position.y, 
-						currentState[Enums.StKey.leftface],
-						false,
-						13)
-				else:
-					emit_signal("summon", 
-						fixed_position.x, 
-						fixed_position.y, 
-						currentState[Enums.StKey.leftface],
-						false,
-						12)
 			elif (entity == "RCVFX"):
 				summonVFX("RCVFX", Global.RCVFX)
 			elif (entity == "fairdash"):
@@ -223,6 +207,22 @@ func summonHelper(entity: String, uninterrupted:bool=true) -> void:
 			summonVFX("KnockdownVFX", Global.KnockdownDustVFX)
 		elif (entity == "WallBounceDust"):
 			summonVFX("WallBounceDustVFX", Global.WallBounceDustVFX)
+		elif (entity == "burst"):
+				summonVFX("BurstVFX", Global.BurstVFX)
+				if (Util.assist_burst_exhausted(currentState)):
+					emit_signal("summon", 
+						fixed_position.x, 
+						fixed_position.y, 
+						currentState[Enums.StKey.leftface],
+						false,
+						13)
+				else:
+					emit_signal("summon", 
+						fixed_position.x, 
+						fixed_position.y, 
+						currentState[Enums.StKey.leftface],
+						false,
+						12)
 
 func delay_summon():
 	var anim_frame : Dictionary = fighterState.state.anim_data.get(currentState[Enums.StKey.frame], {})
