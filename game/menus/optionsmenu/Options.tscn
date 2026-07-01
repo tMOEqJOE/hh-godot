@@ -101,7 +101,6 @@ horizontal_alignment = 2
 
 [node name="MainVolumeMeter" type="HSlider" parent="CanvasLayer/Options"]
 layout_mode = 2
-min_value = 50.0
 value = 90.0
 tick_count = 6
 ticks_on_borders = true
@@ -125,7 +124,6 @@ horizontal_alignment = 2
 
 [node name="MusicVolumeMeter" type="HSlider" parent="CanvasLayer/Options"]
 layout_mode = 2
-min_value = 50.0
 value = 90.0
 tick_count = 6
 ticks_on_borders = true
@@ -149,7 +147,6 @@ horizontal_alignment = 2
 
 [node name="SoundVolumeMeter" type="HSlider" parent="CanvasLayer/Options"]
 layout_mode = 2
-min_value = 50.0
 value = 90.0
 tick_count = 6
 ticks_on_borders = true
@@ -173,7 +170,6 @@ horizontal_alignment = 2
 
 [node name="VoiceVolumeMeter" type="HSlider" parent="CanvasLayer/Options"]
 layout_mode = 2
-min_value = 50.0
 value = 90.0
 tick_count = 6
 ticks_on_borders = true
