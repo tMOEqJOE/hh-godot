@@ -168,6 +168,7 @@ const BGM_UID_LIST = [
 	'uid://dbiyw2ycctnsw', #'Yume Hanabi',
 	'uid://baxokql4qdh6x', #'Homenobi',
 	'uid://cco7o17v7g0oh', #'Palette',
+	'uid://bdadh04yuigie', #'Beginning',
 	'uid://bta8h85cknuxa', #'Heroine Audition',
 	'uid://dpprd47eukupb', #'WIM',
 	'uid://63an0yld6m2s', #'This MU is (2-8) At Best',
