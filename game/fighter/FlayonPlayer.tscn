@@ -1376,10 +1376,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.049999997, 0.15),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("73_f32ml"), ExtResource("122_8hpu6"), ExtResource("123_4p678")]
+"values": [ExtResource("151_ujttm")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1391,7 +1391,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1000000),
 "update": 0,
-"values": [Vector2(-80, 110)]
+"values": [Vector2(-60, 110)]
 }
 
 [sub_resource type="Animation" id="Animation_qfokg"]
