@@ -98,8 +98,6 @@ func load_new_color(is_p1, is_assist):
 			color_slot = PLAYER_2_COLOR[0]
 			instance = PLAYER_2_COLOR_INSTANCE[0]
 			
-	#if (instance != null and is_instance_valid(instance)):
-		#instance.queue_free() # Refcounted auto garbage collects
 	instance = load(color_slot)
 	
 	if (is_p1):
@@ -145,6 +143,7 @@ const BGM_LIST = [
 	'Yume Hanabi',
 	'Homenobi',
 	'Palette',
+	'Beginning',
 	'Heroine Audition',
 	'WIM',
 	'This MU is (2-8) At Best',
