@@ -1,4 +1,4 @@
-[gd_scene load_steps=222 format=3 uid="uid://cbwy2j4nbkk2j"]
+[gd_scene load_steps=223 format=3 uid="uid://cbwy2j4nbkk2j"]
 
 [ext_resource type="Script" uid="uid://dgsx3duqjaeo5" path="res://game/fighter/PointPlayer.gd" id="1_m4qvm"]
 [ext_resource type="Material" uid="uid://bt3lvyqtd78u0" path="res://game/assets/shaders/ColorSwapMat.tres" id="2_xm7kd"]
@@ -50,6 +50,7 @@
 [ext_resource type="Texture2D" uid="uid://bu8ufwlv8wp2h" path="res://game/assets/sprites/flayon/AirDash/Timeline 1_0002.png" id="61_ta16v"]
 [ext_resource type="Texture2D" uid="uid://bxpowiqwqay7i" path="res://game/assets/sprites/flayon/AirDash/Timeline 1_0000.png" id="62_kpeac"]
 [ext_resource type="Texture2D" uid="uid://u1rynvv2jbro" path="res://game/assets/sprites/flayon/AirDash/Timeline 1_0001.png" id="63_f32ml"]
+[ext_resource type="Texture2D" uid="uid://dgqa30mse0lke" path="res://game/assets/sprites/flayon/Burst/Timeline 1_0002.png" id="64_i4l5q"]
 [ext_resource type="Texture2D" uid="uid://ddslrqsj1skn7" path="res://game/assets/sprites/flayon/Walk/Timeline 1_0002.png" id="64_m4qvm"]
 [ext_resource type="Texture2D" uid="uid://6oexsrfbjd0c" path="res://game/assets/sprites/flayon/Walk/Timeline 1_0001.png" id="65_xm7kd"]
 [ext_resource type="Texture2D" uid="uid://d25indahdv1tp" path="res://game/assets/sprites/flayon/Walk/Timeline 1_0000.png" id="66_ujttm"]
@@ -640,7 +641,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1000000),
 "update": 0,
-"values": [Vector2(0, 100)]
+"values": [Vector2(-20, 100)]
 }
 
 [sub_resource type="Animation" id="16"]
@@ -772,10 +773,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.28333333, 0.7833333, 0.8333333, 0.9),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.28333333, 0.33333334, 0.38333333, 0.43333334, 0.5, 0.5833334, 0.6666667, 0.7833333, 0.8333333, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("57_mrj0t"), ExtResource("58_t00t0"), ExtResource("106_m4qvm"), ExtResource("88_0rw8g"), ExtResource("107_rgqmm")]
+"values": [ExtResource("57_mrj0t"), ExtResource("58_t00t0"), ExtResource("64_i4l5q"), ExtResource("58_t00t0"), ExtResource("64_i4l5q"), ExtResource("58_t00t0"), ExtResource("64_i4l5q"), ExtResource("58_t00t0"), ExtResource("106_m4qvm"), ExtResource("88_0rw8g"), ExtResource("107_rgqmm")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -2300,7 +2301,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1000000),
 "update": 0,
-"values": [Vector2(0, 100)]
+"values": [Vector2(-20, 100)]
 }
 
 [sub_resource type="Animation" id="12"]
