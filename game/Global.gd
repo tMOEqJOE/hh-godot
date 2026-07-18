@@ -1,6 +1,6 @@
 extends Node
 
-const BATTLE_ENGINE_VERSION = "HHv0.8.0012"
+const BATTLE_ENGINE_VERSION = "HHv0.8.0013"
 
 func get_battle_version() -> String:
 	if (len(Build.INTERNAL_BATTLE_ENGINE_KEY) < 50):
