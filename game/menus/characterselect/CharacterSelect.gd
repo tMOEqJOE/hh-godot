@@ -402,7 +402,7 @@ func match_color(enumChara:int, is_assist=false) -> String:
 			Enums.PointCharacters.Suisei:
 				color = "res://game/assets/sprites/suisei/ColorPalettes/"
 			Enums.PointCharacters.Flayon:
-				color = "res://game/assets/sprites/subaru/ColorPalettes/"
+				color = "res://game/assets/sprites/flayon/ColorPalettes/"
 			_:
 				color = "res://game/assets/sprites/subaru/ColorPalettes/"
 	return color
