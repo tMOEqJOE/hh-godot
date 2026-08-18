@@ -300,3 +300,10 @@ const TagVFX = preload("res://game/fighter/effects/AssistTag.tscn")
 const RCSound = preload("res://game/assets/sfx/RomanCancel.wav")
 const WhiffSound = preload("res://game/assets/sfx/Whiff.wav")
 const AirTechSound = preload("res://game/assets/sfx/AirTech.wav")
+
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventJoypadMotion or event is InputEventJoypadButton:
+		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	elif event is InputEventMouseMotion:
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
