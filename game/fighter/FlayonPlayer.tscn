@@ -2475,20 +2475,20 @@ script = ExtResource("150_1jibv")
 auto_reset = false
 
 [node name="Hitbox1" parent="." instance=ExtResource("151_0ymqg")]
-fixed_position_x = 2629186
-fixed_position_y = -12760256
-fixed_scale_x = 1026496
-fixed_scale_y = 850290
-position = Vector2(40.118195, -194.70605)
-scale = Vector2(15.663086, 12.974396)
+fixed_position_x = 8629186
+fixed_position_y = -15760254
+fixed_scale_x = 1526496
+fixed_scale_y = 1350290
+position = Vector2(131.67093, -240.48239)
+scale = Vector2(23.29248, 20.60379)
 
 [node name="Hitbox2" parent="." instance=ExtResource("151_0ymqg")]
 fixed_position_x = 22435712
-fixed_position_y = -15136510
-fixed_scale_x = 1220696
-fixed_scale_y = 410074
-position = Vector2(342.3418, -230.96481)
-scale = Vector2(18.626343, 6.2572327)
+fixed_position_y = -18136510
+fixed_scale_x = 1020696
+fixed_scale_y = 910074
+position = Vector2(342.3418, -276.74118)
+scale = Vector2(15.574585, 13.886627)
 
 [node name="Hurtbox1" parent="." instance=ExtResource("152_d42n6")]
 fixed_position_y = -10087936

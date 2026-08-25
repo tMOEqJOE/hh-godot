@@ -28,7 +28,7 @@ func _init():
 		7 : { 
 			Enums.StKey.Summon : "move_pilot",
 			Enums.StKey.Hit1Disable : true,
-			Enums.StKey.Hurt1Disable : true, Enums.StKey.Hurt2Disable : true,
+			Enums.StKey.Hurt1Disable : false, Enums.StKey.Hurt2Disable : true,
 			},
 	}
 

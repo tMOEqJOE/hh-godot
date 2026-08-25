@@ -63,11 +63,11 @@ func _init():
 			Enums.StKey.guard: Enums.GuardType.Mid,
 			Enums.StKey.attack_type : Enums.AttackType.Launcher,
 			Enums.StKey.hitstun: Util.DEFAULT_HITSTUN + 14,
-			Enums.StKey.launch_dir_x : -SGFixed.ONE*15,
+			Enums.StKey.launch_dir_x : -SGFixed.ONE*8,
 			Enums.StKey.launch_dir_y : -SGFixed.ONE*45,
 			Enums.StKey.counter_hit: Enums.AttackType.GroundBouncer,
 			Enums.StKey.counter_hitstun: 30,
-			Enums.StKey.counter_launch_dir_x: -SGFixed.ONE*8,
+			Enums.StKey.counter_launch_dir_x: SGFixed.ONE*2,
 			Enums.StKey.counter_launch_dir_y: -SGFixed.ONE*45,
 			},
 		25 : {
