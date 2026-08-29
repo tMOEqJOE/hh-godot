@@ -25,20 +25,20 @@ var WinCounterP2
 var character = [
 	[Enums.PointCharacters.Ollie, Enums.PointCharacters.Suisei, Enums.PointCharacters.Kanata],
 	[Enums.PointCharacters.Mio, Enums.PointCharacters.Subaru, Enums.PointCharacters.Oga],
-	[Enums.PointCharacters.Random, Enums.PointCharacters.Random, Enums.PointCharacters.Random],
-	[Enums.PointCharacters.Flayon, Enums.PointCharacters.Random, Enums.PointCharacters.Random]
+	[Enums.PointCharacters.Random, Enums.PointCharacters.Flayon, Enums.PointCharacters.Random],
+	[Enums.PointCharacters.Random, Enums.PointCharacters.Random, Enums.PointCharacters.Random]
 	]
 
 var assist2 = [
 	[Enums.AssistCharacters.Ollie, Enums.AssistCharacters.Suisei, Enums.AssistCharacters.Kanata, Enums.AssistCharacters.Fubuki, Enums.AssistCharacters.Hakka],
 	[Enums.AssistCharacters.Mio, Enums.AssistCharacters.Subaru, Enums.AssistCharacters.Oga, Enums.AssistCharacters.Fubuki, Enums.AssistCharacters.OkaKoro],
-	[Enums.AssistCharacters.Random, Enums.AssistCharacters.Random, Enums.AssistCharacters.Random, Enums.AssistCharacters.Sora, Enums.AssistCharacters.Sana],
+	[Enums.AssistCharacters.Random, Enums.AssistCharacters.Flayon, Enums.AssistCharacters.Random, Enums.AssistCharacters.Sora, Enums.AssistCharacters.Sana],
 	[Enums.AssistCharacters.Random, Enums.AssistCharacters.Random, Enums.AssistCharacters.Random, Enums.AssistCharacters.Sora, Enums.AssistCharacters.Sana]
 	]
 var assist1 = [
 	[Enums.AssistCharacters.Hakka, Enums.AssistCharacters.Fubuki, Enums.AssistCharacters.Ollie, Enums.AssistCharacters.Suisei, Enums.AssistCharacters.Kanata],
 	[Enums.AssistCharacters.OkaKoro, Enums.AssistCharacters.Fubuki, Enums.AssistCharacters.Mio, Enums.AssistCharacters.Subaru, Enums.AssistCharacters.Oga],
-	[Enums.AssistCharacters.Sana, Enums.AssistCharacters.Sora, Enums.AssistCharacters.Random, Enums.AssistCharacters.Random, Enums.AssistCharacters.Random],
+	[Enums.AssistCharacters.Sana, Enums.AssistCharacters.Sora, Enums.AssistCharacters.Random, Enums.AssistCharacters.Flayon, Enums.AssistCharacters.Random],
 	[Enums.AssistCharacters.Sana, Enums.AssistCharacters.Sora, Enums.AssistCharacters.Random, Enums.AssistCharacters.Random, Enums.AssistCharacters.Random]
 	]
 

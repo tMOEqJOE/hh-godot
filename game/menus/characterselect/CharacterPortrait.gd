@@ -57,7 +57,7 @@ func change_portrait(enumChara: int, is_assist=false):
 				portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/KanataPortrait"
 			Enums.AssistCharacters.Flayon:
 				color = "res://game/assets/sprites/flayon/ColorPalettes/"
-				portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/FubukiPortrait"
+				portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/FlayonPortrait"
 			Enums.AssistCharacters.Eight:
 				color = "res://game/assets/sprites/assists/fubuki/ColorPalettes/"
 				portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/FubukiPortrait"
@@ -116,7 +116,7 @@ func change_portrait(enumChara: int, is_assist=false):
 				portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/KanataPortrait"
 			Enums.PointCharacters.Flayon:
 				color = "res://game/assets/sprites/flayon/ColorPalettes/"
-				portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/RandomPortrait"
+				portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/FlayonPortrait"
 			Enums.PointCharacters.Eight:
 				color = "res://game/assets/sprites/subaru/ColorPalettes/"
 				portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/SubaruPortrait"
@@ -169,7 +169,7 @@ func change_portrait_all_character(enumChara: int, is_assist=false):
 			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/KanataPortrait"
 		Enums.AllCharacters.AssistFlayon:
 			color = "res://game/assets/sprites/flayon/ColorPalettes/"
-			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/FubukiPortrait"
+			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/FlayonPortrait"
 		Enums.AllCharacters.Fubuki:
 			color = "res://game/assets/sprites/assists/fubuki/ColorPalettes/"
 			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/FubukiPortrait"
@@ -208,7 +208,7 @@ func change_portrait_all_character(enumChara: int, is_assist=false):
 			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/KanataPortrait"
 		Enums.AllCharacters.Flayon:
 			color = "res://game/assets/sprites/flayon/ColorPalettes/"
-			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/RandomPortrait"
+			portrait = "res://game/assets/sprites/UI/CharacterSelect/Portraits/FlayonPortrait"
 		_:
 			color = "res://game/assets/sprites/subaru/ColorPalettes/"
 			portrait = "res://game/assets/sprites/subaru/SubaruPortrait"
