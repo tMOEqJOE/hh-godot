@@ -1,8 +1,8 @@
 extends AssistAirAttackState
 
-class_name FubukiDPState
+class_name AssistFlayonDPState
 
-var voice = preload("res://game/assets/voice/fubuki/fbk_aaa yatta.wav")
+var voice = preload("res://game/assets/voice/AssistFlayon/fbk_aaa yatta.wav")
 
 func _init():
 	endFrame = 100
@@ -80,7 +80,7 @@ func physics_tick(state: Dictionary) -> void:
 		state[Enums.StKey.velocity_x] = SGFixed.ONE*15
 		state[Enums.StKey.accel_y] = Util.GRAVITY
 	if (state[Enums.StKey.frame] == 6):
-		SyncManager.play_sound("FubukiVoice", voice, {"bus": "Voice"})
+		SyncManager.play_sound("AssistFlayonVoice", voice, {"bus": "Voice"})
 	if (state[Enums.StKey.frame] == 27):
 		state[Enums.StKey.velocity_y] = -SGFixed.ONE*30
 		state[Enums.StKey.velocity_x] = SGFixed.ONE*15

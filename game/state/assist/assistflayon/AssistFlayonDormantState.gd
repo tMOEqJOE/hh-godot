@@ -1,3 +1,3 @@
 extends AssistDormantState
 
-class_name FubukiDormantState
+class_name AssistFlayonDormantState

@@ -1,6 +1,6 @@
-extends FubukiAssistAirGuardCancelAttackState
+extends AssistFlayonAssistAirGuardCancelAttackState
 
-class_name FubukiAssistAirWeakGuardCancelAttackState
+class_name AssistFlayonAssistAirWeakGuardCancelAttackState
 
 func _init():
 	endFrame = 120

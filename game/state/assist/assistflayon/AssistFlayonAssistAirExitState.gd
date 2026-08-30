@@ -1,6 +1,6 @@
-extends FubukiAssistAirAttackState
+extends AssistFlayonAssistAirAttackState
 
-class_name FubukiAssistAirExitState
+class_name AssistFlayonAssistAirExitState
 
 func _init():
 	endFrame = Util.ASSIST_EXIT_RECOVERY

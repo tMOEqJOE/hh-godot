@@ -1,3 +1,3 @@
 extends AssistLandingRecoveryState
 
-class_name FubukiLandingRecoveryState
+class_name AssistFlayonLandingRecoveryState

@@ -1,6 +1,6 @@
 extends AssistAttackState
 
-class_name FubukiAssistAttackState
+class_name AssistFlayonAssistAttackState
 
 func _init():
 	endFrame = 70

@@ -1,26 +1,26 @@
 extends AssistStateFactory
 
-class_name FubukiStateFactory
+class_name AssistFlayonStateFactory
 
 func _init():
 	super._init()
 	
 	var new_states : Dictionary = {
-		"Dormant" : FubukiDormantState,
-		"AssistAttack" : FubukiAssistAttackState,
-		"AssistAirAttack" : FubukiAssistAirAttackState,
-		"AssistSuper" : FubukiSuperState,
-		"AssistAirSuper" : FubukiAirSuperState,
-		"AssistAttack2" : FubukiDPState,
-		"AssistAirAttack2" : FubukiDPState,
-		"LandAttackRecovery" : FubukiLandingRecoveryState,
-		"AssistExit": FubukiAssistExitState,
-		"AssistAirExit": FubukiAssistAirExitState,
-		"AssistGuardCancelAttack" : FubukiAssistGuardCancelAttackState,
-		"AssistAirGuardCancelAttack" : FubukiAssistAirGuardCancelAttackState,
-		"AssistWeakGuardCancelAttack" : FubukiAssistWeakGuardCancelAttackState,
-		"AssistAirWeakGuardCancelAttack" : FubukiAssistAirWeakGuardCancelAttackState,
-		"AssistBurst" : FubukiBurstState,
+		"Dormant" : AssistFlayonDormantState,
+		"AssistAttack" : AssistFlayonAssistAttackState,
+		"AssistAirAttack" : AssistFlayonAssistAirAttackState,
+		"AssistSuper" : AssistFlayonSuperState,
+		"AssistAirSuper" : AssistFlayonAirSuperState,
+		"AssistAttack2" : AssistFlayonDPState,
+		"AssistAirAttack2" : AssistFlayonDPState,
+		"LandAttackRecovery" : AssistFlayonLandingRecoveryState,
+		"AssistExit": AssistFlayonAssistExitState,
+		"AssistAirExit": AssistFlayonAssistAirExitState,
+		"AssistGuardCancelAttack" : AssistFlayonAssistGuardCancelAttackState,
+		"AssistAirGuardCancelAttack" : AssistFlayonAssistAirGuardCancelAttackState,
+		"AssistWeakGuardCancelAttack" : AssistFlayonAssistWeakGuardCancelAttackState,
+		"AssistAirWeakGuardCancelAttack" : AssistFlayonAssistAirWeakGuardCancelAttackState,
+		"AssistBurst" : AssistFlayonBurstState,
 	}
 	
 	merge_state_dictionary(new_states)

@@ -1,6 +1,6 @@
 extends AssistGuardCancelAttackState
 
-class_name FubukiAssistGuardCancelAttackState
+class_name AssistFlayonAssistGuardCancelAttackState
 
 func _init():
 	endFrame = 22
