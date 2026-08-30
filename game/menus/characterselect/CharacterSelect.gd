@@ -309,7 +309,7 @@ func resolve_assists(row:int, col:int, is_p1):
 		Enums.AssistCharacters.Suisei:
 			return ["res://game/fighter/assist/assistsuisei/AssistSuiseiPlayer.tscn", Enums.AssistCharacters.Suisei]
 		Enums.AssistCharacters.Flayon:
-			return ["res://game/fighter/assist/fubuki/FubukiPlayer.tscn", Enums.AssistCharacters.Fubuki]
+			return ["res://game/fighter/assist/flayon/AssistFlayonPlayer.tscn", Enums.AssistCharacters.Flayon]
 		_:
 			return ["res://game/fighter/assist/fubuki/FubukiPlayer.tscn", Enums.AssistCharacters.Fubuki]
 

@@ -636,7 +636,7 @@ const AssistOllieMoveList: = [
 	["Attacks"],
 	["5D", "Head Dango", "", ""],
 	["2D", "Idol's hair pin", "", ""],
-	["236[D]", "Bzzt Boom Replica", "Level 1 and 2 assist stocks", ""],
+	["236D", "Bzzt Boom Replica", "Level 1 and 2 assist stocks", ""],
 	["6D Guard Cancel", "", "Level 1 and 2 assist stocks", ""],
 ]
 
@@ -645,7 +645,7 @@ const AssistKanataMoveList: = [
 	["Attacks"],
 	["5D", "Fifty KG Grip Strength", "", ""],
 	["2D", "", "", ""],
-	["236[D]", "Super Ginger Crusher", "Level 1 and 2 assist stocks", ""],
+	["236D", "Super Ginger Crusher", "Level 1 and 2 assist stocks", ""],
 	["6D Guard Cancel", "", "Level 1 and 2 assist stocks", ""],
 ]
 
@@ -655,13 +655,23 @@ const AssistSuiseiMoveList: = [
 	["5D", "Caramel Thrust", "", ""],
 	["jD", "", "", ""],
 	["2D", "Bibbidi", "", "Change to Suicopath Mode"],
-	["236[D]", "", "Level 1 and 2 assist stocks", "Change to Suicopath Mode"],
+	["236D", "", "Level 1 and 2 assist stocks", "Change to Suicopath Mode"],
 	["6D Guard Cancel", "", "Level 1 and 2 assist stocks", ""],
 	["Suicopath Mode"],
 	["5D", "", "", ""],
 	["jD", "Four Lines Crash", "", ""],
 	["2D", "Bobbidi", "", "Change to Suisei Mode"],
-	["236[D]", "Kyou mo Hasami", "Level 1 and 2 assist stocks", ""],
-	["j236[D]", "Stellar Stellar", "Level 1 and 2 assist stocks", ""],
+	["236D", "Kyou mo Hasami", "Level 1 and 2 assist stocks", ""],
+	["j236D", "Stellar Stellar", "Level 1 and 2 assist stocks", ""],
 	["6D Guard Cancel", "", "Level 1 and 2 assist stocks", ""],
 ]
+
+const AssistFlayonMoveList: = [
+	["Assist: Machina X Flayon"],
+	["Attacks"],
+	["5D", "Wave Fang 2", "", ""],
+	["2D", "Ryuken-shiki 2", "", ""],
+	["236D", "Air Rave SP", "Level 1 and 2 assist stocks", ""],
+	["6D Guard Cancel", "", "Level 1 and 2 assist stocks", ""],
+]
+
