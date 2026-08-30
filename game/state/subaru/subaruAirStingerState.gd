@@ -43,7 +43,7 @@ func _init():
 			Enums.StKey.counter_launch_dir_x: -SGFixed.ONE*30,
 			Enums.StKey.counter_launch_dir_y: SGFixed.ONE*35,
 			},
-		28 : { 
+		32 : { 
 			Enums.StKey.Hit1Disable : true,
 			Enums.StKey.Hit2Disable : true,
 			Enums.StKey.Hurt1Disable : false,Enums.StKey.Hurt2Disable : false,Enums.StKey.Hurt3Disable : false,
@@ -65,18 +65,9 @@ func enter(state: Dictionary) -> void:
 func physics_tick(state: Dictionary) -> void:
 	super.physics_tick(state)
 	if (state[Enums.StKey.frame] == 6):
-		state[Enums.StKey.velocity_y] = -SGFixed.ONE * 25
+		state[Enums.StKey.velocity_y] = -SGFixed.ONE * 35
 		state[Enums.StKey.velocity_x] += SGFixed.ONE * 10
 		state[Enums.StKey.velocity_x] = Util.fixed_max(SGFixed.ONE*25, state[Enums.StKey.velocity_x])
-
-func reaction(state: Dictionary, interpreter: InputInterpreter, event_cause: int) -> void:
-	if (event_cause == Enums.Reaction.GroundLand):
-		if (state[Enums.StKey.hitStopFrame] <= 0 and state[Enums.StKey.frame] >= 16):
-			state[Enums.StKey.doubleJump] = 1
-			state[Enums.StKey.airDash] = 1
-			change_state.call("LandingRecovery")
-	else:
-		super.reaction(state, interpreter, event_cause)
 
 func jump_cancel(state: Dictionary, interpreter: InputInterpreter):
 	pass
