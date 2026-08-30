@@ -3,7 +3,7 @@ extends MioAttackState
 class_name Mio6AState
 
 func _init():
-	endFrame = 30
+	endFrame = 31
 	
 	anim_data = {
 		0 : {
@@ -18,7 +18,7 @@ func _init():
 			Enums.StKey.Hurt3PosX : 851968, Enums.StKey.Hurt3PosY : -4325376,
 			Enums.StKey.Hurt3ScaleX : 934301, Enums.StKey.Hurt3ScaleY : -449426,
 			},
-		4 : {
+		5 : {
 			Enums.StKey.counterOK : true,
 			Enums.StKey.Hurt1Disable : true,Enums.StKey.Hurt2Disable : false,Enums.StKey.Hurt3Disable : false,
 			Enums.StKey.Hurt2PosX : 0, Enums.StKey.Hurt2PosY : -7798785,

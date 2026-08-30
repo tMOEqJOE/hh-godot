@@ -146,7 +146,7 @@ func physics_tick(state: Dictionary) -> void:
 	elif (state[Enums.StKey.frame] >= 15 and state[Enums.StKey.frame] < 27):
 		state[Enums.StKey.velocity_x] = SGFixed.ONE*24
 	elif (state[Enums.StKey.frame] == 39):
-		state[Enums.StKey.velocity_x] = SGFixed.ONE*30
+		state[Enums.StKey.velocity_x] = SGFixed.ONE*25
 	elif (state[Enums.StKey.frame] == 58):
 		state[Enums.StKey.velocity_x] = SGFixed.ONE*35
 

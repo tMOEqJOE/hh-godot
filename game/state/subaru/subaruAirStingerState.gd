@@ -69,6 +69,15 @@ func physics_tick(state: Dictionary) -> void:
 		state[Enums.StKey.velocity_x] += SGFixed.ONE * 10
 		state[Enums.StKey.velocity_x] = Util.fixed_max(SGFixed.ONE*25, state[Enums.StKey.velocity_x])
 
+func reaction(state: Dictionary, interpreter: InputInterpreter, event_cause: int) -> void:
+	if (event_cause == Enums.Reaction.GroundLand):
+		if (state[Enums.StKey.hitStopFrame] <= 0 and state[Enums.StKey.frame] >= 16):
+			state[Enums.StKey.doubleJump] = 1
+			state[Enums.StKey.airDash] = 1
+			change_state.call("LandingRecovery")
+	else:
+		super.reaction(state, interpreter, event_cause)
+
 func jump_cancel(state: Dictionary, interpreter: InputInterpreter):
 	pass
 
