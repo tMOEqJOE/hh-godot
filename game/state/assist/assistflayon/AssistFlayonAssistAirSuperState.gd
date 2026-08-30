@@ -26,6 +26,7 @@ func _init():
 			Enums.StKey.counter_hit : Enums.AttackType.BurstLock,
 		},
 		6 : {
+			Enums.StKey.burst_OK: false,
 			Enums.StKey.Hit1Disable : false,
 			Enums.StKey.Hit2Disable : false,
 			Enums.StKey.hit_box_colliding_frame : 254, 
@@ -50,6 +51,7 @@ func _init():
 			Enums.StKey.Hurt1Disable : false, Enums.StKey.Hurt2Disable : false,
 			},
 		15 : {
+			Enums.StKey.burst_OK: false,
 			Enums.StKey.Hit1Disable : false,
 			Enums.StKey.Hit1PosX : 829186, Enums.StKey.Hit1PosY : -15760254,
 			Enums.StKey.Hit1ScaleX : 1526496, Enums.StKey.Hit1ScaleY : 1026496,
@@ -72,6 +74,7 @@ func _init():
 			Enums.StKey.Hurt1Disable : false, Enums.StKey.Hurt2Disable : false,
 			},
 		39 : {
+			Enums.StKey.burst_OK: false,
 			Enums.StKey.Hit1Disable : false,
 			Enums.StKey.Hit2Disable : false,
 			Enums.StKey.hit_box_colliding_frame : 254,
@@ -100,6 +103,7 @@ func _init():
 			Enums.StKey.Hurt1Disable : false, Enums.StKey.Hurt2Disable : false,
 			},
 		58 : {
+			Enums.StKey.burst_OK: false,
 			Enums.StKey.Hit1Disable : false,
 			Enums.StKey.Hit2Disable : false,
 			Enums.StKey.hit_box_colliding_frame : 2, 

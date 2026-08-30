@@ -113,6 +113,8 @@ func load_player_move_list(point, assist, container):
 			load_move_list(Enums.AssistKanataMoveList, container)
 		Enums.AssistCharacters.Suisei:
 			load_move_list(Enums.AssistSuiseiMoveList, container)
+		Enums.AssistCharacters.Flayon:
+			load_move_list(Enums.AssistFlayonMoveList, container)
 		_:
 			printerr("invalid assist character given")
 
