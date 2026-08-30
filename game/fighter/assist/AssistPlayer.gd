@@ -124,8 +124,8 @@ func setup(playerData:PlayerSetup):
 			Enums.AssistCharacters.Kanata:
 				state_factory = load("res://game/state/assist/assistkanata/assistkanatastatefactory.gd").new()
 				dim_sprite()
-			Enums.AssistCharacters.AssistFlayon:
-				state_factory = load("res://game/state/assist/assistkanata/assistkanatastatefactory.gd").new()
+			Enums.AssistCharacters.Flayon:
+				state_factory = load("res://game/state/assist/assistflayon/AssistFlayonstatefactory.gd").new()
 				dim_sprite()
 			_:
 				state_factory = FubukiStateFactory.new()

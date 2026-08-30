@@ -2,7 +2,7 @@ extends AssistBurstState
 
 class_name AssistFlayonBurstState
 
-var voice = preload("res://game/assets/voice/AssistFlayon/fbk_WOOOOW.wav")
+var voice = preload("res://game/assets/voice/flayon/mxf_eurgh hahaha.wav")
 
 func physics_tick(state: Dictionary) -> void:
 	super.physics_tick(state)

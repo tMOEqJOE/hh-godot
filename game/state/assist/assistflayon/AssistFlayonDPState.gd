@@ -2,7 +2,7 @@ extends AssistAirAttackState
 
 class_name AssistFlayonDPState
 
-var voice = preload("res://game/assets/voice/AssistFlayon/fbk_aaa yatta.wav")
+var voice = preload("res://game/assets/voice/flayon/mxf_shock.wav")
 
 func _init():
 	endFrame = 100

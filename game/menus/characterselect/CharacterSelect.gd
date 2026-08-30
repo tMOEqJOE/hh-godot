@@ -384,7 +384,7 @@ func match_color(enumChara:int, is_assist=false) -> String:
 			Enums.AssistCharacters.Suisei:
 				color = "res://game/assets/sprites/suisei/ColorPalettes/"
 			Enums.AssistCharacters.Flayon:
-				color = "res://game/assets/sprites/assists/fubuki/ColorPalettes/"
+				color = "res://game/assets/sprites/flayon/ColorPalettes/"
 			_:
 				color = "res://game/assets/sprites/assists/fubuki/ColorPalettes/"
 	else:
