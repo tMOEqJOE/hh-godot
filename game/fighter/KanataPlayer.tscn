@@ -2151,7 +2151,7 @@ fixed_position_x = 17629186
 fixed_position_y = -17760254
 fixed_scale_x = 1226496
 fixed_scale_y = 2150290
-position = Vector2(269, -271)
+position = Vector2(398, -268.00003)
 scale = Vector2(18.7148, 32.8108)
 
 [node name="Hitbox2" parent="." instance=ExtResource("7")]
@@ -2167,7 +2167,7 @@ fixed_position_x = 6545185
 fixed_position_y = -16087936
 fixed_scale_x = 1103537
 fixed_scale_y = 1171143
-position = Vector2(-35.999985, -188)
+position = Vector2(-363.99994, -205.00002)
 scale = Vector2(16.838638, 17.870224)
 
 [node name="Hurtbox2" parent="." instance=ExtResource("6")]
@@ -2175,7 +2175,7 @@ fixed_position_x = -5046271
 fixed_position_y = -25362432
 fixed_scale_x = 745784
 fixed_scale_y = 365625
-position = Vector2(-77, -387)
+position = Vector2(-425, -386.00003)
 scale = Vector2(11.3798, 5.57899)
 
 [node name="Hurtbox3" parent="." instance=ExtResource("6")]
@@ -2183,5 +2183,5 @@ fixed_position_x = 10092544
 fixed_position_y = -13187392
 fixed_scale_x = 878601
 fixed_scale_y = 796011
-position = Vector2(154, -201.224)
+position = Vector2(-322.00006, -185)
 scale = Vector2(13.4064, 12.1462)

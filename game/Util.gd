@@ -100,7 +100,7 @@ const ANGEL_FAST_METER_DRAIN := SGFixed.ONE*80
 const FLIGHT_METER_DRAIN := SGFixed.ONE*72
 const FLIGHT_ATTACK_METER_DRAIN := SGFixed.ONE*80
 
-const MAX_COLOR_PALETTE_NUMBER := 4
+const MAX_COLOR_PALETTE_NUMBER := 8
 
 var left_axis_neutral: bool = true
 var right_axis_neutral: bool = true
