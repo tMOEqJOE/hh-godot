@@ -1,7 +1,7 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://bt3lvyqtd78u0"]
 
 [ext_resource type="Shader" uid="uid://dinoskkj75qym" path="res://game/assets/shaders/ColorSwapAntiAlias.gdshader" id="2"]
-[ext_resource type="Texture2D" uid="uid://dvnft1tc3ip3g" path="res://game/assets/sprites/mio/ColorPalettes/7.png" id="2_yeeje"]
+[ext_resource type="Texture2D" uid="uid://daib7a7vp80xo" path="res://game/assets/sprites/oga/ColorPalettes/8.png" id="2_yeeje"]
 
 [resource]
 resource_local_to_scene = true

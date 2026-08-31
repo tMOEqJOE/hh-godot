@@ -1895,7 +1895,7 @@ material = ExtResource("5")
 position = Vector2(16, -306)
 scale = Vector2(1.428, 1.428)
 texture = ExtResource("36")
-offset = Vector2(0, -50)
+offset = Vector2(0, 20)
 
 [node name="Shadow" parent="." instance=ExtResource("4_ephom")]
 position = Vector2(-8, -4)
@@ -1920,14 +1920,14 @@ fixed_position_x = 3080193
 fixed_position_y = -25755648
 fixed_scale_x = 1319752
 fixed_scale_y = 585786
-position = Vector2(47, -393)
+position = Vector2(471.99997, -407)
 scale = Vector2(20.1378, 8.93839)
 
 [node name="Hurtbox2" parent="." instance=ExtResource("6")]
 fixed_position_y = -7745600
 fixed_scale_x = 1273239
 fixed_scale_y = 863361
-position = Vector2(0, -118.18848)
+position = Vector2(536, -160.99998)
 scale = Vector2(19.428085, 13.173843)
 
 [node name="Hurtbox3" parent="." instance=ExtResource("6")]
@@ -1935,7 +1935,7 @@ fixed_position_x = 6881280
 fixed_position_y = -4390912
 fixed_scale_x = 501320
 fixed_scale_y = 476368
-position = Vector2(105, -67)
+position = Vector2(481, -236.99998)
 scale = Vector2(7.64954, 7.2688)
 
 [node name="Hitbox1" parent="." instance=ExtResource("7")]
@@ -1943,7 +1943,7 @@ fixed_position_x = 5177342
 fixed_position_y = -23920640
 fixed_scale_x = 1015584
 fixed_scale_y = 572323
-position = Vector2(79, -365)
+position = Vector2(408, -395.00003)
 scale = Vector2(15.4966, 8.73296)
 
 [node name="Hitbox2" parent="." instance=ExtResource("7")]
@@ -1951,5 +1951,5 @@ fixed_position_x = -7208960
 fixed_position_y = -12386305
 fixed_scale_x = 710025
 fixed_scale_y = 525184
-position = Vector2(-110, -189)
+position = Vector2(393, -275)
 scale = Vector2(10.8341, 8.01367)
