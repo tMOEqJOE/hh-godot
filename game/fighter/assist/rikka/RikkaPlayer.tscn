@@ -1,6 +1,6 @@
-[gd_scene load_steps=58 format=3 uid="uid://cdgpxeqjvqrx5"]
+[gd_scene load_steps=45 format=3 uid="uid://cdgpxeqjvqrx5"]
 
-[ext_resource type="Script" uid="uid://dy1wn7kfusnsk" path="res://game/fighter/assist/rikka/HakkaPlayer.gd" id="1_ea7jr"]
+[ext_resource type="Script" uid="uid://dy1wn7kfusnsk" path="res://game/fighter/assist/rikka/RikkaPlayer.gd" id="1_ea7jr"]
 [ext_resource type="Material" uid="uid://bt3lvyqtd78u0" path="res://game/assets/shaders/ColorSwapMat.tres" id="2_b5s6b"]
 [ext_resource type="Texture2D" uid="uid://b6qkll5xu0r1q" path="res://game/assets/sprites/assists/hakka/Badlands/Timeline 1_0002.png" id="3_vs1v1"]
 [ext_resource type="PackedScene" uid="uid://sdxa076t7wfp" path="res://game/fighter/effects/shadow.tscn" id="4_lu3y1"]
@@ -9,30 +9,18 @@
 [ext_resource type="Texture2D" uid="uid://bpg5d0ldqwrtv" path="res://game/assets/sprites/assists/hakka/AirHurt/Timeline 1_0002.png" id="7_meq1u"]
 [ext_resource type="Texture2D" uid="uid://banjx1k2drw38" path="res://game/assets/sprites/assists/hakka/AirHurt/Timeline 1_0003.png" id="8_gnlrs"]
 [ext_resource type="Texture2D" uid="uid://cf4b2whg42t08" path="res://game/assets/sprites/assists/hakka/GunFlame/Timeline 1_0000.png" id="9_gxm6p"]
+[ext_resource type="Texture2D" uid="uid://d2vnr7vssihow" path="res://game/assets/sprites/assists/rikka/Toss/Timeline 1_0000.png" id="9_r0dmr"]
 [ext_resource type="Texture2D" uid="uid://dgvyynvkwjdqi" path="res://game/assets/sprites/assists/hakka/GunFlame/Timeline 1_0001.png" id="10_l4cvs"]
+[ext_resource type="Texture2D" uid="uid://cgk3tnksscqeq" path="res://game/assets/sprites/assists/rikka/Toss/Timeline 1_0001.png" id="10_x2v5e"]
 [ext_resource type="Texture2D" uid="uid://c8i18f7to07g6" path="res://game/assets/sprites/assists/hakka/GunFlame/Timeline 1_0002.png" id="11_aw20k"]
-[ext_resource type="Texture2D" uid="uid://jxpth8xhgpjn" path="res://game/assets/sprites/assists/hakka/Badlands/Timeline 1_0000.png" id="12_0ptlu"]
-[ext_resource type="Texture2D" uid="uid://cchq6c4amhfeb" path="res://game/assets/sprites/assists/hakka/Badlands/Timeline 1_0001.png" id="13_iko67"]
-[ext_resource type="Texture2D" uid="uid://cp122tvkqxspd" path="res://game/assets/sprites/assists/hakka/Badlands/Timeline 1_0003.png" id="14_hldn5"]
-[ext_resource type="Texture2D" uid="uid://ksbnl4l0mtq0" path="res://game/assets/sprites/assists/hakka/Badlands/Timeline 1_0004.png" id="15_oy73v"]
-[ext_resource type="Texture2D" uid="uid://b8ntun3271wrf" path="res://game/assets/sprites/assists/hakka/GalaxyPunch/Timeline 1_0000.png" id="16_5ely2"]
-[ext_resource type="Texture2D" uid="uid://cvxuqannuadxd" path="res://game/assets/sprites/assists/hakka/GalaxyPunch/Timeline 1_0001.png" id="17_foa4h"]
-[ext_resource type="Texture2D" uid="uid://bakrh3fe1moxd" path="res://game/assets/sprites/assists/hakka/GalaxyPunch/Timeline 1_0002.png" id="18_theor"]
-[ext_resource type="Texture2D" uid="uid://c120x2pdyr2t0" path="res://game/assets/sprites/assists/hakka/GalaxyPunch/Timeline 1_0003.png" id="19_gb7yn"]
-[ext_resource type="Texture2D" uid="uid://2tvagonpaxh0" path="res://game/assets/sprites/assists/hakka/GalaxyPunch/Timeline 1_0004.png" id="20_2pd1r"]
-[ext_resource type="Texture2D" uid="uid://ci8tmg36j40d" path="res://game/assets/sprites/assists/hakka/GalaxyPunch/Timeline 1_0005.png" id="21_ra5a6"]
-[ext_resource type="Texture2D" uid="uid://huadivv4dw13" path="res://game/assets/sprites/assists/hakka/GalaxyPunch/Timeline 1_0006.png" id="22_yv07i"]
-[ext_resource type="Texture2D" uid="uid://dyeep11bcsvi5" path="res://game/assets/sprites/assists/hakka/GalaxyPunch/Timeline 1_0007.png" id="23_nkf3c"]
-[ext_resource type="Texture2D" uid="uid://fqtvlgquoc0s" path="res://game/assets/sprites/assists/hakka/GalaxyPunch/Timeline 1_0008.png" id="24_v46et"]
+[ext_resource type="Texture2D" uid="uid://cewowl75mgdg1" path="res://game/assets/sprites/assists/rikka/Toss/Timeline 1_0002.png" id="11_csh3r"]
+[ext_resource type="Texture2D" uid="uid://clwncy2qqdtyf" path="res://game/assets/sprites/assists/rikka/Toss/Timeline 1_0003.png" id="12_2jkud"]
+[ext_resource type="Texture2D" uid="uid://cpnyp1ucgfqv6" path="res://game/assets/sprites/assists/rikka/Idle/Timeline 1_0000.png" id="17_uq747"]
 [ext_resource type="Texture2D" uid="uid://tlh0b2qmb27k" path="res://game/assets/sprites/assists/hakka/GalaxyPunch/Timeline 1_0009.png" id="25_6aho3"]
 [ext_resource type="Texture2D" uid="uid://chphyas0jh07r" path="res://game/assets/sprites/assists/hakka/Burst/Timeline 1_0000.png" id="26_1d2e0"]
 [ext_resource type="Texture2D" uid="uid://cmno6iwf427ks" path="res://game/assets/sprites/assists/hakka/Burst/Timeline 1_0002.png" id="27_1ed74"]
 [ext_resource type="Texture2D" uid="uid://ir51tql60eu5" path="res://game/assets/sprites/assists/hakka/Burst/Timeline 1_0001.png" id="28_wfh7v"]
 [ext_resource type="Texture2D" uid="uid://bdpbp0g5h68jh" path="res://game/assets/sprites/assists/hakka/Burst/Timeline 1_0003.png" id="29_ia3te"]
-[ext_resource type="Texture2D" uid="uid://py8j8xl4st28" path="res://game/assets/sprites/assists/hakka/Exit/Timeline 1_0000.png" id="30_xbyav"]
-[ext_resource type="Texture2D" uid="uid://bf6ujht7wlva1" path="res://game/assets/sprites/assists/hakka/Exit/Timeline 1_0001.png" id="31_xnwnq"]
-[ext_resource type="Texture2D" uid="uid://cytl6q3qf8r" path="res://game/assets/sprites/assists/hakka/Exit/Timeline 1_0002.png" id="32_o7jpg"]
-[ext_resource type="Texture2D" uid="uid://b5ahcxf6y60gq" path="res://game/assets/sprites/assists/hakka/Exit/Timeline 1_0003.png" id="33_72rkw"]
 [ext_resource type="Texture2D" uid="uid://c3h40i4mamblw" path="res://game/assets/sprites/Empty_0000.png" id="34_lju24"]
 [ext_resource type="Texture2D" uid="uid://b21ib4mtumag7" path="res://game/assets/sprites/assists/hakka/GroundHurt/Timeline 1_0000.png" id="35_5tpqi"]
 [ext_resource type="Texture2D" uid="uid://dlftfwmsk4yb3" path="res://game/assets/sprites/assists/hakka/GroundHurt/Timeline 1_0001.png" id="36_claf7"]
@@ -86,10 +74,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.26666668),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.06666668, 0.11666667, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("9_gxm6p"), ExtResource("10_l4cvs"), ExtResource("11_aw20k")]
+"values": [ExtResource("9_r0dmr"), ExtResource("10_x2v5e"), ExtResource("11_csh3r"), ExtResource("12_2jkud")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -106,7 +94,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="16"]
 resource_name = "AssistAttack2"
-length = 0.333334
+length = 0.5000026
 step = 0.0166667
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -115,10 +103,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.183333, 0.25, 0.31666666),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.23333333, 0.33333334, 0.41666666),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("12_0ptlu"), ExtResource("13_iko67"), ExtResource("3_vs1v1"), ExtResource("14_hldn5"), ExtResource("15_oy73v")]
+"values": [ExtResource("9_r0dmr"), ExtResource("10_x2v5e"), ExtResource("11_csh3r"), ExtResource("12_2jkud")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -130,12 +118,12 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1000000),
 "update": 0,
-"values": [Vector2(0, 80)]
+"values": [Vector2(0, 50)]
 }
 
 [sub_resource type="Animation" id="18"]
 resource_name = "AssistSuper"
-length = 4.033343
+length = 0.6666696
 step = 0.0166667
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -144,38 +132,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.15, 1, 1.2333333, 1.4, 1.55, 1.6833334, 1.7666667, 1.8666667, 1.9499999, 2.05, 2.1333332, 2.2166667, 2.3166666, 2.4, 2.4833333, 2.5666666, 2.65, 2.7333333, 2.8166666, 2.9166667, 2.9833333, 3.05, 3.1166666, 3.1833334, 3.25, 3.3166666, 3.3833332, 3.4499998, 3.5166664, 3.5833333, 3.6833334, 3.7666667, 3.9666667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("16_5ely2"), ExtResource("17_foa4h"), ExtResource("18_theor"), ExtResource("19_gb7yn"), ExtResource("18_theor"), ExtResource("19_gb7yn"), ExtResource("18_theor"), ExtResource("19_gb7yn"), ExtResource("18_theor"), ExtResource("19_gb7yn"), ExtResource("18_theor"), ExtResource("19_gb7yn"), ExtResource("18_theor"), ExtResource("19_gb7yn"), ExtResource("20_2pd1r"), ExtResource("21_ra5a6"), ExtResource("20_2pd1r"), ExtResource("21_ra5a6"), ExtResource("20_2pd1r"), ExtResource("21_ra5a6"), ExtResource("20_2pd1r"), ExtResource("21_ra5a6"), ExtResource("20_2pd1r"), ExtResource("21_ra5a6"), ExtResource("20_2pd1r"), ExtResource("21_ra5a6"), ExtResource("20_2pd1r"), ExtResource("21_ra5a6"), ExtResource("20_2pd1r"), ExtResource("21_ra5a6"), ExtResource("20_2pd1r"), ExtResource("21_ra5a6"), ExtResource("20_2pd1r"), ExtResource("21_ra5a6")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:offset")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1000000),
-"update": 0,
-"values": [Vector2(50, 100)]
-}
-
-[sub_resource type="Animation" id="20"]
-resource_name = "AssistSuperFollowup"
-step = 0.0166667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.116667, 0.316667, 0.4),
+"times": PackedFloat32Array(0.0015741121, 0.23490745, 0.33490744, 0.41824076),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("22_yv07i"), ExtResource("23_nkf3c"), ExtResource("24_v46et"), ExtResource("25_6aho3")]
+"values": [ExtResource("9_r0dmr"), ExtResource("10_x2v5e"), ExtResource("11_csh3r"), ExtResource("12_2jkud")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -184,10 +144,10 @@ tracks/1/path = NodePath("Sprite2D:offset")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(1000000, 1),
+"times": PackedFloat32Array(0.0015741121),
+"transitions": PackedFloat32Array(1000000),
 "update": 0,
-"values": [Vector2(50, 100), Vector2(0, 100)]
+"values": [Vector2(0, 50)]
 }
 
 [sub_resource type="Animation" id="14"]
@@ -230,10 +190,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.083333336, 0.21666667, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("30_xbyav"), ExtResource("31_xnwnq"), ExtResource("32_o7jpg"), ExtResource("33_72rkw")]
+"values": [ExtResource("17_uq747")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -245,7 +205,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1000000),
 "update": 0,
-"values": [Vector2(0, 70)]
+"values": [Vector2(-20, 50)]
 }
 
 [sub_resource type="Animation" id="13"]
@@ -317,10 +277,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.33333334, 0.4166667),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("30_xbyav"), ExtResource("31_xnwnq"), ExtResource("32_o7jpg"), ExtResource("33_72rkw")]
+"values": [ExtResource("34_lju24")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -332,7 +292,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1000000),
 "update": 0,
-"values": [Vector2(0, 70)]
+"values": [Vector2(0, 100)]
 }
 
 [sub_resource type="Animation" id="8"]
@@ -455,7 +415,6 @@ _data = {
 &"AssistAttack": SubResource("9"),
 &"AssistAttack2": SubResource("16"),
 &"AssistSuper": SubResource("18"),
-&"AssistSuperFollowup": SubResource("20"),
 &"Burst": SubResource("14"),
 &"Exit": SubResource("19"),
 &"GuardCancel": SubResource("13"),
@@ -475,7 +434,7 @@ script = ExtResource("1_ea7jr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = ExtResource("2_b5s6b")
-position = Vector2(0, -362)
+position = Vector2(9, -343)
 scale = Vector2(1.428, 1.428)
 texture = ExtResource("3_vs1v1")
 offset = Vector2(50, 100)
