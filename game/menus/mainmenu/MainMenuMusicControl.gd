@@ -169,6 +169,8 @@ func character_id_to_bgm_id() -> int:
 				out_id = Global.BGM_LIST.find("The Wahphony")
 			Enums.AssistCharacters.Hakka:
 				out_id = Global.BGM_LIST.find("Battle at the Top of the World")
+			Enums.AssistCharacters.Rikka:
+				out_id = Global.BGM_LIST.find("Just Follow Stars")
 			Enums.AssistCharacters.Fubuki:
 				pass
 			Enums.AssistCharacters.Sora:
@@ -207,6 +209,8 @@ func character_id_to_bgm_id() -> int:
 			if (assist_id == Enums.AssistCharacters.Fubuki):
 				out_id = Global.BGM_LIST.find("WIM")
 			elif (assist_id == Enums.AssistCharacters.Hakka):
+				out_id = Global.BGM_LIST.find("Just Follow Stars")
+			elif (assist_id == Enums.AssistCharacters.Rikka):
 				out_id = Global.BGM_LIST.find("Just Follow Stars")
 		Enums.PointCharacters.Kanata:
 			if (assist_id == Enums.AssistCharacters.Kanata):

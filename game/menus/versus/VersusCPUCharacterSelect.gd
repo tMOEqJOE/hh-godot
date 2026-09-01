@@ -30,10 +30,19 @@ func update_a2():
 		p2_active_cursor = $P1Cursor
 		pick_random_opponent()
 
+func pick_random_color() -> int:
+	var colorNumber = rng.randi_range(0, Util.MAX_COLOR_PALETTE_NUMBER)
+	colorNumber += 1
+	return in
+
 func pick_random_opponent():
 	var randRow = 3
 	var randCol = 1
+	var randColor1 = 0
+	var randColor2 = 0
+	
 	if (Global.TRAINING_P1):
+		p1_color_number 
 		var charaData = resolve_characters(randRow, randCol)
 		unload_character(charaData[0],false,false)
 		Global.PLAYER_2_NODE_PATH[0] = charaData[0]

@@ -3,7 +3,7 @@ extends CharacterSelect
 class_name ComboTrialCharacterSelect
 
 var all_characters = [
-	[Enums.AllCharacters.Hakka, Enums.AllCharacters.Fubuki, Enums.AllCharacters.Ollie, Enums.AllCharacters.Suisei, Enums.AllCharacters.Kanata, Enums.AllCharacters.AssistOllie, Enums.AllCharacters.AssistSuisei, Enums.AllCharacters.AssistKanata,],
+	[Enums.AllCharacters.Hakka, Enums.AllCharacters.Rikka, Enums.AllCharacters.Ollie, Enums.AllCharacters.Suisei, Enums.AllCharacters.Kanata, Enums.AllCharacters.AssistOllie, Enums.AllCharacters.AssistSuisei, Enums.AllCharacters.AssistKanata,],
 	[Enums.AllCharacters.OkaKoro, Enums.AllCharacters.Fubuki, Enums.AllCharacters.Mio, Enums.AllCharacters.Subaru, Enums.AllCharacters.Oga, Enums.AllCharacters.AssistMio, Enums.AllCharacters.AssistSubaru, Enums.AllCharacters.AssistOga],
 	[Enums.AllCharacters.Sana, Enums.AllCharacters.Sora, Enums.AllCharacters.Random, Enums.AllCharacters.Flayon, Enums.AllCharacters.Random, Enums.AllCharacters.Random, Enums.AllCharacters.AssistFlayon, Enums.AllCharacters.Random],
 	[Enums.AllCharacters.Fubuki, Enums.AllCharacters.Fubuki, Enums.AllCharacters.Random, Enums.AllCharacters.Random, Enums.AllCharacters.Random, Enums.AllCharacters.Random, Enums.AllCharacters.Random, Enums.AllCharacters.Random]
@@ -40,7 +40,7 @@ func resolve_characters(row: int, col: int):
 	var enumChara: int = all_characters[row][col]
 	
 	if (enumChara == Enums.AllCharacters.Random):
-		enumChara = rng.randi_range(0, 5)
+		enumChara = rng.randi_range(0, 6)
 		print("RANDOM POINT " + str(enumChara))
 	
 	match enumChara:
@@ -67,7 +67,7 @@ func resolve_assists(row:int, col:int, is_p1):
 		enumChara = all_characters[row][col]
 	
 	if (enumChara == Enums.AllCharacters.Random):
-		enumChara = rng.randi_range(0, 8)
+		enumChara = rng.randi_range(0, 12)
 		print("RANDOM ASSIST " + str(enumChara))
 	
 	match enumChara:
@@ -81,6 +81,8 @@ func resolve_assists(row:int, col:int, is_p1):
 			return ["res://game/fighter/assist/okakoro/OkaKoroPlayer.tscn", Enums.AssistCharacters.OkaKoro]
 		Enums.AllCharacters.Hakka:
 			return ["res://game/fighter/assist/hakka/HakkaPlayer.tscn", Enums.AssistCharacters.Hakka]
+		Enums.AllCharacters.Rikka:
+			return ["res://game/fighter/assist/rikka/RikkaPlayer.tscn", Enums.AssistCharacters.Rikka]
 		Enums.AllCharacters.AssistSubaru:
 			return ["res://game/fighter/assist/assistsubaru/AssistSubaruPlayer.tscn", Enums.AssistCharacters.Subaru]
 		Enums.AllCharacters.AssistMio:

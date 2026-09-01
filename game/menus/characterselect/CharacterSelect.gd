@@ -30,13 +30,13 @@ var character = [
 	]
 
 var assist2 = [
-	[Enums.AssistCharacters.Ollie, Enums.AssistCharacters.Suisei, Enums.AssistCharacters.Kanata, Enums.AssistCharacters.Fubuki, Enums.AssistCharacters.Hakka],
+	[Enums.AssistCharacters.Ollie, Enums.AssistCharacters.Suisei, Enums.AssistCharacters.Kanata, Enums.AssistCharacters.Rikka, Enums.AssistCharacters.Hakka],
 	[Enums.AssistCharacters.Mio, Enums.AssistCharacters.Subaru, Enums.AssistCharacters.Oga, Enums.AssistCharacters.Fubuki, Enums.AssistCharacters.OkaKoro],
 	[Enums.AssistCharacters.Random, Enums.AssistCharacters.Flayon, Enums.AssistCharacters.Random, Enums.AssistCharacters.Sora, Enums.AssistCharacters.Sana],
 	[Enums.AssistCharacters.Random, Enums.AssistCharacters.Random, Enums.AssistCharacters.Random, Enums.AssistCharacters.Sora, Enums.AssistCharacters.Sana]
 	]
 var assist1 = [
-	[Enums.AssistCharacters.Hakka, Enums.AssistCharacters.Fubuki, Enums.AssistCharacters.Ollie, Enums.AssistCharacters.Suisei, Enums.AssistCharacters.Kanata],
+	[Enums.AssistCharacters.Hakka, Enums.AssistCharacters.Rikka, Enums.AssistCharacters.Ollie, Enums.AssistCharacters.Suisei, Enums.AssistCharacters.Kanata],
 	[Enums.AssistCharacters.OkaKoro, Enums.AssistCharacters.Fubuki, Enums.AssistCharacters.Mio, Enums.AssistCharacters.Subaru, Enums.AssistCharacters.Oga],
 	[Enums.AssistCharacters.Sana, Enums.AssistCharacters.Sora, Enums.AssistCharacters.Random, Enums.AssistCharacters.Flayon, Enums.AssistCharacters.Random],
 	[Enums.AssistCharacters.Sana, Enums.AssistCharacters.Sora, Enums.AssistCharacters.Random, Enums.AssistCharacters.Random, Enums.AssistCharacters.Random]
@@ -296,6 +296,8 @@ func resolve_assists(row:int, col:int, is_p1):
 			return ["res://game/fighter/assist/okakoro/OkaKoroPlayer.tscn", Enums.AssistCharacters.OkaKoro]
 		Enums.AssistCharacters.Hakka:
 			return ["res://game/fighter/assist/hakka/HakkaPlayer.tscn", Enums.AssistCharacters.Hakka]
+		Enums.AssistCharacters.Rikka:
+			return ["res://game/fighter/assist/rikka/RikkaPlayer.tscn", Enums.AssistCharacters.Rikka]
 		Enums.AssistCharacters.Subaru:
 			return ["res://game/fighter/assist/assistsubaru/AssistSubaruPlayer.tscn", Enums.AssistCharacters.Subaru]
 		Enums.AssistCharacters.Mio:
@@ -371,6 +373,8 @@ func match_color(enumChara:int, is_assist=false) -> String:
 				color = "res://game/assets/sprites/assists/hakka/ColorPalettes/"
 			Enums.AssistCharacters.Sana:
 				color = "res://game/assets/sprites/assists/sana/ColorPalettes/"
+			Enums.AssistCharacters.Rikka:
+				color = "res://game/assets/sprites/assists/rikka/ColorPalettes/"
 			Enums.AssistCharacters.Subaru:
 				color = "res://game/assets/sprites/subaru/ColorPalettes/"
 			Enums.AssistCharacters.Mio:

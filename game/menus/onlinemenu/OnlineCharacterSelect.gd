@@ -23,20 +23,20 @@ func _ready():
 	character = [
 		[Enums.PointCharacters.Ollie, Enums.PointCharacters.Suisei, Enums.PointCharacters.Kanata],
 		[Enums.PointCharacters.Mio, Enums.PointCharacters.Subaru, Enums.PointCharacters.Oga],
-		[Enums.PointCharacters.Subaru, Enums.PointCharacters.Subaru, Enums.PointCharacters.Subaru],
-		[Enums.PointCharacters.Flayon, Enums.PointCharacters.Subaru, Enums.PointCharacters.Subaru]
+		[Enums.PointCharacters.Subaru, Enums.PointCharacters.Flayon, Enums.PointCharacters.Subaru],
+		[Enums.PointCharacters.Subaru, Enums.PointCharacters.Subaru, Enums.PointCharacters.Subaru]
 		]
 
 	assist2 = [
-		[Enums.AssistCharacters.Ollie, Enums.AssistCharacters.Suisei, Enums.AssistCharacters.Kanata, Enums.AssistCharacters.Fubuki, Enums.AssistCharacters.Hakka],
+		[Enums.AssistCharacters.Ollie, Enums.AssistCharacters.Suisei, Enums.AssistCharacters.Kanata, Enums.AssistCharacters.Rikka, Enums.AssistCharacters.Hakka],
 		[Enums.AssistCharacters.Mio, Enums.AssistCharacters.Subaru, Enums.AssistCharacters.Oga, Enums.AssistCharacters.Fubuki, Enums.AssistCharacters.OkaKoro],
-		[Enums.AssistCharacters.Subaru, Enums.AssistCharacters.Subaru, Enums.AssistCharacters.Subaru, Enums.AssistCharacters.Sora, Enums.AssistCharacters.Sana],
+		[Enums.AssistCharacters.Subaru, Enums.AssistCharacters.Flayon, Enums.AssistCharacters.Subaru, Enums.AssistCharacters.Sora, Enums.AssistCharacters.Sana],
 		[Enums.AssistCharacters.Subaru, Enums.AssistCharacters.Subaru, Enums.AssistCharacters.Subaru, Enums.AssistCharacters.Sora, Enums.AssistCharacters.Sana]
 		]
 	assist1 = [
-		[Enums.AssistCharacters.Hakka, Enums.AssistCharacters.Fubuki, Enums.AssistCharacters.Ollie, Enums.AssistCharacters.Suisei, Enums.AssistCharacters.Kanata],
+		[Enums.AssistCharacters.Hakka, Enums.AssistCharacters.Rikka, Enums.AssistCharacters.Ollie, Enums.AssistCharacters.Suisei, Enums.AssistCharacters.Kanata],
 		[Enums.AssistCharacters.OkaKoro, Enums.AssistCharacters.Fubuki, Enums.AssistCharacters.Mio, Enums.AssistCharacters.Subaru, Enums.AssistCharacters.Oga],
-		[Enums.AssistCharacters.Sana, Enums.AssistCharacters.Sora, Enums.AssistCharacters.Subaru, Enums.AssistCharacters.Subaru, Enums.AssistCharacters.Subaru],
+		[Enums.AssistCharacters.Sana, Enums.AssistCharacters.Sora, Enums.AssistCharacters.Subaru, Enums.AssistCharacters.Flayon, Enums.AssistCharacters.Subaru],
 		[Enums.AssistCharacters.Sana, Enums.AssistCharacters.Sora, Enums.AssistCharacters.Subaru, Enums.AssistCharacters.Subaru, Enums.AssistCharacters.Subaru]
 		]
 	

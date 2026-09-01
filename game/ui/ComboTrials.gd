@@ -632,6 +632,22 @@ Enums.AssistCharacters.Hakka: [
 	1: "AirSuperCharge3",
 	},
 ],
+
+Enums.AssistCharacters.Rikka: [
+	{0: "RikkaBall",
+	1: "Jump5C",
+	2: "Stand5B",
+	4: "Stand5C",
+	},
+	{0: "RikkaBigBall",
+	1: "Jump5C",
+	2: "Stand5B",
+	4: "Stand5C",
+	},
+	{0: "DUMMY: AssistSuper",
+	1: "RikkaSuperBall",
+	},
+],
 Enums.AssistCharacters.Sana: [
 	{0: "DUMMY: AssistAttack2 Hold and Steer Right",
 	1: "Crouch2A",

@@ -101,6 +101,8 @@ func load_player_move_list(point, assist, container):
 			load_move_list(Enums.SanaMoveList, container)
 		Enums.AssistCharacters.Hakka:
 			load_move_list(Enums.HakkaMoveList, container)
+		Enums.AssistCharacters.Rikka:
+			load_move_list(Enums.RikkaMoveList, container)
 		Enums.AssistCharacters.Subaru:
 			load_move_list(Enums.AssistSubaruMoveList, container)
 		Enums.AssistCharacters.Mio:

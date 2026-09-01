@@ -102,6 +102,7 @@ enum AllCharacters {
 	Sana,
 	OkaKoro,
 	Hakka,
+	Rikka,
 	AssistSubaru,
 	AssistMio,
 	AssistOga,
@@ -134,6 +135,7 @@ enum AssistCharacters {
 	Sana,
 	OkaKoro,
 	Hakka,
+	Rikka,
 	Subaru,
 	Mio,
 	Oga,
@@ -170,6 +172,9 @@ enum Projectiles {
 	AssistSubaruStarBall,
 	AssistOllieProtonCannon,
 	HakkaTags,
+	RikkaBall,
+	RikkaBigBall,
+	RikkaSuperBall,
 }
 
 enum AttackType {
@@ -597,6 +602,15 @@ const HakkaMoveList: = [
 	["6D Guard Cancel", "", "Level 1 and 2 assist stocks", ""],
 ]
 
+const RikkaMoveList: = [
+	["Assist: Rikka"],
+	["Attacks"],
+	["5D", "Tuning Guitar", "", "4 way Steering"],
+	["2D", "Tone Tuning Guitar", "", "2 way Steering, Multi hit"],
+	["236[D]", "Holoroid Tuning Guitar", "Level 1 and 2 assist stocks", "4 way Steering and Multi hit"],
+	["6D Guard Cancel", "", "Level 1 and 2 assist stocks", ""],
+]
+
 const AssistSubaruMoveList: = [
 	["Assist: Oozora Subaru"],
 	["Attacks"],
@@ -674,4 +688,3 @@ const AssistFlayonMoveList: = [
 	["236D", "Air Rave SP", "Level 1 and 2 assist stocks", ""],
 	["6D Guard Cancel", "", "Level 1 and 2 assist stocks", ""],
 ]
-
