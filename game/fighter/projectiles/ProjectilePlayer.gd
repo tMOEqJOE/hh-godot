@@ -53,9 +53,9 @@ func setup(playerData:PlayerSetup):
 			Enums.Projectiles.RikkaBall:
 				state_factory = preload("res://game/state/projectiles/rikka/RikkaBallStateFactory.gd").new()
 			Enums.Projectiles.RikkaBigBall:
-				state_factory = preload("res://game/state/projectiles/rikka/RikkaBallStateFactory.gd").new()
+				state_factory = preload("res://game/state/projectiles/rikka/RikkaRedBallStateFactory.gd").new()
 			Enums.Projectiles.RikkaSuperBall:
-				state_factory = preload("res://game/state/projectiles/rikka/RikkaBallStateFactory.gd").new()
+				state_factory = preload("res://game/state/projectiles/rikka/RikkaSuperBallStateFactory.gd").new()
 			Enums.Projectiles.SuicopathChainsaw:
 				state_factory = preload("res://game/state/projectiles/suisei/ChainsawStateFactory.gd").new()
 			_:

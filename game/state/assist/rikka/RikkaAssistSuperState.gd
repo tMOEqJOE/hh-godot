@@ -25,24 +25,11 @@ func _init():
 			Enums.StKey.attack_type : Enums.AttackType.BurstLock,
 			Enums.StKey.counter_hit : Enums.AttackType.BurstLock,
 		},
-		3 : {
-			Enums.StKey.Summon : "Rikkastarball",
-			Enums.StKey.Hurt1Disable : false, Enums.StKey.Hurt2Disable : true,
-			},
-		19 : {
-			Enums.StKey.Summon : "Rikkastarball",
-			Enums.StKey.Hurt1Disable : false, Enums.StKey.Hurt2Disable : true,
-			},
-		35 : {
-			Enums.StKey.Summon : "Rikkastarball",
-			Enums.StKey.Hurt1Disable : false, Enums.StKey.Hurt2Disable : true,
-			},
-		51 : {
-			Enums.StKey.Summon : "Rikkastarball",
+		20 : {
+			Enums.StKey.Summon : "RikkaSuperBall",
 			Enums.StKey.Hurt1Disable : false, Enums.StKey.Hurt2Disable : true,
 			},
 	}
-
 
 # Writing _delta instead of delta here prevents the unused variable warning.
 func enter(state: Dictionary) -> void:

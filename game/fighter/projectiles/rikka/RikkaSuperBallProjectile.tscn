@@ -1,13 +1,13 @@
-[gd_scene load_steps=14 format=3 uid="uid://b2asducu2f8n3"]
+[gd_scene load_steps=14 format=3 uid="uid://vymr3xwqhw2c"]
 
-[ext_resource type="Material" uid="uid://bt3lvyqtd78u0" path="res://game/assets/shaders/ColorSwapMat.tres" id="1_1ogi4"]
-[ext_resource type="Script" uid="uid://b3vinramtp4ia" path="res://game/fighter/projectiles/ProjectilePlayer.gd" id="2_0h2oq"]
-[ext_resource type="Texture2D" uid="uid://xj8p08fphwst" path="res://game/assets/sprites/assists/rikka/Ball/Timeline 1_0000.png" id="3_1sdbn"]
-[ext_resource type="Texture2D" uid="uid://c3h40i4mamblw" path="res://game/assets/sprites/Empty_0000.png" id="4_2jdbx"]
-[ext_resource type="Script" uid="uid://dv11pt6y7wasy" path="res://addons/godot-rollback-netcode/NetworkAnimationPlayer.gd" id="5_nsupx"]
-[ext_resource type="PackedScene" uid="uid://bvgu0aev8rq4g" path="res://game/fighter/Hitbox.tscn" id="6_0q7am"]
-[ext_resource type="PackedScene" uid="uid://cwoqesvdf08m3" path="res://game/fighter/Hurtbox.tscn" id="7_c3g2t"]
-[ext_resource type="Script" uid="uid://b010dt6v25trf" path="res://addons/godot-rollback-netcode/NetworkTimer.gd" id="8_hjly7"]
+[ext_resource type="Material" uid="uid://bt3lvyqtd78u0" path="res://game/assets/shaders/ColorSwapMat.tres" id="1_bpa6a"]
+[ext_resource type="Script" uid="uid://b3vinramtp4ia" path="res://game/fighter/projectiles/ProjectilePlayer.gd" id="2_b0y38"]
+[ext_resource type="Texture2D" uid="uid://xj8p08fphwst" path="res://game/assets/sprites/assists/rikka/Ball/Timeline 1_0000.png" id="3_bueq8"]
+[ext_resource type="Texture2D" uid="uid://c3h40i4mamblw" path="res://game/assets/sprites/Empty_0000.png" id="4_q22uk"]
+[ext_resource type="Script" uid="uid://dv11pt6y7wasy" path="res://addons/godot-rollback-netcode/NetworkAnimationPlayer.gd" id="5_4l7f6"]
+[ext_resource type="PackedScene" uid="uid://bvgu0aev8rq4g" path="res://game/fighter/Hitbox.tscn" id="6_1x3vk"]
+[ext_resource type="PackedScene" uid="uid://cwoqesvdf08m3" path="res://game/fighter/Hurtbox.tscn" id="7_ptxs4"]
+[ext_resource type="Script" uid="uid://b010dt6v25trf" path="res://addons/godot-rollback-netcode/NetworkTimer.gd" id="8_w4ou3"]
 
 [sub_resource type="SGRectangleShape2D" id="1"]
 extents_x = 4063232
@@ -28,7 +28,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.083333336, 0.13333334),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [ExtResource("3_1sdbn"), ExtResource("3_1sdbn"), ExtResource("3_1sdbn")]
+"values": [ExtResource("3_bueq8"), ExtResource("3_bueq8"), ExtResource("3_bueq8")]
 }
 
 [sub_resource type="Animation" id="3"]
@@ -45,7 +45,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("4_2jdbx")]
+"values": [ExtResource("4_q22uk")]
 }
 
 [sub_resource type="Animation" id="Animation_1ogi4"]
@@ -60,7 +60,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("3_1sdbn")]
+"values": [ExtResource("3_bueq8")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7oabd"]
@@ -70,14 +70,15 @@ _data = {
 &"RESET": SubResource("Animation_1ogi4")
 }
 
-[node name="RikkaBall" type="SGCharacterBody2D"]
-material = ExtResource("1_1ogi4")
-script = ExtResource("2_0h2oq")
+[node name="RikkaSuperBall" type="SGCharacterBody2D"]
+material = ExtResource("1_bpa6a")
+script = ExtResource("2_b0y38")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-material = ExtResource("1_1ogi4")
+material = ExtResource("1_bpa6a")
 position = Vector2(-7, -234)
-texture = ExtResource("3_1sdbn")
+scale = Vector2(3, 3)
+texture = ExtResource("3_bueq8")
 
 [node name="Pushbox" type="SGCollisionShape2D" parent="."]
 shape = SubResource("1")
@@ -92,23 +93,23 @@ position = Vector2(1, 3)
 libraries = {
 &"": SubResource("AnimationLibrary_7oabd")
 }
-script = ExtResource("5_nsupx")
+script = ExtResource("5_4l7f6")
 auto_reset = false
 
-[node name="Hitbox1" parent="." instance=ExtResource("6_0q7am")]
+[node name="Hitbox1" parent="." instance=ExtResource("6_1x3vk")]
 fixed_position_y = -15000000
-fixed_scale_x = 433869
-fixed_scale_y = 433869
+fixed_scale_x = 1333869
+fixed_scale_y = 1333868
 position = Vector2(0, -228.88184)
-scale = Vector2(6.6203156, 6.6203156)
+scale = Vector2(20.353226, 20.35321)
 
-[node name="Hurtbox1" parent="." instance=ExtResource("7_c3g2t")]
+[node name="Hurtbox1" parent="." instance=ExtResource("7_ptxs4")]
 fixed_position_y = -15000000
-fixed_scale_x = 433869
-fixed_scale_y = 433869
+fixed_scale_x = 1333869
+fixed_scale_y = 1333869
 position = Vector2(0, -228.88184)
-scale = Vector2(6.6203156, 6.6203156)
+scale = Vector2(20.353226, 20.353226)
 
 [node name="ExplosionTimer" type="Node" parent="."]
-script = ExtResource("8_hjly7")
+script = ExtResource("8_w4ou3")
 wait_ticks = 20

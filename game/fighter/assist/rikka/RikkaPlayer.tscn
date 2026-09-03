@@ -426,7 +426,7 @@ _data = {
 &"StandHighHit": SubResource("7")
 }
 
-[node name="HakkaPlayer" type="SGCharacterBody2D"]
+[node name="RikkaPlayer" type="SGCharacterBody2D"]
 collision_layer = 0
 collision_mask = 262148
 z_index = 8

@@ -608,6 +608,7 @@ const RikkaMoveList: = [
 	["5D", "Tuning Guitar", "", "4 way Steering"],
 	["2D", "Tone Tuning Guitar", "", "2 way Steering, Multi hit"],
 	["236[D]", "Holoroid Tuning Guitar", "Level 1 and 2 assist stocks", "4 way Steering and Multi hit"],
+	["[D]", "", "Hold D to stay on field", ""],
 	["6D Guard Cancel", "", "Level 1 and 2 assist stocks", ""],
 ]
 
@@ -651,6 +652,7 @@ const AssistOllieMoveList: = [
 	["5D", "Head Dango", "", ""],
 	["2D", "Idol's hair pin", "", ""],
 	["236D", "Bzzt Boom Replica", "Level 1 and 2 assist stocks", ""],
+	["[D]", "", "Hold D to stay on field", ""],
 	["6D Guard Cancel", "", "Level 1 and 2 assist stocks", ""],
 ]
 
