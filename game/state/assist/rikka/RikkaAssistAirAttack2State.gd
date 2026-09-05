@@ -13,7 +13,7 @@ func _init():
 			Enums.StKey.Hit1PosX : 0, Enums.StKey.Hit1PosY : -11337728,
 			Enums.StKey.Hit1ScaleX : 686985, Enums.StKey.Hit1ScaleY : 1074037,
 			},
-		20 : {
+		35 : {
 			Enums.StKey.Summon : "RikkaRedBall",
 			Enums.StKey.Hurt1Disable : false, Enums.StKey.Hurt2Disable : true,
 			},
