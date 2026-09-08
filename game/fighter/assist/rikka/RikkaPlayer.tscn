@@ -1,13 +1,14 @@
-[gd_scene load_steps=45 format=3 uid="uid://cdgpxeqjvqrx5"]
+[gd_scene load_steps=46 format=3 uid="uid://cdgpxeqjvqrx5"]
 
 [ext_resource type="Script" uid="uid://dy1wn7kfusnsk" path="res://game/fighter/assist/rikka/RikkaPlayer.gd" id="1_ea7jr"]
 [ext_resource type="Material" uid="uid://bt3lvyqtd78u0" path="res://game/assets/shaders/ColorSwapMat.tres" id="2_b5s6b"]
 [ext_resource type="Texture2D" uid="uid://b6qkll5xu0r1q" path="res://game/assets/sprites/assists/hakka/Badlands/Timeline 1_0002.png" id="3_vs1v1"]
 [ext_resource type="PackedScene" uid="uid://sdxa076t7wfp" path="res://game/fighter/effects/shadow.tscn" id="4_lu3y1"]
-[ext_resource type="Texture2D" uid="uid://dtknfqy2ab3vi" path="res://game/assets/sprites/assists/hakka/AirHurt/Timeline 1_0000.png" id="5_v2eie"]
-[ext_resource type="Texture2D" uid="uid://cf2onglm5ktqj" path="res://game/assets/sprites/assists/hakka/AirHurt/Timeline 1_0001.png" id="6_8tq7x"]
-[ext_resource type="Texture2D" uid="uid://bpg5d0ldqwrtv" path="res://game/assets/sprites/assists/hakka/AirHurt/Timeline 1_0002.png" id="7_meq1u"]
+[ext_resource type="Texture2D" uid="uid://b74a5jcmnyxjc" path="res://game/assets/sprites/assists/rikka/AirHurt/Timeline 1_0000.png" id="5_ef4sw"]
+[ext_resource type="Texture2D" uid="uid://dpphbxy8p2qcg" path="res://game/assets/sprites/assists/rikka/AirHurt/Timeline 1_0001.png" id="6_5iqyj"]
+[ext_resource type="Texture2D" uid="uid://40dluulttqq4" path="res://game/assets/sprites/assists/rikka/AirHurt/Timeline 1_0002.png" id="7_no06e"]
 [ext_resource type="Texture2D" uid="uid://banjx1k2drw38" path="res://game/assets/sprites/assists/hakka/AirHurt/Timeline 1_0003.png" id="8_gnlrs"]
+[ext_resource type="Texture2D" uid="uid://bpusm1jngot1q" path="res://game/assets/sprites/assists/rikka/AirHurt/Timeline 1_0003.png" id="8_r0dmr"]
 [ext_resource type="Texture2D" uid="uid://cf4b2whg42t08" path="res://game/assets/sprites/assists/hakka/GunFlame/Timeline 1_0000.png" id="9_gxm6p"]
 [ext_resource type="Texture2D" uid="uid://d2vnr7vssihow" path="res://game/assets/sprites/assists/rikka/Toss/Timeline 1_0000.png" id="9_r0dmr"]
 [ext_resource type="Texture2D" uid="uid://dgvyynvkwjdqi" path="res://game/assets/sprites/assists/hakka/GunFlame/Timeline 1_0001.png" id="10_l4cvs"]
@@ -45,10 +46,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.3, 0.5),
+"times": PackedFloat32Array(0, 0.083333336, 0.21666667, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("5_v2eie"), ExtResource("6_8tq7x"), ExtResource("7_meq1u"), ExtResource("8_gnlrs")]
+"values": [ExtResource("5_ef4sw"), ExtResource("6_5iqyj"), ExtResource("7_no06e"), ExtResource("8_r0dmr")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false

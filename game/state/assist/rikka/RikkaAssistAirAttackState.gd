@@ -2,6 +2,8 @@ extends AssistAirAttackState
 
 class_name RikkaAssistAirAttackState
 
+var CallSound = preload("res://game/assets/voice/rikka/RKA_oo~.wav")
+
 func _init():
 	endFrame = 30
 	
@@ -28,3 +30,9 @@ func enter(state: Dictionary) -> void:
 	state[Enums.StKey.accel_y] = 0
 	anim.stop(true)
 	anim.play("AssistAttack")
+
+func physics_tick(state: Dictionary) -> void:
+	super.physics_tick(state)
+	if (state[Enums.StKey.frame] == 3):
+		SyncManager.play_sound("RikkaVoice", CallSound, {"bus": "Voice"})
+		SyncManager.play_sound("RikkaVoiceReverb", CallSound, {"bus": "ReverbVoice"})

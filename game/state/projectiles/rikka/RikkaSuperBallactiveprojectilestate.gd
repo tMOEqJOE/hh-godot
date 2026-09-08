@@ -2,6 +2,8 @@ extends ActiveProjectileState
 
 class_name RikkaSuperBallActiveProjectileState
 
+var sound = preload("res://game/assets/sfx/RikkaBall.wav")
+
 const SPEED = 32536
 const UP_SPEED = 32536
 
@@ -33,6 +35,11 @@ func enter(state: Dictionary) -> void:
 	state[Enums.StKey.velocity_x] = SGFixed.ONE*12
 	state[Enums.StKey.velocity_y] = 0
 	state[Enums.StKey.projectile_hp] = 5
+
+func physics_tick(state: Dictionary) -> void:
+	super.physics_tick(state)
+	if (state[Enums.StKey.frame] == 1):
+		SyncManager.play_sound("RikkaBall", sound, {"bus": "Sound"})
 
 func reaction(state: Dictionary, _interpreter: InputInterpreter, event_cause: int) -> void:
 	if (event_cause == Enums.Reaction.PointBlockHurt):

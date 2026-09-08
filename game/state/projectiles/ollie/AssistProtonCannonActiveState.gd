@@ -2,7 +2,7 @@ extends ActiveProjectileState
 
 class_name AssistProtonCannonActiveState
 
-var voice = preload("res://game/assets/sfx/BeamSustain.wav")
+
 
 func _init():
 	anim_data = {
