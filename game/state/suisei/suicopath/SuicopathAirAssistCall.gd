@@ -58,9 +58,9 @@ func special_cancel(state: Dictionary, interpreter: InputInterpreter):
 func meter_cancel(state: Dictionary, interpreter: InputInterpreter):
 	if (state[Enums.StKey.frame] > 1):
 		if (boost_OK(state, interpreter)):
-			state[Enums.StKey.cancelState] = "BoostCancel"
-	elif (state[Enums.StKey.frame] >= Util.ASSIST_CANCEL_LOCKOUT):
-		super.meter_cancel(state, interpreter)
+			state[Enums.StKey.cancelState] = "AngelAirBoostCancel"
+		elif (state[Enums.StKey.frame] >= Util.ASSIST_CANCEL_LOCKOUT):
+			super.meter_cancel(state, interpreter)
 	if (burst_OK(state, interpreter)):
 		change_state.call("AngelBurst")
 
