@@ -240,6 +240,10 @@ func level_5_OK(state: Dictionary) -> bool:
 func assist_ok(state: Dictionary, interpreter: InputInterpreter) -> bool:
 	return assist_meter_ok(state) and interpreter.is_button_down(Enums.InputFlags.DDown)
 
+func assist_ok_with_lockout(state: Dictionary, interpreter: InputInterpreter) -> bool:
+	return state[Enusm.StKey.frame] >= Util.ASSIST_CANCEL_LOCKOUT and assist_ok(state, interpreter)
+
+
 func assist_meter_ok(state: Dictionary) -> bool:
 	return state[Enums.StKey.assist_meter] >= Util.ASSIST_STOCK
 

@@ -2,7 +2,7 @@ extends ActiveProjectileState
 
 class_name RikkaRedBallActiveProjectileState
 
-var sound = preload("res://game/assets/sfx/RikkaBall.wav")
+var sound = preload("res://game/assets/sfx/RikkaBall-001.wav")
 
 const SPEED = 38536
 const UP_SPEED = 38536

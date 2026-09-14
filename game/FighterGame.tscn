@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://bngmafg6y7eqk"]
+[gd_scene load_steps=66 format=3 uid="uid://bngmafg6y7eqk"]
 
 [ext_resource type="PackedScene" uid="uid://bee7pcc18xndp" path="res://game/ui/SyncRateMeter.tscn" id="1"]
 [ext_resource type="PackedScene" uid="uid://btifqf7jlg8wh" path="res://game/StageCage.tscn" id="2"]
@@ -37,10 +37,14 @@
 [ext_resource type="Texture2D" uid="uid://c4emtl2edbvmq" path="res://game/assets/sprites/UI/NOWLOADING/Timeline 1_0007.png" id="36"]
 [ext_resource type="Texture2D" uid="uid://c10djkruq4htc" path="res://game/assets/sprites/UI/NOWLOADING/Timeline 1_0003.png" id="37"]
 [ext_resource type="Texture2D" uid="uid://5lael8762wrm" path="res://game/assets/sprites/UI/NOWLOADING/Timeline 1_0004.png" id="38"]
-[ext_resource type="Texture2D" uid="uid://cwcgjodrfqu0f" path="res://game/assets/sprites/UI/PolkaLoad/All-Up-Pol.png" id="38_p5ebx"]
+[ext_resource type="Texture2D" uid="uid://bmjpm4olyqy4l" path="res://game/assets/sprites/UI/NOWLOADING/Round 3 Polka/Comp 1_00002.png" id="38_4ia5l"]
 [ext_resource type="Texture2D" uid="uid://c4f7wagplpcdy" path="res://game/assets/sprites/UI/NOWLOADING/Timeline 1_0005.png" id="39"]
+[ext_resource type="Texture2D" uid="uid://bqgr5revfdq27" path="res://game/assets/sprites/UI/NOWLOADING/Round 3 Polka/Comp 1_00001.png" id="39_lj5kw"]
 [ext_resource type="Texture2D" uid="uid://cnkqqpsx6ygb3" path="res://game/assets/sprites/UI/NOWLOADING/Timeline 1_0006.png" id="40"]
+[ext_resource type="Texture2D" uid="uid://hxn67byevbd" path="res://game/assets/sprites/UI/NOWLOADING/Round 3 Polka/Comp 1_00003.png" id="40_hwqpn"]
+[ext_resource type="Texture2D" uid="uid://ctey62sw8rtdj" path="res://game/assets/sprites/UI/NOWLOADING/Round 3 Polka/Comp 1_00004.png" id="41_uiivt"]
 [ext_resource type="Animation" path="res://game/assets/anim/gameWIN.tres" id="42"]
+[ext_resource type="Texture2D" uid="uid://bdwko2beetfe1" path="res://game/assets/sprites/UI/NOWLOADING/Round 3 Polka/Comp 1_00005.png" id="42_agykw"]
 [ext_resource type="PackedScene" uid="uid://caiesl5miifd5" path="res://game/ui/BattlePointPortrait.tscn" id="43"]
 [ext_resource type="Texture2D" uid="uid://cu8bjxaqtqxuo" path="res://game/assets/sprites/UI/DOWN/Timeline 1_0008.png" id="45"]
 [ext_resource type="Texture2D" uid="uid://b6ohjprgkrs3q" path="res://game/assets/sprites/UI/DOWN/Timeline 1_0011.png" id="46"]
@@ -272,10 +276,10 @@ tracks/0/path = NodePath("TextSprite:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 2.85, 2.98333, 3.05, 3.08333, 3.11667, 3.18333, 3.48333, 3.55, 3.58333, 3.65),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 1, 1.0666667, 1.1166668, 1.1666667, 1.2166668, 2.85, 2.98333, 3.05, 3.08333, 3.11667, 3.18333, 3.48333, 3.55, 3.58333, 3.65),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("35_yl1ep"), ExtResource("38_p5ebx"), ExtResource("35_yl1ep"), ExtResource("37"), ExtResource("38"), ExtResource("39"), ExtResource("40"), ExtResource("36"), ExtResource("27"), ExtResource("28"), ExtResource("29"), ExtResource("35_yl1ep")]
+"values": [ExtResource("35_yl1ep"), ExtResource("38_4ia5l"), ExtResource("39_lj5kw"), ExtResource("40_hwqpn"), ExtResource("41_uiivt"), ExtResource("42_agykw"), ExtResource("35_yl1ep"), ExtResource("37"), ExtResource("38"), ExtResource("39"), ExtResource("40"), ExtResource("36"), ExtResource("27"), ExtResource("28"), ExtResource("29"), ExtResource("35_yl1ep")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -288,6 +292,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1000000, 1000000),
 "update": 0,
 "values": [Vector2(0, -20), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextSprite:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1, 2.4, 2.85, 2.9833336),
+"transitions": PackedFloat32Array(1, 1, 1000000, 1000000),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_54rxn"]
@@ -317,6 +333,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextSprite:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xonw4"]
