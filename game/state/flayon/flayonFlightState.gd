@@ -110,9 +110,9 @@ func common_flight_transitions(state: Dictionary, interpreter: InputInterpreter)
 	elif (interpreter.special_input_button(Enums.SpecialInput.M236, Enums.InputFlags.ADown, state[Enums.StKey.leftface]) or 
 			interpreter.special_input_button(Enums.SpecialInput.M236, Enums.InputFlags.BDown, state[Enums.StKey.leftface])):
 		change_state.call("AirGrapple")
-	elif (interpreter.special_input_button(Enums.SpecialInput.M214, Enums.InputFlags.ADown, state[Enums.StKey.leftface]) or 
-			interpreter.special_input_button(Enums.SpecialInput.M214, Enums.InputFlags.BDown, state[Enums.StKey.leftface]) or 
-			interpreter.special_input_button(Enums.SpecialInput.M214, Enums.InputFlags.CDown, state[Enums.StKey.leftface])):
+	elif (interpreter.special_input_button(Enums.SpecialInput.M214Quick, Enums.InputFlags.ADown, state[Enums.StKey.leftface]) or 
+			interpreter.special_input_button(Enums.SpecialInput.M214Quick, Enums.InputFlags.BDown, state[Enums.StKey.leftface]) or 
+			interpreter.special_input_button(Enums.SpecialInput.M214Quick, Enums.InputFlags.CDown, state[Enums.StKey.leftface])):
 		change_state.call("FlightExit")
 	elif (interpreter.is_air_dashing_four_way(Enums.Numpad.N6, state[Enums.StKey.leftface])):
 		change_state.call("FlightForwardAirdash")

@@ -293,9 +293,6 @@ enum Numpad {
 	N8,
 	N9
 }
-#
-#func suicopath_scissors_OK(state: Dictionary, interpreter: InputInterpreter) -> bool:
-	#return level_1_OK(state) and interpreter.special_input_button(Enums.SpecialInput.M63214, Enums.InputFlags.ADown, state[Enums.StKey.leftface])
 
 func level_1_OK(state: Dictionary) -> bool:
 	return state[Enums.StKey.super_meter] >= Util.LEVEL_ONE_SUPER
@@ -318,6 +315,7 @@ const SpecialInput: Dictionary = {
 	"DAirDash" : [17, [Numpad.N2, Numpad.N5, Numpad.N2]],
 	"M236" : [20, [Numpad.N6, Numpad.N3, Numpad.N2], [Numpad.N5, Numpad.N6, Numpad.N3, Numpad.N2], [Numpad.N9, Numpad.N6, Numpad.N3, Numpad.N2]],
 	"M214" : [20, [Numpad.N4, Numpad.N1, Numpad.N2], [Numpad.N5, Numpad.N4, Numpad.N1, Numpad.N2], [Numpad.N7, Numpad.N4, Numpad.N1, Numpad.N2]],
+	"M214Quick" : [15, [Numpad.N4, Numpad.N1, Numpad.N2], [Numpad.N5, Numpad.N4, Numpad.N1, Numpad.N2], [Numpad.N7, Numpad.N4, Numpad.N1, Numpad.N2]],
 	"M214Strict" : [20, [Numpad.N4, Numpad.N1, Numpad.N2], [Numpad.N7, Numpad.N4, Numpad.N1, Numpad.N2]],
 	"M623" : [25, [Numpad.N3, Numpad.N2, Numpad.N5, Numpad.N6], [Numpad.N6, Numpad.N3, Numpad.N2, Numpad.N5, Numpad.N6], [Numpad.N9, Numpad.N6, Numpad.N3, Numpad.N2, Numpad.N5, Numpad.N6], [Numpad.N3, Numpad.N2, Numpad.N6], [Numpad.N6, Numpad.N3, Numpad.N2, Numpad.N6], [Numpad.N3, Numpad.N2, Numpad.N3, Numpad.N6], [Numpad.N6, Numpad.N3, Numpad.N2, Numpad.N3, Numpad.N6], [Numpad.N9, Numpad.N6, Numpad.N3, Numpad.N2, Numpad.N3, Numpad.N6]],
 	"M41236" : [25, [Numpad.N6, Numpad.N3, Numpad.N2, Numpad.N1, Numpad.N4], [Numpad.N5, Numpad.N6, Numpad.N3, Numpad.N2, Numpad.N1, Numpad.N4], [Numpad.N9, Numpad.N6, Numpad.N3, Numpad.N2, Numpad.N1, Numpad.N4], 

@@ -33,7 +33,7 @@ func _init():
 			Enums.StKey.meter_build: SGFixed.ONE*950,
 			Enums.StKey.guard: Enums.GuardType.High,
 			Enums.StKey.attack_type : Enums.AttackType.Launcher,
-			Enums.StKey.hitstun: Util.DEFAULT_HITSTUN + 6,
+			Enums.StKey.hitstun: Util.DEFAULT_HITSTUN + 8,
 			Enums.StKey.launch_dir_x : -SGFixed.ONE*22,
 			Enums.StKey.launch_dir_y : -SGFixed.ONE*35,
 			Enums.StKey.counter_hit: Enums.AttackType.WallBouncer,
