@@ -24,7 +24,7 @@ func _init():
 			Enums.StKey.Hurt1ScaleX : 1122078, Enums.StKey.Hurt1ScaleY : 1236954,
 			Enums.StKey.hit_box_colliding_frame : 254,
 			Enums.StKey.attack_damage: 20,
-			Enums.StKey.min_damage: 3,
+			Enums.StKey.min_damage: 5,
 			Enums.StKey.meter_build: 0,
 			Enums.StKey.guard: Enums.GuardType.High,
 			Enums.StKey.hitstun: Util.DEFAULT_HITSTUN,

@@ -24,7 +24,7 @@ func _init():
 			Enums.StKey.hit_box_colliding_frame : 254,
 			Enums.StKey.Hit1PosX : 5111807, Enums.StKey.Hit1PosY : -17170434,
 			Enums.StKey.Hit1ScaleX : 1130702, Enums.StKey.Hit1ScaleY : 1849446,
-			Enums.StKey.attack_damage: 30,
+			Enums.StKey.attack_damage: 50,
 			Enums.StKey.min_damage:2,
 			Enums.StKey.chip_damage:2,
 			Enums.StKey.attack_type : Enums.AttackType.GroundBouncer,
