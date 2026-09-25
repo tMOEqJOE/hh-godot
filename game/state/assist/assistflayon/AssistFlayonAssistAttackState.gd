@@ -101,3 +101,6 @@ func physics_tick(state: Dictionary) -> void:
 	if (state[Enums.StKey.frame] == 58):
 		state[Enums.StKey.drag_x] = Util.SKID_FRICTION
 		state[Enums.StKey.velocity_x] = Util.fixed_max(SGFixed.ONE*35, state[Enums.StKey.velocity_x])
+
+func combo_pushback(comboTime: int) -> int:
+	return Util.pushback_scaling(0, comboTime)

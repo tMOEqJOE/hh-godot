@@ -49,8 +49,14 @@ func _init():
 			Enums.StKey.hit_box_colliding_frame : 3,
 			Enums.StKey.attack_damage: 28,
 			Enums.StKey.min_damage: 5,
-			Enums.StKey.counter_hit: Enums.AttackType.Strike,
-			Enums.StKey.counter_hitstun: 5,
+			Enums.StKey.hitstun: Util.DEFAULT_HITSTUN + 8,
+			Enums.StKey.attack_type : Enums.AttackType.Launcher,
+			Enums.StKey.launch_dir_x : -SGFixed.ONE*10,
+			Enums.StKey.launch_dir_y : -SGFixed.ONE*40,
+			Enums.StKey.counter_hit: Enums.AttackType.WallBouncer,
+			Enums.StKey.counter_hitstun: 60,
+			Enums.StKey.counter_launch_dir_x: -SGFixed.ONE*5,
+			Enums.StKey.counter_launch_dir_y: -SGFixed.ONE*40,
 			},
 		36 : { 
 			Enums.StKey.Hit1Disable : true,
@@ -90,3 +96,6 @@ func reaction(state: Dictionary, interpreter: InputInterpreter, event_cause: int
 			change_state.call("LandAttackRecovery")
 	else:
 		super.reaction(state, interpreter, event_cause)
+
+func combo_pushback(comboTime: int) -> int:
+	return Util.pushback_scaling(0, comboTime)

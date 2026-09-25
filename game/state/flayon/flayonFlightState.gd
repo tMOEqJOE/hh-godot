@@ -2,8 +2,8 @@ extends FlayonFlightBaseState
 
 class_name FlayonFlightState
 
-const SPEED = SGFixed.ONE*17
-const UP_SPEED = SGFixed.ONE*17
+const SPEED = SGFixed.ONE*16
+const UP_SPEED = SGFixed.ONE*13
 
 func _init():
 	endFrame = 180
