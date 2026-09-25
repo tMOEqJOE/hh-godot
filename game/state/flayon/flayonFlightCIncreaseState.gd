@@ -75,7 +75,7 @@ func physics_tick(state: Dictionary) -> void:
 	elif (state[Enums.StKey.frame] == 6):
 		state[Enums.StKey.velocity_y] = 0
 		state[Enums.StKey.velocity_x] = Util.fixed_max(SGFixed.ONE*30, state[Enums.StKey.velocity_x])
-	
+	self.enforce_min_height(state)
 
 func gatling_cancel(state: Dictionary, interpreter: InputInterpreter):
 	if (state[Enums.StKey.hitStopFrame] >= 0):

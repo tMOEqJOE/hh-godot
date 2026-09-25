@@ -61,6 +61,7 @@ func enter(state: Dictionary) -> void:
 func physics_tick(state: Dictionary) -> void:
 	super.physics_tick(state)
 	state[Enums.StKey.super_meter] -= Util.FLIGHT_ATTACK_METER_DRAIN
+	self.enforce_min_height(state)
 
 func gatling_cancel(state: Dictionary, interpreter: InputInterpreter):
 	pass

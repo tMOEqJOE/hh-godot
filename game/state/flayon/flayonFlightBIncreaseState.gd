@@ -69,6 +69,7 @@ func physics_tick(state: Dictionary) -> void:
 	state[Enums.StKey.super_meter] -= Util.FLIGHT_ATTACK_METER_DRAIN
 	if (state[Enums.StKey.frame] == 4):
 		SyncManager.play_sound("airtech", Global.AirTechSound, {"bus": "Sound"})
+	self.enforce_min_height(state)
 
 func gatling_cancel(state: Dictionary, interpreter: InputInterpreter):
 	if (state[Enums.StKey.hitStopFrame] >= 0):

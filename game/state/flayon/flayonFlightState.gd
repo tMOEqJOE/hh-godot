@@ -2,8 +2,8 @@ extends FlayonFlightBaseState
 
 class_name FlayonFlightState
 
-const SPEED = SGFixed.ONE*15
-const UP_SPEED = SGFixed.ONE*6
+const SPEED = SGFixed.ONE*17
+const UP_SPEED = SGFixed.ONE*17
 
 func _init():
 	endFrame = 180
@@ -65,6 +65,8 @@ func handle_input(state: Dictionary, interpreter: InputInterpreter) -> void:
 		state[Enums.StKey.accel_y] = 0
 		state[Enums.StKey.velocity_y] = 0
 	
+	self.enforce_min_height_additive(state)
+
 	if (not interpreter.is_holding_a_direction(Enums.Numpad.N5, state[Enums.StKey.leftface]) or
 			(
 				interpreter.is_button_down(Enums.InputFlags.ADown) or

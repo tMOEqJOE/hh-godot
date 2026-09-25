@@ -49,7 +49,6 @@ func handle_input(state: Dictionary, interpreter: InputInterpreter) -> void:
 	if (state[Enums.StKey.super_meter] <= 0):
 		change_state.call("FlightNoFuel")
 
-
 func jump_cancel(state: Dictionary, interpreter: InputInterpreter):
 	pass
 

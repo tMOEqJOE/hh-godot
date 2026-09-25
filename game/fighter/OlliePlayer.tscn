@@ -1646,7 +1646,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="29"]
 resource_name = "SuperTarot"
-length = 0.766668
+length = 0.16666865
 step = 0.0166667
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -1801,7 +1801,7 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.116667, 0.183333),
+"times": PackedFloat32Array(0, 0.083333336, 0.14999932),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [ExtResource("119"), ExtResource("117"), ExtResource("118")]
@@ -1950,7 +1950,6 @@ material = ExtResource("5")
 position = Vector2(55, -413)
 scale = Vector2(1.428, 1.428)
 texture = ExtResource("3_osmoy")
-offset = Vector2(-60, 100)
 
 [node name="Shadow" parent="." instance=ExtResource("4_nie01")]
 scale = Vector2(2.056, 1.776)

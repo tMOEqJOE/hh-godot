@@ -2,7 +2,7 @@ extends ActiveProjectileState
 
 class_name AssistProtonCannonActiveState
 
-
+var voice = preload("res://game/assets/sfx/BeamSustain.wav")
 
 func _init():
 	anim_data = {
@@ -47,7 +47,6 @@ func physics_tick(state: Dictionary) -> void:
 	super.physics_tick(state)
 	if (state[Enums.StKey.frame] % 10 == 0):
 		SyncManager.play_sound("ProtonCannonBeam", voice, {"bus": "Sound"})
-		#SyncManager.play_sound("MioVoiceReverb", voice, {"bus": "ReverbVoice"})
 
 func combo_pushback(comboTime: int) -> int:
 	return 0
