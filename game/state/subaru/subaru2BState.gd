@@ -3,7 +3,7 @@ extends SubaruCrouchAttackState
 class_name Subaru2BState
 
 func _init():
-	endFrame = 23
+	endFrame = 25
 	
 	anim_data = {
 		0 : {
