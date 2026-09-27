@@ -222,7 +222,7 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.26666668, 0.31666666, 0.46666667),
+"times": PackedFloat32Array(0, 0.23333333, 0.2833333, 0.43333334),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [ExtResource("20_5iqyj"), ExtResource("21_no06e"), ExtResource("22_r0dmr"), ExtResource("23_x2v5e")]
@@ -475,12 +475,12 @@ position = Vector2(393.99997, -247)
 scale = Vector2(9.99898, 22.7186)
 
 [node name="Hitbox1" parent="." instance=ExtResource("41_0n7wh")]
-fixed_position_x = -1048576
-fixed_position_y = -20905984
-fixed_scale_x = 2592796
-fixed_scale_y = 981041
-position = Vector2(709, -332)
-scale = Vector2(39.5629, 14.9695)
+fixed_position_x = 13548576
+fixed_position_y = -15905984
+fixed_scale_x = 1392796
+fixed_scale_y = 581041
+position = Vector2(206.73486, -242.70605)
+scale = Vector2(21.25238, 8.865982)
 
 [node name="Hitbox2" parent="." instance=ExtResource("41_0n7wh")]
 fixed_position_x = 19857410

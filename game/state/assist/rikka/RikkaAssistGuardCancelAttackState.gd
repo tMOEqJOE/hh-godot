@@ -3,7 +3,7 @@ extends AssistGuardCancelAttackState
 class_name RikkaAssistGuardCancelAttackState
 
 func _init():
-	endFrame = 22
+	endFrame = 35
 	
 	anim_data = {
 		0 : {
@@ -11,12 +11,12 @@ func _init():
 			Enums.StKey.Hit2Disable : true,
 			Enums.StKey.Hurt1Disable : true, Enums.StKey.Hurt2Disable : true,
 			},
-		9 : {
+		14 : {
 			Enums.StKey.Hit1Disable : false,
 			Enums.StKey.Hurt1Disable : true, Enums.StKey.Hurt2Disable : true,
 			Enums.StKey.hit_box_colliding_frame : 254, 
-			Enums.StKey.Hit1PosX : 21364738, Enums.StKey.Hit1PosY : -18743296,
-			Enums.StKey.Hit1ScaleX : 1710315, Enums.StKey.Hit1ScaleY : -548777,
+			Enums.StKey.Hit1PosX : 13548576, Enums.StKey.Hit1PosY : -15905984,
+			Enums.StKey.Hit1ScaleX : 1392796, Enums.StKey.Hit1ScaleY : 581041,
 			Enums.StKey.min_damage:0,
 			Enums.StKey.chip_damage:0,
 			Enums.StKey.attack_damage: 0,
@@ -29,7 +29,7 @@ func _init():
 			Enums.StKey.counter_launch_dir_x : -SGFixed.ONE*40,
 			Enums.StKey.counter_launch_dir_y : -SGFixed.ONE*25,
 			},
-		15 : { 
+		17 : { 
 			Enums.StKey.Hit1Disable : true,
 			Enums.StKey.Hurt1Disable : false, Enums.StKey.Hurt2Disable : true,
 			Enums.StKey.Hit1PosX : 0, Enums.StKey.Hit1PosY : -11337728,
