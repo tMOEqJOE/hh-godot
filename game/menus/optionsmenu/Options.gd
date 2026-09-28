@@ -163,12 +163,11 @@ func load_startup_config():
 	# If the file didn't load, ignore it.
 	if err != OK:
 		print("Config File Error: " + str(err))
+		language_mode = Global.resolve_locale(config)
 		apply_language()
 		return
 
-	language_mode = config.get_value("Language", "Locale", "en")
-	if language_mode != "ja":
-		language_mode = "en"
+	language_mode = Global.resolve_locale(config)
 	apply_language()
 	
 	Main_volume = config.get_value("SoundOptions", "MainVolume", 0)

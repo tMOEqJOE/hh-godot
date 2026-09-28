@@ -7,6 +7,13 @@ func get_battle_version() -> String:
 		return Build.INTERNAL_BATTLE_ENGINE_KEY + BATTLE_ENGINE_VERSION
 	return Build.INTERNAL_BATTLE_ENGINE_KEY.substr(0, 50) + BATTLE_ENGINE_VERSION
 
+func resolve_locale(config: ConfigFile) -> String:
+	var locale = OS.get_locale()
+	if config.has_section_key("Language", "Locale"):
+		locale = str(config.get_value("Language", "Locale"))
+	var language = locale.to_lower().replace("-", "_").get_slice("_", 0)
+	return "ja" if language == "ja" else "en"
+
 var LOCAL_SERVER = false
 var FIGHTER_GAME = preload("res://game/FighterGame.tscn")
 var load_queue = preload("res://game/simple_resource_queue.gd").new()
