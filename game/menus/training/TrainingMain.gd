@@ -408,7 +408,7 @@ func recording_fsm_replay_input():
 
 func start_pre_record():
 	recording_state = RecordingStates.PreRecord
-	$CanvasLayer/MessageLabel.text = "Standy for Recording..."
+	$CanvasLayer/MessageLabel.text = tr("UI_STATUS_RECORDING_READY")
 	control_the_dummy()
 	is_recording = false
 	recording_machine.switch_section(0)
@@ -444,11 +444,11 @@ func play_demo():
 		recording_machine.index = 0
 		if (self is ComboTrialMain):
 			prepare_for_demo_playback()
-		$CanvasLayer/MessageLabel.text = "Playing demo"
+		$CanvasLayer/MessageLabel.text = tr("UI_STATUS_PLAYING_DEMO")
 		print(demo_file_path)
 		start_replay()
 	else:
-		$CanvasLayer/MessageLabel.text = "No recording found"
+		$CanvasLayer/MessageLabel.text = tr("UI_STATUS_NO_RECORDING")
 
 func start_record():
 	recording_state = RecordingStates.Recording
@@ -458,7 +458,7 @@ func start_record():
 
 func save_record():
 	recording_state = RecordingStates.Idle
-	$CanvasLayer/MessageLabel.text = "Saved recording"
+	$CanvasLayer/MessageLabel.text = tr("UI_STATUS_RECORDING_SAVED")
 	is_recording = false
 	if (self is ComboTrialMain):
 		var character_enum = Global.PLAYER_2_CHARACTER[0]
@@ -478,14 +478,14 @@ func save_record():
 
 func stop_record():
 	recording_state = RecordingStates.Idle
-	$CanvasLayer/MessageLabel.text = "Cancelled recording"
+	$CanvasLayer/MessageLabel.text = tr("UI_STATUS_RECORDING_CANCELLED")
 	is_recording = false
 	recording_machine.cancel_recording()
 	return_control_to_player()
 
 func start_replay():
 	recording_state = RecordingStates.Replaying
-	$CanvasLayer/MessageLabel.text = "Replaying"
+	$CanvasLayer/MessageLabel.text = tr("UI_STATUS_REPLAYING")
 	if (self is ComboTrialMain):
 		replay_restore_player_input = player_input
 		player_input = fighter_game.get_node("ServerInputInterpreter")

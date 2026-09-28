@@ -42,7 +42,7 @@ grow_horizontal = 2
 scale = Vector2(2.31141, 2.08452)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-text = "WOW"
+text = "UI_STATUS_WOW"
 
 [node name="LoadedStateLabel" type="Label" parent="CanvasLayer"]
 anchors_preset = -1
@@ -56,7 +56,7 @@ grow_horizontal = 2
 scale = Vector2(2.31141, 2.08452)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-text = "Loaded State"
+text = "UI_STATUS_LOADED_STATE"
 script = ExtResource("2_34aeq")
 
 [node name="SyncLostLabel" type="Label" parent="CanvasLayer"]
@@ -72,7 +72,7 @@ scale = Vector2(2, 2)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("2")
-text = "Regaining sync..."
+text = "UI_STATUS_REGAINING_SYNC"
 
 [node name="PingLabel" type="Label" parent="CanvasLayer"]
 visible = false
@@ -87,7 +87,7 @@ scale = Vector2(2, 2)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("2")
-text = "Regaining sync..."
+text = "UI_STATUS_REGAINING_SYNC"
 
 [node name="RollbackFrameLabel" type="Label" parent="CanvasLayer"]
 visible = false
@@ -102,7 +102,7 @@ scale = Vector2(2, 2)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("2")
-text = "Regaining sync..."
+text = "UI_STATUS_REGAINING_SYNC"
 
 [node name="WinCounterP1" parent="CanvasLayer" instance=ExtResource("4")]
 visible = false
@@ -139,7 +139,7 @@ offset_left = 14.0
 offset_top = 8.00001
 offset_right = 118.0
 offset_bottom = 22.0
-text = "Attack  Damage:"
+text = "UI_TRAINING_ATTACK_DAMAGE"
 script = null
 
 [node name="ComboDamage" parent="CanvasLayer/DamageCounter" instance=ExtResource("2")]
@@ -148,7 +148,7 @@ offset_left = 12.9999
 offset_top = 31.0
 offset_right = 52.9999
 offset_bottom = 45.0
-text = "Combo Damage: "
+text = "UI_TRAINING_COMBO_DAMAGE"
 script = null
 
 [node name="TrainingInputDisplay" parent="CanvasLayer" instance=ExtResource("12")]
@@ -181,12 +181,12 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("2")
-text = "Save State"
+text = "UI_BUTTON_SAVE_STATE"
 
 [node name="SaveStateButton" type="Button" parent="CanvasLayer/TrainingOptionsMenu"]
 layout_mode = 2
 focus_neighbor_top = NodePath("../ExitButton")
-text = "Save"
+text = "UI_BUTTON_SAVE"
 
 [node name="SaveStateEmpty" type="Label" parent="CanvasLayer/TrainingOptionsMenu"]
 layout_mode = 2
@@ -199,11 +199,11 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("2")
-text = "Play Demo"
+text = "UI_BUTTON_PLAY_DEMO"
 
 [node name="PlayDemoButton" type="Button" parent="CanvasLayer/TrainingOptionsMenu"]
 layout_mode = 2
-text = "Play Demo"
+text = "UI_BUTTON_PLAY_DEMO"
 
 [node name="PlayDemoEmpty" type="Label" parent="CanvasLayer/TrainingOptionsMenu"]
 layout_mode = 2
@@ -216,11 +216,11 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("2")
-text = "Load From State"
+text = "UI_BUTTON_LOAD_STATE"
 
 [node name="LoadStateButton" type="Button" parent="CanvasLayer/TrainingOptionsMenu"]
 layout_mode = 2
-text = "(Back button also works)"
+text = "UI_HINT_BACK_BUTTON"
 
 [node name="LoadStateEmpty" type="Label" parent="CanvasLayer/TrainingOptionsMenu"]
 layout_mode = 2
@@ -236,7 +236,7 @@ theme_override_fonts/font = SubResource("2")
 
 [node name="PrevButton" type="Button" parent="CanvasLayer/TrainingOptionsMenu"]
 layout_mode = 2
-text = "Prev Trial"
+text = "UI_BUTTON_PREVIOUS_TRIAL"
 
 [node name="PrevEmpty" type="Label" parent="CanvasLayer/TrainingOptionsMenu"]
 layout_mode = 2
@@ -252,7 +252,7 @@ theme_override_fonts/font = SubResource("2")
 
 [node name="NextButton" type="Button" parent="CanvasLayer/TrainingOptionsMenu"]
 layout_mode = 2
-text = "Next Trial"
+text = "UI_BUTTON_NEXT_TRIAL"
 
 [node name="NextEmpty" type="Label" parent="CanvasLayer/TrainingOptionsMenu"]
 layout_mode = 2
@@ -266,7 +266,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("2")
-text = "Stance"
+text = "UI_TRAINING_STANCE"
 
 [node name="StanceOptions" type="OptionButton" parent="CanvasLayer/TrainingOptionsMenu"]
 visible = false
@@ -287,7 +287,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("2")
-text = "CounterHit"
+text = "UI_TRAINING_COUNTER_HIT"
 
 [node name="CounterHitOptions" type="OptionButton" parent="CanvasLayer/TrainingOptionsMenu"]
 visible = false
@@ -308,7 +308,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("2")
-text = "Block Settings"
+text = "UI_TRAINING_BLOCK_SETTINGS"
 
 [node name="BlockOptions" type="OptionButton" parent="CanvasLayer/TrainingOptionsMenu"]
 visible = false
@@ -329,7 +329,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("2")
-text = "Block Switching"
+text = "UI_TRAINING_BLOCK_SWITCHING"
 
 [node name="BlockSwitchOptions" type="OptionButton" parent="CanvasLayer/TrainingOptionsMenu"]
 visible = false
@@ -350,7 +350,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("2")
-text = "Block Type"
+text = "UI_TRAINING_BLOCK_TYPE"
 
 [node name="BlockTypeOptions" type="OptionButton" parent="CanvasLayer/TrainingOptionsMenu"]
 visible = false
@@ -371,7 +371,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("2")
-text = "Air Recovery"
+text = "UI_TRAINING_AIR_RECOVERY"
 
 [node name="RecoveryOptions" type="OptionButton" parent="CanvasLayer/TrainingOptionsMenu"]
 visible = false
@@ -392,7 +392,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("2")
-text = "Super Meter"
+text = "UI_TRAINING_SUPER_METER"
 
 [node name="SuperMeter" type="HSlider" parent="CanvasLayer/TrainingOptionsMenu"]
 visible = false
@@ -419,7 +419,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("2")
-text = "Assist Meter"
+text = "UI_TRAINING_ASSIST_METER"
 
 [node name="AssistMeter" type="HSlider" parent="CanvasLayer/TrainingOptionsMenu"]
 visible = false
@@ -446,7 +446,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("2")
-text = "Sync Rate"
+text = "UI_TRAINING_SYNC_RATE"
 
 [node name="SyncRate" type="HSlider" parent="CanvasLayer/TrainingOptionsMenu"]
 visible = false
@@ -471,12 +471,12 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("2")
-text = "Assist Meter Build"
+text = "UI_TRAINING_ASSIST_METER_BUILD"
 
 [node name="AssistBuildButton" type="Button" parent="CanvasLayer/TrainingOptionsMenu"]
 visible = false
 layout_mode = 2
-text = "OFF"
+text = "UI_TRAINING_OFF"
 
 [node name="AssistBuildNumber" type="Label" parent="CanvasLayer/TrainingOptionsMenu"]
 visible = false
@@ -491,12 +491,12 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("2")
-text = "Meter Refill"
+text = "UI_TRAINING_METER_REFILL"
 
 [node name="MeterResetButton" type="Button" parent="CanvasLayer/TrainingOptionsMenu"]
 visible = false
 layout_mode = 2
-text = "ON"
+text = "UI_TRAINING_ON"
 
 [node name="MeterResetNumber" type="Label" parent="CanvasLayer/TrainingOptionsMenu"]
 visible = false
@@ -513,7 +513,7 @@ theme_override_fonts/font = SubResource("2")
 
 [node name="CommandListButton" type="Button" parent="CanvasLayer/TrainingOptionsMenu"]
 layout_mode = 2
-text = "Command List"
+text = "UI_BUTTON_COMMAND_LIST"
 
 [node name="CommandListNumber" type="Label" parent="CanvasLayer/TrainingOptionsMenu"]
 layout_mode = 2
@@ -529,7 +529,7 @@ theme_override_fonts/font = SubResource("2")
 
 [node name="HideHitboxesButton" type="Button" parent="CanvasLayer/TrainingOptionsMenu"]
 layout_mode = 2
-text = "Toggle Hitboxes"
+text = "UI_TRAINING_TOGGLE_HITBOXES"
 
 [node name="HideHitboxesNumber" type="Label" parent="CanvasLayer/TrainingOptionsMenu"]
 layout_mode = 2
@@ -545,7 +545,7 @@ theme_override_fonts/font = SubResource("2")
 
 [node name="ResetButton" type="Button" parent="CanvasLayer/TrainingOptionsMenu"]
 layout_mode = 2
-text = "Reset Positions"
+text = "UI_TRAINING_RESET_POSITIONS"
 
 [node name="ResetNumber" type="Label" parent="CanvasLayer/TrainingOptionsMenu"]
 layout_mode = 2
@@ -558,11 +558,11 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("2")
-text = "Close Menu"
+text = "UI_REPLAY_CLOSE_MENU"
 
 [node name="CloseButton" type="Button" parent="CanvasLayer/TrainingOptionsMenu"]
 layout_mode = 2
-text = "Close"
+text = "UI_BUTTON_CLOSE"
 
 [node name="CloseNumber" type="Label" parent="CanvasLayer/TrainingOptionsMenu"]
 layout_mode = 2
@@ -575,12 +575,12 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("2")
-text = "Quit Training"
+text = "UI_MENU_QUIT_TRAINING"
 
 [node name="ExitButton" type="Button" parent="CanvasLayer/TrainingOptionsMenu"]
 layout_mode = 2
 focus_neighbor_bottom = NodePath("../SaveStateButton")
-text = "Quit"
+text = "UI_BUTTON_QUIT"
 
 [node name="ExitNumber" type="Label" parent="CanvasLayer/TrainingOptionsMenu"]
 layout_mode = 2

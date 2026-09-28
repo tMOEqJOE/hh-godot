@@ -1,5 +1,40 @@
 extends Node2D
 
+const COMBO_DUMMY_TEXT_KEYS := {
+	"Hint: Use Jump5C as you are falling.": "UI_COMBO_HINT_FALLING_5C",
+	"Hint: Use Jump5B as you are falling.": "UI_COMBO_HINT_FALLING_5B",
+	"Hint: Quickly move the directions first and then press the attack button!": "UI_COMBO_HINT_DIRECTIONS",
+	"Hint: You can start preparing the directions for the special move as Crouch2B is happening.": "UI_COMBO_HINT_SUBARU_SPECIAL",
+	"Hint: You can start preparing the directions for the special move as Stand6C is happening.": "UI_COMBO_HINT_MIO_SPECIAL",
+	"Hint: Hit up as soon as you hit the opponent!": "UI_COMBO_HINT_PRESS_UP",
+	"during throw hit": "UI_COMBO_HINT_THROW_HIT",
+	"Corner Only": "UI_COMBO_HINT_CORNER_ONLY",
+	"Hint: try and air dash as fast as possible!": "UI_COMBO_HINT_AIR_DASH_FAST",
+	"Hint: The first Jump6C requires a": "UI_COMBO_HINT_CLEAN_HIT",
+	"Hint: Hatotaurus attacks when you": "UI_COMBO_HINT_HATOTAURUS_RELEASE",
+	"Hint: Hit Stance D and Scissors in very quick succession": "UI_COMBO_HINT_HIT_STANCE_SCISSORS",
+	"Hint: Start combo in suisei mode": "UI_COMBO_HINT_START_SUISEI",
+	"Hint: AssistAttack2 when Fubuki is behind the opponent": "UI_COMBO_HINT_ASSIST_BEHIND",
+	"Hint: Air throw the opponent before they groundbounce": "UI_COMBO_HINT_AIR_THROW_BOUNCE",
+	"Bonus: SummonHato": "UI_COMBO_BONUS_HATO",
+	"SetOllieRook then Hold A": "UI_COMBO_OLLIE_SET_HOLD",
+	"AssistAttack2 Hold and Steer Right": "UI_COMBO_ASSIST_STEER_RIGHT",
+	"Hold GroundThrowHit": "UI_COMBO_HOLD_GROUND_THROW",
+	"Hold C": "UI_COMBO_HOLD_C",
+	"Hold B": "UI_COMBO_HOLD_B",
+	"hold A": "UI_COMBO_HOLD_A",
+	"hold Left": "UI_COMBO_HOLD_LEFT",
+	"ground bounce after each air move": "UI_COMBO_GROUND_BOUNCE",
+	"delay jump": "UI_COMBO_DELAY_JUMP",
+	"instant air dash": "UI_COMBO_INSTANT_AIR_DASH",
+	"landing cancel": "UI_COMBO_LANDING_CANCEL",
+	"double jump": "UI_COMBO_DOUBLE_JUMP",
+	"airdash": "UI_COMBO_AIRDASH",
+	"air dash": "UI_COMBO_AIR_DASH",
+	"jump": "UI_COMBO_JUMP",
+	"delay": "UI_COMBO_DELAY",
+}
+
 var ComboDatabase = load("res://game/ui/ComboTrials.gd")
 var display_names: Dictionary = load("res://game/ui/ComboTrialDisplayNames.gd").DISPLAY_NAMES
 var icon_paths: Dictionary = load("res://game/ui/IconPaths.gd").ICON_PATHS
@@ -105,7 +140,7 @@ func refresh_combo_ui() -> void:
 	_skip_dummy_steps()
 
 	var lines: Array[String] = []
-	lines.append("[color=white]Inputs are performed while facing right[/color]")
+	lines.append("[color=white]" + tr("UI_COMBO_INPUTS_FACING_RIGHT") + "[/color]")
 
 	for idx in range(processed_combo.size()):
 		var item = processed_combo[idx]
@@ -182,9 +217,19 @@ func _dummy_text(step: String) -> String:
 	var idx := step.find(":")
 
 	var tail := ""
+	var translated_tail := ""
 
 	if idx >= 0:
 		tail = step.substr(idx + 1).strip_edges()
+	if tail.begins_with("UI_COMBO_"):
+		translated_tail = tr(tail)
+	else:
+		for phrase in COMBO_DUMMY_TEXT_KEYS:
+			if step.contains(phrase):
+				translated_tail = tr(COMBO_DUMMY_TEXT_KEYS[phrase])
+				break
+	if not translated_tail.is_empty():
+		tail = translated_tail
 
 	var tokens = tail.split(" ")
 
@@ -241,7 +286,7 @@ func attack_hurt(hitbox_name: String) -> void:
 					refresh_combo_ui()
 
 					if auto_advance_on_complete:
-						combo_list_label.text = combo_list_label.text + "\n [font_size=48] [rainbow] [wave] [b] [center]SUCCESS!"
+						combo_list_label.text = combo_list_label.text + "\n [font_size=48] [rainbow] [wave] [b] [center]" + tr("UI_COMBO_SUCCESS")
 
 					await get_tree().create_timer(1.5).timeout
 

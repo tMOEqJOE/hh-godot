@@ -5,7 +5,7 @@ const COMBOS: Dictionary = { # Sample Subaru Combos
 	{0: "Jump5C", # spammable button into knockdown
 	1: "Crouch2B",
 	2: "Crouch2C",
-	3: "DUMMY: [i] \nHint: Use Jump5C as you are falling."},
+	3: "DUMMY: UI_COMBO_HINT_FALLING_5C"},
 	{0: "Crouch2A", # chain into knockdown
 	1: "StandcB",
 	2: "Stand5C",

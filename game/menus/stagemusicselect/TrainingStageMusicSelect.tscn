@@ -24,7 +24,7 @@ offset_right = -69.0
 offset_bottom = 181.0
 grow_horizontal = 2
 scale = Vector2(2.51291, 3.15569)
-text = "BGM: "
+text = "UI_MENU_BGM"
 
 [node name="StageLabel" type="Label" parent="CanvasLayer"]
 anchors_preset = 5
@@ -36,7 +36,7 @@ offset_right = -64.0
 offset_bottom = 623.0
 grow_horizontal = 2
 scale = Vector2(2.42665, 2.4921)
-text = "STAGE: "
+text = "UI_MENU_STAGE"
 
 [node name="Background" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.2)

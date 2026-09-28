@@ -21,7 +21,7 @@ func _ready() -> void:
 	Global.NETPLAY_MODE = Global.NETPLAY_MODES.PRIVATE_ROOM
 	SyncManager.network_adaptor = WebRTCNetworkAdaptor.new()
 	$CanvasLayer/RoomIDField.secret = true
-	$CanvasLayer/BattleVersionLabel.text = "Battle Version: "+Global.BATTLE_ENGINE_VERSION
+	$CanvasLayer/BattleVersionLabel.text = tr("UI_LABEL_BATTLE_VERSION").format({"version": Global.BATTLE_ENGINE_VERSION})
 	$CanvasLayer/GridContainer/CopyRoomID.grab_focus()
 	SyncManager.input_delay = 2
 	$CanvasLayer/GridContainer/InputDelayMeter.value = SyncManager.input_delay
@@ -113,7 +113,7 @@ func _on_OnlineMatch_webrtc_peer_removed (webrtc_peer, player):
 func _on_OnlineLobby_error(message: String) -> void:
 	print("ERROR: %s" % message)
 	$CanvasLayer/ErrorLabel.visible = true
-	$CanvasLayer/ErrorLabel.text = "ERROR: " + message
+	$CanvasLayer/ErrorLabel.text = tr("UI_LABEL_ERROR").format({"message": message})
 	update_ui()
 
 func _on_OnlineLobby_disconnected() -> void:
@@ -407,7 +407,7 @@ func delete_challenge_pop_up(accepted: bool):
 	update_ui()
 
 func _on_InputDelayMeter_value_changed(value):
-	$CanvasLayer/GridContainer/InputDelayLabel.set_text("Input Delay: " + str(int(value)))
+	$CanvasLayer/GridContainer/InputDelayLabel.text = tr("UI_LABEL_INPUT_DELAY").format({"frames": int(value)})
 	SyncManager.set_input_delay(int($CanvasLayer/GridContainer/InputDelayMeter.value))
 	update_ui()
 

@@ -23,7 +23,7 @@ func _ready() -> void:
 
 func _on_OnlineMatch_error(message: String) -> void:
 	print("ERROR: %s" % message)
-	$CanvasLayer/MessageLabel.text = "ERROR: " + message
+	$CanvasLayer/MessageLabel.text = tr("UI_LABEL_ERROR").format({"message": message})
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
@@ -34,7 +34,7 @@ func _on_create_private_room_pressed():
 
 func _on_OnlineMatch_match_created(match_id: String) -> void:
 	print("Private match created: %s" % match_id)
-	$CanvasLayer/MessageLabel.text = "Private match created: " + match_id
+	$CanvasLayer/MessageLabel.text = tr("UI_STATUS_PRIVATE_MATCH_CREATED").format({"match_id": match_id})
 	get_tree().change_scene_to_file("res://game/menus/onlinemenu/PrivateRoom.tscn")
 
 func _on_PlayerCountMeter_value_changed(value):
@@ -43,5 +43,5 @@ func _on_PlayerCountMeter_value_changed(value):
 func update_lobby_size(new_size):
 	OnlineLobby.max_players = new_size
 	OnlineMatch.max_players = new_size
-	$CanvasLayer/GridContainer/PlayerCountLabel.text = "Max lobby size: " + str(new_size)
+	$CanvasLayer/GridContainer/PlayerCountLabel.text = tr("UI_LABEL_MAX_LOBBY_SIZE").format({"count": new_size})
 	

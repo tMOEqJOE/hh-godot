@@ -11,6 +11,9 @@ func load_startup_config():
 		print("Config File Error: " + str(err))
 		return
 
+	var language_mode: String = config.get_value("Language", "Locale", "en")
+	TranslationServer.set_locale(OS.get_locale() if language_mode == "system" else "en")
+
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"),
 		config.get_value("SoundOptions", "MainVolume", 0))
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"),
@@ -62,6 +65,7 @@ func try_write_new_config_file():
 	config.set_value("Debug", "DebugRollbackLogsEnabled", false)
 	config.set_value("AccountOptions", "UserDisplayName", "HH Player")
 	config.set_value("Replay", "ReplayLogsEnabled", true)
+	config.set_value("Language", "Locale", "en")
 	config.set_value("Visual", "Vsync", true)
 	config.set_value("Visual", "FullScreenMode", DisplayServer.WINDOW_MODE_WINDOWED)
 	# Save it to a file (overwrite if already exists).
