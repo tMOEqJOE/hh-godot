@@ -124,7 +124,7 @@ func load_move_list(move_list, container):
 	for row in move_list:
 		newText = ""
 		for i in row.size():
-			var item_string := str(row[i])
+			var item_string := tr(str(row[i]))
 			for j in item_string.length():
 				var character := item_string[j]
 				if _should_parse_icon(item_string, j, i):
