@@ -14,8 +14,8 @@ var language_mode: String = "en"
 func _ready():
 	load_startup_config()
 	$CanvasLayer/Options/LanguageOption.add_item(tr("UI_LANGUAGE_ENGLISH"), 0)
-	$CanvasLayer/Options/LanguageOption.add_item(tr("UI_LANGUAGE_SYSTEM_DEFAULT"), 1)
-	$CanvasLayer/Options/LanguageOption.select(1 if language_mode == "system" else 0)
+	$CanvasLayer/Options/LanguageOption.add_item(tr("UI_LANGUAGE_JAPANESE"), 1)
+	$CanvasLayer/Options/LanguageOption.select(1 if language_mode == "ja" else 0)
 	$CanvasLayer/Options/FullScreenButton.grab_focus()
 	$CanvasLayer/Options/VsyncEmpty.text = bool_to_on_off_string(DisplayServer.window_get_vsync_mode() != DisplayServer.VSYNC_DISABLED)
 	$CanvasLayer/Options/MainVolumeMeter.value = db_conversion(Main_volume, $CanvasLayer/Options/MainVolumeMeter.max_value)
@@ -55,12 +55,12 @@ func bool_to_on_off_string(input_bool: bool):
 		return tr("UI_TRAINING_OFF")
 
 func _on_LanguageOption_item_selected(index: int) -> void:
-	language_mode = "system" if index == 1 else "en"
+	language_mode = "ja" if index == 1 else "en"
 	apply_language()
 	Util.write_to_config_file("Language", "Locale", language_mode)
 
 func apply_language() -> void:
-	TranslationServer.set_locale(OS.get_locale() if language_mode == "system" else "en")
+	TranslationServer.set_locale(language_mode)
 
 func _on_ResetButton_pressed():
 	_on_MainVolumeMeter_value_changed(0 + $CanvasLayer/Options/MainVolumeMeter.max_value)
@@ -167,7 +167,7 @@ func load_startup_config():
 		return
 
 	language_mode = config.get_value("Language", "Locale", "en")
-	if language_mode != "system":
+	if language_mode != "ja":
 		language_mode = "en"
 	apply_language()
 	

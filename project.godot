@@ -17,6 +17,12 @@ run/max_fps=60
 config/icon="res://AngelSubaruICO.png"
 config/windows_native_icon="res://icon.ico"
 
+[internationalization]
+
+locale/translations=PackedStringArray("res://localization/ui.en.translation", "res://localization/ui.ja.translation")
+locale/fallback="en"
+rendering/root_node_auto_translate=true
+
 [autoload]
 
 Build="*res://game/Build.gd"
@@ -505,7 +511,7 @@ default_replay={
 
 [internationalization]
 
-locale/translations=PackedStringArray("res://localization/ui.en.translation")
+locale/translations=PackedStringArray("res://localization/ui.en.translation", "res://localization/ui.ja.translation")
 
 [layer_names]
 

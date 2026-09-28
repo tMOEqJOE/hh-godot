@@ -1,295 +1,296 @@
-keys,en
-UI_ALERT_EXIT_TITLE,Are you sure you want to exit?
-UI_ALERT_EXIT_MATCH,This will end the match for everyone and return to the match setup screen.
-UI_BUTTON_OK,OK
-UI_BUTTON_CANCEL,Cancel
-UI_BUTTON_BACK,Back
-UI_BUTTON_CLOSE,Close
-UI_BUTTON_CHANGE,Change
-UI_BUTTON_SAVE,Save
-UI_BUTTON_RESET,Reset
-UI_BUTTON_PLAY_DEMO,Play Demo
-UI_BUTTON_LOAD_STATE,Load From State
-UI_BUTTON_SAVE_STATE,Save State
-UI_BUTTON_PREVIOUS_TRIAL,Prev Trial
-UI_BUTTON_NEXT_TRIAL,Next Trial
-UI_BUTTON_COMMAND_LIST,Command List
-UI_MENU_EDIT_CONTROLS,Edit Controls
-UI_MENU_EDIT_KEYBOARD_CONTROLS,Edit Keyboard Controls
-UI_MENU_YOUR_NAME,Your Name:
-UI_MENU_JOIN_DISCORD,Join our discord!
-UI_MENU_EXIT_HINT,Exit: Select - Backspace
-UI_MENU_VERSUS_MODES,Versus Modes
-UI_MENU_TWO_PLAYER,2 Player
-UI_MENU_NEW_CHALLENGER,New Challenger:
-UI_MENU_CHALLENGER_NAME,Challenger Name
-UI_MENU_INPUT_DELAY,Input Delay: 2
-UI_MENU_GO,GO!
-UI_MENU_DECLINE,Decline
-UI_MENU_ROOM_SETTINGS,Room Settings: 
-UI_MENU_CREATE_ROOM,Create Room
-UI_MENU_OPEN_LOBBIES,Currently open Lobbies:
-UI_MENU_JOIN_PRIVATE_ROOM,Join Private Room
-UI_MENU_ROOM_ID,Room ID
-UI_MENU_PASTE_CLIPBOARD,Paste from Clipboard
-UI_MENU_CHALLENGE,Challenge
-UI_MENU_SPECTATE,Spectate
-UI_MENU_LOGGING_IN,Logging in to Server...
-UI_MENU_DISPLAY_NAME,Display Name
-UI_MENU_NETPLAY,Netplay:
-UI_MENU_PRIVATE_ROOM,Private Room
-UI_MENU_JOIN_ROOM,Join Room
-UI_MENU_PUBLIC_ROOM,Public Room
-UI_MENU_DIRECT_IP,Direct IP connection (Needs port forwarding)
-UI_MENU_HOST,Host
-UI_MENU_PORT,Port
-UI_MENU_SERVER,Server
-UI_MENU_COPY_ROOM_ID,Copy Room ID
-UI_MENU_BATTLE_VERSION,Battle Version:
-UI_MENU_CREDITS,CREDITS:
-UI_OPTIONS_FULLSCREEN,Fullscreen
-UI_OPTIONS_VSYNC,VSync
-UI_OPTIONS_MAIN_VOLUME,Main Volume
-UI_OPTIONS_MUSIC,Music
-UI_OPTIONS_SOUND,Sound
-UI_OPTIONS_VOICE,Voice
-UI_OPTIONS_LANGUAGE,Language
-UI_LANGUAGE_ENGLISH,English
-UI_LANGUAGE_SYSTEM_DEFAULT,System Default
-UI_OPTIONS_SAVE_REPLAYS,Save Replays
-UI_OPTIONS_DEBUG_ROLLBACK_LOGS,Debug Rollback Logs
-UI_OPTIONS_GET_LOGS_PATH,Get Logs Path
-UI_OPTIONS_COPY_CLIPBOARD,Copy to clipboard
-UI_OPTIONS_RESET_CONTROLS,Reset Controls File
-UI_REPLAY_OPEN_FILE,Open a replay file: 
-UI_REPLAY_DELETE_MODE,Delete Mode
-UI_REPLAY_CLOSE_MENU,Close Menu
-UI_REPLAY_TAKEOVER,Replay Takeover
-UI_REPLAY_LOAD_TAKEOVER,Load Takeover State
-UI_REPLAY_LOAD_BACK_HINT,Load (Back button works too)
-UI_TRAINING_LOADED_STATE,Loaded State
-UI_TRAINING_ATTACK_DAMAGE,Attack  Damage:
-UI_TRAINING_COMBO_DAMAGE,Combo Damage: 
-UI_TRAINING_STANCE,Stance
-UI_TRAINING_COUNTER_HIT,CounterHit
-UI_TRAINING_BLOCK_SETTINGS,Block Settings
-UI_TRAINING_BLOCK_SWITCHING,Block Switching
-UI_TRAINING_BLOCK_TYPE,Block Type
-UI_TRAINING_AIR_RECOVERY,Air Recovery
-UI_TRAINING_SUPER_METER,Super Meter
-UI_TRAINING_ASSIST_METER,Assist Meter
-UI_TRAINING_SYNC_RATE,Sync Rate
-UI_TRAINING_ASSIST_METER_BUILD,Assist Meter Build
-UI_TRAINING_METER_REFILL,Meter Refill
-UI_TRAINING_CLOSE_COMMAND_LIST,Close
-UI_TRAINING_NONE,NONE
-UI_TRAINING_ALL,ALL
-UI_TRAINING_ENABLED,ENABLED
-UI_TRAINING_DISABLED,DISABLED
-UI_TRAINING_NORMAL_BLOCK,NORMAL BLOCK
-UI_TRAINING_INSTANT_BLOCK,INSTANT BLOCK
-UI_TRAINING_PUSH_BLOCK,PUSH BLOCK
-UI_TRAINING_INSTANT_PUSH_BLOCK,INSTANT PUSH BLOCK
-UI_TRAINING_PARRY,PARRY
-UI_TRAINING_NEUTRAL,NEUTRAL
-UI_TRAINING_FORWARD,FORWARD
-UI_TRAINING_BACKWARD,BACKWARD
-UI_TRAINING_OFF,OFF
-UI_TRAINING_ON,ON
-UI_TRAINING_HAPPY_BIRTHDAY,HAPPY BIRTHDAY
-UI_TRAINING_STAND,STAND
-UI_TRAINING_CROUCH,CROUCH
-UI_TRAINING_JUMP,JUMP
-UI_STATUS_WAITING_PLAYERS,Waiting for players...
-UI_STATUS_WAITING_MATCH,Waiting for next match...
-UI_STATUS_REGAINING_SYNC,Regaining sync...
-UI_STATUS_CONNECTED,CONNECTED
-UI_STATUS_DISCONNECTED,Disconnected from match
-UI_STATUS_CONNECTING_SERVER,Connecting to server
-UI_STATUS_CONNECTING_LOCAL_SERVER,Connecting to local server
-UI_STATUS_UNABLE_CONNECT_SERVER,Unable to connect to server
-UI_STATUS_USERNAME_FAILED,"Unable to create username, try changing your name on the main menu"
-UI_STATUS_USERNAME_UPDATE_FAILED,Unable to connect to server and update username
-UI_STATUS_CONNECTED_SERVER,Connected to server
-UI_STATUS_MATCHMAKING_QUEUED,Joined the matchmaking queue...
-UI_STATUS_MATCH_STARTING,Match is starting!
-UI_STATUS_PRIVATE_MATCH_CREATED,Private match created: {match_id}
-UI_STATUS_JOINED_PRIVATE_MATCH,Joined private match: {match_id}
-UI_STATUS_PLAYER_JOINED,Player joined: {player_name}
-UI_STATUS_PLAYER_LEFT,Player left: {player_name}
-UI_STATUS_MATCH_ERROR,ERROR: {message}
-UI_STATUS_LOADING_TEAMS,Loading teams...
-UI_STATUS_LOAD_COMPLETE,Load complete!
-UI_STATUS_ALL_PEERS_LOADED,All peers loading completed!
-UI_STATUS_WAITING_PEER,Load complete, waiting on peer
-UI_STATUS_DISCONNECTED_BACK,"Disconnected, Press Back button to exit to lobby"
-UI_STATUS_FATAL_SYNC_ERROR,"Fatal sync error: {message} , Press Back button to exit to lobby"
-UI_STATUS_RECORDING_READY,Standy for Recording...
-UI_STATUS_PLAYING_DEMO,Playing demo
-UI_STATUS_NO_RECORDING,No recording found
-UI_STATUS_RECORDING_SAVED,Saved recording
-UI_STATUS_RECORDING_CANCELLED,Cancelled recording
-UI_STATUS_REPLAYING,Replaying
-UI_STATUS_DATA_UPDATED,Data updated
-UI_STATUS_REWINDING,rewinding...
-UI_STATUS_FAST_FORWARDING,fast forwarding...
-UI_STATUS_TAKEOVER_P1,takeover p1
-UI_STATUS_TAKEOVER_P2,takeover p2
-UI_STATUS_NO_REPLAY_TAKEOVER,not currently in replay takeover state
-UI_STATUS_COULD_NOT_DELETE,Couldn't delete
-UI_STATUS_CANNOT_OPEN_REPLAY_DIR,Can't open replay directory
-UI_STATUS_NO_REPLAY_SELECTED,No replay selected
-UI_STATUS_SELECT_REPLAY_DELETE,Select replay to delete
-UI_STATUS_COPIED_FILE_PATH,Copied file path
-UI_STATUS_CLEARED_CONTROLS_FILE,Cleared controllersettings.cfg
-UI_STATUS_ROLLBACK_LOG_WARNING_ON,"ON, Warning: log files take up lots of storage space!"
-UI_STATUS_ROLLBACK_LOG_WARNING_OFF,"OFF, if you want to help catch rollback desyncs, enable this"
-UI_LABEL_PING,Ping: {ping} ms
-UI_LABEL_ROLLBACK_FRAME,RollbackFrame: {frames}F
-UI_LABEL_INPUT_DELAY,Input Delay: {frames}
-UI_LABEL_PLAYERS_COUNT,{count} players
-UI_LABEL_PLAYERS_CAPACITY,{count} / {maximum} players
-UI_LABEL_MAX_LOBBY_SIZE,Max lobby size: {count}
-UI_LABEL_TIMER,Time: {seconds}
-UI_LABEL_BATTLE_VERSION,Battle Version: {version}
-UI_LABEL_STAGE,STAGE: {stage}
-UI_LABEL_BGM,BGM: {bgm}
-UI_LABEL_WIN_STREAK,Win streak: {count}
-UI_LABEL_WINS,Wins: {count}
-UI_LABEL_SPECTATING,Spectating
-UI_LABEL_STATUS_IN_GAME,In a Game
-UI_LABEL_STATUS_CHALLENGING,Challenging
-UI_LABEL_STATUS_DECIDING,Deciding
-UI_LABEL_STATUS_READY,Ready
-UI_LABEL_SERVER_SEARCHING,Server:Searching for connection
-UI_LABEL_SERVER_ERROR,Server ERROR: {error}
-UI_LABEL_CLIENT_SEARCHING,Client:Searching for connection
-UI_LABEL_CLIENT_ERROR,Client ERROR: {error}
-UI_LABEL_ERROR,ERROR: {message}
-UI_LABEL_TIME_REMAINING,{seconds}
-UI_COMBO_SUCCESS,SUCCESS!
-UI_BUTTON_UNMAP,Unmap=
-UI_BUTTON_UNMAP_KEYBOARD,Unmap=[ESC]
-UI_BUTTON_LIGHT,A (Light)
-UI_BUTTON_MEDIUM,B (Medium)
-UI_BUTTON_HEAVY,C (Heavy)
-UI_BUTTON_ASSIST,D (Assist)
-UI_BUTTON_DASH,A+B (Dash)
-UI_BUTTON_RUN,A+B (Run)
-UI_BUTTON_THROW,A+D (Throw)
-UI_BUTTON_PARRY,B+C (Parry)
-UI_BUTTON_R_CANCEL,A+B+C (RCancel)
-UI_BUTTON_BURST,A+B+C+D (Burst)
-UI_MENU_PING_UNKNOWN,Ping: ???ms
-UI_MENU_INPUT_DELAY_DEFAULT,Input Delay: 2
-UI_STATUS_GO,GO!
-UI_STATUS_HOLD_START,Hold Start...
-UI_LABEL_ATTACK_DAMAGE,Attack  Damage:
-UI_LABEL_COMBO_DAMAGE,Combo Damage: 
-UI_LABEL_CURRENT_PING,Ping:160 ms
-UI_LABEL_CURRENT_ROLLBACK,RollbackFrame: 2F
-UI_LABEL_WINS_PREFIX,Wins: 
-UI_LABEL_WIN_STREAK_TITLE,Win Streak:
-UI_LABEL_FRAME_PING,Ping: 
-UI_LABEL_FRAME_ROLLBACK,RollbackFrame: 
-UI_LABEL_PLAYER_COUNT_LABEL, players
-UI_STATUS_WOW,WOW
-UI_STATUS_NOTHING,(Nothing)
-UI_STATUS_NONE,<None>
-UI_HINT_BACK_BUTTON,(Back button also works)
-UI_LABEL_BATTLE_VERSION_COLON,Battle Version:
-UI_LABEL_ROOM_ID_PREFIX,RoomID: 
-UI_LABEL_PING_PREFIX,Ping:
-UI_LABEL_FPS_SUFFIX,fps
-UI_LABEL_SECONDS_SUFFIX, s
-UI_STATUS_LOADING,Loading: {progress}/{total}
-UI_BUTTON_CLEAR_CONTROLS,Clear Controls
-UI_BUTTON_GO_BACK,Go Back
-UI_OPTIONS_RESET_DEFAULT,Reset to default
-UI_LABEL_UP,Up
-UI_LABEL_DOWN,Down
-UI_LABEL_LEFT,Left
-UI_LABEL_RIGHT,Right
-UI_MENU_GO_TO_MATCH,GO!
-UI_MENU_BGM,BGM: 
-UI_MENU_STAGE,STAGE: 
-UI_MENU_OPEN_REPLAY,Open a replay file: 
-UI_MENU_DELETE_MODE,Delete Mode
-UI_MENU_LOG_IN,Logging in to Server...
-UI_MENU_WAITING_MATCH,Waiting for next match...
-UI_MENU_DISCORD,Join our discord!
-UI_MENU_NAME_LABEL,Your Name:
-UI_MENU_CREDITS_TITLE,CREDITS:
-UI_MENU_FIND_ROOM,Find Room
-UI_MENU_VERSUS_CPU,Versus CPU
-UI_MENU_HIDE_ROOM_ID,Hide/UnHide RoomId
-UI_MENU_SEARCH,Search
-UI_MENU_CHANGE_CONTROLS,Change Controls
-UI_MENU_QUIT_TRAINING,Quit Training
-UI_REPLAY_PLAYER_ONE,Player 1
-UI_REPLAY_PLAYER_TWO,Player 2
-UI_STATUS_PUBLIC_LOBBY_CREATED,Created new public lobby: {match_id}
-UI_STATUS_PASTED_CLIPBOARD,Pasted from clipboard
-UI_STATUS_PEERS_LOADED,# of Peers loaded: {count}
-UI_STATUS_UNABLE_OPPONENT_PEER,unable to find opponent's peer id
-UI_STATUS_UNABLE_CLIENT_PEER,unable to find client peer id
-UI_STATUS_FAILED_REPLAY_LOGGER,Failed to start replay logger
-UI_STATUS_GAME_LOADED,Game loaded
-UI_STATUS_HOLD_START_PLAYER,Hold Start... {player}
-UI_STATUS_SERVER_CONNECTED,CONNECTED
-UI_STATUS_SERVER_DISCONNECTED,Disconnected
-UI_STATUS_PUBLIC_LOBBY_READY,Created new public lobby: {match_id}
-UI_REPLAY_CLEAR_MODE,Delete Mode
-UI_LABEL_COMBO_TRIAL,Combo Trial:
-UI_MENU_CLIENT,Client
-UI_STATUS_LOADED_STATE,Loaded State
-UI_STATUS_TEAMS_SELECTED,Teams selected!
-UI_STATUS_LOCAL_TEAMS_SELECTED,Locally: teams selected!
-UI_STATUS_PEERS_LOADING_COMPLETE,All peers loading completed!
-UI_STATUS_GOING_TO_MATCH,Going to match...
-UI_STATUS_CONNECTED_PEER,CONNECTED {peer_id}
-UI_STATUS_DISCONNECTED_PEER,Disconnected {peer_id}
-UI_BUTTON_RECORD,Record
-UI_BUTTON_REPLAY,Replay
-UI_BUTTON_OK_EXCLAIM,OK!
-UI_BUTTON_LOGIN,Login
-UI_BUTTON_EXIT_OPTIONS,Exit Options
-UI_BUTTON_QUIT,Quit
-UI_MENU_QUIT_VERSUS,Quit Versus
-UI_TRAINING_TOGGLE_HITBOXES,Toggle Hitboxes
-UI_TRAINING_RESET_POSITIONS,Reset Positions
-UI_PLACEHOLDER_YOUR_NAME,Your Name
-UI_LABEL_TIMER_INITIAL,Time: 10
-UI_COMBO_INPUTS_FACING_RIGHT,Inputs are performed while facing right
-UI_COMBO_HINT_FALLING_5C,[i]Hint: Use Jump5C as you are falling.[/i]
-UI_COMBO_HINT_FALLING_5B,[i]Hint: Use Jump5B as you are falling.[/i]
-UI_COMBO_HINT_DIRECTIONS,[i]Hint: Quickly move the directions first and then press the attack button![/i]
-UI_COMBO_HINT_SUBARU_SPECIAL,[i]Hint: Prepare the special move directions while Crouch2B is happening. The Down input in Crouch2B counts for Stinger ![/i]
-UI_COMBO_HINT_MIO_SPECIAL,[i]Hint: Prepare the special move directions while Stand6C is happening. The Right input in Stand6C counts for MioCards ![/i]
-UI_COMBO_JUMP,[i]Jump[/i]
-UI_COMBO_DOUBLE_JUMP,[i]Double jump[/i]
-UI_COMBO_HINT_PRESS_UP,[i]Hint: Press up as soon as you hit the opponent![/i]
-UI_COMBO_HINT_THROW_HIT,A + B + C [i]during throw hit[/i]
-UI_COMBO_HINT_CORNER_ONLY,[color=yellow]Corner Only[/color] [i]Hint: Land and jump again after each Jump2C ![/i]
-UI_COMBO_HINT_AIR_DASH_FAST,[i]Hint: Try to air dash as fast as possible![/i]
-UI_COMBO_HINT_CLEAN_HIT,[i]Hint: The first Jump6C requires a [color=yellow]clean hit[/color]. Good Luck![/i]
-UI_COMBO_HOLD_LEFT,[i]Hold Left[/i]
-UI_COMBO_DELAY,[i]Delay[/i]
-UI_COMBO_GROUND_BOUNCE,[i]Ground bounce after each air move[/i]
-UI_COMBO_DELAY_JUMP,[i]Delay jump[/i]
-UI_COMBO_HINT_HATOTAURUS_RELEASE,[i]Hint: Hatotaurus attacks when you [color=yellow]release[/color] attack buttons![/i]
-UI_COMBO_BONUS_HATO,[i]Bonus: SummonHato[/i]
-UI_COMBO_INSTANT_AIR_DASH,[i]Instant air dash[/i]
-UI_COMBO_LANDING_CANCEL,[i]Landing cancel[/i]
-UI_COMBO_AIR_DASH,[i]Air dash[/i]
-UI_COMBO_AIRDASH,[i]Airdash[/i]
-UI_COMBO_HINT_HIT_STANCE_SCISSORS,[i]Hint: Hit Stance D and Scissors in very quick succession[/i]
-UI_COMBO_HINT_START_SUISEI,[i]Hint: Start the combo in Suisei mode[/i]
-UI_COMBO_HINT_ASSIST_BEHIND,[i]Hint: Use AssistAttack2 when Fubuki is behind the opponent[/i]
-UI_COMBO_HINT_AIR_THROW_BOUNCE,[i]Hint: Air throw the opponent before they ground bounce[/i]
-UI_COMBO_HOLD_GROUND_THROW,Hold GroundThrowHit
-UI_COMBO_HOLD_C,Hold C
-UI_COMBO_HOLD_A,Hold A
-UI_COMBO_HOLD_B,Hold B
-UI_COMBO_OLLIE_SET_HOLD,Set Ollie Rook then Hold A
-UI_COMBO_ASSIST_STEER_RIGHT,AssistAttack2: Hold and steer right
+keys,en,ja
+UI_ALERT_EXIT_TITLE,Are you sure you want to exit?,
+UI_ALERT_EXIT_MATCH,This will end the match for everyone and return to the match setup screen.,
+UI_BUTTON_OK,OK,はい
+UI_BUTTON_CANCEL,Cancel,
+UI_BUTTON_BACK,Back,戻る
+UI_BUTTON_CLOSE,Close,
+UI_BUTTON_CHANGE,Change,
+UI_BUTTON_SAVE,Save,
+UI_BUTTON_RESET,Reset,リセット
+UI_BUTTON_PLAY_DEMO,Play Demo,
+UI_BUTTON_LOAD_STATE,Load From State,
+UI_BUTTON_SAVE_STATE,Save State,
+UI_BUTTON_PREVIOUS_TRIAL,Prev Trial,
+UI_BUTTON_NEXT_TRIAL,Next Trial,
+UI_BUTTON_COMMAND_LIST,Command List,コマンドリスト
+UI_MENU_EDIT_CONTROLS,Edit Controls,
+UI_MENU_EDIT_KEYBOARD_CONTROLS,Edit Keyboard Controls,
+UI_MENU_YOUR_NAME,Your Name:,
+UI_MENU_JOIN_DISCORD,Join our discord!,
+UI_MENU_EXIT_HINT,Exit: Select - Backspace,
+UI_MENU_VERSUS_MODES,Versus Modes,
+UI_MENU_TWO_PLAYER,2 Player,
+UI_MENU_NEW_CHALLENGER,New Challenger:,
+UI_MENU_CHALLENGER_NAME,Challenger Name,
+UI_MENU_INPUT_DELAY,Input Delay: 2,
+UI_MENU_GO,GO!,
+UI_MENU_DECLINE,Decline,
+UI_MENU_ROOM_SETTINGS,Room Settings:,
+UI_MENU_CREATE_ROOM,Create Room,
+UI_MENU_OPEN_LOBBIES,Currently open Lobbies:,
+UI_MENU_JOIN_PRIVATE_ROOM,Join Private Room,
+UI_MENU_ROOM_ID,Room ID,
+UI_MENU_PASTE_CLIPBOARD,Paste from Clipboard,
+UI_MENU_CHALLENGE,Challenge,
+UI_MENU_SPECTATE,Spectate,
+UI_MENU_LOGGING_IN,Logging in to Server...,
+UI_MENU_DISPLAY_NAME,Display Name,
+UI_MENU_NETPLAY,Netplay:,
+UI_MENU_PRIVATE_ROOM,Private Room,
+UI_MENU_JOIN_ROOM,Join Room,
+UI_MENU_PUBLIC_ROOM,Public Room,
+UI_MENU_DIRECT_IP,Direct IP connection (Needs port forwarding),
+UI_MENU_HOST,Host,
+UI_MENU_PORT,Port,
+UI_MENU_SERVER,Server,
+UI_MENU_COPY_ROOM_ID,Copy Room ID,
+UI_MENU_BATTLE_VERSION,Battle Version:,
+UI_MENU_CREDITS,CREDITS:,スタッフロール：
+UI_OPTIONS_FULLSCREEN,Fullscreen,スクリーンモード
+UI_OPTIONS_VSYNC,VSync,垂直同期
+UI_OPTIONS_MAIN_VOLUME,Main Volume,全体音量
+UI_OPTIONS_MUSIC,Music,BGM音量
+UI_OPTIONS_SOUND,Sound,効果音音量
+UI_OPTIONS_VOICE,Voice,音声音量
+UI_OPTIONS_LANGUAGE,Language,言語
+UI_LANGUAGE_ENGLISH,English,英語
+UI_LANGUAGE_SYSTEM_DEFAULT,System Default,デフォルト
+UI_LANGUAGE_JAPANESE,Japanese,日本語
+UI_OPTIONS_SAVE_REPLAYS,Save Replays,アーカイブを保存する
+UI_OPTIONS_DEBUG_ROLLBACK_LOGS,Debug Rollback Logs,
+UI_OPTIONS_GET_LOGS_PATH,Get Logs Path,
+UI_OPTIONS_COPY_CLIPBOARD,Copy to clipboard,
+UI_OPTIONS_RESET_CONTROLS,Reset Controls File,デフォルトに戻す
+UI_REPLAY_OPEN_FILE,Open a replay file:,
+UI_REPLAY_DELETE_MODE,Delete Mode,
+UI_REPLAY_CLOSE_MENU,Close Menu,
+UI_REPLAY_TAKEOVER,Replay Takeover,
+UI_REPLAY_LOAD_TAKEOVER,Load Takeover State,
+UI_REPLAY_LOAD_BACK_HINT,Load (Back button works too),
+UI_TRAINING_LOADED_STATE,Loaded State,ロード状態
+UI_TRAINING_ATTACK_DAMAGE,Attack  Damage:,ダメージ
+UI_TRAINING_COMBO_DAMAGE,Combo Damage:,コンボダメージ
+UI_TRAINING_STANCE,Stance,状態
+UI_TRAINING_COUNTER_HIT,CounterHit,
+UI_TRAINING_BLOCK_SETTINGS,Block Settings,
+UI_TRAINING_BLOCK_SWITCHING,Block Switching,
+UI_TRAINING_BLOCK_TYPE,Block Type,
+UI_TRAINING_AIR_RECOVERY,Air Recovery,
+UI_TRAINING_SUPER_METER,Super Meter,
+UI_TRAINING_ASSIST_METER,Assist Meter,
+UI_TRAINING_SYNC_RATE,Sync Rate,
+UI_TRAINING_ASSIST_METER_BUILD,Assist Meter Build,
+UI_TRAINING_METER_REFILL,Meter Refill,
+UI_TRAINING_CLOSE_COMMAND_LIST,Close,
+UI_TRAINING_NONE,NONE,
+UI_TRAINING_ALL,ALL,
+UI_TRAINING_ENABLED,ENABLED,
+UI_TRAINING_DISABLED,DISABLED,
+UI_TRAINING_NORMAL_BLOCK,NORMAL BLOCK,ガード
+UI_TRAINING_INSTANT_BLOCK,INSTANT BLOCK,直前ガード
+UI_TRAINING_PUSH_BLOCK,PUSH BLOCK,FDガード
+UI_TRAINING_INSTANT_PUSH_BLOCK,INSTANT PUSH BLOCK,直前FDガード
+UI_TRAINING_PARRY,PARRY,パリィ
+UI_TRAINING_NEUTRAL,NEUTRAL,ニュートラル
+UI_TRAINING_FORWARD,FORWARD,前方
+UI_TRAINING_BACKWARD,BACKWARD,後方
+UI_TRAINING_OFF,OFF,オフ
+UI_TRAINING_ON,ON,オン
+UI_TRAINING_HAPPY_BIRTHDAY,HAPPY BIRTHDAY,ハッピーバースデー
+UI_TRAINING_STAND,STAND,立ち
+UI_TRAINING_CROUCH,CROUCH,しゃがみ
+UI_TRAINING_JUMP,JUMP,ジャンプ
+UI_STATUS_WAITING_PLAYERS,Waiting for players...,
+UI_STATUS_WAITING_MATCH,Waiting for next match...,
+UI_STATUS_REGAINING_SYNC,Regaining sync...,
+UI_STATUS_CONNECTED,CONNECTED,
+UI_STATUS_DISCONNECTED,Disconnected from match,
+UI_STATUS_CONNECTING_SERVER,Connecting to server,
+UI_STATUS_CONNECTING_LOCAL_SERVER,Connecting to local server,
+UI_STATUS_UNABLE_CONNECT_SERVER,Unable to connect to server,
+UI_STATUS_USERNAME_FAILED,"Unable to create username, try changing your name on the main menu",
+UI_STATUS_USERNAME_UPDATE_FAILED,Unable to connect to server and update username,
+UI_STATUS_CONNECTED_SERVER,Connected to server,
+UI_STATUS_MATCHMAKING_QUEUED,Joined the matchmaking queue...,
+UI_STATUS_MATCH_STARTING,Match is starting!,
+UI_STATUS_PRIVATE_MATCH_CREATED,Private match created: {match_id},
+UI_STATUS_JOINED_PRIVATE_MATCH,Joined private match: {match_id},
+UI_STATUS_PLAYER_JOINED,Player joined: {player_name},
+UI_STATUS_PLAYER_LEFT,Player left: {player_name},
+UI_STATUS_MATCH_ERROR,ERROR: {message},
+UI_STATUS_LOADING_TEAMS,Loading teams...,
+UI_STATUS_LOAD_COMPLETE,Load complete!,
+UI_STATUS_ALL_PEERS_LOADED,All peers loading completed!,
+UI_STATUS_WAITING_PEER,Load complete: waiting on peer,
+UI_STATUS_DISCONNECTED_BACK,"Disconnected, Press Back button to exit to lobby",
+UI_STATUS_FATAL_SYNC_ERROR,"Fatal sync error: {message} , Press Back button to exit to lobby",
+UI_STATUS_RECORDING_READY,Standy for Recording...,
+UI_STATUS_PLAYING_DEMO,Playing demo,
+UI_STATUS_NO_RECORDING,No recording found,
+UI_STATUS_RECORDING_SAVED,Saved recording,
+UI_STATUS_RECORDING_CANCELLED,Cancelled recording,
+UI_STATUS_REPLAYING,Replaying,
+UI_STATUS_DATA_UPDATED,Data updated,
+UI_STATUS_REWINDING,rewinding...,
+UI_STATUS_FAST_FORWARDING,fast forwarding...,
+UI_STATUS_TAKEOVER_P1,takeover p1,
+UI_STATUS_TAKEOVER_P2,takeover p2,
+UI_STATUS_NO_REPLAY_TAKEOVER,not currently in replay takeover state,
+UI_STATUS_COULD_NOT_DELETE,Couldn't delete,
+UI_STATUS_CANNOT_OPEN_REPLAY_DIR,Can't open replay directory,
+UI_STATUS_NO_REPLAY_SELECTED,No replay selected,
+UI_STATUS_SELECT_REPLAY_DELETE,Select replay to delete,
+UI_STATUS_COPIED_FILE_PATH,Copied file path,
+UI_STATUS_CLEARED_CONTROLS_FILE,Cleared controllersettings.cfg,
+UI_STATUS_ROLLBACK_LOG_WARNING_ON,"ON, Warning: log files take up lots of storage space!",
+UI_STATUS_ROLLBACK_LOG_WARNING_OFF,"OFF, if you want to help catch rollback desyncs, enable this",
+UI_LABEL_PING,Ping: {ping} ms,
+UI_LABEL_ROLLBACK_FRAME,RollbackFrame: {frames}F,
+UI_LABEL_INPUT_DELAY,Input Delay: {frames},
+UI_LABEL_PLAYERS_COUNT,{count} players,
+UI_LABEL_PLAYERS_CAPACITY,{count} / {maximum} players,
+UI_LABEL_MAX_LOBBY_SIZE,Max lobby size: {count},
+UI_LABEL_TIMER,Time: {seconds},
+UI_LABEL_BATTLE_VERSION,Battle Version: {version},
+UI_LABEL_STAGE,STAGE: {stage},ステージ: {stage}
+UI_LABEL_BGM,BGM: {bgm},BGM: {bgm}
+UI_LABEL_WIN_STREAK,Win streak: {count},
+UI_LABEL_WINS,Wins: {count},
+UI_LABEL_SPECTATING,Spectating,
+UI_LABEL_STATUS_IN_GAME,In a Game,
+UI_LABEL_STATUS_CHALLENGING,Challenging,
+UI_LABEL_STATUS_DECIDING,Deciding,
+UI_LABEL_STATUS_READY,Ready,
+UI_LABEL_SERVER_SEARCHING,Server:Searching for connection,
+UI_LABEL_SERVER_ERROR,Server ERROR: {error},
+UI_LABEL_CLIENT_SEARCHING,Client:Searching for connection,
+UI_LABEL_CLIENT_ERROR,Client ERROR: {error},
+UI_LABEL_ERROR,ERROR: {message},
+UI_LABEL_TIME_REMAINING,{seconds},
+UI_COMBO_SUCCESS,SUCCESS!,
+UI_BUTTON_UNMAP,Unmap=,
+UI_BUTTON_UNMAP_KEYBOARD,Unmap=[ESC],
+UI_BUTTON_LIGHT,A (Light),
+UI_BUTTON_MEDIUM,B (Medium),
+UI_BUTTON_HEAVY,C (Heavy),
+UI_BUTTON_ASSIST,D (Assist),
+UI_BUTTON_DASH,A+B (Dash),
+UI_BUTTON_RUN,A+B (Run),
+UI_BUTTON_THROW,A+D (Throw),
+UI_BUTTON_PARRY,B+C (Parry),
+UI_BUTTON_R_CANCEL,A+B+C (RCancel),
+UI_BUTTON_BURST,A+B+C+D (Burst),
+UI_MENU_PING_UNKNOWN,Ping: ???ms,
+UI_MENU_INPUT_DELAY_DEFAULT,Input Delay: 2,
+UI_STATUS_GO,GO!,
+UI_STATUS_HOLD_START,Hold Start...,
+UI_LABEL_ATTACK_DAMAGE,Attack  Damage:,
+UI_LABEL_COMBO_DAMAGE,Combo Damage:,
+UI_LABEL_CURRENT_PING,Ping:160 ms,
+UI_LABEL_CURRENT_ROLLBACK,RollbackFrame: 2F,
+UI_LABEL_WINS_PREFIX,Wins:,
+UI_LABEL_WIN_STREAK_TITLE,Win Streak:,
+UI_LABEL_FRAME_PING,Ping:,
+UI_LABEL_FRAME_ROLLBACK,RollbackFrame:,
+UI_LABEL_PLAYER_COUNT_LABEL,players,
+UI_STATUS_WOW,WOW,
+UI_STATUS_NOTHING,(Nothing),
+UI_STATUS_NONE,<None>,
+UI_HINT_BACK_BUTTON,(Back button also works),
+UI_LABEL_BATTLE_VERSION_COLON,Battle Version:,
+UI_LABEL_ROOM_ID_PREFIX,RoomID:,
+UI_LABEL_PING_PREFIX,Ping:,
+UI_LABEL_FPS_SUFFIX,fps,
+UI_LABEL_SECONDS_SUFFIX,s,
+UI_STATUS_LOADING,Loading: {progress}/{total},
+UI_BUTTON_CLEAR_CONTROLS,Clear Controls,
+UI_BUTTON_GO_BACK,Go Back,
+UI_OPTIONS_RESET_DEFAULT,Reset to default,
+UI_LABEL_UP,Up,
+UI_LABEL_DOWN,Down,
+UI_LABEL_LEFT,Left,
+UI_LABEL_RIGHT,Right,
+UI_MENU_GO_TO_MATCH,GO!,
+UI_MENU_BGM,BGM:,
+UI_MENU_STAGE,STAGE:,
+UI_MENU_OPEN_REPLAY,Open a replay file:,
+UI_MENU_DELETE_MODE,Delete Mode,
+UI_MENU_LOG_IN,Logging in to Server...,
+UI_MENU_WAITING_MATCH,Waiting for next match...,
+UI_MENU_DISCORD,Join our discord!,
+UI_MENU_NAME_LABEL,Your Name:,スタッフロール：
+UI_MENU_CREDITS_TITLE,CREDITS:,
+UI_MENU_FIND_ROOM,Find Room,
+UI_MENU_VERSUS_CPU,Versus CPU,
+UI_MENU_HIDE_ROOM_ID,Hide/UnHide RoomId,
+UI_MENU_SEARCH,Search,
+UI_MENU_CHANGE_CONTROLS,Change Controls,トレーニング終了
+UI_MENU_QUIT_TRAINING,Quit Training,
+UI_REPLAY_PLAYER_ONE,Player 1,
+UI_REPLAY_PLAYER_TWO,Player 2,
+UI_STATUS_PUBLIC_LOBBY_CREATED,Created new public lobby: {match_id},
+UI_STATUS_PASTED_CLIPBOARD,Pasted from clipboard,
+UI_STATUS_PEERS_LOADED,# of Peers loaded: {count},
+UI_STATUS_UNABLE_OPPONENT_PEER,unable to find opponent's peer id,
+UI_STATUS_UNABLE_CLIENT_PEER,unable to find client peer id,
+UI_STATUS_FAILED_REPLAY_LOGGER,Failed to start replay logger,
+UI_STATUS_GAME_LOADED,Game loaded,
+UI_STATUS_HOLD_START_PLAYER,Hold Start... {player},
+UI_STATUS_SERVER_CONNECTED,CONNECTED,
+UI_STATUS_SERVER_DISCONNECTED,Disconnected,
+UI_STATUS_PUBLIC_LOBBY_READY,Created new public lobby: {match_id},
+UI_REPLAY_CLEAR_MODE,Delete Mode,
+UI_LABEL_COMBO_TRIAL,Combo Trial:,
+UI_MENU_CLIENT,Client,
+UI_STATUS_LOADED_STATE,Loaded State,
+UI_STATUS_TEAMS_SELECTED,Teams selected!,
+UI_STATUS_LOCAL_TEAMS_SELECTED,Locally: teams selected!,
+UI_STATUS_PEERS_LOADING_COMPLETE,All peers loading completed!,
+UI_STATUS_GOING_TO_MATCH,Going to match...,
+UI_STATUS_CONNECTED_PEER,CONNECTED {peer_id},
+UI_STATUS_DISCONNECTED_PEER,Disconnected {peer_id},
+UI_BUTTON_RECORD,Record,
+UI_BUTTON_REPLAY,Replay,
+UI_BUTTON_OK_EXCLAIM,OK!,
+UI_BUTTON_LOGIN,Login,オプション終了
+UI_BUTTON_EXIT_OPTIONS,Exit Options,
+UI_BUTTON_QUIT,Quit,
+UI_MENU_QUIT_VERSUS,Quit Versus,
+UI_TRAINING_TOGGLE_HITBOXES,Toggle Hitboxes,
+UI_TRAINING_RESET_POSITIONS,Reset Positions,
+UI_PLACEHOLDER_YOUR_NAME,Your Name,
+UI_LABEL_TIMER_INITIAL,Time: 10,
+UI_COMBO_INPUTS_FACING_RIGHT,Inputs are performed while facing right,
+UI_COMBO_HINT_FALLING_5C,[i]Hint: Use Jump5C as you are falling.[/i],
+UI_COMBO_HINT_FALLING_5B,[i]Hint: Use Jump5B as you are falling.[/i],
+UI_COMBO_HINT_DIRECTIONS,[i]Hint: Quickly move the directions first and then press the attack button![/i],
+UI_COMBO_HINT_SUBARU_SPECIAL,[i]Hint: Prepare the special move directions while Crouch2B is happening. The Down input in Crouch2B counts for Stinger ![/i],
+UI_COMBO_HINT_MIO_SPECIAL,[i]Hint: Prepare the special move directions while Stand6C is happening. The Right input in Stand6C counts for MioCards ![/i],
+UI_COMBO_JUMP,[i]Jump[/i],
+UI_COMBO_DOUBLE_JUMP,[i]Double jump[/i],
+UI_COMBO_HINT_PRESS_UP,[i]Hint: Press up as soon as you hit the opponent![/i],
+UI_COMBO_HINT_THROW_HIT,A + B + C [i]during throw hit[/i],
+UI_COMBO_HINT_CORNER_ONLY,[color=yellow]Corner Only[/color] [i]Hint: Land and jump again after each Jump2C ![/i],
+UI_COMBO_HINT_AIR_DASH_FAST,[i]Hint: Try to air dash as fast as possible![/i],
+UI_COMBO_HINT_CLEAN_HIT,[i]Hint: The first Jump6C requires a [color=yellow]clean hit[/color]. Good Luck![/i],
+UI_COMBO_HOLD_LEFT,[i]Hold Left[/i],
+UI_COMBO_DELAY,[i]Delay[/i],
+UI_COMBO_GROUND_BOUNCE,[i]Ground bounce after each air move[/i],
+UI_COMBO_DELAY_JUMP,[i]Delay jump[/i],
+UI_COMBO_HINT_HATOTAURUS_RELEASE,[i]Hint: Hatotaurus attacks when you [color=yellow]release[/color] attack buttons![/i],
+UI_COMBO_BONUS_HATO,[i]Bonus: SummonHato[/i],
+UI_COMBO_INSTANT_AIR_DASH,[i]Instant air dash[/i],
+UI_COMBO_LANDING_CANCEL,[i]Landing cancel[/i],
+UI_COMBO_AIR_DASH,[i]Air dash[/i],
+UI_COMBO_AIRDASH,[i]Airdash[/i],
+UI_COMBO_HINT_HIT_STANCE_SCISSORS,[i]Hint: Hit Stance D and Scissors in very quick succession[/i],
+UI_COMBO_HINT_START_SUISEI,[i]Hint: Start the combo in Suisei mode[/i],
+UI_COMBO_HINT_ASSIST_BEHIND,[i]Hint: Use AssistAttack2 when Fubuki is behind the opponent[/i],
+UI_COMBO_HINT_AIR_THROW_BOUNCE,[i]Hint: Air throw the opponent before they ground bounce[/i],
+UI_COMBO_HOLD_GROUND_THROW,Hold GroundThrowHit,
+UI_COMBO_HOLD_C,Hold C,
+UI_COMBO_HOLD_A,Hold A,
+UI_COMBO_HOLD_B,Hold B,
+UI_COMBO_OLLIE_SET_HOLD,Set Ollie Rook then Hold A,
+UI_COMBO_ASSIST_STEER_RIGHT,AssistAttack2: Hold and steer right,
