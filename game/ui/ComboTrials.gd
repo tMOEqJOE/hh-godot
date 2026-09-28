@@ -376,7 +376,7 @@ Enums.PointCharacters.Kanata: [
 	{0: "StandcB",
 	1: "Stand5B",
 	2: "Stand5C",
-	3: "DUMMY: [i] instant air dash [/i]",
+	3: "DUMMY: [i] jump [/i]",
 	4: "Jump5C",
 	5: "DUMMY: [i] double jump [/i]",
 	6: "Jump5C",
