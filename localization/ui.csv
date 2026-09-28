@@ -4,13 +4,13 @@ UI_ALERT_EXIT_MATCH,This will end the match for everyone and return to the match
 UI_BUTTON_OK,OK,はい
 UI_BUTTON_CANCEL,Cancel,
 UI_BUTTON_BACK,Back,戻る
-UI_BUTTON_CLOSE,Close,
+UI_BUTTON_CLOSE,Close,閉じる
 UI_BUTTON_CHANGE,Change,
-UI_BUTTON_SAVE,Save,
+UI_BUTTON_SAVE,Save,保存する
 UI_BUTTON_RESET,Reset,リセット
 UI_BUTTON_PLAY_DEMO,Play Demo,
 UI_BUTTON_LOAD_STATE,Load From State,
-UI_BUTTON_SAVE_STATE,Save State,
+UI_BUTTON_SAVE_STATE,Save State,状態を保存する
 UI_BUTTON_PREVIOUS_TRIAL,Prev Trial,前のトライアル
 UI_BUTTON_NEXT_TRIAL,Next Trial,次のトライアル
 UI_BUTTON_COMMAND_LIST,Command List,コマンドリスト
@@ -168,19 +168,19 @@ UI_LABEL_CLIENT_SEARCHING,Client:Searching for connection,
 UI_LABEL_CLIENT_ERROR,Client ERROR: {error},
 UI_LABEL_ERROR,ERROR: {message},
 UI_LABEL_TIME_REMAINING,{seconds},
-UI_COMBO_SUCCESS,SUCCESS!,
+UI_COMBO_SUCCESS,SUCCESS!,サクセス！
 UI_BUTTON_UNMAP,Unmap=,
 UI_BUTTON_UNMAP_KEYBOARD,Unmap=[ESC],
-UI_BUTTON_LIGHT,A (Light),
-UI_BUTTON_MEDIUM,B (Medium),
-UI_BUTTON_HEAVY,C (Heavy),
-UI_BUTTON_ASSIST,D (Assist),
-UI_BUTTON_DASH,A+B (Dash),
-UI_BUTTON_RUN,A+B (Run),
-UI_BUTTON_THROW,A+D (Throw),
-UI_BUTTON_PARRY,B+C (Parry),
-UI_BUTTON_R_CANCEL,A+B+C (RCancel),
-UI_BUTTON_BURST,A+B+C+D (Burst),
+UI_BUTTON_LIGHT,A (Light),A (弱攻撃)
+UI_BUTTON_MEDIUM,B (Medium),B (中攻撃)
+UI_BUTTON_HEAVY,C (Heavy),C (強攻撃）
+UI_BUTTON_ASSIST,D (Assist),D (アシスト)
+UI_BUTTON_DASH,A+B (Dash),A+B (ダッシュ)
+UI_BUTTON_RUN,A+B (Run),A+B (走り)
+UI_BUTTON_THROW,A+D (Throw),A+D (投げ)
+UI_BUTTON_PARRY,B+C (Parry),B+C (パリィ)
+UI_BUTTON_R_CANCEL,A+B+C (RCancel),A+B+C (ライブキャン)
+UI_BUTTON_BURST,A+B+C+D (Burst),A+B+C+D (バースト)
 UI_MENU_PING_UNKNOWN,Ping: ???ms,
 UI_MENU_INPUT_DELAY_DEFAULT,Input Delay: 2,
 UI_STATUS_GO,GO!,
@@ -219,14 +219,14 @@ UI_MENU_DELETE_MODE,Delete Mode,
 UI_MENU_LOG_IN,Logging in to Server...,
 UI_MENU_WAITING_MATCH,Waiting for next match...,
 UI_MENU_DISCORD,Join our discord!,
-UI_MENU_NAME_LABEL,Your Name:,スタッフロール：
-UI_MENU_CREDITS_TITLE,CREDITS:,
+UI_MENU_NAME_LABEL,Your Name:,ハンドル：
+UI_MENU_CREDITS_TITLE,CREDITS:,スタッフロール：
 UI_MENU_FIND_ROOM,Find Room,
 UI_MENU_VERSUS_CPU,Versus CPU,
 UI_MENU_HIDE_ROOM_ID,Hide/UnHide RoomId,
 UI_MENU_SEARCH,Search,
-UI_MENU_CHANGE_CONTROLS,Change Controls,トレーニング終了
-UI_MENU_QUIT_TRAINING,Quit Training,
+UI_MENU_CHANGE_CONTROLS,Change Controls,
+UI_MENU_QUIT_TRAINING,Quit Training,トレーニング終了
 UI_REPLAY_PLAYER_ONE,Player 1,
 UI_REPLAY_PLAYER_TWO,Player 2,
 UI_STATUS_PUBLIC_LOBBY_CREATED,Created new public lobby: {match_id},
@@ -253,13 +253,13 @@ UI_STATUS_DISCONNECTED_PEER,Disconnected {peer_id},
 UI_BUTTON_RECORD,Record,
 UI_BUTTON_REPLAY,Replay,
 UI_BUTTON_OK_EXCLAIM,OK!,
-UI_BUTTON_LOGIN,Login,オプション終了
-UI_BUTTON_EXIT_OPTIONS,Exit Options,
+UI_BUTTON_LOGIN,Login,
+UI_BUTTON_EXIT_OPTIONS,Exit Options,オプション終了
 UI_BUTTON_QUIT,Quit,
 UI_MENU_QUIT_VERSUS,Quit Versus,
 UI_TRAINING_TOGGLE_HITBOXES,Toggle Hitboxes,
 UI_TRAINING_RESET_POSITIONS,Reset Positions,
-UI_PLACEHOLDER_YOUR_NAME,Your Name,
+UI_PLACEHOLDER_YOUR_NAME,Your Name,ハンドル：
 UI_LABEL_TIMER_INITIAL,Time: 10,
 UI_COMBO_INPUTS_FACING_RIGHT,Inputs are performed while facing right,
 UI_COMBO_HINT_FALLING_5C,[i]Hint: Use Jump5C as you are falling.[/i],
@@ -304,11 +304,11 @@ UI_COMBO_ASSIST_STEER_RIGHT,AssistAttack2: Hold and steer right,
 50KG Grip Strength,50KG Grip Strength,
 99 strength,99 strength,
 "A super low crouch, blocking is still OK","A super low crouch, blocking is still OK",
-Air dash:,Air dash:,
+Air dash:,Air dash:,空中ダッシュ：
 Air Knockdown. Try hitting a 5D fireball with this,Air Knockdown. Try hitting a 5D fireball with this,
 Air Recovery,Air Recovery,
 Air Throw Cancel,Air Throw Cancel,
-AirDash,AirDash,
+AirDash,AirDash,空中ダッシュ
 Airdash cancel,Airdash cancel,
 Airdashes are air hops,Airdashes are air hops,
 Airdashs are angled down,Airdashs are angled down,
@@ -316,35 +316,35 @@ Akai na...,Akai na...,
 Alternate version that only launches opponent,Alternate version that only launches opponent,
 Alters Oga's air movement,Alters Oga's air movement,
 Amane Kanata,Amane Kanata,
-Anti Air,Anti Air,
-anti air,anti air,
+Anti Air,Anti Air,対空
+anti air,anti air,対空
 Anti air and command jump,Anti air and command jump,
 Anti Air. Try hitting a 5D fireball with this,Anti Air. Try hitting a 5D fireball with this,
 anti-air Normals,anti-air Normals,
-Aragami Oga,Aragami Oga,
+Aragami Oga,Aragami Oga,荒咬オウガ
 Assault,Assault,
 Assist Chain,Assist Chain,
 Assist character cancels into any assist attack,Assist character cancels into any assist attack,
-Assist: Amane Kanata,Assist: Amane Kanata,
-Assist: Aragami Oga,Assist: Aragami Oga,
-Assist: Banzoin Hakka,Assist: Banzoin Hakka,
-Assist: Kureiji Ollie,Assist: Kureiji Ollie,
-Assist: Nekomata Okayu and Inugami Korone,Assist: Nekomata Okayu and Inugami Korone,
-Assist: Ookami Mio,Assist: Ookami Mio,
-Assist: Oozora Subaru,Assist: Oozora Subaru,
-Assist: Shirakami Fubuki,Assist: Shirakami Fubuki,
-Assist: Tokino Sora,Assist: Tokino Sora,
-Assist: Tsukumo Sana,Assist: Tsukumo Sana,
-Assist1,Assist1,
-Assist2,Assist2,
-AssistSuper,AssistSuper,
+Assist: Amane Kanata,Assist: Amane Kanata,アシスト：天音かなた
+Assist: Aragami Oga,Assist: Aragami Oga,アシスト：荒咬オウガ
+Assist: Banzoin Hakka,Assist: Banzoin Hakka,アシスト：万象院ハッカ
+Assist: Kureiji Ollie,Assist: Kureiji Ollie,アシスト：クレイジー・オリー
+Assist: Nekomata Okayu and Inugami Korone,Assist: Nekomata Okayu and Inugami Korone,アシスト：猫又おかゆと戌神ころね
+Assist: Ookami Mio,Assist: Ookami Mio,アシスト：大神ミオ
+Assist: Oozora Subaru,Assist: Oozora Subaru,アシスト：大空スバル
+Assist: Shirakami Fubuki,Assist: Shirakami Fubuki,アシスト：白上フブキ
+Assist: Tokino Sora,Assist: Tokino Sora,アシスト：ときのそら
+Assist: Tsukumo Sana,Assist: Tsukumo Sana,アシスト：九十九佐命
+Assist1,Assist1,アシスト１
+Assist2,Assist2,アシスト２
+AssistSuper,AssistSuper,アシストスーパー
 Astrogirl,Astrogirl,
-Attacks,Attacks,
+Attacks,Attacks,攻撃
 B and C (EX) version are invul reversals,B and C (EX) version are invul reversals,
 B and C versions are jump cancel OK,B and C versions are jump cancel OK,
-Backdash,Backdash,
+Backdash,Backdash,バックステップ
 Backdash is abnormally invul,Backdash is abnormally invul,
-Backdash:,Backdash:,
+Backdash:,Backdash:,バックステップ：
 Backflips and recovers midair,Backflips and recovers midair,
 Bases Loaded,Bases Loaded,
 Basic Controls,Basic Controls,
@@ -354,9 +354,9 @@ Bishop,Bishop,
 "Blazing fast invincible command grab, steerable left and right","Blazing fast invincible command grab, steerable left and right",
 Bobbidi,Bobbidi,
 Bootdive,Bootdive,
-BreadLoops,BreadLoops,
+BreadLoops,BreadLoops,Breadループ
 Build sync rate quickly when held,Build sync rate quickly when held,
-Burst,Burst,
+Burst,Burst,バースト
 Bzzt Boom Replica,Bzzt Boom Replica,
 Bzzt Boom!,Bzzt Boom!,
 C Buttons,C Buttons,
@@ -389,12 +389,12 @@ Dash,Dash,
 "Dashing rapid slash, low profile","Dashing rapid slash, low profile",
 Defense,Defense,
 Demon Scythe: Slash Mode,Demon Scythe: Slash Mode,
-Deus EX Machina,Deus EX Machina,
-DiveKick,DiveKick,
+Deus EX Machina,Deus EX Machina,デウス・エクス・マキナ
+DiveKick,DiveKick,ダイブキック
 Dodge Roll,Dodge Roll,
 Dodges in place,Dodges in place,
 "DP, delay cancels into air throw","DP, delay cancels into air throw",
-Duck Punch,Duck Punch,
+Duck Punch,Duck Punch,昇鴨拳
 Enter stance with followups,Enter stance with followups,
 Even cleaner hit at mid range,Even cleaner hit at mid range,
 EX Hero's Corridor,EX Hero's Corridor,
@@ -414,7 +414,7 @@ Fubuki=the=Kon!-edge,Fubuki=the=Kon!-edge,
 Full invul,Full invul,
 full invul anti air,full invul anti air,
 Full invul reversal,Full invul reversal,
-Funny Defense,Funny Defense,
+Funny Defense,Funny Defense,ファニーディフェンス
 Ginger Crusher,Ginger Crusher,
 Gorilla Dunk,Gorilla Dunk,
 Grappler's Soul,Grappler's Soul,
@@ -458,7 +458,7 @@ Hollow Limit : Pleiades Star Barrage,Hollow Limit : Pleiades Star Barrage,
 Hollow Limit : Shubonic Arm,Hollow Limit : Shubonic Arm,
 Hollow Limit: Star Ball Beam,Hollow Limit: Star Ball Beam,
 Hop kick,Hop kick,
-Hoshimachi Suisei,Hoshimachi Suisei,
+Hoshimachi Suisei,Hoshimachi Suisei,星街すいせい
 Idol's hair pin,Idol's hair pin,
 Increase Moves,Increase Moves,
 Infinity Beam,Infinity Beam,
@@ -473,25 +473,25 @@ Jump Cancels,Jump Cancels,
 jump Normals,jump Normals,
 "Kanata's signature command grab, steerable left and right","Kanata's signature command grab, steerable left and right",
 Koro Hammer,Koro Hammer,
-Kureiji Ollie,Kureiji Ollie,
-Kurokami Flip,Kurokami Flip,
+Kureiji Ollie,Kureiji Ollie,クレイジー・オリー
+Kurokami Flip,Kurokami Flip,黒上側宙
 Kyou mo Hasami,Kyou mo Hasami,
 Launch,Launch,
 Launcher,Launcher,
-Level 1,Level 1,
+Level 1,Level 1,レベル１
 Level 1 and 2 assist stocks,Level 1 and 2 assist stocks,
-Level 2,Level 2,
-Level 3,Level 3,
-Level 5,Level 5,
-Light Punch,Light Punch,
+Level 2,Level 2,レベル２
+Level 3,Level 3,レベル３
+Level 5,Level 5,レベル５
+Light Punch,Light Punch,小パン
 lockdown projectile,lockdown projectile,
 Long distance invul reversal,Long distance invul reversal,
 long range anti air,long range anti air,
 Low profile,Low profile,
-Machina X Flayon,Machina X Flayon,
+Machina X Flayon,Machina X Flayon,マキナ・X・フレオン
 Many jump normals have reverse gatlings / rebeats,Many jump normals have reverse gatlings / rebeats,
 Metal Scream Galaxy,Metal Scream Galaxy,
-Mio Cannon,Mio Cannon,
+Mio Cannon,Mio Cannon,「ミオ・キャノン」
 Mio teleports a fixed distance forwards,Mio teleports a fixed distance forwards,
 Missing,Missing,
 Missing moves,Missing moves,
@@ -519,8 +519,8 @@ Ogayu Advance!,Ogayu Advance!,
 OH!-ga,OH!-ga,
 Only A normals are jump cancel OK,Only A normals are jump cancel OK,
 "Only jA hits high, all other jump normals hit mid","Only jA hits high, all other jump normals hit mid",
-Ookami Mio,Ookami Mio,
-Oozora Subaru,Oozora Subaru,
+Ookami Mio,Ookami Mio,大神ミオ
+Oozora Subaru,Oozora Subaru,大空スバル
 Other-Worldly 50KG Grip Strength,Other-Worldly 50KG Grip Strength,
 "Overhead dive kick, double jump cancel OK","Overhead dive kick, double jump cancel OK",
 Papakin's Son,Papakin's Son,
@@ -531,15 +531,15 @@ Po Po Po!,Po Po Po!,
 Pop Pop Udin Formation,Pop Pop Udin Formation,
 pushes back attackers more,pushes back attackers more,
 Raging Twister Strike,Raging Twister Strike,
-Raibu Cancel,Raibu Cancel,
-Rekka series,Rekka series,
+Raibu Cancel,Raibu Cancel,ライブキャンセル
+Rekka series,Rekka series,烈火攻撃
 "Rekka special, follow ups can whiff cancel","Rekka special, follow ups can whiff cancel",
 Release A for horizontal space control,Release A for horizontal space control,
 "Release A, B, or C to bounce on the opponent","Release A, B, or C to bounce on the opponent",
 Release B for diagonal space control,Release B for diagonal space control,
 Release C for ...knight shaped? space control,Release C for ...knight shaped? space control,
 Release D to do an overhead punch. (Air version hits mid),Release D to do an overhead punch. (Air version hits mid),
-Reverse Chains,Reverse Chains,
+Reverse Chains,Reverse Chains,リバースビート
 Reverse Temperance Crash,Reverse Temperance Crash,
 Rook,Rook,
 Run,Run,
@@ -581,14 +581,14 @@ Summon Concentration,Summon Concentration,
 Summon Hatotaurus,Summon Hatotaurus,
 "Summons chess pieces, can hold the button","Summons chess pieces, can hold the button",
 "Summons enhanced chess pieces, can be held with negative edge","Summons enhanced chess pieces, can be held with negative edge",
-Summons Mio,Summons Mio,
+Summons Mio,Summons Mio,ミオを召喚する
 Super Clean Hit Swing,Super Clean Hit Swing,
 Super Ginger Crusher,Super Ginger Crusher,
 Super jump challenge,Super jump challenge,
 Superjump:,Superjump:,
 Supers,Supers,
-Taiga!,Taiga!,
-Taurus Thunder,Taurus Thunder,
+Taiga!,Taiga!,タイガ！
+Taurus Thunder,Taurus Thunder,「タウロス・サンダー」
 Tenshi Body Splash,Tenshi Body Splash,
 Tenshi Smash,Tenshi Smash,
 Teyah! Combo tool and corner carry,Teyah! Combo tool and corner carry,
@@ -605,14 +605,14 @@ Twintail Drill,Twintail Drill,
 two hitting upper body invul attack,two hitting upper body invul attack,
 Udin Formation,Udin Formation,
 Unfortunately does not force out the opponent's assist,Unfortunately does not force out the opponent's assist,
-Unique Movement,Unique Movement,
-Unique Normals,Unique Normals,
+Unique Movement,Unique Movement,ユニーク移動技
+Unique Normals,Unique Normals,ユニーク通常技
 Universal launcher,Universal launcher,
 "Universal launcher, close range dead zone","Universal launcher, close range dead zone",
 "Universal launcher, Jump cancel OK","Universal launcher, Jump cancel OK",
 Unsummon,Unsummon,
-Unsummons Hatotaurus,Unsummons Hatotaurus,
-Unsummons Mio,Unsummons Mio,
+Unsummons Hatotaurus,Unsummons Hatotaurus,ハトタウロスを送還する
+Unsummons Mio,Unsummons Mio,ミオを送還する
 Upper body invul,Upper body invul,
 Upper body invul. Cat attack!,Upper body invul. Cat attack!,
 Wallbounces on normal hit,Wallbounces on normal hit,

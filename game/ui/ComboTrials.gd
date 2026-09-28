@@ -188,7 +188,7 @@ Enums.PointCharacters.Mio: [
 	2: "Stand5B",
 	3: "Stand5C",
 	4: "Stand6C",
-	5: "DUMMY: [i] Bonus: SummonHato [/i]"},
+	5: "DUMMY: [i](Bonus - SummonHato ) [/i]"},
 	{0: "DUMMY: SummonHato",
 	1: "GroundThrowHit",
 	2: "DUMMY: Hold GroundThrowHit",

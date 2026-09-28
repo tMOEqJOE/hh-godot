@@ -28,7 +28,7 @@ const DISPLAY_NAMES: Dictionary = {
 	"Jump6B": "Right B air", 
 	"Jump6C": "Right C air",
 	"Jump8C": "Up C air",
-	"DuckPunch": "Right Down DownRight B (air ok)", "MioCards":"Right Down DownRight X(air ok)",
+	"DuckPunch": "Right Down DownRight B (air ok)", "MioCards":"Right Down DownRight X (air ok)",
 	"SubaruStarBall": "Down DownRight Right A (air ok)",
 	"Stinger": "Down DownLeft Left B",
 	"AirStinger": "Down DownLeft Left B air",
