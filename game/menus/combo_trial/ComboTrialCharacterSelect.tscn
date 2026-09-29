@@ -58,11 +58,13 @@ script = ExtResource("1_7gm1j")
 
 [node name="P2Cursor" parent="PresentationLayer" index="10"]
 is_p1 = true
+gridY = 3
 gridX = 8
 start_col = 3
 
 [node name="P1Cursor" parent="PresentationLayer" index="11"]
 position = Vector2(960, 392)
+gridY = 3
 gridX = 8
 start_col = 3
 

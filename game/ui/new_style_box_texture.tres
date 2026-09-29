@@ -1,0 +1,8 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://836hlj4qv7df"]
+
+[ext_resource type="Texture2D" uid="uid://dxsvsww1xjbsv" path="res://game/assets/sprites/UI/MainMenus/Buttons/ButtonChalkboard/Timeline 1_0001.png" id="1_s0xan"]
+
+[resource]
+texture = ExtResource("1_s0xan")
+texture_margin_left = 10.0
+modulate_color = Color(0.41091278, 0.5978036, 0.5517601, 1)

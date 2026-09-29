@@ -23,20 +23,20 @@ func _ready():
 	character = [
 		[Enums.PointCharacters.Ollie, Enums.PointCharacters.Suisei, Enums.PointCharacters.Kanata],
 		[Enums.PointCharacters.Mio, Enums.PointCharacters.Subaru, Enums.PointCharacters.Oga],
-		[Enums.PointCharacters.Subaru, Enums.PointCharacters.Subaru, Enums.PointCharacters.Subaru],
-		[Enums.PointCharacters.Flayon, Enums.PointCharacters.Subaru, Enums.PointCharacters.Subaru]
+		[Enums.PointCharacters.Subaru, Enums.PointCharacters.Flayon, Enums.PointCharacters.Subaru],
+		[Enums.PointCharacters.Subaru, Enums.PointCharacters.Subaru, Enums.PointCharacters.Subaru]
 		]
 
 	assist2 = [
-		[Enums.AssistCharacters.Ollie, Enums.AssistCharacters.Suisei, Enums.AssistCharacters.Kanata, Enums.AssistCharacters.Fubuki, Enums.AssistCharacters.Hakka],
+		[Enums.AssistCharacters.Ollie, Enums.AssistCharacters.Suisei, Enums.AssistCharacters.Kanata, Enums.AssistCharacters.Rikka, Enums.AssistCharacters.Hakka],
 		[Enums.AssistCharacters.Mio, Enums.AssistCharacters.Subaru, Enums.AssistCharacters.Oga, Enums.AssistCharacters.Fubuki, Enums.AssistCharacters.OkaKoro],
-		[Enums.AssistCharacters.Subaru, Enums.AssistCharacters.Subaru, Enums.AssistCharacters.Subaru, Enums.AssistCharacters.Sora, Enums.AssistCharacters.Sana],
+		[Enums.AssistCharacters.Subaru, Enums.AssistCharacters.Flayon, Enums.AssistCharacters.Subaru, Enums.AssistCharacters.Sora, Enums.AssistCharacters.Sana],
 		[Enums.AssistCharacters.Subaru, Enums.AssistCharacters.Subaru, Enums.AssistCharacters.Subaru, Enums.AssistCharacters.Sora, Enums.AssistCharacters.Sana]
 		]
 	assist1 = [
-		[Enums.AssistCharacters.Hakka, Enums.AssistCharacters.Fubuki, Enums.AssistCharacters.Ollie, Enums.AssistCharacters.Suisei, Enums.AssistCharacters.Kanata],
+		[Enums.AssistCharacters.Hakka, Enums.AssistCharacters.Rikka, Enums.AssistCharacters.Ollie, Enums.AssistCharacters.Suisei, Enums.AssistCharacters.Kanata],
 		[Enums.AssistCharacters.OkaKoro, Enums.AssistCharacters.Fubuki, Enums.AssistCharacters.Mio, Enums.AssistCharacters.Subaru, Enums.AssistCharacters.Oga],
-		[Enums.AssistCharacters.Sana, Enums.AssistCharacters.Sora, Enums.AssistCharacters.Subaru, Enums.AssistCharacters.Subaru, Enums.AssistCharacters.Subaru],
+		[Enums.AssistCharacters.Sana, Enums.AssistCharacters.Sora, Enums.AssistCharacters.Subaru, Enums.AssistCharacters.Flayon, Enums.AssistCharacters.Subaru],
 		[Enums.AssistCharacters.Sana, Enums.AssistCharacters.Sora, Enums.AssistCharacters.Subaru, Enums.AssistCharacters.Subaru, Enums.AssistCharacters.Subaru]
 		]
 	
@@ -294,12 +294,12 @@ func update_a2():
 	peer_ready = true
 	message_label.text = "peer_ready"
 	if (players_ready()):
-		message_label.text = "teams selected!"
+		message_label.text = tr("UI_STATUS_TEAMS_SELECTED")
 		start_loading_process()
 
 func local_ready():
 	if (players_ready()):
-		message_label.text = "locally: teams selected!"
+		message_label.text = tr("UI_STATUS_LOCAL_TEAMS_SELECTED")
 		start_loading_process()
 
 func music_load():
@@ -328,7 +328,7 @@ func start_loading_process():
 	
 	if (SyncManager.spectating):
 		SyncManager.input_delay = 10
-	message_label.text = "Loading teams..."
+	message_label.text = tr("UI_STATUS_LOADING_TEAMS")
 	Global.PLAYER_1_NODE[0] = Global.load_queue.get_resource(Global.PLAYER_1_NODE_PATH[0])
 	Global.PLAYER_1_NODE_INSTANCE[0] = Global.PLAYER_1_NODE[0].instantiate()
 	
@@ -348,7 +348,7 @@ func start_loading_process():
 		Global.PLAYER_2_NODE_INSTANCE[2] = Global.PLAYER_2_NODE[2].instantiate()
 	Global.load_queue.load_stage_art()
 	music_load()
-	message_label.text = "Load complete, waiting on peer"
+	message_label.text = tr("UI_STATUS_WAITING_PEER")
 	rpc_id(1, "peer_load_queue_ready")
 
 func display_colors():
@@ -369,7 +369,7 @@ func display_colors():
 	all_peer_load_ready += 1
 	message_label.text = "# of peers loaded: " + str(all_peer_load_ready)
 	if (is_all_load_ready()):
-		message_label.text = "All peers loading completed!"
+		message_label.text = tr("UI_STATUS_PEERS_LOADING_COMPLETE")
 		if (get_tree().get_multiplayer().is_server()):
 			rpc("go_to_next_scene")
 
@@ -378,7 +378,7 @@ func is_all_load_ready() -> bool:
 
 @rpc("any_peer", "call_local")
 func go_to_next_scene():
-	message_label.text = "going to match..."
+	message_label.text = tr("UI_STATUS_GOING_TO_MATCH")
 	print("go to next scene")
 	get_tree().change_scene_to_file("res://game/DemoMain.tscn")
 
@@ -393,11 +393,11 @@ func input_helper(event):
 	pass
 
 func _on_network_peer_connected(peer_id: int):
-	message_label.text = "CONNECTED "+str(peer_id)
+	message_label.text = tr("UI_STATUS_CONNECTED_PEER").format({"peer_id": peer_id})
 	display_peer_ids()
 
 func _on_network_peer_disconnected(peer_id: int):
-	message_label.text = "Disconnected "+str(peer_id)
+	message_label.text = tr("UI_STATUS_DISCONNECTED_PEER").format({"peer_id": peer_id})
 	display_peer_ids()
 	if (SyncManager.get_player_peer_count() < 1):
 		exit()
@@ -429,7 +429,7 @@ func get_opponent_peer_id() -> int:
 		else:
 			return SyncManager.get_player_peer_ids()[1]
 	printerr ("Main: unable to find opponent peer id")
-	message_label.text = "unable to find opponent's peer id"
+	message_label.text = tr("UI_STATUS_UNABLE_OPPONENT_PEER")
 	return 1
 
 func get_client_player_peer_id() -> int:
@@ -439,7 +439,7 @@ func get_client_player_peer_id() -> int:
 		else:
 			return SyncManager.get_player_peer_ids()[1]
 	printerr ("Main: unable to find client peer id")
-	message_label.text = "unable to find client peer id"
+	message_label.text = tr("UI_STATUS_UNABLE_CLIENT_PEER")
 	return 1
 
 func set_player_names():

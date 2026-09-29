@@ -17,4 +17,4 @@ offset_top = 208.0
 offset_right = 689.0
 offset_bottom = 338.0
 scale = Vector2(2, 2)
-text = "Logging in to Server..."
+text = "UI_MENU_LOGGING_IN"

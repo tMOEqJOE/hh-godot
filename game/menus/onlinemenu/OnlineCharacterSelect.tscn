@@ -287,7 +287,7 @@ offset = Vector2(40, 0)
 
 [node name="P2Cursor" parent="." instance=ExtResource("7")]
 position = Vector2(966, 392)
-gridY = 4
+gridY = 3
 gridX = 3
 start_col = 1
 start_row = 1
@@ -296,7 +296,7 @@ deselect_ok = false
 [node name="P1Cursor" parent="." instance=ExtResource("7")]
 position = Vector2(962, 392)
 is_p1 = true
-gridY = 4
+gridY = 3
 gridX = 3
 start_col = 1
 start_row = 1
@@ -372,7 +372,7 @@ offset_right = -483.0
 offset_bottom = 157.0
 scale = Vector2(2, 2)
 theme_override_fonts/font = SubResource("9")
-text = "WOW"
+text = "UI_STATUS_WOW"
 
 [node name="DebugLabel" type="Label" parent="CanvasLayer"]
 anchors_preset = -1
@@ -384,7 +384,7 @@ offset_right = -483.0
 offset_bottom = 304.0
 scale = Vector2(2, 2)
 theme_override_fonts/font = SubResource("9")
-text = "WOW"
+text = "UI_STATUS_WOW"
 
 [node name="P1Name" type="Label" parent="CanvasLayer"]
 anchors_preset = -1
@@ -396,7 +396,7 @@ offset_right = -640.0
 offset_bottom = 1008.0
 scale = Vector2(2, 2)
 theme_override_fonts/font = SubResource("9")
-text = "WOW"
+text = "UI_STATUS_WOW"
 horizontal_alignment = 1
 
 [node name="P2Name" type="Label" parent="CanvasLayer"]
@@ -409,7 +409,7 @@ offset_right = 592.0
 offset_bottom = 1008.0
 scale = Vector2(2, 2)
 theme_override_fonts/font = SubResource("9")
-text = "WOW"
+text = "UI_STATUS_WOW"
 horizontal_alignment = 1
 
 [node name="RemainingTime" type="Label" parent="CanvasLayer"]

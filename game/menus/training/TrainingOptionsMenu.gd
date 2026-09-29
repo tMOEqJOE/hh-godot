@@ -5,6 +5,7 @@ signal exit()
 signal reset()
 signal savestate()
 signal loadstate()
+signal play_demo()
 
 var menu_close_delay: int
 var most_recent_focus:Control
@@ -24,31 +25,31 @@ func _ready():
 	get_viewport().connect("gui_focus_changed", Callable(self, "_on_focus_changed"))
 	most_recent_focus = $SaveStateButton
 	
-	$BlockOptions.add_item("NONE", Enums.TrainingBlock.NONE)
-	$BlockOptions.add_item("ALL", Enums.TrainingBlock.ALL)
+	$BlockOptions.add_item(tr("UI_TRAINING_NONE"), Enums.TrainingBlock.NONE)
+	$BlockOptions.add_item(tr("UI_TRAINING_ALL"), Enums.TrainingBlock.ALL)
 	
-	$BlockSwitchOptions.add_item("ENABLED", Enums.TrainingBlockSwitch.ENABLED)
-	$BlockSwitchOptions.add_item("DISABLED", Enums.TrainingBlockSwitch.DISABLED)
+	$BlockSwitchOptions.add_item(tr("UI_TRAINING_ENABLED"), Enums.TrainingBlockSwitch.ENABLED)
+	$BlockSwitchOptions.add_item(tr("UI_TRAINING_DISABLED"), Enums.TrainingBlockSwitch.DISABLED)
 	
-	$BlockTypeOptions.add_item("NONE", Enums.TrainingBlockType.NONE)
-	$BlockTypeOptions.add_item("NORMAL BLOCK", Enums.TrainingBlockType.NORMAL)
-	$BlockTypeOptions.add_item("INSTANT BLOCK", Enums.TrainingBlockType.IB)
-	$BlockTypeOptions.add_item("PUSH BLOCK", Enums.TrainingBlockType.FD)
-	$BlockTypeOptions.add_item("INSTANT PUSH BLOCK", Enums.TrainingBlockType.IFD)
-	$BlockTypeOptions.add_item("PARRY", Enums.TrainingBlockType.PARRY)
+	$BlockTypeOptions.add_item(tr("UI_TRAINING_NONE"), Enums.TrainingBlockType.NONE)
+	$BlockTypeOptions.add_item(tr("UI_TRAINING_NORMAL_BLOCK"), Enums.TrainingBlockType.NORMAL)
+	$BlockTypeOptions.add_item(tr("UI_TRAINING_INSTANT_BLOCK"), Enums.TrainingBlockType.IB)
+	$BlockTypeOptions.add_item(tr("UI_TRAINING_PUSH_BLOCK"), Enums.TrainingBlockType.FD)
+	$BlockTypeOptions.add_item(tr("UI_TRAINING_INSTANT_PUSH_BLOCK"), Enums.TrainingBlockType.IFD)
+	$BlockTypeOptions.add_item(tr("UI_TRAINING_PARRY"), Enums.TrainingBlockType.PARRY)
 	
-	$RecoveryOptions.add_item("NEUTRAL", Enums.TrainingRecovery.NEUTRAL)
-	$RecoveryOptions.add_item("FORWARD", Enums.TrainingRecovery.FORWARD)
-	$RecoveryOptions.add_item("BACKWARD", Enums.TrainingRecovery.BACKWARD)
-	$RecoveryOptions.add_item("OFF", Enums.TrainingRecovery.OFF)
+	$RecoveryOptions.add_item(tr("UI_TRAINING_NEUTRAL"), Enums.TrainingRecovery.NEUTRAL)
+	$RecoveryOptions.add_item(tr("UI_TRAINING_FORWARD"), Enums.TrainingRecovery.FORWARD)
+	$RecoveryOptions.add_item(tr("UI_TRAINING_BACKWARD"), Enums.TrainingRecovery.BACKWARD)
+	$RecoveryOptions.add_item(tr("UI_TRAINING_OFF"), Enums.TrainingRecovery.OFF)
 	
-	$CounterHitOptions.add_item("OFF", Enums.TrainingCounterHit.OFF)
-	$CounterHitOptions.add_item("ON", Enums.TrainingCounterHit.ON)
-	$CounterHitOptions.add_item("HAPPY BIRTHDAY", Enums.TrainingCounterHit.ASSIST_DANGER)
+	$CounterHitOptions.add_item(tr("UI_TRAINING_OFF"), Enums.TrainingCounterHit.OFF)
+	$CounterHitOptions.add_item(tr("UI_TRAINING_ON"), Enums.TrainingCounterHit.ON)
+	$CounterHitOptions.add_item(tr("UI_TRAINING_HAPPY_BIRTHDAY"), Enums.TrainingCounterHit.ASSIST_DANGER)
 	
-	$StanceOptions.add_item("STAND", Enums.TrainingStance.STAND)
-	$StanceOptions.add_item("CROUCH", Enums.TrainingStance.CROUCH)
-	$StanceOptions.add_item("JUMP", Enums.TrainingStance.JUMP)
+	$StanceOptions.add_item(tr("UI_TRAINING_STAND"), Enums.TrainingStance.STAND)
+	$StanceOptions.add_item(tr("UI_TRAINING_CROUCH"), Enums.TrainingStance.CROUCH)
+	$StanceOptions.add_item(tr("UI_TRAINING_JUMP"), Enums.TrainingStance.JUMP)
 	
 	$SyncRate.value = Util.BASE_SYNC_RATE / SGFixed.ONE
 
@@ -122,6 +123,9 @@ func _on_SaveStateButton_pressed():
 func _on_LoadStateButton_pressed():
 	emit_signal("loadstate")
 
+func _on_PlayDemoButton_pressed():
+	emit_signal("play_demo")
+
 func _on_CloseButton_pressed():
 	set_close_delay()
 
@@ -151,9 +155,9 @@ func get_assist_build_option() -> bool:
 func _on_AssistBuildButton_pressed() -> void:
 	assist_build_option = not assist_build_option
 	if (assist_build_option):
-		$AssistBuildButton.text = "ON"
+		$AssistBuildButton.text = tr("UI_TRAINING_ON")
 	else:
-		$AssistBuildButton.text = "OFF"
+		$AssistBuildButton.text = tr("UI_TRAINING_OFF")
 
 func get_meter_reset_option() -> bool:
 	return meter_reset_option
@@ -161,6 +165,6 @@ func get_meter_reset_option() -> bool:
 func _on_MeterResetButton_pressed() -> void:
 	meter_reset_option = not meter_reset_option
 	if (meter_reset_option):
-		$MeterResetButton.text = "ON"
+		$MeterResetButton.text = tr("UI_TRAINING_ON")
 	else:
-		$MeterResetButton.text = "OFF"
+		$MeterResetButton.text = tr("UI_TRAINING_OFF")

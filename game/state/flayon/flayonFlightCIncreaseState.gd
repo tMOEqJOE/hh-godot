@@ -38,8 +38,8 @@ func _init():
 			Enums.StKey.Hurt2PosX : 12976128, Enums.StKey.Hurt2PosY : -20774912,
 			Enums.StKey.Hurt2ScaleX : 1535050, Enums.StKey.Hurt2ScaleY : 643629,
 			Enums.StKey.attack_damage: 75,
-			Enums.StKey.min_damage: 15,
-			Enums.StKey.chip_damage:8,
+			Enums.StKey.min_damage: 18,
+			Enums.StKey.chip_damage: 12,
 			Enums.StKey.meter_build: SGFixed.ONE*3000,
 			Enums.StKey.guard: Enums.GuardType.High,
 			Enums.StKey.attack_type : Enums.AttackType.WallBouncer,
@@ -75,7 +75,7 @@ func physics_tick(state: Dictionary) -> void:
 	elif (state[Enums.StKey.frame] == 6):
 		state[Enums.StKey.velocity_y] = 0
 		state[Enums.StKey.velocity_x] = Util.fixed_max(SGFixed.ONE*30, state[Enums.StKey.velocity_x])
-	
+	self.enforce_min_height(state)
 
 func gatling_cancel(state: Dictionary, interpreter: InputInterpreter):
 	if (state[Enums.StKey.hitStopFrame] >= 0):

@@ -111,8 +111,8 @@ func update_UI():
 	else:
 		cursor.position.y = 624
 	
-	$CanvasLayer/StageLabel.text = "STAGE: " + Global.STAGE_LIST[stage_id]
-	$CanvasLayer/BGMLabel.text = "BGM: " + Global.BGM_LIST[bgm_id]
+	$CanvasLayer/StageLabel.text = tr("UI_LABEL_STAGE").format({"stage": Global.STAGE_LIST[stage_id]})
+	$CanvasLayer/BGMLabel.text = tr("UI_LABEL_BGM").format({"bgm": Global.BGM_LIST[bgm_id]})
 
 func update_selected_index():
 	selected_index = (selected_index + 1) % 2
