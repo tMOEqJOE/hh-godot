@@ -22,7 +22,7 @@ scale = Vector2(3, 3)
 [node name="Label" type="Label" parent="CanvasLayer/Credits"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2")
-text = "CREDITS:"
+text = "UI_MENU_CREDITS"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.341176)

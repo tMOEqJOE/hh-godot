@@ -362,5 +362,5 @@ offset_top = 991.0
 offset_right = 1101.0
 offset_bottom = 1005.0
 scale = Vector2(2.39159, 3.70576)
-text = "Win Streak:"
+text = "UI_LABEL_WIN_STREAK_TITLE"
 metadata/_edit_use_anchors_ = true

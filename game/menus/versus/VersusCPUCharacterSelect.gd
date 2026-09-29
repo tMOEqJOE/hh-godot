@@ -10,13 +10,13 @@ func _ready():
 		$P2Cursor.input_prefix = "player1_"
 		$P2Cursor.enable(false)
 		$P2Cursor.visible = false
-		$CanvasLayer/WinStreak.text = "Win streak: "+str(Global.P1_WIN_STREAK)
+		$CanvasLayer/WinStreak.text = tr("UI_LABEL_WIN_STREAK").format({"count": Global.P1_WIN_STREAK})
 	else:
 		$P1Cursor.input_prefix = "player2_"
 		$P2Cursor.input_prefix = "player2_"
 		$P1Cursor.enable(false)
 		$P1Cursor.visible = false
-		$CanvasLayer/WinStreak.text = "Win streak: "+str(Global.P2_WIN_STREAK)
+		$CanvasLayer/WinStreak.text = tr("UI_LABEL_WIN_STREAK").format({"count": Global.P2_WIN_STREAK})
 
 func update_a1():
 	if (Global.TRAINING_P1):

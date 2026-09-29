@@ -1,24 +1,43 @@
 extends Node2D
 
-const ICON_PATHS: Dictionary = {
-	"A": "res://game/assets/sprites/UI/MainMenus/MenuTutorials/Input_0000.png",
-	"B": "res://game/assets/sprites/UI/MainMenus/MenuTutorials/Input_0001.png",
-	"C": "res://game/assets/sprites/UI/MainMenus/MenuTutorials/Input_0002.png",
-	"D": "res://game/assets/sprites/UI/MainMenus/MenuTutorials/Input_0003.png",
-
-	"Up": "res://game/assets/sprites/UI/MainMenus/MenuTutorials/Input_0005.png",
-	"Right": "res://game/assets/sprites/UI/MainMenus/MenuTutorials/Input_0007.png",
-	"Down": "res://game/assets/sprites/UI/MainMenus/MenuTutorials/Input_0009.png",
-	"Left": "res://game/assets/sprites/UI/MainMenus/MenuTutorials/Input_0011.png",
-
-	"UpRight": "res://game/assets/sprites/UI/MainMenus/MenuTutorials/Input_0006.png",
-	"DownRight": "res://game/assets/sprites/UI/MainMenus/MenuTutorials/Input_0008.png",
-	"UpLeft": "res://game/assets/sprites/UI/MainMenus/MenuTutorials/Input_0012.png",
-	"DownLeft": "res://game/assets/sprites/UI/MainMenus/MenuTutorials/Input_0010.png",
+const COMBO_DUMMY_TEXT_KEYS := {
+	"Hint: Use Jump5C as you are falling.": "UI_COMBO_HINT_FALLING_5C",
+	"Hint: Use Jump5B as you are falling.": "UI_COMBO_HINT_FALLING_5B",
+	"Hint: Quickly move the directions first and then press the attack button!": "UI_COMBO_HINT_DIRECTIONS",
+	"Hint: You can start preparing the directions for the special move as Crouch2B is happening.": "UI_COMBO_HINT_SUBARU_SPECIAL",
+	"Hint: You can start preparing the directions for the special move as Stand6C is happening.": "UI_COMBO_HINT_MIO_SPECIAL",
+	"Hint: Hit up as soon as you hit the opponent!": "UI_COMBO_HINT_PRESS_UP",
+	"during throw hit": "UI_COMBO_HINT_THROW_HIT",
+	"Corner Only": "UI_COMBO_HINT_CORNER_ONLY",
+	"Hint: try and air dash as fast as possible!": "UI_COMBO_HINT_AIR_DASH_FAST",
+	"Hint: The first Jump6C requires a": "UI_COMBO_HINT_CLEAN_HIT",
+	"Hint: Hatotaurus attacks when you": "UI_COMBO_HINT_HATOTAURUS_RELEASE",
+	"Hint: Hit Stance D and Scissors in very quick succession": "UI_COMBO_HINT_HIT_STANCE_SCISSORS",
+	"Hint: Start combo in suisei mode": "UI_COMBO_HINT_START_SUISEI",
+	"Hint: AssistAttack2 when Fubuki is behind the opponent": "UI_COMBO_HINT_ASSIST_BEHIND",
+	"Hint: Air throw the opponent before they groundbounce": "UI_COMBO_HINT_AIR_THROW_BOUNCE",
+	"Bonus: SummonHato": "UI_COMBO_BONUS_HATO",
+	"SetOllieRook then Hold A": "UI_COMBO_OLLIE_SET_HOLD",
+	"AssistAttack2 Hold and Steer Right": "UI_COMBO_ASSIST_STEER_RIGHT",
+	"Hold GroundThrowHit": "UI_COMBO_HOLD_GROUND_THROW",
+	"Hold C": "UI_COMBO_HOLD_C",
+	"Hold B": "UI_COMBO_HOLD_B",
+	"hold A": "UI_COMBO_HOLD_A",
+	"hold Left": "UI_COMBO_HOLD_LEFT",
+	"ground bounce after each air move": "UI_COMBO_GROUND_BOUNCE",
+	"delay jump": "UI_COMBO_DELAY_JUMP",
+	"instant air dash": "UI_COMBO_INSTANT_AIR_DASH",
+	"landing cancel": "UI_COMBO_LANDING_CANCEL",
+	"double jump": "UI_COMBO_DOUBLE_JUMP",
+	"airdash": "UI_COMBO_AIRDASH",
+	"air dash": "UI_COMBO_AIR_DASH",
+	"jump": "UI_COMBO_JUMP",
+	"delay": "UI_COMBO_DELAY",
 }
 
 var ComboDatabase = load("res://game/ui/ComboTrials.gd")
 var display_names: Dictionary = load("res://game/ui/ComboTrialDisplayNames.gd").DISPLAY_NAMES
+var icon_paths: Dictionary = load("res://game/ui/IconPaths.gd").ICON_PATHS
 var combo_trial: Dictionary = {}
 var current_combo_index = 0
 
@@ -26,6 +45,9 @@ var processed_combo: Array = []
 var current_combo_position: int = 0
 var current_step_progress: int = 0
 var showing_complete_message: bool = false
+var is_paused: bool = false
+var auto_advance_on_complete: bool = true
+var hold_completion_for_demo: bool = false
 
 var success_bg_color: String = "#0aaa80"
 var pending_bg_color: String = "#eedd22"
@@ -110,14 +132,15 @@ func _skip_dummy_steps() -> void:
 
 
 func refresh_combo_ui() -> void:
-	if showing_complete_message:
+	var is_completion_state := current_combo_position >= processed_combo.size()
+	if showing_complete_message and not is_completion_state:
 		return
 
 	_process_combo()
 	_skip_dummy_steps()
 
 	var lines: Array[String] = []
-	lines.append("[color=white]Inputs are performed while facing right[/color]")
+	lines.append("[color=white]" + tr("UI_COMBO_INPUTS_FACING_RIGHT") + "[/color]")
 
 	for idx in range(processed_combo.size()):
 		var item = processed_combo[idx]
@@ -173,7 +196,7 @@ func _format_display_text(text: String) -> String:
 	var parts: Array[String] = []
 
 	for token in tokens:
-		if ICON_PATHS.has(token):
+		if icon_paths.has(token):
 			parts.append(_bbcode_icon(token))
 		else:
 			parts.append(token)
@@ -182,7 +205,7 @@ func _format_display_text(text: String) -> String:
 
 
 func _bbcode_icon(name: String) -> String:
-	var path = ICON_PATHS.get(name, "")
+	var path = icon_paths.get(name, "")
 
 	if path == "":
 		return name
@@ -194,16 +217,26 @@ func _dummy_text(step: String) -> String:
 	var idx := step.find(":")
 
 	var tail := ""
+	var translated_tail := ""
 
 	if idx >= 0:
 		tail = step.substr(idx + 1).strip_edges()
+	if tail.begins_with("UI_COMBO_"):
+		translated_tail = tr(tail)
+	else:
+		for phrase in COMBO_DUMMY_TEXT_KEYS:
+			if step.contains(phrase):
+				translated_tail = tr(COMBO_DUMMY_TEXT_KEYS[phrase])
+				break
+	if not translated_tail.is_empty():
+		tail = translated_tail
 
 	var tokens = tail.split(" ")
 
 	var parts: Array[String] = []
 
 	for token in tokens:
-		if ICON_PATHS.has(token):
+		if icon_paths.has(token):
 			parts.append(_bbcode_icon(token))
 		elif display_names.has(token):
 			parts.append(_format_display_text(display_names.get(token, token)))
@@ -217,8 +250,19 @@ func _is_dummy_step(step: String) -> bool:
 	return step.begins_with("DUMMY:")
 
 
+func set_paused(paused: bool) -> void:
+	is_paused = paused
+	if not is_paused:
+		refresh_combo_ui()
+
+func set_auto_advance_on_complete(enabled: bool) -> void:
+	auto_advance_on_complete = enabled
+
+func set_hold_completion_for_demo(hold: bool) -> void:
+	hold_completion_for_demo = hold
+
 func attack_hurt(hitbox_name: String) -> void:
-	if showing_complete_message:
+	if is_paused or showing_complete_message:
 		return
 
 	print(hitbox_name)
@@ -239,8 +283,10 @@ func attack_hurt(hitbox_name: String) -> void:
 
 				if current_combo_position >= processed_combo.size():
 					showing_complete_message = true
+					refresh_combo_ui()
 
-					combo_list_label.text = "[color=green] [b] COMPLETE! [/b] [/color]"
+					if auto_advance_on_complete:
+						combo_list_label.text = combo_list_label.text + "\n [font_size=48] [rainbow] [wave] [b] [center]" + tr("UI_COMBO_SUCCESS")
 
 					await get_tree().create_timer(1.5).timeout
 
@@ -249,14 +295,21 @@ func attack_hurt(hitbox_name: String) -> void:
 					current_combo_position = 0
 					current_step_progress = 0
 
-					load_combo(current_combo_index + 1)
+					var should_auto_advance := auto_advance_on_complete and not hold_completion_for_demo
+					if should_auto_advance:
+						load_combo(current_combo_index + 1)
+					else:
+						load_combo(current_combo_index)
 
+					hold_completion_for_demo = false
 					return
 
 	refresh_combo_ui()
 
 
 func drop_combo() -> void:
+	if is_paused:
+		return
 	if current_combo_position > 0 or current_step_progress > 0:
 
 		current_combo_position = 0

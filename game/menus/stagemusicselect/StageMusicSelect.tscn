@@ -24,7 +24,7 @@ offset_right = -69.0
 offset_bottom = 176.0
 grow_horizontal = 2
 scale = Vector2(2.57381, 2.70362)
-text = "BGM: "
+text = "UI_MENU_BGM"
 
 [node name="StageLabel" type="Label" parent="CanvasLayer"]
 anchors_preset = -1
@@ -36,7 +36,7 @@ offset_right = -64.0
 offset_bottom = 613.0
 grow_horizontal = 2
 scale = Vector2(2.66899, 2.72905)
-text = "STAGE: "
+text = "UI_MENU_STAGE"
 
 [node name="Background" type="Sprite2D" parent="."]
 material = ExtResource("7")
