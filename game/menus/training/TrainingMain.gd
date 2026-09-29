@@ -530,7 +530,7 @@ func input_helper(event):
 			loadstate()
 	elif (Global.TRAINING_P1 and Input.is_action_just_pressed("player1_record")) or (not Global.TRAINING_P1 and Input.is_action_just_pressed("player2_record")):
 		if (not $CanvasLayer/TrainingOptionsMenu.is_enabled()):
-			#if not (self is ComboTrialMain): #WARN DEBUG FUNCTION FOR RECORDING COMBO TRIALS ENABLE ME BEFORE BUILDING
+			if not (self is ComboTrialMain): #WARN DEBUG FUNCTION FOR RECORDING COMBO TRIALS ENABLE ME BEFORE BUILDING
 				recording_fsm_record_input()
 	elif (Global.TRAINING_P1 and Input.is_action_just_pressed("player1_replay")) or (not Global.TRAINING_P1 and Input.is_action_just_pressed("player2_replay")):
 		if (not $CanvasLayer/TrainingOptionsMenu.is_enabled()):

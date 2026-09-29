@@ -429,7 +429,7 @@ func get_opponent_peer_id() -> int:
 		else:
 			return SyncManager.get_player_peer_ids()[1]
 	printerr ("Main: unable to find opponent peer id")
-		message_label.text = tr("UI_STATUS_UNABLE_OPPONENT_PEER")
+	message_label.text = tr("UI_STATUS_UNABLE_OPPONENT_PEER")
 	return 1
 
 func get_client_player_peer_id() -> int:
@@ -439,7 +439,7 @@ func get_client_player_peer_id() -> int:
 		else:
 			return SyncManager.get_player_peer_ids()[1]
 	printerr ("Main: unable to find client peer id")
-		message_label.text = tr("UI_STATUS_UNABLE_CLIENT_PEER")
+	message_label.text = tr("UI_STATUS_UNABLE_CLIENT_PEER")
 	return 1
 
 func set_player_names():
