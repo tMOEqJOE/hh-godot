@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://dd3yb0gkhhiur"]
+[gd_scene load_steps=10 format=3 uid="uid://dd3yb0gkhhiur"]
 
 [ext_resource type="Script" uid="uid://bv6s3shxbair" path="res://game/menus/stagemusicselect/StageMusicSelect.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://n33w3t786qbh" path="res://game/menus/stagemusicselect/StageSelectText.tscn" id="2_5dm38"]
 [ext_resource type="Texture2D" uid="uid://cn8lnxibcnyyv" path="res://game/assets/sprites/UI/CharacterSelect/Cursors/BigP1/Timeline 1_0000.png" id="3"]
 [ext_resource type="Texture2D" uid="uid://dls6321oqqqwg" path="res://game/assets/sprites/UI/MainMenus/HOLOHEAVEN.png" id="3_t0v2x"]
 [ext_resource type="Texture2D" uid="uid://dwck8tt07iqoq" path="res://game/assets/sprites/UI/CharacterSelect/Cursors/BigP2/Timeline 1_0000.png" id="4"]
@@ -12,31 +13,7 @@
 [node name="StageMusicSelect" type="Node2D"]
 script = ExtResource("1")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="BGMLabel" type="Label" parent="CanvasLayer"]
-anchors_preset = -1
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -540.0
-offset_top = 46.0
-offset_right = -69.0
-offset_bottom = 176.0
-grow_horizontal = 2
-scale = Vector2(2.57381, 2.70362)
-text = "BGM: "
-
-[node name="StageLabel" type="Label" parent="CanvasLayer"]
-anchors_preset = -1
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -535.0
-offset_top = 483.0
-offset_right = -64.0
-offset_bottom = 613.0
-grow_horizontal = 2
-scale = Vector2(2.66899, 2.72905)
-text = "STAGE: "
+[node name="CanvasLayer" parent="." instance=ExtResource("2_5dm38")]
 
 [node name="Background" type="Sprite2D" parent="."]
 material = ExtResource("7")

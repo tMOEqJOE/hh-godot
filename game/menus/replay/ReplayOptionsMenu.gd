@@ -22,9 +22,9 @@ func _ready():
 	most_recent_focus = $CloseButton
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	
-	$TakeoverButton.add_item("None", 0)
-	$TakeoverButton.add_item("Player 1", 1)
-	$TakeoverButton.add_item("Player 2", 2)
+	$TakeoverButton.add_item(tr("UI_TRAINING_NONE"), 0)
+	$TakeoverButton.add_item(tr("UI_REPLAY_PLAYER_ONE"), 1)
+	$TakeoverButton.add_item(tr("UI_REPLAY_PLAYER_TWO"), 2)
 	
 func _physics_process(delta):
 	if menu_close_delay > 0:
