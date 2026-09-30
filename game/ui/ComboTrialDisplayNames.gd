@@ -73,7 +73,7 @@ const DISPLAY_NAMES: Dictionary = {
 	"KanataWingStanceEnter":"Down DownRight Right X",
 	"KanataWingStanceC":"   ↪ C",
 	
-	"GrappleFollowUp": "Down DownRight Right A UI_COMBO_WORD_OR B (UI_COMBO_WORD_AIR_OK)",
+	"GrappleFollowUp": "Down DownRight Right A UI_COMBO_WORD_OR B UI_COMBO_WORD_AIR_OK",
 	"AirGrapple": "Down DownRight Right A UI_COMBO_WORD_OR B UI_COMBO_WORD_AIR",
 	"Grapple": "Down DownRight Right A or B",
 	"Flight5A": "A UI_COMBO_WORD_FLIGHT",
@@ -83,6 +83,8 @@ const DISPLAY_NAMES: Dictionary = {
 	"Flight2CIncrease": "UI_COMBO_WORD_HOLD Down C",
 	"FlightEnter": "Down DownLeft Left X",
 	"DeusExMachina": "Down DownRight Right C",
+	"AirStomp": "Down DownRight Right C UI_COMBO_WORD_AIR",
+	"RyukenShiki": "Right Down DownRight A UI_COMBO_WORD_OR B UI_COMBO_WORD_AIR_OK",
 
 	"HammerStartup" : "UI_COMBO_WORD_TAP D UI_COMBO_WORD_THEN UI_COMBO_WORD_HOLD Left",
 	"HammerFollowup" : "UI_COMBO_WORD_RELEASE Left UI_COMBO_WORD_EARLY",

@@ -492,7 +492,24 @@ Enums.PointCharacters.Flayon: [
 	18: "Stand5B",
 	19: "DeusExMachina",
 	20: "DeusExMachina",
-	21: "DeusExMachina",}
+	21: "DeusExMachina"
+	},
+	{0:"Jump5A",
+	1: "AirStomp",
+	2: "AirStomp",
+	3: "AirStomp",
+	4: "Crouch3C",
+	5: "DUMMY: [i] jump [/i]",
+	6: "Jump5B",
+	7: "Jump5B",
+	8: "Jump5C",
+	9: "DUMMY: [i] jump [/i]",
+	10: "Jump5A",
+	11: "Jump5B",
+	12: "Jump5B",
+	13: "Jump6C",
+	14: "RyukenShiki",
+	15: "AirThrowHit"}
 ]}
 
 
