@@ -38,7 +38,7 @@ func _init():
 
 func enter(state: Dictionary) -> void:
 	super.enter(state)
-	state[Enums.StKey.velocity_x] = SGFixed.ONE*20
+	state[Enums.StKey.velocity_x] = SGFixed.ONE*15
 	state[Enums.StKey.velocity_y] = 0
 	state[Enums.StKey.projectile_hp] = 3
 
