@@ -292,8 +292,8 @@ UI_COMBO_HOLD_A,Hold A,
 UI_COMBO_HOLD_B,Hold B,
 UI_COMBO_OLLIE_SET_HOLD,Set Ollie Rook then Hold A,
 UI_COMBO_ASSIST_STEER_RIGHT,AssistAttack2 : Hold and steer right,
-UI_COMBO_WORD_AIR,air,空中
-UI_COMBO_WORD_AIR_OK,air ok,空中可
+UI_COMBO_WORD_AIR,(Air),(空中)
+UI_COMBO_WORD_AIR_OK,(Air OK),(空中可)
 UI_COMBO_WORD_CLOSE,close,近
 UI_COMBO_WORD_RELEASE,Release,離し
 UI_COMBO_WORD_TAP,Tap,押し
