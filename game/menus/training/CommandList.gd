@@ -129,6 +129,8 @@ func load_move_list(move_list, container):
 		newText = ""
 		for i in row.size():
 			var item_string := tr(str(row[i]))
+			if i == 0 and item_string.begins_with("j"):
+				item_string = tr("UI_COMBO_WORD_AIR") + " " + item_string.substr(1)
 			for j in item_string.length():
 				var character := item_string[j]
 				if _should_parse_icon(item_string, j, i):
