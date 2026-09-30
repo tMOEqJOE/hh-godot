@@ -106,6 +106,8 @@ func setup(playerData:PlayerSetup):
 				state_factory = load("res://game/state/assist/okakoro/Okakorostatefactory.gd").new()
 			Enums.AssistCharacters.Hakka:
 				state_factory = load("res://game/state/assist/hakka/Hakkastatefactory.gd").new()
+			Enums.AssistCharacters.Rikka:
+				state_factory = load("res://game/state/assist/rikka/Rikkastatefactory.gd").new()
 			Enums.AssistCharacters.Subaru:
 				state_factory = load("res://game/state/assist/assistsubaru/assistsubarustatefactory.gd").new()
 				dim_sprite()
@@ -123,6 +125,9 @@ func setup(playerData:PlayerSetup):
 				dim_sprite()
 			Enums.AssistCharacters.Kanata:
 				state_factory = load("res://game/state/assist/assistkanata/assistkanatastatefactory.gd").new()
+				dim_sprite()
+			Enums.AssistCharacters.Flayon:
+				state_factory = load("res://game/state/assist/assistflayon/AssistFlayonstatefactory.gd").new()
 				dim_sprite()
 			_:
 				state_factory = FubukiStateFactory.new()

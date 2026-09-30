@@ -23,20 +23,20 @@ func _ready():
 	character = [
 		[Enums.PointCharacters.Ollie, Enums.PointCharacters.Suisei, Enums.PointCharacters.Kanata],
 		[Enums.PointCharacters.Mio, Enums.PointCharacters.Subaru, Enums.PointCharacters.Oga],
-		[Enums.PointCharacters.Subaru, Enums.PointCharacters.Subaru, Enums.PointCharacters.Subaru],
-		[Enums.PointCharacters.Flayon, Enums.PointCharacters.Subaru, Enums.PointCharacters.Subaru]
+		[Enums.PointCharacters.Subaru, Enums.PointCharacters.Flayon, Enums.PointCharacters.Subaru],
+		[Enums.PointCharacters.Subaru, Enums.PointCharacters.Subaru, Enums.PointCharacters.Subaru]
 		]
 
 	assist2 = [
-		[Enums.AssistCharacters.Ollie, Enums.AssistCharacters.Suisei, Enums.AssistCharacters.Kanata, Enums.AssistCharacters.Fubuki, Enums.AssistCharacters.Hakka],
+		[Enums.AssistCharacters.Ollie, Enums.AssistCharacters.Suisei, Enums.AssistCharacters.Kanata, Enums.AssistCharacters.Rikka, Enums.AssistCharacters.Hakka],
 		[Enums.AssistCharacters.Mio, Enums.AssistCharacters.Subaru, Enums.AssistCharacters.Oga, Enums.AssistCharacters.Fubuki, Enums.AssistCharacters.OkaKoro],
-		[Enums.AssistCharacters.Subaru, Enums.AssistCharacters.Subaru, Enums.AssistCharacters.Subaru, Enums.AssistCharacters.Sora, Enums.AssistCharacters.Sana],
+		[Enums.AssistCharacters.Subaru, Enums.AssistCharacters.Flayon, Enums.AssistCharacters.Subaru, Enums.AssistCharacters.Sora, Enums.AssistCharacters.Sana],
 		[Enums.AssistCharacters.Subaru, Enums.AssistCharacters.Subaru, Enums.AssistCharacters.Subaru, Enums.AssistCharacters.Sora, Enums.AssistCharacters.Sana]
 		]
 	assist1 = [
-		[Enums.AssistCharacters.Hakka, Enums.AssistCharacters.Fubuki, Enums.AssistCharacters.Ollie, Enums.AssistCharacters.Suisei, Enums.AssistCharacters.Kanata],
+		[Enums.AssistCharacters.Hakka, Enums.AssistCharacters.Rikka, Enums.AssistCharacters.Ollie, Enums.AssistCharacters.Suisei, Enums.AssistCharacters.Kanata],
 		[Enums.AssistCharacters.OkaKoro, Enums.AssistCharacters.Fubuki, Enums.AssistCharacters.Mio, Enums.AssistCharacters.Subaru, Enums.AssistCharacters.Oga],
-		[Enums.AssistCharacters.Sana, Enums.AssistCharacters.Sora, Enums.AssistCharacters.Subaru, Enums.AssistCharacters.Subaru, Enums.AssistCharacters.Subaru],
+		[Enums.AssistCharacters.Sana, Enums.AssistCharacters.Sora, Enums.AssistCharacters.Subaru, Enums.AssistCharacters.Flayon, Enums.AssistCharacters.Subaru],
 		[Enums.AssistCharacters.Sana, Enums.AssistCharacters.Sora, Enums.AssistCharacters.Subaru, Enums.AssistCharacters.Subaru, Enums.AssistCharacters.Subaru]
 		]
 	
@@ -429,7 +429,7 @@ func get_opponent_peer_id() -> int:
 		else:
 			return SyncManager.get_player_peer_ids()[1]
 	printerr ("Main: unable to find opponent peer id")
-		message_label.text = tr("UI_STATUS_UNABLE_OPPONENT_PEER")
+	message_label.text = tr("UI_STATUS_UNABLE_OPPONENT_PEER")
 	return 1
 
 func get_client_player_peer_id() -> int:
@@ -439,7 +439,7 @@ func get_client_player_peer_id() -> int:
 		else:
 			return SyncManager.get_player_peer_ids()[1]
 	printerr ("Main: unable to find client peer id")
-		message_label.text = tr("UI_STATUS_UNABLE_CLIENT_PEER")
+	message_label.text = tr("UI_STATUS_UNABLE_CLIENT_PEER")
 	return 1
 
 func set_player_names():

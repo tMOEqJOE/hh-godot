@@ -287,7 +287,7 @@ offset = Vector2(40, 0)
 
 [node name="P2Cursor" parent="." instance=ExtResource("7")]
 position = Vector2(966, 392)
-gridY = 4
+gridY = 3
 gridX = 3
 start_col = 1
 start_row = 1
@@ -296,7 +296,7 @@ deselect_ok = false
 [node name="P1Cursor" parent="." instance=ExtResource("7")]
 position = Vector2(962, 392)
 is_p1 = true
-gridY = 4
+gridY = 3
 gridX = 3
 start_col = 1
 start_row = 1

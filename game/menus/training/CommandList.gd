@@ -103,6 +103,8 @@ func load_player_move_list(point, assist, container):
 			load_move_list(Enums.SanaMoveList, container)
 		Enums.AssistCharacters.Hakka:
 			load_move_list(Enums.HakkaMoveList, container)
+		Enums.AssistCharacters.Rikka:
+			load_move_list(Enums.RikkaMoveList, container)
 		Enums.AssistCharacters.Subaru:
 			load_move_list(Enums.AssistSubaruMoveList, container)
 		Enums.AssistCharacters.Mio:
@@ -115,6 +117,8 @@ func load_player_move_list(point, assist, container):
 			load_move_list(Enums.AssistKanataMoveList, container)
 		Enums.AssistCharacters.Suisei:
 			load_move_list(Enums.AssistSuiseiMoveList, container)
+		Enums.AssistCharacters.Flayon:
+			load_move_list(Enums.AssistFlayonMoveList, container)
 		_:
 			printerr("invalid assist character given")
 
@@ -125,8 +129,6 @@ func load_move_list(move_list, container):
 		newText = ""
 		for i in row.size():
 			var item_string := tr(str(row[i]))
-			if i == 0 and item_string.begins_with("j"):
-				item_string = tr("UI_COMBO_WORD_AIR") + " " + item_string.substr(1)
 			for j in item_string.length():
 				var character := item_string[j]
 				if _should_parse_icon(item_string, j, i):

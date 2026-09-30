@@ -13,8 +13,8 @@ var language_mode: String = "en"
 
 func _ready():
 	load_startup_config()
-	$CanvasLayer/Options/LanguageOption.add_item("English", 0)
-	$CanvasLayer/Options/LanguageOption.add_item("日本語", 1)
+	$CanvasLayer/Options/LanguageOption.add_item(tr("UI_LANGUAGE_ENGLISH"), 0)
+	$CanvasLayer/Options/LanguageOption.add_item(tr("UI_LANGUAGE_JAPANESE"), 1)
 	$CanvasLayer/Options/LanguageOption.select(1 if language_mode == "ja" else 0)
 	$CanvasLayer/Options/FullScreenButton.grab_focus()
 	$CanvasLayer/Options/VsyncEmpty.text = bool_to_on_off_string(DisplayServer.window_get_vsync_mode() != DisplayServer.VSYNC_DISABLED)
