@@ -79,7 +79,10 @@ const DISPLAY_NAMES: Dictionary = {
 	"Flight5A": "A UI_COMBO_WORD_FLIGHT",
 	"Flight5BEarly": "B UI_COMBO_WORD_FLIGHT",
 	"Flight5CEarly": "C UI_COMBO_WORD_FLIGHT",
+	"Flight8C": "Up C UI_COMBO_WORD_FLIGHT",
+	"Flight2CIncrease": "UI_COMBO_WORD_HOLD Down C",
 	"FlightEnter": "Down DownLeft Left X",
+	"DeusExMachina": "Down DownRight Right C",
 
 	"HammerStartup" : "UI_COMBO_WORD_TAP D UI_COMBO_WORD_THEN UI_COMBO_WORD_HOLD Left",
 	"HammerFollowup" : "UI_COMBO_WORD_RELEASE Left UI_COMBO_WORD_EARLY",

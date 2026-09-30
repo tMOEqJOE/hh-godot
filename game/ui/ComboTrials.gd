@@ -471,6 +471,28 @@ Enums.PointCharacters.Flayon: [
 	3: "Flight5A",
 	4: "Flight5BEarly",
 	},
+	{0: "Stand5B",
+	1: "Crouch3C",
+	2: "AirGrapple",
+	3: "DUMMY: FlightEnter",
+	4: "Flight8C",
+	5: "Flight2CIncrease",
+	6: "Flight2CIncrease",
+	7: "Flight2CIncrease",
+	8: "AirGrapple",
+	9: "DUMMY: FlightEnter",
+	10: "Flight2CIncrease", 
+	11: "Flight2CIncrease", 
+	12: "Flight2CIncrease",
+	13: "AirGrapple",
+	14: "Jump6C",
+	15: "AirThrowHit",
+	16: "DUMMY: Right Right",
+	17: "Stand5A",
+	18: "Stand5B",
+	19: "DeusExMachina",
+	20: "DeusExMachina",
+	21: "DeusExMachina",}
 ]}
 
 
