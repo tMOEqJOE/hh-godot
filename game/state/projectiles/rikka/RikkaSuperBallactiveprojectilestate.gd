@@ -21,7 +21,7 @@ func _init():
 			Enums.StKey.min_damage: 10,
 			Enums.StKey.attack_type : Enums.AttackType.Strike,
 			Enums.StKey.counter_hit: Enums.AttackType.Strike,
-			Enums.StKey.attack_damage: 45,
+			Enums.StKey.attack_damage: 36,
 			Enums.StKey.hit_box_colliding_frame : 8,
 			Enums.StKey.counter_launch_dir_y: Util.BASE_AIR_Y_PUSHBACK,
 			Enums.StKey.block_dir_x : -SGFixed.ONE*35,
