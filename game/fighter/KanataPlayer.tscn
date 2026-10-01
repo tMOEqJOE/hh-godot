@@ -1825,10 +1825,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.16666663, 0.24999994, 0.33333328, 0.41666663, 0.53333324, 0.68333334),
+"times": PackedFloat32Array(0, 0.16666663, 0.24999994, 0.33333328, 0.41666663, 0.55, 0.6166667),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("51"), ExtResource("128_d60l7"), ExtResource("129_6b3gs"), ExtResource("130_6b3gs"), ExtResource("128_d60l7"), ExtResource("129_6b3gs"), ExtResource("130_6b3gs")]
+"values": [ExtResource("51"), ExtResource("128_d60l7"), ExtResource("129_6b3gs"), ExtResource("130_6b3gs"), ExtResource("128_d60l7"), ExtResource("129_6b3gs"), ExtResource("51")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
