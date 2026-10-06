@@ -45,6 +45,7 @@ const COMBOS: Dictionary = { # Sample Subaru Combos
 	2: "AssistSuper",
 	3: "AssistSuper",},
 	{0: "DUMMY: [color=yellow]Corner Only[/color] [i] \nHint: Land and jump again after each Jump2C ! [/i]",
+	"reset_position": "RIGHT",
 	1: "StandcB",
 	2: "Stand5C",
 	3: "Crouch3C",
