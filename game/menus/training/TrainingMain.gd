@@ -2,6 +2,15 @@ extends DemoMain
 
 class_name TrainingMain
 
+enum TrainingResetPosition {
+	CENTER,
+	CENTER_SWITCHED,
+	LEFT,
+	LEFT_SWITCHED,
+	RIGHT,
+	RIGHT_SWITCHED,
+}
+
 var meter_refresher: TrainingMeterRefresher
 var savestate: Dictionary
 var state_history: Array
@@ -148,6 +157,27 @@ func get_input_vector(is_p1: bool) -> Dictionary:
 
 func execute_savestate():
 	savestate = SyncManager._call_save_state()
+	var input_source: InputSource = player_input.get_node("InputSource")
+	var input_source_path: String = str(input_source.get_path())
+	var input_source_state: Dictionary = savestate.get(input_source_path, {})
+	if (input_source_state.is_empty()):
+		return
+
+	var button_flags = {
+		"a": Enums.InputFlags.ADown | Enums.InputFlags.AHold | Enums.InputFlags.AUp,
+		"b": Enums.InputFlags.BDown | Enums.InputFlags.BHold | Enums.InputFlags.BUp,
+		"c": Enums.InputFlags.CDown | Enums.InputFlags.CHold | Enums.InputFlags.CUp,
+		"d": Enums.InputFlags.DDown | Enums.InputFlags.DHold | Enums.InputFlags.DUp,
+	}
+	var active_button_flags: int = 0
+	for button in button_flags:
+		var button_action: String = player_input.input_prefix + button
+		if (Input.is_action_pressed(button_action) or Input.is_action_just_pressed(button_action) or Input.is_action_just_released(button_action)):
+			active_button_flags |= button_flags[button]
+	if (active_button_flags != 0):
+		var input_history: Array = input_source_state[InputSource.State.inputHistory]
+		var current_index: int = input_source_state[InputSource.State.zeroIndex]
+		input_history[current_index] &= ~active_button_flags
 	
 func update_reaction_save_state():
 	var new_state = SyncManager._call_save_state()
@@ -212,19 +242,114 @@ func exit():
 	free_main()
 	MainMenuMusicControl.stop_music()
 
-func reset():
+func reset(position: int = TrainingResetPosition.CENTER):
 	sync_clear()
 	$CanvasLayer/TrainingOptionsMenu.hide()
 	fighter_game.stop_glowing_characters()
-	reload_scene()
+	reload_scene(position)
 	#get_tree().reload_current_scene()
 
-func reload_scene():
+func _get_back_reset_position(input_prefix: String) -> int:
+	var left_pressed: bool = Input.get_action_strength(input_prefix + "left") > 0 or Input.get_action_strength(input_prefix + "left_stick") > 0
+	var right_pressed: bool = Input.get_action_strength(input_prefix + "right") > 0 or Input.get_action_strength(input_prefix + "right_stick") > 0
+	var up_pressed: bool = Input.get_action_strength(input_prefix + "up") > 0 or Input.get_action_strength(input_prefix + "up_stick") > 0
+	var down_pressed: bool = Input.get_action_strength(input_prefix + "down") > 0 or Input.get_action_strength(input_prefix + "down_stick") > 0
+
+	if (left_pressed):
+		return TrainingResetPosition.LEFT_SWITCHED if down_pressed else TrainingResetPosition.LEFT
+	if (right_pressed):
+		return TrainingResetPosition.RIGHT_SWITCHED if down_pressed else TrainingResetPosition.RIGHT
+	if (up_pressed):
+		return TrainingResetPosition.CENTER
+	if (down_pressed):
+		return TrainingResetPosition.CENTER_SWITCHED
+	return -1
+
+func reload_scene(position: int = TrainingResetPosition.CENTER):
+	var music_stream = MainMenuMusicControl.audio_player.stream if MainMenuMusicControl != null else null
+	var music_position = MainMenuMusicControl.audio_player.get_playback_position() if MainMenuMusicControl != null else 0.0
+	var music_is_playing = MainMenuMusicControl.audio_player.playing if MainMenuMusicControl != null else false
+	var sfx_stream = MainMenuMusicControl.menu_sounds.stream if MainMenuMusicControl != null else null
+	var sfx_position = MainMenuMusicControl.menu_sounds.get_playback_position() if MainMenuMusicControl != null else 0.0
+	var sfx_is_playing = MainMenuMusicControl.menu_sounds.playing if MainMenuMusicControl != null else false
+
+	if (MainMenuMusicControl != null):
+		MainMenuMusicControl.skip_next_fade_in()
 	super.reload_scene()
+	_apply_training_reset_position(position)
+	setup_training()
 	skip_training_intro()
 	stop_record()
 	stop_replay()
+
+	if (MainMenuMusicControl != null):
+		if (music_stream != null and music_is_playing):
+			MainMenuMusicControl.audio_player.stream = music_stream
+			MainMenuMusicControl.audio_player.play(music_position)
+		if (sfx_stream != null and sfx_is_playing):
+			MainMenuMusicControl.menu_sounds.stream = sfx_stream
+			MainMenuMusicControl.menu_sounds.play(sfx_position)
+
+func _apply_training_reset_position(position: int) -> void:
+	var server_x: int
+	var client_x: int
+	var server_scale_x: int = SGFixed.ONE
+	var client_scale_x: int = -SGFixed.ONE
+
+	match position:
+		TrainingResetPosition.CENTER:
+			server_x = -23292288
+			client_x = 23292288
+		TrainingResetPosition.CENTER_SWITCHED:
+			server_x = 23292288
+			client_x = -23292288
+		TrainingResetPosition.LEFT:
+			server_x = -175570000
+			client_x = -145570000
+		TrainingResetPosition.LEFT_SWITCHED:
+			server_x = -145570000
+			client_x = -175570000
+		TrainingResetPosition.RIGHT:
+			server_x = 145570000
+			client_x = 175570000
+		TrainingResetPosition.RIGHT_SWITCHED:
+			server_x = 175570000
+			client_x = 145570000
+		_:
+			server_x = -23292288
+			client_x = 23292288
+
+	fighter_game.ServerPlayer.fixed_position.x = server_x
+	fighter_game.ServerPlayer.fixed_position.y = 29949952
+	fighter_game.ServerPlayer.fixed_scale.x = server_scale_x
+	fighter_game.ServerPlayer.sync_to_physics_engine()
+
+	fighter_game.ClientPlayer.fixed_position.x = client_x
+	fighter_game.ClientPlayer.fixed_position.y = 29949952
+	fighter_game.ClientPlayer.fixed_scale.x = client_scale_x
+	fighter_game.ClientPlayer.sync_to_physics_engine()
 	
+	if (fighter_game.AssistPlayer1 != null):
+		fighter_game.AssistPlayer1.fixed_position.x = server_x - 16946816
+		fighter_game.AssistPlayer1.fixed_position.y = 29949952
+		fighter_game.AssistPlayer1.fixed_scale.x = server_scale_x
+		fighter_game.AssistPlayer1.sync_to_physics_engine()
+	if (fighter_game.AssistPlayer2 != null):
+		fighter_game.AssistPlayer2.fixed_position.x = client_x + 16946816
+		fighter_game.AssistPlayer2.fixed_position.y = 29949952
+		fighter_game.AssistPlayer2.fixed_scale.x = client_scale_x
+		fighter_game.AssistPlayer2.sync_to_physics_engine()
+	
+	if (fighter_game.Hato1 != null):
+		fighter_game.Hato1.fixed_position.x = server_x - 8000000
+		fighter_game.Hato1.fixed_position.y = 29949952
+		fighter_game.Hato1.fixed_scale.x = server_scale_x
+		fighter_game.Hato1.sync_to_physics_engine()
+	if (fighter_game.Hato2 != null):
+		fighter_game.Hato2.fixed_position.x = client_x + 8000000
+		fighter_game.Hato2.fixed_position.y = 29949952
+		fighter_game.Hato2.fixed_scale.x = client_scale_x
+		fighter_game.Hato2.sync_to_physics_engine()
 
 func control_the_dummy():
 	if (not dummy_input.player == null):
@@ -525,9 +650,19 @@ func input_helper(event):
 	if (Global.TRAINING_P1 and Input.is_action_just_pressed("player1_start")) or (not Global.TRAINING_P1 and Input.is_action_just_pressed("player2_start")):
 		if (not $CanvasLayer/TrainingOptionsMenu.is_enabled()):
 			toggle_training_menu()
+	elif (ComboTrialMain and ((Global.TRAINING_P1 and Input.is_action_just_pressed("player1_reset_position")) or (not Global.TRAINING_P1 and Input.is_action_just_pressed("player2_reset_position")))):
+		if (not $CanvasLayer/TrainingOptionsMenu.is_enabled()):
+			reset()
 	elif (Global.TRAINING_P1 and Input.is_action_just_pressed("player1_cancel")) or (not Global.TRAINING_P1 and Input.is_action_just_pressed("player2_cancel")):
 		if (not $CanvasLayer/TrainingOptionsMenu.is_enabled()):
-			loadstate()
+			var input_prefix: String = "player1_" if Global.TRAINING_P1 else "player2_"
+			var reset_position: int = _get_back_reset_position(input_prefix)
+			if (reset_position >= 0):
+				reset(reset_position)
+			elif (savestate.is_empty()):
+				reset(TrainingResetPosition.CENTER)
+			else:
+				loadstate()
 	elif (Global.TRAINING_P1 and Input.is_action_just_pressed("player1_record")) or (not Global.TRAINING_P1 and Input.is_action_just_pressed("player2_record")):
 		if (not $CanvasLayer/TrainingOptionsMenu.is_enabled()):
 			#if not (self is ComboTrialMain): #WARN DEBUG FUNCTION FOR RECORDING COMBO TRIALS ENABLE ME BEFORE BUILDING
