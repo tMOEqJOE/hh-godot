@@ -13,6 +13,7 @@ enum TrainingResetPosition {
 
 var meter_refresher: TrainingMeterRefresher
 var savestate: Dictionary
+var last_reset_position: int = TrainingResetPosition.CENTER
 var state_history: Array
 var reaction_save_state: Dictionary
 var dummy_input: InputInterpreter
@@ -243,6 +244,7 @@ func exit():
 	MainMenuMusicControl.stop_music()
 
 func reset(position: int = TrainingResetPosition.CENTER):
+	last_reset_position = position
 	sync_clear()
 	$CanvasLayer/TrainingOptionsMenu.hide()
 	fighter_game.stop_glowing_characters()
@@ -350,6 +352,15 @@ func _apply_training_reset_position(position: int) -> void:
 		fighter_game.Hato2.fixed_position.y = 29949952
 		fighter_game.Hato2.fixed_scale.x = client_scale_x
 		fighter_game.Hato2.sync_to_physics_engine()
+
+	var camera: Camera2D = fighter_game.get_node("Camera3D")
+	var server_position: Vector2 = fighter_game.ServerPlayer.global_position
+	var client_position: Vector2 = fighter_game.ClientPlayer.global_position
+	var camera_target_x: float = (server_position.x + client_position.x) * 0.5
+	var camera_target_y: float = server_position.y + camera.yCameraOffset1
+	if (client_position.y + camera.yCameraOffset2 < camera_target_y):
+		camera_target_y = client_position.y + camera.yCameraOffset2
+	camera.position = camera.camera_clamp(camera_target_x, camera_target_y)
 
 func control_the_dummy():
 	if (not dummy_input.player == null):
@@ -662,7 +673,7 @@ func input_helper(event):
 			elif (self is ComboTrialMain):
 				reset(TrainingResetPosition.get($CanvasLayer/ComboTrialListener.current_reset_position, TrainingResetPosition.CENTER))
 			elif (savestate.is_empty()):
-				reset(TrainingResetPosition.CENTER)
+				reset(last_reset_position)
 			else:
 				loadstate()
 	elif (Global.TRAINING_P1 and Input.is_action_just_pressed("player1_record")) or (not Global.TRAINING_P1 and Input.is_action_just_pressed("player2_record")):
