@@ -28,6 +28,7 @@ var recording_machine
 var replay_restore_player_input: InputInterpreter
 
 var _input_frames_received: Dictionary = {}
+var _reaction_state_active: bool = false
 
 func _init() -> void:
 	super._init()
@@ -123,6 +124,7 @@ func _do_execute_frame_mechanized(tick, delta) -> bool:
 	var peer_dict = {}
 	var p1_input_package = {}
 	var p2_input_package = {}
+	var processing_reaction_state: bool = _reaction_state_active and not _input_frames_received.is_empty()
 	
 	if (not _input_frames_received.is_empty()):
 		p1_input_package = _input_frames_received[1]
@@ -145,6 +147,8 @@ func _do_execute_frame_mechanized(tick, delta) -> bool:
 	dummy_input.in_rollback = false
 	_input_frames_received = {}
 	SyncManager.reset_mechanized_data()
+	if (processing_reaction_state):
+		_reaction_state_active = false
 	return true
 
 func get_input_vector(is_p1: bool) -> Dictionary:
@@ -212,6 +216,9 @@ func load_reaction_state():
 			p2_input_package[tick] = peer_dict
 			_input_frames_received[1] = p1_input_package
 			_input_frames_received[2] = p2_input_package
+	if (p1_input_package.is_empty()):
+		return
+	_reaction_state_active = true
 	store_rollback_state.call_deferred(_input_frames_received, state_history.size())
 
 func store_rollback_state(p_input_frames_received, rollback_ticks):
@@ -244,6 +251,8 @@ func exit():
 	MainMenuMusicControl.stop_music()
 
 func reset(position: int = TrainingResetPosition.CENTER):
+	if (_reaction_state_active):
+		return
 	last_reset_position = position
 	sync_clear()
 	$CanvasLayer/TrainingOptionsMenu.hide()
