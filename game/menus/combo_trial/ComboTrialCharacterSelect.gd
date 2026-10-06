@@ -117,7 +117,11 @@ func update_p1():
 		p1_color_number = 1
 		load_assist(P1Cursor.row, P1Cursor.col, true)
 	else:
-		load_assist(1, 1, true)
+		match charaData[1]:
+			Enums.PointCharacters.Flayon:
+				load_assist(0,0, true)
+			_:	
+				load_assist(1, 1, true)
 	Global.load_queue.queue_resource(Global.PLAYER_1_NODE_PATH[0])
 	if (Global.PLAYER_1_CHARACTER[0] == Enums.PointCharacters.Mio):
 		Global.load_queue.queue_resource(Global.PLAYER_1_NODE_PATH[2])
@@ -140,7 +144,11 @@ func update_p2():
 		p2_color_number = 1
 		load_assist(P2Cursor.row, P2Cursor.col, false)
 	else:
-		load_assist(1, 1, false)
+		match charaData[1]:
+			Enums.PointCharacters.Flayon:
+				load_assist(0,0, false)
+			_:	
+				load_assist(1, 1, false)
 	Global.load_queue.queue_resource(Global.PLAYER_2_NODE_PATH[0])
 	if (Global.PLAYER_2_CHARACTER[0] == Enums.PointCharacters.Mio):
 		Global.load_queue.queue_resource(Global.PLAYER_2_NODE_PATH[2])
