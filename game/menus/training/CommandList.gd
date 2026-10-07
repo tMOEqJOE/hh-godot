@@ -129,6 +129,8 @@ func load_move_list(move_list, container):
 		newText = ""
 		for i in row.size():
 			var item_string := tr(str(row[i]))
+			if i == 0 and item_string.begins_with("j"):
+				item_string = tr("UI_COMBO_WORD_AIR") + " " + item_string.substr(1)
 			for j in item_string.length():
 				var character := item_string[j]
 				if _should_parse_icon(item_string, j, i):
@@ -207,7 +209,7 @@ func _input(event):
 func input_helper(event: InputEvent):
 	if event.is_action_pressed("player1_start") or event.is_action_pressed("player2_start"):
 		_on_CloseButton_pressed()
-	elif event.is_action_pressed("player1_cancel") or event.is_action_pressed("player2_cancel"):
+	elif event.is_action_pressed("player1_cancel") or event.is_action_pressed("player2_cancel") or event.is_action_pressed("menu_back_b"):
 		_on_CloseButton_pressed()
 	elif Util.is_left_pressed(true):
 		scroll_left()

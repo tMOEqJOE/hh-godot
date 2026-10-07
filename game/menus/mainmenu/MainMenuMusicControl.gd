@@ -21,6 +21,7 @@ var seek_point: float = 0.0
 
 var fade_out: Tween
 var fade_in: Tween
+var _skip_next_fade_in: bool = false
 
 func _ready():
 	menu_music = load("res://game/assets/music/WIM.ogg")
@@ -238,8 +239,14 @@ func fade_out_music():
 	set_seek()
 
 func fade_in_music():
+	if (_skip_next_fade_in):
+		_skip_next_fade_in = false
+		return
 	audio_player.volume_db = -70
 	start_fade_in()
+
+func skip_next_fade_in():
+	_skip_next_fade_in = true
 
 func play_win_song():
 	stop_fade_out()

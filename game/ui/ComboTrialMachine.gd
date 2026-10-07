@@ -1,5 +1,7 @@
 extends Node2D
 
+signal combo_loaded(reset_position: String)
+
 const COMBO_DUMMY_TEXT_KEYS := {
 	"Hint: Use Jump5C as you are falling.": "UI_COMBO_HINT_FALLING_5C",
 	"Hint: Use Jump5B as you are falling.": "UI_COMBO_HINT_FALLING_5B",
@@ -40,6 +42,7 @@ var display_names: Dictionary = load("res://game/ui/ComboTrialDisplayNames.gd").
 var icon_paths: Dictionary = load("res://game/ui/IconPaths.gd").ICON_PATHS
 var combo_trial: Dictionary = {}
 var current_combo_index = 0
+var current_reset_position: String = "CENTER"
 
 var processed_combo: Array = []
 var current_combo_position: int = 0
@@ -55,9 +58,11 @@ var pending_text_color: String = "#555555"
 
 @onready var combo_list_label: RichTextLabel = $ComboTrialList
 var button_icon_size: int = 20
+var combo_prose_regex := RegEx.new()
 
 
 func _ready() -> void:
+	combo_prose_regex.compile("UI_COMBO_WORD_[A-Z_]+")
 	combo_list_label.bbcode_enabled = true
 	combo_list_label.scroll_active = false
 	combo_list_label.scroll_following = false
@@ -88,12 +93,15 @@ func load_combo(index: int) -> void:
 		print("All combo trials complete!")
 		return
 	combo_trial = combo_database[character_index][index].duplicate()
+	current_reset_position = combo_trial.get("reset_position", "CENTER")
+	combo_trial.erase("reset_position")
 
 	current_combo_position = 0
 	current_step_progress = 0
 	showing_complete_message = false
 
 	refresh_combo_ui()
+	combo_loaded.emit(current_reset_position)
 
 
 func _process_combo() -> void:
@@ -192,6 +200,7 @@ func refresh_combo_ui() -> void:
 	create_tween().tween_property(sb, "value", target_value, 0.1)
 
 func _format_display_text(text: String) -> String:
+	text = _translate_combo_prose(text)
 	var tokens = text.split(" ")
 	var parts: Array[String] = []
 
@@ -202,6 +211,21 @@ func _format_display_text(text: String) -> String:
 			parts.append(token)
 
 	return " ".join(parts)
+
+
+func _translate_combo_prose(text: String) -> String:
+	var matches = combo_prose_regex.search_all(text)
+	if matches.is_empty():
+		return text
+
+	var translated_text := ""
+	var previous_end := 0
+	for regex_match in matches:
+		translated_text += text.substr(previous_end, regex_match.get_start() - previous_end)
+		translated_text += tr(regex_match.get_string())
+		previous_end = regex_match.get_end()
+	translated_text += text.substr(previous_end)
+	return translated_text
 
 
 func _bbcode_icon(name: String) -> String:
