@@ -44,6 +44,7 @@ func pick_random_opponent():
 		p2_color_number = pick_random_color()
 		a2_color_number = pick_random_color()
 		var charaData = resolve_characters(randRow, randCol)
+		p2_color_number = fit_color_number_to_character(charaData[1], false, p2_color_number)
 		unload_character(charaData[0],false,false)
 		Global.PLAYER_2_NODE_PATH[0] = charaData[0]
 		Global.PLAYER_2_CHARACTER[0] = charaData[1]
@@ -52,6 +53,7 @@ func pick_random_opponent():
 			Global.load_queue.queue_resource(Global.PLAYER_2_NODE_PATH[2])
 		
 		charaData = resolve_assists(randRow, randCol, false)
+		a2_color_number = fit_color_number_to_character(charaData[1], true, a2_color_number)
 		unload_character(charaData[0],false,true)
 		p2_active_cursor = null
 		Global.PLAYER_2_NODE_PATH[1] = charaData[0]
@@ -64,6 +66,7 @@ func pick_random_opponent():
 		p1_color_number = pick_random_color()
 		a1_color_number = pick_random_color()
 		var charaData = resolve_characters(randRow, randCol)
+		p1_color_number = fit_color_number_to_character(charaData[1], false, p1_color_number)
 		unload_character(charaData[0],true,false)
 		Global.PLAYER_1_NODE_PATH[0] = charaData[0]
 		Global.PLAYER_1_CHARACTER[0] = charaData[1]
@@ -74,6 +77,7 @@ func pick_random_opponent():
 		randRow = 3
 		randCol = p2_assist_select.cursor.gridX - 2
 		charaData = resolve_assists(randRow, randCol, true)
+		a1_color_number = fit_color_number_to_character(charaData[1], true, a1_color_number)
 		unload_character(charaData[0], true,true)
 		p1_active_cursor = null
 		Global.PLAYER_1_NODE_PATH[1] = charaData[0]
