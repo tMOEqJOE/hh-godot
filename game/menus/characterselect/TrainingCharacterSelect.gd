@@ -52,7 +52,7 @@ func update_a2():
 		p1_active_cursor = null
 
 func physics_tick():
-	if (Global.TRAINING_P1 and p1_button_map == null and Input.is_action_just_pressed("player1_cancel")):
+	if (Global.TRAINING_P1 and p1_button_map == null and (Input.is_action_just_pressed("player1_cancel") or Input.is_action_just_pressed("menu_back_b"))):
 		if (not $P1Cursor.selected):
 			go_to_prev_scene()
 		else:
@@ -79,7 +79,7 @@ func physics_tick():
 				p1_assist_select = null
 				p1_active_cursor = $P1Cursor
 				$P1Cursor.deselect()
-	elif ((not Global.TRAINING_P1) and p2_button_map == null and Input.is_action_just_pressed("player2_cancel")):
+	elif ((not Global.TRAINING_P1) and p2_button_map == null and (Input.is_action_just_pressed("player2_cancel") or Input.is_action_just_pressed("menu_back_b"))):
 		if (not $P2Cursor.selected):
 			go_to_prev_scene()
 		else:

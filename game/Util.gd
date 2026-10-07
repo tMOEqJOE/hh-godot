@@ -111,6 +111,7 @@ var down_axis_neutral: bool = true
 
 func _ready() -> void:
 	Input.connect("joy_connection_changed", Callable(self, "update_controllers"))
+	_add_fixed_joypad_b_back_bindings()
 
 func is_left_pressed(is_p1: bool):
 	if (is_p1):
@@ -478,6 +479,7 @@ func _get_default_joy_stick(is_p1, button):
 func set_input_map_ui_controls() -> void:
 	InputMap.action_erase_events("ui_accept")
 	InputMap.action_erase_events("ui_cancel")
+	_add_fixed_joypad_b_back_bindings()
 	var input_map_actions : Dictionary = {}
 	var assigned = false
 	var default_input_map_actions = {
@@ -584,6 +586,16 @@ func set_input_map_ui_controls() -> void:
 	InputMap.action_add_event("ui_cancel", mouse_event)
 	
 	#_burner_input_map_ui_controls()
+
+func _add_fixed_joypad_b_back_bindings() -> void:
+	if (not InputMap.has_action("menu_back_b")):
+		InputMap.add_action("menu_back_b")
+	var back_event := InputEventJoypadButton.new()
+	back_event.device = -1
+	back_event.button_index = JOY_BUTTON_B
+	for action in ["ui_cancel", "menu_back_b"]:
+		if (not InputMap.action_has_event(action, back_event)):
+			InputMap.action_add_event(action, back_event)
 
 func _burner_input_map_ui_controls() -> void:
 	for device_id in Input.get_connected_joypads():

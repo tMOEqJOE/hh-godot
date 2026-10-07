@@ -220,7 +220,7 @@ func _physics_process(_delta):
 	physics_tick()
 
 func physics_tick():
-	if (p1_button_map == null and Input.is_action_just_pressed("player1_cancel")):
+	if (p1_button_map == null and (Input.is_action_just_pressed("player1_cancel") or Input.is_action_just_pressed("menu_back_b"))):
 		if (not P1Cursor.selected):
 			go_to_prev_scene()
 		else:
@@ -235,7 +235,7 @@ func physics_tick():
 				p1_assist_select = null
 				p1_active_cursor = P1Cursor
 				P1Cursor.deselect()
-	if (p2_button_map == null and Input.is_action_just_pressed("player2_cancel")):
+	if (p2_button_map == null and (Input.is_action_just_pressed("player2_cancel") or Input.is_action_just_pressed("menu_back_b"))):
 		if (not P2Cursor.selected):
 			go_to_prev_scene()
 		else:

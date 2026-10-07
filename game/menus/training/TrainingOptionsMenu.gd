@@ -142,7 +142,7 @@ func input_helper(event):
 	if event.is_action_pressed("player1_start") or event.is_action_pressed("player2_start"):
 		if (not command_list.is_enabled()):
 			_on_CloseButton_pressed()
-	elif event.is_action_pressed("player1_cancel") or event.is_action_pressed("player2_cancel"):
+	elif event.is_action_pressed("player1_cancel") or event.is_action_pressed("player2_cancel") or event.is_action_pressed("menu_back_b"):
 		if (not command_list.is_enabled()):
 			_on_CloseButton_pressed()
 
