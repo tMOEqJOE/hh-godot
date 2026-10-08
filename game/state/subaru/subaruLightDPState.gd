@@ -70,7 +70,6 @@ func physics_tick(state: Dictionary) -> void:
 	if (state[Enums.StKey.frame] == 4):
 		state[Enums.StKey.velocity_y] = -SGFixed.ONE * 45
 		state[Enums.StKey.velocity_x] = Util.fixed_max(SGFixed.ONE * 1, state[Enums.StKey.velocity_x])
-#		state[Enums.StKey.drag_x] = 85536
 	elif (state[Enums.StKey.frame] == 3):
 		SyncManager.play_sound("SubaruVoice", DPSound, {"bus": "Voice"})
 

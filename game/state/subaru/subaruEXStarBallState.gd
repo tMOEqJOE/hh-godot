@@ -2,6 +2,8 @@ extends SubaruAttackState
 
 class_name SubaruEXStarBallState
 
+var VoiceSound = preload("res://game/assets/voice/subaru/SBR_poka poka subau.wav")
+
 func _init():
 	endFrame = 45
 	
@@ -48,6 +50,9 @@ func physics_tick(state: Dictionary) -> void:
 	super.physics_tick(state)
 	if (state[Enums.StKey.frame] == 3):
 		state[Enums.StKey.hitStopFrame] = 0
+	elif (state[Enums.StKey.frame] == 2):
+		SyncManager.play_sound("SubaruVoice", VoiceSound, {"bus": "Voice"})
+		SyncManager.play_sound("SubaruVoiceReverb", VoiceSound, {"bus": "ReverbVoice"})
 
 func meter_cancel(state: Dictionary, interpreter: InputInterpreter):
 	if (state[Enums.StKey.hitStopFrame] >= 0):

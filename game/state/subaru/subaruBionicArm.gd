@@ -94,6 +94,7 @@ func physics_tick(state: Dictionary) -> void:
 		state[Enums.StKey.velocity_x] = SGFixed.ONE*70
 	elif (state[Enums.StKey.frame] == 5):
 		SyncManager.play_sound("SubaruVoice", CallSound, {"bus": "Voice"})
+		SyncManager.play_sound("SubaruVoiceReverb", CallSound, {"bus": "ReverbVoice"})
 
 func meter_cancel(state: Dictionary, interpreter: InputInterpreter):
 	if (state[Enums.StKey.hitStopFrame] >= 0):

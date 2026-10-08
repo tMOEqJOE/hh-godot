@@ -71,6 +71,7 @@ func physics_tick(state: Dictionary) -> void:
 	super.physics_tick(state)
 	if (state[Enums.StKey.frame] == 2):
 		SyncManager.play_sound("OgaVoice", voice, {"bus": "Voice"})
+		SyncManager.play_sound("OgaVoiceReverb", voice, {"bus": "ReverbVoice"})
 	if (state[Enums.StKey.frame] == 11):
 		SyncManager.play_sound("ogaDPSound", sound, {"bus": "Sound"})
 

@@ -2,6 +2,8 @@ extends SuicopathAttackState
 
 class_name SuicopathScissorsState
 
+var Voice = preload("res://game/assets/voice/suisei/sui_bokoboko ni shiteruyo.wav")
+
 func _init():
 	endFrame = 40
 	
@@ -91,6 +93,9 @@ func physics_tick(state: Dictionary) -> void:
 	super.physics_tick(state)
 	if (state[Enums.StKey.frame] == 1):
 		state[Enums.StKey.velocity_x] = SGFixed.ONE*50
+		SyncManager.play_sound("SuicopathVoice", Voice, {"bus": "Voice"})
+		SyncManager.play_sound("SuicopathVoiceReverb", Voice, {"bus": "ReverbVoice"})
+	
 
 func meter_cancel(state: Dictionary, interpreter: InputInterpreter):
 	if (state[Enums.StKey.hitStopFrame] >= 0):
