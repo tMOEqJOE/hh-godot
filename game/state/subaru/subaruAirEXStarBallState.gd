@@ -70,23 +70,23 @@ func meter_cancel(state: Dictionary, interpreter: InputInterpreter):
 		if (boost_OK(state, interpreter)):
 			change_state.call("AirBoostCancel")
 
-
 func special_cancel(state: Dictionary, interpreter: InputInterpreter):
 	if (state[Enums.StKey.hitStopFrame] >= 0):
 		if (interpreter.special_input_button(Enums.SpecialInput.M214, Enums.InputFlags.ADown, state[Enums.StKey.leftface])):
-			state[Enums.StKey.cancelState] = "BatterSwing"
+			state[Enums.StKey.cancelState] = "AirBatterSwing"
+	
 	if (state[Enums.StKey.frame] >= 13 and state[Enums.StKey.frame] <= 20):
 		if (interpreter.special_input_button(Enums.SpecialInput.M214, Enums.InputFlags.ADown, state[Enums.StKey.leftface])):
-			state[Enums.StKey.cancelState] = "BatterSwing"
-	if (state[Enums.StKey.frame] >= 21):
+			state[Enums.StKey.cancelState] = "AirBatterSwing"
+	elif (state[Enums.StKey.frame] >= 21):
 		if (interpreter.special_input_button(Enums.SpecialInput.M623, Enums.InputFlags.BDown, state[Enums.StKey.leftface])):
 			state[Enums.StKey.cancelState] = "DuckPunch"
 		elif (interpreter.special_input_button(Enums.SpecialInput.M623, Enums.InputFlags.ADown, state[Enums.StKey.leftface])):
 			state[Enums.StKey.cancelState] = "LightDuckPunch"
 		elif (interpreter.special_input_button(Enums.SpecialInput.M214, Enums.InputFlags.ADown, state[Enums.StKey.leftface])):
-			state[Enums.StKey.cancelState] = "BatterSwing"
+			state[Enums.StKey.cancelState] = "AirBatterSwing"
 		elif (interpreter.special_input_button(Enums.SpecialInput.M214, Enums.InputFlags.BDown, state[Enums.StKey.leftface])):
-			state[Enums.StKey.cancelState] = "Stinger"
+			state[Enums.StKey.cancelState] = "AirStinger"
 
 
 func jump_cancel(state: Dictionary, interpreter: InputInterpreter):
