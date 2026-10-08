@@ -10,8 +10,8 @@ func _init():
 			},
 		1 : {
 			Enums.StKey.Hit1Disable : false,
-			Enums.StKey.chip_damage: 6,
-			Enums.StKey.min_damage: 6,
+			Enums.StKey.chip_damage: 4,
+			Enums.StKey.min_damage: 4,
 			Enums.StKey.attack_type : Enums.AttackType.WallBouncer,
 			Enums.StKey.counter_hit: Enums.AttackType.GroundBouncer,
 			Enums.StKey.attack_damage: 45,

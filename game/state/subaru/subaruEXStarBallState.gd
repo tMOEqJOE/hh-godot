@@ -3,7 +3,7 @@ extends SubaruAttackState
 class_name SubaruEXStarBallState
 
 func _init():
-	endFrame = 25
+	endFrame = 45
 	
 	anim_data = {
 		0 : {
@@ -28,7 +28,7 @@ func _init():
 			Enums.StKey.counter_hit : Enums.AttackType.BurstLock,
 		},
 		3 : {
-			Enums.StKey.Summon : "subarubattersetball",
+			Enums.StKey.Summon : "subaruEXbattersetball",
 			Enums.StKey.Hurt1Disable : false,Enums.StKey.Hurt2Disable : false,Enums.StKey.Hurt3Disable : false,
 			Enums.StKey.Hurt1PosX : -458752, Enums.StKey.Hurt1PosY : -22282238,
 			Enums.StKey.Hurt1ScaleX : 339834, Enums.StKey.Hurt1ScaleY : 629832,
@@ -37,46 +37,6 @@ func _init():
 			Enums.StKey.Hurt3PosX : 1572864, Enums.StKey.Hurt3PosY : -10485762,
 			Enums.StKey.Hurt3ScaleX : 554342, Enums.StKey.Hurt3ScaleY : -1021119,
 			},
-		7 : {
-			Enums.StKey.Summon : "subarubattersetball",
-			Enums.StKey.Hurt1Disable : false,Enums.StKey.Hurt2Disable : false,Enums.StKey.Hurt3Disable : false,
-			Enums.StKey.Hurt1PosX : -458752, Enums.StKey.Hurt1PosY : -22282238,
-			Enums.StKey.Hurt1ScaleX : 339834, Enums.StKey.Hurt1ScaleY : 629832,
-			Enums.StKey.Hurt2PosX : -655360, Enums.StKey.Hurt2PosY : -18219008,
-			Enums.StKey.Hurt2ScaleX : 548413, Enums.StKey.Hurt2ScaleY : -906915,
-			Enums.StKey.Hurt3PosX : 1572864, Enums.StKey.Hurt3PosY : -10485762,
-			Enums.StKey.Hurt3ScaleX : 554342, Enums.StKey.Hurt3ScaleY : -1021119,
-			},
-		12 : {
-			Enums.StKey.Summon : "subarubattersetball",
-			Enums.StKey.Hurt1Disable : false,Enums.StKey.Hurt2Disable : false,Enums.StKey.Hurt3Disable : false,
-			Enums.StKey.Hurt1PosX : -458752, Enums.StKey.Hurt1PosY : -22282238,
-			Enums.StKey.Hurt1ScaleX : 339834, Enums.StKey.Hurt1ScaleY : 629832,
-			Enums.StKey.Hurt2PosX : -655360, Enums.StKey.Hurt2PosY : -18219008,
-			Enums.StKey.Hurt2ScaleX : 548413, Enums.StKey.Hurt2ScaleY : -906915,
-			Enums.StKey.Hurt3PosX : 1572864, Enums.StKey.Hurt3PosY : -10485762,
-			Enums.StKey.Hurt3ScaleX : 554342, Enums.StKey.Hurt3ScaleY : -1021119,
-			},
-#		16 : {
-#			Enums.StKey.Summon : "subarustarball",
-#			Enums.StKey.Hurt1Disable : false,Enums.StKey.Hurt2Disable : false,Enums.StKey.Hurt3Disable : false,
-#			Enums.StKey.Hurt1PosX : -458752, Enums.StKey.Hurt1PosY : -22282238,
-#			Enums.StKey.Hurt1ScaleX : 339834, Enums.StKey.Hurt1ScaleY : 629832,
-#			Enums.StKey.Hurt2PosX : -655360, Enums.StKey.Hurt2PosY : -18219008,
-#			Enums.StKey.Hurt2ScaleX : 548413, Enums.StKey.Hurt2ScaleY : -906915,
-#			Enums.StKey.Hurt3PosX : 1572864, Enums.StKey.Hurt3PosY : -10485762,
-#			Enums.StKey.Hurt3ScaleX : 554342, Enums.StKey.Hurt3ScaleY : -1021119,
-#			},
-#		20 : {
-#			Enums.StKey.Summon : "subarustarball",
-#			Enums.StKey.Hurt1Disable : false,Enums.StKey.Hurt2Disable : false,Enums.StKey.Hurt3Disable : false,
-#			Enums.StKey.Hurt1PosX : -458752, Enums.StKey.Hurt1PosY : -22282238,
-#			Enums.StKey.Hurt1ScaleX : 339834, Enums.StKey.Hurt1ScaleY : 629832,
-#			Enums.StKey.Hurt2PosX : -655360, Enums.StKey.Hurt2PosY : -18219008,
-#			Enums.StKey.Hurt2ScaleX : 548413, Enums.StKey.Hurt2ScaleY : -906915,
-#			Enums.StKey.Hurt3PosX : 1572864, Enums.StKey.Hurt3PosY : -10485762,
-#			Enums.StKey.Hurt3ScaleX : 554342, Enums.StKey.Hurt3ScaleY : -1021119,
-#			},
 	}
 
 func enter(state: Dictionary) -> void:
@@ -100,8 +60,24 @@ func meter_cancel(state: Dictionary, interpreter: InputInterpreter):
 		if (boost_OK(state, interpreter)):
 			change_state.call("BoostCancel")
 
+
 func special_cancel(state: Dictionary, interpreter: InputInterpreter):
-	pass
+	if (state[Enums.StKey.hitStopFrame] >= 0):
+		if (interpreter.special_input_button(Enums.SpecialInput.M214, Enums.InputFlags.ADown, state[Enums.StKey.leftface])):
+			state[Enums.StKey.cancelState] = "BatterSwing"
+	if (state[Enums.StKey.frame] >= 13 and state[Enums.StKey.frame] <= 20):
+		if (interpreter.special_input_button(Enums.SpecialInput.M214, Enums.InputFlags.ADown, state[Enums.StKey.leftface])):
+			state[Enums.StKey.cancelState] = "BatterSwing"
+	if (state[Enums.StKey.frame] >= 21):
+		if (interpreter.special_input_button(Enums.SpecialInput.M623, Enums.InputFlags.BDown, state[Enums.StKey.leftface])):
+			state[Enums.StKey.cancelState] = "DuckPunch"
+		elif (interpreter.special_input_button(Enums.SpecialInput.M623, Enums.InputFlags.ADown, state[Enums.StKey.leftface])):
+			state[Enums.StKey.cancelState] = "LightDuckPunch"
+		elif (interpreter.special_input_button(Enums.SpecialInput.M214, Enums.InputFlags.ADown, state[Enums.StKey.leftface])):
+			state[Enums.StKey.cancelState] = "BatterSwing"
+		elif (interpreter.special_input_button(Enums.SpecialInput.M214, Enums.InputFlags.BDown, state[Enums.StKey.leftface])):
+			state[Enums.StKey.cancelState] = "Stinger"
+
 
 func jump_cancel(state: Dictionary, interpreter: InputInterpreter):
 	pass

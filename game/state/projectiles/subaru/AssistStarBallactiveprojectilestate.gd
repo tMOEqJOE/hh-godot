@@ -10,8 +10,8 @@ func _init():
 			},
 		1 : {
 			Enums.StKey.Hit1Disable : false,
-			Enums.StKey.chip_damage: 4,
-			Enums.StKey.min_damage: 4,
+			Enums.StKey.chip_damage: 3,
+			Enums.StKey.min_damage: 2,
 			Enums.StKey.attack_type : Enums.AttackType.Strike,
 			Enums.StKey.counter_hit: Enums.AttackType.Strike,
 			Enums.StKey.hit_box_colliding_frame : 1,
