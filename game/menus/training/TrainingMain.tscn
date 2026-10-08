@@ -437,23 +437,6 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("2")
 
-[node name="ChangeControlsLabel" type="Label" parent="CanvasLayer/TrainingOptionsMenu"]
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = SubResource("2")
-text = "UI_MENU_EDIT_CONTROLS"
-
-[node name="ChangeControlsButton" type="Button" parent="CanvasLayer/TrainingOptionsMenu"]
-layout_mode = 2
-text = "UI_BUTTON_CHANGE"
-
-[node name="ChangeControlsNumber" type="Label" parent="CanvasLayer/TrainingOptionsMenu"]
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = SubResource("2")
-
 [node name="HideHitboxesLabel" type="Label" parent="CanvasLayer/TrainingOptionsMenu"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -537,7 +520,6 @@ scale = Vector2(2.87118, 3.02479)
 [connection signal="pressed" from="CanvasLayer/TrainingOptionsMenu/AssistBuildButton" to="CanvasLayer/TrainingOptionsMenu" method="_on_AssistBuildButton_pressed"]
 [connection signal="pressed" from="CanvasLayer/TrainingOptionsMenu/MeterResetButton" to="CanvasLayer/TrainingOptionsMenu" method="_on_MeterResetButton_pressed"]
 [connection signal="pressed" from="CanvasLayer/TrainingOptionsMenu/CommandListButton" to="CanvasLayer/TrainingOptionsMenu" method="_on_CommandListButton_pressed"]
-[connection signal="pressed" from="CanvasLayer/TrainingOptionsMenu/ChangeControlsButton" to="CanvasLayer/TrainingOptionsMenu" method="_on_ChangeControlsButton_pressed"]
 [connection signal="pressed" from="CanvasLayer/TrainingOptionsMenu/HideHitboxesButton" to="CanvasLayer/TrainingOptionsMenu" method="_on_hide_hitboxes_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/TrainingOptionsMenu/ResetButton" to="CanvasLayer/TrainingOptionsMenu" method="_on_ResetButton_pressed"]
 [connection signal="pressed" from="CanvasLayer/TrainingOptionsMenu/CloseButton" to="CanvasLayer/TrainingOptionsMenu" method="_on_CloseButton_pressed"]

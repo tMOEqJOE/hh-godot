@@ -162,5 +162,5 @@ func _input(event):
 		elif Input.is_action_just_pressed(input_prefix+"d"):
 			Global.BGM_IS_ASSIST = true
 			setup_match()
-		elif Input.is_action_just_pressed("player1_cancel") or Input.is_action_just_pressed("player2_cancel") or Input.is_action_just_pressed("menu_back_b"):
+		elif Input.is_action_just_pressed("player1_cancel") or Input.is_action_just_pressed("player2_cancel"):
 			go_to_prev_scene()

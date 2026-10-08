@@ -21,9 +21,6 @@ func load_next_scenes():
 
 func update_p1():
 	super.update_p1()
-
-func complete_p1_selection():
-	super.complete_p1_selection()
 	if (Global.TRAINING_P1):
 		p1_assist_select.get_node("CharacterCursor").input_prefix = "player1_"
 	else:
@@ -32,9 +29,6 @@ func complete_p1_selection():
 
 func update_p2():
 	super.update_p2()
-
-func complete_p2_selection():
-	super.complete_p2_selection()
 	if (Global.TRAINING_P1):
 		p2_assist_select.get_node("CharacterCursor").input_prefix = "player1_"
 		p1_active_cursor = p2_assist_select
@@ -43,9 +37,6 @@ func complete_p2_selection():
 
 func update_a1():
 	super.update_a1()
-
-func complete_a1_selection():
-	super.complete_a1_selection()
 	if (Global.TRAINING_P1):
 		p1_active_cursor = $P2Cursor
 		$P2Cursor.enable(true)
@@ -54,9 +45,6 @@ func complete_a1_selection():
 
 func update_a2():
 	super.update_a2()
-
-func complete_a2_selection():
-	super.complete_a2_selection()
 	if (not Global.TRAINING_P1):
 		p2_active_cursor = $P1Cursor
 		$P1Cursor.enable(true)
@@ -64,8 +52,7 @@ func complete_a2_selection():
 		p1_active_cursor = null
 
 func physics_tick():
-	process_color_captures()
-	if (p1_color_capture.is_empty() and Global.TRAINING_P1 and p1_button_map == null and (Input.is_action_just_pressed("player1_cancel") or Input.is_action_just_pressed("menu_back_b"))):
+	if (Global.TRAINING_P1 and p1_button_map == null and Input.is_action_just_pressed("player1_cancel")):
 		if (not $P1Cursor.selected):
 			go_to_prev_scene()
 		else:
@@ -92,7 +79,7 @@ func physics_tick():
 				p1_assist_select = null
 				p1_active_cursor = $P1Cursor
 				$P1Cursor.deselect()
-	elif (p2_color_capture.is_empty() and (not Global.TRAINING_P1) and p2_button_map == null and (Input.is_action_just_pressed("player2_cancel") or Input.is_action_just_pressed("menu_back_b"))):
+	elif ((not Global.TRAINING_P1) and p2_button_map == null and Input.is_action_just_pressed("player2_cancel")):
 		if (not $P2Cursor.selected):
 			go_to_prev_scene()
 		else:

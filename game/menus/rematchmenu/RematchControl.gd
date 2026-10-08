@@ -130,10 +130,10 @@ func _physics_process(_delta):
 			rpc("remote_main_menu")
 
 func _input(event):
-	if event.is_action_pressed("player1_cancel") or event.is_action_pressed("menu_back_b"):
+	if event.is_action_pressed("player1_cancel"):
 		if (get_node("P1Cursor") != null):
 			$P1Cursor.deselect()
-	if event.is_action_pressed("player2_cancel") or event.is_action_pressed("menu_back_b"):
+	if event.is_action_pressed("player2_cancel"):
 		if (get_node("P2Cursor") != null):
 			$P2Cursor.deselect()
 

@@ -210,10 +210,7 @@ func input_helper(event: InputEvent):
 			var is_axis = event is InputEventJoypadMotion
 			
 			if (not is_axis and Input.is_action_just_pressed(prefix+"start")):
-				if (current_button == len(input_map_actions)):
-					set_new_buttons()
-				else:
-					OK_delay = 5
+				OK_delay = 5
 			elif (Util.is_down_pressed_prefix(prefix)):
 				advance_to_next_button()
 				MainMenuMusicControl.play_cursor_move()

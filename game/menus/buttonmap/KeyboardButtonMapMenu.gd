@@ -99,9 +99,7 @@ func set_new_buttons():
 		var input_action: String = input_map_actions[i]
 		var event_action: InputEventKey = actions_to_buttons[i]
 		Input.action_release(input_action)
-		for input_event in InputMap.action_get_events(input_action):
-			if (input_event is InputEventKey):
-				InputMap.action_erase_event(input_action, input_event)
+		InputMap.action_erase_events(input_action)
 		InputMap.action_add_event(input_action, event_action)
 #		var appended = false
 #		for input_event in InputMap.get_action_list(input_action): 
@@ -136,8 +134,6 @@ func input_helper(event: InputEvent):
 				if (current_button < len(input_map_actions)):
 					unmap_button()
 					advance_to_next_button()
-				elif (current_button == len(input_map_actions)):
-					set_new_buttons()
 		elif (not is_p1):
 #			if (Util.is_down_pressed_prefix("player2_")):
 #				advance_to_next_button()
@@ -155,5 +151,3 @@ func input_helper(event: InputEvent):
 				if (current_button < len(input_map_actions)):
 					unmap_button()
 					advance_to_next_button()
-				elif (current_button == len(input_map_actions)):
-					set_new_buttons()
