@@ -209,7 +209,7 @@ func _input(event):
 func input_helper(event: InputEvent):
 	if event.is_action_pressed("player1_start") or event.is_action_pressed("player2_start"):
 		_on_CloseButton_pressed()
-	elif event.is_action_pressed("player1_cancel") or event.is_action_pressed("player2_cancel") or event.is_action_pressed("menu_back_b"):
+	elif event.is_action_pressed("player1_cancel") or event.is_action_pressed("player2_cancel"):
 		_on_CloseButton_pressed()
 	elif Util.is_left_pressed(true):
 		scroll_left()

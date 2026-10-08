@@ -670,6 +670,9 @@ func input_helper(event):
 	if (Global.TRAINING_P1 and Input.is_action_just_pressed("player1_start")) or (not Global.TRAINING_P1 and Input.is_action_just_pressed("player2_start")):
 		if (not $CanvasLayer/TrainingOptionsMenu.is_enabled()):
 			toggle_training_menu()
+	elif (ComboTrialMain and ((Global.TRAINING_P1 and Input.is_action_just_pressed("player1_reset_position")) or (not Global.TRAINING_P1 and Input.is_action_just_pressed("player2_reset_position")))):
+		if (not $CanvasLayer/TrainingOptionsMenu.is_enabled()):
+			reset(TrainingResetPosition.get($CanvasLayer/ComboTrialListener.current_reset_position, TrainingResetPosition.CENTER))
 	elif (Global.TRAINING_P1 and Input.is_action_just_pressed("player1_cancel")) or (not Global.TRAINING_P1 and Input.is_action_just_pressed("player2_cancel")):
 		if (not $CanvasLayer/TrainingOptionsMenu.is_enabled()):
 			var input_prefix: String = "player1_" if Global.TRAINING_P1 else "player2_"

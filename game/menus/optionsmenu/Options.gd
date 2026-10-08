@@ -2,11 +2,6 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 
-@onready var BUTTON_MAP_MENU = preload("res://game/menus/buttonmap/ButtonMapMenuScreen.tscn")
-var button_menu
-var button_map_paused_before_open: bool
-var last_input_event: InputEvent
-
 # holoheavenbugreport@gmail.com
 
 var Main_volume = 0
@@ -35,7 +30,6 @@ func db_conversion(internal_volume, meter_max):
 	return (internal_volume * 2) + meter_max
 
 func _input(event):
-	last_input_event = event
 	if event.is_action_pressed("ui_cancel"):
 		_on_GoBackButton_pressed()
 
@@ -159,25 +153,6 @@ func _on_ClearControlsButton_pressed() -> void:
 	Util.try_create_new_controller_file()
 	Util.set_input_map_ui_controls()
 	Util.init_global_input_map()
-
-func _on_ChangeControlsButton_pressed() -> void:
-	button_map_paused_before_open = get_tree().paused
-	button_menu = BUTTON_MAP_MENU.instantiate()
-	button_menu.configure_single_player(last_input_event, true)
-	set_process_input(false)
-	var focus_owner = get_viewport().gui_get_focus_owner()
-	if (focus_owner != null):
-		focus_owner.release_focus()
-	$CanvasLayer.add_child(button_menu)
-	button_menu.connect("complete", Callable(self, "button_set_complete"))
-
-func button_set_complete() -> void:
-	get_tree().paused = button_map_paused_before_open
-	button_menu.disconnect("complete", Callable(self, "button_set_complete"))
-	button_menu.queue_free()
-	button_menu = null
-	set_process_input(true)
-	$CanvasLayer/Options/ChangeControlsButton.call_deferred("grab_focus")
 
 func load_startup_config():
 	var config = ConfigFile.new()
