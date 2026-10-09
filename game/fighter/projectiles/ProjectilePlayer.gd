@@ -46,6 +46,8 @@ func setup(playerData:PlayerSetup):
 				state_factory = SubaruStarBallStateFactory.new()
 			Enums.Projectiles.SubaruBatterSetBall:
 				state_factory = preload("res://game/state/projectiles/subaru/SubaruBatterSetBallStateFactory.gd").new()
+			Enums.Projectiles.SubaruEXBatterSetBall:
+				state_factory = preload("res://game/state/projectiles/subaru/SubaruEXBatterSetBallStateFactory.gd").new()
 			Enums.Projectiles.AssistSubaruStarBall:
 				state_factory = preload("res://game/state/projectiles/subaru/AssistSubaruStarBallStateFactory.gd").new()
 			Enums.Projectiles.HakkaTags:

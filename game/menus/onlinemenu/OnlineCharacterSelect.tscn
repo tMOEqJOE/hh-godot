@@ -55,7 +55,7 @@
 [ext_resource type="Script" uid="uid://ds4bds8ylrmqi" path="res://game/menus/characterselect/PlayerSelectFlash.gd" id="66"]
 [ext_resource type="Shader" uid="uid://dinoskkj75qym" path="res://game/assets/shaders/ColorSwapAntiAlias.gdshader" id="66_fj7xv"]
 [ext_resource type="Script" uid="uid://bjc0r8bue6an" path="res://game/menus/onlinemenu/OnlineCharacterSelect.gd" id="67"]
-[ext_resource type="Texture2D" uid="uid://7j6rx4336gr2" path="res://game/assets/sprites/assists/hakka/ColorPalettes/2.png" id="67_q3mc5"]
+[ext_resource type="Texture2D" uid="uid://7j6rx4336gr2" path="res://game/assets/sprites/assists/rikka/ColorPalettes/2.png" id="67_q3mc5"]
 [ext_resource type="Script" uid="uid://cv1fa8k03ytiy" path="res://game/menus/characterselect/CurtainFlash.gd" id="68"]
 [ext_resource type="FontFile" uid="uid://b2jogmfxodv6o" path="res://game/assets/monogram_extended.ttf" id="69"]
 
@@ -179,9 +179,6 @@ delay = 80
 
 [node name="CharacterIconsNode" parent="." instance=ExtResource("6_tgc0a")]
 position = Vector2(750, 144)
-
-[node name="8" parent="CharacterIconsNode" index="8"]
-visible = false
 
 [node name="KimiNoHiroin" type="Node2D" parent="."]
 z_index = 120
