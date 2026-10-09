@@ -237,38 +237,6 @@ func _physics_process(_delta):
 
 func physics_tick():
 	process_color_captures()
-	if (p1_color_capture.is_empty() and p1_button_map == null and (Input.is_action_just_pressed("player1_cancel") or Input.is_action_just_pressed("menu_back_b"))):
-		if (not P1Cursor.selected):
-			go_to_prev_scene()
-			return
-		else:
-			if (p1_assist_select != null and p1_assist_select.is_selected()):
-				p1_assist_select.deselect()
-				p1_active_cursor = p1_assist_select
-				p1_ready = false
-			else:
-				p1_assist_select.queue_free()
-				remove_child(p1_assist_select)
-				A1Portrait.clear_portrait()
-				p1_assist_select = null
-				p1_active_cursor = P1Cursor
-				P1Cursor.deselect()
-	if (p2_color_capture.is_empty() and p2_button_map == null and (Input.is_action_just_pressed("player2_cancel") or Input.is_action_just_pressed("menu_back_b"))):
-		if (not P2Cursor.selected):
-			go_to_prev_scene()
-			return
-		else:
-			if (p2_assist_select != null and p2_assist_select.is_selected()):
-				p2_assist_select.deselect()
-				p2_active_cursor = p2_assist_select
-				p2_ready = false
-			else:
-				p2_assist_select.queue_free()
-				remove_child(p2_assist_select)
-				A2Portrait.clear_portrait()
-				p2_assist_select = null
-				p2_active_cursor = P2Cursor
-				P2Cursor.deselect()
 
 func resolve_characters(row: int, col: int):
 	var enumChara: int = character[row][col]
@@ -469,6 +437,41 @@ func _input(event):
 func input_helper(event):
 	button_set_initiate(event)
 	try_react_to_new_controller(event)
+	back_button(event)
+
+func back_button(event):
+	if (p1_color_capture.is_empty() and p1_button_map == null and (Input.is_action_just_pressed("player1_cancel") or Util.is_action_pressed_player_specific(event, "menu_back_b", true))):
+		if (not P1Cursor.selected):
+			go_to_prev_scene()
+			return
+		else:
+			if (p1_assist_select != null and p1_assist_select.is_selected()):
+				p1_assist_select.deselect()
+				p1_active_cursor = p1_assist_select
+				p1_ready = false
+			else:
+				p1_assist_select.queue_free()
+				remove_child(p1_assist_select)
+				A1Portrait.clear_portrait()
+				p1_assist_select = null
+				p1_active_cursor = P1Cursor
+				P1Cursor.deselect()
+	if (p2_color_capture.is_empty() and p2_button_map == null and (Input.is_action_just_pressed("player2_cancel") or Util.is_action_pressed_player_specific(event, "menu_back_b", false))):
+		if (not P2Cursor.selected):
+			go_to_prev_scene()
+			return
+		else:
+			if (p2_assist_select != null and p2_assist_select.is_selected()):
+				p2_assist_select.deselect()
+				p2_active_cursor = p2_assist_select
+				p2_ready = false
+			else:
+				p2_assist_select.queue_free()
+				remove_child(p2_assist_select)
+				A2Portrait.clear_portrait()
+				p2_assist_select = null
+				p2_active_cursor = P2Cursor
+				P2Cursor.deselect()
 
 func button_set_initiate(event):
 	if event.is_action_pressed("player1_start"):
