@@ -185,6 +185,7 @@ text = "UI_BUTTON_PLAY_DEMO"
 
 [node name="PlayDemoButton" type="Button" parent="CanvasLayer/TrainingOptionsMenu"]
 layout_mode = 2
+focus_neighbor_top = NodePath("../ExitButton")
 text = "UI_BUTTON_PLAY_DEMO"
 
 [node name="PlayDemoEmpty" type="Label" parent="CanvasLayer/TrainingOptionsMenu"]
@@ -578,6 +579,7 @@ text = "UI_MENU_QUIT_TRAINING"
 
 [node name="ExitButton" type="Button" parent="CanvasLayer/TrainingOptionsMenu"]
 layout_mode = 2
+focus_neighbor_bottom = NodePath("../PlayDemoButton")
 text = "UI_BUTTON_QUIT"
 
 [node name="ExitNumber" type="Label" parent="CanvasLayer/TrainingOptionsMenu"]
