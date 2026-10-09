@@ -240,6 +240,7 @@ func physics_tick():
 	if (p1_color_capture.is_empty() and p1_button_map == null and (Input.is_action_just_pressed("player1_cancel") or Input.is_action_just_pressed("menu_back_b"))):
 		if (not P1Cursor.selected):
 			go_to_prev_scene()
+			return
 		else:
 			if (p1_assist_select != null and p1_assist_select.is_selected()):
 				p1_assist_select.deselect()
@@ -255,6 +256,7 @@ func physics_tick():
 	if (p2_color_capture.is_empty() and p2_button_map == null and (Input.is_action_just_pressed("player2_cancel") or Input.is_action_just_pressed("menu_back_b"))):
 		if (not P2Cursor.selected):
 			go_to_prev_scene()
+			return
 		else:
 			if (p2_assist_select != null and p2_assist_select.is_selected()):
 				p2_assist_select.deselect()
