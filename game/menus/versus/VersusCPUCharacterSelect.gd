@@ -60,7 +60,6 @@ func pick_random_opponent():
 		Global.PLAYER_2_CHARACTER[1] = charaData[1]
 		Global.load_queue.queue_resource(Global.PLAYER_2_NODE_PATH[1])
 		p2_ready = true
-		p1_ready = true
 		ready_up_peer()
 	else:
 		p1_color_number = pick_random_color()
@@ -84,7 +83,6 @@ func pick_random_opponent():
 		Global.PLAYER_1_CHARACTER[1] = charaData[1]
 		Global.load_queue.queue_resource(Global.PLAYER_1_NODE_PATH[1])
 		p1_ready = true
-		p2_ready = true
 		ready_up_peer()
 
 func start_loading_process():
