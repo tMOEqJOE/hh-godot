@@ -47,6 +47,7 @@ const DISPLAY_NAMES: Dictionary = {
 
 	"MediumDP": "Right Down DownRight B",
 	"Snapback": "Down DownLeft Left C",
+	"SlashMode": "Right DownRight Down DownLeft Left Right C",
 
 	"LightYoruMatsuyo": "Down DownLeft Left A UI_COMBO_WORD_AIR_OK",
 	"YoruMatsuyo": "Down DownLeft Left B UI_COMBO_WORD_AIR_OK",
