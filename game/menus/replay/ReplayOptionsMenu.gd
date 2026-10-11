@@ -10,6 +10,8 @@ signal loadstate()
 
 var menu_close_delay: int
 var most_recent_focus:Control
+var button_map_paused_before_open: bool
+var last_input_event: InputEvent
 
 #func _on_focus_changed(control:Control) -> void:
 	#if control is PopupMenu:
@@ -72,27 +74,31 @@ func _on_CloseButton_pressed():
 	set_close_delay()
 
 func _input(event):
+	last_input_event = event
 	input_helper(event)
 
 func input_helper(event):
-	if process_mode != Node.PROCESS_MODE_PAUSABLE and is_enabled():
+	if is_enabled():
 		if event.is_action_pressed("player1_start") or event.is_action_pressed("player2_start"):
 			_on_CloseButton_pressed()
 		elif event.is_action_pressed("player1_cancel") or event.is_action_pressed("player2_cancel") or event.is_action_pressed("menu_back_b"):
 			_on_CloseButton_pressed()
 
 func _on_ChangeControlsButton_pressed():
+	button_map_paused_before_open = get_tree().paused
 	button_menu = BUTTON_MAP_MENU.instantiate()
-	add_child(button_menu)
+	button_menu.configure_single_player(last_input_event, true)
+	set_process_input(false)
+	var focus_owner = get_viewport().gui_get_focus_owner()
+	if (focus_owner != null):
+		focus_owner.release_focus()
+	get_parent().add_child(button_menu)
 	button_menu.connect("complete", Callable(self, "button_set_complete"))
-	button_menu.scale.x /= self.scale.x
-	button_menu.scale.y /= self.scale.y
-	button_menu.remove_player(false)
-	process_mode = Node.PROCESS_MODE_PAUSABLE
 
 func button_set_complete():
-	process_mode = Node.PROCESS_MODE_ALWAYS
+	get_tree().paused = button_map_paused_before_open
 	button_menu.disconnect("complete", Callable(self, "button_set_complete"))
-	remove_child(button_menu)
 	button_menu.queue_free()
 	button_menu = null
+	set_process_input(true)
+	$ChangeControlsButton.call_deferred("grab_focus")

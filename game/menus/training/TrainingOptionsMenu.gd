@@ -30,7 +30,7 @@ func _on_focus_changed(control:Control) -> void:
 
 func _ready():
 	get_viewport().connect("gui_focus_changed", Callable(self, "_on_focus_changed"))
-	most_recent_focus = $SaveStateButton
+	most_recent_focus = get_default_focus()
 	
 	$BlockOptions.add_item(tr("UI_TRAINING_NONE"), Enums.TrainingBlock.NONE)
 	$BlockOptions.add_item(tr("UI_TRAINING_ALL"), Enums.TrainingBlock.ALL)
@@ -70,8 +70,14 @@ func open_training_options_menu():
 	if (not is_enabled()):
 		self.visible = true
 		if (most_recent_focus == null):
-			most_recent_focus = $SaveStateButton
+			most_recent_focus = get_default_focus()
 		most_recent_focus.grab_focus()
+
+func get_default_focus() -> Control:
+	var save_state_button = get_node_or_null("SaveStateButton") as Control
+	if (save_state_button != null):
+		return save_state_button
+	return get_node_or_null("PlayDemoButton") as Control
 	
 func set_close_delay():
 	if (is_enabled()):

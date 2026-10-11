@@ -2,6 +2,8 @@ extends FlayonFlightBaseState
 
 class_name FlayonFlight2CIncreaseState
 
+var VoiceSound = preload("res://game/assets/voice/flayon/MXF_running noises.wav")
+
 func _init():
 	endFrame = 30
 	
@@ -75,6 +77,8 @@ func physics_tick(state: Dictionary) -> void:
 	elif (state[Enums.StKey.frame] == 8):
 		state[Enums.StKey.velocity_x] = Util.fixed_max(SGFixed.ONE*25, state[Enums.StKey.velocity_x])
 		state[Enums.StKey.velocity_y] = SGFixed.ONE*55
+	elif (state[Enums.StKey.frame] == 6):
+		SyncManager.play_sound("FlayonVoice", VoiceSound, {"bus": "Voice"})
 
 func gatling_cancel(state: Dictionary, interpreter: InputInterpreter):
 	pass

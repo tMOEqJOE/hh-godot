@@ -29,6 +29,7 @@ func _init():
 			Enums.StKey.counter_hit : Enums.AttackType.BurstLock,
 		},
 		6 : {
+			Enums.StKey.counterOK : true,
 			Enums.StKey.Hit1Disable : false,
 			Enums.StKey.Hurt1Disable : true,Enums.StKey.Hurt2Disable : true,Enums.StKey.Hurt3Disable : true,
 			Enums.StKey.hit_box_colliding_frame : 254,
@@ -50,6 +51,7 @@ func _init():
 			Enums.StKey.counter_launch_dir_y: -SGFixed.ONE*70,
 			},
 		10 : {
+			Enums.StKey.counterOK : true,
 			Enums.StKey.Hit1Disable : false,
 			Enums.StKey.Hurt1Disable : false,Enums.StKey.Hurt2Disable : true,Enums.StKey.Hurt3Disable : true,
 			Enums.StKey.Hurt1PosX : -262144, Enums.StKey.Hurt1PosY : -7471104,
@@ -72,6 +74,7 @@ func _init():
 			Enums.StKey.counter_launch_dir_y: -SGFixed.ONE*70,
 			},
 		37 : {
+			Enums.StKey.counterOK : true,
 			Enums.StKey.Hit1Disable : true,
 			Enums.StKey.Hurt1Disable : false,Enums.StKey.Hurt2Disable : true,Enums.StKey.Hurt3Disable : true,
 			Enums.StKey.Hurt1PosX : -262144, Enums.StKey.Hurt1PosY : -7471104,
@@ -91,6 +94,7 @@ func physics_tick(state: Dictionary) -> void:
 		state[Enums.StKey.velocity_x] = SGFixed.ONE*70
 	elif (state[Enums.StKey.frame] == 5):
 		SyncManager.play_sound("SubaruVoice", CallSound, {"bus": "Voice"})
+		SyncManager.play_sound("SubaruVoiceReverb", CallSound, {"bus": "ReverbVoice"})
 
 func meter_cancel(state: Dictionary, interpreter: InputInterpreter):
 	if (state[Enums.StKey.hitStopFrame] >= 0):

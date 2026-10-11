@@ -159,6 +159,7 @@ enum Projectiles {
 	HighMioCannon,
 	SubaruStarBall,
 	SubaruBatterSetBall,
+	SubaruEXBatterSetBall,
 	OllieRook,
 	OllieBishop,
 	OllieKnight,

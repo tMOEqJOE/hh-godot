@@ -54,5 +54,5 @@ func enter(state: Dictionary) -> void:
 func physics_tick(state: Dictionary) -> void:
 	super.physics_tick(state)
 	if (state[Enums.StKey.frame] == 1):
-		state[Enums.StKey.velocity_x] = SGFixed.ONE*35
+		state[Enums.StKey.velocity_x] = SGFixed.ONE*40
 		state[Enums.StKey.drag_x] = Util.FRICTION

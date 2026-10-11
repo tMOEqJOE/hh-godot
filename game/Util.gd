@@ -6,6 +6,7 @@ const KANATA_GRAVITY := 185800
 const JUGGLE_GRAVITY := 183500
 const OLLIE_FAST_FALL_GRAVITY := 285800
 
+const DEFAULT_MIN_DAMAGE:= 3
 const DEFAULT_HITSTOP := 8
 const DEFAULT_BLOCKSTUN := 15
 const DEFAULT_HITSTUN := 17
@@ -19,6 +20,8 @@ const IB_REDUCED_AIR_BLOCKSTUN := 10
 const PARRY_REDUCED_HITSTOP := 5
 const ASSIST_EXIT_RECOVERY := 40
 const FORCE_UNDIZZY := 450
+const AIR_EXTRA_CHIP:= 6
+const DANGER_EXTRA_CHIP:= 6
 
 const HYPER_FRICTION := 405536
 const FD_FRICTION := 205536
@@ -492,61 +495,7 @@ func set_input_map_ui_controls() -> void:
 		return
 	for device_id in Input.get_connected_joypads():
 		add_saved_device_input_map_ui_controls(device_id)
-		#input_map_actions = default_input_map_actions
-		#if (device_id == Global.p1_device_id):
-			#var new_input_map_actions = {
-				#"ui_accept": ["player1_a", "player1_b", "player1_c", "player1_d"],
-				#"ui_cancel": ["player1_cancel"]
-			#}
-			#assigned = false
-			#for ui_control_key in new_input_map_actions:
-				#for input_action in new_input_map_actions[ui_control_key]:
-					#var action_list: Array = InputMap.action_get_events(input_action)
-					#for event in action_list:
-						#if (event is InputEventKey):
-							#pass
-						#elif (event is InputEventJoypadButton or event is InputEventJoypadMotion):
-							#assigned = true
-			#if (assigned):
-				#input_map_actions = new_input_map_actions
-		#elif (device_id == Global.p2_device_id):
-			#var new_input_map_actions = {
-				#"ui_accept": ["player2_a", "player2_b", "player2_c", "player2_d"],
-				#"ui_cancel": ["player2_cancel"]
-			#}
-			#assigned = false
-			#for ui_control_key in new_input_map_actions:
-				#for input_action in new_input_map_actions[ui_control_key]:
-					#var action_list: Array = InputMap.action_get_events(input_action)
-					#for event in action_list:
-						#if (event is InputEventKey):
-							#pass
-						#elif (event is InputEventJoypadButton or event is InputEventJoypadMotion):
-							#assigned = true
-			#if (assigned):
-				#input_map_actions = new_input_map_actions
-		#
-		#assigned = false
-		#for ui_control_key in input_map_actions:
-			#for input_action in input_map_actions[ui_control_key]:
-				#var action_list: Array = InputMap.action_get_events(input_action)
-				#for event in action_list:
-					#if (event is InputEventKey):
-						#pass
-					#elif (event is InputEventJoypadButton):
-						#var joy_event = InputEventJoypadButton.new()
-						#joy_event.device = device_id
-						#joy_event.button_index = event.button_index
-						#InputMap.action_add_event(ui_control_key, joy_event)
-						#assigned = true
-					#elif (event is InputEventJoypadMotion):
-						#var joy_event = InputEventJoypadMotion.new()
-						#joy_event.device = device_id
-						#joy_event.axis = event.axis
-						#InputMap.action_add_event(ui_control_key, joy_event)
-						#assigned = true
-					#else:
-						#print("Unknown InputEvent: " + str(event))
+	
 	input_map_actions = {
 			"ui_accept": ["player1_a", "player1_b", "player1_c", "player1_d"],
 			"ui_cancel": ["player1_cancel"]
@@ -596,6 +545,17 @@ func _add_fixed_joypad_b_back_bindings() -> void:
 	for action in ["ui_cancel", "menu_back_b"]:
 		if (not InputMap.action_has_event(action, back_event)):
 			InputMap.action_add_event(action, back_event)
+
+func is_action_pressed_player_specific(event, event_name:String, is_p1: bool):
+	if event.is_action_pressed(event_name):
+		if is_p1 and event.device == Global.p1_device_id:
+			return true
+		elif not is_p1 and event.device == Global.p2_device_id:
+			return true
+		else:
+			return false
+	else:
+		return false
 
 func _burner_input_map_ui_controls() -> void:
 	for device_id in Input.get_connected_joypads():

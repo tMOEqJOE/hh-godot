@@ -68,6 +68,7 @@ const DISPLAY_NAMES: Dictionary = {
 
 	"KanataAirFiftyKGHit": "Right DownRight Down DownLeft Left A UI_COMBO_WORD_AIR",
 	"KanataFiftyKGHit": "Right DownRight Down DownLeft Left A",
+	"KanataAirFiftyRekkaA": "Right DownRight Down DownLeft Left A",
 	
 	"KanataSuperFiftyRekkaA":"Right DownRight Down DownLeft Left C",
 	
