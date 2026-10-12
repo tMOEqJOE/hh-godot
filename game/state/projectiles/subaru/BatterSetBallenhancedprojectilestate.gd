@@ -41,3 +41,8 @@ func enter(state: Dictionary) -> void:
 func reaction(state: Dictionary, _interpreter: InputInterpreter, event_cause: int) -> void:
 	if (event_cause == Enums.Reaction.StrikeHurt):
 		state[Enums.StKey.frame] = 2
+	elif (event_cause == Enums.Reaction.PointAttackHurt):
+		change_state.call("Destroy")
+	elif (event_cause == Enums.Reaction.PointBlockHurt):
+		change_state.call("Destroy")
+	

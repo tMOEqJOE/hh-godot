@@ -28,7 +28,7 @@ func _init():
 			Enums.StKey.Hurt3PosX : 12845056, Enums.StKey.Hurt3PosY : -12517376,
 			Enums.StKey.Hurt3ScaleX : 845584, Enums.StKey.Hurt3ScaleY : -455324,
 			},
-		21 : {
+		12 : {
 			Enums.StKey.counterOK : true,
 			Enums.StKey.Hit1Disable : false,
 			Enums.StKey.Hit2Disable : false,
@@ -58,7 +58,7 @@ func _init():
 			Enums.StKey.counter_launch_dir_x: SGFixed.ONE*30,
 			Enums.StKey.counter_launch_dir_y: -SGFixed.ONE*30,
 			},
-		25 : { 
+		14 : { 
 			Enums.StKey.Hit1Disable : true,
 			Enums.StKey.Hit2Disable : true,
 			Enums.StKey.Hurt1Disable : false,Enums.StKey.Hurt2Disable : false,Enums.StKey.Hurt3Disable : true,
