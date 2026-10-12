@@ -22,7 +22,7 @@ const ASSIST_EXIT_RECOVERY := 40
 const FORCE_UNDIZZY := 450
 const AIR_EXTRA_CHIP:= 6
 const DANGER_EXTRA_CHIP:= 6
-const GUTS_PERCENT := 35768 # 32768
+const GUTS_PERCENT := 27768 # 32768
 
 const HYPER_FRICTION := 405536
 const FD_FRICTION := 205536
@@ -216,9 +216,9 @@ func damage_scaling_percent(hitCount: int) -> int:
 	return percentF
 
 func guts_scaling(damage: int, currentHP: int) -> int:
-	var hp_modify: int = SGFixed.div(SGFixed.from_int(currentHP), SGFixed.from_int(MAX_HP))
-	var guts_modify: int = SGFixed.mul(hp_modify, Util.GUTS_PERCENT) + (SGFixed.ONE - Util.GUTS_PERCENT) # minguts_percent + (hpmod * enough to max to 100%)
-	return SGFixed.mul(damage, guts_modify)
+	var hp_percent: int = SGFixed.div(SGFixed.from_int(currentHP), SGFixed.from_int(MAX_HP))
+	var guts_modify: int = SGFixed.mul(Util.GUTS_PERCENT, (SGFixed.ONE - hp_percent))
+	return damage - SGFixed.mul(damage, guts_modify)
 
 func gravity_scaling(gravity: int, comboTime: int) -> int:
 	var comboTimeF: int = SGFixed.from_int(comboTime)
