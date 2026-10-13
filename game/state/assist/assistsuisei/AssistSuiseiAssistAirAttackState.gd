@@ -3,7 +3,7 @@ extends AssistAirAttackState
 class_name AssistSuiseiAssistAirAttackState
 
 func _init():
-	endFrame = 30
+	endFrame = 35
 
 	anim_data = {
 		0 : {
