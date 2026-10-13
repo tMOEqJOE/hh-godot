@@ -47,6 +47,10 @@ const DISPLAY_NAMES: Dictionary = {
 
 	"MediumDP": "Right Down DownRight B",
 	"Snapback": "Down DownLeft Left C",
+	"AirRiderKickLight": "Down DownRight Right A UI_COMBO_WORD_AIR",
+	"AirRiderKick": "Down DownRight Right B UI_COMBO_WORD_AIR",
+	"AirTurnKickLight": "Down DownLeft Left A UI_COMBO_WORD_AIR",
+	"AirTurnKick": "Down DownLeft Left B UI_COMBO_WORD_AIR",
 	"SlashMode": "Right DownRight Down DownLeft Left Right C",
 
 	"LightYoruMatsuyo": "Down DownLeft Left A UI_COMBO_WORD_AIR_OK",
