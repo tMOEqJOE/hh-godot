@@ -19,7 +19,7 @@ func _init():
 			#Enums.StKey.Hurt3PosX : 1179648, Enums.StKey.Hurt3PosY : -34734084,
 			#Enums.StKey.Hurt3ScaleX : 574199, Enums.StKey.Hurt3ScaleY : 659435,
 			},
-		14 : {
+		10 : {
 			Enums.StKey.Hit1Disable : true,
 			Enums.StKey.Hit2Disable : true,
 			Enums.StKey.Hurt1Disable : false,Enums.StKey.Hurt2Disable : false,
@@ -31,7 +31,7 @@ func _init():
 			#Enums.StKey.Hurt3ScaleX : 574199, Enums.StKey.Hurt3ScaleY : 659435,
 			Enums.StKey.Summon : "knockdowndust",
 			},
-		15 : {
+		11 : {
 			Enums.StKey.Hit1Disable : false,
 			Enums.StKey.Hit2Disable : true,
 			Enums.StKey.Hit1PosX : 23658496, Enums.StKey.Hit1PosY : -17563648,
@@ -60,7 +60,7 @@ func _init():
 			Enums.StKey.counter_launch_dir_x: SGFixed.ONE*3,
 			Enums.StKey.counter_launch_dir_y: SGFixed.ONE*75,
 			},
-		20 : { 
+		16 : { 
 			Enums.StKey.Hit1Disable : true,
 			Enums.StKey.Hit2Disable : true,
 			Enums.StKey.Hurt1Disable : false,Enums.StKey.Hurt2Disable : false,

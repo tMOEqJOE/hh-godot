@@ -16,7 +16,6 @@ func _init():
 			Enums.StKey.counter_hit: Enums.AttackType.Launcher,
 			Enums.StKey.attack_damage: 40,
 			Enums.StKey.hit_box_colliding_frame : 1,
-#			Enums.StKey.hitstun: 25,
 			},
 		60 : {
 			Enums.StKey.Hit1Disable : true,
