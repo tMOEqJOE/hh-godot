@@ -24,11 +24,11 @@ func _init():
 			Enums.StKey.attack_damage: 40,
 			Enums.StKey.hitstun: 30,
 			Enums.StKey.attack_type : Enums.AttackType.Launcher,
-			Enums.StKey.launch_dir_x : -SGFixed.ONE*10,
+			Enums.StKey.launch_dir_x : -SGFixed.ONE*15,
 			Enums.StKey.launch_dir_y : -SGFixed.ONE*55,
 			Enums.StKey.counter_hit: Enums.AttackType.Launcher,
 			Enums.StKey.counter_hitstun: 60,
-			Enums.StKey.counter_launch_dir_x: -SGFixed.ONE*10,
+			Enums.StKey.counter_launch_dir_x: -SGFixed.ONE*15,
 			Enums.StKey.counter_launch_dir_y: -SGFixed.ONE*60,
 			},
 		13 : { 
@@ -55,7 +55,7 @@ func _init():
 			Enums.StKey.launch_dir_y : -SGFixed.ONE*40,
 			Enums.StKey.counter_hit: Enums.AttackType.WallBouncer,
 			Enums.StKey.counter_hitstun: 60,
-			Enums.StKey.counter_launch_dir_x: -SGFixed.ONE*5,
+			Enums.StKey.counter_launch_dir_x: -SGFixed.ONE*10,
 			Enums.StKey.counter_launch_dir_y: -SGFixed.ONE*40,
 			},
 		36 : { 
