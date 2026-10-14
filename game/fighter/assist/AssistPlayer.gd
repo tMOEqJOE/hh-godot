@@ -255,6 +255,8 @@ func summonHelper(entity: String, uninterrupted:bool=true) -> void:
 				SyncManager.play_sound("superflash", Global.SuperFlashSound, {"bus": "Sound"})
 			elif (entity == "meterDump"):
 				emit_signal("battery_player", -Util.LEVEL_ONE_SUPER, 0, 0)
+			elif (entity == "sync_down"):
+				emit_signal("battery_player", 0, -13536, -SGFixed.ONE*40) #-8536
 		if (entity == "knockdowndust"):
 			summonVFX("KnockdownVFX", Global.KnockdownDustVFX)
 		elif (entity == "WallBounceDust"):
