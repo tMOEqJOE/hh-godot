@@ -75,7 +75,8 @@ func join_an_online_match() -> void:
 	SyncManager.connect("peer_removed", Callable(self, "_on_SyncManager_peer_removed"))
 	
 	OnlineMatch.leave()
-	
+	self.focus_exited.connect(_on_focus_lost)
+
 	$CanvasLayer/RoomIDField.text = OnlineLobby.match_id
 	SyncManager.spectating = false
 	Global.was_spectating = false
@@ -92,6 +93,10 @@ func join_an_online_match() -> void:
 	update_ui()
 	OnlineLobby.clear_my_spectators()
 	init_player_list(OnlineLobby.players)
+
+func _on_focus_lost() -> void:
+	$CanvasLayer/GridContainer/InputDelayMeter.grab_focus()
+	print("UI control lost focus!")
 
 func _on_OnlineMatch_match_left():
 	print("OnlineMatch left")

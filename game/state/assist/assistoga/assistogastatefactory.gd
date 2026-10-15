@@ -14,7 +14,7 @@ func _init():
 		"AssistSuperFollowup" : preload("res://game/state/assist/assistoga/AssistOgaAssistSuperFollowupState.gd"),
 		"AssistAirSuperFollowup" : preload("res://game/state/assist/assistoga/AssistOgaAssistAirSuperFollowupState.gd"),
 		"AssistAttack2" : preload("res://game/state/assist/assistoga/AssistOgaDPState.gd"),
-		"AssistAirAttack2" : preload("res://game/state/assist/assistoga/AssistOgaFastFallState.gd"),
+		"AssistAirAttack2" : preload("res://game/state/assist/assistoga/AssistOgaDPState.gd"),
 		"LandAttackRecovery" : preload("res://game/state/assist/assistoga/AssistOgaLandingRecovery.gd"),
 		"AssistExit": preload("res://game/state/assist/assistoga/AssistOgaAssistExitState.gd"),
 		"AssistAirExit": preload("res://game/state/assist/assistoga/AssistOgaAssistAirExitState.gd"),
