@@ -265,6 +265,7 @@ UI_COMBO_HINT_HIT_STANCE_SCISSORS,[i]Hint: Hit Stance D and Scissors in very qui
 UI_COMBO_HINT_START_SUISEI,[i]Hint: Start the combo in Suisei mode[/i],[i]ヒント：すいせいモードに始まる[/i],
 UI_COMBO_HINT_ASSIST_BEHIND,[i]Hint: Use AssistAttack2 when Fubuki is behind the opponent[/i],[i]ヒント：フブキが相手の後ろに AssistAttack2 を使う[/i],
 UI_COMBO_HINT_AIR_THROW_BOUNCE,[i]Hint: Air throw the opponent before they ground bounce[/i],,
+UI_COMBO_HINT_J8CBUFFER,[i]Hint: Press Up C (Air) before C (Air) connects![/i],,
 UI_COMBO_HOLD_GROUND_THROW,Hold GroundThrowHit,GroundThrowHit を押したままに,
 UI_COMBO_HOLD_C,Hold C,C を押したままに,
 UI_COMBO_HOLD_A,Hold A,A を押したままに,
