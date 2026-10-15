@@ -256,7 +256,7 @@ func summonHelper(entity: String, uninterrupted:bool=true) -> void:
 			elif (entity == "meterDump"):
 				emit_signal("battery_player", -Util.LEVEL_ONE_SUPER, 0, 0)
 			elif (entity == "sync_down"):
-				emit_signal("battery_player", 0, -13536, -SGFixed.ONE*40) #-8536
+				emit_signal("battery_player", 0, -8536, -SGFixed.ONE*70) #-8536
 		if (entity == "knockdowndust"):
 			summonVFX("KnockdownVFX", Global.KnockdownDustVFX)
 		elif (entity == "WallBounceDust"):
