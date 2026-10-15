@@ -1,5 +1,12 @@
 extends GridContainer
 
+@onready var BUTTON_MAP_MENU = preload("res://game/menus/buttonmap/ButtonMapMenuScreen.tscn")
+var button_menu
+var button_map_paused_before_open: bool
+var last_input_event: InputEvent
+var command_list_input_was_enabled: bool
+var command_list_physics_was_enabled: bool
+
 signal close_menu()
 signal exit()
 signal reset()
@@ -23,7 +30,7 @@ func _on_focus_changed(control:Control) -> void:
 
 func _ready():
 	get_viewport().connect("gui_focus_changed", Callable(self, "_on_focus_changed"))
-	most_recent_focus = $SaveStateButton
+	most_recent_focus = get_default_focus()
 	
 	$BlockOptions.add_item(tr("UI_TRAINING_NONE"), Enums.TrainingBlock.NONE)
 	$BlockOptions.add_item(tr("UI_TRAINING_ALL"), Enums.TrainingBlock.ALL)
@@ -63,8 +70,14 @@ func open_training_options_menu():
 	if (not is_enabled()):
 		self.visible = true
 		if (most_recent_focus == null):
-			most_recent_focus = $SaveStateButton
+			most_recent_focus = get_default_focus()
 		most_recent_focus.grab_focus()
+
+func get_default_focus() -> Control:
+	var save_state_button = get_node_or_null("SaveStateButton") as Control
+	if (save_state_button != null):
+		return save_state_button
+	return get_node_or_null("PlayDemoButton") as Control
 	
 func set_close_delay():
 	if (is_enabled()):
@@ -132,17 +145,43 @@ func _on_CloseButton_pressed():
 func _on_CommandListButton_pressed():
 	command_list.open_command_list()
 
+func _on_ChangeControlsButton_pressed() -> void:
+	button_map_paused_before_open = get_tree().paused
+	button_menu = BUTTON_MAP_MENU.instantiate()
+	button_menu.configure_single_player(last_input_event, Global.TRAINING_P1)
+	set_process_input(false)
+	command_list_input_was_enabled = command_list.is_processing_input()
+	command_list_physics_was_enabled = command_list.is_physics_processing()
+	command_list.set_process_input(false)
+	command_list.set_physics_process(false)
+	var focus_owner = get_viewport().gui_get_focus_owner()
+	if (focus_owner != null):
+		focus_owner.release_focus()
+	get_parent().add_child(button_menu)
+	button_menu.connect("complete", Callable(self, "button_set_complete"))
+
+func button_set_complete() -> void:
+	get_tree().paused = button_map_paused_before_open
+	button_menu.disconnect("complete", Callable(self, "button_set_complete"))
+	button_menu.queue_free()
+	button_menu = null
+	set_process_input(true)
+	command_list.set_process_input(command_list_input_was_enabled)
+	command_list.set_physics_process(command_list_physics_was_enabled)
+	$ChangeControlsButton.call_deferred("grab_focus")
+
 func command_list_closed():
 	$CommandListButton.grab_focus()
 
 func _input(event):
+	last_input_event = event
 	input_helper(event)
 
 func input_helper(event):
 	if event.is_action_pressed("player1_start") or event.is_action_pressed("player2_start"):
 		if (not command_list.is_enabled()):
 			_on_CloseButton_pressed()
-	elif event.is_action_pressed("player1_cancel") or event.is_action_pressed("player2_cancel"):
+	elif event.is_action_pressed("player1_cancel") or event.is_action_pressed("player2_cancel") or event.is_action_pressed("menu_back_b"):
 		if (not command_list.is_enabled()):
 			_on_CloseButton_pressed()
 

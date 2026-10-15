@@ -107,6 +107,8 @@ func update_p1():
 	if (charaData[2] == true):
 		Global.ASSIST_COMBO_TRIAL = true
 		charaData = ["res://game/fighter/SubaruPlayer.tscn", Enums.PointCharacters.Subaru, false]
+	else:
+		p1_color_number = fit_color_number_to_character(charaData[1], false, p1_color_number)
 
 	unload_character(charaData[0],true,false)
 	Global.PLAYER_1_NODE_PATH[0] = charaData[0]
@@ -117,7 +119,11 @@ func update_p1():
 		p1_color_number = 1
 		load_assist(P1Cursor.row, P1Cursor.col, true)
 	else:
-		load_assist(1, 1, true)
+		match charaData[1]:
+			Enums.PointCharacters.Flayon:
+				load_assist(0,0, true)
+			_:	
+				load_assist(1, 1, true)
 	Global.load_queue.queue_resource(Global.PLAYER_1_NODE_PATH[0])
 	if (Global.PLAYER_1_CHARACTER[0] == Enums.PointCharacters.Mio):
 		Global.load_queue.queue_resource(Global.PLAYER_1_NODE_PATH[2])
@@ -130,6 +136,8 @@ func update_p2():
 	if (charaData[2] == true):
 		Global.ASSIST_COMBO_TRIAL = true
 		charaData = ["res://game/fighter/SubaruPlayer.tscn", Enums.PointCharacters.Subaru, false]
+	else:
+		p2_color_number = fit_color_number_to_character(charaData[1], false, p2_color_number)
 
 	unload_character(charaData[0],false,false)
 	Global.PLAYER_2_NODE_PATH[0] = charaData[0]
@@ -140,7 +148,11 @@ func update_p2():
 		p2_color_number = 1
 		load_assist(P2Cursor.row, P2Cursor.col, false)
 	else:
-		load_assist(1, 1, false)
+		match charaData[1]:
+			Enums.PointCharacters.Flayon:
+				load_assist(0,0, false)
+			_:	
+				load_assist(1, 1, false)
 	Global.load_queue.queue_resource(Global.PLAYER_2_NODE_PATH[0])
 	if (Global.PLAYER_2_CHARACTER[0] == Enums.PointCharacters.Mio):
 		Global.load_queue.queue_resource(Global.PLAYER_2_NODE_PATH[2])
@@ -150,6 +162,7 @@ func update_p2():
 func load_assist(row, col, is_p1=true):
 	if (is_p1):
 		var charaData = resolve_assists(row, col, is_p1)
+		a1_color_number = fit_color_number_to_character(charaData[1], true, a1_color_number)
 		unload_character(charaData[0], true,true)
 		Global.PLAYER_1_NODE_PATH[1] = charaData[0]
 		Global.PLAYER_1_CHARACTER[1] = charaData[1]
@@ -157,6 +170,7 @@ func load_assist(row, col, is_p1=true):
 		p1_ready = true
 	else:
 		var charaData = resolve_assists(row, col, is_p1)
+		a2_color_number = fit_color_number_to_character(charaData[1], true, a2_color_number)
 		unload_character(charaData[0], false,true)
 		Global.PLAYER_2_NODE_PATH[1] = charaData[0]
 		Global.PLAYER_2_CHARACTER[1] = charaData[1]

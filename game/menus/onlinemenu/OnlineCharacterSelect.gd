@@ -158,6 +158,7 @@ func remote_peer_select(row:int, col:int, color_number:int):
 	message_label.text = str(peer) + " " + str(row) + " " + str(col)
 	var charaData = resolve_characters(row, col)
 	if peer == 1:
+		color_number = fit_color_number_to_character(charaData[1], false, color_number)
 		Global.PLAYER_1_NODE_PATH[0] = charaData[0]
 		Global.PLAYER_1_CHARACTER[0] = charaData[1]
 		Global.load_queue.queue_resource(Global.PLAYER_1_NODE_PATH[0])
@@ -168,6 +169,7 @@ func remote_peer_select(row:int, col:int, color_number:int):
 		P1Portrait.change_color_number(p1_color_number)
 		P1SelectFlash.player_call()
 	else:
+		color_number = fit_color_number_to_character(charaData[1], false, color_number)
 		Global.PLAYER_2_NODE_PATH[0] = charaData[0]
 		Global.PLAYER_2_CHARACTER[0] = charaData[1]
 		p2_color_number = color_number
@@ -184,6 +186,7 @@ func remote_peer_assist_select(row:int, col:int, color_number:int):
 	message_label.text = str(peer) + " " + str(row) + " " + str(col)
 	if peer == 1:
 		var charaData = resolve_assists(row, col, true)
+		color_number = fit_color_number_to_character(charaData[1], true, color_number)
 		Global.PLAYER_1_NODE_PATH[1] = charaData[0]
 		Global.PLAYER_1_CHARACTER[1] = charaData[1]
 		Global.load_queue.queue_resource(Global.PLAYER_1_NODE_PATH[1])
@@ -193,6 +196,7 @@ func remote_peer_assist_select(row:int, col:int, color_number:int):
 		P1SelectFlash.player_call()
 	else:
 		var charaData = resolve_assists(row, col, false)
+		color_number = fit_color_number_to_character(charaData[1], true, color_number)
 		Global.PLAYER_2_NODE_PATH[1] = charaData[0]
 		Global.PLAYER_2_CHARACTER[1] = charaData[1]
 		Global.load_queue.queue_resource(Global.PLAYER_2_NODE_PATH[1])
@@ -213,9 +217,10 @@ func update_p1():
 	p1_cursor_pos_row = P1Cursor.row
 	p1_cursor_pos_col = P1Cursor.col
 	p1_color_number = select_color(P1Cursor.input_prefix)
+	var charaData = resolve_characters(P1Cursor.row, P1Cursor.col)
+	p1_color_number = fit_color_number_to_character(charaData[1], false, p1_color_number)
 	P1Portrait.change_color_number(p1_color_number)
 	rpc("remote_peer_select", P1Cursor.row, P1Cursor.col, p1_color_number)
-	var charaData = resolve_characters(P1Cursor.row, P1Cursor.col)
 	Global.PLAYER_1_NODE_PATH[0] = charaData[0]
 	Global.PLAYER_1_CHARACTER[0] = charaData[1]
 	p1_assist_select = AssistSelect.instantiate()
@@ -238,9 +243,10 @@ func update_p2():
 	p2_cursor_pos_row = P2Cursor.row
 	p2_cursor_pos_col = P2Cursor.col
 	p2_color_number = select_color(P2Cursor.input_prefix)
+	var charaData = resolve_characters(P2Cursor.row, P2Cursor.col)
+	p2_color_number = fit_color_number_to_character(charaData[1], false, p2_color_number)
 	P2Portrait.change_color_number(p2_color_number)
 	rpc("remote_peer_select", P2Cursor.row, P2Cursor.col, p2_color_number)
-	var charaData = resolve_characters(P2Cursor.row, P2Cursor.col)
 	Global.PLAYER_2_NODE_PATH[0] = charaData[0]
 	Global.PLAYER_2_CHARACTER[0] = charaData[1]
 	p2_assist_select = AssistSelect.instantiate()
@@ -261,13 +267,13 @@ func update_p2():
 @rpc("any_peer") func update_a1():
 	message_label.text = "a1 update"
 	var charaData = resolve_assists(p1_assist_select.cursor_row(), p1_assist_select.cursor_col(), true)
+	a1_color_number = fit_color_number_to_character(charaData[1], true, select_color(p1_assist_select.get_node("CharacterCursor").input_prefix))
 	Global.PLAYER_1_NODE_PATH[1] = charaData[0]
 	Global.PLAYER_1_CHARACTER[1] = charaData[1]
 	Global.load_queue.queue_resource(Global.PLAYER_1_NODE_PATH[1])
 	
 	p1_assist_pos_row = p1_assist_select.cursor_row()
 	p1_assist_pos_col = p1_assist_select.cursor_col()
-	a1_color_number = select_color(p1_assist_select.get_node("CharacterCursor").input_prefix)
 	A1Portrait.change_color_number(a1_color_number)
 	rpc("remote_peer_assist_select", p1_assist_select.cursor_row(), p1_assist_select.cursor_col(), a1_color_number)
 	p1_ready = true
@@ -277,13 +283,13 @@ func update_p2():
 func update_a2():
 	message_label.text = "a2 update"
 	var charaData = resolve_assists(p2_assist_select.cursor_row(), p2_assist_select.cursor_col(), false)
+	a2_color_number = fit_color_number_to_character(charaData[1], true, select_color(p2_assist_select.get_node("CharacterCursor").input_prefix))
 	Global.PLAYER_2_NODE_PATH[1] = charaData[0]
 	Global.PLAYER_2_CHARACTER[1] = charaData[1]
 	Global.load_queue.queue_resource(Global.PLAYER_2_NODE_PATH[1])
 	
 	p2_assist_pos_row = p2_assist_select.cursor_row()
 	p2_assist_pos_col = p2_assist_select.cursor_col()
-	a2_color_number = select_color(p2_assist_select.get_node("CharacterCursor").input_prefix)
 	A2Portrait.change_color_number(a2_color_number)
 	rpc("remote_peer_assist_select", p2_assist_select.cursor_row(), p2_assist_select.cursor_col(), a2_color_number)
 	p2_ready = true

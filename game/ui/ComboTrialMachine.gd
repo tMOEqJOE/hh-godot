@@ -1,5 +1,7 @@
 extends Node2D
 
+signal combo_loaded(reset_position: String)
+
 const COMBO_DUMMY_TEXT_KEYS := {
 	"Hint: Use Jump5C as you are falling.": "UI_COMBO_HINT_FALLING_5C",
 	"Hint: Use Jump5B as you are falling.": "UI_COMBO_HINT_FALLING_5B",
@@ -40,6 +42,7 @@ var display_names: Dictionary = load("res://game/ui/ComboTrialDisplayNames.gd").
 var icon_paths: Dictionary = load("res://game/ui/IconPaths.gd").ICON_PATHS
 var combo_trial: Dictionary = {}
 var current_combo_index = 0
+var current_reset_position: String = "CENTER"
 
 var processed_combo: Array = []
 var current_combo_position: int = 0
@@ -90,12 +93,15 @@ func load_combo(index: int) -> void:
 		print("All combo trials complete!")
 		return
 	combo_trial = combo_database[character_index][index].duplicate()
+	current_reset_position = combo_trial.get("reset_position", "CENTER")
+	combo_trial.erase("reset_position")
 
 	current_combo_position = 0
 	current_step_progress = 0
 	showing_complete_message = false
 
 	refresh_combo_ui()
+	combo_loaded.emit(current_reset_position)
 
 
 func _process_combo() -> void:

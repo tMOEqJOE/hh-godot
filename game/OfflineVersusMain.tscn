@@ -197,6 +197,23 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("3")
 
+[node name="ChangeControlsLabel" type="Label" parent="CanvasLayer/PauseMenu"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("3")
+text = "UI_MENU_EDIT_CONTROLS"
+
+[node name="ChangeControlsButton" type="Button" parent="CanvasLayer/PauseMenu"]
+layout_mode = 2
+text = "UI_BUTTON_CHANGE"
+
+[node name="ChangeControlsNumber" type="Label" parent="CanvasLayer/PauseMenu"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("3")
+
 [node name="ExitLabel" type="Label" parent="CanvasLayer/PauseMenu"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -227,4 +244,5 @@ scale = Vector2(2.87118, 3.02479)
 
 [connection signal="pressed" from="CanvasLayer/PauseMenu/CloseButton" to="CanvasLayer/PauseMenu" method="_on_CloseButton_pressed"]
 [connection signal="pressed" from="CanvasLayer/PauseMenu/CommandListButton" to="CanvasLayer/PauseMenu" method="_on_CommandListButton_pressed"]
+[connection signal="pressed" from="CanvasLayer/PauseMenu/ChangeControlsButton" to="CanvasLayer/PauseMenu" method="_on_ChangeControlsButton_pressed"]
 [connection signal="pressed" from="CanvasLayer/PauseMenu/ExitButton" to="CanvasLayer/PauseMenu" method="_on_ExitButton_pressed"]
