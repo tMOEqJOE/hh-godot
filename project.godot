@@ -19,7 +19,7 @@ config/windows_native_icon="res://icon.ico"
 
 [internationalization]
 
-locale/translations=PackedStringArray("res://localization/ui.en.translation", "res://localization/ui.ja.translation")
+locale/translations=PackedStringArray("res://localization/ui.en.translation", "res://localization/ui.ja.translation", "res://localization/ui.es.translation", "res://localization/ui.pt.translation")
 locale/fallback="en"
 rendering/root_node_auto_translate=true
 

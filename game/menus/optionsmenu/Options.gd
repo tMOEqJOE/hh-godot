@@ -16,11 +16,24 @@ var Voice_volume = -10
 var DebugRollbackLogsEnabled: bool = false
 var language_mode: String = "en"
 
+func get_language_index(locale: String) -> int:
+	match locale:
+		"ja":
+			return 1
+		"es":
+			return 2
+		"pt":
+			return 3
+		_:
+			return 0
+
 func _ready():
 	load_startup_config()
 	$CanvasLayer/Options/LanguageOption.add_item("English", 0)
 	$CanvasLayer/Options/LanguageOption.add_item("日本語", 1)
-	$CanvasLayer/Options/LanguageOption.select(1 if language_mode == "ja" else 0)
+	$CanvasLayer/Options/LanguageOption.add_item("Español", 2)
+	$CanvasLayer/Options/LanguageOption.add_item("Português", 3)
+	$CanvasLayer/Options/LanguageOption.select(get_language_index(language_mode))
 	$CanvasLayer/Options/FullScreenButton.grab_focus()
 	$CanvasLayer/Options/VsyncEmpty.text = bool_to_on_off_string(DisplayServer.window_get_vsync_mode() != DisplayServer.VSYNC_DISABLED)
 	$CanvasLayer/Options/MainVolumeMeter.value = db_conversion(Main_volume, $CanvasLayer/Options/MainVolumeMeter.max_value)
@@ -61,7 +74,15 @@ func bool_to_on_off_string(input_bool: bool):
 		return tr("UI_TRAINING_OFF")
 
 func _on_LanguageOption_item_selected(index: int) -> void:
-	language_mode = "ja" if index == 1 else "en"
+	match index:
+		1:
+			language_mode = "ja"
+		2:
+			language_mode = "es"
+		3:
+			language_mode = "pt"
+		_:
+			language_mode = "en"
 	apply_language()
 	Util.write_to_config_file("Language", "Locale", language_mode)
 
