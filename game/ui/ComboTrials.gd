@@ -229,13 +229,6 @@ Enums.PointCharacters.Oga: [
 	2: "Snapback",
 	3: "Snapback",
 	},
-	{0: "StandcB", # ground IAD loop
-	1: "DUMMY: UI_COMBO_INSTANT_AIR_DASH",
-	2: "Jump5B",
-	3: "StandcB",
-	4: "DUMMY: UI_COMBO_INSTANT_AIR_DASH",
-	5: "Jump5B",
-	},
 	{0: "StandcB",
 	1: "Crouch3C",
 	2: "DUMMY: UI_COMBO_INSTANT_AIR_DASH",
@@ -243,8 +236,8 @@ Enums.PointCharacters.Oga: [
 	4: "Jump2C",
 	5: "StandcB",
 	6: "Crouch3C",
-	7: "DUMMY: UI_COMBO_INSTANT_AIR_DASH",
-	8: "Jump5B",
+	7: "Jump5B",
+	8: "Jump5C",
 	9: "Jump2C",
 	},
 	{0: "DUMMY: UI_COMBO_HINT_J8CBUFFER",
@@ -297,6 +290,13 @@ Enums.PointCharacters.Oga: [
 	25: "SlashMode",
 	26: "SlashMode",
 	27: "SlashMode"
+	},
+	{0: "StandcB", # ground IAD loop
+	1: "DUMMY: UI_COMBO_INSTANT_AIR_DASH",
+	2: "Jump5B",
+	3: "StandcB",
+	4: "DUMMY: UI_COMBO_INSTANT_AIR_DASH",
+	5: "Jump5B",
 	}
 ],
 Enums.PointCharacters.Ollie: [
