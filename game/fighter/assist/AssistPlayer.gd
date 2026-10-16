@@ -159,7 +159,7 @@ func warp_off_screen() -> void:
 		leftface = currentState[Enums.StKey.leftface],
 	})
 	fixed_position.x = 0
-	fixed_position.y = -SGFixed.ONE * 30000
+	fixed_position.y = Util.ASSIST_WARP_POSITION_Y
 	sync_to_physics_engine()
 
 func anim_updates() -> void:

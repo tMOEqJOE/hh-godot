@@ -1,4 +1,4 @@
-extends AssistAirAttackState
+extends AssistAttackState
 
 class_name AssistOgaDPState
 
@@ -16,7 +16,7 @@ func _init():
 			Enums.StKey.Hurt1PosX : -262144, Enums.StKey.Hurt1PosY : -7471104,
 			Enums.StKey.Hurt1ScaleX : 522078, Enums.StKey.Hurt1ScaleY : 1436954,
 			},
-		15 : {
+		13 : {
 			Enums.StKey.Hit1Disable : false, 
 			Enums.StKey.hit_box_colliding_frame : 254,
 			Enums.StKey.Hit1PosX : 3014656, Enums.StKey.Hit1PosY : -40108028,
@@ -25,14 +25,14 @@ func _init():
 			Enums.StKey.launch_dir_y : -SGFixed.ONE*80,
 			Enums.StKey.attack_type : Enums.AttackType.Launcher,
 			Enums.StKey.counter_hit: Enums.AttackType.Launcher,
-			Enums.StKey.hitstun: 30,
+			Enums.StKey.hitstun: 40,
 			Enums.StKey.counter_hitstun: 30,
 			Enums.StKey.attack_damage: 70,
 			Enums.StKey.min_damage: 12,
 			Enums.StKey.counter_launch_dir_x: -SGFixed.ONE*30,
 			Enums.StKey.counter_launch_dir_y: -SGFixed.ONE*80,
 			},
-		19 : {
+		17 : {
 			Enums.StKey.Hit1Disable : true,
 			Enums.StKey.Hurt1Disable : false,Enums.StKey.Hurt2Disable : false,
 			},
@@ -41,6 +41,11 @@ func _init():
 # Writing _delta instead of delta here prevents the unused variable warning.
 func enter(state: Dictionary) -> void:
 	super.enter(state)
+	state[Enums.StKey.velocity_x] = 0
+	state[Enums.StKey.velocity_y] = 0
+	state[Enums.StKey.accel_y] = 0
+	state[Enums.StKey.drag_x] = Util.ICE_FRICTION
+	anim.stop(true)
 	anim.play("DP")
 
 func physics_tick(state: Dictionary) -> void:

@@ -24,6 +24,7 @@ cache/0/16/0/scale = 1.0
 
 [node name="Challenge" type="Node2D"]
 z_index = 1000
+z_as_relative = false
 scale = Vector2(0.904932, 0.904932)
 script = ExtResource("3")
 
