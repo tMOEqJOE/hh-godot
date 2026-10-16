@@ -335,12 +335,6 @@ Enums.PointCharacters.Ollie: [
 	4: "Jump5C",
 	5: "Jump5B",
 	},
-	{0: "DUMMY: UI_COMBO_OLLIE_SET_HOLD",
-	1: "DUMMY: UI_COMBO_JUMP",
-	2: "OllieRook",
-	3: "Jump5A",
-	4: "Crouch2A",
-	},
 	{0: "Crouch2A",
 	1: "Stand5C",
 	2: "Stand6A",
@@ -348,6 +342,7 @@ Enums.PointCharacters.Ollie: [
 	4: "Stand6A",
 	5: "OllieProtonCannon",
 	6: "AssistSuper",
+	7: "AssistSuper"
 	},
 ],
 Enums.PointCharacters.Suisei: [
