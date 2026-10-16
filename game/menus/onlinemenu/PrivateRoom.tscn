@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://rghsr4xkme1m"]
+[gd_scene load_steps=9 format=3 uid="uid://rghsr4xkme1m"]
 
 [ext_resource type="Script" uid="uid://bqourwt6u6d5m" path="res://game/menus/training/FastSlider.gd" id="2"]
+[ext_resource type="Script" uid="uid://cbuh2gofsg4ua" path="res://game/menus/onlinemenu/never_lose_focus.gd" id="2_giwl6"]
 [ext_resource type="Script" uid="uid://7pwdp6l0cxh8" path="res://game/menus/onlinemenu/PrivateRoom.gd" id="3"]
 [ext_resource type="Theme" uid="uid://of3afybns5hm" path="res://game/menus/default_menu.tres" id="3_xqwvp"]
 [ext_resource type="FontFile" uid="uid://b2jogmfxodv6o" path="res://game/assets/monogram_extended.ttf" id="6"]
@@ -147,7 +148,7 @@ max_length = 40
 editable = false
 secret = true
 
-[node name="GridContainer" type="GridContainer" parent="CanvasLayer"]
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer" node_paths=PackedStringArray("home_control")]
 anchors_preset = -1
 offset_left = 282.0
 offset_top = 74.0
@@ -156,6 +157,8 @@ offset_bottom = 474.0
 scale = Vector2(2, 2)
 theme = ExtResource("3_xqwvp")
 columns = 3
+script = ExtResource("2_giwl6")
+home_control = NodePath("CopyRoomID")
 
 [node name="CopyRoomID" type="Button" parent="CanvasLayer/GridContainer"]
 layout_mode = 2

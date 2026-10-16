@@ -75,7 +75,7 @@ func join_an_online_match() -> void:
 	SyncManager.connect("peer_removed", Callable(self, "_on_SyncManager_peer_removed"))
 	
 	OnlineMatch.leave()
-	
+
 	$CanvasLayer/RoomIDField.text = OnlineLobby.match_id
 	SyncManager.spectating = false
 	Global.was_spectating = false
@@ -92,6 +92,8 @@ func join_an_online_match() -> void:
 	update_ui()
 	OnlineLobby.clear_my_spectators()
 	init_player_list(OnlineLobby.players)
+
+
 
 func _on_OnlineMatch_match_left():
 	print("OnlineMatch left")
@@ -195,6 +197,7 @@ func _on_OnlineLobby_challenge_received(sender: String, is_connect: bool) -> voi
 				add_child(challenge)
 			update_challenge_status(OnlineLobby.CHALLENGE_STATE.DECIDING)
 			challenges.push_back(challenge)
+			MainMenuMusicControl.play_cursor_select()
 	else:
 		delete_challenge_pop_up(false)
 		OnlineMatch.leave()
@@ -443,6 +446,7 @@ func add_player_list(player, status=OnlineLobby.CHALLENGE_STATE.IDLE):
 		player_cards[player.session_id].get_node("Spectate").focus_neighbor_top = player_cards[player.session_id].get_node("Spectate").get_path_to($CanvasLayer/GridContainer/InputDelayMeter)
 		$CanvasLayer/GridContainer/InputDelayMeter.focus_neighbor_bottom = $CanvasLayer/GridContainer/InputDelayMeter.get_path_to(player_cards[player.session_id].get_node("Challenge"))
 	update_ui()
+	MainMenuMusicControl.play_cursor_select()
 
 func remove_player_list(player):
 	# remove any challenges or spectates sent to the player

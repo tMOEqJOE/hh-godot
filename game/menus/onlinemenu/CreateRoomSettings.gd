@@ -1,5 +1,8 @@
 extends Node2D
 
+const MIN_PLAYER_COUNT = 2
+const MAX_PLAYER_COUNT = 16
+
 func _ready() -> void:
 	MainMenuMusicControl.play_main_menu_music()
 	Global.NETPLAY_MODE = Global.NETPLAY_MODES.PRIVATE_ROOM
@@ -10,13 +13,13 @@ func _ready() -> void:
 	OnlineLobby.connect("match_created", Callable(self, "_on_OnlineMatch_match_created"))
 	
 	# We can configure OnlineMatch before using it:
-	OnlineLobby.min_players = 2
-	OnlineLobby.max_players = 8
+	OnlineLobby.min_players = MIN_PLAYER_COUNT
+	OnlineLobby.max_players = MAX_PLAYER_COUNT
 	OnlineLobby.client_version = Global.get_battle_version()
 	OnlineLobby.use_network_relay = OnlineLobby.NetworkRelay.AUTO
 	
-	OnlineMatch.min_players = 2
-	OnlineMatch.max_players = 8
+	OnlineMatch.min_players = MIN_PLAYER_COUNT
+	OnlineMatch.max_players = MAX_PLAYER_COUNT
 	OnlineMatch.ice_servers = [{ "urls": Build.ICE_SERVERS }]
 	OnlineMatch.use_network_relay = OnlineMatch.NetworkRelay.AUTO
 	update_lobby_size($CanvasLayer/GridContainer/PlayerCountMeter.value)

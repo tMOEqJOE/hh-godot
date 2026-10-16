@@ -103,6 +103,8 @@ const DISPLAY_NAMES: Dictionary = {
 	"JumpFollowup" : "UI_COMBO_WORD_RELEASE Down UI_COMBO_WORD_EARLY",
 	"JumpJustFollowup" : "UI_COMBO_WORD_RELEASE Down UI_COMBO_WORD_PERFECT",
 	"AssistAirSuperAttack" : "UI_COMBO_WORD_RELEASE X",
+	"AssistSuperAttack" : "UI_COMBO_WORD_RELEASE X",
+	"AssistSuperFollowup" : "UI_COMBO_WORD_RELEASE D",
 
 	"AssistSubaruStarBall": "D",
 	
