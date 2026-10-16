@@ -24,11 +24,11 @@ func _init():
 			Enums.StKey.attack_damage: 40,
 			Enums.StKey.hitstun: 30,
 			Enums.StKey.attack_type : Enums.AttackType.Launcher,
-			Enums.StKey.launch_dir_x : -SGFixed.ONE*10,
+			Enums.StKey.launch_dir_x : -SGFixed.ONE*15,
 			Enums.StKey.launch_dir_y : -SGFixed.ONE*55,
 			Enums.StKey.counter_hit: Enums.AttackType.Launcher,
 			Enums.StKey.counter_hitstun: 60,
-			Enums.StKey.counter_launch_dir_x: -SGFixed.ONE*10,
+			Enums.StKey.counter_launch_dir_x: -SGFixed.ONE*15,
 			Enums.StKey.counter_launch_dir_y: -SGFixed.ONE*60,
 			},
 		13 : { 
@@ -49,13 +49,13 @@ func _init():
 			Enums.StKey.hit_box_colliding_frame : 3,
 			Enums.StKey.attack_damage: 28,
 			Enums.StKey.min_damage: 5,
-			Enums.StKey.hitstun: Util.DEFAULT_HITSTUN + 8,
+			Enums.StKey.hitstun: Util.DEFAULT_HITSTUN + 15,
 			Enums.StKey.attack_type : Enums.AttackType.Launcher,
 			Enums.StKey.launch_dir_x : -SGFixed.ONE*10,
 			Enums.StKey.launch_dir_y : -SGFixed.ONE*40,
 			Enums.StKey.counter_hit: Enums.AttackType.WallBouncer,
 			Enums.StKey.counter_hitstun: 60,
-			Enums.StKey.counter_launch_dir_x: -SGFixed.ONE*5,
+			Enums.StKey.counter_launch_dir_x: -SGFixed.ONE*10,
 			Enums.StKey.counter_launch_dir_y: -SGFixed.ONE*40,
 			},
 		36 : { 
@@ -82,7 +82,7 @@ func physics_tick(state: Dictionary) -> void:
 	super.physics_tick(state)
 	if (state[Enums.StKey.frame] == 7):
 		state[Enums.StKey.velocity_y] = -SGFixed.ONE*50
-		state[Enums.StKey.velocity_x] = SGFixed.ONE*15
+		state[Enums.StKey.velocity_x] = SGFixed.ONE*28
 		state[Enums.StKey.accel_y] = Util.GRAVITY
 	if (state[Enums.StKey.frame] == 6):
 		SyncManager.play_sound("AssistFlayonVoice", voice, {"bus": "Voice"})

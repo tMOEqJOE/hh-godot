@@ -1895,7 +1895,7 @@ material = ExtResource("5")
 position = Vector2(16, -306)
 scale = Vector2(1.428, 1.428)
 texture = ExtResource("36")
-offset = Vector2(120, -150)
+offset = Vector2(20, 0)
 
 [node name="Shadow" parent="." instance=ExtResource("4_ephom")]
 position = Vector2(-8, -4)
@@ -1935,7 +1935,7 @@ fixed_position_x = 1
 fixed_position_y = -27390912
 fixed_scale_x = 1001320
 fixed_scale_y = 476368
-position = Vector2(1.5258789e-05, -417.95215)
+position = Vector2(428, -578)
 scale = Vector2(15.278931, 7.268799)
 
 [node name="Hitbox1" parent="." instance=ExtResource("7")]
