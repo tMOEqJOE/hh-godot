@@ -224,11 +224,6 @@ Enums.PointCharacters.Oga: [
 	6: "Jump5B",
 	7: "Jump8C",
 	},
-	{0: "MediumDP",
-	1: "DUMMY: D",
-	2: "Snapback",
-	3: "Snapback",
-	},
 	{0: "StandcB",
 	1: "Crouch3C",
 	2: "DUMMY: UI_COMBO_INSTANT_AIR_DASH",
@@ -290,6 +285,11 @@ Enums.PointCharacters.Oga: [
 	25: "SlashMode",
 	26: "SlashMode",
 	27: "SlashMode"
+	},
+	{0: "MediumDP",
+	1: "DUMMY: D",
+	2: "Snapback",
+	3: "Snapback",
 	},
 	{0: "StandcB", # ground IAD loop
 	1: "DUMMY: UI_COMBO_INSTANT_AIR_DASH",
