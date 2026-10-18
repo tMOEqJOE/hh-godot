@@ -3,6 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://dxsvsww1xjbsv" path="res://game/assets/sprites/UI/MainMenus/Buttons/ButtonChalkboard/Timeline 1_0001.png" id="1_s0xan"]
 
 [resource]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
 texture = ExtResource("1_s0xan")
 texture_margin_left = 10.0
-modulate_color = Color(0.41091278, 0.5978036, 0.5517601, 1)
+modulate_color = Color(0.4117647, 0.59607846, 0.5529412, 0.6313726)
