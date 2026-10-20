@@ -562,6 +562,7 @@ const FubukiMoveList: = [
 	["5D", "Akai na...", "", "Dashing rapid slash, low profile"],
 	["2D", "Kurokami Flip", "", "Invul reversal, ground bounces on second hit"],
 	["236D", "Hi Friend!", "Level 1 and 2 assist stocks", "Full invul"],
+	["[D]", "", "Hold D to stay on field", ""],
 	["6D Guard Cancel", "", "Level 1 and 2 assist stocks", "Fubuki=the=Kon!-edge"],
 ]
 
@@ -571,6 +572,7 @@ const SoraMoveList: = [
 	["5D", "Nun-Nun Step", "", "Wallbounces on normal hit"],
 	["2D", "Nun-Nun Fence", "", "Invul reversal, Groundbounces on normal hit."],
 	["236D", "Colossal Piano", "Level 1 and 2 assist stocks", ""],
+	["[D]", "", "Hold D to stay on field", ""],
 	["6D Guard Cancel", "", "Level 1 and 2 assist stocks", ""],
 ]
 
@@ -580,6 +582,7 @@ const OkakoroMoveList: = [
 	["5D", "Koro Hammer", "", "Hold back to charge, release at just timing for an enhanced attack"],
 	["2D", "Ogayu Advance!", "", "Hold down to charge, release at just timing for an enhanced attack"],
 	["236D", "Super jump challenge", "Level 1 and 2 assist stocks", "Release A, B, or C to bounce on the opponent"],
+	["[D]", "", "Hold D to stay on field", ""],
 	["6D Guard Cancel", "", "Level 1 and 2 assist stocks", ""],
 ]
 
@@ -589,6 +592,7 @@ const SanaMoveList: = [
 	["5[D]", "Sanallite", "", "Hold D. Pulls in your point character towards Sana"],
 	["2[D]", "The Tsukumo System", "", "Hold D and steer Sana left or right"],
 	["236[D]", "Astrogirl", "Level 1 and 2 assist stocks", "Hold D and steer Sana in all 4 directions"],
+	["[D]", "", "Hold D to stay on field", ""],
 	["6D Guard Cancel", "", "Level 1 and 2 assist stocks", "Hold D to pull yourself away from block pressure"],
 ]
 
@@ -598,6 +602,7 @@ const HakkaMoveList: = [
 	["5D", "Exorcist Tags", "", "Multi hit projectile"],
 	["2D", "Shattered Wings", "", "Anti air and command jump"],
 	["236[D]", "Metal Scream Galaxy", "Level 1 and 2 assist stocks", "Hold and release D for 3 different levels of charge"],
+	["[D]", "", "Hold D to stay on field", ""],
 	["6D Guard Cancel", "", "Level 1 and 2 assist stocks", ""],
 ]
 
@@ -618,7 +623,7 @@ const AssistSubaruMoveList: = [
 	["2D", "Fly Ball", "", "Anti Air. Try hitting a 5D fireball with this"],
 	["j2D", "Ground Ball", "", "Air Knockdown. Try hitting a 5D fireball with this"],
 	["236D", "Hollow Limit: Star Ball Beam", "Level 1 and 2 assist stocks", "Subaru fires off 4 star balls. Hitting star ball changes trajectory"],
-	["[D]", "Bases Loaded", "", "Hold D. Keep Subaru on field"],
+	["[D]", "Bases Loaded", "", "Hold D to Keep Subaru on field"],
 	["6D Guard Cancel", "", "Level 1 and 2 assist stocks", ""],
 ]
 
@@ -631,6 +636,7 @@ const AssistMioMoveList: = [
 	["]B[", "Cut", "", ""],
 	["]C[", "Launch", "", ""],
 	["236D", "Card Teleport", "Level 1 and 2 assist stocks", "Mio teleports a fixed distance forwards"],
+	["[D]", "", "Hold D to stay on field", ""],
 	["6D Guard Cancel", "", "Level 1 and 2 assist stocks", ""],
 ]
 
@@ -638,10 +644,10 @@ const AssistOgaMoveList: = [
 	["Assist: Aragami Oga"],
 	["Attacks"],
 	["5D", "Light Punch", "", "Guard: High"],
-	["2D", "High Jump", "", ""],
+	["2D", "Hero's Corridor", "", ""],
 	["jD", "DiveKick", "", "Guard: Mid"],
-	["j2D", "Fast Fall", "", ""],
 	["236[D]", "Tuna Punch", "Level 1 and 2 assist stocks", "Release D to do an overhead punch. (Air version hits mid)"],
+	["[D]", "", "Hold D to stay on field", ""],
 	["6D Guard Cancel", "", "Level 1 and 2 assist stocks", ""],
 ]
 
@@ -661,6 +667,7 @@ const AssistKanataMoveList: = [
 	["5D", "Fifty KG Grip Strength", "", ""],
 	["2D", "", "", ""],
 	["236D", "Super Ginger Crusher", "Level 1 and 2 assist stocks", ""],
+	["[D]", "", "Hold D to stay on field", ""],
 	["6D Guard Cancel", "", "Level 1 and 2 assist stocks", ""],
 ]
 
@@ -678,6 +685,7 @@ const AssistSuiseiMoveList: = [
 	["2D", "Bobbidi", "", "Change to Suisei Mode"],
 	["236D", "Kyou mo Hasami", "Level 1 and 2 assist stocks", ""],
 	["j236D", "Stellar Stellar", "Level 1 and 2 assist stocks", ""],
+	["[D]", "", "Hold D to stay on field", ""],
 	["6D Guard Cancel", "", "Level 1 and 2 assist stocks", ""],
 ]
 
@@ -687,5 +695,6 @@ const AssistFlayonMoveList: = [
 	["5D", "Wave Fang 2", "", ""],
 	["2D", "Ryuken-shiki 2", "", ""],
 	["236D", "Air Rave SP", "Level 1 and 2 assist stocks", ""],
+	["[D]", "", "Hold D to stay on field", ""],
 	["6D Guard Cancel", "", "Level 1 and 2 assist stocks", ""],
 ]

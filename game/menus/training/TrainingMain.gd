@@ -66,9 +66,6 @@ func _ready() -> void:
 	$CanvasLayer/TrainingOptionsMenu.command_list = $CanvasLayer/CommandList
 	$CanvasLayer/TrainingOptionsMenu.command_list.connect("close_menu", Callable($CanvasLayer/TrainingOptionsMenu, "command_list_closed"))
 	dummy_input.connect("strike_hurt", Callable(self, "load_reaction_state"))
-	var dummy_player = fighter_game.ClientPlayer if Global.TRAINING_P1 else fighter_game.ServerPlayer
-	#dummy_player.connect("attack_hurt", Callable($CanvasLayer/ComboTrialListener, "attack_hurt"))
-	#dummy_player.connect("combo_exit", Callable($CanvasLayer/ComboTrialListener, "drop_combo"))
 
 func _physics_process(delta):
 	if (not $CanvasLayer/TrainingOptionsMenu.is_enabled()):
@@ -342,23 +339,23 @@ func _apply_training_reset_position(position: int) -> void:
 	
 	if (fighter_game.AssistPlayer1 != null):
 		fighter_game.AssistPlayer1.fixed_position.x = server_x - 16946816
-		fighter_game.AssistPlayer1.fixed_position.y = 29949952
+		fighter_game.AssistPlayer1.fixed_position.y = Util.ASSIST_WARP_POSITION_Y
 		fighter_game.AssistPlayer1.fixed_scale.x = server_scale_x
 		fighter_game.AssistPlayer1.sync_to_physics_engine()
 	if (fighter_game.AssistPlayer2 != null):
 		fighter_game.AssistPlayer2.fixed_position.x = client_x + 16946816
-		fighter_game.AssistPlayer2.fixed_position.y = 29949952
+		fighter_game.AssistPlayer2.fixed_position.y = Util.ASSIST_WARP_POSITION_Y
 		fighter_game.AssistPlayer2.fixed_scale.x = client_scale_x
 		fighter_game.AssistPlayer2.sync_to_physics_engine()
 	
 	if (fighter_game.Hato1 != null):
 		fighter_game.Hato1.fixed_position.x = server_x - 8000000
-		fighter_game.Hato1.fixed_position.y = 29949952
+		fighter_game.Hato1.fixed_position.y = Util.ASSIST_WARP_POSITION_Y
 		fighter_game.Hato1.fixed_scale.x = server_scale_x
 		fighter_game.Hato1.sync_to_physics_engine()
 	if (fighter_game.Hato2 != null):
 		fighter_game.Hato2.fixed_position.x = client_x + 8000000
-		fighter_game.Hato2.fixed_position.y = 29949952
+		fighter_game.Hato2.fixed_position.y = Util.ASSIST_WARP_POSITION_Y
 		fighter_game.Hato2.fixed_scale.x = client_scale_x
 		fighter_game.Hato2.sync_to_physics_engine()
 

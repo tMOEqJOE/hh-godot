@@ -22,6 +22,7 @@ const COMBO_DUMMY_TEXT_KEYS := {
 	"SetOllieRook then Hold A": "UI_COMBO_OLLIE_SET_HOLD",
 	"AssistAttack2 Hold and Steer Right": "UI_COMBO_ASSIST_STEER_RIGHT",
 	"Hold GroundThrowHit": "UI_COMBO_HOLD_GROUND_THROW",
+	"Hold D": "UI_COMBO_HOLD_D",
 	"Hold C": "UI_COMBO_HOLD_C",
 	"Hold B": "UI_COMBO_HOLD_B",
 	"hold A": "UI_COMBO_HOLD_A",

@@ -159,7 +159,7 @@ func warp_off_screen() -> void:
 		leftface = currentState[Enums.StKey.leftface],
 	})
 	fixed_position.x = 0
-	fixed_position.y = -SGFixed.ONE * 30000
+	fixed_position.y = Util.ASSIST_WARP_POSITION_Y
 	sync_to_physics_engine()
 
 func anim_updates() -> void:
@@ -255,6 +255,8 @@ func summonHelper(entity: String, uninterrupted:bool=true) -> void:
 				SyncManager.play_sound("superflash", Global.SuperFlashSound, {"bus": "Sound"})
 			elif (entity == "meterDump"):
 				emit_signal("battery_player", -Util.LEVEL_ONE_SUPER, 0, 0)
+			elif (entity == "sync_down"):
+				emit_signal("battery_player", 0, -8536, -SGFixed.ONE*70) #-8536
 		if (entity == "knockdowndust"):
 			summonVFX("KnockdownVFX", Global.KnockdownDustVFX)
 		elif (entity == "WallBounceDust"):

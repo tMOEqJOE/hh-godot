@@ -46,7 +46,7 @@ const DISPLAY_NAMES: Dictionary = {
 	"HatoCards": "Down DownRight Right UI_COMBO_WORD_RELEASE C UI_COMBO_WORD_AIR_OK",
 
 	"MediumDP": "Right Down DownRight B",
-	"Snapback": "Down DownLeft Left C",
+	"Snapback": "Right DownRight Down DownLeft Left C",
 	"AirRiderKickLight": "Down DownRight Right A UI_COMBO_WORD_AIR",
 	"AirRiderKick": "Down DownRight Right B UI_COMBO_WORD_AIR",
 	"AirTurnKickLight": "Down DownLeft Left A UI_COMBO_WORD_AIR",
@@ -103,6 +103,8 @@ const DISPLAY_NAMES: Dictionary = {
 	"JumpFollowup" : "UI_COMBO_WORD_RELEASE Down UI_COMBO_WORD_EARLY",
 	"JumpJustFollowup" : "UI_COMBO_WORD_RELEASE Down UI_COMBO_WORD_PERFECT",
 	"AssistAirSuperAttack" : "UI_COMBO_WORD_RELEASE X",
+	"AssistSuperAttack" : "UI_COMBO_WORD_RELEASE X",
+	"AssistSuperFollowup" : "UI_COMBO_WORD_RELEASE D",
 
 	"AssistSubaruStarBall": "D",
 	
