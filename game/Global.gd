@@ -12,7 +12,13 @@ func resolve_locale(config: ConfigFile) -> String:
 	if config.has_section_key("Language", "Locale"):
 		locale = str(config.get_value("Language", "Locale"))
 	var language = locale.to_lower().replace("-", "_").get_slice("_", 0)
-	return "ja" if language == "ja" else "en"
+	if language == "ja":
+		return "ja"
+	if language == "es":
+		return "es"
+	if language == "pt":
+		return "pt"
+	return "en"
 
 var LOCAL_SERVER = false
 var FIGHTER_GAME = preload("res://game/FighterGame.tscn")
