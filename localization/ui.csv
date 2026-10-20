@@ -354,8 +354,8 @@ Bishop,Bishop,ビショップ,Alfil,Bispo
 "Blazing fast invincible command grab, steerable left and right","Blazing fast invincible command grab, steerable left and right",超早いコマンド投げ、左右にステアリングできる,"Comando de agarre  invencible increiblemente rápido, puede moverse entre izquerda y derecha",Arremeso invencivel incrivelmente rapido que permite se mover para a esquerda e direita
 Bobbidi,Bobbidi,Bobbidi,Bobbidi,Bobbidi
 Bootdive,Bootdive,ブットダイブ,BotaCaida,Queda em Botas
-BreadLoops,BreadLoops,Breadループ,BuclePanadero,Anéis de pão
-Build sync rate quickly when held,Build sync rate quickly when held,,Genera Tasa de Sync rapidamente mientras mantienes,Gera taxa de synchronização rapidamente quando segurado
+BreadLoops,BreadLoops,Breadループ,PanCiclo,Anéis de pão
+Build sync rate quickly when held,Build sync rate quickly when held,,Genera Tasa de Sync rapidamente mientras se mantiene,Gera taxa de synchronização rapidamente quando segurado
 Burst,Burst,バースト,Estallido,Explosão
 Bzzt Boom Replica,Bzzt Boom Replica,ビリビリガーン！レプリカ,Bzzt Boom Replica,Bzzt Boom Replica
 Bzzt Boom!,Bzzt Boom!,ビリビリガーン！,Bzzt Boom!,Bzzt Boom!
@@ -507,7 +507,7 @@ Multiple assist calls,Multiple assist calls,,Multiples llamadas de assist,Multip
 Next Color Chainsaw,Next Color Chainsaw,次色チェーンソー,Motosierra Next Color,Motossera Next Color
 No airdashes,No airdashes,空中ダッシュなし,Sin arremetidas aéreas,Sem Arrancadas aéreas
 No close B,No close B,,Sin B cercano,Sem B proximo
-No reverse chains on command normals,No reverse chains on command normals,,No hace cadena reversal con normales de comando,Sem cadeia reversa em normais de comando
+No reverse chains on command normals,No reverse chains on command normals,,Sin cadena reversal con normales de comando,Sem cadeia reversa em normais de comando
 No run,No run,,Sin Correr,Sem correr
 None,None,なし,Ninguno,Nenhum
 Not invul!,Not invul!,,Sin invulneravilidad!,Sem invulnerabilidade!
@@ -518,24 +518,24 @@ Offense,Offense,攻め技,Ofensa,Ofensa
 Oga Rocket,Oga Rocket,,Cohete Oga,Foguete Oga
 Oga Spike,Oga Spike,,Pincho Oga,Espinho Oga
 Ogayu Advance!,Ogayu Advance!,おがゆ突撃！,Avance Ogayu!,Avance Ogayu!
-OH!-ga,OH!-ga,,OH!-ga,OH!-ga
-Only A normals are jump cancel OK,Only A normals are jump cancel OK,,Solo normales A son OK en cancel de salto,Só A normais são OK em cancelamento de pulo
+OH!-ga,OH!-ga,,¡OH!-ga,OH!-ga
+Only A normals are jump cancel OK,Only A normals are jump cancel OK,,Solo normales A pueden cancelarse en salto,Só A normais são OK em cancelamento de pulo
 "Only jA hits high, all other jump normals hit mid","Only jA hits high, all other jump normals hit mid",,"Solo jA golpea alto, todos los otros normales de salto golpean medio","Apenas jA acerta alto, todos os outros normais de pulo acertam médio"
 Ookami Mio,Ookami Mio,大神ミオ,Ookami Mio,Ookami Mio
 Oozora Subaru,Oozora Subaru,大空スバル,Oozora Subaru,Oozora Subaru
 Other-Worldly 50KG Grip Strength,Other-Worldly 50KG Grip Strength,,Fuerza de agarre de 50KG del otro mundo,Força de Preensão de 50KG Transcendental
-"Overhead dive kick, double jump cancel OK","Overhead dive kick, double jump cancel OK",,"Golpe alto que es patada en caida, es cancelable en doble salto ",Chute em queda que golpeia alto e cancelavel em pulo duplo
+"Overhead dive kick, double jump cancel OK","Overhead dive kick, double jump cancel OK",,"Golpe alto que es patada en caida,puede cancelarse en doble salto ",Chute em queda que golpeia alto e cancelavel em pulo duplo
 Papakin's Son,Papakin's Son,Papakinの童,Hijo de la Papakin,Filho de Papakin
 Pegasus,Pegasus,,Pegaso,Pegasus
 Pizza Cutter,Pizza Cutter,ピザカッター,Cortador de Pizza,Cortador de Pizza
 Pleiades Star Ball,Pleiades Star Ball,,Bola Estelar de Pleyades,Bola Estelar das Pleiades
 Po Po Po!,Po Po Po!,ポポポ！,Po Po Po!,Po Po Po!
 Pop Pop Udin Formation,Pop Pop Udin Formation,,Formacion Udin: Pop Pop,Formação Udin: Pop Pop
-pushes back attackers more,pushes back attackers more,,empuja mas atras al atacante,Empurra o atacante para trás
-Raging Twister Strike,Raging Twister Strike,,Golpe Tornado Furioso,Golpe Tornado Furioso
+pushes back attackers more,pushes back attackers more,,empuja aún más atras al atacante,Empurra o atacante para trás
+Raging Twister Strike,Raging Twister Strike,,Golpe de Tornado Furioso,Golpe Tornado Furioso
 Raibu Cancel,Raibu Cancel,ライブキャンセル,Cancel Raibu,Cancelamento Raibu
-Rekka series,Rekka series,烈火攻撃,Serie Rekka,Serie Rekka 
-"Rekka special, follow ups can whiff cancel","Rekka special, follow ups can whiff cancel",,"Las cadenas del Especial Rekka, pueden ser canceladas si fallan",As cadeias do especial Rekka podem ser canceladas ao errarem
+Rekka series,Rekka series,烈火攻撃,Serie de Rekkas,Serie Rekka 
+"Rekka special, follow ups can whiff cancel","Rekka special, follow ups can whiff cancel",,"Las cadenas del Especial Rekka, pueden ser canceladas aunque fallen",As cadeias do especial Rekka podem ser canceladas ao errarem
 Release A for horizontal space control,Release A for horizontal space control,,Suelta A para controlar el espacio horizontalmente ,Solte A para controlar o espaço horizontal
 "Release A, B, or C to bounce on the opponent","Release A, B, or C to bounce on the opponent",,"Suelta A, B o C para rebotar en el oponente","Solte A, B, ou C para quicar no oponente"
 Release B for diagonal space control,Release B for diagonal space control,,Suelta B para controlar el espacio diagonal,Solte B para controlar o espaço diagonal
@@ -546,7 +546,7 @@ Reverse Temperance Crash,Reverse Temperance Crash,,Choque Templanza Reverso,Choq
 Rook,Rook,ルーク,Torre,Torre
 Run,Run,走り,Correr,Correr
 Run is a short step dash,Run is a short step dash,走りは,Correr es un pequeño paso rápido,Correr é um pequeno passo rapido
-Run is slow to start up,Run is slow to start up,走りは最初から遅い,Correr es lento para arrancar,Correr inicia devagar
+Run is slow to start up,Run is slow to start up,走りは最初から遅い,Correr es lento al iniciar,Correr inicia devagar
 Run:,Run:,走り:,Correr:,Correr:
 Ryuken-shiki,Ryuken-shiki,竜拳式,Ryuken-shiki,Ryuken-shiki
 Ryuken-shiki 2,Ryuken-shiki 2,竜拳式2,Ryuken-shiki2,Ryuken-shiki2
@@ -554,22 +554,22 @@ Sanallite,Sanallite,Sanallite,Sanalite,Sanalite
 Shattered Wings,Shattered Wings,,Alas Destrozadas,Asas estilhaçadas
 Slap back,Slap back,スラップバック,Devuelveles el golpe,Devolve o golpe
 Smollie Kiiiick!,Smollie Kiiiick!,ソモリーキィィィック!,¡PATADAAA Smollie!,CHUUUUTE Pequenollie!
-Smollie Queen,Smollie Queen,スモリークイーン,Majestad Smollie,Vossa Majestade Pequenollie
+Smollie Queen,Smollie Queen,スモリークイーン,Su Majestad Smollie,Vossa Majestade Pequenollie
 "Smollie, hold down the neutral","Smollie, hold down the neutral",スモリー、ニュートラルを任せるぜ,"Smollie, robales el neutral","Pequenollie, segure o neutro"
-Some anti air normals have reverse gatlings / rebeats,Some anti air normals have reverse gatlings / rebeats,,Algunos anti aereos normales pueden encadenarse en reversa ,Alguns anti aereos normais possuem cadeia reversa
-Some Flight Normals can be held to enhance them,Some Flight Normals can be held to enhance them,,Algunos normales en vuelo pueden ser mantenidos para mejorarlos,Alguns normais de voo podem ser segurados para serem aprimorados
+Some anti air normals have reverse gatlings / rebeats,Some anti air normals have reverse gatlings / rebeats,,Algunos anti aéreos normales pueden encadenarse en reversa ,Alguns anti aereos normais possuem cadeia reversa
+Some Flight Normals can be held to enhance them,Some Flight Normals can be held to enhance them,,Algunos normales en vuelo pueden ser mantenidos para mejorarse,Alguns normais de voo podem ser segurados para serem aprimorados
 Specials,Specials,必殺技,Especiales,Especiais
 Spend super meter to fly,Spend super meter to fly,,Consume medidor de super para volar,Consome medidor de super para voar
-Stance cancel on hit,Stance cancel on hit,,Cancel de estancia tras golpear,Cancelamento de Postura ao receber golpe
-Stance cancel on whiff and hit,Stance cancel on whiff and hit,,Cancel de estancia al fallar y golpear,Cancelamento de Postura ao errar o golpe a ser acertado
+Stance cancel on hit,Stance cancel on hit,,Cancelación de postura tras golpear,Cancelamento de Postura ao receber golpe
+Stance cancel on whiff and hit,Stance cancel on whiff and hit,,Cancelación de postura al fallar y al  golpear,Cancelamento de Postura ao errar o golpe a ser acertado
 Star Ball,Star Ball,,Bola Estelar ,Bola Estelar 
 Star Ball Toss,Star Ball Toss,,Lanzamiento de Bola Estelar,Lançamento da Bola Estelar
-Starts with a back sway,Starts with a back sway,,Empieza con un movimiento hacia atras,Começa com um movimento para trás
+Starts with a back sway,Starts with a back sway,,Empieza con un movimiento hacia atrás,Começa com um movimento para trás
 Steal Home,Steal Home,,Robar Home,Roubar Casa
 Steer smollie with 4 and 6 inputs,Steer smollie with 4 and 6 inputs,,Maneja a Smollie con los comandos de izquierda y derecha,Controla a pequenollie com os comandos de esquerda e direita
 Steerable ender,Steerable ender,,Finalizador manejable,Finalizador controlavel
-Steerable in 4 directions,Steerable in 4 directions,,Manejable en las 4 direcciones,Controlavel em 4 direções
-Steerable left and right,Steerable left and right,,Manejable para la izquierda y derecha,Controlavel para a esquerda e direita
+Steerable in 4 directions,Steerable in 4 directions,,puede moverse en las 4 direcciones,Controlavel em 4 direções
+Steerable left and right,Steerable left and right,,Controlable para la izquierda y derecha,Controlavel para a esquerda e direita
 "Steerable left and right, Groundbounces on normal hit","Steerable left and right, Groundbounces on normal hit",,"Manejable para la izquierda y derecha, rebota en golpe normal","Controlavel para a direita e esquerda, ricocheteia em golpe normal"
 Steerable multi hitting anti air,Steerable multi hitting anti air,,Golpe múltiple anti-aéreo manejable,Golpe multiplo anti-aéreo controlavel
 Stellar Stellar,Stellar Stellar,,Stellar Stellar,Estelar Estelar
@@ -579,52 +579,52 @@ Suicopath cannot air tech,Suicopath cannot air tech,,Suicópata no puede recuper
 Suicopath cannot build super meter,Suicopath cannot build super meter,,Suicópata no puede generar barras,Suicopáta não pode ganhar barra
 Suicopath cannot jump,Suicopath cannot jump,ジャンプできない,A Suicópata le pesan los pies (No puede saltar),Suicopáta não pode saltar devido ao inferno a puxar para baixo
 Suicopath Mode,Suicopath Mode,,Modo Suicópata,Modo Suicopáta
-Summon,Summon,召喚,Invocar,Invocar
+Summon,Summon,召喚,Invocación,Invocar
 Summon Concentration,Summon Concentration,召喚集中,Invocación Concentrada,Invocação Concentrada
 Summon Hatotaurus,Summon Hatotaurus,ハトタウロスを召喚する,Invocación de Hatotauros,Invocação de Hatotaurus
 "Summons chess pieces, can hold the button","Summons chess pieces, can hold the button",,Invoca piezas de ajedrez potenciadas; puedes mantener presionado el botón,"Invoca peças de xadrez, pode segurar o botão"
 "Summons enhanced chess pieces, can be held with negative edge","Summons enhanced chess pieces, can be held with negative edge",,Invoca piezas de ajedrez potenciadas; puedes activar el movimiento al soltar el botón,Invoca peça de xadrez potencializadas; podem ser usadas ao soltar o botão
 Summons Mio,Summons Mio,ミオを召喚する,Invoca a Mio,Invoca a Mio
 Super Clean Hit Swing,Super Clean Hit Swing,,Golpe de bateo super limpio,Golpe de Suingue Super Limpo
-Super Ginger Crusher,Super Ginger Crusher,,Super Aplasta Jengibre,Super Esmagador de Gengibre
+Super Ginger Crusher,Super Ginger Crusher,,Super Aplastador de Jengibre,Super Esmagador de Gengibre
 Super jump challenge,Super jump challenge,,Desafio de Super salto,Desafio de Super Salto
 Superjump:,Superjump:,スーパージャンプ:,Supersalto:,Supersalto:
 Supers,Supers,スーパー,Supers:,Supers:
 Taiga!,Taiga!,タイガ！,¡Taiga!,Taiga!
 Taurus Thunder,Taurus Thunder,タウロス・サンダー,Trueno de Taurus,Trovão de Taurus
 Tenshi Body Splash,Tenshi Body Splash,,Aplastamiento Tenshi,Splash Corporal Tenshi
-Tenshi Smash,Tenshi Smash,天使スマッシュ,Destruccion Angelica,Tenshi splash
-Teyah! Combo tool and corner carry,Teyah! Combo tool and corner carry,テイヤー！浮かせ技空中攻撃,Teyah! Herramienta de combo y lleva a la esquina,Teyah! Ferramenta de combo e carrega oponente até o canto
+Tenshi Smash,Tenshi Smash,天使スマッシュ,Destrucción Angelica,Tenshi splash
+Teyah! Combo tool and corner carry,Teyah! Combo tool and corner carry,テイヤー！浮かせ技空中攻撃,¡Teyah! Herramienta de combo y lleva a la esquina,Teyah! Ferramenta de combo e carrega oponente até o canto
 The Great Grappler's Duster Kick,The Great Grappler's Duster Kick,"大投げキャラのダスター
-キック",La Gran Patada Polvorienta de la Agarradora,O Chute de Capa Da Grande Lutadora
+キック",La Gran Patada Polvorienta de la Luchadora,O Chute de Capa Da Grande Lutadora
 The Tsukumo System,The Tsukumo System,九十九システム,El sistema Tsukumo,O Sistema Tsukumo
 Throw / Air Throw,Throw / Air Throw,投げ / 空投げ,Agarre / Agarre aéreo,Arremeso / Arremeso aéreo
 Throw hits at mid range,Throw hits at mid range,中距離投げ,El agarre golpea a rango Medio,Arremeso acerta em alcance médio
 Time to get fancy!,Time to get fancy!,派手になるぜ！,¡Hora de lucirse!,Hora de ficar chique!
 Tokusha-seizon Wandarada-!!,Tokusha-seizon Wandarada-!!,特者生存ワンダラダー！！,Tokusha-seizon Wandarada-!!,Tokusha-seizon Wandarada-!!
-Tone Tuning Guitar,Tone Tuning Guitar,,Guitarra Entonadora,Ajuste de Guitarra 
+Tone Tuning Guitar,Tone Tuning Guitar,,Guitarra Afinadora,Ajuste de Guitarra 
 Tower Force,Tower Force,,Fuerza de Torre,Força da Torre
 Tuning Guitar,Tuning Guitar,チューニングギター,Afinando Guitarra,Afinando Guitarra
 Triangle Jump,Triangle Jump,三角飛び,Salto Triangular,Salto Triângulo
 Tuna Punch,Tuna Punch,ツナパンチ,Puño Atún,Soco Atum
 Twintail Drill,Twintail Drill,ツインテールドリル,Taladro de Coletas,Cachos Furadeira
-two hitting upper body invul attack,two hitting upper body invul attack,,ataque con invencibilidad superior de dos golpes,Ataque com invulnerabilidade atingindo duas vezes o corpo superior
+two hitting upper body invul attack,two hitting upper body invul attack,,Ataque con invencibilidad superior de dos golpes,Ataque com invulnerabilidade atingindo duas vezes o corpo superior
 Udin Formation,Udin Formation,ウディン陣形,Formación Udin,Formação Udin
 Unfortunately does not force out the opponent's assist,Unfortunately does not force out the opponent's assist,本物スナップバックじゃないから残念,Desafortunadamente no fuerza la asistencia del oponente,Infelizmente não quebra a assistência do oponente
-Unique Movement,Unique Movement,ユニーク移動技,Movimiento Unico,Movimento Unico
-Unique Normals,Unique Normals,ユニーク通常技,Normales Unicos,Normais Unicos
+Unique Movement,Unique Movement,ユニーク移動技,Movimiento Único,Movimento Unico
+Unique Normals,Unique Normals,ユニーク通常技,Normales Únicos,Normais Unicos
 Universal launcher,Universal launcher,一般的な浮かせ技,Lanzador universal,Lançador universal
 "Universal launcher, close range dead zone","Universal launcher, close range dead zone",一般的な浮かせ技、近くに空振りする,"Lanzador universal, zona muerta a corta distancia","Lançador universal, zona morta a curta distância"
 "Universal launcher, Jump cancel OK","Universal launcher, Jump cancel OK",一般的な浮かせ技、ジャンプキャンセルできる,"Lanzador universal, cancel de salto permitida","Lançador universal, cancelamento de pulo permitida"
-Unsummon,Unsummon,送還,Retirar invocación,Desconjuração
-Unsummons Hatotaurus,Unsummons Hatotaurus,ハトタウロスを送還する,Retira a Hatotaurus,Desconjura Hatotaurus
-Unsummons Mio,Unsummons Mio,ミオを送還する,Retira a Mio,Desconjura Mio
+Unsummon,Unsummon,送還,Desinvocar,Desconjuração
+Unsummons Hatotaurus,Unsummons Hatotaurus,ハトタウロスを送還する,Desinvoca a Hatotaurus,Desconjura Hatotaurus
+Unsummons Mio,Unsummons Mio,ミオを送還する,Desinvoca a Mio,Desconjura Mio
 Upper body invul,Upper body invul,上半身無敵,Invencibilidad en la parte superior del cuerpo,Invulnerabilidade em corpo superior
-Upper body invul. Cat attack!,Upper body invul. Cat attack!,上半身無敵。猫やんけ！,Invencibilidad en la parte superior del cuerpo. Ataque Felino!,Invulnerabilidade em corpose superior. Ataque Felino!
+Upper body invul. Cat attack!,Upper body invul. Cat attack!,上半身無敵。猫やんけ！,Invencibilidad en la parte superior del cuerpo. ¡Ataque Felino!,Invulnerabilidade em corpose superior. Ataque Felino!
 Wallbounces on normal hit,Wallbounces on normal hit,普通のヒット壁バウンド,Rebote contra la pared en golpe normal,Ricocheteia nas paredes em golpe normal
 WARNING,WARNING,WARNING,ADVERTENCIA,AVISO
-Wave Fang 2,Wave Fang 2,,Onda Colmillo 2,Onda Presa 2
-Whiffs on most crouchers,Whiffs on most crouchers,大半のしゃがみに空振り,Falla contra la mayoria de oponentes agachados,Erra na maioria dos oponentes agachados
+Wave Fang 2,Wave Fang 2,,Onda de Colmillo 2,Onda Presa 2
+Whiffs on most crouchers,Whiffs on most crouchers,大半のしゃがみに空振り,No conecta contra la mayoria de oponentes agachados,Erra na maioria dos oponentes agachados
 Wing Shield,Wing Shield,翼シールド,Escudo Alado,Escudo Alado
 Wing Stance,Wing Stance,翼構え,Postura Alada,Postura Alada
 Wing Stance Exit,Wing Stance Exit,翼構え出る,Salir de la Postura Alada,Saida da Postura Alada
