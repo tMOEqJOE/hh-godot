@@ -1,5 +1,7 @@
 extends Node2D
 
+const VIEWPORT_MARGIN := 32.0
+
 # Called when the node enters the scene tree for the first time.
 
 @onready var BUTTON_MAP_MENU = preload("res://game/menus/buttonmap/ButtonMapMenuScreen.tscn")
@@ -15,6 +17,11 @@ var Sound_volume = -10
 var Voice_volume = -10
 var DebugRollbackLogsEnabled: bool = false
 var language_mode: String = "en"
+
+var _options_base_position: Vector2
+var _options_base_scale: Vector2
+var _options_base_size: Vector2
+var _options_layout_ready := false
 
 func get_language_index(locale: String) -> int:
 	match locale:
@@ -43,6 +50,39 @@ func _ready():
 	$CanvasLayer/Options/VersionLabelReadout.text = Global.BATTLE_ENGINE_VERSION
 	update_debug_rollback_log()
 	replay_text_update()
+	var options: Control = $CanvasLayer/Options
+	_options_base_position = options.position
+	_options_base_scale = options.scale
+	_options_base_size = options.size
+	_options_layout_ready = true
+	get_viewport().size_changed.connect(_fit_options_to_viewport)
+	call_deferred("_fit_options_to_viewport")
+
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_TRANSLATION_CHANGED and _options_layout_ready:
+		call_deferred("_fit_options_to_viewport")
+
+func _fit_options_to_viewport() -> void:
+	var options: Control = $CanvasLayer/Options
+	var viewport_size := get_viewport_rect().size
+	var margin := minf(VIEWPORT_MARGIN, minf(viewport_size.x, viewport_size.y) * 0.05)
+	var available_size := viewport_size - Vector2.ONE * margin * 2.0
+	var content_size := _options_base_size.max(options.get_combined_minimum_size())
+	var base_display_size := content_size * _options_base_scale
+	if base_display_size.x <= 0.0 or base_display_size.y <= 0.0:
+		return
+
+	var fit_scale := minf(
+		1.0,
+		minf(available_size.x / base_display_size.x, available_size.y / base_display_size.y)
+	)
+	options.size = content_size
+	options.scale = _options_base_scale * fit_scale
+	var displayed_size := content_size * options.scale
+	options.position = Vector2(
+		clampf(_options_base_position.x, margin, viewport_size.x - displayed_size.x - margin),
+		clampf(_options_base_position.y, margin, viewport_size.y - displayed_size.y - margin)
+	)
 
 func db_conversion(internal_volume, meter_max):
 	return (internal_volume * 2) + meter_max
