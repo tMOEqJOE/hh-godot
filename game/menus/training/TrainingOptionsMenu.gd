@@ -1,5 +1,7 @@
 extends GridContainer
 
+const VIEWPORT_MARGIN := 32.0
+
 @onready var BUTTON_MAP_MENU = preload("res://game/menus/buttonmap/ButtonMapMenuScreen.tscn")
 var button_menu
 var button_map_paused_before_open: bool
@@ -22,6 +24,11 @@ var command_list
 var assist_build_option: bool = false
 var meter_reset_option: bool = true
 
+var _base_position: Vector2
+var _base_scale: Vector2
+var _base_size: Vector2
+var _layout_ready := false
+
 func _on_focus_changed(control:Control) -> void:
 	#if control is PopupMenu:
 		#return
@@ -29,6 +36,11 @@ func _on_focus_changed(control:Control) -> void:
 		most_recent_focus = control
 
 func _ready():
+	_base_position = position
+	_base_scale = scale
+	_base_size = size
+	_layout_ready = true
+	get_viewport().size_changed.connect(_fit_to_viewport)
 	get_viewport().connect("gui_focus_changed", Callable(self, "_on_focus_changed"))
 	most_recent_focus = get_default_focus()
 	
@@ -59,6 +71,30 @@ func _ready():
 	$StanceOptions.add_item(tr("UI_TRAINING_JUMP"), Enums.TrainingStance.JUMP)
 	
 	$SyncRate.value = Util.BASE_SYNC_RATE / SGFixed.ONE
+	call_deferred("_fit_to_viewport")
+
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_TRANSLATION_CHANGED and _layout_ready:
+		call_deferred("_fit_to_viewport")
+
+func _fit_to_viewport() -> void:
+	var viewport_size := get_viewport_rect().size
+	var margin := minf(VIEWPORT_MARGIN, minf(viewport_size.x, viewport_size.y) * 0.05)
+	var available_size := viewport_size - Vector2.ONE * margin * 2.0
+	var content_size := _base_size.max(get_combined_minimum_size())
+	var base_display_size := content_size * _base_scale
+	var fit_scale := minf(
+		1.0,
+		minf(available_size.x / base_display_size.x, available_size.y / base_display_size.y)
+	)
+
+	size = content_size
+	scale = _base_scale * fit_scale
+	var displayed_size := content_size * scale
+	position = Vector2(
+		clampf(_base_position.x, margin, viewport_size.x - displayed_size.x - margin),
+		clampf(_base_position.y, margin, viewport_size.y - displayed_size.y - margin)
+	)
 
 func _physics_process(delta):
 	if menu_close_delay > 0:

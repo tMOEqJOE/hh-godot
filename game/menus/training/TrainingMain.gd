@@ -83,11 +83,7 @@ func _physics_process(delta):
 			if (recording_machine.has_input()):
 				var input:int = recording_machine.read_input()
 				if (self is ComboTrialMain):
-					var replay_target: InputInterpreter
-					if (Global.TRAINING_P1):
-						replay_target = fighter_game.get_node("ServerInputInterpreter")
-					else:
-						replay_target = fighter_game.get_node("ClientInputInterpreter")
+					var replay_target: InputInterpreter = fighter_game.get_node("ServerInputInterpreter")
 					replay_target.replay_input = input
 					replay_target.is_replaying = true
 				else:
@@ -96,11 +92,7 @@ func _physics_process(delta):
 				$CanvasLayer/MessageLabel.text = recording_machine.string_replaying_frame()
 			else:
 				if (self is ComboTrialMain):
-					var replay_target: InputInterpreter
-					if (Global.TRAINING_P1):
-						replay_target = fighter_game.get_node("ServerInputInterpreter")
-					else:
-						replay_target = fighter_game.get_node("ClientInputInterpreter")
+					var replay_target: InputInterpreter = fighter_game.get_node("ServerInputInterpreter")
 					replay_target.is_replaying = false
 					replay_target.replay_input = 0
 				else:
@@ -379,7 +371,19 @@ func _apply_training_reset_position(position: int) -> void:
 func control_the_dummy():
 	if (not dummy_input.player == null):
 		dummy_input.disconnect_signals()
-	if (Global.TRAINING_P1):
+	if (self is ComboTrialMain):
+		player_input = fighter_game.get_node("ServerInputInterpreter")
+		fighter_game.ServerPlayer.input_interpreter = player_input
+		fighter_game.ClientPlayer.input_interpreter = dummy_input
+		fighter_game.AssistPlayer1.input_interpreter = player_input
+		fighter_game.AssistPlayer2.input_interpreter = dummy_input
+		if (fighter_game.Hato1 != null):
+			fighter_game.Hato1.input_interpreter = player_input
+		if (fighter_game.Hato2 != null):
+			fighter_game.Hato2.input_interpreter = dummy_input
+		dummy_input.player = fighter_game.ClientPlayer
+		record_left_face_ref = fighter_game.ServerPlayer.currentState[Enums.StKey.leftface]
+	elif (Global.TRAINING_P1):
 		player_input = fighter_game.get_node("ServerInputInterpreter")
 		fighter_game.ServerPlayer.input_interpreter = dummy_input
 		fighter_game.ClientPlayer.input_interpreter = player_input
@@ -408,7 +412,18 @@ func control_the_dummy():
 func return_control_to_player():
 	if (not dummy_input.player == null):
 		dummy_input.disconnect_signals()
-	if (Global.TRAINING_P1):
+	if (self is ComboTrialMain):
+		player_input = fighter_game.get_node("ServerInputInterpreter")
+		fighter_game.ServerPlayer.input_interpreter = player_input
+		fighter_game.ClientPlayer.input_interpreter = dummy_input
+		fighter_game.AssistPlayer1.input_interpreter = player_input
+		fighter_game.AssistPlayer2.input_interpreter = dummy_input
+		if (fighter_game.Hato1 != null):
+			fighter_game.Hato1.input_interpreter = player_input
+		if (fighter_game.Hato2 != null):
+			fighter_game.Hato2.input_interpreter = dummy_input
+		dummy_input.player = fighter_game.ClientPlayer
+	elif (Global.TRAINING_P1):
 		player_input = fighter_game.get_node("ServerInputInterpreter")
 		fighter_game.ServerPlayer.input_interpreter = player_input
 		fighter_game.ClientPlayer.input_interpreter = dummy_input
@@ -560,6 +575,7 @@ func get_demo_file_path() -> String:
 	print("looking for " + file_name)
 	var packaged_candidate = "res://game/ui/combotrialdemos/%s" % file_name
 	return packaged_candidate
+	return "user://training_recording.dat"
 
 func play_demo():
 	var demo_file_path = "user://training_recording.dat"
@@ -614,12 +630,7 @@ func start_replay():
 	$CanvasLayer/MessageLabel.text = tr("UI_STATUS_REPLAYING")
 	if (self is ComboTrialMain):
 		replay_restore_player_input = player_input
-		if (Global.TRAINING_P1):
-			player_input = fighter_game.get_node("ServerInputInterpreter")
-		else:
-			player_input = fighter_game.get_node("ClientInputInterpreter")
-			dummy_input.game_left_face = true
-		dummy_input.prep_for_replay()
+		player_input = fighter_game.get_node("ServerInputInterpreter")
 		player_input.prep_for_replay()
 		$CanvasLayer/ComboTrialListener.set_auto_advance_on_complete(false)
 		$CanvasLayer/ComboTrialListener.set_hold_completion_for_demo(true)
@@ -628,21 +639,14 @@ func start_replay():
 		dummy_input.prep_for_replay()
 	return_control_to_player()
 	if (self is ComboTrialMain):
-		if (Global.TRAINING_P1):
-			player_input = fighter_game.get_node("ServerInputInterpreter")
-		else:
-			player_input = fighter_game.get_node("ClientInputInterpreter")
+		player_input = fighter_game.get_node("ServerInputInterpreter")
 	is_replaying = true
 
 func stop_replay():
 	recording_state = RecordingStates.Idle
 	$CanvasLayer/MessageLabel.text = ""
 	if (self is ComboTrialMain):
-		var replay_target: InputInterpreter
-		if (Global.TRAINING_P1):
-			replay_target = fighter_game.get_node("ServerInputInterpreter")
-		else:
-			replay_target = fighter_game.get_node("ClientInputInterpreter")
+		var replay_target: InputInterpreter = fighter_game.get_node("ServerInputInterpreter")
 		replay_target.is_replaying = false
 		replay_target.replay_input = 0
 		$CanvasLayer/ComboTrialListener.set_auto_advance_on_complete(true)
@@ -655,23 +659,6 @@ func stop_replay():
 	recording_machine.cancel_replay()
 	is_replaying = false
 	replay_restore_player_input = null
-
-func get_inverted_reset_position(reset_position: TrainingResetPosition):
-	match reset_position:
-		TrainingResetPosition.LEFT:
-			return TrainingResetPosition.LEFT_SWITCHED
-		TrainingResetPosition.RIGHT:
-			return TrainingResetPosition.RIGHT_SWITCHED
-		TrainingResetPosition.CENTER:
-			return TrainingResetPosition.CENTER_SWITCHED
-		TrainingResetPosition.RIGHT_SWITCHED:
-			return TrainingResetPosition.RIGHT
-		TrainingResetPosition.LEFT_SWITCHED:
-			return TrainingResetPosition.LEFT
-		TrainingResetPosition.CENTER_SWITCHED:
-			return TrainingResetPosition.CENTER
-		_:
-			return TrainingResetPosition.CENTER_SWITCHED
 
 func _input(event):
 	pass
@@ -687,8 +674,7 @@ func input_helper(event):
 			if (reset_position >= 0):
 				reset(reset_position)
 			elif (self is ComboTrialMain):
-				reset_position = TrainingResetPosition.get($CanvasLayer/ComboTrialListener.current_reset_position, TrainingResetPosition.CENTER)
-				reset(reset_position)
+				reset(TrainingResetPosition.get($CanvasLayer/ComboTrialListener.current_reset_position, TrainingResetPosition.CENTER))
 			elif (savestate.is_empty()):
 				reset(last_reset_position)
 			else:
