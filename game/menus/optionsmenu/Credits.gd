@@ -21,6 +21,8 @@ const credits = {
 	],
 	"Localization" : [
 		"JP - Keyboard Noah",
+		"ES - Alasonic, Doppio, Hoshii, nabbori, Maku, Trista, [M], Dess",
+		"PT - Linley Baruch"
 	],
 	"Infinite and Bug Hunters" : [
 		"りてら",
