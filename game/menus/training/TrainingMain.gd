@@ -37,6 +37,7 @@ var _move_data_opponent: BasePlayer
 var _move_data_advantage_player: BasePlayer
 var _move_data_advantage_state_name: String = ""
 var _move_data_projectile_sources: Dictionary = {}
+var _has_move_data_ui: bool = false
 
 func _init() -> void:
 	super._init()
@@ -71,24 +72,32 @@ func _ready() -> void:
 	$CanvasLayer/TrainingOptionsMenu.connect("loadstate", Callable(self, "loadstate_menu"))
 	$CanvasLayer/TrainingOptionsMenu.connect("savestate", Callable(self, "execute_savestate"))
 	$CanvasLayer/TrainingOptionsMenu.connect("play_demo", Callable(self, "play_demo"))
-	$CanvasLayer/TrainingOptionsMenu.connect("move_data_toggled", Callable(self, "_on_move_data_toggled"))
 	$CanvasLayer/TrainingOptionsMenu.command_list = $CanvasLayer/CommandList
 	$CanvasLayer/TrainingOptionsMenu.command_list.connect("close_menu", Callable($CanvasLayer/TrainingOptionsMenu, "command_list_closed"))
 	dummy_input.connect("strike_hurt", Callable(self, "load_reaction_state"))
-	for training_opponent in _get_move_data_opponents():
-		training_opponent.attack_hurt.connect(
-			Callable(self, "_on_training_opponent_attack_hurt").bind(training_opponent)
-		)
-	for attacker in _get_move_data_attackers():
-		attacker.projectilespawn.connect(
-			Callable(self, "_on_move_data_projectile_spawned").bind(attacker)
-		)
-	_reset_move_data_display()
+	_has_move_data_ui = has_node("CanvasLayer/MoveData")
+	if (_has_move_data_ui):
+		$CanvasLayer/TrainingOptionsMenu.connect("move_data_toggled", Callable(self, "_on_move_data_toggled"))
+		_on_move_data_toggled($CanvasLayer/TrainingOptionsMenu.move_data_visible)
+		for training_opponent in _get_move_data_opponents():
+			training_opponent.attack_hurt_resolved.connect(
+				Callable(self, "_on_training_opponent_attack_hurt").bind(training_opponent)
+			)
+		for attacker in _get_move_data_attackers():
+			attacker.projectilespawn.connect(
+				Callable(self, "_on_move_data_projectile_spawned").bind(attacker)
+			)
+		_reset_move_data_display()
 
 func _on_move_data_toggled(is_visible: bool) -> void:
 	$CanvasLayer/MoveData.visible = is_visible
 
-func _on_training_opponent_attack_hurt(hitbox_name: String, _opponent: BasePlayer) -> void:
+func _on_training_opponent_attack_hurt(
+	hitbox_name: String,
+	hit_type: int,
+	_opponent: BasePlayer
+) -> void:
+	var was_parried: bool = hit_type == Enums.HitType.Parry
 	var player: BasePlayer = _find_move_data_attacker(hitbox_name)
 	if (player == null):
 		var projectile_source: Dictionary = _move_data_projectile_sources.get(
@@ -103,10 +112,11 @@ func _on_training_opponent_attack_hurt(hitbox_name: String, _opponent: BasePlaye
 		_queue_move_data_contact(
 			player,
 			projectile_source["move_data"],
-			true
+			true,
+			was_parried
 		)
 		return
-	_queue_move_data_contact(player)
+	_queue_move_data_contact(player, {}, false, was_parried)
 
 func _on_move_data_projectile_spawned(
 	_x: int,
@@ -131,7 +141,8 @@ func _normalize_projectile_name(projectile_name: String) -> String:
 func _queue_move_data_contact(
 	player: BasePlayer,
 	move_data_snapshot: Dictionary = {},
-	is_projectile: bool = false
+	is_projectile: bool = false,
+	was_parried: bool = false
 ) -> void:
 	if (player.fighterState == null):
 		return
@@ -148,14 +159,16 @@ func _queue_move_data_contact(
 		player,
 		player.currentState.get(Enums.StKey.stateName, ""),
 		move_data,
-		is_projectile
+		is_projectile,
+		was_parried
 	)
 
 func _record_move_data_contact(
 	player: BasePlayer,
 	move_state_name: String,
 	move_data_snapshot: Dictionary,
-	is_projectile: bool
+	is_projectile: bool,
+	was_parried: bool
 ) -> void:
 	if (not is_instance_valid(player) or player.fighterState == null):
 		return
@@ -171,8 +184,8 @@ func _record_move_data_contact(
 		move_data_snapshot = _get_move_frame_data(move_state)
 		if (move_data_snapshot.is_empty() and not is_projectile):
 			return
-	var opponent_stun: int = opponent.currentState.get(Enums.StKey.hitstun, 0)
-	if (opponent_stun <= 0):
+	var opponent_stun: int = 0 if was_parried else opponent.currentState.get(Enums.StKey.hitstun, 0)
+	if (opponent_stun <= 0 and not was_parried):
 		return
 
 	var opponent_hitstop: int = maxi(opponent.currentState.get(Enums.StKey.hitStopFrame, 0), 0)
@@ -385,7 +398,8 @@ func _physics_process(delta):
 		$CanvasLayer/TrainingOptionsMenu.get_assist_meter(),
 		$CanvasLayer/TrainingOptionsMenu.get_sync_rate())
 		$CanvasLayer/DamageCounter.tick()
-		_update_move_data()
+		if (_has_move_data_ui):
+			_update_move_data()
 		$CanvasLayer/TrainingInputDisplay.update_input(player_input.get_most_recent_input())
 		if (is_recording):
 			var train_input: int = player_input.get_training_input(record_left_face_ref)
