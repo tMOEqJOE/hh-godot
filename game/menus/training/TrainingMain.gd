@@ -208,9 +208,9 @@ func _record_move_data_contact(
 	if (not move_data_snapshot.is_empty()):
 		_set_move_data_frame_values(move_data_snapshot)
 	else:
-		$CanvasLayer/MoveData/AttackDamage.text = tr("UI_TRAINING_ATTACK_STARTUP") + " --"
+		$CanvasLayer/MoveData/AttackStartup.text = tr("UI_TRAINING_ATTACK_STARTUP") + " --"
 		$CanvasLayer/MoveData/ActiveFrames.text = tr("UI_TRAINING_ATTACK_ACTIVE") + " --"
-		$CanvasLayer/MoveData/ComboDamage.text = tr("UI_TRAINING_ATTACK_RECOVERY") + " --"
+		$CanvasLayer/MoveData/AttackRecovery.text = tr("UI_TRAINING_ATTACK_RECOVERY") + " --"
 	_set_move_data_advantage_text(advantage)
 
 func _get_controlled_player() -> BasePlayer:
@@ -265,10 +265,10 @@ func _get_active_move_data_attacker() -> BasePlayer:
 	return null
 
 func _reset_move_data_display() -> void:
-	$CanvasLayer/MoveData/AttackDamage.text = tr("UI_TRAINING_ATTACK_STARTUP") + " --"
+	$CanvasLayer/MoveData/AttackStartup.text = tr("UI_TRAINING_ATTACK_STARTUP") + " --"
 	$CanvasLayer/MoveData/ActiveFrames.text = tr("UI_TRAINING_ATTACK_ACTIVE") + " --"
-	$CanvasLayer/MoveData/ComboDamage.text = tr("UI_TRAINING_ATTACK_RECOVERY") + " --"
-	$CanvasLayer/MoveData/ComboDamage2.text = tr("UI_TRAINING_FRAME_ADVANTAGE") + " --"
+	$CanvasLayer/MoveData/AttackRecovery.text = tr("UI_TRAINING_ATTACK_RECOVERY") + " --"
+	$CanvasLayer/MoveData/FrameAdvantage.text = tr("UI_TRAINING_FRAME_ADVANTAGE") + " --"
 
 func _get_move_frame_data(move_state: State) -> Dictionary:
 	var animation_frames: Array = move_state.anim_data.keys()
@@ -343,7 +343,7 @@ func _update_move_data() -> void:
 	elif (not _move_data_contacted and state_name != _move_data_state_name):
 		if (is_attack_move):
 			_move_data_advantage_locked = false
-			$CanvasLayer/MoveData/ComboDamage2.text = tr("UI_TRAINING_FRAME_ADVANTAGE") + " --"
+			$CanvasLayer/MoveData/FrameAdvantage.text = tr("UI_TRAINING_FRAME_ADVANTAGE") + " --"
 
 	if (not _move_data_contacted):
 		_move_data_state_name = state_name
@@ -357,9 +357,9 @@ func _update_move_data() -> void:
 	var startup: int = move_data["startup"]
 	var active: int = move_data["active"]
 	var recovery: int = move_data["recovery"]
-	$CanvasLayer/MoveData/AttackDamage.text = tr("UI_TRAINING_ATTACK_STARTUP") + " " + str(startup)
+	$CanvasLayer/MoveData/AttackStartup.text = tr("UI_TRAINING_ATTACK_STARTUP") + " " + str(startup)
 	$CanvasLayer/MoveData/ActiveFrames.text = tr("UI_TRAINING_ATTACK_ACTIVE") + " " + str(active)
-	$CanvasLayer/MoveData/ComboDamage.text = tr("UI_TRAINING_ATTACK_RECOVERY") + " " + str(recovery)
+	$CanvasLayer/MoveData/AttackRecovery.text = tr("UI_TRAINING_ATTACK_RECOVERY") + " " + str(recovery)
 	_move_data_actor = player
 
 func _calculate_cancel_frame_advantage(
@@ -377,9 +377,9 @@ func _set_move_data_advantage_value(advantage: int) -> void:
 	_move_data_advantage_locked = true
 
 func _set_move_data_frame_values(move_data: Dictionary) -> void:
-	$CanvasLayer/MoveData/AttackDamage.text = tr("UI_TRAINING_ATTACK_STARTUP") + " " + str(move_data["startup"])
+	$CanvasLayer/MoveData/AttackStartup.text = tr("UI_TRAINING_ATTACK_STARTUP") + " " + str(move_data["startup"])
 	$CanvasLayer/MoveData/ActiveFrames.text = tr("UI_TRAINING_ATTACK_ACTIVE") + " " + str(move_data["active"])
-	$CanvasLayer/MoveData/ComboDamage.text = tr("UI_TRAINING_ATTACK_RECOVERY") + " " + str(move_data["recovery"])
+	$CanvasLayer/MoveData/AttackRecovery.text = tr("UI_TRAINING_ATTACK_RECOVERY") + " " + str(move_data["recovery"])
 
 func _set_move_data_advantage_text(advantage: int) -> void:
 	var frame_advantage: String = ("+" if advantage >= 0 else "") + str(advantage)
@@ -389,7 +389,7 @@ func _set_move_data_advantage_text(advantage: int) -> void:
 	elif (advantage < 0):
 		color_tag = "[color=red]"
 	var value_text: String = frame_advantage if color_tag.is_empty() else color_tag + frame_advantage + "[/color]"
-	$CanvasLayer/MoveData/ComboDamage2.text = tr("UI_TRAINING_FRAME_ADVANTAGE") + " " + value_text
+	$CanvasLayer/MoveData/FrameAdvantage.text = tr("UI_TRAINING_FRAME_ADVANTAGE") + " " + value_text
 
 func _physics_process(delta):
 	if (not $CanvasLayer/TrainingOptionsMenu.is_enabled()):

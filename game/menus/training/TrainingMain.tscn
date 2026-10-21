@@ -129,7 +129,7 @@ position = Vector2(256, 51)
 scale = Vector2(4.24481, 0.9)
 texture = ExtResource("10")
 
-[node name="AttackDamage" parent="CanvasLayer/MoveData" instance=ExtResource("2")]
+[node name="AttackStartup" parent="CanvasLayer/MoveData" instance=ExtResource("2")]
 offset_left = 14.0
 offset_top = 8.00001
 offset_right = 118.0
@@ -145,7 +145,7 @@ offset_bottom = 43.0
 text = "UI_TRAINING_ATTACK_ACTIVE"
 script = null
 
-[node name="ComboDamage" parent="CanvasLayer/MoveData" instance=ExtResource("2")]
+[node name="AttackRecovery" parent="CanvasLayer/MoveData" instance=ExtResource("2")]
 offset_left = 12.9999
 offset_top = 50.0
 offset_right = 52.9999
@@ -153,7 +153,7 @@ offset_bottom = 64.0
 text = "UI_TRAINING_ATTACK_RECOVERY"
 script = null
 
-[node name="ComboDamage2" type="RichTextLabel" parent="CanvasLayer/MoveData"]
+[node name="FrameAdvantage" type="RichTextLabel" parent="CanvasLayer/MoveData"]
 offset_left = 13.0
 offset_top = 75.0
 offset_right = 276.0
@@ -204,7 +204,6 @@ theme = ExtResource("11_s221j")
 columns = 3
 script = ExtResource("5")
 move_data_visible = true
-
 [node name="Background" type="Sprite2D" parent="CanvasLayer/TrainingOptionsMenu"]
 modulate = Color(0.172549, 0.121569, 0.121569, 0.411765)
 position = Vector2(172.305, 200.957)
