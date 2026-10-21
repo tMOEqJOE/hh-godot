@@ -382,14 +382,14 @@ func _set_move_data_frame_values(move_data: Dictionary) -> void:
 	$CanvasLayer/MoveData/AttackRecovery.text = tr("UI_TRAINING_ATTACK_RECOVERY") + " " + str(move_data["recovery"])
 
 func _set_move_data_advantage_text(advantage: int) -> void:
-	var frame_advantage: String = ("+" if advantage >= 0 else "") + str(advantage)
-	var color_tag: String = ""
-	if (advantage > 0):
-		color_tag = "[color=green]"
-	elif (advantage < 0):
-		color_tag = "[color=red]"
-	var value_text: String = frame_advantage if color_tag.is_empty() else color_tag + frame_advantage + "[/color]"
-	$CanvasLayer/MoveData/FrameAdvantage.text = tr("UI_TRAINING_FRAME_ADVANTAGE") + " " + value_text
+	var value := "%+d" % advantage
+	if advantage > 0:
+		value = "[color=green]%s[/color]" % value
+	elif advantage < 0:
+		value = "[color=red]%s[/color]" % value
+	$CanvasLayer/MoveData/FrameAdvantage.text = (
+		tr("UI_TRAINING_FRAME_ADVANTAGE") + " " + value
+	)
 
 func _physics_process(delta):
 	if (not $CanvasLayer/TrainingOptionsMenu.is_enabled()):

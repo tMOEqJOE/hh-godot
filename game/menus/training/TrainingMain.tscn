@@ -203,7 +203,7 @@ scale = Vector2(2.8483367, 1.8152132)
 theme = ExtResource("11_s221j")
 columns = 3
 script = ExtResource("5")
-move_data_visible = true
+move_data_visible = false
 [node name="Background" type="Sprite2D" parent="CanvasLayer/TrainingOptionsMenu"]
 modulate = Color(0.172549, 0.121569, 0.121569, 0.411765)
 position = Vector2(172.305, 200.957)
@@ -518,7 +518,7 @@ text = "UI_TRAINING_MOVE_DATA"
 
 [node name="MoveDataButton" type="Button" parent="CanvasLayer/TrainingOptionsMenu"]
 layout_mode = 2
-text = "UI_TRAINING_ON"
+text = "UI_TRAINING_OFF"
 
 [node name="MoveDataNumber" type="Label" parent="CanvasLayer/TrainingOptionsMenu"]
 layout_mode = 2
