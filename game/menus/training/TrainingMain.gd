@@ -33,9 +33,12 @@ var _move_data_state_name: String = ""
 var _move_data_advantage_locked: bool = false
 var _move_data_contacted: bool = false
 var _move_data_actor: BasePlayer
-var _move_data_opponent: BasePlayer
 var _move_data_advantage_player: BasePlayer
 var _move_data_advantage_state_name: String = ""
+var _move_data_contact_advantage: int = 0
+var _move_data_contact_end_frame: int = 0
+var _move_data_contact_start_frame: int = 0
+var _move_data_contact_last_frame: int = 0
 var _move_data_projectile_sources: Dictionary = {}
 var _has_move_data_ui: bool = false
 
@@ -176,7 +179,6 @@ func _record_move_data_contact(
 	var opponent: BasePlayer = _get_opponent_point_player()
 	if (base_player.fighterState == null):
 		return
-	var base_move_state: State = base_player.fighterState.state
 	if (move_data_snapshot.is_empty()):
 		var move_state: State = player.fighterState.state
 		if (not is_projectile and not move_state is AttackState and not move_state is AirAttackState):
@@ -187,19 +189,28 @@ func _record_move_data_contact(
 	var opponent_stun: int = 0 if was_parried else opponent.currentState.get(Enums.StKey.hitstun, 0)
 	if (opponent_stun <= 0 and not was_parried):
 		return
+	var opponent_next_state: String = opponent.currentState.get(Enums.StKey.next_state, "")
+	if (opponent.currentState.get(Enums.StKey.transition_state_flag, false)
+			and opponent_next_state.ends_with("HurtCrouch")):
+		opponent_stun += 1
 
-	var opponent_hitstop: int = maxi(opponent.currentState.get(Enums.StKey.hitStopFrame, 0), 0)
-	var player_hitstop: int = maxi(base_player.currentState.get(Enums.StKey.hitStopFrame, 0), 0)
 	var player_recovery: int = 0
+	var base_move_state: State = base_player.fighterState.state
 	if (base_move_state.endFrame < 99):
 		player_recovery = maxi(
 			base_move_state.endFrame - base_player.currentState.get(Enums.StKey.frame, 0),
 			0
 		)
-	var advantage: int = opponent_stun + opponent_hitstop - player_hitstop - player_recovery
+	_move_data_contact_advantage = _calculate_frame_advantage(
+		base_player,
+		opponent,
+		opponent_stun,
+		player_recovery
+	)
+	_move_data_contact_end_frame = base_move_state.endFrame
+	_move_data_contact_last_frame = base_player.currentState.get(Enums.StKey.frame, 0)
 
 	_move_data_actor = player
-	_move_data_opponent = opponent
 	_move_data_advantage_player = base_player
 	_move_data_advantage_state_name = base_player.currentState.get(Enums.StKey.stateName, "")
 	_move_data_state_name = move_state_name
@@ -211,7 +222,7 @@ func _record_move_data_contact(
 		$CanvasLayer/MoveData/AttackStartup.text = tr("UI_TRAINING_ATTACK_STARTUP") + " --"
 		$CanvasLayer/MoveData/ActiveFrames.text = tr("UI_TRAINING_ATTACK_ACTIVE") + " --"
 		$CanvasLayer/MoveData/AttackRecovery.text = tr("UI_TRAINING_ATTACK_RECOVERY") + " --"
-	_set_move_data_advantage_text(advantage)
+	$CanvasLayer/MoveData/FrameAdvantage.text = tr("UI_TRAINING_FRAME_ADVANTAGE") + " --"
 
 func _get_controlled_player() -> BasePlayer:
 	return fighter_game.ServerPlayer if (self is ComboTrialMain or Global.TRAINING_P1) else fighter_game.ClientPlayer
@@ -312,7 +323,6 @@ func _update_move_data() -> void:
 	var advantage_player: BasePlayer = (
 		_move_data_advantage_player if _move_data_contacted else _get_controlled_player()
 	)
-	var opponent: BasePlayer = _move_data_opponent if _move_data_contacted else _get_opponent_point_player()
 
 	if (player.fighterState == null):
 		return
@@ -320,26 +330,49 @@ func _update_move_data() -> void:
 	var state_name: String = player.currentState.get(Enums.StKey.stateName, "")
 	if (advantage_player.fighterState == null):
 		return
-	var advantage_state: State = advantage_player.fighterState.state
 	var advantage_state_name: String = advantage_player.currentState.get(Enums.StKey.stateName, "")
 	var move_data: Dictionary = {}
 	if (move_state is AttackState or move_state is AirAttackState):
 		move_data = _get_move_frame_data(move_state)
 	var is_attack_move: bool = not move_data.is_empty()
 
+	if (_move_data_contacted and advantage_state_name == _move_data_advantage_state_name):
+		_move_data_contact_last_frame = maxi(
+			_move_data_contact_last_frame,
+			advantage_player.currentState.get(Enums.StKey.frame, 0)
+		)
 	if (_move_data_contacted and advantage_state_name != _move_data_advantage_state_name):
-		var advantage_recovery: int = 0
-		if (advantage_state.endFrame < 99):
-			advantage_recovery = maxi(
-				advantage_state.endFrame - advantage_player.currentState.get(Enums.StKey.frame, 0),
+		var cancelled_recovery: int = 0
+		var advantage_state: State = advantage_player.fighterState.state
+		var was_interrupted: bool = (
+			advantage_state is HurtState
+			or advantage_state is AirReactionState
+		)
+		if (not was_interrupted
+				and _move_data_contact_last_frame < _move_data_contact_end_frame - 1):
+			cancelled_recovery = _move_data_contact_end_frame - _move_data_contact_last_frame
+		_move_data_contact_advantage += cancelled_recovery
+		if (not was_interrupted
+				and (advantage_state is AttackState or advantage_state is AirAttackState)):
+			_move_data_advantage_state_name = advantage_state_name
+			_move_data_contact_end_frame = advantage_state.endFrame
+			_move_data_contact_start_frame = advantage_player.currentState.get(
+				Enums.StKey.frame,
 				0
 			)
-		_set_move_data_advantage_value(
-			_calculate_cancel_frame_advantage(advantage_player, opponent, advantage_recovery)
-		)
-		_move_data_contacted = false
-		_move_data_opponent = null
-		_move_data_advantage_player = null
+			_move_data_contact_last_frame = advantage_player.currentState.get(
+				Enums.StKey.frame,
+				0
+			)
+			if (advantage_state.endFrame < 99):
+				_move_data_contact_advantage -= maxi(
+					advantage_state.endFrame - _move_data_contact_start_frame,
+					0
+				)
+		else:
+			_set_move_data_advantage_value(_move_data_contact_advantage)
+			_move_data_contacted = false
+			_move_data_advantage_player = null
 	elif (not _move_data_contacted and state_name != _move_data_state_name):
 		if (is_attack_move):
 			_move_data_advantage_locked = false
@@ -362,12 +395,12 @@ func _update_move_data() -> void:
 	$CanvasLayer/MoveData/AttackRecovery.text = tr("UI_TRAINING_ATTACK_RECOVERY") + " " + str(recovery)
 	_move_data_actor = player
 
-func _calculate_cancel_frame_advantage(
+func _calculate_frame_advantage(
 	player: BasePlayer,
 	opponent: BasePlayer,
+	opponent_stun: int,
 	player_recovery: int
 ) -> int:
-	var opponent_stun: int = opponent.currentState.get(Enums.StKey.hitstun, 0)
 	var opponent_hitstop: int = maxi(opponent.currentState.get(Enums.StKey.hitStopFrame, 0), 0)
 	var player_hitstop: int = maxi(player.currentState.get(Enums.StKey.hitStopFrame, 0), 0)
 	return opponent_stun + opponent_hitstop - player_hitstop - player_recovery
