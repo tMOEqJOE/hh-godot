@@ -21,14 +21,22 @@ func _ready():
 func update_a1():
 	if (Global.TRAINING_P1):
 		super.update_a1()
+
+func complete_a1_selection():
+	if (Global.TRAINING_P1):
 		p1_active_cursor = $P2Cursor
 		pick_random_opponent()
+	super.complete_a1_selection()
 
 func update_a2():
 	if (not Global.TRAINING_P1):
 		super.update_a2()
+
+func complete_a2_selection():
+	if (not Global.TRAINING_P1):
 		p2_active_cursor = $P1Cursor
 		pick_random_opponent()
+	super.complete_a2_selection()
 
 func pick_random_color() -> int:
 	var colorNumber = rng.randi_range(1, Util.MAX_COLOR_PALETTE_NUMBER)

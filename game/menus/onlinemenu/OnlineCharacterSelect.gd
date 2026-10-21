@@ -213,10 +213,12 @@ func players_ready():
 		return peer_ready and p2_ready
 
 func update_p1():
+	begin_color_capture(true, P1Cursor.input_prefix, false, Callable(self, "complete_online_p1_selection"))
+
+func complete_online_p1_selection():
 	message_label.text = "p1 update"
 	p1_cursor_pos_row = P1Cursor.row
 	p1_cursor_pos_col = P1Cursor.col
-	p1_color_number = select_color(P1Cursor.input_prefix)
 	var charaData = resolve_characters(P1Cursor.row, P1Cursor.col)
 	p1_color_number = fit_color_number_to_character(charaData[1], false, p1_color_number)
 	P1Portrait.change_color_number(p1_color_number)
@@ -239,10 +241,12 @@ func update_p1():
 		Global.load_queue.queue_resource(Global.PLAYER_1_NODE_PATH[2])
 
 func update_p2():
+	begin_color_capture(false, P2Cursor.input_prefix, false, Callable(self, "complete_online_p2_selection"))
+
+func complete_online_p2_selection():
 	message_label.text = "p2 update"
 	p2_cursor_pos_row = P2Cursor.row
 	p2_cursor_pos_col = P2Cursor.col
-	p2_color_number = select_color(P2Cursor.input_prefix)
 	var charaData = resolve_characters(P2Cursor.row, P2Cursor.col)
 	p2_color_number = fit_color_number_to_character(charaData[1], false, p2_color_number)
 	P2Portrait.change_color_number(p2_color_number)
@@ -265,9 +269,13 @@ func update_p2():
 		Global.load_queue.queue_resource(Global.PLAYER_1_NODE_PATH[2])
 
 @rpc("any_peer") func update_a1():
+	var cursor = p1_assist_select.get_node("CharacterCursor")
+	begin_color_capture(true, cursor.input_prefix, true, Callable(self, "complete_online_a1_selection"))
+
+func complete_online_a1_selection():
 	message_label.text = "a1 update"
 	var charaData = resolve_assists(p1_assist_select.cursor_row(), p1_assist_select.cursor_col(), true)
-	a1_color_number = fit_color_number_to_character(charaData[1], true, select_color(p1_assist_select.get_node("CharacterCursor").input_prefix))
+	a1_color_number = fit_color_number_to_character(charaData[1], true, a1_color_number)
 	Global.PLAYER_1_NODE_PATH[1] = charaData[0]
 	Global.PLAYER_1_CHARACTER[1] = charaData[1]
 	Global.load_queue.queue_resource(Global.PLAYER_1_NODE_PATH[1])
@@ -281,9 +289,13 @@ func update_p2():
 	local_ready()
 
 func update_a2():
+	var cursor = p2_assist_select.get_node("CharacterCursor")
+	begin_color_capture(false, cursor.input_prefix, true, Callable(self, "complete_online_a2_selection"))
+
+func complete_online_a2_selection():
 	message_label.text = "a2 update"
 	var charaData = resolve_assists(p2_assist_select.cursor_row(), p2_assist_select.cursor_col(), false)
-	a2_color_number = fit_color_number_to_character(charaData[1], true, select_color(p2_assist_select.get_node("CharacterCursor").input_prefix))
+	a2_color_number = fit_color_number_to_character(charaData[1], true, a2_color_number)
 	Global.PLAYER_2_NODE_PATH[1] = charaData[0]
 	Global.PLAYER_2_CHARACTER[1] = charaData[1]
 	Global.load_queue.queue_resource(Global.PLAYER_2_NODE_PATH[1])
@@ -389,6 +401,7 @@ func go_to_next_scene():
 	get_tree().change_scene_to_file("res://game/DemoMain.tscn")
 
 func physics_tick():
+	super.physics_tick()
 	if ($CanvasLayer/RemainingTime.visible):
 		$CanvasLayer/RemainingTime.text = str(int($TimeLimit.time_left+1))
 
