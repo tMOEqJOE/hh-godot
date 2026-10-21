@@ -194,13 +194,11 @@ func _record_move_data_contact(
 			and opponent_next_state.ends_with("HurtCrouch")):
 		opponent_stun += 1
 
-	var player_recovery: int = 0
 	var base_move_state: State = base_player.fighterState.state
-	if (base_move_state.endFrame < 99):
-		player_recovery = maxi(
-			base_move_state.endFrame - base_player.currentState.get(Enums.StKey.frame, 0),
-			0
-		)
+	var player_recovery: int = maxi(
+		base_move_state.endFrame - base_player.currentState.get(Enums.StKey.frame, 0),
+		0
+	)
 	_move_data_contact_advantage = _calculate_frame_advantage(
 		base_player,
 		opponent,
@@ -348,12 +346,15 @@ func _update_move_data() -> void:
 			advantage_state is HurtState
 			or advantage_state is AirReactionState
 		)
+		var is_attack_followup: bool = (
+			(advantage_state is AttackState or advantage_state is AirAttackState)
+			and not _get_move_frame_data(advantage_state).is_empty()
+		)
 		if (not was_interrupted
 				and _move_data_contact_last_frame < _move_data_contact_end_frame - 1):
 			cancelled_recovery = _move_data_contact_end_frame - _move_data_contact_last_frame
 		_move_data_contact_advantage += cancelled_recovery
-		if (not was_interrupted
-				and (advantage_state is AttackState or advantage_state is AirAttackState)):
+		if (not was_interrupted and is_attack_followup):
 			_move_data_advantage_state_name = advantage_state_name
 			_move_data_contact_end_frame = advantage_state.endFrame
 			_move_data_contact_start_frame = advantage_player.currentState.get(
@@ -364,11 +365,10 @@ func _update_move_data() -> void:
 				Enums.StKey.frame,
 				0
 			)
-			if (advantage_state.endFrame < 99):
-				_move_data_contact_advantage -= maxi(
-					advantage_state.endFrame - _move_data_contact_start_frame,
-					0
-				)
+			_move_data_contact_advantage -= maxi(
+				advantage_state.endFrame - _move_data_contact_start_frame,
+				0
+			)
 		else:
 			_set_move_data_advantage_value(_move_data_contact_advantage)
 			_move_data_contacted = false
