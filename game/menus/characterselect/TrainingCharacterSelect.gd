@@ -19,9 +19,6 @@ func load_next_scenes():
 	next_scene_packed = load("res://game/menus/stagemusicselect/TrainingStageMusicSelect.tscn")
 	prev_scene_packed = load("res://game/menus/buttonmap/TrainingControllerPickMenuScreen.tscn")
 
-func update_p1():
-	super.update_p1()
-
 func complete_p1_selection():
 	super.complete_p1_selection()
 	if (Global.TRAINING_P1):
@@ -29,9 +26,6 @@ func complete_p1_selection():
 	else:
 		p1_assist_select.get_node("CharacterCursor").input_prefix = "player2_"
 		p2_active_cursor = p1_assist_select
-
-func update_p2():
-	super.update_p2()
 
 func complete_p2_selection():
 	super.complete_p2_selection()
@@ -41,9 +35,6 @@ func complete_p2_selection():
 	else:
 		p2_assist_select.get_node("CharacterCursor").input_prefix = "player2_"
 
-func update_a1():
-	super.update_a1()
-
 func complete_a1_selection():
 	super.complete_a1_selection()
 	if (Global.TRAINING_P1):
@@ -51,9 +42,6 @@ func complete_a1_selection():
 		$P2Cursor.enable(true)
 	else:
 		p2_active_cursor = null
-
-func update_a2():
-	super.update_a2()
 
 func complete_a2_selection():
 	super.complete_a2_selection()
@@ -124,51 +112,3 @@ func go_to_prev_scene():
 
 func go_to_next_scene():
 	get_tree().change_scene_to_packed(next_scene_packed)
-
-func button_set_initiate(event):
-	if event.is_action_pressed("player1_start"):
-		if (p1_button_map == null):
-			if (event is InputEventJoypadButton and Global.p1_is_gamepad):
-				p1_button_map = ButtonMap.instantiate()
-			elif (event is InputEventKey and not Global.p1_is_gamepad):
-				p1_button_map = KeyButtonMap.instantiate()
-			else:
-				return
-			add_child(p1_button_map)
-			p1_button_map.position.x = 50
-			p1_button_map.position.y = 50
-			p1_button_map.set_is_p1(true)
-			p1_button_map.connect("button_set_complete", Callable(self, "button_set_complete"))
-			if (p1_active_cursor != null):
-				p1_active_cursor.enable(false)
-	if event.is_action_pressed("player2_start"):
-		if (p2_button_map == null):
-			if (event is InputEventJoypadButton and Global.p2_is_gamepad):
-				p2_button_map = ButtonMap.instantiate()
-			elif (event is InputEventKey and not Global.p2_is_gamepad):
-				p2_button_map = KeyButtonMap.instantiate()
-			else:
-				return
-			add_child(p2_button_map)
-			p2_button_map.position.x = 1150
-			p2_button_map.position.y = 50
-			p2_button_map.set_is_p1(false)
-			p2_button_map.connect("button_set_complete", Callable(self, "button_set_complete"))
-			if (p2_active_cursor != null):
-				p2_active_cursor.enable(false)
-
-func button_set_complete(is_p1:bool):
-	if (is_p1):
-		p1_button_map.free_button_menu()
-		remove_child(p1_button_map)
-		p1_button_map = null
-	else:
-		p2_button_map.free_button_menu()
-		remove_child(p2_button_map)
-		p2_button_map = null
-	if (is_p1):
-		if (p1_active_cursor != null):
-			p1_active_cursor.enable(true)
-	else:
-		if (p2_active_cursor != null):
-			p2_active_cursor.enable(true)

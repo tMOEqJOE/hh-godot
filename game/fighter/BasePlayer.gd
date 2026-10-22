@@ -13,6 +13,7 @@ var Hurtbox3
 signal strike_hurt (damage, hitCount, invalid, block, guard)
 
 signal attack_hurt(hitbox_name)
+signal attack_hurt_resolved(hitbox_name, hit_type)
 
 signal combo_exit () # invalid combo
 
@@ -784,6 +785,7 @@ func on_attack_hurt(react_type: int, opponent_attack: Dictionary, leftface: bool
 					hit_data["hitType"] = Enums.HitType.Block
 			Enums.Reaction.BurstLockHurt:
 				fighterState.reaction(Enums.Reaction.BurstLockHurt, input_interpreter)
+	emit_signal("attack_hurt_resolved", hitbox_name, hit_data["hitType"])
 	return hit_data
 
 func launcher_hurt(react_type: int, opponent_attack: Dictionary, leftface: bool, attack_leftface: bool, hit_data):

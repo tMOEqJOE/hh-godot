@@ -107,6 +107,9 @@ const DISPLAY_NAMES: Dictionary = {
 	"AssistSuperFollowup" : "UI_COMBO_WORD_RELEASE D",
 
 	"AssistSubaruStarBall": "D",
+	"RikkaBall": "D",
+	"RikkaBigBall": "Down D",
+	"RikkaSuperBall": "Down DownRight Right D",
 	
 	"Assist5B": "UI_COMBO_WORD_RELEASE B",
 	"Assist5C": "UI_COMBO_WORD_RELEASE C",

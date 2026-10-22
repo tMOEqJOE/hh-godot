@@ -29,6 +29,18 @@ var replay_restore_player_input: InputInterpreter
 
 var _input_frames_received: Dictionary = {}
 var _reaction_state_active: bool = false
+var _move_data_state_name: String = ""
+var _move_data_advantage_locked: bool = false
+var _move_data_contacted: bool = false
+var _move_data_actor: BasePlayer
+var _move_data_advantage_player: BasePlayer
+var _move_data_advantage_state_name: String = ""
+var _move_data_contact_advantage: int = 0
+var _move_data_contact_end_frame: int = 0
+var _move_data_contact_start_frame: int = 0
+var _move_data_contact_last_frame: int = 0
+var _move_data_projectile_sources: Dictionary = {}
+var _has_move_data_ui: bool = false
 
 func _init() -> void:
 	super._init()
@@ -66,6 +78,351 @@ func _ready() -> void:
 	$CanvasLayer/TrainingOptionsMenu.command_list = $CanvasLayer/CommandList
 	$CanvasLayer/TrainingOptionsMenu.command_list.connect("close_menu", Callable($CanvasLayer/TrainingOptionsMenu, "command_list_closed"))
 	dummy_input.connect("strike_hurt", Callable(self, "load_reaction_state"))
+	_has_move_data_ui = has_node("CanvasLayer/MoveData")
+	if (_has_move_data_ui):
+		$CanvasLayer/TrainingOptionsMenu.connect("move_data_toggled", Callable(self, "_on_move_data_toggled"))
+		_on_move_data_toggled($CanvasLayer/TrainingOptionsMenu.move_data_visible)
+		for training_opponent in _get_move_data_opponents():
+			training_opponent.attack_hurt_resolved.connect(
+				Callable(self, "_on_training_opponent_attack_hurt").bind(training_opponent)
+			)
+		for attacker in _get_move_data_attackers():
+			attacker.projectilespawn.connect(
+				Callable(self, "_on_move_data_projectile_spawned").bind(attacker)
+			)
+		_reset_move_data_display()
+
+func _on_move_data_toggled(is_visible: bool) -> void:
+	$CanvasLayer/MoveData.visible = is_visible
+
+func _on_training_opponent_attack_hurt(
+	hitbox_name: String,
+	hit_type: int,
+	_opponent: BasePlayer
+) -> void:
+	var was_parried: bool = hit_type == Enums.HitType.Parry
+	var player: BasePlayer = _find_move_data_attacker(hitbox_name)
+	if (player == null):
+		var projectile_source: Dictionary = _move_data_projectile_sources.get(
+			_normalize_projectile_name(hitbox_name),
+			{}
+		)
+		if (projectile_source.is_empty()):
+			return
+		player = projectile_source["actor"]
+		if (not is_instance_valid(player)):
+			return
+		_queue_move_data_contact(
+			player,
+			projectile_source["move_data"],
+			true,
+			was_parried
+		)
+		return
+	_queue_move_data_contact(player, {}, false, was_parried)
+
+func _on_move_data_projectile_spawned(
+	_x: int,
+	_y: int,
+	_scene: PackedScene,
+	node_name: String,
+	_player_data: PlayerSetup,
+	attacker: BasePlayer
+) -> void:
+	if (attacker.fighterState == null):
+		return
+	var move_state: State = attacker.fighterState.state
+	var move_data: Dictionary = _get_move_frame_data(move_state)
+	_move_data_projectile_sources[_normalize_projectile_name(node_name)] = {
+		"actor": attacker,
+		"move_data": move_data,
+	}
+
+func _normalize_projectile_name(projectile_name: String) -> String:
+	return projectile_name.rstrip("0123456789")
+
+func _queue_move_data_contact(
+	player: BasePlayer,
+	move_data_snapshot: Dictionary = {},
+	is_projectile: bool = false,
+	was_parried: bool = false
+) -> void:
+	if (player.fighterState == null):
+		return
+	var move_state: State = player.fighterState.state
+	var move_data: Dictionary = move_data_snapshot
+	if (move_data.is_empty()):
+		if (not is_projectile and not move_state is AttackState and not move_state is AirAttackState):
+			return
+		move_data = _get_move_frame_data(move_state)
+	if (move_data.is_empty() and not is_projectile):
+		return
+	call_deferred(
+		"_record_move_data_contact",
+		player,
+		player.currentState.get(Enums.StKey.stateName, ""),
+		move_data,
+		is_projectile,
+		was_parried
+	)
+
+func _record_move_data_contact(
+	player: BasePlayer,
+	move_state_name: String,
+	move_data_snapshot: Dictionary,
+	is_projectile: bool,
+	was_parried: bool
+) -> void:
+	if (not is_instance_valid(player) or player.fighterState == null):
+		return
+	var base_player: BasePlayer = _get_controlled_player()
+	var opponent: BasePlayer = _get_opponent_point_player()
+	if (base_player.fighterState == null):
+		return
+	if (move_data_snapshot.is_empty()):
+		var move_state: State = player.fighterState.state
+		if (not is_projectile and not move_state is AttackState and not move_state is AirAttackState):
+			return
+		move_data_snapshot = _get_move_frame_data(move_state)
+		if (move_data_snapshot.is_empty() and not is_projectile):
+			return
+	var opponent_stun: int = 0 if was_parried else opponent.currentState.get(Enums.StKey.hitstun, 0)
+	if (opponent_stun <= 0 and not was_parried):
+		return
+	var opponent_next_state: String = opponent.currentState.get(Enums.StKey.next_state, "")
+	if (opponent.currentState.get(Enums.StKey.transition_state_flag, false)
+			and opponent_next_state.ends_with("HurtCrouch")):
+		opponent_stun += 1
+
+	var base_move_state: State = base_player.fighterState.state
+	var player_recovery: int = maxi(
+		base_move_state.endFrame - base_player.currentState.get(Enums.StKey.frame, 0),
+		0
+	)
+	_move_data_contact_advantage = _calculate_frame_advantage(
+		base_player,
+		opponent,
+		opponent_stun,
+		player_recovery
+	)
+	_move_data_contact_end_frame = base_move_state.endFrame
+	_move_data_contact_last_frame = base_player.currentState.get(Enums.StKey.frame, 0)
+
+	_move_data_actor = player
+	_move_data_advantage_player = base_player
+	_move_data_advantage_state_name = base_player.currentState.get(Enums.StKey.stateName, "")
+	_move_data_state_name = move_state_name
+	_move_data_advantage_locked = true
+	_move_data_contacted = true
+	if (not move_data_snapshot.is_empty()):
+		_set_move_data_frame_values(move_data_snapshot)
+	else:
+		$CanvasLayer/MoveData/AttackStartup.text = tr("UI_TRAINING_ATTACK_STARTUP") + " --"
+		$CanvasLayer/MoveData/ActiveFrames.text = tr("UI_TRAINING_ATTACK_ACTIVE") + " --"
+		$CanvasLayer/MoveData/AttackRecovery.text = tr("UI_TRAINING_ATTACK_RECOVERY") + " --"
+	$CanvasLayer/MoveData/FrameAdvantage.text = tr("UI_TRAINING_FRAME_ADVANTAGE") + " --"
+
+func _get_controlled_player() -> BasePlayer:
+	return fighter_game.ServerPlayer if (self is ComboTrialMain or Global.TRAINING_P1) else fighter_game.ClientPlayer
+
+func _get_opponent_point_player() -> BasePlayer:
+	return fighter_game.ClientPlayer if (self is ComboTrialMain or Global.TRAINING_P1) else fighter_game.ServerPlayer
+
+func _get_move_data_attackers() -> Array[BasePlayer]:
+	var controlled_is_server: bool = self is ComboTrialMain or Global.TRAINING_P1
+	var attackers: Array[BasePlayer] = [
+		fighter_game.ServerPlayer if controlled_is_server else fighter_game.ClientPlayer,
+		fighter_game.AssistPlayer1 if controlled_is_server else fighter_game.AssistPlayer2,
+	]
+	var puppet: PuppetPlayer = fighter_game.Hato1 if controlled_is_server else fighter_game.Hato2
+	if (puppet != null):
+		attackers.append(puppet)
+	return attackers
+
+func _get_move_data_opponents() -> Array[BasePlayer]:
+	var controlled_is_server: bool = self is ComboTrialMain or Global.TRAINING_P1
+	var opponents: Array[BasePlayer] = [
+		_get_opponent_point_player(),
+		fighter_game.AssistPlayer2 if controlled_is_server else fighter_game.AssistPlayer1,
+	]
+	var puppet: PuppetPlayer = fighter_game.Hato2 if controlled_is_server else fighter_game.Hato1
+	if (puppet != null):
+		opponents.append(puppet)
+	return opponents
+
+func _find_move_data_attacker(hitbox_name: String) -> BasePlayer:
+	for attacker in _get_move_data_attackers():
+		if (attacker.fighterState == null):
+			continue
+		if (attacker.currentState.get(Enums.StKey.stateName, "") != hitbox_name):
+			continue
+		var move_state: State = attacker.fighterState.state
+		if (not move_state is AttackState and not move_state is AirAttackState):
+			continue
+		if (not _get_move_frame_data(move_state).is_empty()):
+			return attacker
+	return null
+
+func _get_active_move_data_attacker() -> BasePlayer:
+	for attacker in _get_move_data_attackers():
+		if (attacker.fighterState == null):
+			continue
+		var move_state: State = attacker.fighterState.state
+		if ((move_state is AttackState or move_state is AirAttackState)
+				and not _get_move_frame_data(move_state).is_empty()):
+			return attacker
+	return null
+
+func _reset_move_data_display() -> void:
+	$CanvasLayer/MoveData/AttackStartup.text = tr("UI_TRAINING_ATTACK_STARTUP") + " --"
+	$CanvasLayer/MoveData/ActiveFrames.text = tr("UI_TRAINING_ATTACK_ACTIVE") + " --"
+	$CanvasLayer/MoveData/AttackRecovery.text = tr("UI_TRAINING_ATTACK_RECOVERY") + " --"
+	$CanvasLayer/MoveData/FrameAdvantage.text = tr("UI_TRAINING_FRAME_ADVANTAGE") + " --"
+
+func _get_move_frame_data(move_state: State) -> Dictionary:
+	var animation_frames: Array = move_state.anim_data.keys()
+	animation_frames.sort()
+	var startup: int = -1
+	var last_active_frame: int = -1
+	var active_frames: int = 0
+
+	for index in range(animation_frames.size()):
+		var frame: int = int(animation_frames[index])
+		if (frame > move_state.endFrame):
+			break
+		var frame_data: Dictionary = move_state.anim_data[frame]
+		var hitbox_active: bool = (
+			not frame_data.get(Enums.StKey.Hit1Disable, true)
+			or not frame_data.get(Enums.StKey.Hit2Disable, true)
+		)
+		if (not hitbox_active):
+			continue
+
+		if (startup < 0):
+			startup = maxi(frame, 0)
+		var active_until: int = move_state.endFrame
+		if (index + 1 < animation_frames.size()):
+			active_until = mini(active_until, int(animation_frames[index + 1]) - 1)
+		last_active_frame = maxi(last_active_frame, active_until)
+		active_frames += maxi(active_until - maxi(frame, 0) + 1, 0)
+
+	if (startup < 0):
+		return {}
+	return {
+		"startup": startup,
+		"active": active_frames,
+		"recovery": maxi(move_state.endFrame - last_active_frame, 0),
+	}
+
+func _update_move_data() -> void:
+	var player: BasePlayer = _move_data_actor if _move_data_contacted else _get_active_move_data_attacker()
+	if (player == null):
+		player = _move_data_actor if is_instance_valid(_move_data_actor) else _get_controlled_player()
+	var advantage_player: BasePlayer = (
+		_move_data_advantage_player if _move_data_contacted else _get_controlled_player()
+	)
+
+	if (player.fighterState == null):
+		return
+	var move_state: State = player.fighterState.state
+	var state_name: String = player.currentState.get(Enums.StKey.stateName, "")
+	if (advantage_player.fighterState == null):
+		return
+	var advantage_state_name: String = advantage_player.currentState.get(Enums.StKey.stateName, "")
+	var move_data: Dictionary = {}
+	if (move_state is AttackState or move_state is AirAttackState):
+		move_data = _get_move_frame_data(move_state)
+	var is_attack_move: bool = not move_data.is_empty()
+
+	if (_move_data_contacted and advantage_state_name == _move_data_advantage_state_name):
+		_move_data_contact_last_frame = maxi(
+			_move_data_contact_last_frame,
+			advantage_player.currentState.get(Enums.StKey.frame, 0)
+		)
+	if (_move_data_contacted and advantage_state_name != _move_data_advantage_state_name):
+		var cancelled_recovery: int = 0
+		var advantage_state: State = advantage_player.fighterState.state
+		var was_interrupted: bool = (
+			advantage_state is HurtState
+			or advantage_state is AirReactionState
+		)
+		var is_attack_followup: bool = (
+			(advantage_state is AttackState or advantage_state is AirAttackState)
+			and not _get_move_frame_data(advantage_state).is_empty()
+		)
+		if (not was_interrupted
+				and _move_data_contact_last_frame < _move_data_contact_end_frame - 1):
+			cancelled_recovery = _move_data_contact_end_frame - _move_data_contact_last_frame
+		_move_data_contact_advantage += cancelled_recovery
+		if (not was_interrupted and is_attack_followup):
+			_move_data_advantage_state_name = advantage_state_name
+			_move_data_contact_end_frame = advantage_state.endFrame
+			_move_data_contact_start_frame = advantage_player.currentState.get(
+				Enums.StKey.frame,
+				0
+			)
+			_move_data_contact_last_frame = advantage_player.currentState.get(
+				Enums.StKey.frame,
+				0
+			)
+			_move_data_contact_advantage -= maxi(
+				advantage_state.endFrame - _move_data_contact_start_frame,
+				0
+			)
+		else:
+			_set_move_data_advantage_value(_move_data_contact_advantage)
+			_move_data_contacted = false
+			_move_data_advantage_player = null
+	elif (not _move_data_contacted and state_name != _move_data_state_name):
+		if (is_attack_move):
+			_move_data_advantage_locked = false
+			$CanvasLayer/MoveData/FrameAdvantage.text = tr("UI_TRAINING_FRAME_ADVANTAGE") + " --"
+
+	if (not _move_data_contacted):
+		_move_data_state_name = state_name
+
+	if (not is_attack_move):
+		if (not _move_data_advantage_locked):
+			_reset_move_data_display()
+		_move_data_actor = player
+		return
+
+	var startup: int = move_data["startup"]
+	var active: int = move_data["active"]
+	var recovery: int = move_data["recovery"]
+	$CanvasLayer/MoveData/AttackStartup.text = tr("UI_TRAINING_ATTACK_STARTUP") + " " + str(startup)
+	$CanvasLayer/MoveData/ActiveFrames.text = tr("UI_TRAINING_ATTACK_ACTIVE") + " " + str(active)
+	$CanvasLayer/MoveData/AttackRecovery.text = tr("UI_TRAINING_ATTACK_RECOVERY") + " " + str(recovery)
+	_move_data_actor = player
+
+func _calculate_frame_advantage(
+	player: BasePlayer,
+	opponent: BasePlayer,
+	opponent_stun: int,
+	player_recovery: int
+) -> int:
+	var opponent_hitstop: int = maxi(opponent.currentState.get(Enums.StKey.hitStopFrame, 0), 0)
+	var player_hitstop: int = maxi(player.currentState.get(Enums.StKey.hitStopFrame, 0), 0)
+	return opponent_stun + opponent_hitstop - player_hitstop - player_recovery
+
+func _set_move_data_advantage_value(advantage: int) -> void:
+	_set_move_data_advantage_text(advantage)
+	_move_data_advantage_locked = true
+
+func _set_move_data_frame_values(move_data: Dictionary) -> void:
+	$CanvasLayer/MoveData/AttackStartup.text = tr("UI_TRAINING_ATTACK_STARTUP") + " " + str(move_data["startup"])
+	$CanvasLayer/MoveData/ActiveFrames.text = tr("UI_TRAINING_ATTACK_ACTIVE") + " " + str(move_data["active"])
+	$CanvasLayer/MoveData/AttackRecovery.text = tr("UI_TRAINING_ATTACK_RECOVERY") + " " + str(move_data["recovery"])
+
+func _set_move_data_advantage_text(advantage: int) -> void:
+	var value := "%+d" % advantage
+	if advantage > 0:
+		value = "[color=green]%s[/color]" % value
+	elif advantage < 0:
+		value = "[color=red]%s[/color]" % value
+	$CanvasLayer/MoveData/FrameAdvantage.text = (
+		tr("UI_TRAINING_FRAME_ADVANTAGE") + " " + value
+	)
 
 func _physics_process(delta):
 	if (not $CanvasLayer/TrainingOptionsMenu.is_enabled()):
@@ -74,6 +431,8 @@ func _physics_process(delta):
 		$CanvasLayer/TrainingOptionsMenu.get_assist_meter(),
 		$CanvasLayer/TrainingOptionsMenu.get_sync_rate())
 		$CanvasLayer/DamageCounter.tick()
+		if (_has_move_data_ui):
+			_update_move_data()
 		$CanvasLayer/TrainingInputDisplay.update_input(player_input.get_most_recent_input())
 		if (is_recording):
 			var train_input: int = player_input.get_training_input(record_left_face_ref)

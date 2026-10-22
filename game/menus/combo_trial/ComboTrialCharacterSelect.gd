@@ -100,8 +100,18 @@ func resolve_assists(row:int, col:int, is_p1):
 		_:
 			return ["res://game/fighter/assist/fubuki/FubukiPlayer.tscn", Enums.AssistCharacters.Fubuki]
 
+func get_selected_character_enum(is_p1: bool, is_assist: bool) -> int:
+	if (is_assist):
+		return super.get_selected_character_enum(is_p1, is_assist)
+	var cursor = P1Cursor if is_p1 else P2Cursor
+	if (all_characters[cursor.row][cursor.col] == Enums.AllCharacters.Random):
+		return Enums.PointCharacters.Subaru
+	return resolve_characters(cursor.row, cursor.col)[1]
+
 func update_p1():
-	p1_color_number = select_color(P1Cursor.input_prefix)
+	begin_color_capture(true, P1Cursor.input_prefix, false, Callable(self, "complete_p1_selection"))
+
+func complete_p1_selection():
 	var charaData = resolve_characters(P1Cursor.row, P1Cursor.col)
 	
 	if (charaData[2] == true):
@@ -130,7 +140,9 @@ func update_p1():
 	
 	
 func update_p2():
-	p2_color_number = select_color(P2Cursor.input_prefix)
+	begin_color_capture(false, P2Cursor.input_prefix, false, Callable(self, "complete_p2_selection"))
+
+func complete_p2_selection():
 	var charaData = resolve_characters(P2Cursor.row, P2Cursor.col)
 	
 	if (charaData[2] == true):
