@@ -66,8 +66,8 @@ UI_REPLAY_TAKEOVER,Replay Takeover,リプレイテイクオーバー,Control de 
 UI_REPLAY_LOAD_TAKEOVER,Load Takeover State,テイクオーバーをロードする,Cargar estado de Control,Carregar estado de controle
 UI_REPLAY_LOAD_BACK_HINT,Load (Back button works too),状態をロードする(戻るボタンもよい),Cargar (Botón atrás también funciona),Carregar (Botão Voltar também funciona)
 UI_TRAINING_LOADED_STATE,Loaded State,ロード状態,Estado cargado,Estado Carregado
-UI_TRAINING_ATTACK_DAMAGE,Attack Damage:,ダメージ:,Daño del ataque:,Dano do Golpe: 
-UI_TRAINING_COMBO_DAMAGE,Combo Damage:,コンボダメージ:,Daño del combo:,Dano do Combo: 
+UI_TRAINING_ATTACK_DAMAGE,Attack Damage:,ダメージ:,Daño del ataque:,Dano do Golpe:
+UI_TRAINING_COMBO_DAMAGE,Combo Damage:,コンボダメージ:,Daño del combo:,Dano do Combo:
 UI_TRAINING_ATTACK_STARTUP,Startup:,発生:,Inicio:,Inicial:
 UI_TRAINING_ATTACK_ACTIVE,Active Frames:,持続:,Activos:,Ativos:
 UI_TRAINING_ATTACK_RECOVERY,Recovery:,硬直:,Recuperación:,Recuperação:
